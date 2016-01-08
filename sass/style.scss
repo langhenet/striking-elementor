@@ -109,49 +109,52 @@ body {
 .logo img {}
 
 .header-scrolled .logo {
-  img{}
-  a{}
+  .logo{
+    img{}
+    a{}
+  }
+  .av-main-nav{}
+
 }
 
 
-.av_minimal_header #header_main .container{
-
-}
+.av_minimal_header #header_main .container{}
 
 .av-main-nav {
   /*border-bottom: 1px solid #373737;
   min-height: 8.5em;*/
+  > li > a {}
 }
 
-.header-scrolled .av-main-nav {
-}
 
-.av-main-nav > li > a {
-}
 
 /*SPAN CHE CONTENGONO IL TESTO DEI MENU*/
-.header_color .main_menu #avia-menu a span.avia-menu-text {
+.header_color .main_menu ul#avia-menu{
+
+  a span.avia-menu-text {}
+
+  /*SPAN CHE CONTENGONO IL TESTO DEI MENU*/
+  > li a:hover span.avia-menu-text,
+  &:first-child > li a:hover span.avia-menu-text,
+  &:first-child > li.current-menu-item > a span.avia-menu-text,
+  &:first-child > li.current_page_item > a span.avia-menu-text,
+  &:first-child > li.active-parent-item > a span.avia-menu-text,
+
+  /*SPAN CHE CONTENGONO IL TESTO DEI SOTTO MENU*/
+  .sub-menu a span.avia-menu-text,
+  .sub-menu > li a:hover span.avia-menu-text,
+  &:first-child .sub-menu > li a:hover span.avia-menu-text,
+  &:first-child .sub-menu > li.current-menu-item > a span.avia-menu-text,
+  &:first-child .sub-menu > li.current_page_item > a span.avia-menu-text,
+  &:first-child .sub-menu > li.active-parent-item > a span.avia-menu-text,
+  {
+      border-bottom: none;
+      border-bottom-width: 0px;
+      padding:0;
+  }
+
 }
 
-/*SPAN CHE CONTENGONO IL TESTO DEI MENU*/
-.header_color .main_menu ul#avia-menu > li a:hover span.avia-menu-text,
-.header_color .main_menu ul#avia-menu:first-child > li a:hover span.avia-menu-text,
-.header_color .main_menu ul#avia-menu:first-child > li.current-menu-item > a span.avia-menu-text,
-.header_color .main_menu ul#avia-menu:first-child > li.current_page_item > a span.avia-menu-text,
-.header_color .main_menu ul#avia-menu:first-child > li.active-parent-item > a span.avia-menu-text {
-    border-bottom: none;
-}
-
-/*SPAN CHE CONTENGONO IL TESTO DEI SOTTO MENU*/
-.header_color .main_menu ul#avia-menu .sub-menu > li a:hover span.avia-menu-text,
-.header_color .main_menu ul#avia-menu:first-child .sub-menu > li a:hover span.avia-menu-text,
-.header_color .main_menu ul#avia-menu:first-child .sub-menu > li.current-menu-item > a span.avia-menu-text,
-.header_color .main_menu ul#avia-menu:first-child .sub-menu > li.current_page_item > a span.avia-menu-text,
-.header_color .main_menu ul#avia-menu:first-child .sub-menu > li.active-parent-item > a span.avia-menu-text,
-.header_color .main_menu #avia-menu .sub-menu a span.avia-menu-text {
-    border-bottom-width: 0px;
-    padding:0;
-}
 
 /*
  * Mega Menu
