@@ -4,3 +4,32 @@
   font-weight:400;
   font-family: 'Muli', sans-serif;
 }
+
+
+
+/**
+ * Extend sassy
+ */
+
+@mixin sassy-gridlover-paddings($unit: $sgl-base-unit, $base-value: $sgl-base-font-size) {
+    $margin: round($base-value * $sgl-base-line-height);
+
+    @if($unit == "px" or $unit == "pxrem") {
+        padding-bottom: $margin * 1px;
+        padding-top: $margin * 1px;
+    }
+
+    @if($unit == "rem" or $unit == "pxrem") {
+        padding-bottom: rem-calc($margin);
+        padding-top: rem-calc($margin);
+    }
+
+    @if($unit == "em") {
+        padding-bottom: em-calc($margin, $base-value);
+        padding-top: em-calc($margin, $base-value);
+    }
+}
+
+/**
+ * END - Extend sassy
+ */
