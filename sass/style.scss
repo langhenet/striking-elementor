@@ -58,8 +58,26 @@ body {
       }
     }
 
-    a, li, .phone-info{
+    a, li{
       line-height: none;
+    }
+
+    .phone-info{
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: none;
+      line-height: none;
+
+      &.with_nav {
+        span{
+          display: block;
+          font-weight: none;
+          letter-spacing: none;
+          border-right-width: none;
+          font-size: none;
+          line-height: none;
+        }
+      }
     }
 
     #avia2-menu{
@@ -71,35 +89,12 @@ body {
         border-right-width: none;
       }
     }
+
+    .social_bookmarks li {
+      border-right-width:0px;
+    }
+
   }
-}
-
-
-/*
- * ICONE SOCIAL
- */
-#top .social_bookmarks li {
-border-right-width:0px;
-}
-
-/*
- * Telefono
- */
-
-.phone-info.with_nav span {
-    display: block;
-    font-weight: none;
-    letter-spacing: none;
-    border-right-width: none;
-    font-size: none;
-    line-height: none;
-}
-
-#top #header_meta .phone-info {
-    padding-top: 0;
-    padding-bottom: 0;
-    font-size: none;
-    line-height: none;
 }
 
 /***********************/
@@ -111,17 +106,15 @@ border-right-width:0px;
  * LOGO
  */
 
-.logo img {
+.logo img {}
+
+.header-scrolled .logo {
+  img{}
+  a{}
 }
 
-.header-scrolled .logo img {
-}
 
-.header-scrolled .logo a {
-}
-
-.av_minimal_header #header_main .container/*,
-.av_minimal_header .main_menu ul:first-child > li a*/ {
+.av_minimal_header #header_main .container{
 
 }
 
