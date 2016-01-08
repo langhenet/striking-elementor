@@ -1,5 +1,9 @@
 # lgenf
 
+acquistare tema padre
+
+creare tema figlio
+
 node.js
 `npm install -g gulp`
 `npm install -g bower`
