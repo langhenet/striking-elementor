@@ -1,10 +1,15 @@
+var config      = require('./config.json');
+
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
-var sass       = require('gulp-sass');
-var minifyCSS = require('gulp-minify-css');
-var sourceMaps = require('gulp-sourcemaps');
-var rename = require('gulp-rename');
+var sass        = require('gulp-sass');
+var minifyCSS   = require('gulp-minify-css');
+var sourceMaps  = require('gulp-sourcemaps');
+var rename      = require('gulp-rename');
+
+
+
 // browser-sync task for starting the server.
 gulp.task('browser-sync', function() {
     //watch files
@@ -16,7 +21,7 @@ gulp.task('browser-sync', function() {
     //initialize browsersync
     browserSync.init(files, {
     //browsersync with a php server
-    proxy: "http://lalibera.dev:8888",
+    proxy: config.proxy,
     notify: false
     });
 });
