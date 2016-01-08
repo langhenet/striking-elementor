@@ -1,0 +1,19 @@
+{
+  "name": "lalibera",
+  "description": "ciao",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sassy-gridlover": "~2.0.0"
+  }
+}
