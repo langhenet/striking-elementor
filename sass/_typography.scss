@@ -2,6 +2,13 @@ body {
     @include sassy-gridlover-body($sgl-base-font-size, "em");
 }
 
+h1,
+h2,
+h3,
+h4 {
+  @include standard-h;
+}
+
 h1 {
     @include sassy-gridlover-heading(3, "em");
 }
