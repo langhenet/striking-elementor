@@ -25,8 +25,8 @@
     }
 
     @if($unit == "em") {
-        padding-bottom: em-calc($margin, $base-value);
-        padding-top: em-calc($margin, $base-value);
+        padding-bottom: em-calc($margin, $base-value)*2;
+        padding-top: em-calc($margin, $base-value)*2;
     }
 }
 

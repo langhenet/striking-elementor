@@ -118,7 +118,7 @@ body {
 }
 
 
-.av_minimal_header #header_main .container{}
+.av_minimal_header #header_main .container {}
 
 .av-main-nav {
   /*border-bottom: 1px solid #373737;
@@ -129,7 +129,7 @@ body {
 
 
 /*SPAN CHE CONTENGONO IL TESTO DEI MENU*/
-.header_color .main_menu ul#avia-menu{
+.header_color .main_menu ul#avia-menu {
 
   a span.avia-menu-text {}
 
@@ -161,24 +161,23 @@ body {
  */
 
 #top #header .avia_mega_div > .sub-menu {
-background:#f8f8f8;
-    border-bottom: 5px solid #CD754F;
-}
-
-#top #header .avia_mega_div > .sub-menu > li > ul > li a {
-background:#f8f8f8;
-}
-
-#top #header .avia_mega_div > .sub-menu > li > ul > li a:hover {
-    text-decoration: underline;
-}
-
-#header .mega_menu_title,
-#top #header .mega_menu_title a {
-font-size:1em;
-text-transform:uppercase;
-margin-bottom:0;
-padding: 7px 0 8px 0;
+  background:#f8f8f8;
+  border-bottom: 5px solid #CD754F;
+  .mega_menu_title {
+    font-size:1em;
+    text-transform:uppercase;
+    margin-bottom:0;
+    padding: 7px 0 8px 0;
+      a {
+        @extend .mega_menu_title;
+      }
+  }
+  > li > ul > li a {
+    background:#f8f8f8;
+  }
+  &:hover {
+      text-decoration: underline;
+  }
 }
 
 #top .av-main-nav .avia_mega_div ul a {
