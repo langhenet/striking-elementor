@@ -168,70 +168,44 @@ body {
     text-transform:uppercase;
     margin-bottom:0;
     padding: 7px 0 8px 0;
-      a {
-        @extend .mega_menu_title;
+    a {
+      @extend .mega_menu_title;
+    }
+  }
+  > li > ul > li {
+    a {
+      background:#f8f8f8;
+      &:hover {
+          text-decoration: underline;
       }
+    }
+    &.lg-fakesub a {
+      text-transform:uppercase;
+      font-weight:bold;
+      line-height: 1.1em;
+      padding: 6px 0 8px 0;
+      .avia-bullet {
+        display:none;
+      }
+    }
   }
-  > li > ul > li a {
-    background:#f8f8f8;
-  }
-  &:hover {
-      text-decoration: underline;
-  }
 }
-
-#top .av-main-nav .avia_mega_div ul a {
-font-size:1em;
-}
-
-#top #header .avia_mega_div > .sub-menu > li > ul > li.lg-fakesub a {
-text-transform:uppercase;
-font-weight:bold;
-line-height: 1.1em;
-padding: 6px 0 8px 0;
-}
-
-#top #header .avia_mega_div > .sub-menu > li > ul > li.lg-fakesub a .avia-bullet {
-display:none;
-}
-
-
-/*
- * RICERCA
- */
-
-.html_cart_at_menu.html_main_nav_header #top .main_menu .menu>li:last-child {
-}
-
 
 /***********************/
 /** 3.  FEAT HEADER ***/
 /*********************/
 
-.html_header_top.html_header_topbar_active.html_header_sticky #top #main {
-
-}
-
-.alternate_color.title_container {
-
-}
-
 /*
- * BG Pagine - Articoli - Shop
+ * CONTAINER
  */
-
-
-
-/*
- * COntainer Featured
- */
-#top .title_container .container {
+#top .alternate_color.title_container .container {
+  
 }
 
 /*
  * Titolo
  */
-.alternate_color .breadcrumb, .alternate_color .breadcrumb a,
+.breadcrumb, .alternate_color .breadcrumb a,
 #top .alternate_color.title_container .main-title,
 #top .alternate_color.title_container .main-title a {
 }
