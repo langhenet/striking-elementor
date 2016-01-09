@@ -5,9 +5,9 @@
 @import 'wp-header';
 
 // custom sass
-@import 'variables';
-@import 'mixins';
-@import 'typography';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'base/typography';
 
 
 span {
