@@ -13,7 +13,5 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "sassy-gridlover": "~2.0.0"
-  }
+  "dependencies": {}
 }
