@@ -71,12 +71,14 @@ sub { bottom: $sub-bottom; }
    font-family: $secondary-font-family; //TODO
    font-size: 1.5em; //TODO
    line-height: 1.185185185em; //TODO
-   margin-top:$line-height * 4;
+   margin-top:$line-height * 3;
    padding:$line-height 0; //TODO
    border-left:0px;
     p {
-      margin-top:-$line-height*4;
       padding-left:$line-height*3;
+        &:first-child {
+          margin-top:-$line-height*2;
+        }
     }
     &:before {
       content: "\201C";

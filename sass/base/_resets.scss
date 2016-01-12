@@ -3,6 +3,8 @@
 //****************************************************************************//
 
 // Dimensioni e Lineheight
+#top .social_bookmarks li,
+#top .social_bookmarks li a,
 .avia_textblock,
 p.lead,
 blockquote,
@@ -151,3 +153,21 @@ p + h6 {
 .avia-animated-number-content {
 
 }
+
+/*
+ * RESET SPECIALI PER HEADER - //TOCHK
+ */
+#header_main .container,
+.main_menu ul:first-child > li a,
+.av_minimal_header #header_main .container,
+.av_minimal_header .main_menu ul:first-child > li a,
+.html_header_top .av_bottom_nav_header .main_menu ul:first-child > li a,
+.html_header_top .av_bottom_nav_header .main_menu ul:first-child>li a,
+.html_header_top.html_bottom_nav_header .main_menu>div, .html_header_top.html_bottom_nav_header .main_menu ul:first-child
+{ line-height:inherit;
+  height:inherit;}
+
+/*  .html_header_top.html_bottom_nav_header .main_menu {
+    line-height: $line-height;
+    font-size:inherit;
+}*/

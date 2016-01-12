@@ -1,14 +1,68 @@
-// Top Bar Baground Color
+//***********************************************************************//
+//*                                                                     *//
+//*                    LAYOUT DELL'HEADER
+//*              descrizione - descrizione - descrizione
+//*                                                                     *//
+//***********************************************************************//
+
+
+//***********************************************************************//
+//                               TOP BAR
+//***********************************************************************//
+
+/*
+ * Colori e altezza
+ */
 #top #header_meta {
   background-color:#ededeb;
-  line-height:$line-height;
+  line-height:$line-height; //TODO
+  margin-bottom:0;
 }
 
-#top .social_bookmarks li a {
-  line-height:$line-height;
-  width:$line-height;
+/*
+ * Layout Elementi Top Bar
+ */
+#top .social_bookmarks {
+  height:auto;
+  li {
+    width:$line-height; //TODO
+    border-right-width:0; //TODO
+    line-height:$line-height; //TOCR - da tenere solo se non riesco a resettare le mediaqueris
+    a {
+      width:$line-height; //TODO
+    }
+  }
 }
 
 .phone-info {
   padding:0;
+  font-size:$h5-font-size; //TODO
+  font-weight:$base-font-weight;
+}
+
+
+
+
+//***********************************************************************//
+//                               TOP BAR
+//***********************************************************************//
+
+/*
+ * Altezza Header - LOGO SOPRA - NAVIGAZIONE SOTTO
+ */
+.av_minimal_header #header_main .container.av-logo-container {
+  line-height:$line-height*4; //TODO
+  height:$line-height*4; //TODO
+}
+
+.html_header_top.html_bottom_nav_header .main_menu {
+  line-height:$line-height*2;
+
+}
+
+#avia-menu.av-main-nav {
+//  line-height:$line-height;
+  vertical-align: middle;
+  &> li {
+    line-height:$line-height; }
 }
