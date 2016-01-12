@@ -1,30 +1,76 @@
-body {
-    @include sassy-gridlover-body($sgl-base-font-size, "em");
+
+//***********************************************************************//
+//*                                                                     *//
+//*                     LA TIPOGRAFIA DEL PROGETTO
+//*              descrizione - descrizione - descrizione
+//*                                                                     *//
+//***********************************************************************//
+
+
+
+//***********************************************************************//
+//              PARTE PRINCIPALE - BODY - P - TITOLI & DETTAGLI
+//***********************************************************************//
+
+/*
+ * BODY e P
+ */
+ body {
+   @include body-decoration;
+   @include body-size;
+   margin:0 auto;
+ }
+
+ p, ul, ol, pre, table, blockquote {
+   @include body-margin;
+ }
+
+ ul ul, ol ol, ul ol, ol ul {
+   margin-top: 0;
+   margin-bottom: 0;
+ }
+
+/*
+* HEADINGS - TITOLI
+*/
+
+h1, h2, h3, h4, h5 { @include heading-decoration; }
+
+h1 { @include h1-size; }
+
+h2 { @include h2-size; }
+
+h3 { @include h3-size; }
+
+h4 { @include h4-size; }
+
+h5 { @include h5-size; }
+
+/*
+ * Dettagli
+ */
+
+hr { @include hr-spacing; }
+
+b, strong, em, small, code { line-height: 1; }
+
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: $sup-top;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  @include standard-h;
-}
+sub { bottom: $sub-bottom; }
 
-h1 {
-    @include sassy-gridlover-heading(3, "em");
-}
+/*
+ * Blockquote - citazione
+ */
 
-h2 {
-    @include sassy-gridlover-heading(2, "em");
-}
-
-h3 {
-    @include sassy-gridlover-heading(1, "em");
-}
-
-h4 {
-    @include sassy-gridlover-heading(0);
-}
-
-p, ul, ol, pre, table, blockquote {
-    @include sassy-gridlover-margins();
-}
+ blockquote {
+   font-family: $secondary-font-family; //TODO
+   font-size: 1.5em; //TODO
+   line-height: 1.185185185em; //TODO
+   padding:$line-height; //TODO
+   border-left:0px;
+ }

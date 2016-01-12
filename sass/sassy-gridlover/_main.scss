@@ -21,7 +21,7 @@
 /// }
 
 @mixin sassy-gridlover-body($font-size: $sgl-base-font-size, $unit: $sgl-base-unit) {
-    $line-height: abs(($font-size * $sgl-base-line-height));
+    $line-height: round(($font-size * $sgl-base-line-height)) !global;
 
     @if($unit == "px" or $unit == "pxrem") {
         font-size: $font-size * 1px;
@@ -110,12 +110,12 @@
 /// }
 
 @mixin sassy-gridlover-heading($step, $unit: $sgl-base-unit, $base-value: $sgl-base-font-size) {
-    $font-size: $sgl-base-font-size;
+    $font-size: $sgl-base-font-size !global;
     $scale: $sgl-scale-factor;
     $computed-font-size: round($font-size * exponent($scale, $step));
     $line-height: round($font-size * $sgl-base-line-height);
     $lines: ceil($computed-font-size / $line-height);
-    $computed-line-height: $line-height * $lines;
+    $computed-line-height: $line-height * $lines !global;
 
     $margin-top: $line-height;
     @if($step > 1) {
@@ -182,7 +182,7 @@
     }
 }
 
-// CASSI - EXTRA MIXIN FOR PADDING 
+// CASSI - EXTRA MIXIN FOR PADDING
 
 @mixin sassy-gridlover-paddings($unit: $sgl-base-unit, $base-value: $sgl-base-font-size) {
     $margin: round($base-value * $sgl-base-line-height);

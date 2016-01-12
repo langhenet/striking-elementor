@@ -30,7 +30,7 @@ gulp.task('browser-sync', function() {
 // will auto-update browsers
 gulp.task('sass', function () {
     return gulp.src('sass/*.scss')
-        .pipe(sass())
+        .pipe(sass({precision: '15'}))
         .pipe(rename('unmin-style.css'))
         .pipe(gulp.dest('./'))
         .pipe(sourceMaps.init())

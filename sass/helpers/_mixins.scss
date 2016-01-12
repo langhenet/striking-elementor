@@ -1,35 +1,85 @@
-// TYPOGRAPHY STYLE
-@mixin standard-h {
-  text-transform:uppercase;
-  font-weight:400;
-  font-family: 'Muli', sans-serif;
+
+//***********************************************************************//
+//*                                                                     *//
+//*                  I MIXIN - FUNZIONI CHE COMPONGONO COSE
+//*              descrizione - descrizione - descrizione
+//*                                                                     *//
+//***********************************************************************//
+
+
+
+//***********************************************************************//
+//                            MIXIN TIPOGRAFICI
+//***********************************************************************//
+
+@mixin body-size {
+  font-size:$font-size;
+  line-height:$line-height;
 }
 
-
-
-/**
- * Extend sassy
- */
-
-@mixin sassy-gridlover-paddings($unit: $sgl-base-unit, $base-value: $sgl-base-font-size) {
-    $margin: round($base-value * $sgl-base-line-height);
-
-    @if($unit == "px" or $unit == "pxrem") {
-        padding-bottom: $margin * 1px;
-        padding-top: $margin * 1px;
-    }
-
-    @if($unit == "rem" or $unit == "pxrem") {
-        padding-bottom: rem-calc($margin);
-        padding-top: rem-calc($margin);
-    }
-
-    @if($unit == "em") {
-        padding-bottom: em-calc($margin, $base-value)*2;
-        padding-top: em-calc($margin, $base-value)*2;
-    }
+@mixin body-margin {
+  margin-top:$margin-top;
+  margin-bottom:$margin-bottom;
 }
 
-/**
- * END - Extend sassy
+@mixin body-decoration {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}
+
+/*
+ * Dimensioni Titoli
  */
+
+@mixin h1-size {
+  font-size:$h1-font-size;
+  line-height:$h1-line-height;
+  margin-top:$h1-margin-top;
+  margin-bottom:$h1-margin-bottom;
+}
+
+@mixin h2-size {
+  font-size:$h2-font-size;
+  line-height:$h2-line-height;
+  margin-top:$h2-margin-top;
+  margin-bottom:$h2-margin-bottom;
+}
+
+@mixin h3-size {
+  font-size:$h3-font-size;
+  line-height:$h3-line-height;
+  margin-top:$h3-margin-top;
+  margin-bottom:$h3-margin-bottom;
+}
+
+@mixin h4-size {
+  font-size:$h4-font-size;
+  line-height:$h4-line-height;
+  margin-top:$h4-margin-top;
+  margin-bottom:$h4-margin-bottom;
+}
+
+@mixin h5-size {
+  font-size:$h5-font-size;
+  line-height:$h5-line-height;
+  margin-top:$h5-margin-top;
+  margin-bottom:$h5-margin-bottom;
+}
+
+/*
+ * Decorazioni Headings
+ */
+
+@mixin heading-decoration {
+  font-family: $base-font-family; //TODO
+  font-weight:400; //TODO
+  text-transform:uppercase; //TODO
+}
+
+/*
+ * HR
+ */
+@mixin hr-spacing {
+  border:$hr-spacing;
+  margin:-$hr-spacing 0;
+}
