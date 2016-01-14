@@ -21,7 +21,7 @@
    margin:0 auto;
  }
 
- p, ul, ol, pre, table, blockquote {
+ p, ul, ol, pre, table /*, blockquote*/ { //PJRL - togliere dal template il commento
    @include body-margin;
  }
 
@@ -72,6 +72,8 @@ sub { bottom: $sub-bottom; }
    font-size: 1.5em; //TODO
    line-height: 1.185185185em; //TODO
    margin-top:$line-height * 3;
+   margin-bottom:0;
+   //margin-right:0;
    padding:$line-height 0; //TODO
    border-left:0px;
     p {

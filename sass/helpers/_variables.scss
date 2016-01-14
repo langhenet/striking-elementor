@@ -15,7 +15,7 @@
  * BASE DEL BODY
  */
 $font-size:1.125em; //TODO
-$line-height:1.7777777777777777em; //TODO
+$line-height: 1.7777777777777777em; //TODO
 
 /*
  * p and other standard elements
@@ -30,7 +30,6 @@ $half-line:$line-height / 2;
 /*
  * HEADING
  */
-
  $h1-font-size: 6.333333333333333em; //TODO
  $h1-line-height: 1.1228070175438596em; //TODO
  $h1-margin-top: 0.2807017543859649em; //TODO
@@ -66,8 +65,22 @@ $half-line:$line-height / 2;
   //***********************************************************************//
   //                            TIPOGRAFIA - DECORAZIONI
   //***********************************************************************//
-
   $base-font-family:'Muli', sans-serif; //TODO
   $base-font-weight:400; //TODO
 
   $secondary-font-family:'Lora', serif; //TODO
+
+
+  //***********************************************************************//
+  //                           LAYOUT - SPAZIATURE
+  //***********************************************************************//
+$block-v-space:$line-height*2; //TODO
+
+
+//***********************************************************************//
+//                           COLORI
+//***********************************************************************//
+$main-base-color:;
+$main-bg-color:;
+$main-acc-color:;
+$main-border-color:;
