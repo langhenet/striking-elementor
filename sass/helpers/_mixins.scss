@@ -1,17 +1,16 @@
 
-//***********************************************************************//
-//*                                                                     *//
+//****************************************************************************//
+//*                                                                          *//
 //*                  I MIXIN - FUNZIONI CHE COMPONGONO COSE
 //*              descrizione - descrizione - descrizione
-//*                                                                     *//
-//***********************************************************************//
+//*                                                                          *//
+//****************************************************************************//
 
 
 
-//***********************************************************************//
+//****************************************************************************//
 //                            MIXIN TIPOGRAFICI
-//***********************************************************************//
-
+//****************************************************************************//
 @mixin body-size {
   font-size:$font-size;
   line-height:$line-height;
@@ -27,10 +26,10 @@
   font-weight: $base-font-weight;
 }
 
-/*
- * Dimensioni Titoli
- */
 
+///
+// Dimensioni Titoli
+///
 @mixin h1-size {
   font-size:$h1-font-size;
   line-height:$h1-line-height;
@@ -66,19 +65,20 @@
   margin-bottom:$h5-margin-bottom;
 }
 
-/*
- * Decorazioni Headings
- */
 
+
+///
+// Decorazioni Headings
+///
 @mixin heading-decoration {
   font-family: $base-font-family; //TODO
   font-weight:400; //TODO
   text-transform:uppercase; //TODO
 }
 
-/*
- * HR
- */
+///
+// HR
+///
 @mixin hr-spacing {
   border:$hr-spacing;
   margin:-$hr-spacing 0;
