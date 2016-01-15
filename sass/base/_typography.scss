@@ -19,6 +19,7 @@
    @include body-decoration;
    @include body-size;
    margin:0 auto;
+   @include respond-to(step-2) { font-size: $font-size * 0.9;}
  }
 
  p, ul, ol, pre, table /*, blockquote*/ { //PJRL - togliere dal template il commento
@@ -36,9 +37,12 @@
 
 h1, h2, h3, h4, h5 { @include heading-decoration; }
 
-h1 { @include h1-size; }
+h1 {
+  @include h1-size;}
 
-h2 { @include h2-size; }
+h2 {
+  @include h2-size;
+}
 
 h3 { @include h3-size; }
 

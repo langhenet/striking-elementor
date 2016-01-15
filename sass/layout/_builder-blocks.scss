@@ -1,5 +1,15 @@
+///
+// Padding sopra tutto il main-title
+///
+.html_header_top.html_header_topbar_active.html_header_sticky.html_bottom_nav_header #top #main {
+  padding-top: ($line-height * 8) + $half-line; //TODO
+}
+
+///
+// Margine Sopra Sidebar e contenuto
+///
 .content,
 .sidebar {
-  padding-top:$block-v-space;
-  padding-bottom:$block-v-space;
+  padding-top: $block-v-space;
+  padding-bottom: $block-v-space;
 }

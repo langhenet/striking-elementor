@@ -83,3 +83,30 @@
   border:$hr-spacing;
   margin:-$hr-spacing 0;
 }
+
+//****************************************************************************//
+//                            MEDIA QUERIES
+//****************************************************************************//
+@mixin respond-to($media) {
+  @if $media == step-1 {
+    @media only screen and (max-width: $s-desktop) { @content; }
+  }
+  @else if $media == step-2 {
+    @media only screen and (max-width: $l-tablet + 1) { @content; }
+  }
+  @else if $media == step-3 {
+    @media only screen and (max-width: $p-tablet + 1) { @content; }
+  }
+  @else if $media == step-4 {
+    @media only screen and (max-width: $l-phone) { @content; }
+  }
+  @else if $media == step-5 {
+    @media only screen and (max-width: $p-phone) { @content; }
+  }
+  @else if $media == step-0 {
+    @media only screen and (max-width: $website-width) { @content; }
+  }
+  @else if $media == step-p1 {
+    @media only screen and (min-width: $u-hd) { @content; }
+  }
+}

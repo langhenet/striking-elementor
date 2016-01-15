@@ -11,11 +11,14 @@
 ///
 $website-width: 1170px; //TODO
 
-$small-desktop: $website-width - 1px;
-$landscape-trablet: 989px;
-$portrait-tablet: 767px;
-$landscape-phone: 567px;
-$portrait-phone: 479px;
+$u-hd:1981px;
+
+$s-desktop: $website-width - 1px; // step-1
+$l-tablet: 989px; // step-2
+$p-tablet: 767px; // step-3
+$l-phone: 567px; // step-4
+$p-phone: 479px; // step-5
+$s-phone: 320px; // step-6
 
 
 //***********************************************************************//
