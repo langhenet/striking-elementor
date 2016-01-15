@@ -11,7 +11,7 @@
 ///
 $website-width: 1170px; //TODO
 
-$u-hd:1981px;
+$u-hd:1981px; //step-p1
 
 $s-desktop: $website-width - 1px; // step-1
 $l-tablet: 989px; // step-2
@@ -101,7 +101,44 @@ $s-phone: 320px; // step-6
 //****************************************************************************//
 //                           COLORI
 //****************************************************************************//
-  $main-base-color:;
-  $main-bg-color:;
-  $main-acc-color:;
-  $main-border-color:;
+
+///
+//SETUP COLORE //TODO
+///
+  $tortora: #c7bdb1;
+  $arancio: #db8947;
+  $grigio-scuro: #616266;
+  $grigio-chiaro: #ededeb;
+  $bianco-1: #f7f5f3;
+  $bianco-2: #fdfdf9;
+
+///
+// SEZIONI COLORI - //TODO Solo per progetti grossi
+///
+
+  $overlay-bgcolor: rgba(97, 98, 102, 0.25);
+
+  $head-base-color: ;
+  $head-bg-color: ;
+  $head-acc-color: ;
+  $head-border-color: ;
+
+  $main-base-color: $grigio-scuro;
+  $main-bg-color: $bianco-1;
+  $main-acc-color: $arancio;
+  $main-border-color: $tortora;
+
+  $alt-base-color: ;
+  $alt-bg-color: ;
+  $alt-acc-color: ;
+  $alt-border-color: ;
+
+  $socket-base-color: ;
+  $socket-bg-color: ;
+  $socket-acc-color: ;
+  $socket-border-color: ;
+
+  $footer-base-color: ;
+  $footer-bg-color: ;
+  $footer-acc-color: ;
+  $footer-border-color: ;

@@ -110,3 +110,20 @@
     @media only screen and (min-width: $u-hd) { @content; }
   }
 }
+
+//****************************************************************************//
+//                            DECORAZIONI
+//****************************************************************************//
+///
+// Overlay di colore da mettere sui ::before
+///
+  @mixin color-overlay($bg-color: $overlay-bgcolor) {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    background: $bg-color;
+    height: 73.2%; //TOCHK
+  }

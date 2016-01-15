@@ -1,0 +1,7 @@
+.avia-section:first-child h1 {
+  color:white;
+}
+
+.avia-section:first-child::before {
+  @include color-overlay;
+}
