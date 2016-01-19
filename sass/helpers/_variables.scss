@@ -28,6 +28,7 @@ $s-phone: 320px; // step-6
 ///
 // BASE DEL BODY
 ///
+  $base:16;
   $font-size: 1.125em; //TODO
   $line-height: 1.7777777777777777em; //TODO
 
@@ -79,6 +80,9 @@ $s-phone: 320px; // step-6
   $sub-bottom: -0.25em; //TODO
   $hr-spacing: 1px; //TODO
 
+///
+// BOTTONI
+//
 
 
 //****************************************************************************//
@@ -113,10 +117,16 @@ $s-phone: 320px; // step-6
   $bianco-2: #fdfdf9;
 
 ///
+// COLORI BOTTONI - //TODO
+///
+  $button-main-color: $arancio; //TODO
+  $button-secondarry-color: $grigio-scuro; //TODO
+
+///
 // SEZIONI COLORI - //TODO Solo per progetti grossi
 ///
 
-  $overlay-bgcolor: rgba(97, 98, 102, 0.25);
+  $overlay-bgcolor: rgba($grigio-scuro, 0.35);
 
   $head-base-color: ;
   $head-bg-color: ;

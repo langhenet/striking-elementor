@@ -15,21 +15,27 @@
 /*
  * BODY e P
  */
- body {
-   @include body-decoration;
-   @include body-size;
-   margin:0 auto;
-   @include respond-to(step-2) { font-size: $font-size * 0.9;}
- }
+body {
+  @include body-decoration;
+  @include body-size;
+  margin:0 auto;
+  @include respond-to(step-2) { font-size: $font-size * 0.9;}
+}
 
- p, ul, ol, pre, table /*, blockquote*/ { //PJRL - togliere dal template il commento
-   @include body-margin;
- }
+p, ul, ol, pre, table /*, blockquote*/ { //PJRL - togliere dal template il commento
+  @include body-margin;
+}
 
- ul ul, ol ol, ul ol, ol ul {
-   margin-top: 0;
-   margin-bottom: 0;
- }
+ul, ol, pre, table {
+  @include body-decoration;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+//.helvetica-neue-websave { font-family: $base-font-family; }
 
 /*
 * HEADINGS - TITOLI
@@ -38,7 +44,9 @@
 h1, h2, h3, h4, h5 { @include heading-decoration; }
 
 h1 {
-  @include h1-size;}
+  @include h1-size;
+  @include respond-to(step-2) { font-size: $h1-font-size * 0.8; }
+}
 
 h2 {
   @include h2-size;
@@ -68,7 +76,7 @@ sup {
 sub { bottom: $sub-bottom; }
 
 /*
- * Blockquote - citazione
+ * Blockquote - citazione //TOCHK
  */
 
  blockquote {
@@ -80,18 +88,19 @@ sub { bottom: $sub-bottom; }
    //margin-right:0;
    padding:$line-height 0; //TODO
    border-left:0px;
+
     p {
       padding-left:$line-height*3;
         &:first-child {
           margin-top:-$line-height*2;
         }
     }
-    &:before {
+
+    &:before { //TODO
       content: "\201C";
       font-family: 'Lora', serif;
       font-size: $h1-font-size*2;
       display: inline-flex;
       float: left;
     }
-
  }

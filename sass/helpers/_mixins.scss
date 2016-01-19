@@ -85,6 +85,103 @@
 }
 
 //****************************************************************************//
+//                            BOTTONI
+//              il padding va a compensare per i bordi
+//****************************************************************************//
+
+///
+// Base dei bottoni: display, font-family e ombre
+///
+@mixin button {
+  display:inline-block;
+  font-family: $base-font-family;
+  white-space: normal;
+  border-style:solid;
+  -webkit-box-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
+     -moz-box-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
+          box-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
+}
+
+
+///
+// Bottoni Piccoli
+///
+@mixin button-small {
+  font-weight: 400; //TODO
+
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+
+  margin-top: $h5-margin-top;
+  margin-bottom: $h5-margin-bottom;
+
+  padding:0;
+
+  border-bottom-width: 2px;
+  border-top-width: 2px;
+}
+
+
+///
+// Bottoni Medi - come p - 1.5 con bordo sotto la metà
+///
+@mixin button-medium {
+  $border-width: 2;
+//  $padding: 0.7777777777777778em; //TODO - questo valore deve essere pari alla metà dell'interlinea meno la somma dei bordi sup e inf
+  $padding: (((($base * $font-size * ($line-height / 1em)) - $border-width *2)) / ($base * $font-size) ) * 0.5em;
+  font-weight: 600; //TODO
+
+  font-size: 1em;
+  line-height: $line-height;
+
+  margin-top: $line-height;
+  margin-bottom: $line-height;
+
+  padding-top: $padding;
+  padding-bottom: $padding;
+  padding-right:1em;
+  padding-left:1em;
+
+  border-bottom-width: $border-width * 1px;
+  border-top-width: $border-width * 1px;
+  letter-spacing: 0.5px; //TODO
+}
+
+
+///
+// Bottoni Grandi
+///
+@mixin button-large {
+  $border-width: 4;
+  $padding: (((($base * $font-size * ($h3-font-size / 1em) * ($h3-line-height / 1em)) - $border-width *2)) / ($base * $font-size * ($h3-font-size / 1em)) ) * 0.5em;
+
+  font-weight: 600; //TODO
+
+  font-size: $h3-font-size;
+  line-height: $h3-line-height;
+
+  margin-top: $h3-margin-top;
+  margin-bottom: $h3-margin-bottom;
+
+  padding-top: $padding / 2.3333;
+  padding-bottom: $padding / 2.3333;
+  padding-right:1.5em;
+  padding-left:1.5em;
+
+  border-bottom-width: $border-width * 1px;
+  border-top-width: $border-width * 1px;
+  letter-spacing: 0.5px; //TODO
+}
+
+
+///
+// Bottoni Extra-Grandi
+///
+@mixin button-x-large {
+
+}
+
+//****************************************************************************//
 //                            MEDIA QUERIES
 //****************************************************************************//
 @mixin respond-to($media) {
@@ -92,10 +189,10 @@
     @media only screen and (max-width: $s-desktop) { @content; }
   }
   @else if $media == step-2 {
-    @media only screen and (max-width: $l-tablet + 1) { @content; }
+    @media only screen and (max-width: $l-tablet) { @content; }
   }
   @else if $media == step-3 {
-    @media only screen and (max-width: $p-tablet + 1) { @content; }
+    @media only screen and (max-width: $p-tablet) { @content; }
   }
   @else if $media == step-4 {
     @media only screen and (max-width: $l-phone) { @content; }
@@ -125,5 +222,5 @@
     bottom: 0;
     left:0;
     background: $bg-color;
-    height: 73.2%; //TOCHK
+    //height: 73.2%; //TODL
   }

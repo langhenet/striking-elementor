@@ -2,6 +2,10 @@
   color:white;
 }
 
-.avia-section:first-child::before {
+.avia-section:first-child {
+  position: relative; //PJRL per far funzionare l'overlay
+
+  &::before {
   @include color-overlay;
+  }
 }

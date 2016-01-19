@@ -17,21 +17,25 @@
  * Colori e altezza
  */
 #top #header_meta {
-  background-color: #ededeb;
+  background-color: $grigio-chiaro; //TODO
   line-height:$line-height; //TODO
   margin-bottom:0;
+
+  a {
+    color: $main-base-color; //TODO
+  }
 }
 
 /*
  * Layout Elementi Top Bar
  */
 #top .social_bookmarks {
-  height:auto;
+  height: auto;
 
   li {
-    width:$line-height; //TODO
-    border-right-width:0; //TODO
-    line-height:$line-height; //TOCR - da tenere solo se non riesco a resettare le mediaquerie
+    width: $line-height; //TODO
+    border-right-width: 0; //TODO
+    line-height: $line-height; //TOCR - da tenere solo se non riesco a resettare le mediaqueries
 
     a {
       width:$line-height; //TODO
@@ -40,11 +44,14 @@
 }
 
 .phone-info {
-  padding:0;
-  font-size:$h5-font-size; //TODO
-  font-weight:$base-font-weight;
-}
+  padding: 0;
+  font-size: $h5-font-size; //TODO
+  font-weight: $base-font-weight;
 
+  span {
+    color: $main-base-color;
+  }
+}
 
 
 
@@ -65,8 +72,41 @@
 
 }
 
+/*
+ * Impostazione navigazione - LOGO SOPRA - NAVIGAZIONE SOTTO
+ */
 #avia-menu.av-main-nav {
   vertical-align: top; //TODO - può essere middle o bottom anche!
+
   &> li {
-    line-height:$line-height; }
+    line-height: $line-height;
+    text-transform:uppercase;
+
+    &> a {
+      font-weight: 400; //TODO
+    }
+  }
+}
+
+/*
+ * Decorazione degli elementi di navigazione - hover - corrent
+ */
+.av-main-nav > li {
+
+  &:hover::after {
+    content: "\e886";
+    display: block;
+    color: #fff;
+    font-family: 'entypo-fontello';
+    line-height: 0;
+    margin-top: 8px;
+    -webkit-transform: scale(2.5,1);
+       -moz-transform: scale(2.5,1);
+        -ms-transform: scale(2.5,1);
+            transform: scale(2.5,1);
+  }
+
+  &.current-menu-item::after {
+      @extend :hover::after;
+  }
 }

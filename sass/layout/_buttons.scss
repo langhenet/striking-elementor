@@ -1,0 +1,42 @@
+//***********************************************************************//
+//*                                                                     *//
+//*                             I BOTTONI
+//*              descrizione - descrizione - descrizione
+//*                                                                     *//
+//***********************************************************************//
+
+
+/*
+ * Evitiamo che i bottoni con le icone siano diversi da quelli senza icone
+ */
+.avia-button .avia_button_icon,
+#top .avia_cart_buttons .button > span {
+  line-height:0;
+}
+
+/*
+ * Fix font-size dei bottoni in pagine woocommerce
+ */
+.woocommerce-page .button,
+.cart_dropdown .dropdown_widget .widget_shopping_cart_content p {
+  font-size:1em;
+}
+
+//***********************************************************************//
+//                              BOTTONI ENFOLD - Dimensioni
+//***********************************************************************//
+
+.avia-button.avia-size-small {
+  @include button;
+  @include button-small;
+}
+
+.avia-button.avia-size-medium {
+  @include button;
+  @include button-medium;
+}
+
+.avia-button.avia-size-large {
+  @include button;
+  @include button-large;
+}
