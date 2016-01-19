@@ -5,16 +5,66 @@
 //*                                                                     *//
 //***********************************************************************//
 
-///
-// PADDING per ELEMENTI SOTTOLINEATI
-///
-@function border-pad($b-width, $b-base: $base, $b-font-size: $font-size, $b-line-height: $line-height) {
+//****************************************************************************//
+//              PADDING per BOTTONI & ELEMENTI SOTTOLINEATI
+//            qui c'è un trick complicato che va spiegato per bene
+//
+//  PROBLEMA: gli elementi sottolineati devono avere un padding che non rispetta
+//  la griglia, perché devono tenere conto del bordo
+//
+//  Per ogni grandezza io devo quindi sottrarre l'altezza del bordo (dichiarata //  in PX) all'altezza di griglia - che è invece dichiarata in EM).
+//
+//        PASSO #1 - TROVARE IL VALORE IN PX DEL PADDING RIDOTTO
+//        PAD è il valore in PX che risulta da
+//        [LH meno (bordo per 2)]
+//        quindi altezza di linea (PX) meno il bordo sopra più quello sotto
+//
+//        PASSO #2 - CONVERTIRE il PAD da PX a EM
+//        la proporzione è la seguente:
+//        1(EM) : fs(PX) = X(em) : PAD(PX)
+//        dove X è il valore in EM del padding volglio ottenere
+//
+//  Nelle funzioni sottostanti viene prima calcolato il PAD in pixel che viene
+//  poi diviso dal FS in pixel (anchesso calcolato).
+//
+//  FUNZIONE #1 - font size di base
+//  la LH in PX ($b-base * $b-font-size * ($b-line-height / 1em))
+//  a cui viene sottratto il bordo doppio:  - $b-width *2
+//  il tutto viene diviso per la FS calcolata con ($b-base * $b-font-size)
+//  e ulteriormente diviso per due (padding sotto + padding sopra)
+//
+//  FUNZIONE #2 - bottoni grandi come h3
+//  2 grandi differenze
+//
+//    #1 per calcolare la LH e la FS si aggiunge una moltiplicazione per il
+//    valore in EM del font
+//    LH: ($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)
+//    FS: ($b-base * $font-size * ($b-font-size / 1em)
+//
+//    #2 in questo caso particolare, vorrei tenere solo la metà dell'altezza di
+//    linea per non far venire il bottone troppo grande quindi in realtà:
+//    LH: viene ancora divisa per 2.
+//
+//  FUNZIONE #3 - tutti gli altri
+//  è come la #2 ma senza la divisione della LH
+//
+//
+//
+//****************************************************************************//
 
+@function border-pad($b-width, $b-base: $base, $b-font-size: $font-size, $b-line-height: $line-height) {
+  // #1 - Font size di base
   @if $b-font-size == $font-size {
     @return (((($b-base * $b-font-size * ($b-line-height / 1em)) - $b-width *2)) / ($b-base * $b-font-size) ) * 0.5em
   }
 
+  // #2 - font size come h3
+  @else if $b-font-size == $h3-font-size {
+    @return (($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) / 2) - ($b-width * 2)) / ($b-base * $font-size * ($b-font-size / 1em)) * 0.5em
+  }
+
+  // #3 - font size altri
   @else {
-    @return (((($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)) - $b-width *2)) / ($b-base * $font-size * ($b-font-size / 1em)) ) * 0.5em;
+    @return (((($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)) - $b-width * 2)) / ($b-base * $font-size * ($b-font-size / 1em)) ) * 0.5em;
   }
 }
