@@ -1,0 +1,20 @@
+//***********************************************************************//
+//*                                                                     *//
+//*                  FUNZIONI
+//*              descrizione - descrizione - descrizione
+//*                                                                     *//
+//***********************************************************************//
+
+///
+// PADDING per ELEMENTI SOTTOLINEATI
+///
+@function border-pad($b-width, $b-base: $base, $b-font-size: $font-size, $b-line-height: $line-height) {
+
+  @if $b-font-size == $font-size {
+    @return (((($b-base * $b-font-size * ($b-line-height / 1em)) - $b-width *2)) / ($b-base * $b-font-size) ) * 0.5em
+  }
+
+  @else {
+    @return (((($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)) - $b-width *2)) / ($b-base * $font-size * ($b-font-size / 1em)) ) * 0.5em;
+  }
+}

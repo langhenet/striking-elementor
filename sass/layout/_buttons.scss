@@ -40,3 +40,8 @@
   @include button;
   @include button-large;
 }
+
+.avia-button.avia-size-x-large {
+  @include button;
+  @include button-x-large;
+}

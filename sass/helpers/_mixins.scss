@@ -85,8 +85,10 @@
 }
 
 //****************************************************************************//
-//                            BOTTONI
-//              il padding va a compensare per i bordi
+//                                    BOTTONI
+//                   il padding va a compensare per i bordi
+//              il valore del padding deve essere pari alla metà di
+//                (interlinea meno la somma dei bordi sup e inf)
 //****************************************************************************//
 
 ///
@@ -107,6 +109,8 @@
 // Bottoni Piccoli
 ///
 @mixin button-small {
+  $border-width: 2;
+  $padding: border-pad($b-width: $border-width, $b-font-size: $h5-font-size, $b-line-height: $h5-line-height);
   font-weight: 400; //TODO
 
   font-size: $h5-font-size;
@@ -115,10 +119,10 @@
   margin-top: $h5-margin-top;
   margin-bottom: $h5-margin-bottom;
 
-  padding:0;
+  padding: .0715em 1.5em; //TODO
 
-  border-bottom-width: 2px;
-  border-top-width: 2px;
+  border-bottom-width: $border-width * 1px;
+  border-top-width: $border-width * 1px;
 }
 
 
@@ -127,10 +131,8 @@
 ///
 @mixin button-medium {
   $border-width: 2;
-//  $padding: 0.7777777777777778em; //TODO - questo valore deve essere pari alla metà dell'interlinea meno la somma dei bordi sup e inf
-  $padding: (((($base * $font-size * ($line-height / 1em)) - $border-width *2)) / ($base * $font-size) ) * 0.5em;
+  $padding: border-pad($b-width: $border-width) ;
   font-weight: 600; //TODO
-
   font-size: 1em;
   line-height: $line-height;
 
@@ -139,8 +141,8 @@
 
   padding-top: $padding;
   padding-bottom: $padding;
-  padding-right:1em;
-  padding-left:1em;
+  padding-right:1.5em;
+  padding-left:1.5em;
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
@@ -153,10 +155,8 @@
 ///
 @mixin button-large {
   $border-width: 4;
-  $padding: (((($base * $font-size * ($h3-font-size / 1em) * ($h3-line-height / 1em)) - $border-width *2)) / ($base * $font-size * ($h3-font-size / 1em)) ) * 0.5em;
-
+  $padding: border-pad($b-width: $border-width, $b-font-size: $h3-font-size, $b-line-height: $h3-line-height);
   font-weight: 600; //TODO
-
   font-size: $h3-font-size;
   line-height: $h3-line-height;
 
@@ -178,7 +178,23 @@
 // Bottoni Extra-Grandi
 ///
 @mixin button-x-large {
+  $border-width: 6;
+  $padding: border-pad($b-width: $border-width, $b-font-size: $h2-font-size, $b-line-height: $h2-line-height);
+  font-weight: 600; //TODO
+  font-size: $h2-font-size;
+  line-height: $h2-line-height;
 
+  margin-top: $h2-margin-top;
+  margin-bottom: $h2-margin-bottom;
+
+  padding-top: $padding;
+  padding-bottom: $padding;
+  padding-right:1.5em;
+  padding-left:1.5em;
+
+  border-bottom-width: $border-width * 1px;
+  border-top-width: $border-width * 1px;
+  letter-spacing: 0.5px; //TODO
 }
 
 //****************************************************************************//
