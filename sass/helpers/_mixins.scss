@@ -22,13 +22,13 @@
 }
 
 @mixin body-decoration {
-  font-family: $base-font-family;
-  font-weight: $base-font-weight;
+  font-family: $font-family;
+  font-weight: $font-weight;
 }
 
 
 ///
-// Dimensioni Titoli
+// Dimensioni Titoli //TOCR - usare una variabile per richiamare il mixin in modo da non dover scrivere 5 mixin diversi
 ///
 @mixin h1-size {
   font-size:$h1-font-size;
@@ -66,15 +66,15 @@
 }
 
 
-
 ///
 // Decorazioni Headings
 ///
 @mixin heading-decoration {
-  font-family: $base-font-family; //TODO
+  font-family: $font-family; //TODO
   font-weight:400; //TODO
   text-transform:uppercase; //TODO
 }
+
 
 ///
 // HR
@@ -83,6 +83,8 @@
   border:$hr-spacing;
   margin:-$hr-spacing 0;
 }
+
+
 
 //****************************************************************************//
 //                                    BOTTONI
@@ -94,9 +96,9 @@
 ///
 // Base dei bottoni: display, font-family e ombre
 ///
-@mixin button {
+%button {
   display:inline-block;
-  font-family: $base-font-family;
+  font-family: $button-font-family;
   white-space: normal;
   border-style:solid;
   -webkit-box-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
@@ -119,7 +121,7 @@
   margin-top: $h5-margin-top;
   margin-bottom: $h5-margin-bottom;
 
-  padding: .0715em 1.5em; //TODO
+  padding: $padding 1.5em; //TODO
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
@@ -155,7 +157,7 @@
 ///
 @mixin button-large {
   $border-width: 4;
-  $padding: border-pad($b-width: $border-width, $b-font-size: $h3-font-size, $b-line-height: $h3-line-height);
+  $padding: border-halfpad($b-width: $border-width, $b-font-size: $h3-font-size, $b-line-height: $h3-line-height);
   font-weight: 600; //TODO
   font-size: $h3-font-size;
   line-height: $h3-line-height;
@@ -197,6 +199,53 @@
   letter-spacing: 0.5px; //TODO
 }
 
+
+
+//****************************************************************************//
+//                                    FORMS
+//****************************************************************************//
+
+///
+// Form Field size settings
+///
+@mixin form-field {
+  font-family: $form-font-family;
+  font-size: $form-font-size;
+  $f-line-height: border-pad(1);
+  line-height: $f-line-height*2;
+  margin-bottom: $line-height;
+  margin-top: 0;
+  padding: 0;
+}
+
+///
+// Forms Labels size settings
+///
+@mixin form-label {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  font-weight: $font-weight;
+  text-transform: none;
+  letter-spacing: 0px;
+}
+
+///
+// Forms Field Descritpions
+///
+@mixin form-desc {
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+  font-style: none;
+  margin-top: $h5-line-height / 2;
+  margin-bottom: $h5-line-height / 2;
+  padding: 0!important;
+  font-weight: $font-weight;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+
 //****************************************************************************//
 //                            MEDIA QUERIES
 //****************************************************************************//
@@ -224,9 +273,12 @@
   }
 }
 
+
+
 //****************************************************************************//
 //                            DECORAZIONI
 //****************************************************************************//
+
 ///
 // Overlay di colore da mettere sui ::before
 ///

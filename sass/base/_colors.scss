@@ -1,11 +1,5 @@
-.avia-section:first-child h1 {
-  color:white;
-}
 
-.avia-section:first-child {
-  position: relative; //PJRL per far funzionare l'overlay
 
-  &::before {
-  @include color-overlay;
-  }
+.socket_color .gform_wrapper {
+    background: $sfondino-arancio; //TODO
 }

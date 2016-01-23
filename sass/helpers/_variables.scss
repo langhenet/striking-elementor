@@ -67,8 +67,8 @@ $s-phone: 320px; // step-6
   $h4-margin-top: 1.7777777777777777em; //TODO
   $h4-margin-bottom: 0em; //TODO
 
-  $h5-font-size: 0.7777em; //TODO
-  $h5-line-height: 1.9285714em; //TODO
+  $h5-font-size: 0.7777777777778em; //TODO
+  $h5-line-height: 1.142857142857em; //TODO
   $h5-margin-top: 1.9285714em; //TODO
   $h5-margin-bottom: 0em; //TODO
 
@@ -81,24 +81,22 @@ $s-phone: 320px; // step-6
   $hr-spacing: 1px; //TODO
 
 ///
-// BOTTONI
-//
+// FORMS
+///
 
 
 //****************************************************************************//
 //                            TIPOGRAFIA - DECORAZIONI
 //****************************************************************************//
-  $base-font-family: 'Muli', sans-serif; //TODO
-  $base-font-weight: 400; //TODO
+  $font-family: 'Muli', sans-serif; //TODO
+  $font-weight: 300; //TODO
 
   $secondary-font-family: 'Lora', serif; //TODO
-
-
 
 //****************************************************************************//
 //                           LAYOUT - SPAZIATURE
 //****************************************************************************//
-  $block-v-space: $line-height * 2; //TODO
+  $block-v-space: $line-height * 4; //TODO
 
 
 
@@ -115,12 +113,13 @@ $s-phone: 320px; // step-6
   $grigio-chiaro: #ededeb;
   $bianco-1: #f7f5f3;
   $bianco-2: #fdfdf9;
+  $sfondino-arancio: rgba(white,0.75);
 
 ///
 // COLORI BOTTONI - //TODO
 ///
   $button-main-color: $arancio; //TODO
-  $button-secondarry-color: $grigio-scuro; //TODO
+  $button-secondary-color: $grigio-scuro; //TODO
 
 ///
 // SEZIONI COLORI - //TODO Solo per progetti grossi
@@ -152,3 +151,16 @@ $s-phone: 320px; // step-6
   $footer-bg-color: ;
   $footer-acc-color: ;
   $footer-border-color: ;
+
+//****************************************************************************//
+//                            BOTTONI
+//****************************************************************************//
+
+  $button-font-family: $font-family; //TODO
+
+//****************************************************************************//
+//                            BOTTONI
+//****************************************************************************//
+
+  $form-font-family: $font-family; //TODO
+  $form-font-size: 1em; //TODO

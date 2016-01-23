@@ -9,21 +9,20 @@
   }
 }
 
+
 ///
 // Margine Sopra Sidebar e contenuto
 ///
+
+//TOCHK - questo inficia sia il padding delle pagine "normali" sia quello delle sezioni colore.
 .content,
 .sidebar {
   padding-top: $block-v-space;
   padding-bottom: $block-v-space;
 }
 
-///
-// Bordi Generali sezioni FW
-///
-.container_wrap {
-  border-top-width:0px;
-}
+
+
 
 
 ///

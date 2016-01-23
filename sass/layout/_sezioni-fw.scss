@@ -1,0 +1,63 @@
+
+///
+// Bordi Generali sezioni FW
+///
+.container_wrap {
+  border-top-width:0px; //TODO
+}
+
+///
+// Primo titolo delle sezioni fw //PJRL
+.avia-section:first-child h1 {
+  color:white;
+}
+
+
+///
+// Overlay sezioni FW //TUTTO //PJRL
+///
+
+.home .avia-section.socket_color:nth-child(3) {
+  position: relative; //PJRL per far funzionare l'overlay
+
+  &::before {
+  @include color-overlay;
+  }
+}
+
+.avia-section:first-child {
+  position: relative; //PJRL per far funzionare l'overlay
+
+  &::before {
+  @include color-overlay;
+  }
+}
+
+
+
+
+
+///
+// Celle Flessibili //TOCHK
+///
+.flex_cell {
+  padding-top: $block-v-space;
+  padding-bottom: $block-v-space;
+  position: relative; //PJRL
+
+  &::before {
+    @include color-overlay;
+  }
+
+  &.el_before_av_cell_one_half {
+    border-right:8px solid;
+
+    @include respond-to(step-3) { border-right: 0;  border-bottom: 8px solid;} //TODO
+  }
+
+  &.el_after_av_cell_one_half {
+    border-left:8px solid;
+
+    @include respond-to(step-3) { border-left: 0;} //TODO
+  }
+}

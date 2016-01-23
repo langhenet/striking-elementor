@@ -27,21 +27,21 @@
 //***********************************************************************//
 
 .avia-button.avia-size-small {
-  @include button;
+  @extend %button;
   @include button-small;
 }
 
 .avia-button.avia-size-medium {
-  @include button;
+  @extend %button;
   @include button-medium;
 }
 
 .avia-button.avia-size-large {
-  @include button;
+  @extend %button;
   @include button-large;
 }
 
 .avia-button.avia-size-x-large {
-  @include button;
+  @extend %button;
   @include button-x-large;
 }

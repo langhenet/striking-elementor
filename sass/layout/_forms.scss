@@ -1,0 +1,183 @@
+//****************************************************************************//
+//*                                                                     ******//
+//*                             MODULI & FORMS
+//*              descrizione - descrizione - descrizione
+//*                                                                     ******//
+//****************************************************************************//
+
+
+
+//****************************************************************************//
+//                            FORM GENERICI
+//****************************************************************************//
+
+#top {
+
+  form {
+    margin-bottom: $line-height; //TODO
+  }
+
+
+  ///
+  // Dimensioni dei Campi generici - anche gravity
+  ///
+  .input-text,
+  input[type='text'],
+  input[type='input'],
+  input[type='password'],
+  input[type='email'],
+  input[type='number'],
+  input[type='url'],
+  input[type='tel'],
+  input[type='search'],
+  select,
+  .select2-container .select2-choice {
+    @include form-field;
+  }
+
+
+  ///
+  // Dimensioni text area generica - anche gravity
+  ///
+  textarea {
+    @include form-field;
+    line-height: $line-height;
+    min-height: $line-height * 6;
+    padding: border-pad(1);
+    margin-bottom: 0;
+  }
+
+
+///
+// Etichette dei Moduli
+///
+  label,
+  #commentform .comment-form-rating label,
+  .logged-in div #commentform .comment-form-comment label {
+    @include form-label;
+  }
+
+
+///
+// Non so a cosa servono... //TOCR - a cosa servono? si possono eliminare?
+///
+  label span,
+  legend span {
+    font-size: 1em;
+  }
+}
+
+
+//****************************************************************************//
+//                            SPECIFICI PER GRAVITY FORMS
+//****************************************************************************//
+
+///
+// Padding per il contenitore di Gravity Form
+///
+.gform_wrapper {
+  padding: $line-height * 2; //TODO
+  margin: 0 !important; //TOCR - questo dovrebbe stare in un reset?
+}
+
+///
+// I <li> che contengono i campi di Gravity Forms
+// in particolare per azzerare i padding
+///
+#top .gform_wrapper {
+  ul li.gfield {
+    margin-bottom: $line-height !important;
+    padding:0;
+
+    ///
+    // Campo HTML di gravity - check marigni
+    ///
+    //&.gfield_html.gfield_no_follows_desc {
+    //  margin-top:;
+    //  margin-bottom: !important;
+    //}
+  }
+
+  select {
+    height: $line-height;
+
+      option {
+        font-size: $h5-font-size;
+        line-height: $line-height;
+        padding: ($line-height / 2) .125em;
+      }
+  }
+
+  &.gf_browser_chrome ul.gform_fields li.gfield span.name_first {
+    padding-top:0;
+  }
+  &.gf_browser_chrome ul.gform_fields li.gfield span.name_last {
+    padding-top:0;
+  }
+  &.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
+    padding-top:0;
+  }
+}
+
+
+///
+// Descrizioni campi Gravity Forms
+///
+.gform_wrapper .top_label .gfield_description,
+#top .ginput_complex label {
+  @include form-desc;
+}
+
+///
+// Bottone Gravity
+///
+
+#top .gform_wrapper .gform_footer input.button {
+  @extend %button;
+  @include button-medium;
+
+  width: 100%;
+  border-right-width: 0;
+  border-left-width: 0;
+  text-transform: uppercase;
+}
+
+
+///
+// COLORI FORM DA CAPIRE COME ORGANIZZARE //TOCR
+///
+//#top .main_color .input-text,
+//#top .main_color input[type='text'],
+//#top .main_color input[type='input'],
+//#top .main_color input[type='password'],
+//#top .main_color input[type='email'],
+//#top .main_color input[type='number'],
+//#top .main_color input[type='url'],
+//#top .main_color input[type='tel'],
+//#top .main_color input[type='search'],
+//#top .main_color textarea,
+//#top .main_color select,
+//#top .main_color .select2-container .select2-choice {
+//  background:;
+//  color:;
+//  border-color:;
+//}
+
+///
+// Quest cose erano presenti nel template... ma non sembrano necessarie. visto
+// che il margin bottom è già impostato a 0 in gravity mod
+///
+//#top .gform_wrapper .input-text,
+//#top .gform_wrapper input[type='text'],
+//#top .gform_wrapper input[type='input'],
+//#top .gform_wrapper input[type='password'],
+//#top .gform_wrapper input[type='email'],
+//#top .gform_wrapper input[type='number'],
+//#top .gform_wrapper input[type='url'],
+//#top .gform_wrapper input[type='tel'],
+//#top .gform_wrapper input[type='search'],
+//#top .gform_wrapper textarea,
+//#top .gform_wrapper select,
+//#top .gform_wrapper .select2-container .select2-choice  {
+//    margin-bottom: 0!important;
+//}

@@ -34,37 +34,47 @@
 //  e ulteriormente diviso per due (padding sotto + padding sopra)
 //
 //  FUNZIONE #2 - bottoni grandi come h3
-//  2 grandi differenze
+//  1 grande differenza
 //
-//    #1 per calcolare la LH e la FS si aggiunge una moltiplicazione per il
+//    Per calcolare la LH e la FS si aggiunge una moltiplicazione per il
 //    valore in EM del font
 //    LH: ($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)
 //    FS: ($b-base * $font-size * ($b-font-size / 1em)
 //
-//    #2 in questo caso particolare, vorrei tenere solo la metà dell'altezza di
-//    linea per non far venire il bottone troppo grande quindi in realtà:
-//    LH: viene ancora divisa per 2.
-//
-//  FUNZIONE #3 - tutti gli altri
-//  è come la #2 ma senza la divisione della LH
 //
 //
 //
 //****************************************************************************//
 
+///
+// Padding Pieno
+///
 @function border-pad($b-width, $b-base: $base, $b-font-size: $font-size, $b-line-height: $line-height) {
+
   // #1 - Font size di base
   @if $b-font-size == $font-size {
-    @return (((($b-base * $b-font-size * ($b-line-height / 1em)) - $b-width *2)) / ($b-base * $b-font-size) ) * 0.5em
+    @return ($b-base * $b-font-size * ($b-line-height / 1em) - $b-width *2) / ($b-base * $b-font-size) * 0.5em
   }
 
-  // #2 - font size come h3
-  @else if $b-font-size == $h3-font-size {
-    @return (($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) / 2) - ($b-width * 2)) / ($b-base * $font-size * ($b-font-size / 1em)) * 0.5em
-  }
-
-  // #3 - font size altri
+  // #2 - font size altri
   @else {
-    @return (((($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)) - $b-width * 2)) / ($b-base * $font-size * ($b-font-size / 1em)) ) * 0.5em;
+    @return ($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) - $b-width * 2) / ($b-base * $font-size * ($b-font-size / 1em)) * 0.5em
+  }
+}
+
+///
+// Mezzo padding
+///
+
+@function border-halfpad($b-width, $b-base: $base, $b-font-size: $font-size, $b-line-height: $line-height) {
+
+  // #1 - Font size di base
+  @if $b-font-size == $font-size {
+    @return (($b-base * $b-font-size * ($b-line-height / 1em) / 2) - $b-width *2) / ($b-base * $b-font-size) * 0.5em
+  }
+
+  // #2 -  - font size altri
+  @else {
+    @return (($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) / 2) - ($b-width * 2)) / ($b-base * $font-size * ($b-font-size / 1em)) * 0.5em
   }
 }

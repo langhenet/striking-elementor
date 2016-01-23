@@ -165,9 +165,16 @@ p + h6 {
 .html_header_top .av_bottom_nav_header .main_menu ul:first-child>li a,
 .html_header_top.html_bottom_nav_header .main_menu>div, .html_header_top.html_bottom_nav_header .main_menu ul:first-child
 { line-height:inherit;
-  height:inherit;}
+  height:inherit; }
 
 /*  .html_header_top.html_bottom_nav_header .main_menu {
     line-height: $line-height;
     font-size:inherit;
 }*/
+
+/*
+ * Reset per margine delle labels di gravity forms
+ */
+body#top .gform_wrapper label.gfield_label+div.ginput_container {
+  margin-top:0 !important;
+}
