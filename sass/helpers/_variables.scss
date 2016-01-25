@@ -39,10 +39,6 @@ $s-phone: 320px; // step-6
   $margin-top: 0em; //TODO
   $margin-bottom: 1.7777777777777777em; //TODO
 
-  $double-line: $line-height * 2;
-  $half-line: $line-height / 2;
-
-
 
 ////
 // HEADING
@@ -80,9 +76,6 @@ $s-phone: 320px; // step-6
   $sub-bottom: -0.25em; //TODO
   $hr-spacing: 1px; //TODO
 
-///
-// FORMS
-///
 
 
 //****************************************************************************//
@@ -90,15 +83,23 @@ $s-phone: 320px; // step-6
 //****************************************************************************//
   $font-family: 'Muli', sans-serif; //TODO
   $font-weight: 300; //TODO
+  $font-weight-bold:;
 
   $secondary-font-family: 'Lora', serif; //TODO
 
 //****************************************************************************//
-//                           LAYOUT - SPAZIATURE
+//                            FORMS
 //****************************************************************************//
-  $block-v-space: $line-height * 4; //TODO
 
+  $form-font-family: $font-family; //TODO
+  $form-font-size: 1em; //TODO
 
+  //****************************************************************************//
+  //                            BOTTONI
+  //****************************************************************************//
+
+    $button-font-family: $font-family; //TODO
+    $button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
 
 //****************************************************************************//
 //                           COLORI
@@ -113,54 +114,95 @@ $s-phone: 320px; // step-6
   $grigio-chiaro: #ededeb;
   $bianco-1: #f7f5f3;
   $bianco-2: #fdfdf9;
-  $sfondino-arancio: rgba(white,0.75);
+  $verde: #8BC34A;
 
 ///
-// COLORI BOTTONI - //TODO
-///
-  $button-main-color: $arancio; //TODO
-  $button-secondary-color: $grigio-scuro; //TODO
-
-///
-// SEZIONI COLORI - //TODO Solo per progetti grossi
+// SEZIONI COLORI - //TODO Solo per progetti grossi o NO?
 ///
 
-  $overlay-bgcolor: rgba($grigio-scuro, 0.35);
 
-  $head-base-color: ;
-  $head-bg-color: ;
-  $head-acc-color: ;
-  $head-border-color: ;
 
-  $main-base-color: $grigio-scuro;
-  $main-bg-color: $bianco-1;
-  $main-acc-color: $arancio;
-  $main-border-color: $tortora;
+  $colors: (
+    header: (
+      body:       $grigio-scuro,      //colore corpo
+      heading:    $bianco-2,          //colore titoli
+      link:       $bianco-2,          //Colore link
+      bg:         $tortora,           //Colore sfondo principale
 
-  $alt-base-color: ;
-  $alt-bg-color: ;
-  $alt-acc-color: ;
-  $alt-border-color: ;
+      accent:     $arancio,           //Colore accento //TOCHK
 
-  $socket-base-color: ;
-  $socket-bg-color: ;
-  $socket-acc-color: ;
-  $socket-border-color: ;
+      border:     $grigio-scuro,      //Colore Bordi
 
-  $footer-base-color: ;
-  $footer-bg-color: ;
-  $footer-acc-color: ;
-  $footer-border-color: ;
+      body-alt:   $grigio-scuro,      //colore body alternativo
+      bg-alt:     $grigio-chiaro,     //Colore sfondo alternativo
+      overlay:    rgba($grigio-scuro, 0.35), //Colore overlay
 
-//****************************************************************************//
-//                            BOTTONI
-//****************************************************************************//
+      button:     $bianco-2,
+      bg-button:  $arancio
 
-  $button-font-family: $font-family; //TODO
+    ),
 
-//****************************************************************************//
-//                            BOTTONI
-//****************************************************************************//
+    main: (
+      body:       $grigio-scuro,
+      heading:    $tortora,
+      link:       $arancio,
+      bg:         $bianco-2,
 
-  $form-font-family: $font-family; //TODO
-  $form-font-size: 1em; //TODO
+      accent:     $arancio,
+
+      border:     $tortora,
+
+      body-alt:   $grigio-scuro, // colore form e box
+      bg-alt:     $tortora, // BG form e box
+      overlay:    rgba($grigio-scuro, 0.35),
+
+      button:     $bianco-2,
+      bg-button:  $arancio,
+    ),
+
+    alternate: (
+      body:       $grigio-scuro,
+      heading:    $grigio-scuro,
+      link:       $arancio,
+      bg:         $bianco-1,
+
+      accent:     $arancio,
+      border:     $tortora,
+      bg-alt:     $bianco-2,
+      overlay:    rgba($grigio-scuro, 0.35),
+      button:     $bianco-2,
+      bg-button:  $arancio
+    ),
+
+    socket: (
+      body:       $bianco-2,
+      heading:    $bianco-2,
+      link:       $bianco-2,
+      bg:         $arancio,
+
+      accent:     $bianco-2,
+      border:     $bianco-2,
+
+      body-alt:   $grigio-scuro, // colore form e box
+      bg-alt:     rgba(white,0.75),
+      overlay:    rgba($grigio-scuro, 0.35),
+
+      button:     $bianco-2,
+      bg-button:  $verde
+    ),
+
+    footer: (
+      body:       $grigio-scuro,
+      heading:    $grigio-scuro,
+      link:       $grigio-scuro,
+      bg:         $grigio-chiaro,
+
+      accent:     $arancio,
+      border:     $grigio-scuro,
+      bg-alt:     $bianco-1,
+      overlay:    rgba($grigio-scuro, 0.35),
+
+      button:     $bianco-2,
+      bg-button:  $arancio
+    )
+  );

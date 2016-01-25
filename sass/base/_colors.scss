@@ -1,5 +1,6 @@
 
 
 .socket_color .gform_wrapper {
-    background: $sfondino-arancio; //TODO
+//   background: $sfondino-arancio; //TODO
+    background: lighten($arancio, 25%); //TODO
 }

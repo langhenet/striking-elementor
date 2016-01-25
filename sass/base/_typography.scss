@@ -101,7 +101,7 @@ sub { bottom: $sub-bottom; }
  * Blockquote - citazione //TOCHK
  */
 
- blockquote {
+ blockquote { //PJRL TUTTO
    font-family: $secondary-font-family; //TODO
    font-size: 1.5em; //TODO
    line-height: 1.185185185em; //TODO
@@ -113,6 +113,8 @@ sub { bottom: $sub-bottom; }
 
     p {
       padding-left:$line-height*3;
+      color: $tortora;
+
         &:first-child {
           margin-top:-$line-height*2;
         }
@@ -125,6 +127,7 @@ sub { bottom: $sub-bottom; }
       font-size: $h1-font-size*2;
       display: inline-flex;
       float: left;
+      color: $tortora;
 
       @include respond-to(step-2) {
         font-size: $h1-font-size;

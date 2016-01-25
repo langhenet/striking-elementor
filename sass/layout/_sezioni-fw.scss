@@ -13,6 +13,37 @@
 }
 
 
+/*
+ * Sezioni FW no Margin //PJRL //TOCR
+ */
+#top div .no_margin {
+
+  &.av_one_half {
+    width: 48%;
+    margin-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    p {
+      padding: 20% 10%;
+      margin-bottom: 0;
+
+      @include respond-to(step-1) {
+        padding:18% 10%;
+      }
+
+      @include respond-to(step-2) {
+        padding:5% 10%;
+      }
+    }
+  }
+}
+
+#top div .no_margin.first {
+  margin-left:0;
+}
+
+
 ///
 // Overlay sezioni FW //TUTTO //PJRL
 ///
@@ -21,7 +52,8 @@
   position: relative; //PJRL per far funzionare l'overlay
 
   &::before {
-  @include color-overlay;
+  //@include color-overlay();
+    @include color-overlay(palette(socket, overlay));
   }
 }
 
@@ -29,24 +61,21 @@
   position: relative; //PJRL per far funzionare l'overlay
 
   &::before {
-  @include color-overlay;
+    @include color-overlay(palette(socket, overlay));
   }
 }
-
-
-
 
 
 ///
 // Celle Flessibili //TOCHK
 ///
 .flex_cell {
-  padding-top: $block-v-space;
-  padding-bottom: $block-v-space;
+  padding-top: $line-height * 4;
+  padding-bottom: $line-height * 4;
   position: relative; //PJRL
 
   &::before {
-    @include color-overlay;
+    @include color-overlay(palette(socket, overlay));
   }
 
   &.el_before_av_cell_one_half {

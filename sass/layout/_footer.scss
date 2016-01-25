@@ -1,0 +1,12 @@
+//****************************************************************************//
+//*                                                                     ******//
+//*                    LAYOUT FOOTER
+//*              descrizione - descrizione - descrizione
+//*                                                                     ******//
+//****************************************************************************//
+
+#footer .widget p { //PJRL TUTTO
+  @include h5-size;
+  line-height: $h5-line-height * 2;
+  margin-top:0;
+}

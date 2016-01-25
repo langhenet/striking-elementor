@@ -70,9 +70,9 @@
 // Decorazioni Headings
 ///
 @mixin heading-decoration {
-  font-family: $font-family; //TODO
-  font-weight:400; //TODO
-  text-transform:uppercase; //TODO
+  font-family: $font-family; //TODO //TOCR
+  font-weight:400; //TODO //TOCR
+  text-transform:uppercase; //TODO //TOCR
 }
 
 
@@ -100,10 +100,10 @@
   display:inline-block;
   font-family: $button-font-family;
   white-space: normal;
-  border-style:solid;
-  -webkit-box-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
-     -moz-box-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
-          box-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
+  border-style: solid;
+  -webkit-box-shadow: $button-shadow;
+     -moz-box-shadow: $button-shadow;
+          box-shadow: $button-shadow;
 }
 
 
@@ -112,16 +112,15 @@
 ///
 @mixin button-small {
   $border-width: 2;
-  $padding: border-pad($b-width: $border-width, $b-font-size: $h5-font-size, $b-line-height: $h5-line-height);
-  font-weight: 400; //TODO
 
+  font-weight: 400; //TODO //TOCR
   font-size: $h5-font-size;
   line-height: $h5-line-height;
 
   margin-top: $h5-margin-top;
   margin-bottom: $h5-margin-bottom;
 
-  padding: $padding 1.5em; //TODO
+  padding: border-pad($b-width: $border-width, $b-font-size: $h5-font-size, $b-line-height: $h5-line-height) 1.5em; //TODO padding orizzontale.. da settare altrove?
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
@@ -133,18 +132,16 @@
 ///
 @mixin button-medium {
   $border-width: 2;
-  $padding: border-pad($b-width: $border-width) ;
-  font-weight: 600; //TODO
+
+  font-weight: 600; //TODO //TOCR
   font-size: 1em;
   line-height: $line-height;
+  @include body-margin;
 
-  margin-top: $line-height;
-  margin-bottom: $line-height;
-
-  padding-top: $padding;
-  padding-bottom: $padding;
-  padding-right:1.5em;
-  padding-left:1.5em;
+  padding-top: border-pad($b-width: $border-width);
+  padding-bottom: border-pad($b-width: $border-width);
+  padding-right: 1.5em; //TODO padding orizzontale.. da settare altrove?
+  padding-left: 1.5em; //TODO padding orizzontale.. da settare altrove?
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
@@ -157,22 +154,22 @@
 ///
 @mixin button-large {
   $border-width: 4;
-  $padding: border-halfpad($b-width: $border-width, $b-font-size: $h3-font-size, $b-line-height: $h3-line-height);
-  font-weight: 600; //TODO
+
+  font-weight: 600; //TODO //TOCR
   font-size: $h3-font-size;
   line-height: $h3-line-height;
 
   margin-top: $h3-margin-top;
   margin-bottom: $h3-margin-bottom;
 
-  padding-top: $padding;
-  padding-bottom: $padding;
-  padding-right:1.5em;
-  padding-left:1.5em;
+  padding-top: border-halfpad($b-width: $border-width, $b-font-size: $h3-font-size, $b-line-height: $h3-line-height);
+  padding-bottom: border-halfpad($b-width: $border-width, $b-font-size: $h3-font-size, $b-line-height: $h3-line-height);
+  padding-right: 1.5em; //TODO padding orizzontale.. da settare altrove?
+  padding-left: 1.5em; //TODO padding orizzontale.. da settare altrove?
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
-  letter-spacing: 0.5px; //TODO
+  letter-spacing: 0.5px; //TODO //TOCR ?
 }
 
 
@@ -181,22 +178,45 @@
 ///
 @mixin button-x-large {
   $border-width: 6;
-  $padding: border-pad($b-width: $border-width, $b-font-size: $h2-font-size, $b-line-height: $h2-line-height);
-  font-weight: 600; //TODO
+
+  font-weight: 600; //TODO //TOCR
   font-size: $h2-font-size;
   line-height: $h2-line-height;
 
   margin-top: $h2-margin-top;
   margin-bottom: $h2-margin-bottom;
 
-  padding-top: $padding;
-  padding-bottom: $padding;
-  padding-right:1.5em;
-  padding-left:1.5em;
+  padding-top: border-pad($b-width: $border-width, $b-font-size: $h2-font-size, $b-line-height: $h2-line-height);
+  padding-bottom: border-pad($b-width: $border-width, $b-font-size: $h2-font-size, $b-line-height: $h2-line-height);
+  padding-right: 1.5em; //TODO padding orizzontale.. da settare altrove?
+  padding-left: 1.5em; //TODO padding orizzontale.. da settare altrove?
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
-  letter-spacing: 0.5px; //TODO
+  letter-spacing: 0.5px; //TODO //TOCR
+}
+
+//****************************************************************************//
+//                                    COLORI BOTTONI
+//
+//****************************************************************************//
+
+@mixin button-color($state:none) {
+
+  @if $state == hover {
+    background: darken(palette($palette, bg-button), 5%);
+    color: palette($palette, button);
+    border-color: palette($palette, bg-button);
+    border-bottom-color: darken(palette($palette, bg-button), 10%);
+  }
+
+  @else {
+    background: palette($palette, bg-button);
+    color: palette($palette, button);
+    border-color: palette($palette, bg-button);
+    border-bottom-color: darken(palette($palette, bg-button), 10%);
+    opacity: 1;
+  }
 }
 
 
@@ -226,7 +246,7 @@
   margin-bottom: 0;
   padding-top: 0;
   font-weight: $font-weight;
-  text-transform: none;
+  text-transform: none; //TODO //TOCR
   letter-spacing: 0px;
 }
 
@@ -237,11 +257,10 @@
   font-size: $h5-font-size;
   line-height: $h5-line-height;
   font-style: none;
-  margin-top: $h5-line-height / 2;
-  margin-bottom: $h5-line-height / 2;
-  padding: 0!important;
+  margin:0;
+  padding: ($h5-line-height / 2) 0!important;
   font-weight: $font-weight;
-  text-transform: none;
+  text-transform: none; //TODO //TOCR
   letter-spacing: 0;
 }
 
@@ -280,9 +299,9 @@
 //****************************************************************************//
 
 ///
-// Overlay di colore da mettere sui ::before
+// Overlay di colore da mettere sui ::before //TOCR
 ///
-  @mixin color-overlay($bg-color: $overlay-bgcolor) {
+  @mixin color-overlay($bg-color: palette(main, overlay)) {
     content: '';
     position: absolute;
     top: 0;

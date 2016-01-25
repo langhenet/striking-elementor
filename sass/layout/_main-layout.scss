@@ -2,10 +2,10 @@
 // Padding sopra tutto il main-title
 ///
 .html_header_top.html_header_topbar_active.html_header_sticky.html_bottom_nav_header #top #main { //TOCHK
-  padding-top: ($line-height * 8) + $half-line; //TODO
+  padding-top: ($line-height * 8) + $line-height / 2; //TODO
 
   @include respond-to(step-2) {
-    padding-top: ($line-height * 5) + $half-line; //TODO
+    padding-top: ($line-height * 5) + $line-height / 2; //TODO
   }
 }
 
@@ -17,8 +17,8 @@
 //TOCHK - questo inficia sia il padding delle pagine "normali" sia quello delle sezioni colore.
 .content,
 .sidebar {
-  padding-top: $block-v-space;
-  padding-bottom: $block-v-space;
+  padding-top: $line-height * 4;
+  padding-bottom: $line-height * 4;
 }
 
 

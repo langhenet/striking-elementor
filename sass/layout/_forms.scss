@@ -73,18 +73,25 @@
 //****************************************************************************//
 
 ///
-// Padding per il contenitore di Gravity Form
+// Padding per il contenitore di Gravity Form e per il footer di Gravity
 ///
 .gform_wrapper {
   padding: $line-height * 2; //TODO
   margin: 0 !important; //TOCR - questo dovrebbe stare in un reset?
+
 }
 
 ///
-// I <li> che contengono i campi di Gravity Forms
-// in particolare per azzerare i padding
+// Insieme di Regole da impostare con il #top per soprassedere agli
+// stili esistenti di Gravity Forms (formmsmain.css e gravity-mod.css)
 ///
 #top .gform_wrapper {
+  max-width: 100%;
+
+
+  ///
+  // Il Padding e i Margini dei campi standard
+  ///
   ul li.gfield {
     margin-bottom: $line-height !important;
     padding:0;
@@ -98,6 +105,11 @@
     //}
   }
 
+
+  ///
+  // Altezza della select (che va impostata a parte per motivi sconosciuti)
+  // e delle sue opzioni
+  ///
   select {
     height: $line-height;
 
@@ -108,6 +120,10 @@
       }
   }
 
+
+  ///
+  // Padding dei campi complessi (nome)
+  ///
   &.gf_browser_chrome ul.gform_fields li.gfield span.name_first {
     padding-top:0;
   }
@@ -117,16 +133,32 @@
   &.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
     padding-top:0;
   }
+
+
+  ///
+  // Padding e margini del footer
+  ///
+  .gform_footer {
+      padding: 0;
+      margin: 0; //TODO
+  }
 }
 
 
 ///
 // Descrizioni campi Gravity Forms
 ///
-.gform_wrapper .top_label .gfield_description,
+.gform_wrapper .top_label .gfield_description {
+  @include form-desc;
+}
+///
+// Sotto-etichette dei campi complessi (p.es nome)
+///
 #top .ginput_complex label {
   @include form-desc;
 }
+
+
 
 ///
 // Bottone Gravity
@@ -134,12 +166,12 @@
 
 #top .gform_wrapper .gform_footer input.button {
   @extend %button;
-  @include button-medium;
+  @include button-medium; //TODO
 
   width: 100%;
   border-right-width: 0;
   border-left-width: 0;
-  text-transform: uppercase;
+  text-transform: uppercase; //TODO
 }
 
 

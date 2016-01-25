@@ -45,3 +45,27 @@
   @extend %button;
   @include button-x-large;
 }
+
+//****************************************************************************//
+//                         BOTTONI ENFOLD - COLORI
+//                  include anche i colori dei bottoni di gravity pare
+//****************************************************************************//
+
+@each $palette, $bgcolor in $colors {
+    #top .#{$palette}_color .avia-button.avia-color-theme-color,
+    div .#{$palette}_color .button {
+      @include button-color;
+
+      &:hover {
+        @include button-color(hover);
+      }
+    }
+}
+
+#top .socket_color.av-flex-cells .avia-button.avia-color-theme-color { //PJRL
+  background: rgba(#fff, 0.75);
+  border-color: rgba(#fff, 0.1);
+  border-radius: 0;
+  color: palette(socket,body-alt);
+  text-transform:uppercase;
+}
