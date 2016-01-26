@@ -79,6 +79,17 @@
   padding: $line-height * 2; //TODO
   margin: 0 !important; //TOCR - questo dovrebbe stare in un reset?
 
+  @include  respond-to(step-2) {
+    padding: $line-height;
+  }
+
+  @include  respond-to(step-3) {
+    padding: $line-height*2;
+  }
+
+  @include  respond-to(step-4) {
+    padding: $line-height;
+  }
 }
 
 ///
@@ -159,6 +170,26 @@
 }
 
 
+///
+// Campi gf_*_half - un po' un merdone per via degli !IMPORTANT //TOCHK
+///
+.gform_wrapper .top_label li.gfield.gf_left_half,
+.gform_wrapper .top_label li.gfield.gf_right_half {
+  @include respond-to(step-2) {
+    width: 100% !important;
+    margin-right: 0% !important;
+  }
+
+  @include respond-to(step-3) {
+    margin-right: 3.1% !important;
+    width: 45.5% !important;
+
+    @at-root .gform_wrapper .top_label li.gfield.gf_right_half {
+      margin-right: 0% !important;
+      width: 48.4% !important;
+    }
+  }
+}
 
 ///
 // Bottone Gravity
@@ -175,25 +206,47 @@
 }
 
 
-///
-// COLORI FORM DA CAPIRE COME ORGANIZZARE //TOCR
-///
-//#top .main_color .input-text,
-//#top .main_color input[type='text'],
-//#top .main_color input[type='input'],
-//#top .main_color input[type='password'],
-//#top .main_color input[type='email'],
-//#top .main_color input[type='number'],
-//#top .main_color input[type='url'],
-//#top .main_color input[type='tel'],
-//#top .main_color input[type='search'],
-//#top .main_color textarea,
-//#top .main_color select,
-//#top .main_color .select2-container .select2-choice {
-//  background:;
-//  color:;
-//  border-color:;
-//}
+//****************************************************************************//
+//                            Colori FORMS, LABELS e DESCRIZIONI CAMPI
+//****************************************************************************//
+
+.main_color .gform_wrapper {
+  background: palette(main, bg-alt)
+}
+
+#top .main_color .input-text,
+#top .main_color input[type='text'],
+#top .main_color input[type='input'],
+#top .main_color input[type='password'],
+#top .main_color input[type='email'],
+#top .main_color input[type='number'],
+#top .main_color input[type='url'],
+#top .main_color input[type='tel'],
+#top .main_color input[type='search'],
+#top .main_color textarea,
+#top .main_color select,
+#top .main_color .select2-container .select2-choice {
+  border-color: palette(main, border);
+  background: palette(main, bg);
+  color: palette(main, body-alt);
+}
+
+#top .main_color label,
+#top .main_color .gfield_description {
+  color: palette(main, body);
+}
+
+/*
+ * Socket color
+ */
+.socket_color .gform_wrapper {
+  background: palette(socket, bg-alt);
+}
+
+#top .socket_color label,
+#top .socket_color .gfield_description {
+  color: palette(socket, body-alt);
+}
 
 ///
 // Quest cose erano presenti nel template... ma non sembrano necessarie. visto

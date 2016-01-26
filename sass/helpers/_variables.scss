@@ -102,7 +102,14 @@ $s-phone: 320px; // step-6
     $button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
 
 //****************************************************************************//
-//                           COLORI
+//                                 COLORI
+//              In questa sezione vengono configurati i colori
+//            nella prima parte si utilizzano dei colori "veri" che
+//            vengono setuppati in delle variabili dai nomi leggibili
+//
+//              Nella seconda parte le variabili vengono associate
+//            ai valori della mappa $colors che utilizza invece nomi
+//            legati alle funzioni svolte dal colore.
 //****************************************************************************//
 
 ///

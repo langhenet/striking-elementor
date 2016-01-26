@@ -201,6 +201,16 @@
 //
 //****************************************************************************//
 
+////
+//  Questo Mixin utilizza la funzione 'palette' in modo particolare
+//
+//  La variabile $palette, che va a selezionare il contesto (la key di
+//  "primo livello") in cui vengono salvati i diversi COLORI, viene
+//  dichiarata solamente al momento di utilizzo.
+//
+//  Nel caso specifico, verrà utilizzato un @each che looppa attraverso tutte
+//  le palette per costruire delle classi dinamiche basate sulle palette
+///
 @mixin button-color($state:none) {
 
   @if $state == hover {

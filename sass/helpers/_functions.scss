@@ -46,6 +46,7 @@
 //
 //****************************************************************************//
 
+
 ///
 // Padding Pieno
 ///
@@ -62,10 +63,10 @@
   }
 }
 
+
 ///
 // Mezzo padding
 ///
-
 @function border-halfpad($b-width, $b-base: $base, $b-font-size: $font-size, $b-line-height: $line-height) {
 
   // #1 - Font size di base
@@ -79,10 +80,25 @@
   }
 }
 
+
+
 //****************************************************************************//
 //*                   FUNZIONI PER I COLORI
 //****************************************************************************//
 
-@function palette($palette, $element: 'base') {
+////
+//  Questa funzione incatena 2 map-get sulla map $colors
+//
+//    il primo (più interno) dice: nella mappa $colors
+//    cerca la key $palette (che deve essere specificata)
+//
+//    Il map-get più esterno invece utilizza la key tirata fuori predentemente //    (quindi la "palette" - p.es "socket") per abbinargli un sotto valore
+//    nestato al suo interno.
+//
+//  ESEMPI DI UTILIZZO:
+//    background: palette(header, bg);
+//    restituisce il valore salvato nella key: header / sotto-key: bg
+///
+@function palette($palette, $element: 'body') {
     @return map-get(map-get($colors, $palette), $element);
 }
