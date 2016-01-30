@@ -43,6 +43,25 @@
   }
 }
 
+/*
+ * Toglie i bordi dalle icone social a <767px
+ */
+.responsive #header_meta .social_bookmarks li {
+
+  @include respond-to(step-3) {
+    border-width: 0;
+  }
+}
+
+/*
+ * Toglie il bordo destro dall'ultima icona social a <767px
+ */
+.responsive #top #header_meta .social_bookmarks li:last-child {
+  @include respond-to(step-3) {
+    border-right-width: 0;
+  }
+}
+
 .phone-info {
   padding: 0;
   font-size: $h5-font-size; //TODO

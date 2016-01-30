@@ -17,11 +17,15 @@
 //TOCHK - questo inficia sia il padding delle pagine "normali" sia quello delle sezioni colore.
 .content,
 .sidebar {
+  padding-top: $line-height * 6;
+  padding-bottom: $line-height * 6;
+}
+
+// SOLO SEZIONI SOCKET //PJRL
+.socket_color .content {
   padding-top: $line-height * 4;
   padding-bottom: $line-height * 4;
 }
-
-
 
 
 
