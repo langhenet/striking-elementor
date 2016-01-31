@@ -30,49 +30,21 @@
 ///
 // Dimensioni Titoli //TOCR - usare una variabile per richiamare il mixin in modo da non dover scrivere 5 mixin diversi
 ///
-@mixin h1-size {
-  font-size:$h1-font-size;
-  line-height:$h1-line-height;
-  margin-top:$h1-margin-top;
-  margin-bottom:$h1-margin-bottom;
-}
 
-@mixin h2-size {
-  font-size:$h2-font-size;
-  line-height:$h2-line-height;
-  margin-top:$h2-margin-top;
-  margin-bottom:$h2-margin-bottom;
+@mixin h-size ($size:h4) {
+  font-size: font-size($size, fs);
+  line-height: font-size($size, lh);
+  margin-top: font-size($size, mt);
+  margin-bottom: font-size($size, mb);
 }
-
-@mixin h3-size {
-  font-size:$h3-font-size;
-  line-height:$h3-line-height;
-  margin-top:$h3-margin-top;
-  margin-bottom:$h3-margin-bottom;
-}
-
-@mixin h4-size {
-  font-size:$h4-font-size;
-  line-height:$h4-line-height;
-  margin-top:$h4-margin-top;
-  margin-bottom:$h4-margin-bottom;
-}
-
-@mixin h5-size {
-  font-size:$h5-font-size;
-  line-height:$h5-line-height;
-  margin-top:$h5-margin-top;
-  margin-bottom:$h5-margin-bottom;
-}
-
 
 ///
 // Decorazioni Headings
 ///
 @mixin heading-decoration {
   font-family: $font-family; //TODO //TOCR
-  font-weight:400; //TODO //TOCR
-  text-transform:uppercase; //TODO //TOCR
+  font-weight: 400; //TODO //TOCR
+  text-transform: uppercase; //TODO //TOCR
 }
 
 
@@ -113,14 +85,10 @@
 @mixin button-small {
   $border-width: 2;
 
+  @include h-size(h5);
   font-weight: 400; //TODO //TOCR
-  font-size: $h5-font-size;
-  line-height: $h5-line-height;
 
-  margin-top: $h5-margin-top;
-  margin-bottom: $h5-margin-bottom;
-
-  padding: border-pad($b-width: $border-width, $b-font-size: $h5-font-size, $b-line-height: $h5-line-height) 1.5em; //TODO padding orizzontale.. da settare altrove?
+  padding: border-pad($b-width: $border-width, $b-font-size: font-size(h5, fs), $b-line-height: font-size(h5, lh)) 1.5em; //TODO padding orizzontale.. da settare altrove?
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
@@ -133,10 +101,8 @@
 @mixin button-medium {
   $border-width: 2;
 
+  @include h-size(p);
   font-weight: 600; //TODO //TOCR
-  font-size: 1em;
-  line-height: $line-height;
-  @include body-margin;
 
   padding-top: border-pad($b-width: $border-width);
   padding-bottom: border-pad($b-width: $border-width);
@@ -155,17 +121,10 @@
 @mixin button-large {
   $border-width: 4;
 
+  @include h-size(h3);
   font-weight: 600; //TODO //TOCR
-  font-size: $h3-font-size;
-  line-height: $h3-line-height;
 
-  margin-top: $h3-margin-top;
-  margin-bottom: $h3-margin-bottom;
-
-  padding-top: border-halfpad($b-width: $border-width, $b-font-size: $h3-font-size, $b-line-height: $h3-line-height);
-  padding-bottom: border-halfpad($b-width: $border-width, $b-font-size: $h3-font-size, $b-line-height: $h3-line-height);
-  padding-right: 1.5em; //TODO padding orizzontale.. da settare altrove?
-  padding-left: 1.5em; //TODO padding orizzontale.. da settare altrove?
+  padding: border-halfpad($b-width: $border-width, $b-font-size: font-size(h3, fs), $b-line-height: font-size(h3, lh)) 1.5em;
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
@@ -179,17 +138,10 @@
 @mixin button-x-large {
   $border-width: 6;
 
+  @include h-size(h2);
   font-weight: 600; //TODO //TOCR
-  font-size: $h2-font-size;
-  line-height: $h2-line-height;
 
-  margin-top: $h2-margin-top;
-  margin-bottom: $h2-margin-bottom;
-
-  padding-top: border-pad($b-width: $border-width, $b-font-size: $h2-font-size, $b-line-height: $h2-line-height);
-  padding-bottom: border-pad($b-width: $border-width, $b-font-size: $h2-font-size, $b-line-height: $h2-line-height);
-  padding-right: 1.5em; //TODO padding orizzontale.. da settare altrove?
-  padding-left: 1.5em; //TODO padding orizzontale.. da settare altrove?
+  padding: border-pad($b-width: $border-width, $b-font-size: font-size(h2, fs), $b-line-height: font-size(h2, lh)) 1.5em;
 
   border-bottom-width: $border-width * 1px;
   border-top-width: $border-width * 1px;
@@ -213,19 +165,19 @@
 ///
 @mixin button-color($state:none) {
 
-  @if $state == hover {
-    background: darken(palette($palette, bg-button), 5%);
+  @if $state != hover {
+    background: palette($palette, button-bg);
     color: palette($palette, button);
-    border-color: palette($palette, bg-button);
-    border-bottom-color: darken(palette($palette, bg-button), 10%);
+    border-color: palette($palette, button-bg);
+    border-bottom-color: darken(palette($palette, button-bg), 10%);
+    opacity: 1;
   }
 
   @else {
-    background: palette($palette, bg-button);
+    background: darken(palette($palette, button-bg), 5%);
     color: palette($palette, button);
-    border-color: palette($palette, bg-button);
-    border-bottom-color: darken(palette($palette, bg-button), 10%);
-    opacity: 1;
+    border-color: palette($palette, button-bg);
+    border-bottom-color: darken(palette($palette, button-bg), 10%);
   }
 }
 
@@ -263,12 +215,11 @@
 ///
 // Forms Field Descritpions
 ///
-@mixin form-desc {
-  font-size: $h5-font-size;
-  line-height: $h5-line-height;
+@mixin form-desc($size: p) {
+  font-size: font-size($size, fs);
+  line-height: font-size($size, lh);
   font-style: none;
   margin:0;
-  padding: ($h5-line-height / 2) 0!important;
   font-weight: $font-weight;
   text-transform: none; //TODO //TOCR
   letter-spacing: 0;
@@ -319,5 +270,4 @@
     bottom: 0;
     left:0;
     background: $bg-color;
-    //height: 73.2%; //TODL
   }

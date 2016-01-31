@@ -6,9 +6,9 @@
 //***********************************************************************//
 
 
-///
-// WIDTH & BREAKPOINT
-///
+//***********************************************************************//
+//             LARGHEZZA LAYOUT & BREAKPOINT MEDIA QUERIES
+//***********************************************************************//
 $website-width: 1170px; //TODO
 
 $u-hd:1981px; //step-p1
@@ -43,30 +43,50 @@ $s-phone: 320px; // step-6
 ////
 // HEADING
 ////
-  $h1-font-size: 6.333333333333333em; //TODO
-  $h1-line-height: 1.1228070175438596em; //TODO
-  $h1-margin-top: 0.2807017543859649em; //TODO
-  $h1-margin-bottom: 0em; //TODO
+  $font-sizes: (
 
-  $h2-font-size: 3.4444444444444446em; //TODO
-  $h2-line-height: 1.032258064516129em; //TODO
-  $h2-margin-top: 0.5161290322580645em; //TODO
-  $h2-margin-bottom: 0.5161290322580645em; //TODO
+    p: (
+      fs: 1em,
+      lh: $line-height,
+      mt: $margin-top,
+      mb: $margin-bottom,
+    ),
 
-  $h3-font-size: 1.8333333333333333em; //TODO
-  $h3-line-height: 1.9393939393939394em; //TODO
-  $h3-margin-top: 0.9696969696969697em; //TODO
-  $h3-margin-bottom: 0em; //TODO
+    h1: (
+      fs: 6.333333333333333em,
+      lh: 1.1228070175438596em,
+      mt: 0.2807017543859649em,
+      mb: 0em,
+    ),
 
-  $h4-font-size: 1em; //TODO
-  $h4-line-height: 1.7777777777777777em; //TODO
-  $h4-margin-top: 1.7777777777777777em; //TODO
-  $h4-margin-bottom: 0em; //TODO
+    h2: (
+      fs: 3.4444444444444446em,
+      lh: 1.032258064516129em,
+      mt: 0.5161290322580645em,
+      mb: 0.5161290322580645em,
+    ),
 
-  $h5-font-size: 0.7777777777778em; //TODO
-  $h5-line-height: 1.142857142857em; //TODO
-  $h5-margin-top: 1.9285714em; //TODO
-  $h5-margin-bottom: 0em; //TODO
+    h3: (
+      fs: 1.8333333333333333em,
+      lh: 1.9393939393939394em,
+      mt: 0.9696969696969697em,
+      mb: 0em,
+    ),
+
+    h4: (
+      fs: 1em,
+      lh: 1.7777777777777777em,
+      mt: 1.7777777777777777em,
+      mb: 0em,
+    ),
+
+    h5: (
+      fs: 0.7777777777778em,
+      lh: 1.142857142857em,
+      mt: 1.9285714em,
+      mb: 0em,
+    )
+);
 
 
 ////
@@ -82,10 +102,21 @@ $s-phone: 320px; // step-6
 //                            TIPOGRAFIA - DECORAZIONI
 //****************************************************************************//
   $font-family: 'Muli', sans-serif; //TODO
+  $font-family-heading: 'Muli', sans-serif; //TODO
+  $font-family-special: 'Lora', serif; //TODO
+
+  $families: (
+    base: null,
+    headings: null,
+    special: null
+  );
+
   $font-weight: 300; //TODO
   $font-weight-bold:;
 
-  $secondary-font-family: 'Lora', serif; //TODO
+
+
+
 
 //****************************************************************************//
 //                            FORMS
@@ -94,12 +125,20 @@ $s-phone: 320px; // step-6
   $form-font-family: $font-family; //TODO
   $form-font-size: 1em; //TODO
 
-  //****************************************************************************//
-  //                            BOTTONI
-  //****************************************************************************//
+
+
+//****************************************************************************//
+//                            BOTTONI
+//****************************************************************************//
 
     $button-font-family: $font-family; //TODO
     $button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
+
+
+
+
+
+
 
 //****************************************************************************//
 //                                 COLORI
@@ -145,7 +184,7 @@ $s-phone: 320px; // step-6
       overlay:    rgba($grigio-scuro, 0.35), //Colore overlay
 
       button:     $bianco-2,
-      bg-button:  $arancio
+      button-bg:  $arancio
 
     ),
 
@@ -164,7 +203,7 @@ $s-phone: 320px; // step-6
       overlay:    rgba($grigio-scuro, 0.35),
 
       button:     $bianco-2,
-      bg-button:  $grigio-scuro,
+      button-bg:  $grigio-scuro,
     ),
 
     alternate: (
@@ -178,7 +217,7 @@ $s-phone: 320px; // step-6
       bg-alt:     $bianco-2,
       overlay:    rgba($grigio-scuro, 0.35),
       button:     $bianco-2,
-      bg-button:  $arancio
+      button-bg:  $arancio
     ),
 
     socket: (
@@ -195,7 +234,7 @@ $s-phone: 320px; // step-6
       overlay:    rgba($grigio-scuro, 0.35),
 
       button:     $bianco-2,
-      bg-button:  $grigio-scuro
+      button-bg:  $grigio-scuro
     ),
 
     footer: (
@@ -210,6 +249,6 @@ $s-phone: 320px; // step-6
       overlay:    rgba($grigio-scuro, 0.35),
 
       button:     $bianco-2,
-      bg-button:  $arancio
+      button-bg:  $arancio
     )
   );

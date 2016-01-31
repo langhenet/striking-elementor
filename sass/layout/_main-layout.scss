@@ -21,6 +21,11 @@
   padding-bottom: $line-height * 6;
 }
 
+.avia-section:first-child .content {
+  padding-top: $line-height * 7.5;
+  padding-bottom: $line-height * 8.5;
+}
+
 // SOLO SEZIONI SOCKET //PJRL
 .socket_color .content {
   padding-top: $line-height * 4;

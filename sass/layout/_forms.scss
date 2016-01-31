@@ -125,7 +125,7 @@
     height: $line-height;
 
       option {
-        font-size: $h5-font-size;
+        font-size: font-size(h5, fs); //TODO
         line-height: $line-height;
         padding: ($line-height / 2) .125em;
       }
@@ -160,13 +160,15 @@
 // Descrizioni campi Gravity Forms
 ///
 .gform_wrapper .top_label .gfield_description {
-  @include form-desc;
+  @include form-desc(h5); //TODO - selezionare la corrispondenza di dimensione
+  padding: (font-size(h5, lh) / 2) 0!important;
 }
 ///
 // Sotto-etichette dei campi complessi (p.es nome)
 ///
 #top .ginput_complex label {
-  @include form-desc;
+  @include form-desc(h5); //TODO - selezionare la corrispondenza di dimensione
+  padding: (font-size(h5, lh) / 2) 0!important;
 }
 
 
