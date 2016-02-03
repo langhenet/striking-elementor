@@ -7,6 +7,8 @@ var sass        = require('gulp-sass');
 var minifyCSS   = require('gulp-minify-css');
 var sourceMaps  = require('gulp-sourcemaps');
 var rename      = require('gulp-rename');
+var postcss      = require('gulp-postcss');
+var autoprefixer      = require('autoprefixer');
 
 
 
@@ -30,12 +32,14 @@ gulp.task('browser-sync', function() {
 // will auto-update browsers
 gulp.task('sass', function () {
     return gulp.src('sass/*.scss')
-        .pipe(sass({precision: '15'}))
-        .pipe(rename('unmin-style.css'))
+        .pipe(sass({precision: '15'})) //compila sass
+        .pipe(postcss([ autoprefixer({ browsers: ['last 7 versions'] }) ])) // aggiunge css di autoprefixer
+        .pipe(rename('unmin-style.css')) //rinomina il file
         .pipe(gulp.dest('./'))
         .pipe(sourceMaps.init())
+        //.pipe(postcss([ autoprefixer({ browsers: ['last 10 versions'] }) ]))
         .pipe(minifyCSS({keepSpecialComments:1}))
-        .pipe(rename('style.css'))
+        .pipe(rename('style.css')) //rinomina il file minifcato
         .pipe(sourceMaps.write())
         .pipe(gulp.dest('./'))
         .pipe(reload({stream:true}));

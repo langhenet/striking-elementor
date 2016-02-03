@@ -73,8 +73,8 @@
   font-family: $button-font-family;
   white-space: normal;
   border-style: solid;
-  -webkit-box-shadow: $button-shadow;
-     -moz-box-shadow: $button-shadow;
+  //-webkit-box-shadow: $button-shadow;
+    // -moz-box-shadow: $button-shadow;
           box-shadow: $button-shadow;
 }
 
