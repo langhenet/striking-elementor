@@ -28,10 +28,10 @@
 
 
 ///
-// Dimensioni Titoli //TOCR - usare una variabile per richiamare il mixin in modo da non dover scrivere 5 mixin diversi
+// Dimensioni Titoli
 ///
 
-@mixin h-size ($size:h4) {
+@mixin h-size($size:p) {
   font-size: font-size($size, fs);
   line-height: font-size($size, lh);
   margin-top: font-size($size, mt);
@@ -42,7 +42,7 @@
 // Decorazioni Headings
 ///
 @mixin heading-decoration {
-  font-family: $font-family; //TODO //TOCR
+  font-family: $font-family-heading; //TODO //TOCR
   font-weight: 400; //TODO //TOCR
   text-transform: uppercase; //TODO //TOCR
 }
@@ -78,75 +78,41 @@
           box-shadow: $button-shadow;
 }
 
-
 ///
-// Bottoni Piccoli
+// Mixin per i bottoni con padding
 ///
-@mixin button-small {
-  $border-width: 2;
+@mixin button($size: p, $bw:2, $pw: null) {
+  @include h-size($size);
 
-  @include h-size(h5);
-  font-weight: 400; //TODO //TOCR
+  @if $pw == half {
+    padding: bhpad($b-width: $bw, $b-font-size: font-size($size, fs), $b-line-height: font-size($size, lh)) 1.5em;
+  }
 
-  padding: border-pad($b-width: $border-width, $b-font-size: font-size(h5, fs), $b-line-height: font-size(h5, lh)) 1.5em; //TODO padding orizzontale.. da settare altrove?
+  @else if $pw == quarter {
+    padding: bqpad($b-width: $bw, $b-font-size: font-size($size, fs), $b-line-height: font-size($size, lh)) 1.5em;
+  }
 
-  border-bottom-width: $border-width * 1px;
-  border-top-width: $border-width * 1px;
+  @else {
+    padding: bpad($b-width: $bw, $b-font-size: font-size($size, fs), $b-line-height: font-size($size, lh)) 1.5em;
+  }
+
+  border-bottom-width: $bw * 1px;
+  border-top-width: $bw * 1px;
 }
 
-
 ///
-// Bottoni Medi - come p - 1.5 con bordo sotto la metà
+// Mixin per i bottoni con line-height
 ///
-@mixin button-medium {
-  $border-width: 2;
+@mixin button-lh($size: p, $bw:2, $pw: null) {
+  @include h-size($size);
 
-  @include h-size(p);
-  font-weight: 600; //TODO //TOCR
+  line-height: blh($b-width: $bw, $b-font-size: font-size($size, fs), $b-line-height: font-size($size, lh));
 
-  padding-top: border-pad($b-width: $border-width);
-  padding-bottom: border-pad($b-width: $border-width);
-  padding-right: 1.5em; //TODO padding orizzontale.. da settare altrove?
-  padding-left: 1.5em; //TODO padding orizzontale.. da settare altrove?
-
-  border-bottom-width: $border-width * 1px;
-  border-top-width: $border-width * 1px;
-  letter-spacing: 0.5px; //TODO
+  padding: 0 1.5em;
+  border-bottom-width: $bw * 1px;
+  border-top-width: $bw * 1px;
 }
 
-
-///
-// Bottoni Grandi
-///
-@mixin button-large {
-  $border-width: 4;
-
-  @include h-size(h3);
-  font-weight: 600; //TODO //TOCR
-
-  padding: border-halfpad($b-width: $border-width, $b-font-size: font-size(h3, fs), $b-line-height: font-size(h3, lh)) 1.5em;
-
-  border-bottom-width: $border-width * 1px;
-  border-top-width: $border-width * 1px;
-  letter-spacing: 0.5px; //TODO //TOCR ?
-}
-
-
-///
-// Bottoni Extra-Grandi
-///
-@mixin button-x-large {
-  $border-width: 6;
-
-  @include h-size(h2);
-  font-weight: 600; //TODO //TOCR
-
-  padding: border-pad($b-width: $border-width, $b-font-size: font-size(h2, fs), $b-line-height: font-size(h2, lh)) 1.5em;
-
-  border-bottom-width: $border-width * 1px;
-  border-top-width: $border-width * 1px;
-  letter-spacing: 0.5px; //TODO //TOCR
-}
 
 //****************************************************************************//
 //                                    COLORI BOTTONI
@@ -193,7 +159,7 @@
 @mixin form-field {
   font-family: $form-font-family;
   font-size: $form-font-size;
-  $f-line-height: border-pad(1);
+  $f-line-height: bpad(1); //TOCR - questa è meglio dichiararla qui o dentro i form stessi?
   line-height: $f-line-height*2;
   margin-bottom: $line-height;
   margin-top: 0;

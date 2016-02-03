@@ -6,24 +6,27 @@
 //***************************************************************************//
 
 //****************************************************************************//
-//*                   FUNZIONI PER I Font size
+//*                           FUNZIONI PER i FONT SIZE
+//*             Per il funzionamento della funzione vedere "FUNZIONI
+//*             PER I COLORI" in questa pagina
 //****************************************************************************//
 @function font-size($size, $attr: 'fs') {
     @return map-get(map-get($font-sizes, $size), $attr);
 }
 
 //****************************************************************************//
-//              PADDING per BOTTONI & ELEMENTI SOTTOLINEATI
+//              PADDING & LINE HEIGHT per ELEMENTI SOTTOLINEATI
 //            qui c'è un trick complicato che va spiegato per bene
 //
-//  PROBLEMA: gli elementi sottolineati devono avere un padding che non rispetta
+//  PROBLEMA: gli elementi sottolineati devono avere un padding o una Line
+//  Height che non rispetta
 //  la griglia, perché devono tenere conto del bordo
 //
 //  Per ogni grandezza io devo quindi sottrarre l'altezza del bordo (dichiarata //  in PX) all'altezza di griglia - che è invece dichiarata in EM).
 //
 //        PASSO #1 - TROVARE IL VALORE IN PX DEL PADDING RIDOTTO
 //        PAD è il valore in PX che risulta da
-//        [LH meno (bordo per 2)]
+//        [LH - (bordo * 2)]
 //        quindi altezza di linea (PX) meno il bordo sopra più quello sotto
 //
 //        PASSO #2 - CONVERTIRE il PAD da PX a EM
@@ -34,22 +37,11 @@
 //  Nelle funzioni sottostanti viene prima calcolato il PAD in pixel che viene
 //  poi diviso dal FS in pixel (anchesso calcolato).
 //
-//  FUNZIONE #1 - font size di base
-//  la LH in PX ($b-base * $b-font-size * ($b-line-height / 1em))
+//  FUNZIONE #1
+//  la LH in PX ($base * $b-font-size * ($b-line-height / 1em))
 //  a cui viene sottratto il bordo doppio:  - $b-width *2
-//  il tutto viene diviso per la FS calcolata con ($b-base * $b-font-size)
+//  il tutto viene diviso per la FS calcolata con ($base * $b-font-size)
 //  e ulteriormente diviso per due (padding sotto + padding sopra)
-//
-//  FUNZIONE #2 - bottoni grandi come h3
-//  1 grande differenza
-//
-//    Per calcolare la LH e la FS si aggiunge una moltiplicazione per il
-//    valore in EM del font
-//    LH: ($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)
-//    FS: ($b-base * $font-size * ($b-font-size / 1em)
-//
-//
-//
 //
 //****************************************************************************//
 
@@ -57,34 +49,34 @@
 ///
 // Padding Pieno
 ///
-@function border-pad($b-width, $b-base: $base, $b-font-size: $font-size, $b-line-height: $line-height) {
-
-  // #1 - Font size di base
-  @if $b-font-size == $font-size {
-    @return ($b-base * $b-font-size * ($b-line-height / 1em) - $b-width *2) / ($b-base * $b-font-size) * 0.5em
-  }
-
-  // #2 - font size altri
-  @else {
-    @return ($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) - $b-width * 2) / ($b-base * $font-size * ($b-font-size / 1em)) * 0.5em
-  }
+@function bpad($b-width: 1, $b-font-size: font-size(p, fs), $b-line-height: $line-height) {
+  @return ($base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) - $b-width * 2) / ($base * $font-size * ($b-font-size / 1em)) * 0.5em;
 }
 
 
 ///
 // Mezzo padding
 ///
-@function border-halfpad($b-width, $b-base: $base, $b-font-size: $font-size, $b-line-height: $line-height) {
+@function bhpad($b-width: 1, $b-font-size: font-size(p, fs), $b-line-height: $line-height) {
+  @return (($base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) / 2) - ($b-width * 2)) / ($base * $font-size * ($b-font-size / 1em)) * 0.5em;
+}
 
-  // #1 - Font size di base
-  @if $b-font-size == $font-size {
-    @return (($b-base * $b-font-size * ($b-line-height / 1em) / 2) - $b-width *2) / ($b-base * $b-font-size) * 0.5em
-  }
+////
+// Quarter padding - **Importante** Il quarter padding va sempre compensato con
+// del margine a metà o a un quarto
+////
 
-  // #2 -  - font size altri
-  @else {
-    @return (($b-base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) / 2) - ($b-width * 2)) / ($b-base * $font-size * ($b-font-size / 1em)) * 0.5em
-  }
+@function bqpad($b-width: 1, $b-font-size: font-size(p, fs), $b-line-height: $line-height) {
+  @return (($base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) / 4) - ($b-width * 2)) / ($base * $font-size * ($b-font-size / 1em)) * 0.5em;
+}
+
+////
+// Border Line Height - questa funzione fà le stesse cose delle precedenti ma
+// calcolate per essere usate nella line-height. **ATTENZIONE** gli elementi
+// che usano questa funzione NON possono andare a capo
+////
+@function blh($b-width: 1, $b-font-size: font-size(p, fs), $b-line-height: $line-height) {
+  @return (($base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)) - ($b-width * 2)) / ($base * $font-size * ($b-font-size / 1em)) * 1em;
 }
 
 

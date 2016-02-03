@@ -28,22 +28,31 @@
 
 .avia-button.avia-size-small {
   @extend %button;
-  @include button-small;
+  @include button(h5, 1);
 }
 
 .avia-button.avia-size-medium {
   @extend %button;
-  @include button-medium;
+  @include button(p, 2);
+
+  text-transform: uppercase;
+  font-weight:600;
+  letter-spacing: 2px;
 }
 
 .avia-button.avia-size-large {
   @extend %button;
-  @include button-large;
+  @include button-lh(h3, 4)
+
+  margin-bottom: font-size(h3, lh) / 4;
+  text-transform: uppercase;
 }
 
 .avia-button.avia-size-x-large {
   @extend %button;
-  @include button-x-large;
+  @include button(h2, 6, half);
+  
+  text-transform: uppercase;
 }
 
 //****************************************************************************//
@@ -52,14 +61,14 @@
 //****************************************************************************//
 
 @each $palette, $bg in $colors {
-    #top .#{$palette}_color .avia-button.avia-color-theme-color,
-    div .#{$palette}_color .button {
-      @include button-color;
+  #top .#{$palette}_color .avia-button.avia-color-theme-color,
+  div .#{$palette}_color .button {
+    @include button-color;
 
-      &:hover {
-        @include button-color(hover);
-      }
+    &:hover {
+      @include button-color(hover);
     }
+  }
 }
 
 #top .socket_color.av-flex-cells .avia-button.avia-color-theme-color { //PJRL

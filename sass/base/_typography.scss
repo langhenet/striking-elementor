@@ -53,7 +53,7 @@ h1 {
 h2 {
   @include h-size(h2);
 
-  padding-bottom: border-halfpad($b-width:2, $b-font-size: font-size(h2, fs), $b-line-height: font-size(h2, lh)); //PJRL
+  padding-bottom: bhpad($b-width:2, $b-font-size: font-size(h2, fs), $b-line-height: font-size(h2, lh)); //PJRL
   border-bottom: 2px solid; //PJRL
   margin-bottom: font-size(h2, mb) * 3.5; //PJRL
   letter-spacing: -2px !important; //TODO //PJRL
@@ -63,7 +63,7 @@ h2 {
   &.lg-special { //PJRL
     @include h-size(h1);
 
-    padding-bottom: border-pad($b-width: 2, $b-font-size: font-size(h1, fs), $b-line-height: font-size(h1,lh));
+    padding-bottom: bpad($b-width: 2, $b-font-size: font-size(h1, fs), $b-line-height: font-size(h1,lh));
     border-bottom: 2px solid;
     margin-bottom:font-size(h1, mt) * 2;
 

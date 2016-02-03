@@ -43,7 +43,7 @@
     @include form-field;
     line-height: $line-height;
     min-height: $line-height * 6;
-    padding: border-pad(1);
+    padding: bpad(1);
     margin-bottom: 0;
   }
 
@@ -199,7 +199,7 @@
 
 #top .gform_wrapper .gform_footer input.button {
   @extend %button;
-  @include button-medium; //TODO
+  @include button(p, 2); //TODO
 
   width: 100%;
   border-right-width: 0;
