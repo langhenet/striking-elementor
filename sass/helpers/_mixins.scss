@@ -85,15 +85,15 @@
   @include h-size($size);
 
   @if $pw == half {
-    padding: bhpad($b-width: $bw, $b-font-size: font-size($size, fs), $b-line-height: font-size($size, lh)) 1.5em;
+    padding: bhpad($bw, font-size($size, fs), font-size($size, lh)) 1.5em;
   }
 
   @else if $pw == quarter {
-    padding: bqpad($b-width: $bw, $b-font-size: font-size($size, fs), $b-line-height: font-size($size, lh)) 1.5em;
+    padding: bqpad($bw, font-size($size, fs), font-size($size, lh)) 1.5em;
   }
 
   @else {
-    padding: bpad($b-width: $bw, $b-font-size: font-size($size, fs), $b-line-height: font-size($size, lh)) 1.5em;
+    padding: bpad($bw, font-size($size, fs), font-size($size, lh)) 1.5em;
   }
 
   border-bottom-width: $bw * 1px;
@@ -106,7 +106,7 @@
 @mixin button-lh($size: p, $bw:2, $pw: null) {
   @include h-size($size);
 
-  line-height: blh($b-width: $bw, $b-font-size: font-size($size, fs), $b-line-height: font-size($size, lh));
+  line-height: blh($bw, font-size($size, fs), font-size($size, lh));
 
   padding: 0 1.5em;
   border-bottom-width: $bw * 1px;

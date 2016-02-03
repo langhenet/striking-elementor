@@ -38,9 +38,9 @@
 //  poi diviso dal FS in pixel (anchesso calcolato).
 //
 //  FUNZIONE #1
-//  la LH in PX ($base * $b-font-size * ($b-line-height / 1em))
-//  a cui viene sottratto il bordo doppio:  - $b-width *2
-//  il tutto viene diviso per la FS calcolata con ($base * $b-font-size)
+//  la LH in PX ($base * $bp-fs * ($bp-lh / 1em))
+//  a cui viene sottratto il bordo doppio:  - $bp-bw *2
+//  il tutto viene diviso per la FS calcolata con ($base * $bp-fs)
 //  e ulteriormente diviso per due (padding sotto + padding sopra)
 //
 //****************************************************************************//
@@ -49,16 +49,16 @@
 ///
 // Padding Pieno
 ///
-@function bpad($b-width: 1, $b-font-size: font-size(p, fs), $b-line-height: $line-height) {
-  @return ($base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) - $b-width * 2) / ($base * $font-size * ($b-font-size / 1em)) * 0.5em;
+@function bpad($bp-bw: 1, $bp-fs: font-size(p, fs), $bp-lh: $line-height) {
+  @return ($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) - $bp-bw * 2) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
 }
 
 
 ///
 // Mezzo padding
 ///
-@function bhpad($b-width: 1, $b-font-size: font-size(p, fs), $b-line-height: $line-height) {
-  @return (($base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) / 2) - ($b-width * 2)) / ($base * $font-size * ($b-font-size / 1em)) * 0.5em;
+@function bhpad($bp-bw: 1, $bp-fs: font-size(p, fs), $bp-lh: $line-height) {
+  @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) / 2) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
 }
 
 ////
@@ -66,8 +66,8 @@
 // del margine a metà o a un quarto
 ////
 
-@function bqpad($b-width: 1, $b-font-size: font-size(p, fs), $b-line-height: $line-height) {
-  @return (($base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em) / 4) - ($b-width * 2)) / ($base * $font-size * ($b-font-size / 1em)) * 0.5em;
+@function bqpad($bp-bw: 1, $bp-fs: font-size(p, fs), $bp-lh: $line-height) {
+  @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) / 4) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
 }
 
 ////
@@ -75,8 +75,8 @@
 // calcolate per essere usate nella line-height. **ATTENZIONE** gli elementi
 // che usano questa funzione NON possono andare a capo
 ////
-@function blh($b-width: 1, $b-font-size: font-size(p, fs), $b-line-height: $line-height) {
-  @return (($base * $font-size * ($b-font-size / 1em) * ($b-line-height / 1em)) - ($b-width * 2)) / ($base * $font-size * ($b-font-size / 1em)) * 1em;
+@function blh($bp-bw: 1, $bp-fs: font-size(p, fs), $bp-lh: $line-height) {
+  @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em)) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 1em;
 }
 
 
