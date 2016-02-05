@@ -9,10 +9,10 @@
 		  "proxy" : "http://langhe.dev"
 		}`
 
-- `bower install`
-- `bower init`
-- installare sassy grid lover via bower https://github.com/hiulit/Sassy-Gridlover
-- `gulp`
+~ - `bower install`~
+~- `bower init`~
+~- installare sassy grid lover via bower https://github.com/hiulit/Sassy-Gridlover~
+~- `gulp`~
 
 
 ## initial config (not for checkout)
