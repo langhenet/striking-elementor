@@ -181,7 +181,7 @@ $s-phone: 320px; // step-6
 
       body-alt:   $grigio-scuro,      //colore body alternativo
       bg-alt:     $grigio-chiaro,     //Colore sfondo alternativo
-      overlay:    rgba($grigio-scuro, 0.35), //Colore overlay
+      overlay:    rgba($grigio-scuro, 0.25), //Colore overlay
 
       button:     $bianco-2,
       button-bg:  $arancio
@@ -200,7 +200,7 @@ $s-phone: 320px; // step-6
 
       body-alt:   $grigio-scuro, // colore form e box
       bg-alt:     $tortora, // BG form e box
-      overlay:    rgba($grigio-scuro, 0.35),
+      overlay:    rgba($grigio-scuro, 0.25),
 
       button:     $bianco-2,
       button-bg:  $grigio-scuro,
@@ -215,7 +215,7 @@ $s-phone: 320px; // step-6
       accent:     $arancio,
       border:     $tortora,
       bg-alt:     $bianco-2,
-      overlay:    rgba($grigio-scuro, 0.35),
+      overlay:    rgba($grigio-scuro, 0.25),
       button:     $bianco-2,
       button-bg:  $arancio
     ),
@@ -231,7 +231,7 @@ $s-phone: 320px; // step-6
 
       body-alt:   $grigio-scuro, // colore form e box
       bg-alt:     rgba(white,0.75),
-      overlay:    rgba($grigio-scuro, 0.35),
+      overlay:    rgba($grigio-scuro, 0.25),
 
       button:     $bianco-2,
       button-bg:  $grigio-scuro
@@ -246,7 +246,7 @@ $s-phone: 320px; // step-6
       accent:     $arancio,
       border:     $grigio-scuro,
       bg-alt:     $bianco-1,
-      overlay:    rgba($grigio-scuro, 0.35),
+      overlay:    rgba($grigio-scuro, 0.25),
 
       button:     $bianco-2,
       button-bg:  $arancio

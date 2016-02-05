@@ -199,7 +199,7 @@
 
 #top .gform_wrapper .gform_footer input.button {
   @extend %button;
-  @include button(p, 2); //TODO
+  @include button-lh(h3, 4); //TODO
 
   width: 100%;
   border-right-width: 0;

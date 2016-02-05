@@ -103,7 +103,7 @@
 ///
 // Mixin per i bottoni con line-height
 ///
-@mixin button-lh($size: p, $bw:2, $pw: null) {
+@mixin button-lh($size: p, $bw:2) {
   @include h-size($size);
 
   line-height: blh($bw, font-size($size, fs), font-size($size, lh));
