@@ -20,7 +20,7 @@
 - nella cartella del progetto `npm init`
 - nella cartella del progetto `npm install gulp gulp-minify-css gulp-sourcemaps gulp-rename gulp-sass browser-sync --save-dev`
 - installare postcss `npm install gulp-postcss --save-dev`
-- installare autoprefixer (plugin di post css)
+- installare autoprefixer (plugin di post css) `npm install autoprefixer --save-dev`
 - nella cartella del progetto creare un file gulpfile.js in cui incollo codice simile a [questo](http://wasimbhalli.com/configuring-gulp-and-browsersync-for-wordpress-_s-theme/)
 
 ## Note
