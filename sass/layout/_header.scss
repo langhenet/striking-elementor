@@ -82,16 +82,16 @@
  * Altezza Header - LOGO SOPRA - NAVIGAZIONE SOTTO
  */
 .av_minimal_header #header_main .container.av-logo-container {
-  line-height:$line-height*4; //TODO
-  height:$line-height*4; //TODO
+  line-height: $line-height * 4; //TODO
+  height: $line-height * 4; //TODO
 }
 
 .html_header_top.html_bottom_nav_header .main_menu {
-  line-height:$line-height*3;
+  line-height:$line-height * 3;
 }
 .html_header_top.html_bottom_nav_header .header-scrolled .main_menu {
-  line-height:$line-height*2; //TODO
-  height:$line-height*1.5; //TODO
+  line-height: $line-height * 2; //TODO
+  height: $line-height * 1.5; //TODO
 }
 
 /*
@@ -102,10 +102,11 @@
 
   &> li {
     line-height: $line-height;
-    text-transform:uppercase;
+    text-transform: uppercase;
 
     &> a {
       font-weight: 400; //TODO
+      padding: 30px;
     }
   }
 }
