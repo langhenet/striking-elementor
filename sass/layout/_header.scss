@@ -106,7 +106,11 @@
 
     &> a {
       font-weight: 400; //TODO
-      padding: 30px;
+      padding: 0 35px; // TODO
+
+      @include respond-to(step-1) {
+        padding: 0 20px;
+      }
     }
   }
 }

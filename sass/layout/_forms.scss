@@ -209,13 +209,26 @@
 
 
 //****************************************************************************//
-//                            Colori FORMS, LABELS e DESCRIZIONI CAMPI
+//                            Colori FORM, LABEL e DESCRIZIONI CAMPI
 //****************************************************************************//
 
+/*
+ * MAIN COLOR - bg del form e dei link
+ */
 .main_color .gform_wrapper {
-  background: palette(main, bg-alt)
+  background: palette(main, bg-alt);
+
+
+  a {
+    color: palette(main, body-alt);
+    text-decoration: underline;
+  }
 }
 
+
+/*
+ * MAIN COLOR - campi
+ */
 #top .main_color .input-text,
 #top .main_color input[type='text'],
 #top .main_color input[type='input'],
@@ -233,22 +246,39 @@
   color: palette(main, body-alt);
 }
 
+
+/*
+ * MAIN COLOR - label e descrizioni
+ */
 #top .main_color label,
 #top .main_color .gfield_description {
   color: palette(main, body);
 }
 
+
+
+
 /*
- * Socket color
+ * SOCKET COLOR - - bg del form e dei link
  */
 .socket_color .gform_wrapper {
   background: palette(socket, bg-alt);
+
+  a {
+    color: palette(socket, body-alt);
+    text-decoration: underline;
+  }
 }
 
+
+/*
+ * SOCKET COLOR - label e descrizioni
+ */
 #top .socket_color label,
 #top .socket_color .gfield_description {
   color: palette(socket, body-alt);
 }
+
 
 ///
 // Quest cose erano presenti nel template... ma non sembrano necessarie. visto
