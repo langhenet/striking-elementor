@@ -51,7 +51,7 @@
 .avia-button.avia-size-x-large {
   @extend %button;
   @include button(h2, 6, half);
-  
+
   text-transform: uppercase;
 }
 
@@ -68,18 +68,5 @@
     &:hover {
       @include button-color(hover);
     }
-  }
-}
-
-#top .socket_color.av-flex-cells .avia-button.avia-color-theme-color { //PJRL
-  background: rgba(palette(socket,body), 0.75);
-  border-color: rgba(palette(socket,body), 0.1);
-  border-radius: 0;
-  color: palette(socket,body-alt);
-  text-transform:uppercase;
-
-  &:hover {
-    background: rgba(palette(socket,body), 0.95);
-    border-color: rgba(palette(socket,body), 0.1);
   }
 }
