@@ -9,6 +9,7 @@
 /*
  * Evitiamo che i bottoni con le icone siano diversi da quelli senza icone
  */
+.test-rule,
 .avia-button .avia_button_icon,
 #top .avia_cart_buttons .button > span {
   line-height:0;
@@ -69,4 +70,8 @@
       @include button-color(hover);
     }
   }
+}
+
+.test-rule.bottom {
+
 }
