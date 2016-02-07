@@ -4,9 +4,3 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                     ******//
 //****************************************************************************//
-
-#footer .widget p { //PJRL TUTTO
-  @include h-size(h5);
-  line-height: font-size(h5, lh) * 2;
-  margin-top:0;
-}
