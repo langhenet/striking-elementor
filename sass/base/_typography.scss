@@ -22,7 +22,7 @@ body {
   @include respond-to(step-4) { font-size: $font-size * 0.7;} //TODO
 }
 
-p, ul, ol, pre, table /*, blockquote*/ { //PJRL - togliere dal template il commento
+p, ul, ol, pre, table, blockquote {
   @include body-margin;
 }
 
@@ -46,29 +46,12 @@ h1, h2, h3, h4, h5 { @include heading-decoration; }
 h1 {
   @include h-size(h1);
   @include respond-to(step-2) { font-size: font-size(h1, fs) * 0.7; }
-
-  letter-spacing: -2px !important; //TODO //PJRL
 }
 
 h2 {
   @include h-size(h2);
-
-  padding-bottom: bhpad(2, font-size(h2, fs), font-size(h2, lh)); //PJRL
-  border-bottom: 2px solid; //PJRL
-  margin-bottom: font-size(h2, mb) * 3.5; //PJRL
-  letter-spacing: -2px !important; //TODO //PJRL
-
+  margin-bottom: font-size(h2, mb);
   @include respond-to(step-2) { font-size: font-size(h2, fs) * 0.8; }
-
-  &.lg-special { //PJRL
-    @include h-size(h1);
-
-    padding-bottom: bpad(2, font-size(h1, fs), font-size(h1,lh));
-    border-bottom: 2px solid;
-    margin-bottom:font-size(h1, mt) * 2;
-
-    @include respond-to(step-2) { font-size: font-size(h1, fs) * 0.7; }
-  }
 }
 
 h3 { @include h-size(h3); }
@@ -97,37 +80,3 @@ sub { bottom: $sub-bottom; }
 /*
  * Blockquote - citazione //TOCHK
  */
-
- blockquote { //PJRL TUTTO
-   font-family: $font-family-special; //TODO
-   font-size: 1.5em; //TODO
-   line-height: 1.185185185em; //TODO
-   margin-top:$line-height * 3;
-   margin-bottom:0;
-   //margin-right:0;
-   padding:$line-height 0; //TODO
-   border-left:0px;
-
-    p {
-      padding-left:$line-height*3;
-      color: $tortora;
-
-        &:first-child {
-          margin-top:-$line-height*2;
-        }
-      @include respond-to(step-2) { padding-left: $line-height * 1.5; }
-    }
-
-    &:before { //TODO
-      content: "\201C";
-      font-family: 'Lora', serif;
-      font-size: font-size(h1, fs) * 2;
-      display: inline-flex;
-      float: left;
-      color: $tortora;
-
-      @include respond-to(step-2) {
-        font-size: font-size(h1, fs);
-      }
-    }
- }
