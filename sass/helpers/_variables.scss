@@ -101,18 +101,49 @@ $s-phone: 320px; // step-6
 //****************************************************************************//
 //                            TIPOGRAFIA - DECORAZIONI
 //****************************************************************************//
-  $font-family: 'Muli', sans-serif; //TODO
-  $font-family-heading: 'Muli', sans-serif; //TODO
-  $font-family-special: 'Lora', serif; //TODO
+$font-family: 'Muli', sans-serif; //TODO
+$font-family-heading: 'Muli', sans-serif; //TODO
+$font-family-special: 'Lora', serif; //TODO
 
-  $families: (
-    base: null,
-    headings: null,
-    special: null
-  );
+$fonts-decoration: (
+  h1 (
+    family: $font-family-heading,
+    weight: null,
+  ),
 
-  $font-weight: 300; //TODO
-  $font-weight-bold:;
+  h2: (
+    family: null,
+    weight: null,
+    ),
+
+  h3: (
+    family: null,
+    weight: null,
+  ),
+
+  h4: (
+    family: null,
+    weight: null,
+  ),
+
+  p: (
+    family: null,
+    weight: null,
+  ),
+
+  blockquote: (
+    family: null,
+    weight: null,
+  ),
+
+  button: (
+    family: null,
+    weight: null,
+  ),
+);
+
+$font-weight: 300; //TODO
+$font-weight-bold:;
 
 
 

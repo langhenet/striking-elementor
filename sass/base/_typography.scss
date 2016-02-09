@@ -17,7 +17,9 @@
 body {
   @include body-decoration;
   @include body-size;
+
   margin:0 auto;
+
   @include respond-to(step-2) { font-size: $font-size * 0.9;} //TODO
   @include respond-to(step-4) { font-size: $font-size * 0.7;} //TODO
 }
@@ -35,7 +37,6 @@ ul ul, ol ol, ul ol, ol ul {
   margin-bottom: 0;
 }
 
-//.helvetica-neue-websave { font-family: $font-family; }
 
 /*
 * HEADINGS - TITOLI
