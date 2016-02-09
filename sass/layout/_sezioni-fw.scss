@@ -1,42 +1,18 @@
-
-///
-// Bordi Generali sezioni FW
-///
+//****************************************************************************//
+//                               SEZIONI FW
+//****************************************************************************//
+/*
+ * Bordi Generali sezioni FW
+ */
 .container_wrap {
   border-top-width:0px; //TODO
 }
 
-///
-// Primo titolo delle sezioni fw //PJRL
-.avia-section:first-child h1 {
-  color:white;
-}
-
-
 /*
- * Sezioni FW no Margin //PJRL //TOCR
+ * Sezioni FW no Margin //TOCR
  */
 #top div .no_margin {
 
-  &.av_one_half {
-    width: 48%;
-    margin-left: 2%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-
-    p {
-      padding: 20% 10%;
-      margin-bottom: 0;
-
-      @include respond-to(step-1) {
-        padding:18% 10%;
-      }
-
-      @include respond-to(step-2) {
-        padding:5% 10%;
-      }
-    }
-  }
 }
 
 #top div .no_margin.first {
@@ -44,49 +20,35 @@
 }
 
 
-///
-// Overlay sezioni FW //TUTTO //PJRL
-///
 
-.home .avia-section.socket_color:nth-child(3) {
-  position: relative; //PJRL per far funzionare l'overlay
-
-  &::before {
-  //@include color-overlay();
-    @include color-overlay(palette(socket, overlay));
-  }
-}
-
-.avia-section:first-child {
-  position: relative; //PJRL per far funzionare l'overlay
-
-  &::before {
-    @include color-overlay(palette(socket, overlay));
-  }
-}
-
-
-///
-// Celle Flessibili //TOCHK
-///
+//****************************************************************************//
+//                               FLEX CELLS
+//****************************************************************************//
 .flex_cell {
   padding-top: $line-height * 4;
   padding-bottom: $line-height * 4;
-  position: relative; //PJRL
+//  position: relative; // se voglio overlay automatico
 
-  &::before {
-    @include color-overlay(palette(socket, overlay));
-  }
+/*
+ * Overlay
+ */
+//  &::before {
+//    @include color-overlay(palette(socket, overlay));
+//  }
 
-  &.el_before_av_cell_one_half {
-    border-right:8px solid;
 
-    @include respond-to(step-3) { border-right: 0;  border-bottom: 8px solid;} //TODO
-  }
+///
+// Bordi delle Flex Cells
+///
+//  &.el_before_av_cell_one_half {
+//    border-right:8px solid;
 
-  &.el_after_av_cell_one_half {
-    border-left:8px solid;
-
-    @include respond-to(step-3) { border-left: 0;} //TODO
-  }
+//    @include respond-to(step-3) { border-right: 0;  border-bottom: 8px solid;}
+//  }
+//
+//  &.el_after_av_cell_one_half {
+//    border-left:8px solid;
+//
+//    @include respond-to(step-3) { border-left: 0;} //TODO
+//  }
 }

@@ -1,18 +1,22 @@
-///
-// Padding sopra tutto il main-title
-///
-.html_header_top.html_header_topbar_active.html_header_sticky.html_bottom_nav_header #top #main { //TOCHK
-  padding-top: ($line-height * 8); //TODO
-
-  @include respond-to(step-2) {
-    padding-top: ($line-height * 5); //TODO
-  }
-}
-
+//****************************************************************************//
+//                               PADDING TOTALE SOPRA IL CONTENUTO
+//****************************************************************************//
 
 ///
-// Margine Sopra Sidebar e contenuto
-///
+// Con TOPBAR attiva - HEADER STICKY e NAV SOTTO
+//
+//.html_header_top.html_header_topbar_active.html_header_sticky.html_bottom_nav_header #top #main { //TOCHK
+//  padding-top: ($line-height * 8); //TODO
+//
+//  @include respond-to(step-2) {
+//    padding-top: ($line-height * 5); //TODO
+//  }
+//}
+
+
+/*
+ * Margine Sopra Sidebar e contenuto
+ */
 
 //TOCHK - questo inficia sia il padding delle pagine "normali" sia quello delle sezioni colore.
 .content,
@@ -21,22 +25,11 @@
   padding-bottom: $line-height * 6;
 }
 
-.avia-section:first-child .content {
-  padding-top: $line-height * 7.5;
-  padding-bottom: $line-height * 8.5;
-}
-
-// SOLO SEZIONI SOCKET //PJRL
-.socket_color .content {
-  padding-top: $line-height * 4;
-  padding-bottom: $line-height * 4;
-}
 
 
-
-///
-// Margini Colonne
-///
+/*
+ * Margini Colonne
+ */
 body .column-top-margin {
   margin-top: $line-height * 2;
 }
