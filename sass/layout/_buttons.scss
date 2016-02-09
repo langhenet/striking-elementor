@@ -29,22 +29,24 @@
 .avia-button.avia-size-small {
   @extend %button;
   @include button(h5, 1);
+
+  font-weight: button-deco(small, weight);
+  text-transform: uppercase;
 }
 
 .avia-button.avia-size-medium {
   @extend %button;
   @include button(p, 2);
 
+  font-weight: button-deco(medium, weight);
   text-transform: uppercase;
-  font-weight:600;
-  letter-spacing: 2px;
 }
 
 .avia-button.avia-size-large {
   @extend %button;
   @include button-lh(h3, 4)
 
-  margin-bottom: font-size(h3, lh) / 4;
+  font-weight: button-deco(large, weight);
   text-transform: uppercase;
 }
 
@@ -52,6 +54,7 @@
   @extend %button;
   @include button(h2, 6, half);
 
+  font-weight: button-deco(x-large, weight);
   text-transform: uppercase;
 }
 

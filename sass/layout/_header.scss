@@ -71,7 +71,7 @@
 .phone-info {
   padding: 0;
   font-size: font-size(h5, fs); //TODO
-  font-weight: $font-weight;
+  font-weight: font-deco(small, weight);
 
   span {
     color: palette(header, body);

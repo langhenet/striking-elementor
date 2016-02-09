@@ -22,8 +22,8 @@
 }
 
 @mixin body-decoration {
-  font-family: $font-family;
-  font-weight: $font-weight;
+  font-family: font-deco(p, family);
+  font-weight: font-deco(p, weight);
 }
 
 
@@ -70,12 +70,10 @@
 ///
 %button {
   display:inline-block;
-  font-family: $button-font-family;
+  font-family: button-deco(medium, family);
   white-space: normal;
   border-style: solid;
-  //-webkit-box-shadow: $button-shadow;
-    // -moz-box-shadow: $button-shadow;
-          box-shadow: $button-shadow;
+  box-shadow: $button-shadow;
 }
 
 ///
@@ -156,12 +154,11 @@
 ///
 // Form Field size settings
 ///
-@mixin form-field {
-  font-family: $form-font-family;
-  font-size: $form-font-size;
-  $f-line-height: bpad(1); //TOCR - questa è meglio dichiararla qui o dentro i form stessi?
-  line-height: $f-line-height*2;
-  margin-bottom: $line-height;
+@mixin form-field($size: p, $bw: 1) {
+  font-family: inherit;
+  font-size: font-size($size, fs);
+  line-height: bpad($bw, font-size($size, fs), font-size($size, lh)) * 2; //TOCR - forse è più facile farla con la funzione blh?
+  margin-bottom: font-size($size, mb);
   margin-top: 0;
   padding: 0;
 }
@@ -181,7 +178,7 @@
 ///
 // Forms Field Descritpions
 ///
-@mixin form-desc($size: p) {
+@mixin form-desc($size: h5) {
   font-size: font-size($size, fs);
   line-height: font-size($size, lh);
   font-style: none;
@@ -228,12 +225,12 @@
 ///
 // Overlay di colore da mettere sui ::before //TOCR
 ///
-  @mixin color-overlay($bg-color: palette(main, overlay)) {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left:0;
-    background: $bg-color;
-  }
+@mixin color-overlay($bg-color: palette(main, overlay)) {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
+  background: $bg-color;
+}

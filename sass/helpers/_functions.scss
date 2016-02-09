@@ -6,12 +6,36 @@
 //***************************************************************************//
 
 //****************************************************************************//
-//*                           FUNZIONI PER i FONT SIZE
+//*                           FUNZIONI PER i FONT
 //*             Per il funzionamento della funzione vedere "FUNZIONI
 //*             PER I COLORI" in questa pagina
 //****************************************************************************//
+
+///
+// Font Size
+///
 @function font-size($size, $attr: 'fs') {
     @return map-get(map-get($font-sizes, $size), $attr);
+}
+
+
+///
+// Font Decoration
+///
+@function font-deco($element, $attr: 'family') {
+    @return map-get(map-get($font-decoration, $element), $attr);
+}
+
+@function weight($font, $attr: 'normal') {
+    @return map-get(map-get($weights, $font), $attr);
+}
+
+
+///
+// Button Decoration
+///
+@function button-deco($size, $attr: 'family') {
+    @return map-get(map-get($button-decoration, $size), $attr);
 }
 
 //****************************************************************************//
