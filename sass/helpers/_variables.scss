@@ -21,41 +21,16 @@ $p-phone: 479px; // step-5
 $s-phone: 320px; // step-6
 
 
-//***********************************************************************//
-//                            TIPOGRAFIA - DIMENSIONI
-//***********************************************************************//
-
-
-$font-family: 'Muli', sans-serif; //TODO
-$font-family-heading: $font-family; //TODO
-$font-family-special: 'Lora', serif; //TODO
-
-
-$weights: (
-  ff: (
-    family: $font-family,
-    lighter: 100,
-    light: 200,
-    normal: 400,
-    ),
-  ffh: (
-    family: $font-family-heading,
-    lighter: 100,
-    light: 200,
-    normal: 400,
-    ),
-  ffs: (
-    family: $font-family-special,
-    lighter: 100,
-    light: 200,
-    normal: 400,
-    ),
-  );
+//****************************************************************************//
+//                             TIPOGRAFIA
+//                          DIMENSIONI & FACE
+//
+//****************************************************************************//
 
 ///
 // BASE DEL BODY
 ///
-  $base:16;
+  $base: 16;
   $font-size: 1.125em; //TODO
   $line-height: 1.7777777777777777em; //TODO
 
@@ -67,16 +42,58 @@ $weights: (
   $margin-bottom: 1.7777777777777777em; //TODO
 
 
-////
-// HEADING
-////
-  $font-sizes: (
+///
+// Families
+///
+  $font-family: 'Muli', sans-serif; //TODO
+  $font-family-heading: $font-family; //TODO
+  $font-family-special: 'Lora', serif; //TODO
+  $font-family-button: $font-family;
 
+
+///
+// WEIGHTS per Families
+///
+$weights: (
+  ff: (
+    family: $font-family,
+    u-thin: 100,
+    thin: 100,
+    light: 200,
+    normal: 400,
+    bold: 600,
+  ),
+
+  ffh: (
+    family: $font-family-heading,
+    u-thin: 100,
+    thin: 200,
+    light: 200,
+    normal: 400,
+    bold: 400,
+  ),
+
+  ffs: (
+    family: $font-family-special,
+    u-thin: 100,
+    thin: 100,
+    light: 200,
+    normal: 400,
+    bold: 600,
+  ),
+);
+
+////
+// Dimensioni & caratteristiche dei font principali
+////
+  $fonts: (
     p: (
       fs: 1em,
       lh: $line-height,
       mt: $margin-top,
       mb: $margin-bottom,
+      fm: family(ff, family),
+      wt: family(ff, normal),
     ),
 
     h1: (
@@ -84,35 +101,45 @@ $weights: (
       lh: 1.1228070175438596em,
       mt: 0.2807017543859649em,
       mb: 0em,
-      ),
+      fm: family(ffh, family),
+      wt: family(ffh, thin),
+    ),
 
     h2: (
       fs: 3.4444444444444446em,
       lh: 1.032258064516129em,
       mt: 0.5161290322580645em,
       mb: 0.5161290322580645em,
-      ),
+      fm: family(ffh, family),
+      wt: family(ffh, thin),
+    ),
 
     h3: (
       fs: 1.8333333333333333em,
       lh: 1.9393939393939394em,
       mt: 0.9696969696969697em,
       mb: 0em,
-      ),
+      fm: family(ffh, family),
+      wt: family(ffh, light),
+    ),
 
     h4: (
       fs: 1em,
       lh: 1.7777777777777777em,
       mt: 1.7777777777777777em,
       mb: 0em,
-      ),
+      fm: family(ffh, family),
+      wt: family(ffh, normal),
+    ),
 
     h5: (
       fs: 0.7777777777778em,
       lh: 1.142857142857em,
       mt: 1.9285714em,
       mb: 0em,
-      )
+      fm: family(ffh, family),
+      wt: family(ffh, normal),
+    )
 );
 
 
@@ -126,99 +153,30 @@ $weights: (
 
 
 //****************************************************************************//
-//                            TIPOGRAFIA - DECORAZIONI
-//****************************************************************************//
-
-
-$font-decoration: (
-  p: (
-    family: $font-family, //TODO
-    weight: 400, //TODO
-  ),
-
-  h1: (
-    family: $font-family, //TODO
-    weight: 400, //TODO
-  ),
-
-  h2: (
-    family: $font-family, //TODO
-    weight: $font-family, //TODO
-    ),
-
-  h3: (
-    family: $font-family, //TODO
-    weight: null, //TODO
-  ),
-
-  h4: (
-    family: $font-family, //TODO
-    weight: null, //TODO
-  ),
-
-  blockquote: (
-    family: $font-family-special, //TODO
-    weight: null, //TODO
-  ),
-
-  small: (
-    familY: $font-family, //TODO
-    weight: 300, //TODO
-  )
-);
-
-
-//****************************************************************************//
-//                            BOTTONI
-//****************************************************************************//
-$button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
-
-$button-decoration: (
-  small: (
-    family: null,
-    weight: null,
-  ),
-
-  medium: (
-    family: null,
-    weight: null,
-  ),
-
-  large: (
-    family: null,
-    weight: null,
-  ),
-
-  x-large: (
-    family: null,
-    weight: null,
-  ),
-);
-
-$font-weight: 300; //TODO
-
-
-
-//****************************************************************************//
 //                                      FORMS
 //****************************************************************************//
 
 $forms: (
   field: (
-    family: $font-family,
-    weight: 300,
+    fm: family(ffh, family),
+    wt: family(ffh, normal),
   ),
 
   label: (
-    family: $font-family,
-    weight: 300,
+    fm: family(ffh, family),
+    wt: family(ffh, normal),
   ),
 
   desc: (
-    family: $font-family,
-    weight: 300,
+    fm: family(ffh, family),
+    wt: family(ffh, normal),
   ),
 );
+
+//****************************************************************************//
+//                            BOTTONI
+//****************************************************************************//
+$button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
 
 
 //****************************************************************************//

@@ -15,7 +15,7 @@
  * BODY e P
  */
 body {
-  @include body-decoration;
+  @include deco();
   @include body-size;
 
   margin:0 auto;
@@ -29,7 +29,7 @@ p, ul, ol, pre, table, blockquote {
 }
 
 ul, ol, pre, table {
-  @include body-decoration;
+  @include deco();
 }
 
 ul ul, ol ol, ul ol, ol ul {
@@ -42,24 +42,32 @@ ul ul, ol ol, ul ol, ol ul {
 * HEADINGS - TITOLI
 */
 
-h1, h2, h3, h4, h5 { @include heading-decoration; }
+h1, h2, h3, h4, h5 { @include deco; }
 
 h1 {
-  @include h-size(h1);
-  @include respond-to(step-2) { font-size: font-size(h1, fs) * 0.7; }
+  @include size(h1);
+  @include deco(h1);
+  @include respond-to(step-2) { font-size: font(h1, fs) * 0.7; }
 }
 
 h2 {
-  @include h-size(h2);
-  margin-bottom: font-size(h2, mb);
-  @include respond-to(step-2) { font-size: font-size(h2, fs) * 0.8; }
+  @include size(h2);
+  @include deco(h2);
+  @include respond-to(step-2) { font-size: font(h2, fs) * 0.8; }
 }
 
-h3 { @include h-size(h3); }
+h3 {
+  @include size(h3);
+  @include deco(h3);}
 
-h4 { @include h-size(h4); }
+h4 {
+  @include size(h4);
+  @include deco(h4);}
 
-h5 { @include h-size(h5); }
+h5 {
+  @include size(h5);
+  @include deco(h5);
+}
 
 /*
  * Dettagli

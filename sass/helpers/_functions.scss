@@ -14,24 +14,23 @@
 ///
 // Font Size
 ///
-@function font-size($size, $attr: 'fs') {
-    @return map-get(map-get($font-sizes, $size), $attr);
+@function font($size, $attr: 'fs') {
+    @return map-get(map-get($fonts, $size), $attr);
+}
+
+///
+// Font Families & Weights
+///
+@function family($family, $weight: 'normal') {
+    @return map-get(map-get($weights, $family), $weight);
 }
 
 
 ///
-// Font Decoration
+// FORM Decoration
 ///
-@function font-deco($element, $attr: 'family') {
-    @return map-get(map-get($font-decoration, $element), $attr);
-}
-
-
-///
-// Button Decoration
-///
-@function button-deco($size, $attr: 'family') {
-    @return map-get(map-get($button-decoration, $size), $attr);
+@function form($element, $attr: 'fm') {
+    @return map-get(map-get($forms, $element), $attr);
 }
 
 //****************************************************************************//
@@ -69,7 +68,7 @@
 ///
 // Padding Pieno
 ///
-@function bpad($bp-bw: 1, $bp-fs: font-size(p, fs), $bp-lh: $line-height) {
+@function bpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
   @return ($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) - $bp-bw * 2) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
 }
 
@@ -77,7 +76,7 @@
 ///
 // Mezzo padding
 ///
-@function bhpad($bp-bw: 1, $bp-fs: font-size(p, fs), $bp-lh: $line-height) {
+@function bhpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
   @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) / 2) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
 }
 
@@ -86,7 +85,7 @@
 // del margine a metà o a un quarto
 ////
 
-@function bqpad($bp-bw: 1, $bp-fs: font-size(p, fs), $bp-lh: $line-height) {
+@function bqpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
   @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) / 4) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
 }
 
@@ -95,7 +94,7 @@
 // calcolate per essere usate nella line-height. **ATTENZIONE** gli elementi
 // che usano questa funzione NON possono andare a capo
 ////
-@function blh($bp-bw: 1, $bp-fs: font-size(p, fs), $bp-lh: $line-height) {
+@function blh($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
   @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em)) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 1em;
 }
 

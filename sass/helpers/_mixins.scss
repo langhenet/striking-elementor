@@ -11,40 +11,35 @@
 //****************************************************************************//
 //                            MIXIN TIPOGRAFICI
 //****************************************************************************//
+
+///
+// Dimensioni e margini caratteri
+///
+
+@mixin size($size: p) {
+  font-size: font($size, fs);
+  line-height: font($size, lh);
+  margin-top: font($size, mt);
+  margin-bottom: font($size, mb);
+}
+
 @mixin body-size {
-  font-size:$font-size;
-  line-height:$line-height;
+  font-size: $font-size;
+  line-height: $line-height;
 }
 
 @mixin body-margin {
-  margin-top:$margin-top;
-  margin-bottom:$margin-bottom;
-}
-
-@mixin body-decoration {
-  font-family: font-deco(p, family);
-  font-weight: font-deco(p, weight);
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
 }
 
 
 ///
-// Dimensioni Titoli
+// Decorazioni caratteri (family e boldness)
 ///
-
-@mixin h-size($size:p) {
-  font-size: font-size($size, fs);
-  line-height: font-size($size, lh);
-  margin-top: font-size($size, mt);
-  margin-bottom: font-size($size, mb);
-}
-
-///
-// Decorazioni Headings
-///
-@mixin heading-decoration {
-  font-family: $font-family-heading; //TODO //TOCR
-  font-weight: 400; //TODO //TOCR
-  text-transform: uppercase; //TODO //TOCR
+@mixin deco($size: p) {
+  font-family: font($size, fm);
+  font-weight: font($size, wt);
 }
 
 
@@ -52,8 +47,8 @@
 // HR
 ///
 @mixin hr-spacing {
-  border:$hr-spacing;
-  margin:-$hr-spacing 0;
+  border: $hr-spacing;
+  margin: -$hr-spacing 0;
 }
 
 
@@ -70,7 +65,7 @@
 ///
 %button {
   display:inline-block;
-  font-family: button-deco(medium, family);
+  font-family: inherit; //TODO
   white-space: normal;
   border-style: solid;
   box-shadow: $button-shadow;
@@ -80,18 +75,18 @@
 // Mixin per i bottoni con padding
 ///
 @mixin button($size: p, $bw:2, $pw: null) {
-  @include h-size($size);
+  @include size($size);
 
   @if $pw == half {
-    padding: bhpad($bw, font-size($size, fs), font-size($size, lh)) 1.5em;
+    padding: bhpad($bw, font($size, fs), font($size, lh)) 1.5em;
   }
 
   @else if $pw == quarter {
-    padding: bqpad($bw, font-size($size, fs), font-size($size, lh)) 1.5em;
+    padding: bqpad($bw, font($size, fs), font($size, lh)) 1.5em;
   }
 
   @else {
-    padding: bpad($bw, font-size($size, fs), font-size($size, lh)) 1.5em;
+    padding: bpad($bw, font($size, fs), font($size, lh)) 1.5em;
   }
 
   border-bottom-width: $bw * 1px;
@@ -102,9 +97,9 @@
 // Mixin per i bottoni con line-height
 ///
 @mixin button-lh($size: p, $bw:2) {
-  @include h-size($size);
+  @include size($size);
 
-  line-height: blh($bw, font-size($size, fs), font-size($size, lh));
+  line-height: blh($bw, font($size, fs), font($size, lh));
 
   padding: 0 1.5em;
   border-bottom-width: $bw * 1px;
@@ -156,9 +151,9 @@
 ///
 @mixin form-field($size: p, $bw: 1) {
   font-family: inherit;
-  font-size: font-size($size, fs);
-  line-height: bpad($bw, font-size($size, fs), font-size($size, lh)) * 2; //TOCR - forse è più facile farla con la funzione blh?
-  margin-bottom: font-size($size, mb);
+  font-size: font($size, fs);
+  line-height: bpad($bw, font($size, fs), font($size, lh)) * 2; //TOCR - forse è più facile farla con la funzione blh?
+  margin-bottom: font($size, mb);
   margin-top: 0;
   padding: 0;
 }
@@ -170,7 +165,7 @@
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
-  font-weight: $font-weight;
+  font-weight: form(label, weight);
   text-transform: none; //TODO //TOCR
   letter-spacing: 0px;
 }
@@ -179,11 +174,11 @@
 // Forms Field Descritpions
 ///
 @mixin form-desc($size: h5) {
-  font-size: font-size($size, fs);
-  line-height: font-size($size, lh);
+  font-size: font($size, fs);
+  line-height: font($size, lh);
   font-style: none;
   margin:0;
-  font-weight: $font-weight;
+  font-weight: form(desc, weight);
   text-transform: none; //TODO //TOCR
   letter-spacing: 0;
 }
