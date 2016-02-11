@@ -6,11 +6,12 @@
 
 // custom sass
 @import 'helpers/functions';
-@import 'helpers/variables';
+@import 'config/typography';
+@import 'config/colors';
+@import 'config/layout';
 @import 'helpers/mixins';
 @import 'base/resets';
 @import 'base/typography';
-@import 'base/colors';
 @import 'layout/main-layout';
 @import 'layout/header';
 @import 'layout/widgets';
