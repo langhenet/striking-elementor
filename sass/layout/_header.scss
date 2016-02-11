@@ -9,75 +9,89 @@
 }
 
 //****************************************************************************//
-//                               TOP BAR
+//                               TOP BAR - decommentare per utilizzarla
 //****************************************************************************//
 
+//*
+// * Colori e altezza
+// */
+//#top #header_meta {
+//  background-color: palette(header, bg-alt); //TODO
+//  line-height:$line-height; //TODO
+//  margin-bottom:0;
+
+//  a {
+//    color: palette(header, body); //TODO
+//  }
+// }
+
+
+///*
+// * Layout Elementi Top Bar
+// */
+//#top .social_bookmarks {
+//  height: auto;
+
+//  li {
+//    width: $line-height; //TODO
+//    border-right-width: 0; //TODO
+//    line-height: $line-height; //TOCR - da tenere solo se non riesco a resettare le mediaqueries
+
+//    a {
+//      width:$line-height; //TODO
+//    }
+//  }
+//}
+
+
+///*
+// * Toglie i bordi dalle icone social a <767px
+// */
+//.responsive #header_meta .social_bookmarks li {
+
+//  @include respond-to(step-3) {
+//    border-width: 0;
+//  }
+//}
+
+
+///*
+// * Toglie il bordo destro dall'ultima icona social a <767px
+// */
+//.responsive #top #header_meta .social_bookmarks li:last-child {
+//  @include respond-to(step-3) {
+//    border-right-width: 0;
+//  }
+//}
+
+
+///*
+// * Testo - Numero di telefono
+// */
+//.phone-info {
+//  padding: 0;
+//  font-size: font-size(h5, fs); //TODO
+//  font-weight: font-deco(small, weight);
+
+//  span {
+//    color: palette(header, body);
+//  }
+//}
+
+
+
+//***********************************************************************//
+//                                MINIMAL HEADER
+//                          scommentare per usare
+//***********************************************************************//
+
 /*
- * Colori e altezza
+ * Altezza Header
  */
-#top #header_meta {
-  background-color: palette(header, bg-alt); //TODO
-  line-height:$line-height; //TODO
-  margin-bottom:0;
-
-  a {
-    color: palette(header, body); //TODO
-  }
+.av_minimal_header #header_main .container.av-logo-container {
+  line-height: $line-height * 4; //TODO
+  height: $line-height * 4; //TODO
 }
-
-
-/*
- * Layout Elementi Top Bar
- */
-#top .social_bookmarks {
-  height: auto;
-
-  li {
-    width: $line-height; //TODO
-    border-right-width: 0; //TODO
-    line-height: $line-height; //TOCR - da tenere solo se non riesco a resettare le mediaqueries
-
-    a {
-      width:$line-height; //TODO
-    }
-  }
-}
-
-
-/*
- * Toglie i bordi dalle icone social a <767px
- */
-.responsive #header_meta .social_bookmarks li {
-
-  @include respond-to(step-3) {
-    border-width: 0;
-  }
-}
-
-
-/*
- * Toglie il bordo destro dall'ultima icona social a <767px
- */
-.responsive #top #header_meta .social_bookmarks li:last-child {
-  @include respond-to(step-3) {
-    border-right-width: 0;
-  }
-}
-
-
-/*
- * Testo - Numero di telefono
- */
-.phone-info {
-  padding: 0;
-  font-size: font-size(h5, fs); //TODO
-  font-weight: font-deco(small, weight);
-
-  span {
-    color: palette(header, body);
-  }
-}
-
 
 
 //***********************************************************************//
@@ -85,13 +99,7 @@
 //            scommentare per usare
 //***********************************************************************//
 
-/*
- * Altezza Header
- */
-//.av_minimal_header #header_main .container.av-logo-container {
-//  line-height: $line-height * 4; //TODO
-//  height: $line-height * 4; //TODO
-//}
+
 
 //.html_header_top.html_bottom_nav_header .main_menu {
 //  line-height:$line-height * 3;
@@ -109,7 +117,7 @@
 
 
 //***********************************************************************//
-//                LOGO & NAV ## LOGO SOPRA e NAVIGAZIONE SOTTO
+//                LOGO & NAV ## LOGO SOTTO e NAVIGAZIONE SOPRA
 //***********************************************************************//
 
 
