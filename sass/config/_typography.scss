@@ -39,14 +39,14 @@ $weights: (
     thin: 100,
     light: 200,
     normal: 400,
-    bold: 600,
+    bold: 700,
   ),
 
   ffh: (
     family: $font-family-heading,
     u-thin: 100,
     thin: 200,
-    light: 200,
+    light: 300,
     normal: 400,
     bold: 400,
   ),
@@ -118,6 +118,15 @@ $weights: (
       fm: family(ffh, family),
       wt: family(ffh, normal),
     )
+
+    blockquote: (
+      fs: 2em,
+      lh: 2em,
+      mt: 2em,
+      mb: 0em,
+      fm: family(ffh, family),
+      wt: family(ffh, light),
+  );
 );
 
 
