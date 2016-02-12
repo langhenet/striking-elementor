@@ -32,7 +32,7 @@ gulp.task('browser-sync', function() {
 // will auto-update browsers
 gulp.task('sass', function () {
     return gulp.src('sass/*.scss')
-        .pipe(sass({precision: '15'})) //compila sass
+        .pipe(sass({precision: '20'})) //compila sass
         .pipe(postcss([ autoprefixer({ browsers: ['last 7 versions'] }) ])) // aggiunge css di autoprefixer
         .pipe(rename('unmin-style.css')) //rinomina il file
         .pipe(gulp.dest('./'))
