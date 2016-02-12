@@ -105,6 +105,15 @@
 //            scommentare per usare
 //***********************************************************************//
 
+/*
+ * Altezza Logo Scrollato
+ */
+//.html_header_top.html_bottom_nav_header .header-scrolled .main_menu {
+//  line-height: $line-height * 2; //TODO
+//  height: $line-height * 1.5; //TODO
+//}
+
+
 ///*
 // * Sovrapporre il logo centrato + nav alla topbar - il bg della topbar deve essere trasparente
 // */
@@ -117,17 +126,20 @@
 //  right: 0;
 //}
 
-//.html_header_top.html_bottom_nav_header .main_menu {
-//  line-height:$line-height * 3;
+
+///*
+// * Corregge il logo sovrapposto quando l'header scrolla - il bg della topbar deve essere trasparente
+// */
+//.html_header_top.html_bottom_nav_header .header-scrolled #header_main {
+//  position: relative;
 //}
 
 
-/*
- * Altezza Logo Scrollato
- */
-//.html_header_top.html_bottom_nav_header .header-scrolled .main_menu {
-//  line-height: $line-height * 2; //TODO
-//  height: $line-height * 1.5; //TODO
+///*
+// * Main Nav
+// */
+//.html_header_top.html_bottom_nav_header .main_menu {
+//  line-height:$line-height * 3;
 //}
 
 
