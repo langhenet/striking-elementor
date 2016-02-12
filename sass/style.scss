@@ -12,8 +12,11 @@
 @import 'helpers/mixins';
 @import 'base/resets';
 @import 'base/typography';
+
+//IMPORT HEADER VARI
+@import 'layout/header/logo-over-nav';
+
 @import 'layout/main-layout';
-@import 'layout/header';
 @import 'layout/widgets';
 @import 'layout/footer';
 @import 'layout/sezioni-fw';
