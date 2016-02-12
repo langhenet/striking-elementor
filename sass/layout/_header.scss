@@ -142,7 +142,6 @@
 
   &> li {
     line-height: $line-height;
-    text-transform: uppercase;
 
     &> a {
       font-weight: 400; //TODO
@@ -161,6 +160,7 @@
 .av-main-nav > li {
   // il font family della navigazione
   //font-family: inherit;
+  //text-transform: uppercase;
 
   &:hover {
 
