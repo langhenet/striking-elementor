@@ -10,104 +10,111 @@
 //****************************************************************************//
 
 ///
-//SETUP COLORE //TODO
+// SETUP COLORE - //TODO
+// Segnare qui le variabili semantiche dei colori
 ///
-  $tortora: #c7bdb1;
-  $arancio: #db8947;
-  $grigio-scuro: #616266;
-  $grigio-chiaro: #ededeb;
-  $bianco-1: #f7f5f3;
-  $bianco-2: #fdfdf9;
-  $verde: #8BC34A;
 
 ///
-// SEZIONI COLORI - //TODO Solo per progetti grossi o NO?
+// SEZIONI COLORI - //TODO
+// Usare qui le variabili semantiche segnate sopra
 ///
 
 
 
   $colors: (
     header: (
-      body:       $grigio-scuro,      //colore corpo
-      heading:    $bianco-2,          //colore titoli
-      link:       $bianco-2,          //Colore link
-      bg:         $tortora,           //Colore sfondo principale
+      body:       null,      //colore corpo
+      body-sec:   null,      // Colore secondario - es blockquote
+      heading:    null,      //colore titoli
+      link:       null,      //Colore link
+      bg:         null,      //Colore sfondo principale
+      border:     null,      //Colore Bordi
 
-      accent:     $arancio,           //Colore accento //TOCHK
+      accent:     null,      //Colore accento - p.es icone / sfondo icone
 
-      border:     $grigio-scuro,      //Colore Bordi
+      body-alt:   null,      //colore body alternativo
+      bg-alt:     null,      //Colore sfondo alternativo
 
-      body-alt:   $grigio-scuro,      //colore body alternativo
-      bg-alt:     $grigio-chiaro,     //Colore sfondo alternativo
-      overlay:    rgba($grigio-scuro, 0.25), //Colore overlay
+      overlay:    null,      //Colore sfondo overlay
 
-      button:     $bianco-2,
-      button-bg:  $arancio
-
+      button:     null,      //colore bottone
+      button-bg:  green       //bg bottone
     ),
 
     main: (
-      body:       $grigio-scuro,
-      heading:    $tortora,
-      link:       $arancio,
-      bg:         $bianco-2,
+      body:       null,      //colore corpo
+      body-sec:   null,      // Colore secondario - es blockquote
+      heading:    null,      //colore titoli
+      link:       null,      //Colore link
+      bg:         null,      //Colore sfondo principale
+      border:     null,      //Colore Bordi
 
-      accent:     $arancio,
+      accent:     null,      //Colore accento - p.es icone / sfondo icone
 
-      border:     $tortora,
+      body-alt:   null,      //colore body alternativo
+      bg-alt:     null,      //Colore sfondo alternativo
 
-      body-alt:   $grigio-scuro, // colore form e box
-      bg-alt:     $tortora, // BG form e box
-      overlay:    rgba($grigio-scuro, 0.25),
+      overlay:    null,      //Colore sfondo overlay
 
-      button:     $bianco-2,
-      button-bg:  $grigio-scuro,
+      button:     null,      //colore bottone
+      button-bg:  green       //bg bottone
     ),
 
     alternate: (
-      body:       $grigio-scuro,
-      heading:    $grigio-scuro,
-      link:       $arancio,
-      bg:         $bianco-1,
+      body:       null,      //colore corpo
+      body-sec:   null,      // Colore secondario - es blockquote
+      heading:    null,      //colore titoli
+      link:       null,      //Colore link
+      bg:         null,      //Colore sfondo principale
+      border:     null,      //Colore Bordi
 
-      accent:     $arancio,
-      border:     $tortora,
-      bg-alt:     $bianco-2,
-      overlay:    rgba($grigio-scuro, 0.25),
-      button:     $bianco-2,
-      button-bg:  $arancio
+      accent:     null,      //Colore accento - p.es icone / sfondo icone
+
+      body-alt:   null,      //colore body alternativo
+      bg-alt:     null,      //Colore sfondo alternativo
+
+      overlay:    null,      //Colore sfondo overlay
+
+      button:     null,      //colore bottone
+      button-bg:  green       //bg bottone
     ),
 
     socket: (
-      body:       $bianco-2,
-      heading:    $bianco-2,
-      link:       $bianco-2,
-      bg:         $arancio,
+      body:       null,      //colore corpo
+      body-sec:   null,      // Colore secondario - es blockquote
+      heading:    null,      //colore titoli
+      link:       null,      //Colore link
+      bg:         null,      //Colore sfondo principale
+      border:     null,      //Colore Bordi
 
-      accent:     $bianco-2,
-      border:     $bianco-2,
+      accent:     null,      //Colore accento - p.es icone / sfondo icone
 
-      body-alt:   $grigio-scuro, // colore form e box
-      bg-alt:     rgba(white,0.75),
-      overlay:    rgba($grigio-scuro, 0.25),
+      body-alt:   null,      //colore body alternativo
+      bg-alt:     null,      //Colore sfondo alternativo
 
-      button:     $bianco-2,
-      button-bg:  $grigio-scuro
+      overlay:    null,      //Colore sfondo overlay
+
+      button:     null,      //colore bottone
+      button-bg:  green       //bg bottone
     ),
 
     footer: (
-      body:       $grigio-scuro,
-      heading:    $grigio-scuro,
-      link:       $grigio-scuro,
-      bg:         $grigio-chiaro,
+      body:       null,      //colore corpo
+      body-sec:   null,      // Colore secondario - es blockquote
+      heading:    null,      //colore titoli
+      link:       null,      //Colore link
+      bg:         null,      //Colore sfondo principale
+      border:     null,      //Colore Bordi
 
-      accent:     $arancio,
-      border:     $grigio-scuro,
-      bg-alt:     $bianco-1,
-      overlay:    rgba($grigio-scuro, 0.25),
+      accent:     null,      //Colore accento - p.es icone / sfondo icone
 
-      button:     $bianco-2,
-      button-bg:  $arancio
+      body-alt:   null,      //colore body alternativo
+      bg-alt:     null,      //Colore sfondo alternativo
+
+      overlay:    null,      //Colore sfondo overlay
+
+      button:     null,      //colore bottone
+      button-bg:  green       //bg bottone
     )
   );
 
