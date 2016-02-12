@@ -105,7 +105,17 @@
 //            scommentare per usare
 //***********************************************************************//
 
-
+///*
+// * Sovrapporre il logo centrato + nav alla topbar - il bg della topbar deve essere trasparente
+// */
+//.html_header_top.html_bottom_nav_header #header_main {
+//  z-index: 3;
+//  position: absolute;
+//  top: 0;
+//  bottom: 0;
+//  left: 0;
+//  right: 0;
+//}
 
 //.html_header_top.html_bottom_nav_header .main_menu {
 //  line-height:$line-height * 3;
