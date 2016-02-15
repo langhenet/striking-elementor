@@ -64,7 +64,7 @@
 //****************************************************************************//
 
 @each $palette, $bg in $colors {
-  #top .#{$palette}_color .avia-button.avia-color-theme-color,
+  #top .#{$palette}_color .avia-color-theme-color,
   div .#{$palette}_color .button {
     @include button-color;
 
