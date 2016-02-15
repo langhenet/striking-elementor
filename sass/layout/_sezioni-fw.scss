@@ -1,6 +1,9 @@
-//****************************************************************************//
-//                               SEZIONI FW
-//****************************************************************************//
+//***************************************************************************//
+//*                                                                     *****//
+//*                                SEZIONI FW
+//*              comportamento delle sezioni full-width
+//*                                                                         *//
+//***************************************************************************//
 /*
  * Bordi Generali sezioni FW
  */
@@ -8,16 +11,51 @@
   border-top-width:0px; //TODO
 }
 
+
+
+
+//****************************************************************************//
+//                               PADDING DELLE RIGHE
+//****************************************************************************//
 /*
- * Sezioni FW no Margin //TOCR
+ * SMALL padding
  */
-#top div .no_margin {
-
+.avia-section-small .content,
+.avia-section-small .sidebar {
+  padding-top: $line-height;
+  padding-bottom: $line-height;
 }
 
-#top div .no_margin.first {
-  margin-left:0;
+
+/*
+* NORMAL padding
+*/
+.avia-section-default .content,
+.avia-section-default .sidebar {
+ padding-top: $line-height * 3;
+ padding-bottom: $line-height * 3;
 }
+
+
+/*
+* LARGE padding
+*/
+.avia-section-large .content,
+.avia-section-large .sidebar {
+  padding-top: $line-height * 4;
+  padding-bottom: $line-height * 4;
+}
+
+
+/*
+* HUGE padding
+*/
+.avia-section-huge .content,
+.avia-section-huge .sidebar {
+  padding-top: $line-height * 6;
+  padding-bottom: $line-height * 6;
+}
+
 
 
 

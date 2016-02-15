@@ -17,8 +17,6 @@
 /*
  * Margine Sopra Sidebar e contenuto
  */
-
-//TOCHK - questo inficia sia il padding delle pagine "normali" sia quello delle sezioni colore.
 .content,
 .sidebar {
   padding-top: $line-height * 6;
@@ -27,9 +25,25 @@
 
 
 
+
+//****************************************************************************//
+//                               COLONNE
+//****************************************************************************//
 /*
  * Margini Colonne
  */
 body .column-top-margin {
   margin-top: $line-height * 2;
+}
+
+
+/*
+ * Colonne senza margini
+ */
+#top div .no_margin {
+
+}
+
+#top div .no_margin.first {
+  margin-left:0;
 }
