@@ -4,3 +4,12 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                          *//
 //****************************************************************************//
+
+//****************************************************************************//
+//                            BOX TOP ICON
+//****************************************************************************//
+@each $palette, $bg in $colors {
+  .#{$palette}_color .main_color.iconbox_top .iconbox_content {
+    background: palette($palette, bg-alt)
+  }
+}
