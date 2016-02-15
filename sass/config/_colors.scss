@@ -23,98 +23,103 @@
 
   $colors: (
     header: (
-      body:       null,      //colore corpo
-      body-sec:   null,      // Colore secondario - es blockquote
-      heading:    null,      //colore titoli
-      link:       null,      //Colore link
-      bg:         null,      //Colore sfondo principale
-      border:     null,      //Colore Bordi
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       null,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
 
-      accent:     null,      //Colore accento - p.es icone / sfondo icone
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
 
-      body-alt:   null,      //colore body alternativo
-      bg-alt:     null,      //Colore sfondo alternativo
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
 
       overlay:    null,      //Colore sfondo overlay
 
       button:     null,      //colore bottone
-      button-bg:  green       //bg bottone
+      button-bg:  green      //bg bottone
     ),
 
     main: (
-      body:       null,      //colore corpo
-      body-sec:   null,      // Colore secondario - es blockquote
-      heading:    null,      //colore titoli
-      link:       null,      //Colore link
-      bg:         null,      //Colore sfondo principale
-      border:     null,      //Colore Bordi
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       null,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
 
-      accent:     null,      //Colore accento - p.es icone / sfondo icone
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
 
-      body-alt:   null,      //colore body alternativo
-      bg-alt:     null,      //Colore sfondo alternativo
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
 
       overlay:    null,      //Colore sfondo overlay
 
       button:     null,      //colore bottone
-      button-bg:  green       //bg bottone
+      button-bg:  green      //bg bottone
     ),
 
     alternate: (
-      body:       null,      //colore corpo
-      body-sec:   null,      // Colore secondario - es blockquote
-      heading:    null,      //colore titoli
-      link:       null,      //Colore link
-      bg:         null,      //Colore sfondo principale
-      border:     null,      //Colore Bordi
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       null,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
 
-      accent:     null,      //Colore accento - p.es icone / sfondo icone
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
 
-      body-alt:   null,      //colore body alternativo
-      bg-alt:     null,      //Colore sfondo alternativo
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
 
       overlay:    null,      //Colore sfondo overlay
 
       button:     null,      //colore bottone
-      button-bg:  green       //bg bottone
+      button-bg:  green      //bg bottone
     ),
 
     socket: (
-      body:       null,      //colore corpo
-      body-sec:   null,      // Colore secondario - es blockquote
-      heading:    null,      //colore titoli
-      link:       null,      //Colore link
-      bg:         null,      //Colore sfondo principale
-      border:     null,      //Colore Bordi
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       null,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
 
-      accent:     null,      //Colore accento - p.es icone / sfondo icone
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
 
-      body-alt:   null,      //colore body alternativo
-      bg-alt:     null,      //Colore sfondo alternativo
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
 
       overlay:    null,      //Colore sfondo overlay
 
       button:     null,      //colore bottone
-      button-bg:  green       //bg bottone
+      button-bg:  green      //bg bottone
     ),
 
     footer: (
-      body:       null,      //colore corpo
-      body-sec:   null,      // Colore secondario - es blockquote
-      heading:    null,      //colore titoli
-      link:       null,      //Colore link
-      bg:         null,      //Colore sfondo principale
-      border:     null,      //Colore Bordi
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       null,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
 
-      accent:     null,      //Colore accento - p.es icone / sfondo icone
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
 
-      body-alt:   null,      //colore body alternativo
-      bg-alt:     null,      //Colore sfondo alternativo
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
 
       overlay:    null,      //Colore sfondo overlay
 
       button:     null,      //colore bottone
-      button-bg:  green       //bg bottone
+      button-bg:  green      //bg bottone
     )
   );
 
