@@ -207,7 +207,7 @@
     @media only screen and (max-width: $s-desktop ) { @content; }
   }
   @else if $media == step-p0 {
-    @media only screen and (max-width: $s-desktop ) { @content; }
+    @media only screen and (min-width: $s-desktop ) { @content; }
   }
   @else if $media == step-p1 {
     @media only screen and (min-width: $u-hd) { @content; }
