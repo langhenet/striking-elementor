@@ -15,4 +15,12 @@
     border-color: palette($palette, border);
     padding: bpad(2) 1em;
   }
+
+  p {
+    color: palette($palette, body-alt);
+  }
+
+  blockquote {
+    color: palette($palette, body-alt);
+  }
 }
