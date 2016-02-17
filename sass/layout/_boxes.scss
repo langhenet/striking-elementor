@@ -8,19 +8,29 @@
 //****************************************************************************//
 //                            BOX TOP ICON
 //****************************************************************************//
+
+/*
+ * Layout iconbox top icon
+ */
+.iconbox_top .iconbox_content {
+  padding: bpad(2) 2em;
+  border: 2px solid;
+}
+
+/*
+ * Colori iconbox top icon
+ */
 @each $palette, $bg in $colors {
   .#{$palette}_color .main_color.iconbox_top .iconbox_content {
     background: palette($palette, bg-alt);
-    border: 2px solid;
     border-color: palette($palette, border);
-    padding: bpad(2) 1em;
-  }
 
-  p {
-    color: palette($palette, body-alt);
-  }
+    p {
+      color: palette($palette, body-alt);
+    }
 
-  blockquote {
-    color: palette($palette, body-alt);
+    blockquote {
+      color: palette($palette, body-alt);
+    }
   }
 }
