@@ -103,8 +103,17 @@ sub { bottom: $sub-bottom; }
 
 
 //****************************************************************************//
-//              COLORI TIPOGRAFIA
+//                      COLORI TIPOGRAFIA
 //****************************************************************************//
 
 .socket_color {
+}
+
+/*
+ * Colore Link + HOVER
+ */
+@each $palette, $attr in $colors {
+  .#{$palette}_color a {
+    color: palette($palette, link);
+  }
 }
