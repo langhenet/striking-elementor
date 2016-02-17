@@ -110,10 +110,34 @@ sub { bottom: $sub-bottom; }
 }
 
 /*
+ * Decorazione Link + HOVER
+ */
+.content a {
+  //text-decoration: underline;
+  //border-bottom: 1px dashed;
+  //font-weight: family(ff, bold);
+
+  &:hover {
+    //text-decoration: none;
+  }
+
+  //rimuove eventuali decorazioni da immagini nel testo
+  &.lightbox-added {
+    border-bottom: none;
+    text-decoration: none;
+  }
+}
+
+
+/*
  * Colore Link + HOVER
  */
-@each $palette, $attr in $colors {
-  .#{$palette}_color a {
+@each $palette, $bg in $colors {
+  .#{$palette}_color .content a {
     color: palette($palette, link);
+
+    &:hover {
+      color: lighten(palette($palette, link), 20%);
+    }
   }
 }

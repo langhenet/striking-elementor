@@ -33,5 +33,9 @@
       color: palette($palette, body-alt);
       border-color: palette($palette, accent-alt)
     }
+
+    a {
+      color: palette($palette, accent-alt);
+    }
   }
 }
