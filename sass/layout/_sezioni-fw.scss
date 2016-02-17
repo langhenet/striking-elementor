@@ -18,12 +18,29 @@
 //                               PADDING DELLE RIGHE
 //****************************************************************************//
 /*
+ * NO Padding: resetta i margini bottomo degli elementi della sezione
+ */
+ .avia-section-no-padding p:last-of-type,
+ .avia-section-no-padding .avia-button.avia-size-medium:last-of-type {
+   margin-bottom: 0;
+ }
+
+
+/*
  * SMALL padding
  */
 .avia-section-small .content,
 .avia-section-small .sidebar {
   padding-top: $line-height;
   padding-bottom: $line-height;
+}
+
+/*
+ * SMALL padding: resetta i margini bottom degli ultimi elementi della sezione
+ */
+.avia-section-small p:last-of-type,
+.avia-section-small .avia-button.avia-size-medium:last-of-type {
+  margin-bottom: 0;
 }
 
 
