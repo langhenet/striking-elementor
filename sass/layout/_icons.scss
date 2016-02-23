@@ -12,8 +12,8 @@
  * Main color
  */
 .main_color .avia-icon-list .iconlist_icon {
-  background: palette(main, accent-alt);
-  color: palette(main, background);
+  background: palette(main, accent);
+  color: palette(main, bg);
 }
 
 
@@ -22,8 +22,8 @@
  * Header color
  */
 .header_color .avia-icon-list .iconlist_icon {
-  background: palette(header, bg-alt);
-  color: palette(header, accent);
+  background: palette(header, accent);
+  color: palette(header, bg);
 }
 
 
@@ -32,8 +32,8 @@
  * Socket color
  */
 .socket_color .avia-icon-list .iconlist_icon {
-  background: palette(socket, bg-alt);
-  color: palette(socket, accent);
+  background: palette(socket, accent);
+  color: palette(socket, bg);
 }
 
 
@@ -42,8 +42,8 @@
  * Footer color
  */
 .footer_color .avia-icon-list .iconlist_icon {
-  background: palette(footer, bg-alt);
-  color: palette(footer, accent);
+  background: palette(footer, accent);
+  color: palette(footer, bg);
 }
 
 
@@ -52,6 +52,6 @@
  * Alternate color
  */
 .alternate_color .avia-icon-list .iconlist_icon {
-  background: palette(alternate, bg-alt);
-  color: palette(alternate, accent);
+  background: palette(alternate, accent);
+  color: palette(alternate, bg);
 }
