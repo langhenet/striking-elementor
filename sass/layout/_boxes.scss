@@ -13,8 +13,18 @@
  * Layout iconbox top icon
  */
 .iconbox_top .iconbox_content {
-  padding: bpad(2) 2em;
-  border: 2px solid;
+  padding: bpad(0) 2em;
+  border: 0px solid;
+}
+
+
+
+/*
+ * Iconbox Title
+ */
+
+.iconbox_top .iconbox_content .iconbox_content_title {
+  @include size(h3);
 }
 
 /*
