@@ -126,33 +126,36 @@ div .avia_message_box .avia_message_box_title,
   font-size: inherit;
 }
 
-// Margini
-
-p + h1,
-p + h2,
-p + h3,
-p + h4,
-p + h5,
-p + h6 {
+ .avia-section {
+  min-height: $line-height;
 }
+// Margini
+//
+//p + h1,
+//p + h2,
+//p + h3,
+//p + h4,
+//p + h5,
+//p + h6 {
+//}
 
 // DI QUESTE BISOGNA FARE UN RESET SENSATO - O MAGARI GIA' DEI CSS
 
-.av-icon-display,
-#top .avia-icon-tooltip,
-.av_icon_caption,
-.iconbox_icon,
-.iconbox_top .iconbox_icon,
-#top .iconbox_left_content .iconbox_icon,
-#top .iconbox_right_content .iconbox_icon,
-#top .iconbox.av-no-box .iconbox_icon,
-.avia-icon-list .iconlist_icon,
-.av-seperator-icon,
-.avia-animated-number-title,
-.avia-no-number,
-.avia-animated-number-content {
-
-}
+//.av-icon-display,
+//#top .avia-icon-tooltip,
+//.av_icon_caption,
+//.iconbox_icon,
+//.iconbox_top .iconbox_icon,
+//#top .iconbox_left_content .iconbox_icon,
+//#top .iconbox_right_content .iconbox_icon,
+//#top .iconbox.av-no-box .iconbox_icon,
+//.avia-icon-list .iconlist_icon,
+//.av-seperator-icon,
+//.avia-animated-number-title,
+//.avia-no-number,
+//.avia-animated-number-content {
+//
+//}
 
 /*
  * RESET SPECIALI PER HEADER - //TOCHK
@@ -171,5 +174,5 @@ p + h6 {
  * Reset per margine delle labels di gravity forms
  */
 body#top .gform_wrapper label.gfield_label+div.ginput_container {
-  margin-top:0 !important;
+  margin-top: 0 !important;
 }
