@@ -8,9 +8,15 @@
 //****************************************************************************//
 //                            BOX TOP ICON
 //****************************************************************************//
+/*
+ * Layout top-iconbox - contenitore
+ */
+#top .iconbox_top {
+  margin-top: $line-height;
+}
 
 /*
- * Layout iconbox top icon
+ * Layout top-iconbox - contenuto
  */
 .iconbox_top .iconbox_content {
   padding: bpad(0) 2em;
