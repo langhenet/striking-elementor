@@ -1,0 +1,301 @@
+//****************************************************************************//
+//*                                                                     ******//
+//*                             MODULI & FORMS
+//*              descrizione - descrizione - descrizione
+//*                                                                     ******//
+//****************************************************************************//
+
+
+
+//****************************************************************************//
+//                            FORM GENERICI
+//****************************************************************************//
+
+#top {
+
+  form {
+    margin-bottom: $line-height; //TODO
+  }
+
+
+  ///
+  // Dimensioni dei Campi generici - anche gravity
+  ///
+  .input-text,
+  input[type='text'],
+  input[type='input'],
+  input[type='password'],
+  input[type='email'],
+  input[type='number'],
+  input[type='url'],
+  input[type='tel'],
+  input[type='search'],
+  select,
+  .select2-container .select2-choice {
+    @include form-field;
+  }
+
+
+  ///
+  // Dimensioni text area generica - anche gravity
+  ///
+  textarea {
+    @include form-field;
+    line-height: $line-height;
+    min-height: $line-height * 6;
+    padding: bpad(1);
+    margin-bottom: 0;
+  }
+
+
+///
+// Etichette dei Moduli
+///
+  label,
+  #commentform .comment-form-rating label,
+  .logged-in div #commentform .comment-form-comment label {
+    @include form-label;
+  }
+
+
+///
+// Non so a cosa servono... //TOCR - a cosa servono? si possono eliminare?
+///
+  label span,
+  legend span {
+    font-size: 1em;
+  }
+}
+
+
+//****************************************************************************//
+//                            SPECIFICI PER GRAVITY FORMS
+//****************************************************************************//
+
+///
+// Padding per il contenitore di Gravity Form e per il footer di Gravity
+///
+.gform_wrapper {
+  padding: $line-height * 2; //TODO
+  margin: 0 !important; //TOCR - questo dovrebbe stare in un reset?
+
+  @include  respond-to(step-2) {
+    padding: $line-height;
+  }
+
+  @include  respond-to(step-3) {
+    padding: $line-height*2;
+  }
+
+  @include  respond-to(step-4) {
+    padding: $line-height;
+  }
+}
+
+///
+// Insieme di Regole da impostare con il #top per soprassedere agli
+// stili esistenti di Gravity Forms (formmsmain.css e gravity-mod.css)
+///
+#top .gform_wrapper {
+  max-width: 100%;
+
+
+  ///
+  // Il Padding e i Margini dei campi standard
+  ///
+  ul li.gfield {
+    margin-bottom: $line-height !important;
+    padding:0;
+
+    ///
+    // Campo HTML di gravity - check marigni
+    ///
+
+    &.gfield_html.gfield_no_follows_desc {
+      margin-bottom: !important;
+    }
+  }
+
+
+  ///
+  // Altezza della select (che va impostata a parte per motivi sconosciuti)
+  // e delle sue opzioni
+  ///
+  select {
+    height: $line-height;
+
+      option {
+        font-size: font-size(h5, fs); //TODO
+        line-height: $line-height;
+        padding: ($line-height / 2) .125em;
+      }
+  }
+
+
+  ///
+  // Padding dei campi complessi (nome)
+  ///
+  &.gf_browser_chrome ul.gform_fields li.gfield span.name_first {
+    padding-top:0;
+  }
+  &.gf_browser_chrome ul.gform_fields li.gfield span.name_last {
+    padding-top:0;
+  }
+  &.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
+    padding-top:0;
+  }
+
+
+  ///
+  // Padding e margini del footer
+  ///
+  .gform_footer {
+      padding: 0;
+      margin: 0; //TODO
+  }
+}
+
+
+///
+// Descrizioni campi Gravity Forms
+///
+.gform_wrapper .top_label .gfield_description {
+  @include form-desc(); //TODO - selezionare la corrispondenza di dimensione
+  padding: (font-size(h5, lh) / 2) 0 !important;
+}
+///
+// Sotto-etichette dei campi complessi (p.es nome)
+///
+#top .ginput_complex label {
+  @include form-desc(); //TODO - selezionare la corrispondenza di dimensione
+  padding: (font-size(h5, lh) / 2) 0!important;
+}
+
+
+///
+// Campi gf_*_half - un po' un merdone per via degli !IMPORTANT //TOCHK
+///
+.gform_wrapper .top_label li.gfield.gf_left_half,
+.gform_wrapper .top_label li.gfield.gf_right_half {
+  @include respond-to(step-2) {
+    width: 100% !important;
+    margin-right: 0% !important;
+  }
+
+  @include respond-to(step-3) {
+    margin-right: 3.1% !important;
+    width: 45.5% !important;
+
+    @at-root .gform_wrapper .top_label li.gfield.gf_right_half {
+      margin-right: 0% !important;
+      width: 48.4% !important;
+    }
+  }
+}
+
+///
+// Bottone Gravity
+///
+
+#top .gform_wrapper .gform_footer input.button {
+  @extend %button;
+  @include button-lh(h3, 4); //TODO
+
+  width: 100%;
+  border-right-width: 0;
+  border-left-width: 0;
+  text-transform: uppercase; //TODO
+  font-weight: inherit; //TODO
+}
+
+
+//****************************************************************************//
+//                            Colori FORM, LABEL e DESCRIZIONI CAMPI
+//****************************************************************************//
+
+/*
+ * MAIN COLOR - bg del form e dei link
+ */
+.main_color .gform_wrapper {
+  background: palette(main, bg-alt);
+
+
+  a {
+    color: palette(main, body-alt);
+    text-decoration: underline;
+  }
+}
+
+
+/*
+ * MAIN COLOR - campi
+ */
+#top .main_color .input-text,
+#top .main_color input[type='text'],
+#top .main_color input[type='input'],
+#top .main_color input[type='password'],
+#top .main_color input[type='email'],
+#top .main_color input[type='number'],
+#top .main_color input[type='url'],
+#top .main_color input[type='tel'],
+#top .main_color input[type='search'],
+#top .main_color textarea,
+#top .main_color select,
+#top .main_color .select2-container .select2-choice {
+  border-color: palette(main, border);
+  background: palette(main, bg);
+  color: palette(main, body-alt);
+}
+
+
+/*
+ * MAIN COLOR - label e descrizioni
+ */
+#top .main_color label,
+#top .main_color .gfield_description {
+  color: palette(main, body);
+}
+
+
+
+
+/*
+ * SOCKET COLOR - - bg del form e dei link
+ */
+.socket_color .gform_wrapper {
+  background: palette(socket, bg-alt);
+
+  a {
+    color: palette(socket, body-alt);
+    text-decoration: underline;
+  }
+}
+
+
+/*
+ * SOCKET COLOR - label e descrizioni
+ */
+#top .socket_color label,
+#top .socket_color .gfield_description {
+  color: palette(socket, body-alt);
+}
+
+
+///
+// Quest cose erano presenti nel template... ma non sembrano necessarie. visto
+// che il margin bottom è già impostato a 0 in gravity mod
+///
+//#top .gform_wrapper .input-text,
+//#top .gform_wrapper input[type='text'],
+//#top .gform_wrapper input[type='input'],
+//#top .gform_wrapper input[type='password'],
+//#top .gform_wrapper input[type='email'],
+//#top .gform_wrapper input[type='number'],
+//#top .gform_wrapper input[type='url'],
+//#top .gform_wrapper input[type='tel'],
+//#top .gform_wrapper input[type='search'],
+//#top .gform_wrapper textarea,
+//#top .gform_wrapper select,
+//#top .gform_wrapper .select2-container .select2-choice  {
+//    margin-bottom: 0!important;
+//}

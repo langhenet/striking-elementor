@@ -1,0 +1,75 @@
+//***********************************************************************//
+//*                                                                     *//
+//*                             I BOTTONI
+//*              descrizione - descrizione - descrizione
+//*                                                                     *//
+//***********************************************************************//
+
+
+/*
+ * Evitiamo che i bottoni con le icone siano diversi da quelli senza icone
+ */
+.avia-button .avia_button_icon,
+#top .avia_cart_buttons .button > span {
+  line-height:0;
+}
+
+/*
+ * Fix font-size dei bottoni in pagine woocommerce
+ */
+.woocommerce-page .button,
+.cart_dropdown .dropdown_widget .widget_shopping_cart_content p {
+  font-size:1em;
+}
+
+//***********************************************************************//
+//                              BOTTONI ENFOLD - Dimensioni
+//***********************************************************************//
+
+.avia-button.avia-size-small {
+  @extend %button;
+  @include button(h5, 1);
+
+  font-weight: button-deco(small, weight);
+  text-transform: uppercase;
+}
+
+.avia-button.avia-size-medium {
+  @extend %button;
+  @include button(p, 2);
+
+  font-weight: inherit; //TODO
+  text-transform: uppercase;
+}
+
+.avia-button.avia-size-large {
+  @extend %button;
+  @include button-lh(h3, 4)
+
+  font-weight: inherit; //TODO
+  text-transform: uppercase;
+}
+
+.avia-button.avia-size-x-large {
+  @extend %button;
+  @include button(h2, 6, half);
+
+  font-weight: inherit; //TODO
+  text-transform: uppercase;
+}
+
+//****************************************************************************//
+//                         BOTTONI ENFOLD - COLORI
+//                  include anche i colori dei bottoni di gravity pare
+//****************************************************************************//
+
+@each $palette, $bg in $colors {
+  #top .#{$palette}_color .avia-color-theme-color,
+  div .#{$palette}_color .button {
+    @include button-color;
+
+    &:hover {
+      @include button-color(hover);
+    }
+  }
+}
