@@ -46,12 +46,16 @@ tr td:first-child {
 //****************************************************************************//
 
 @each $palette, $bg in $colors {
+
+  //BG e colore delle celle dispari
   .#{$palette}_color tr:nth-child(odd) {
     background: palette($palette, bg);
     color: palette($palette, body)
   }
 
+  //BG e colore delle celle dispari
   .#{$palette}_color tr:nth-child(even) {
-    background: palette($palette, body-alt);
+    background: palette($palette, bg-alt);
+    color: palette($palette, body-alt);
   }
 }
