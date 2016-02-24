@@ -42,5 +42,16 @@ tr td:first-child {
 
 
 //****************************************************************************//
-//                            TABELLE STANDARD
+//                         COLORI   TABELLE STANDARD
 //****************************************************************************//
+
+@each $palette, $bg in $colors {
+  .#{$palette}_color tr:nth-child(odd) {
+    background: palette($palette, bg);
+    color: palette($palette, body)
+  }
+
+  .#{$palette}_color tr:nth-child(even) {
+    background: palette($palette, body-alt);
+  }
+}
