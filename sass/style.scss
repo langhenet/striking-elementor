@@ -4,18 +4,22 @@
 //importa il file con l'header per far funzionare il tema in WP
 @import 'wp-header';
 
-// custom sass
+// FUNCTIONS & PROJECT CONFIGURATION
 @import 'helpers/functions';
 @import 'config/typography';
 @import 'config/colors';
 @import 'config/layout';
 @import 'helpers/mixins';
+
+// BASE ELEMENTS
 @import 'base/resets';
 @import 'base/typography';
+@import 'base/images';
 
-//IMPORT HEADER VARI
+// TIPI DI HEADER
 @import 'elements/header/logo-over-nav';
 
+// ELEMENTI
 @import 'elements/layout/main-layout';
 @import 'elements/layout/sezioni-fw';
 @import 'elements/layout/footer';
@@ -25,3 +29,9 @@
 @import 'elements/forms';
 @import 'elements/boxes';
 @import 'elements/icons';
+
+// BLOG SINGLE
+@import 'elements/blog/single-big';
+
+// BLOG LIST
+@import 'elements/blog/list-big';
