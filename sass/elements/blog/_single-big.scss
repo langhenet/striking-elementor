@@ -1,6 +1,37 @@
 //*==========================================================================*//
 //*                                                                          *//
-//*                   VARIABILI PER    TIPOGRAFIA
+//*                       POST SINGOLO - BIG IMAGE
 //*                          DIMENSIONI & FACE
 //*                                                                          *//
 //*==========================================================================*//
+
+
+//****************************************************************************//
+//                            IMMAGINE + TITOLO + META
+//****************************************************************************//
+/*
+ * Contenitore Immagine
+ */
+
+.big-preview.single-big {
+  padding-bottom: 0;
+  margin-bottom: $line-height * 2;
+}
+
+/*
+ * TITOLO
+ */
+.entry-content-wrapper h1.post-title {
+  font-size: font(h1, fs) * 0.7;
+  line-height: font(h1, lh);
+  margin-top: font(h1, mt);
+  margin-bottom: font(h1, mt);
+  letter-spacing: -2px;
+}
+
+/*
+ * Meta - contenitore // uno span
+ */
+.single-post .single-big .post-meta-infos {
+  background: blue;
+}

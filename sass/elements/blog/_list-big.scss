@@ -1,0 +1,30 @@
+//*==========================================================================*//
+//*                                                                          *//
+//*                         LISTATI - BIG IMAGE
+//*                          DIMENSIONI & FACE
+//*                                                                          *//
+//*==========================================================================*//
+
+/*
+ * Immagine
+ */
+
+
+
+/*
+ * Titolo
+ */
+.single-big h2.post-title {
+  @include size(h2);
+}
+
+#top .flex_column .single-big .entry-content-wrapper h2.post-title {
+
+}
+
+/*
+ * Meta del listato - uno span
+ */
+.single-big  .post-meta-infos {
+background: black;
+}
