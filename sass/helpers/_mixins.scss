@@ -165,7 +165,8 @@
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
-  font-weight: form(label, weight);
+  font-family: form(label, fm);
+  font-weight: form(label, wt);
   text-transform: none; //TODO //TOCR
   letter-spacing: 0px;
 }
@@ -178,7 +179,8 @@
   line-height: font($size, lh);
   font-style: none;
   margin:0;
-  font-weight: form(desc, weight);
+  font-family: form(desc, fm);
+  font-weight: form(desc, wt);
   text-transform: none; //TODO //TOCR
   letter-spacing: 0;
 }
