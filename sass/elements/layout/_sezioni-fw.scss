@@ -107,3 +107,12 @@
 //    @include respond-to(step-3) { border-left: 0;} //TODO
 //  }
 }
+
+//****************************************************************************//
+//                               FRECCETTE CHE SCROLLANO
+//****************************************************************************//
+@each $palette, $bg in $colors {
+  #top .#{$palette}_color .scroll-down-link {
+    color: palette($palette, accent);
+  }
+}
