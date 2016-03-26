@@ -112,6 +112,7 @@
     ///
 
     &.gfield_html.gfield_no_follows_desc {
+      margin-top: 0;
       margin-bottom: !important;
     }
   }
@@ -161,14 +162,14 @@
 ///
 .gform_wrapper .top_label .gfield_description {
   @include form-desc(); //TODO - selezionare la corrispondenza di dimensione
-  padding: (font-size(h5, lh) / 2) 0 !important;
+  padding: (font(h5, lh) / 2) 0 !important;
 }
 ///
 // Sotto-etichette dei campi complessi (p.es nome)
 ///
 #top .ginput_complex label {
   @include form-desc(); //TODO - selezionare la corrispondenza di dimensione
-  padding: (font-size(h5, lh) / 2) 0!important;
+  padding: (font(h5, lh) / 2) 0!important;
 }
 
 
