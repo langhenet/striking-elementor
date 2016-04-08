@@ -73,3 +73,23 @@
     }
   }
 }
+
+//****************************************************************************//
+//                         BOTTONI SCHELETRICI ENFOLD - COLORI
+//                  include anche i colori dei bottoni di gravity pare
+//                  ho cambiato la dichiarazione nel mixin dei bottoni per fare i bordi -
+//****************************************************************************//
+@each $palette, $bg in $colors {
+  #top .#{$palette}_color .avia-button.avia-color-light {
+    border-color: white;
+    color: white;
+    background: transparent;
+
+    &:hover {
+      border-color: palette($palette, body-alt);
+      color: palette($palette, bg-alt);
+      background: palette($palette, body-alt);
+      opacity: 1;
+    }
+  }
+}
