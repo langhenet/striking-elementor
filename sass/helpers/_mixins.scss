@@ -65,7 +65,7 @@
 ///
 %button {
   display:inline-block;
-  font-family: inherit; //TODO
+  font-family: $font-family-button; //TODO
   white-space: normal;
   border-style: solid;
   box-shadow: $button-shadow;
