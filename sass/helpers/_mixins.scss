@@ -161,7 +161,9 @@
 ///
 // Forms Labels size settings
 ///
-@mixin form-label {
+@mixin form-label($size: p) {
+  font-size: font($size, fs);
+  line-height: font($size, lh);
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
