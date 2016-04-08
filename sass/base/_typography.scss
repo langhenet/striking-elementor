@@ -96,9 +96,28 @@ sup {
 
 sub { bottom: $sub-bottom; }
 
+
+
 /*
- * Blockquote - citazione //TOCHK
+ * Blockquote - citazione TIPOGRAFIA
  */
+blockquote {
+  font-size: font(blockquote, fs);
+  line-height: font(blockquote, lh);
+  font-family: font(blockquote, fm);
+  border-left-width: 3px;
+  font-weight: font(blockquote, wt);
+}
+ /*
+  * Blockquote - citazione TIPOGRAFIA
+  */
+@each $palette, $section in $colors  {
+  .#{$palette}_color blockquote {
+    border-color: palette($palette, border);
+    color: palette($palette, body-sec);
+  }
+}
+
 
 
 
