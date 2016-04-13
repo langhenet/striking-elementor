@@ -1,0 +1,32 @@
+{
+  "name": "matteomorra",
+  "version": "1.0.0",
+  "description": "ciao",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-postcss": "^6.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/langhenet/lgenf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/langhenet/lgenf/issues"
+  },
+  "homepage": "https://github.com/langhenet/lgenf#readme"
+}

@@ -1,0 +1,71 @@
+//****************************************************************************//
+//                               PADDING TOTALE SOPRA IL CONTENUTO
+//****************************************************************************//
+
+///*
+// * Con TOPBAR attiva - HEADER STICKY e NAV SOTTO
+// */
+//.html_header_top.html_header_topbar_active.html_header_sticky.html_bottom_nav_header #main { //TOCHK
+//  padding-top: ($line-height * 8); //TODO
+//
+//  @include respond-to(step-2) {
+//    padding-top: ($line-height * 5); //TODO
+//  }
+//}
+
+///*
+// * SENZA TOPBAR - HEADER STICKY e NAV SOTTO
+// */
+//.html_header_top.html_header_sticky.html_bottom_nav_header #main {
+//  padding-top: ($line-height * 8); //TODO
+//
+//  @include respond-to(step-2) {
+//    padding-top: ($line-height * 5); //TODO
+//  }
+//}
+
+
+///*
+// * SENZA TOPBAR - HEADER STICKY e NAV INLINE
+// */
+//.html_header_top.html_header_sticky #main {
+//  padding-top: ($line-height * 8); //TODO
+//
+//  @include respond-to(step-2) {
+//    padding-top: ($line-height * 5); //TODO
+//  }
+//}
+
+/*
+ * Margine Sopra Sidebar e contenuto
+ */
+.content,
+.sidebar {
+  padding-top: $line-height * 6;
+  padding-bottom: $line-height * 6;
+}
+
+
+
+
+//****************************************************************************//
+//                               COLONNE
+//****************************************************************************//
+/*
+ * Margini Colonne
+ */
+body .column-top-margin {
+  margin-top: $line-height * 2;
+}
+
+
+/*
+ * Colonne senza margini
+ */
+#top div .no_margin {
+
+}
+
+#top div .no_margin.first {
+  margin-left:0;
+}

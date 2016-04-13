@@ -1,0 +1,238 @@
+
+//****************************************************************************//
+//*                                                                          *//
+//*                  I MIXIN - FUNZIONI CHE COMPONGONO COSE
+//*                 descrizione - descrizione - descrizione
+//*                                                                          *//
+//****************************************************************************//
+
+
+
+//****************************************************************************//
+//                            MIXIN TIPOGRAFICI
+//****************************************************************************//
+
+///
+// Dimensioni e margini caratteri
+///
+
+@mixin size($size: p) {
+  font-size: font($size, fs);
+  line-height: font($size, lh);
+  margin-top: font($size, mt);
+  margin-bottom: font($size, mb);
+}
+
+@mixin body-size {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin body-margin {
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+}
+
+
+///
+// Decorazioni caratteri (family e boldness)
+///
+@mixin deco($size: p) {
+  font-family: font($size, fm);
+  font-weight: font($size, wt);
+}
+
+
+///
+// HR
+///
+@mixin hr-spacing {
+  border: $hr-spacing;
+  margin: -$hr-spacing 0;
+}
+
+
+
+//****************************************************************************//
+//                                    BOTTONI
+//                   il padding va a compensare per i bordi
+//              il valore del padding deve essere pari alla metà di
+//                (interlinea meno la somma dei bordi sup e inf)
+//****************************************************************************//
+
+///
+// Base dei bottoni: display, font-family e ombre
+///
+%button {
+  display:inline-block;
+  font-family: $font-family-button; //TODO
+  white-space: normal;
+  border-style: solid;
+  box-shadow: $button-shadow;
+}
+
+///
+// Mixin per i bottoni con padding
+///
+@mixin button($size: p, $bw:2, $pw: null) {
+  @include size($size);
+
+  @if $pw == half {
+    padding: bhpad($bw, font($size, fs), font($size, lh)) 1.5em;
+  }
+
+  @else if $pw == quarter {
+    padding: bqpad($bw, font($size, fs), font($size, lh)) 1.5em;
+  }
+
+  @else {
+    padding: bpad($bw, font($size, fs), font($size, lh)) 1.5em;
+  }
+
+  border-bottom-width: $bw * 1px;
+  border-top-width: $bw * 1px;
+}
+
+///
+// Mixin per i bottoni con line-height
+///
+@mixin button-lh($size: p, $bw:2) {
+  @include size($size);
+
+  line-height: blh($bw, font($size, fs), font($size, lh));
+
+  padding: 0 1.5em;
+  border-bottom-width: $bw * 1px;
+  border-top-width: $bw * 1px;
+}
+
+
+//****************************************************************************//
+//                                    COLORI BOTTONI
+//
+//****************************************************************************//
+
+////
+//  Questo Mixin utilizza la funzione 'palette' in modo particolare
+//
+//  La variabile $palette, che va a selezionare il contesto (la key di
+//  "primo livello") in cui vengono salvati i diversi COLORI, viene
+//  dichiarata solamente al momento di utilizzo.
+//
+//  Nel caso specifico, verrà utilizzato un @each che looppa attraverso tutte
+//  le palette per costruire delle classi dinamiche basate sulle palette
+///
+@mixin button-color($state:none) {
+
+  @if $state != hover {
+    background: palette($palette, button-bg);
+    color: palette($palette, button);
+    border-color: palette($palette, button-bg);
+    border-bottom-color: darken(palette($palette, button-bg), 10%);
+    opacity: 1;
+  }
+
+  @else {
+    background: darken(palette($palette, button-bg), 5%);
+    color: palette($palette, button);
+    border-color: palette($palette, button-bg);
+    border-bottom-color: darken(palette($palette, button-bg), 10%);
+  }
+}
+
+
+
+//****************************************************************************//
+//                                    FORMS
+//****************************************************************************//
+
+///
+// Form Field size settings
+///
+@mixin form-field($size: p, $bw: 1) {
+  font-family: inherit;
+  font-size: font($size, fs);
+  line-height: bpad($bw, font($size, fs), font($size, lh)) * 2; //TOCR - forse è più facile farla con la funzione blh?
+  margin-bottom: font($size, mb);
+  margin-top: 0;
+  padding: 0;
+}
+
+///
+// Forms Labels size settings
+///
+@mixin form-label($size: p) {
+  font-size: font($size, fs);
+  line-height: font($size, lh);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  font-family: form(label, fm);
+  font-weight: form(label, wt);
+  text-transform: none; //TODO //TOCR
+  letter-spacing: 0px;
+}
+
+///
+// Forms Field Descritpions
+///
+@mixin form-desc($size: h5) {
+  font-size: font($size, fs);
+  line-height: font($size, lh);
+  font-style: none;
+  margin:0;
+  font-family: form(desc, fm);
+  font-weight: form(desc, wt);
+  text-transform: none; //TODO //TOCR
+  letter-spacing: 0;
+}
+
+
+//****************************************************************************//
+//                            MEDIA QUERIES
+//****************************************************************************//
+@mixin respond-to($media) {
+  @if $media == step-1 {
+    @media only screen and (max-width: $s-desktop) { @content; }
+  }
+  @else if $media == step-2 {
+    @media only screen and (max-width: $l-tablet) { @content; }
+  }
+  @else if $media == step-3 {
+    @media only screen and (max-width: $p-tablet) { @content; }
+  }
+  @else if $media == step-4 {
+    @media only screen and (max-width: $l-phone) { @content; }
+  }
+  @else if $media == step-5 {
+    @media only screen and (max-width: $p-phone) { @content; }
+  }
+  @else if $media == step-0 {
+    @media only screen and (max-width: $s-desktop ) { @content; }
+  }
+  @else if $media == step-p0 {
+    @media only screen and (min-width: $s-desktop ) { @content; }
+  }
+  @else if $media == step-p1 {
+    @media only screen and (min-width: $u-hd) { @content; }
+  }
+}
+
+
+
+//****************************************************************************//
+//                            DECORAZIONI
+//****************************************************************************//
+
+///
+// Overlay di colore da mettere sui ::before //TOCR
+///
+@mixin color-overlay($bg-color: palette(main, overlay)) {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
+  background: $bg-color;
+}

@@ -1,0 +1,164 @@
+//***********************************************************************//
+//*                                                                     *//
+//*                     LA TIPOGRAFIA DEL PROGETTO
+//*              descrizione - descrizione - descrizione
+//*                                                                     *//
+//***********************************************************************//
+
+
+
+//***********************************************************************//
+//              PARTE PRINCIPALE - BODY - P - TITOLI & DETTAGLI
+//***********************************************************************//
+
+/*
+ * BODY e P
+ */
+body {
+  @include deco();
+  @include body-size;
+
+  margin:0 auto;
+
+  @include respond-to(step-2) { font-size: $font-size * 0.9;} //TODO
+  @include respond-to(step-4) { font-size: $font-size * 0.7;} //TODO
+}
+
+p, ul, ol, pre, table, blockquote {
+  @include body-margin;
+}
+
+ul, ol, pre, table {
+  @include deco();
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/*
+* HEADINGS - TITOLI
+*/
+
+h1, h2, h3, h4, h5 {
+
+}
+
+h1 {
+  @include size(h1);
+  @include deco(h1);
+  @include respond-to(step-2) { font-size: font(h1, fs) * 0.7; }
+}
+
+///*
+// * Eliminare uppercase
+// */
+//.template-page .entry-content-wrapper h1,
+//.template-page .entry-content-wrapper h2 {
+//  text-transform: none;
+//}
+
+h2 {
+  @include size(h2);
+  @include deco(h2);
+  @include respond-to(step-2) { font-size: font(h2, fs) * 0.8; }
+}
+
+h3 {
+  @include size(h3);
+  @include deco(h3);}
+
+h4 {
+  @include size(h4);
+  @include deco(h4);}
+
+h5 {
+  @include size(h5);
+  @include deco(h5);
+}
+
+/*
+ * Dettagli
+ */
+
+hr { @include hr-spacing; }
+
+b, strong, em, small, code { line-height: 1; }
+
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: $sup-top;
+}
+
+sub { bottom: $sub-bottom; }
+
+
+
+/*
+ * Blockquote - citazione TIPOGRAFIA
+ */
+blockquote {
+  font-size: font(blockquote, fs);
+  line-height: font(blockquote, lh);
+  font-family: font(blockquote, fm);
+  border-left-width: 3px;
+  font-weight: font(blockquote, wt);
+}
+ /*
+  * Blockquote - citazione TIPOGRAFIA
+  */
+@each $palette, $section in $colors  {
+  .#{$palette}_color blockquote {
+    border-color: palette($palette, border);
+    color: palette($palette, body-sec);
+  }
+}
+
+
+
+
+
+
+//****************************************************************************//
+//                      COLORI TIPOGRAFIA
+//****************************************************************************//
+
+.socket_color {
+}
+
+/*
+ * Decorazione Link + HOVER
+ */
+.content a {
+  //text-decoration: underline;
+  //border-bottom: 1px dashed;
+  //font-weight: family(ff, bold);
+
+  &:hover {
+    //text-decoration: none;
+  }
+
+  //rimuove eventuali decorazioni da immagini nel testo
+  &.lightbox-added {
+    border-bottom: none;
+    text-decoration: none;
+  }
+}
+
+
+/*
+ * Colore Link + HOVER
+ */
+@each $palette, $bg in $colors {
+  .#{$palette}_color .content a {
+    color: palette($palette, link);
+
+    &:hover {
+      color: lighten(palette($palette, link), 20%);
+    }
+  }
+}

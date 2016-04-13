@@ -1,0 +1,57 @@
+//****************************************************************************//
+//*                                                                          *//
+//*                             ICONE VARIE
+//*              descrizione - descrizione - descrizione
+//*                                                                          *//
+//****************************************************************************//
+
+//****************************************************************************//
+//                            ICON LIST
+//****************************************************************************//
+/*
+ * Main color
+ */
+.main_color .avia-icon-list .iconlist_icon {
+  background: palette(main, accent);
+  color: palette(main, bg);
+}
+
+
+
+/*
+ * Header color
+ */
+.header_color .avia-icon-list .iconlist_icon {
+  background: palette(header, accent);
+  color: palette(header, bg);
+}
+
+
+
+/*
+ * Socket color
+ */
+.socket_color .avia-icon-list .iconlist_icon {
+  background: palette(socket, accent);
+  color: palette(socket, bg);
+}
+
+
+
+/*
+ * Footer color
+ */
+.footer_color .avia-icon-list .iconlist_icon {
+  background: palette(footer, accent);
+  color: palette(footer, bg);
+}
+
+
+
+/*
+ * Alternate color
+ */
+.alternate_color .avia-icon-list .iconlist_icon {
+  background: palette(alternate, accent);
+  color: palette(alternate, bg);
+}

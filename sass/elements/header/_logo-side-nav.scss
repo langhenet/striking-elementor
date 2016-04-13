@@ -1,0 +1,13 @@
+//****************************************************************************//
+//*                                                                          *//
+//*                           LAYOUT DELL'HEADER
+//*                    in versione LOGO affiancato a NAVIGAZIONE
+//*                                                                          *//
+//****************************************************************************//
+/*
+ * Altezza Header
+ */
+.av_minimal_header #header_main .container.av-logo-container {
+  line-height: $line-height * 4; //TODO
+  height: $line-height * 4; //TODO
+}

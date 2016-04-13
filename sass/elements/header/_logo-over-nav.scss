@@ -1,0 +1,145 @@
+//****************************************************************************//
+//*                                                                          *//
+//*                           LAYOUT DELL'HEADER
+//*                    in versione LOGO sopra NAVIGAZIONE
+//*                              (tutto centrato)
+//*                                                                          *//
+//****************************************************************************//
+
+//****************************************************************************//
+//                 TOP BAR - decommentare per utilizzarla
+//****************************************************************************//
+
+//*
+// * Colori e altezza
+// */
+//#top #header_meta {
+//  background-color: palette(header, bg-alt); //TODO
+//  line-height:$line-height; //TODO
+//  margin-bottom:0;
+
+//  a {
+//    color: palette(header, body); //TODO
+//  }
+// }
+
+
+///*
+// * Layout Elementi Top Bar
+// */
+//#top .social_bookmarks {
+//  height: auto;
+
+//  li {
+//    width: $line-height; //TODO
+//    border-right-width: 0; //TODO
+//    line-height: $line-height; //TOCR - da tenere solo se non riesco a resettare le mediaqueries
+
+//    a {
+//      width:$line-height; //TODO
+//    }
+//  }
+//}
+
+
+///*
+// * Toglie i bordi dalle icone social a <767px
+// */
+//.responsive #header_meta .social_bookmarks li {
+
+//  @include respond-to(step-3) {
+//    border-width: 0;
+//  }
+//}
+
+
+///*
+// * Toglie il bordo destro dall'ultima icona social a <767px
+// */
+//.responsive #top #header_meta .social_bookmarks li:last-child {
+//  @include respond-to(step-3) {
+//    border-right-width: 0;
+//  }
+//}
+
+
+///*
+// * Testo - Numero di telefono
+// */
+//.phone-info {
+//  padding: 0;
+//  font-size: font-size(h5, fs); //TODO
+//  font-weight: font-deco(small, weight);
+
+//  span {
+//    color: palette(header, body);
+//  }
+//}
+
+
+
+//****************************************************************************//
+//                                MINIMAL HEADER
+//                            scommentare per usare
+//****************************************************************************//
+
+/*
+ * Altezza Header
+ */
+.av_minimal_header #header_main .container.av-logo-container {
+  line-height: $line-height * 4; //TODO
+  height: $line-height * 4; //TODO
+}
+
+
+///*
+// * Sezione logo - scrollato
+// */
+//.html_header_top.html_bottom_nav_header .header-scrolled .av-logo-container {
+//
+//}
+
+///*
+// * Main Nav
+// */
+//.html_header_top.html_bottom_nav_header .main_menu {
+//  line-height:$line-height * 3;
+//}
+
+///*
+// * Main Nav- Scrollato
+// */
+//.html_header_top.html_bottom_nav_header .header-scrolled .main_menu {
+//  line-height: $line-height * 2; //TODO
+//  height: $line-height * 1.5; //TODO
+//}
+
+
+//****************************************************************************//
+//                        SOVRAPPOSIZIONE HEADER A TOP BAR
+//                   il bg della topbar deve essere trasparente
+//                              scommentare per usare
+//****************************************************************************//
+
+///*
+// * Contenitore LOGO + NAV
+// */
+//.html_header_top.html_bottom_nav_header #header_main {
+//  z-index: 3;
+//  position: absolute;
+//  top: 0;
+//  bottom: 0;
+//  left: 0;
+//  right: 0;
+//    @include respond-to(step-2) {
+//      position: relative;
+//    }
+//}
+
+
+///*
+// * Corregge il logo sovrapposto quando l'header scrolla - il bg della topbar deve essere trasparente
+// */
+//.html_header_top.html_bottom_nav_header .header-scrolled #header_main {
+//  position: relative;
+//}

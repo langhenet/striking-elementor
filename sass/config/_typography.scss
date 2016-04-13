@@ -1,0 +1,161 @@
+//*==========================================================================*//
+//*                                                                          *//
+//*                   VARIABILI PER    TIPOGRAFIA
+//*                          DIMENSIONI & FACE
+//*                                                                          *//
+//*==========================================================================*//
+
+///
+// BASE DEL BODY
+///
+  $base: 16;
+  $font-size: 1.125em; //TODO
+  $line-height: 1.7777777777777777em; //TODO
+
+
+///
+// p and other standard elements
+///
+  $margin-top: 0em; //TODO
+  $margin-bottom: 1.7777777777777777em; //TODO
+
+
+///
+// Families
+///
+  $font-family: 'Muli', sans-serif; //TODO
+  $font-family-heading: $font-family; //TODO
+  $font-family-special: 'Lora', serif; //TODO
+  $font-family-button: $font-family;
+
+
+///
+// WEIGHTS per Families
+///
+$weights: (
+  ff: (
+    family: $font-family,
+    u-thin: 100,
+    thin: 100,
+    light: 200,
+    normal: 400,
+    bold: 700,
+  ),
+
+  ffh: (
+    family: $font-family-heading,
+    u-thin: 100,
+    thin: 200,
+    light: 300,
+    normal: 400,
+    bold: 400,
+  ),
+
+  ffs: (
+    family: $font-family-special,
+    u-thin: 100,
+    thin: 100,
+    light: 200,
+    normal: 400,
+    bold: 600,
+  ),
+);
+
+////
+// Dimensioni & caratteristiche dei font principali
+////
+  $fonts: (
+    p: (
+      fs: 1em,
+      lh: $line-height,
+      mt: $margin-top,
+      mb: $margin-bottom,
+      fm: family(ff, family),
+      wt: family(ff, normal),
+    ),
+
+    h1: (
+      fs: 6.333333333333333em,
+      lh: 1.1228070175438596em,
+      mt: 0.2807017543859649em,
+      mb: 0em,
+      fm: family(ffh, family),
+      wt: family(ffh, thin),
+    ),
+
+    h2: (
+      fs: 3.4444444444444446em,
+      lh: 1.032258064516129em,
+      mt: 0.5161290322580645em,
+      mb: 0.5161290322580645em,
+      fm: family(ffh, family),
+      wt: family(ffh, thin),
+    ),
+
+    h3: (
+      fs: 1.8333333333333333em,
+      lh: 1.9393939393939394em,
+      mt: 0.9696969696969697em,
+      mb: 0em,
+      fm: family(ffh, family),
+      wt: family(ffh, light),
+    ),
+
+    h4: (
+      fs: 1em,
+      lh: 1.7777777777777777em,
+      mt: 1.7777777777777777em,
+      mb: 0em,
+      fm: family(ffh, family),
+      wt: family(ffh, normal),
+    ),
+
+    h5: (
+      fs: 0.7777777777778em,
+      lh: 1.142857142857em,
+      mt: 1.9285714em,
+      mb: 0em,
+      fm: family(ffh, family),
+      wt: family(ffh, normal),
+    ),
+
+    blockquote: (
+      fs: 2em,
+      lh: 2em,
+      mt: 2em,
+      mb: 0em,
+      fm: family(ffh, family),
+      wt: family(ffh, light),
+  ),
+);
+
+
+////
+// DETTAGLI
+////
+  $sup-top: -0.5em; //TODO
+  $sub-bottom: -0.25em; //TODO
+  $hr-spacing: 1px; //TODO
+
+
+
+//****************************************************************************//
+//                                      FORMS
+//****************************************************************************//
+
+$forms: (
+  field: (
+    fm: family(ffh, family),
+    wt: family(ffh, normal),
+  ),
+
+  label: (
+    fm: family(ffh, family),
+    wt: family(ffh, normal),
+  ),
+
+  desc: (
+    fm: family(ffh, family),
+    wt: family(ffh, normal),
+  ),
+);

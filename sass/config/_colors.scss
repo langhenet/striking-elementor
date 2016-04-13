@@ -1,0 +1,139 @@
+//****************************************************************************//
+//                                 COLORI
+//              In questa sezione vengono configurati i colori
+//            nella prima parte si utilizzano dei colori "veri" che
+//            vengono setuppati in delle variabili dai nomi leggibili
+//
+//              Nella seconda parte le variabili vengono associate
+//            ai valori della mappa $colors che utilizza invece nomi
+//            legati alle funzioni svolte dal colore.
+//****************************************************************************//
+
+///
+// SETUP COLORE - //TODO
+// Segnare qui le variabili semantiche dei colori
+///
+
+///
+// SEZIONI COLORI - //TODO
+// Usare qui le variabili semantiche segnate sopra
+///
+
+
+
+  $colors: (
+    header: (
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       blue,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
+
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
+
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
+
+      overlay:    null,      //Colore sfondo overlay
+
+      button:     null,      //colore bottone
+      button-bg:  green      //bg bottone
+    ),
+
+    main: (
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       blue,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
+
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
+
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
+
+      overlay:    null,      //Colore sfondo overlay
+
+      button:     null,      //colore bottone
+      button-bg:  green      //bg bottone
+    ),
+
+    alternate: (
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       blue,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
+
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
+
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
+
+      overlay:    null,      //Colore sfondo overlay
+
+      button:     null,      //colore bottone
+      button-bg:  green      //bg bottone
+    ),
+
+    socket: (
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       blue,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
+
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
+
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
+
+      overlay:    null,      //Colore sfondo overlay
+
+      button:     null,      //colore bottone
+      button-bg:  green      //bg bottone
+    ),
+
+    footer: (
+      body:       null,      //Corpo - testo
+      body-sec:   null,      //Secondario - blockquote o blog meta
+      heading:    null,      //Titoli
+      link:       blue,      //Link
+      bg:         null,      //Sfondo principale
+      border:     null,      //Bordi
+
+      accent:     null,      //Accento - sfondo lista icone / grassetti / icone
+
+      body-alt:   null,      //body alternativo - testo in un form o in un box
+      bg-alt:     null,      //sfondo alt - il bg di un form o di un box
+      accent-alt: null,      //accento alt - il di un link nel form
+
+      overlay:    null,      //Colore sfondo overlay
+
+      button:     null,      //colore bottone
+      button-bg:  green      //bg bottone
+    )
+  );
+
+
+//****************************************************************************//                         //                                 BOTTONI
+//****************************************************************************//
+
+///
+// Ombra
+///
+$button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
+
+
+///
+// HOVER del BOTTONE
+// Funzione: darken e/o lighten (del bg originale) + funzione
+///
