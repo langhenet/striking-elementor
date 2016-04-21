@@ -9,23 +9,23 @@
 // BASE DEL BODY
 ///
   $base: 16;
-  $font-size: 1.125em; //TODO
-  $line-height: 1.7777777777777777em; //TODO
+  $font-size: 1.0625em; //TODO
+  $line-height: 1.6470588235294117em; //TODO
 
 
 ///
 // p and other standard elements
 ///
   $margin-top: 0em; //TODO
-  $margin-bottom: 1.7777777777777777em; //TODO
+  $margin-bottom: 1.6470588235294117em; //TODO
 
 
 ///
 // Families
 ///
-  $font-family: 'Muli', sans-serif; //TODO
+  $font-family: 'Raleway', sans-serif; //TODO
   $font-family-heading: $font-family; //TODO
-  $font-family-special: 'Lora', serif; //TODO
+  $font-family-special: $font-family; //TODO
   $font-family-button: $font-family;
 
 
@@ -36,10 +36,10 @@ $weights: (
   ff: (
     family: $font-family,
     u-thin: 100,
-    thin: 100,
-    light: 200,
+    thin: 200,
+    light: 300,
     normal: 400,
-    bold: 700,
+    bold: 600,
   ),
 
   ffh: (
@@ -48,14 +48,14 @@ $weights: (
     thin: 200,
     light: 300,
     normal: 400,
-    bold: 400,
+    bold: 600,
   ),
 
   ffs: (
     family: $font-family-special,
     u-thin: 100,
-    thin: 100,
-    light: 200,
+    thin: 200,
+    light: 300,
     normal: 400,
     bold: 600,
   ),
@@ -75,27 +75,27 @@ $weights: (
     ),
 
     h1: (
-      fs: 6.333333333333333em,
-      lh: 1.1228070175438596em,
-      mt: 0.2807017543859649em,
+      fs: 6.352941176470588em,
+      lh: 1.037037037037037em,
+      mt: 0.25925925925925924em,
       mb: 0em,
       fm: family(ffh, family),
-      wt: family(ffh, thin),
+      wt: family(ffh, u-thin),
     ),
 
     h2: (
-      fs: 3.4444444444444446em,
-      lh: 1.032258064516129em,
-      mt: 0.5161290322580645em,
-      mb: 0.5161290322580645em,
+      fs: 3.411764705882353em,
+      lh: 1.4482758620689655em,
+      mt: 0.4827586206896552em,
+      mb: 0.4827586206896552em,
       fm: family(ffh, family),
       wt: family(ffh, thin),
     ),
 
     h3: (
-      fs: 1.8333333333333333em,
-      lh: 1.9393939393939394em,
-      mt: 0.9696969696969697em,
+      fs: 1.8235294117647058em,
+      lh: 1.8064516129032258em,
+      mt: 0.9032258064516129em,
       mb: 0em,
       fm: family(ffh, family),
       wt: family(ffh, light),
@@ -103,8 +103,8 @@ $weights: (
 
     h4: (
       fs: 1em,
-      lh: 1.7777777777777777em,
-      mt: 1.7777777777777777em,
+      lh: 1.6470588235294117em,
+      mt: 1.6470588235294117em,
       mb: 0em,
       fm: family(ffh, family),
       wt: family(ffh, normal),
