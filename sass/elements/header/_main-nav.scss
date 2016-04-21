@@ -5,8 +5,46 @@
 //*                                                                          *//
 //****************************************************************************//
 /*
- * Colore Header
+ * Contenitore Nav
  */
-#main-header {
-  background-color: inherit;
+.et_header_style_left #et-top-navigation,
+.et_header_style_split #et-top-navigation {
+  padding-top: 0;
+  margin-top: $line-height * 2; //controlla anche l'altezza dell'header
+  margin-bottom: $line-height;
+}
+
+
+
+/*
+ * I li del menu
+ */
+#top-menu li {
+  font-size: font(p, fs);
+  line-height: font(p, lh);
+}
+
+
+
+/*
+ * I Link del menu
+ */
+.et_header_style_left #et-top-navigation nav>ul>li>a,
+.et_header_style_split #et-top-navigation nav>ul>li>a {
+  padding-bottom: 0;
+}
+
+/*
+ * Colori dei link di NAVIGAZIONE
+ */
+#top-menu a {
+  color: main-color(header, link);
+
+  &:hover {
+    color: main-color(header, accent);
+  }
+}
+
+#top-menu  .current_page_item a { //Link corrente
+  color: main-color(header, accent);
 }

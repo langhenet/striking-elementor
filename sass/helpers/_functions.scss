@@ -120,3 +120,7 @@
 @function palette($palette, $element: 'body') {
     @return map-get(map-get($colors, $palette), $element);
 }
+
+@function main-color($palette, $element: 'body') {
+    @return map-get(map-get($layout-colors, $palette), $element);
+}
