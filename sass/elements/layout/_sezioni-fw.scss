@@ -4,12 +4,11 @@
 //*              comportamento delle sezioni full-width
 //*                                                                         *//
 //***************************************************************************//
+
 /*
  * Bordi Generali sezioni FW
  */
-.container_wrap {
-  border-top-width:0px; //TODO
-}
+
 
 
 
@@ -17,53 +16,31 @@
 //****************************************************************************//
 //                               PADDING DELLE RIGHE
 //****************************************************************************//
+
 /*
  * NO Padding: resetta i margini bottomo degli elementi della sezione
  */
- .avia-section-no-padding .flex_column p:last-child,
- .avia-section-no-padding .flex_column .avia-button.avia-size-medium:last-child {
-   margin-bottom: 0;
- }
 
 
 /*
  * SMALL padding
  */
-.avia-section-small .content,
-.avia-section-small .sidebar {
-  padding-top: $line-height;
-  padding-bottom: $line-height;
-}
 
 
 /*
 * NORMAL padding
 */
-.avia-section-default .content,
-.avia-section-default .sidebar {
- padding-top: $line-height * 3;
- padding-bottom: $line-height * 3;
-}
 
 
 /*
 * LARGE padding
 */
-.avia-section-large .content,
-.avia-section-large .sidebar {
-  padding-top: $line-height * 4;
-  padding-bottom: $line-height * 4;
-}
 
 
 /*
 * HUGE padding
 */
-.avia-section-huge .content,
-.avia-section-huge .sidebar {
-  padding-top: $line-height * 6;
-  padding-bottom: $line-height * 6;
-}
+
 
 
 
@@ -71,34 +48,8 @@
 //****************************************************************************//
 //                               FLEX CELLS
 //****************************************************************************//
-.flex_cell {
-  padding-top: $line-height * 4;
-  padding-bottom: $line-height * 4;
-//  position: relative; // se voglio overlay automatico
-
-/*
- * Overlay
- */
-//  &::before {
-//    @include color-overlay(palette(socket, overlay));
-//  }
 
 
-///
-// Bordi delle Flex Cells
-///
-//  &.el_before_av_cell_one_half {
-//    border-right:8px solid;
-
-//    @include respond-to(step-3) { border-right: 0;  border-bottom: 8px solid;}
-//  }
-//
-//  &.el_after_av_cell_one_half {
-//    border-left:8px solid;
-//
-//    @include respond-to(step-3) { border-left: 0;} //TODO
-//  }
-}
 
 //****************************************************************************//
 //                               FRECCETTE CHE SCROLLANO

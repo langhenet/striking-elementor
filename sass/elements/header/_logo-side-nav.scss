@@ -4,43 +4,73 @@
 //*                    in versione LOGO affiancato a NAVIGAZIONE
 //*                                                                          *//
 //****************************************************************************//
-/*
- * Colore Header
- */
-#main-header {
- background-color: main-color(header, bg);
- line-height: inherit;
-}
-
- //****************************************************************************//
+ //***************************************************************************//
  //                 TOP BAR - decommentare per utilizzarla
- //****************************************************************************//
+ //***************************************************************************//
+
+/*
+ * Colore del bg e dei link
+ */
  #top-header {
-   font-size: 1em;
+   font-size: 1em; //reset della font-size
    background: main-color(topbar, bg);
 
   a {
     color: main-color(topbar, link);
   }
  }
+
+
+
+/*
+ * Padding del contenitore della topbar
+ */
  #top-header .container {
    padding-top: $line-height / 2;
    padding-bottom: $line-height / 2;
  }
 
+
+
+/*
+ * UL della navigazione secondaria
+ */
+#et-secondary-nav {
+  margin-bottom: 0;
+}
+
+
+
+/*
+ * I Link della navigazione secondaria - per controllare le dimensioni
+ */
+#et-info,
+#et-secondary-menu>ul>li a {
+  padding-bottom: 0;
+  font-size: font(p, fs);
+  line-height: font(p, lh);
+}
+
+/*
+ * Icone social
+ */
 #top-header .et-social-icon a {
   font-size: font(p, fs);
   line-height: font(p, lh);
 }
 
 
-#et-secondary-nav {
-  margin-bottom: 0;
-}
 
-#et-info,
-#et-secondary-menu>ul>li a {
-  padding-bottom: 0;
-  font-size: font(p, fs);
-  line-height: font(p, lh);
+
+
+//***************************************************************************//
+//                 HEADER PRIMARIO
+//***************************************************************************//
+
+/*
+ * Colore BG Header Primario
+ */
+#main-header {
+ background-color: main-color(header, bg);
+ line-height: inherit; //Reset dell'altezza di linea
 }

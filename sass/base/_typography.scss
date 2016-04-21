@@ -127,29 +127,6 @@ blockquote {
 //                      COLORI TIPOGRAFIA
 //****************************************************************************//
 
-.socket_color {
-}
-
-/*
- * Decorazione Link + HOVER
- */
-.content a {
-  //text-decoration: underline;
-  //border-bottom: 1px dashed;
-  //font-weight: family(ff, bold);
-
-  &:hover {
-    //text-decoration: none;
-  }
-
-  //rimuove eventuali decorazioni da immagini nel testo
-  &.lightbox-added {
-    border-bottom: none;
-    text-decoration: none;
-  }
-}
-
-
 /*
  * Colore Link + HOVER
  */

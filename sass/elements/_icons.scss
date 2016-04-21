@@ -8,30 +8,3 @@
 //****************************************************************************//
 //                            ICON LIST
 //****************************************************************************//
-/*
- * Main color
- */
-.main_color .avia-icon-list .iconlist_icon {
-  background: palette(main, accent);
-  color: palette(main, bg);
-}
-
-
-
-/*
- * Header color
- */
-.header_color .avia-icon-list .iconlist_icon {
-  background: palette(header, accent);
-  color: palette(header, bg);
-}
-
-
-
-/*
- * Socket color
- */
-.socket_color .avia-icon-list .iconlist_icon {
-  background: palette(socket, accent);
-  color: palette(socket, bg);
-}
