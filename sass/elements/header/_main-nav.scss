@@ -24,7 +24,7 @@
  */
 .et_header_style_left .et-fixed-header #et-top-navigation,
 .et_header_style_split .et-fixed-header #et-top-navigation {
-  margin-top: $line-height;
+  margin-top: 0;
   margin-bottom: 0;
 
   ul { //UL che contiene la navigazione
@@ -34,44 +34,63 @@
 
 
 /*
- * I li del menu
+ * I li del menu - Font e spaziature orizzontali
  */
 #top-menu li {
   font-size: font(p, fs);
   line-height: font(p, lh);
+  padding-right: $line-height / 2;
+  padding-left: $line-height / 2;
+  margin-right: 0;
 }
 
-
-
 /*
- * I Link del menu
+ * I LI del menu - Altezze e spaziature verticali + hover
  */
-.et_header_style_left #et-top-navigation nav>ul>li>a,
-.et_header_style_split #et-top-navigation nav>ul>li>a {
-  padding-bottom: $line-height * 0.5 !important;
+.et_header_style_left #et-top-navigation nav>ul>li,
+.et_header_style_split #et-top-navigation nav>ul>li {
   margin-bottom: $line-height * 0.5;
+  padding-top: $line-height * 0.25;
+  border-bottom: 4px solid main-color(header, bg);
+  padding-bottom: bhpad(4) !important;
 
   &:hover {
-        border-bottom: 4px solid main-color(header, accent);
-        padding-bottom: bhpad(4) !important;
-        color: main-color(header, accent);
+    border-bottom: 4px solid main-color(header, accent);
+    transition: all 1s;
   }
 }
 
 /*
- * Colori dei link di NAVIGAZIONE
+ * I LI correnti
  */
-#top-menu a {
-  transition: all 0s;
-}
-
-#et-info-email:hover, #et-secondary-menu>ul>li>a:hover, #top-menu-nav>ul>li>a:hover, .et-social-icons a:hover {
-  transition: all 0s;
-}
-
-.et_header_style_left #et-top-navigation nav>ul>li.current_page_item>a,
-.et_header_style_split #et-top-navigation nav>ul>li.current_page_item>a  { //Link corrente
-  color: main-color(header, accent);
+.et_header_style_left #et-top-navigation nav>ul>li.current_page_item,
+.et_header_style_split #et-top-navigation nav>ul>li.current_page_item  { //LI corrente
   border-bottom: 4px solid main-color(header, accent);
-  padding-bottom: bhpad(4) !important;
+  tranistion: all 0.4s;
+
+  &>a {
+    color: main-color(header, body);
+  }
 }
+
+
+
+/*
+ * I Link del menu - reset dei margini e dei padding + colore hover
+ */
+ .et_header_style_left #et-top-navigation nav>ul>li>a,
+ .et_header_style_split #et-top-navigation nav>ul>li>a {
+   padding-bottom: 0; //reset
+   margin-bottom: 0; //Reset
+
+   &:hover {
+     color: main-color(header, body);
+   }
+ }
+
+ /*
+  * I Link del menu scrollato
+  */
+ .et_header_style_left .et-fixed-header #et-top-navigation nav>ul>li>a, .et_header_style_split .et-fixed-header #et-top-navigation nav>ul>li>a {
+   padding-bottom: 0; //Reset
+ }
