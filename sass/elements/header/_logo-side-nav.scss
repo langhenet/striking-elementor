@@ -23,6 +23,23 @@
 
 
 /*
+ * Scroll del top bar
+ */
+#top-header {
+ &.et-fixed-header { //nasconde la topbar quando l'header è scrollato
+   //display:none;
+   height: 0;
+   transition: all 0.4s;
+
+   #et-secondary-nav {
+     display:none;
+   }
+ }
+}
+
+
+
+/*
  * Padding del contenitore della topbar
  */
  #top-header .container {
@@ -73,4 +90,8 @@
 #main-header {
  background-color: main-color(header, bg);
  line-height: inherit; //Reset dell'altezza di linea
+
+ &.et-fixed-header {
+   top: 0 !important; //aggiusta il top per far sparire la topbar
+ }
 }

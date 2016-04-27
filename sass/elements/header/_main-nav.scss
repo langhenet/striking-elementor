@@ -9,11 +9,28 @@
  */
 .et_header_style_left #et-top-navigation,
 .et_header_style_split #et-top-navigation {
-  padding-top: 0;
+  padding-top: 0 !important;
   margin-top: $line-height * 2; //controlla anche l'altezza dell'header
-  margin-bottom: $line-height;
+  margin-bottom: $line-height * 1;
+  transition: all 0.4s;
+
+  ul { //UL che contiene la navigazione
+    margin-bottom: 0;
+  }
 }
 
+/*
+ * Contenitore Nav SCROLLATA
+ */
+.et_header_style_left .et-fixed-header #et-top-navigation,
+.et_header_style_split .et-fixed-header #et-top-navigation {
+  margin-top: $line-height;
+  margin-bottom: 0;
+
+  ul { //UL che contiene la navigazione
+    margin-bottom: 0;
+  }
+}
 
 
 /*
@@ -31,19 +48,30 @@
  */
 .et_header_style_left #et-top-navigation nav>ul>li>a,
 .et_header_style_split #et-top-navigation nav>ul>li>a {
-  padding-bottom: 0;
+  padding-bottom: $line-height * 0.5 !important;
+  margin-bottom: $line-height * 0.5;
+
+  &:hover {
+        border-bottom: 4px solid main-color(header, accent);
+        padding-bottom: bhpad(4) !important;
+        color: main-color(header, accent);
+  }
 }
 
 /*
  * Colori dei link di NAVIGAZIONE
  */
 #top-menu a {
-  color: main-color(header, link);
-
-  &:hover {
-    color: main-color(header, accent);
-  }
+  transition: all 0s;
 }
-#top-menu  .current_page_item a { //Link corrente
+
+#et-info-email:hover, #et-secondary-menu>ul>li>a:hover, #top-menu-nav>ul>li>a:hover, .et-social-icons a:hover {
+  transition: all 0s;
+}
+
+.et_header_style_left #et-top-navigation nav>ul>li.current_page_item>a,
+.et_header_style_split #et-top-navigation nav>ul>li.current_page_item>a  { //Link corrente
   color: main-color(header, accent);
+  border-bottom: 4px solid main-color(header, accent);
+  padding-bottom: bhpad(4) !important;
 }
