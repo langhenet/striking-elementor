@@ -94,3 +94,13 @@
  .et_header_style_left .et-fixed-header #et-top-navigation nav>ul>li>a, .et_header_style_split .et-fixed-header #et-top-navigation nav>ul>li>a {
    padding-bottom: 0; //Reset
  }
+
+
+
+
+/******************************************************************************/
+/*          NAVIGAZIONE MOBILE - HAMBURGER NAV
+/******************************************************************************/
+.mobile_menu_bar:before {
+  color: main-color(header, accent);
+}

@@ -4,3 +4,45 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                          *//
 //****************************************************************************//
+/*
+ * Padding contenitore & Dimensioni titolo
+ */
+.et_pb_blurb {
+  padding: $line-height;
+
+  &.et_pb_blurb_position_top h4 { //solo titolo top
+    @include size(h3);
+
+    margin-top: 0;
+    padding-bottom: 0;
+
+  }
+}
+
+
+/*
+ * colori
+ */
+ @each $palette, $bg in $colors {
+.#{$palette}_color .et_pb_blurb {
+    background-color: palette($palette, bg-alt);
+    color: palette($palette, body-alt);
+
+    p, h1, h2, h3, h4, h5 {
+      color: palette($palette, body-alt);
+    }
+
+    a {
+      color: palette($palette, accent-alt);
+    }
+
+    .et-pb-icon { // colore icona
+      color: palette($palette, body-alt) !important;
+
+      &.et-pb-icon-circle { // icona con il cerchio
+        background: transparent !important;
+        border: palette($palette, border) 2px solid;
+      }
+    }
+   }
+ }

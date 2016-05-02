@@ -4,3 +4,33 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                     ******//
 //****************************************************************************//
+
+#main-footer {
+  background-color: main-color(footer, bg);
+}
+
+#et-footer-nav {
+  background-color: lighten(main-color(footer, bg), 10%);
+
+  .bottom-nav li {
+    @include size(p);
+    margin-bottom: 0;
+  }
+}
+
+#footer-bottom {
+  background-color: main-color(footer, bg);
+}
+
+
+/*************************************************************************/
+/*                                  WIDGET
+/*************************************************************************/
+
+/*
+ * Titoli
+ */
+
+.footer-widget h4.title {
+  @include size(h3);
+}
