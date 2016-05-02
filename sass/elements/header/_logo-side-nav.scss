@@ -90,8 +90,10 @@
 #main-header {
  background-color: main-color(header, bg);
  line-height: inherit; //Reset dell'altezza di linea
+ transition: all 0.2s;
 
- &.et-fixed-header {
-   top: 0 !important; //aggiusta il top per far sparire la topbar
+&.et-fixed-header {
+  top: 0 !important; //aggiusta il top per far sparire la topbar
+  transition: all 0.2s;
  }
 }

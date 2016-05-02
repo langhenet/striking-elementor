@@ -28,6 +28,11 @@ p, ul, ol, pre, table, blockquote {
   @include body-margin;
 }
 
+p,
+p.et_normal_padding {
+  padding-bottom: 0;
+}
+
 ul, ol, pre, table {
   @include deco();
 }
@@ -51,14 +56,6 @@ h1 {
   @include deco(h1);
   @include respond-to(step-2) { font-size: font(h1, fs) * 0.7; }
 }
-
-///*
-// * Eliminare uppercase
-// */
-//.template-page .entry-content-wrapper h1,
-//.template-page .entry-content-wrapper h2 {
-//  text-transform: none;
-//}
 
 h2 {
   @include size(h2);
