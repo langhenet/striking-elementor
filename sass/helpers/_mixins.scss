@@ -78,15 +78,15 @@
   @include size($size);
 
   @if $pw == half {
-    padding: bhpad($bw, font($size, fs), font($size, lh)) 1.5em;
+    padding: bhpad($bw, font($size, fs), font($size, lh)) 2em;
   }
 
   @else if $pw == quarter {
-    padding: bqpad($bw, font($size, fs), font($size, lh)) 1.5em;
+    padding: bqpad($bw, font($size, fs), font($size, lh)) 2em;
   }
 
   @else {
-    padding: bpad($bw, font($size, fs), font($size, lh)) 1.5em;
+    padding: bpad($bw, font($size, fs), font($size, lh)) 2em;
   }
 
   border-bottom-width: $bw * 1px;
@@ -128,14 +128,14 @@
     background: palette($palette, button-bg);
     color: palette($palette, button);
     border-color: palette($palette, button-bg);
-    border-bottom-color: darken(palette($palette, button-bg), 10%);
+    border-bottom-color: darken(palette($palette, button-bg), 15%);
     opacity: 1;
   }
 
   @else {
     background: darken(palette($palette, button-bg), 5%);
     color: palette($palette, button);
-    border-color: palette($palette, button-bg);
+    border-color: darken(palette($palette, button-bg), 5%);
     border-bottom-color: darken(palette($palette, button-bg), 10%);
   }
 }
@@ -152,10 +152,11 @@
 @mixin form-field($size: p, $bw: 1) {
   font-family: inherit;
   font-size: font($size, fs);
-  line-height: bpad($bw, font($size, fs), font($size, lh)) * 2; //TOCR - forse è più facile farla con la funzione blh?
+  line-height: font($size, lh); //TOCR - forse è più facile farla con la funzione blh?
   margin-bottom: font($size, mb);
   margin-top: 0;
-  padding: 0;
+  padding: bhpad($bw, font($size, fs), font($size, lh)) !important;
+  border-width: $bw * 1px;
 }
 
 ///
@@ -164,12 +165,12 @@
 @mixin form-label($size: p) {
   font-size: font($size, fs);
   line-height: font($size, lh);
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   padding-top: 0;
   font-family: form(label, fm);
   font-weight: form(label, wt);
-  text-transform: none; //TODO //TOCR
+  text-transform: uppercase; //TODO //TOCR
   letter-spacing: 0px;
 }
 
@@ -177,14 +178,14 @@
 // Forms Field Descritpions
 ///
 @mixin form-desc($size: h5) {
-  font-size: font($size, fs);
+  font-size: font($size, fs) !important;
   line-height: font($size, lh);
   font-style: none;
-  margin:0;
+  margin:0 !important;
   font-family: form(desc, fm);
   font-weight: form(desc, wt);
   text-transform: none; //TODO //TOCR
-  letter-spacing: 0;
+  letter-spacing: 0 !important;
 }
 
 

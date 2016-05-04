@@ -9,36 +9,79 @@
 //                              BOTTONI ENFOLD - Dimensioni
 //***********************************************************************//
 
-.size-small {
+//.et_pb_button {
+//  line-height: inherit !important;
+//}
+
+//body #page-container a.et_pb_button.et_pb_custom_button_icon {
+//  font-size: inherit !important;
+//}
+
+body #page-container .et_pb_button.size-small {
   @extend %button;
   @include button(h5, 1);
 
   font-weight: button-deco(small, weight);
   text-transform: uppercase;
+
+  &:hover {
+    @extend .et_pb_button.size-small;
+  }
 }
 
-.size-medium {
+//body #page-container a.et_pb_button[class*="et_pb_button_"],
+body #page-container .et_pb_button.size-medium {
   @extend %button;
   @include button(p, 2);
 
   font-weight: inherit; //TODO
   text-transform: uppercase;
+
+  &:hover {
+    @extend .et_pb_button.size-medium;
+  }
+  &:after {
+    font-size: inherit;
+    line-height: inherit;
+    padding-right: 1em;
+    margin-left: 0.5em;
+  }
 }
 
-.size-large {
+//body #page-container a.et_pb_button.size-large[class*="et_pb_button_"],
+body #page-container .et_pb_button.size-large {
   @extend %button;
-  @include button-lh(h3, 4)
+  @include button(h3, 4, half)
 
   font-weight: inherit; //TODO
   text-transform: uppercase;
+
+  &:hover {
+    @extend .et_pb_button.size-large;
+  }
+  &:after {
+    font-size: inherit;
+    line-height: inherit;
+  }
 }
 
-.size-x-large {
+.et_pb_button.size-x-large {
   @extend %button;
   @include button(h2, 6, half);
 
   font-weight: inherit; //TODO
   text-transform: uppercase;
+
+  &:hover {
+    @extend .et_pb_button.size-x-large;
+  }
+}
+
+a.et_pb_more_button:after {
+  line-height: inherit;
+}
+.et_pb_button:after {
+  font-size: inherit;
 }
 
 //****************************************************************************//
@@ -47,8 +90,7 @@
 //****************************************************************************//
 
 @each $palette, $bg in $colors {
-  #top .#{$palette}-color,
-  div .#{$palette}-color .button {
+  div .#{$palette}_color .et_pb_bg_layout_light.et_pb_module.et_pb_button {
     @include button-color;
 
     &:hover {
