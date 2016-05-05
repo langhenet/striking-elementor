@@ -30,6 +30,54 @@
   }
 }
 
+//DIVI allarga le sezioni al max al 980px
+.et_pb_row {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-to(step-2) {
+    display: block;
+    align-items: inherit;
+    justify-content: inherit;
+  }
+}
+
+.et_pb_row.et_pb_equal_columns {
+  align-items: inherit;
+  justify-content: inherit;
+//  display: block;
+}
+
+//ELIMINO MARGINI ULTIMI elementi
+.et_pb_text p:last-child,
+.et_pb_text h1:last-child,
+.et_pb_text h2:last-child,
+.et_pb_text h3:last-child,
+.et_pb_text h4:last-child,
+.et_pb_text h5:last-child,
+.et_pb_text ul:last-child,
+.et_pb_text ol:last-child {
+  margin-bottom:0;
+}
+
+.et_pb_text p:first-child,
+.et_pb_text h1:first-child,
+.et_pb_text h2:first-child,
+.et_pb_text h3:first-child,
+.et_pb_text h4:first-child,
+.et_pb_text h5:first-child,
+.et_pb_text ul:first-child,
+.et_pb_text ol:first-child {
+  margin-top:0;
+}
+
+.et_pb_gutters3 .et_pb_column_1_2 .et_pb_module,
+.et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
+.et_section_specialty .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
+.et_section_specialty .et_pb_row .et_pb_column_1_2 .et_pb_gutters3.et_pb_row_inner .et_pb_module {
+  margin-bottom: $line-height !important;
+}
 
 //****************************************************************************//
 //                               PADDING DELLE SEZIONI e DELLE RIGHE
@@ -38,6 +86,8 @@
 // RESET PADDING DELLE RIGHE
 .et_pb_row {
   padding: 0px 0 !important;
+  padding-top: $line-height !important;
+  padding-bottom: $line-height;
 }
 
 /*

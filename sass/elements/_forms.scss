@@ -117,29 +117,97 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
 // Campi gf_*_half - un po' un merdone per via degli !IMPORTANT //TOCHK
 ///
 
+/*
+ * Footer Gravity
+ */
 
+.gform_wrapper .gform_footer {
+  padding: 0 !important;
+  margin: $line-height * 2 0 0 0 !important;
+  text-align: center;
+}
 
 ///
 // Bottone Gravity
 ///
+.entry-content .gform_wrapper .gform_footer input.button,
+.entry-content .gform_wrapper .gform_footer input[type=submit] {
+  @extend %button;
+  @include button(h3, 2, half);
+
+  width: 90%;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
 
 
 
 //****************************************************************************//
 //                     Colori FORM, LABEL e DESCRIZIONI CAMPI
-//                     di tutte le varie sezioni 
+//                     di tutte le varie sezioni
 //****************************************************************************//
 
 /*
- * MAIN COLOR - bg del form e dei link
+ * BG DEL FORM e dei LINK
  */
-.gform_wrapper {
-  background: palette(main, form-bg);
+
+@each $palette, $bg in $colors {
+  .#{$palette}_color .gform_wrapper {
+    background: palette($palette, form-bg);
+
+    a {
+      color: palette($palette, form-link);
+    }
+
+    input,
+    textarea,
+    select {
+      border-color: darken(palette($palette, form-bg), 2.5%);
+
+      &:focus {
+        border-color: darken(palette($palette, form-bg), 20%);
+      }
+    }
+
+    label {
+      color: palette($palette, form-body)
+    }
+
+    .gfield_date_day label,
+    .gfield_date_month label,
+    .gfield_date_year label,
+    .gfield_time_ampm label,
+    .gfield_time_hour label,
+    .gfield_time_minute label,
+    .ginput_complex label,
+    .instruction,
+    .gfield_description {
+      color: palette($palette, form-desc)
+    }
+
+    input.button,
+    input[type=submit] {
+      @include button-color;
+
+      &:hover {
+        @include button-color(hover);
+      }
+    }
+  }
 }
 
 /*
- * MAIN COLOR - campi
+ * Colori campi
  */
+
+
+ ///
+ // Bottone Gravity
+ ///
+.entry-content .gform_wrapper .gform_footer input.button,
+.entry-content .gform_wrapper .gform_footer input[type=submit] {
+
+}
 
 
 /*

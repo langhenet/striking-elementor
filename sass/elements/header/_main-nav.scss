@@ -24,7 +24,7 @@
   padding-top: 0 !important;
   margin-top: $line-height * 2; //controlla anche l'altezza dell'header
   margin-bottom: $line-height * 1;
-  transition: all 0.4s;
+  transition: all 0.1s;
 
   ul { //UL che contiene la navigazione
     margin-bottom: 0;
@@ -38,7 +38,7 @@
 .et_header_style_split .et-fixed-header #et-top-navigation {
   margin-top: $line-height / 2;
   margin-bottom: 0;
-  transition: all 0.4s;
+  transition: all 0.1s;
 
   ul { //UL che contiene la navigazione
     margin-bottom: 0;
@@ -79,7 +79,7 @@
 .et_header_style_left #et-top-navigation nav>ul>li.current_page_item,
 .et_header_style_split #et-top-navigation nav>ul>li.current_page_item  { //LI corrente
   border-bottom: 4px solid main-color(header, accent);
-  tranistion: all 0.4s;
+  tranistion: all 0.1s;
 
   &>a {
     color: main-color(header, body);
@@ -95,7 +95,7 @@
 .et_header_style_split #et-top-navigation nav>ul>li>a {
   padding-bottom: 0; //reset
   margin-bottom: 0; //Reset
-  tranistion: all 0.4s;
+  tranistion: all 0.1s;
 
   &:hover {
     color: main-color(header, body);
@@ -108,7 +108,7 @@
 .et_header_style_left .et-fixed-header #et-top-navigation nav>ul>li>a,
 .et_header_style_split .et-fixed-header #et-top-navigation nav>ul>li>a {
   padding-bottom: 0; //Reset
-  tranistion: all 0.4s;
+  tranistion: all 0.1s;
 }
 
 

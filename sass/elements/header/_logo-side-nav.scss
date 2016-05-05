@@ -29,7 +29,7 @@
  &.et-fixed-header { //nasconde la topbar quando l'header è scrollato
    //display:none;
    height: 0;
-   transition: all 0.4s;
+   transition: all 0.1s;
 
    #et-secondary-nav {
      display:none;
@@ -90,10 +90,10 @@
 #main-header {
  background-color: main-color(header, bg);
  line-height: inherit; //Reset dell'altezza di linea
- transition: all 0.2s;
+ transition: all 0.1s;
 
 &.et-fixed-header {
   top: 0 !important; //aggiusta il top per far sparire la topbar
-  transition: all 0.2s;
+  transition: all 0.1s;
  }
 }
