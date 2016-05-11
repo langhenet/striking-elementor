@@ -31,7 +31,7 @@
 }
 
 //DIVI allarga le sezioni al max al 980px
-.et_pb_row {
+/*.et_pb_row {
   display:flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +47,7 @@
   align-items: inherit;
   justify-content: inherit;
 //  display: block;
-}
+}*/
 
 //ELIMINO MARGINI ULTIMI elementi
 .et_pb_text p:last-child,
@@ -78,6 +78,24 @@
 .et_section_specialty .et_pb_row .et_pb_column_1_2 .et_pb_gutters3.et_pb_row_inner .et_pb_module {
   margin-bottom: $line-height !important;
 }
+
+
+
+
+//****************************************************************************//
+//    LARGHEZZA DELLA TIPOGRAFIA NELLA RIGA a 1 COLONNA
+//****************************************************************************//
+
+.et_pb_column_4_4 {
+  p, h1, h2, h3, h4, h5, ul, ol, blockquote {
+    max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
 
 //****************************************************************************//
 //                               PADDING DELLE SEZIONI e DELLE RIGHE
@@ -143,11 +161,29 @@
 }
 
 
+
 //****************************************************************************//
 //                               FRECCETTE CHE SCROLLANO
 //****************************************************************************//
 @each $palette, $bg in $colors {
   #top .#{$palette}_color .scroll-down-link {
     color: palette($palette, accent);
+  }
+}
+
+
+
+
+//****************************************************************************//
+//                               FRECCETTE CHE SCROLLANO
+//****************************************************************************//
+#intro .et_parallax_bg::before {
+  @include color-overlay(socket);
+}
+
+#intro {
+
+  p {
+    @include size(h3);
   }
 }

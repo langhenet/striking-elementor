@@ -75,18 +75,31 @@
 // Mixin per i bottoni con padding
 ///
 @mixin button($size: p, $bw:2, $pw: null) {
-  @include size($size);
+  font-size: font($size, fs);
+  line-height: font($size, lh);
+  margin-bottom: font($size, mb) !important;
 
-  @if $pw == half {
-    padding: bhpad($bw, font($size, fs), font($size, lh)) 2em;
-  }
-
-  @else if $pw == quarter {
-    padding: bqpad($bw, font($size, fs), font($size, lh)) 2em;
+  @if $size == p {
+    margin-top: font($size, mb);
   }
 
   @else {
-    padding: bpad($bw, font($size, fs), font($size, lh)) 2em;
+    margin-top: font($size, mt);
+  }
+
+  @if $pw == half {
+    padding-top: bhpad($bw, font($size, fs), font($size, lh));
+    padding-bottom: bhpad($bw, font($size, fs), font($size, lh));
+  }
+
+  @else if $pw == quarter {
+    padding-top: bqpad($bw, font($size, fs), font($size, lh));
+    padding-bottom: bqpad($bw, font($size, fs), font($size, lh));
+  }
+
+  @else {
+    padding-top: bpad($bw, font($size, fs), font($size, lh));
+    padding-bottom: bpad($bw, font($size, fs), font($size, lh));
   }
 
   border-bottom-width: $bw * 1px;
@@ -164,7 +177,7 @@
 ///
 @mixin form-label($size: p) {
   font-size: font($size, fs);
-  line-height: font($size, lh);
+  line-height: font($size, lh) !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   padding-top: 0;
@@ -181,11 +194,12 @@
   font-size: font($size, fs) !important;
   line-height: font($size, lh);
   font-style: none;
-  margin:0 !important;
+  margin: 0 !important;
   font-family: form(desc, fm);
   font-weight: form(desc, wt);
   text-transform: none; //TODO //TOCR
   letter-spacing: 0 !important;
+  padding-top: font($size, lh);
 }
 
 
@@ -228,12 +242,12 @@
 ///
 // Overlay di colore da mettere sui ::before //TOCR
 ///
-@mixin color-overlay($bg-color: palette(main, overlay)) {
+@mixin color-overlay($bg-color: main) {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left:0;
-  background: $bg-color;
+  background: palette($bg-color, overlay);
 }
