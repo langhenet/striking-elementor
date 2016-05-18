@@ -30,83 +30,40 @@
   }
 }
 
-//DIVI allarga le sezioni al max al 980px
-/*.et_pb_row {
-  display:flex;
-  align-items: center;
-  justify-content: center;
+/*.et_pb_row.et_pb_equal_columns {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 
-  @include respond-to(step-2) {
-    display: block;
-    align-items: inherit;
-    justify-content: inherit;
+  .et_pb_column {
+  float: none;
+  display: table-cell;
+  vertical-align: middle;
   }
-}
-
-.et_pb_row.et_pb_equal_columns {
-  align-items: inherit;
-  justify-content: inherit;
-//  display: block;
 }*/
 
-//ELIMINO MARGINI ULTIMI elementi
-.et_pb_text p:last-child,
-.et_pb_text h1:last-child,
-.et_pb_text h2:last-child,
-.et_pb_text h3:last-child,
-.et_pb_text h4:last-child,
-.et_pb_text h5:last-child,
-.et_pb_text ul:last-child,
-.et_pb_text ol:last-child {
-  margin-bottom:0;
-}
-
-.et_pb_text p:first-child,
-.et_pb_text h1:first-child,
-.et_pb_text h2:first-child,
-.et_pb_text h3:first-child,
-.et_pb_text h4:first-child,
-.et_pb_text h5:first-child,
-.et_pb_text ul:first-child,
-.et_pb_text ol:first-child {
-  margin-top:0;
-}
-
-.et_pb_gutters3 .et_pb_column_1_2 .et_pb_module,
-.et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
-.et_section_specialty .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
-.et_section_specialty .et_pb_row .et_pb_column_1_2 .et_pb_gutters3.et_pb_row_inner .et_pb_module {
-  margin-bottom: $line-height !important;
-}
-
 
 
 
 //****************************************************************************//
-//    LARGHEZZA DELLA TIPOGRAFIA NELLA RIGA a 1 COLONNA
+//                      RIGHE & COLONNE
 //****************************************************************************//
-
-.et_pb_column_4_4 {
-  p, h1, h2, h3, h4, h5, ul, ol, blockquote {
-    max-width: 770px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-
-
-
-//****************************************************************************//
-//                               PADDING DELLE SEZIONI e DELLE RIGHE
-//****************************************************************************//
-
-// RESET PADDING DELLE RIGHE
+//RESET padding DELLE RIGHE
 .et_pb_row {
-  padding: 0px 0 !important;
-  padding-top: $line-height !important;
-  padding-bottom: $line-height;
+  padding: $line-height 0 !important;
 }
+
+
+///
+// Fix delle righe ad altezza uguale in modo che il contenuto si centri
+///
+.et_pb_row.et_pb_equal_columns {
+   align-items: center;
+}
+
+//****************************************************************************//
+//                  PADDING DELLE SEZIONI e DELLE RIGHE
+//****************************************************************************//
 
 /*
  * NO Padding: resetta i margini bottomo degli elementi della sezione
@@ -127,12 +84,14 @@
 /*
 * NORMAL padding
 */
+
 .et_pb_section {
   padding: $line-height * 4 0 !important;
   @media only screen and (min-width: 1462px) {
     padding: $line-height * 4 0 !important;
   }
 }
+
 
 /*
 * LARGE padding
@@ -146,19 +105,140 @@
 
 
 
-
 //****************************************************************************//
-//                               FLEX CELLS
+//                     RIGHE A LARGHEZZA PIENA
+//                come le flex-cells o le "righe griglia"
 //****************************************************************************//
 /*
- * Reset delle larghezze delle sezioni a RIGA
+ * Reset delle larghezze dell RIGHE a larghezza piena
  */
-
 .et_pb_row.et_pb_row_fullwidth,
 .et_pb_specialty_fullwidth>.et_pb_row {
   width: 100% !important;
   max-width: 100% !important;
 }
+
+
+
+///
+// Struttura delle RIGHE a larghezza piena
+///
+.et_pb_row.et_pb_row_fullwidth {
+  display: inline-table; //per allineamento verticale
+  vertical-align: middle; //per allineamento verticale
+
+    ///
+    // Colonna interna alle righe
+    ///
+    .et_pb_column {
+    float: none;  //per allineamento verticale
+    display: table-cell;  //per allineamento verticale
+    vertical-align: middle;  //per allineamento verticale
+    padding-top: $line-height * 2;
+    padding-bottom: $line-height * 2;
+
+      ///
+      // Elementi interni alle colonne
+      // sono rimpiccioliti per non fargli uscire troppo a risoluzioni troppo grandi
+      ///
+      .et_pb_text,
+      .et_pb_module {
+        max-width: 580px; //TOCR - trovare una larghezza giusta da impostare per gli schermi normali
+      }
+
+    &:first-child {
+      padding-right: 5.5em; //Paddo la prima cella per dare dello spazio a DX
+
+      .et_pb_text,
+      .et_pb_button_module_wrapper { //Flotto gli elementi interni alla prima cella in modo che si allineino a dx
+        float: right;
+        clear: both;
+        width: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      padding-left: 5.5em; //Paddo la seconda cella per dare dello spazio a SX
+    }
+  }
+}
+
+///
+// Colonne 1/2 delle righe a larghezza PIENA
+// le allargo al massimo
+///
+.et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_2,
+.et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
+  width: 50%;
+//  margin: 0 auto !important;
+}
+
+
+.lg-no-padding .et_pb_row.et_pb_row_fullwidth {
+  padding: 0 !important;
+}
+
+
+
+//****************************************************************************//
+//    CONTENUTI DELLE RIGHE E DELLE SEZIONI
+//****************************************************************************//
+///
+//ELIMINO MARGINI BOTTOM degli utlimi elementi dei box di testo
+///
+.et_pb_text p:last-child,
+.et_pb_text h1:last-child,
+.et_pb_text h2:last-child,
+.et_pb_text h3:last-child,
+.et_pb_text h4:last-child,
+.et_pb_text h5:last-child,
+.et_pb_text ul:last-child,
+.et_pb_text ol:last-child {
+  margin-bottom:0;
+}
+
+///
+//ELIMINO I MARGINI SOPRA dei primi elementi dei box di testo
+///
+.et_pb_text p:first-child,
+.et_pb_text h1:first-child,
+.et_pb_text h2:first-child,
+.et_pb_text h3:first-child,
+.et_pb_text h4:first-child,
+.et_pb_text h5:first-child,
+.et_pb_text ul:first-child,
+.et_pb_text ol:first-child {
+  margin-top:0;
+}
+
+
+
+///
+// Margini dei moduli
+///
+@media (min-width: 981px) { //TOCR
+  .et_pb_gutters3 .et_pb_column_1_2 .et_pb_module,
+  .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
+  .et_section_specialty .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
+  .et_section_specialty .et_pb_row .et_pb_column_1_2 .et_pb_gutters3.et_pb_row_inner .et_pb_module {
+    margin-bottom: $line-height;
+  }
+}
+
+
+
+///
+// LARGHEZZA DELLA TIPOGRAFIA NELLA RIGA a 1 COLONNA
+///
+.et_pb_column_4_4 {
+  p, h1, h2, h3, h4, h5, ul, ol, blockquote {
+    max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
 
 
 
