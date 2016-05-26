@@ -28,6 +28,15 @@ p, ul, ol, pre, table, blockquote {
   @include body-margin;
 }
 
+#left-area,
+.comment-content,
+.entry-content,
+body.et-pb-preview #main-content .container {
+  ol, ul {
+    padding: 0 0 $line-height $line-height;
+  }
+}
+
 p,
 p.et_normal_padding {
   padding-bottom: 0;
