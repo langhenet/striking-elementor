@@ -264,12 +264,12 @@
 ///
 // Overlay di colore da mettere sui ::before //TOCR
 ///
-@mixin color-overlay($bg-color: main) {
+@mixin color-overlay($palette: main) {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left:0;
-  background: palette($bg-color, overlay);
+  background: palette($palette, overlay);
 }

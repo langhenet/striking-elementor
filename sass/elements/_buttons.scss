@@ -6,9 +6,12 @@
 //***********************************************************************//
 
 //***********************************************************************//
-//                              BOTTONI ENFOLD - Dimensioni
+//                              BOTTONI DIVI BUILDER - Dimensioni
 //***********************************************************************//
 
+/*
+ * Bottone Piccolo
+ */
 body #page-container .et_pb_button.size-small {
   @extend %button;
   @include button(h5, 1);
@@ -21,6 +24,10 @@ body #page-container .et_pb_button.size-small {
   }
 }
 
+
+/*
+ * Bottone Medio
+ */
 //body #page-container a.et_pb_button[class*="et_pb_button_"],
 body #page-container .et_pb_button.size-medium,
 body a.big-button { //TOCHK ultima dichiarazione per bottone merda nel blurb
@@ -34,7 +41,7 @@ body a.big-button { //TOCHK ultima dichiarazione per bottone merda nel blurb
   &:hover {
     @extend .et_pb_button.size-medium;
   }
-  &:after {
+  &:after { //il padding viene usato per correggere l'icona di DIVI
     font-size: inherit !important;
     line-height: inherit;
     padding-right: 1em;
@@ -42,6 +49,10 @@ body a.big-button { //TOCHK ultima dichiarazione per bottone merda nel blurb
   }
 }
 
+
+/*
+ * Bottone Grande
+ */
 //body #page-container a.et_pb_button.size-large[class*="et_pb_button_"],
 body #page-container .et_pb_button.size-large {
   @extend %button;
@@ -53,7 +64,7 @@ body #page-container .et_pb_button.size-large {
   &:hover {
     @extend .et_pb_button.size-large;
   }
-  &:after {
+  &:after { //il padding viene usato per correggere l'icona di DIVI
     font-size: inherit !important;
     line-height: inherit;
     padding-right: 1em;
@@ -61,6 +72,10 @@ body #page-container .et_pb_button.size-large {
   }
 }
 
+
+/*
+ * Bottone Xtra Grande
+ */
 body #page-container .et_pb_button.size-x-large {
   @extend %button;
   @include button(h2, 6, half);
@@ -72,7 +87,7 @@ body #page-container .et_pb_button.size-x-large {
     @extend .et_pb_button.size-x-large;
   }
 
-  &:after {
+  &:after { //il padding viene usato per correggere l'icona di DIVI
     font-size: inherit !important;
     line-height: inherit;
     padding-right: 1em;
