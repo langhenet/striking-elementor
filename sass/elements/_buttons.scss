@@ -9,14 +9,6 @@
 //                              BOTTONI ENFOLD - Dimensioni
 //***********************************************************************//
 
-//.et_pb_button {
-//  line-height: inherit !important;
-//}
-
-//body #page-container a.et_pb_button.et_pb_custom_button_icon {
-//  font-size: inherit !important;
-//}
-
 body #page-container .et_pb_button.size-small {
   @extend %button;
   @include button(h5, 1);
@@ -102,10 +94,10 @@ a.et_pb_more_button:after {
 
 @each $palette, $bg in $colors {
   div .#{$palette}_color .et_pb_bg_layout_light.et_pb_module.et_pb_button {
-    @include button-color;
+    @include button-color(none, $palette);
 
     &:hover {
-      @include button-color(hover);
+      @include button-color(hover, $palette);
     }
   }
 
