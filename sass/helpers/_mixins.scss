@@ -241,29 +241,88 @@
 //                            MEDIA QUERIES
 //****************************************************************************//
 @mixin respond-to($media) {
-  @if $media == step-1 {
+
+  @if $media == step-0 {
+    @media only screen and (max-width: $website-width - 1px) { @content; }
+  }
+
+  @else if $media == step-1 {
     @media only screen and (max-width: $s-desktop) { @content; }
   }
+
   @else if $media == step-2 {
     @media only screen and (max-width: $l-tablet) { @content; }
   }
+
   @else if $media == step-3 {
     @media only screen and (max-width: $p-tablet) { @content; }
   }
+
   @else if $media == step-4 {
     @media only screen and (max-width: $l-phone) { @content; }
   }
+
   @else if $media == step-5 {
     @media only screen and (max-width: $p-phone) { @content; }
   }
-  @else if $media == step-0 {
-    @media only screen and (max-width: $s-desktop ) { @content; }
-  }
+
   @else if $media == step-p0 {
-    @media only screen and (min-width: $s-desktop ) { @content; }
+    @media only screen and (min-width: $website-width ) { @content; }
   }
+
   @else if $media == step-p1 {
     @media only screen and (min-width: $u-hd) { @content; }
+  }
+
+  // DIVI Media queries
+  //@media all and (min-width: 1405px)
+  //@media all and (min-width: 1100px) and (max-width: 1405px)
+  //@media all and (min-width: 981px) and (max-width: 1405px)
+  //@media all and (min-width: 981px)
+  //@media all and (max-width: 980px)
+  //@media screen and (max-width: 782px)
+  //@media all and (max-width: 767px)
+  //@media all and (max-width: 768px)
+  //@media all and (max-width: 479px)
+  //@media all and (min-width: 480px)
+  @else if $media == divi-p1 {
+    @media all and (min-width: $divi-large-desktop) { @content; }
+  }
+
+  @else if $media == divi-p2 {
+    @media all and (min-width: $divi-small-desktop) and (max-width: $divi-large-desktop) { @content; }
+  }
+
+  @else if $media == divi-0 {
+    @media all and (min-width: $divi-l-tablet + 1px) and (max-width: $divi-large-desktop) { @content; }
+  }
+
+  @else if $media ==  divi-1 {
+    @media all and (min-width: $divi-l-tablet + 1px) { @content; }
+  }
+
+  @else if $media == divi-2 {
+    @media all and (max-width: $divi-l-tablet) { @content; }
+  }
+
+  @else if $media == divi-3 {
+    @media screen and (max-width: $divi-m-tablet) { @content; }
+  }
+
+  @else if $media == divi-4 {
+    @media all and (max-width: $p-tablet) { @content; }
+  }
+
+  @else if $media == divi-5 {
+    @media all and (max-width: $p-tablet + 1px) { @content; }
+  }
+
+  @else if $media == divi-6 {
+    @media all and (max-width: $p-phone) { @content; }
+  }
+
+  @else if $media == divi-7 {
+    @media all and (max-width: $p-phone + 1px) { @content; }
   }
 }
 
