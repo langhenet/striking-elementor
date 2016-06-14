@@ -20,29 +20,52 @@
 }
 
 
+.et_pb_blurb {
+  background-color: palette(main, bg-alt);
+  color: palette(main, body-alt);
+
+  p, h1, h2, h3, h4, h5 {
+    color: palette(main, body-alt);
+  }
+
+a {
+    color: palette(main, accent-alt);
+  }
+}
+
+.et-pb-icon { // colore icona
+  color: palette(main, body-alt) !important;
+
+  &.et-pb-icon-circle { // icona con il cerchio
+    background: transparent !important;
+    border: palette(main, border) 2px solid;
+  }
+}
+
+
 /*
  * colori
  */
- @each $palette, $bg in $colors {
-.#{$palette}_color .et_pb_blurb {
+@each $palette, $bg in $colors {
+  .#{$palette}_color .et_pb_blurb {
     background-color: palette($palette, bg-alt);
     color: palette($palette, body-alt);
 
     p, h1, h2, h3, h4, h5 {
-      color: palette($palette, body-alt);
-    }
+    color: palette($palette, body-alt);
+  }
 
-    a {
-      color: palette($palette, accent-alt);
-    }
+  a {
+    color: palette($palette, accent-alt);
+  }
 
-    .et-pb-icon { // colore icona
-      color: palette($palette, body-alt) !important;
+  .et-pb-icon { // colore icona
+    color: palette($palette, body-alt) !important;
 
-      &.et-pb-icon-circle { // icona con il cerchio
-        background: transparent !important;
-        border: palette($palette, border) 2px solid;
-      }
+    &.et-pb-icon-circle { // icona con il cerchio
+      background: transparent !important;
+      border: palette($palette, border) 2px solid;
     }
-   }
+  }
  }
+}
