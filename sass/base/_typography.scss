@@ -63,13 +63,13 @@ padding-bottom: 0;
 h1 {
   @include size(h1);
   @include deco(h1);
-  @include respond-to(step-2) { font-size: font(h1, fs) * 0.7; }
+//  @include respond-to(step-2) { font-size: font(h1, fs) * 0.7; }
 }
 
 h2 {
   @include size(h2);
   @include deco(h2);
-  @include respond-to(step-2) { font-size: font(h2, fs) * 0.8; }
+//  @include respond-to(step-2) { font-size: font(h2, fs) * 0.8; }
 }
 
 h3 {

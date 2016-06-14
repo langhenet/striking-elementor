@@ -21,6 +21,18 @@
   line-height: font($size, lh);
   margin-top: font($size, mt);
   margin-bottom: font($size, mb);
+
+  @if $size == h1 {
+    @include respond-to(step-2) {font-size: font(h1, fs) * 0.7;} //TODO
+  }
+
+  @else if $size == h2 {
+    @include respond-to(step-2) {font-size: font(h2, fs) * 0.85;} //TODO
+  }
+
+  @else if $size == h3 {
+    @include respond-to(step-2) {font-size: font(h3, fs) * 0.9;} //TODO
+  }
 }
 
 @mixin body-size {
