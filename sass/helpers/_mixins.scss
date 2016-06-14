@@ -285,11 +285,15 @@
   //@media all and (max-width: 768px)
   //@media all and (max-width: 479px)
   //@media all and (min-width: 480px)
+  @else if $media == divi-p2 {
+    @media all and (min-width: $divi-u-hd) { @content; }
+  }
+
   @else if $media == divi-p1 {
     @media all and (min-width: $divi-large-desktop) { @content; }
   }
 
-  @else if $media == divi-p2 {
+  @else if $media == divi-p0 {
     @media all and (min-width: $divi-small-desktop) and (max-width: $divi-large-desktop) { @content; }
   }
 

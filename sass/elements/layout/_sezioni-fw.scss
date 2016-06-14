@@ -48,12 +48,6 @@
 //****************************************************************************//
 //                      RIGHE & COLONNE
 //****************************************************************************//
-//RESET padding DELLE RIGHE
-.et_pb_row {
-  padding: $line-height 0 !important;
-}
-
-
 ///
 // Fix delle righe ad altezza uguale in modo che il contenuto si centri
 ///
@@ -61,18 +55,44 @@
    align-items: center;
 }
 
+/*
+ * Media queries per margini delle colonne
+ */
+.et_pb_column {
+  @include respond-to(divi-2) {
+    margin-bottom: $line-height;
+  }
+}
+
 //****************************************************************************//
 //                  PADDING DELLE SEZIONI e DELLE RIGHE
 //****************************************************************************//
+//RESET padding DELLE SEZIONI
+.et_pb_section {
+  padding: 0;
+  @include respond-to(divi-p2) {
+    padding: 0 !important;
+  }
+}
+
+//RESET padding DELLE RIGHE
+.et_pb_row {
+  padding-top: $line-height;
+  padding-bottom: $line-height;
+
+  @include respond-to(divi-2) {
+    padding-bottom: 0;
+  }
+}
 
 /*
  * NO Padding: resetta i margini bottomo degli elementi della sezione
  */
- .et_pb_section.lg-no-padding {
-   padding: 0 !important;
+ .et_pb_section.lg-no-padding .et_pb_row {
+   padding: 0;
 
-   @media only screen and (min-width: 1462px) {
-     padding: 0 !important;
+   @include respond-to(divi-p2) {
+     padding: 0;
    }
  }
 
@@ -82,14 +102,31 @@
 
 
 /*
-* NORMAL padding
+* NORMAL padding - SEZIONI NORMALI E FW
 */
+.et_pb_section > div.et_pb_row:first-of-type {
+  padding-top: $line-height * 4;
+}
 
-.et_pb_section {
-  padding: $line-height * 4 0 !important;
-  @media only screen and (min-width: 1462px) {
-    padding: $line-height * 4 0 !important;
-  }
+.et_pb_section > div.et_pb_row:last-of-type {
+  padding-bottom: $line-height * 4;
+}
+
+//fix parallax
+.et_pb_section_parallax > div.et_pb_row:nth-of-type(2) {
+  padding-top: $line-height * 4;
+}
+
+//Azzera il padding della riga per quelle FW
+.et_pb_section .et_pb_row.et_pb_row_fullwidth:first-of-type,
+.et_pb_section .et_pb_row.et_pb_row_fullwidth:last-of-type {
+  padding: 0;
+}
+
+//sposta il padding sulle colonne per le sezioni FW
+.et_pb_section .et_pb_row.et_pb_row_fullwidth .et_pb_column {
+  padding-top: $line-height * 4;
+  padding-bottom: $line-height * 4;
 }
 
 
@@ -171,11 +208,6 @@
 .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
   width: 50%;
 //  margin: 0 auto !important;
-}
-
-
-.lg-no-padding .et_pb_row.et_pb_row_fullwidth {
-  padding: 0 !important;
 }
 
 
