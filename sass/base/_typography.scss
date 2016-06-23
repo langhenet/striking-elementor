@@ -72,16 +72,17 @@ h2 {
 
 h3 {
   @include size(h3);
-  @include deco(h3);}
+  @include deco(h3);
+}
 
 h4 {
   @include size(h4);
-  @include deco(h4);}
+  @include deco(h4)
+}
 
 h5 {
   @include size(h5);
   @include deco(h5);
-  color: $grigio;
 }
 
 /*
@@ -124,18 +125,44 @@ blockquote {
 }
 
 
-a {
-  color: palette(main, link)
-}
-
-
-
 //****************************************************************************//
 //                      COLORI TIPOGRAFIA
 //****************************************************************************//
+/*
+ * Colori Tipografia
+ */
+h1 {color: palette(main, heading);}
+h2 {color: palette(main, heading);}
+h3 {color: palette(main, heading);}
+h4 {color: palette(main, heading);}
+h5 {color: $grigio;}
+p {color: palette(main, body);}
 
 /*
- * Colore Link + HOVER
+ * Colori Tipografia nelle Varie sezioni
+ */
+@each $palette, $sections in $colors {
+  .#{$palette}_color {
+    p {
+      color: palette($palette, body)
+    }
+
+    h1, h2, h3, h4, h5 {
+      color: palette($palette, heading);
+    }
+  }
+}
+
+
+/*
+ * Colore Link + Hover
+ */
+a {
+  color: palette(main, link);
+}
+
+/*
+ * Colore Link + HOVER per varie sezioni
  */
 @each $palette, $bg in $colors {
   .#{$palette}_color .content a {

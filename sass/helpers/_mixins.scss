@@ -49,7 +49,7 @@
 ///
 // Decorazioni caratteri (family e boldness)
 ///
-@mixin deco($size: p) {
+@mixin deco($size: p, $palette: main) {
   font-family: font($size, fm);
   font-weight: font($size, wt);
 }

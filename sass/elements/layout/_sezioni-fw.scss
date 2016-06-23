@@ -5,43 +5,14 @@
 //*                                                                         *//
 //***************************************************************************//
 //****************************************************************************//
-//                               COLORI DELLE SEZ FW
+//                               BG DELLE SEZ FW
 //****************************************************************************//
 
-#et-main-area .et_pb_section.socket_color {
-  background: palette(socket, bg) !important;
-}
-
-.socket_color {
-  p, h1, h2, h3, h4, h5 {
-    color: palette(socket, body);
+@each $palette, $sections in $colors {
+  #et-main-area .et_pb_section.#{$palette}_color {
+    background: palette($palette, bg) !important;
   }
 }
-
-
-
-#et-main-area .et_pb_section.alternate_color {
-  background: palette(alternate, bg) !important;
-}
-
-.alternate_color {
-  p, h1, h2, h3, h4, h5 {
-    color: palette(alternate, body);
-  }
-}
-
-/*.et_pb_row.et_pb_equal_columns {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-
-  .et_pb_column {
-  float: none;
-  display: table-cell;
-  vertical-align: middle;
-  }
-}*/
-
 
 
 
@@ -211,6 +182,17 @@
 }
 
 
+/*.et_pb_row.et_pb_equal_columns {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  .et_pb_column {
+  float: none;
+  display: table-cell;
+  vertical-align: middle;
+  }
+}*/
 
 //****************************************************************************//
 //    CONTENUTI DELLE RIGHE E DELLE SEZIONI
