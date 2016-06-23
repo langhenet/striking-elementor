@@ -20,7 +20,7 @@ body {
 
   margin:0 auto;
 
-  @include respond-to(step-2) { font-size: $font-size * 0.9;} //TODO
+  @include respond-to(step-0) { font-size: $font-size * 0.9;} //TODO
   @include respond-to(step-4) { font-size: $font-size * 0.7;} //TODO
 }
 
@@ -63,13 +63,11 @@ padding-bottom: 0;
 h1 {
   @include size(h1);
   @include deco(h1);
-//  @include respond-to(step-2) { font-size: font(h1, fs) * 0.7; }
 }
 
 h2 {
   @include size(h2);
   @include deco(h2);
-//  @include respond-to(step-2) { font-size: font(h2, fs) * 0.8; }
 }
 
 h3 {
@@ -83,6 +81,7 @@ h4 {
 h5 {
   @include size(h5);
   @include deco(h5);
+  color: $grigio;
 }
 
 /*
@@ -125,7 +124,9 @@ blockquote {
 }
 
 
-
+a {
+  color: palette(main, link)
+}
 
 
 

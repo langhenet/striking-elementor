@@ -107,6 +107,34 @@ a.et_pb_more_button:after {
 //                  include anche i colori dei bottoni di gravity pare
 //****************************************************************************//
 
+/*
+ * Bottoni in szeioni di Base
+ */
+div .et_pb_bg_layout_light.et_pb_module.et_pb_button {
+  @include button-color(none, main);
+
+  &:hover {
+    @include button-color(hover, main);
+  }
+}
+
+//TOCHK - BOTTONI SCHELETRICI in sezioni di base DA RIFARE!!
+.bigblue {
+  border-color: palette(main, body-alt) !important;
+  background: palette(main, bg-alt);
+  color: palette(main, body-alt) !important;
+
+  &:hover {
+    border-color: palette(main, bg-alt) !important;
+    background: palette(main, body-alt);
+    color: palette(main, bg-alt) !important;
+  }
+}
+
+/*****
+ * Loop Bottoni per varie sezioni
+ */
+
 @each $palette, $bg in $colors {
   div .#{$palette}_color .et_pb_bg_layout_light.et_pb_module.et_pb_button {
     @include button-color(none, $palette);
@@ -135,6 +163,28 @@ a.et_pb_more_button:after {
 //                  include anche i colori dei bottoni di gravity pare
 //                  ho cambiato la dichiarazione nel mixin dei bottoni per fare i bordi -
 //****************************************************************************//
+
+/*
+ * Bottoni scheletrici in sezioni di Base
+ */
+#top .avia-button.avia-color-light {
+  border-color: white;
+  color: white;
+  background: transparent;
+
+  &:hover {
+    border-color: palette(main, body-alt);
+    color: palette(main, bg-alt);
+    background: palette(main, body-alt);
+    opacity: 1;
+  }
+}
+
+
+/*****
+ * Loop Bottoni scheletrici per varie sezioni
+ */
+
 @each $palette, $bg in $colors {
   #top .#{$palette}_color .avia-button.avia-color-light {
     border-color: white;
