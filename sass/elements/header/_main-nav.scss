@@ -19,132 +19,39 @@
 /*
  * Contenitore Nav
  */
-.et_header_style_left #et-top-navigation,
-.et_header_style_split #et-top-navigation {
-  padding-top: 0 !important;
-  margin-top: $line-height * 2; //controlla anche l'altezza dell'header
-  margin-bottom: $line-height * 1;
-  transition: all 0.1s;
 
-  ul { //UL che contiene la navigazione
-    margin-bottom: 0;
-  }
-}
 
 /*
  * Contenitore Nav SCROLLATA
  */
-.et_header_style_left .et-fixed-header #et-top-navigation,
-.et_header_style_split .et-fixed-header #et-top-navigation {
-  margin-top: $line-height / 2;
-  margin-bottom: 0;
-  transition: all 0.1s;
-
-  ul { //UL che contiene la navigazione
-    margin-bottom: 0;
-  }
-}
 
 
 /*
  * I li del menu - Font e spaziature orizzontali
  */
-#top-menu li {
-  font-size: font(p, fs);
-  line-height: font(p, lh);
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 0.7em;
-  margin-right: 0.7em;
 
-  &:first-child {
-    margin-left: 0;
-  }
-  &:last-child {
-    margin-right:0;
-  }
-
-  @include respond-to(step-0) {
-    margin-right: 0.4em;
-    margin-left: 0.4em;
-  }
-}
 
 /*
  * I LI del menu - Altezze e spaziature verticali + hover
  */
-.et_header_style_left #et-top-navigation nav>ul>li,
-.et_header_style_split #et-top-navigation nav>ul>li {
-  margin-bottom: $line-height * 0.5;
-  padding-top: $line-height * 0.25;
-  border-bottom: 4px solid main-color(header, bg);
-
-
- border-bottom: 4px solid main-color(header, bg);
-
-  &:hover {
-//    border-bottom: 4px solid main-color(header, accent);
-//    transition: all 1s;
-    border-bottom: 4px solid main-color(header, accent);
-  }
-}
 
 /*
  * I LI correnti
  */
-.et_header_style_left #et-top-navigation nav>ul>li.current_page_item,
-.et_header_style_split #et-top-navigation nav>ul>li.current_page_item { //LI corrente
-  border-bottom: 4px solid main-color(header, accent);
-  transition: all 0.1s;
-
-  & > a {
-    color: main-color(header, accent);
-  }
-}
 
 
 
 /*
  * I Link del menu - reset dei margini e dei padding + colore hover
  */
-.et_header_style_left #et-top-navigation nav>ul>li>a,
-.et_header_style_split #et-top-navigation nav>ul>li>a {
-  padding-bottom: 0; //reset
-  margin-bottom: 0; //Reset
-  tranistion: all 0.1s;
-  padding-bottom: bhpad(4);
-
-  &:hover {
-    color: main-color(header, accent);
-    transition: all 1s;
-  }
-}
 
 /*
  * Le freccette del sottomenu da nascondere a certe risoluzioni
  */
-#et-secondary-nav .menu-item-has-children>a:first-child,
-#top-menu .menu-item-has-children>a:first-child {
-  @include respond-to(step-0) {
-    padding-right: 0;
-  }
-}
-
-#et-secondary-nav .menu-item-has-children>a:first-child:after,
-#top-menu .menu-item-has-children>a:first-child:after {
- @include respond-to(step-0) {
-   display: none;
- }
-}
 
  /*
   * I Link del menu scrollato
   */
-.et_header_style_left .et-fixed-header #et-top-navigation nav>ul>li>a,
-.et_header_style_split .et-fixed-header #et-top-navigation nav>ul>li>a {
-  padding-bottom: bhpad(4);
-  transition: all 0.1s;
-}
 
 
 
@@ -153,22 +60,6 @@
 /*          SOTTOMENU
 /******************************************************************************/
 
-.nav .sub-menu {
-  border-top: 0;
-  margin-top: 4px; //questo allinea il sottomenu col bordo //TODO
-}
-
-#top-menu li li {
-  padding: 0;
-
-  a {
-    width: 100%;
-  }
-}
-
-.nav li.et-reverse-direction-nav li ul {
-  right: 160px;
-}
 
 /******************************************************************************/
 /*          RICERCA
@@ -177,15 +68,9 @@
 /*
  * Ricerca
  */
-#et_top_search {
-  display:none;
-}
 
 
 
 /******************************************************************************/
 /*          NAVIGAZIONE MOBILE - HAMBURGER NAV
 /******************************************************************************/
-.mobile_menu_bar:before {
-  color: main-color(header, accent);
-}

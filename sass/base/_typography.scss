@@ -10,6 +10,12 @@
 //***********************************************************************//
 //              PARTE PRINCIPALE - BODY - P - TITOLI & DETTAGLI
 //***********************************************************************//
+/*
+ * Reset impostazioni di Striking
+ */
+#page {
+  font-size: 1em;
+}
 
 /*
  * BODY e P
@@ -24,8 +30,13 @@ body {
   @include respond-to(step-4) { font-size: $font-size * 0.7;} //TODO
 }
 
-p, ul, ol, pre, table, blockquote {
+p, ul, ol, pre, table, blockquote,
+.et_divi_builder #et_builder_outer_content .et_pb_module p {
   @include body-margin;
+}
+//fix padding bottom sul p di DIVI BUILDER
+.et_divi_builder #et_builder_outer_content .et_pb_module p {
+  padding-bottom: 0;
 }
 
 #left-area,
@@ -131,18 +142,18 @@ blockquote {
 /*
  * Colori Tipografia
  */
-h1 {color: palette(main, heading);}
-h2 {color: palette(main, heading);}
-h3 {color: palette(main, heading);}
-h4 {color: palette(main, heading);}
-h5 {color: $grigio;}
-p {color: palette(main, body);}
+#page h1 {color: palette(main, heading);}
+#page h2 {color: palette(main, heading);}
+#page h3 {color: palette(main, heading);}
+#page h4 {color: palette(main, heading);}
+#page h5 {color: $grigio;}
+#page p {color: palette(main, body);}
 
 /*
  * Colori Tipografia nelle Varie sezioni
  */
 @each $palette, $sections in $colors {
-  .#{$palette}_color {
+  #page .#{$palette}_color {
     p {
       color: palette($palette, body)
     }

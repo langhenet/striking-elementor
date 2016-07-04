@@ -11,71 +11,28 @@
 /*
  * Colore del bg e dei link
  */
- #top-header {
-   font-size: 1em; //reset della font-size
-   background: main-color(topbar, bg);
-
-  a {
-    color: main-color(topbar, link);
-  }
- }
-
 
 
 /*
  * Scroll del top bar
  */
-#top-header {
- &.et-fixed-header { //nasconde la topbar quando l'header è scrollato
-   //display:none;
-   height: 0;
-   transition: all 0.1s;
-
-   #et-secondary-nav {
-     display:none;
-   }
- }
-}
-
-
 
 /*
  * Padding del contenitore della topbar
  */
- #top-header .container {
-   padding-top: $line-height / 4;
-   padding-bottom: $line-height / 4;
- }
-
-
 
 /*
  * UL della navigazione secondaria
  */
-#et-secondary-nav {
-  margin-bottom: 0;
-}
-
 
 
 /*
  * I Link della navigazione secondaria - per controllare le dimensioni
  */
-#et-info,
-#et-secondary-menu>ul>li a {
-  padding-bottom: 0;
-  font-size: font(p, fs);
-  line-height: font(p, lh);
-}
 
 /*
  * Icone social
  */
-#top-header .et-social-icon a {
-  font-size: font(p, fs);
-  line-height: font(p, lh);
-}
-
 
 
 
@@ -87,13 +44,3 @@
 /*
  * Colore BG Header Primario
  */
-#main-header {
- background-color: main-color(header, bg);
- line-height: inherit; //Reset dell'altezza di linea
- transition: all 0.1s;
-
-&.et-fixed-header {
-  top: 0 !important; //aggiusta il top per far sparire la topbar
-  transition: all 0.1s;
- }
-}
