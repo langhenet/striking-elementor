@@ -183,7 +183,7 @@
     background: darken(palette($palette, button-bg-subtle), 5%);
     color: palette($palette, button-subtle);
     border-color: palette($palette, button-bg-subtle);
-    border-bottom-color: darken(palette($palette, button-subtle-bg), 10%);
+    border-bottom-color: darken(palette($palette, button-bg-subtle), 10%);
   }
 }
 

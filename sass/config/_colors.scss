@@ -104,7 +104,7 @@ $colors: (
     button-bg:  $arancio,      //bg bottone
 
     button-subtle: $bianco,
-    button-subtle-bg: $grigio-scuro
+    button-bg-subtle: $grigio-scuro
   ),
 
   main: (
@@ -132,7 +132,7 @@ $colors: (
     button-bg:  $arancio,
 
     button-subtle: $grigio-scuro,
-    button-subtle-bg: $grigio-chiaro      //bg bottone
+    button-bg-subtle: $grigio-chiaro      //bg bottone
   ),
 
   socket: (
@@ -160,7 +160,7 @@ $colors: (
     button-bg:  $verde,
 
     button-subtle: $grigio-scuro,
-    button-subtle-bg: $grigio-chiaro      //bg bottone            //bg bottone
+    button-bg-subtle: $grigio-chiaro      //bg bottone            //bg bottone
   ),
 );
 
