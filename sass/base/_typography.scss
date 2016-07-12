@@ -34,10 +34,7 @@ p, ul, ol, pre, table, blockquote,
 .et_divi_builder #et_builder_outer_content .et_pb_module p {
   @include body-margin;
 }
-//fix padding bottom sul p di DIVI BUILDER
-.et_divi_builder #et_builder_outer_content .et_pb_module p {
-  padding-bottom: 0;
-}
+
 
 #left-area,
 .comment-content,

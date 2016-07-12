@@ -4,13 +4,36 @@
 //*              comportamento delle sezioni full-width
 //*                                                                         *//
 //***************************************************************************//
+
+.page-template-template_fullwidth #page .inner {
+  width: 100%;
+}
+
+//****************************************************************************//
+//                               CORREZIONE TIPOGRAFIA SEZ FW
+//****************************************************************************//
+.et_divi_builder #et_builder_outer_content .et_pb_module {
+  h1 { @include size(h1); }
+  h2 { @include size(h2); }
+  h3 { @include size(h3); }
+  h4 { @include size(h4); }
+  h5 { @include size(h5); }
+}
+
+//fix padding bottom su tipografia di DIVI BUILDER
+.et_divi_builder #et_builder_outer_content .et_pb_module {
+  p, h1, h2, h3, h4, h5 {
+    padding-bottom: 0;
+  }
+}
+
 //****************************************************************************//
 //                               BG DELLE SEZ FW
 //****************************************************************************//
 
 @each $palette, $sections in $colors {
-.et_pb_section.#{$palette}_color {
-    background: palette($palette, bg) !important;
+.et_divi_builder #et_builder_outer_content .et_pb_section.#{$palette}_color {
+    background-color: palette($palette, bg);
   }
 }
 
@@ -29,7 +52,7 @@
 /*
  * Media queries per margini delle colonne
  */
-.et_pb_column {
+.et_divi_builder #et_builder_outer_content .et_pb_column {
   @include respond-to(divi-2) {
     margin-bottom: $line-height;
   }
@@ -39,13 +62,13 @@
 //                  PADDING DELLE SEZIONI e DELLE RIGHE
 //****************************************************************************//
 //RESET padding DELLE SEZIONI
-.et_pb_section {
+.et_divi_builder #et_builder_outer_content .et_pb_section {
   padding: 0;
   @include respond-to(divi-2) {
-    padding: 0 !important;
+    padding: 0;
   }
   @include respond-to(divi-1) {
-    padding: 0 !important;
+    padding: 0;
   }
 }
 
@@ -142,7 +165,7 @@
     ///
     // Colonna interna alle righe
     ///
-    .et_pb_column {
+  .et_pb_column {
     float: none;  //per allineamento verticale
     display: table-cell;  //per allineamento verticale
     vertical-align: middle;  //per allineamento verticale
@@ -181,10 +204,14 @@
 // Colonne 1/2 delle righe a larghezza PIENA
 // le allargo al massimo
 ///
-.et_divi_builder #et_builder_outer_content .et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_2,
-.et_divi_builder #et_builder_outer_content  .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
-  width: 50%;
+.et_divi_builder #et_builder_outer_content {
+
+  .et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_2,
+  .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
+    width: 50%;
 //  margin: 0 auto !important;
+  }
+
 }
 
 
