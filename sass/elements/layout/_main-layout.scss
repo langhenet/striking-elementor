@@ -3,8 +3,43 @@
 //*                          LAYOUT PRINCIPALE DELLE PAGINE
 //*                                                                          *//
 //****************************************************************************//
+//****************************************************************************//
+//                               LARGHEZZA SITO
+//****************************************************************************//
 
+@include respond-to(step-p0) {
+  .inner {
+    width: $website-width;
+  }
 
+  .right_sidebar #main,
+  .left_sidebar #main {
+    width: 64%;
+  }
+
+  .right_sidebar #main .content,
+  .left_sidebar #main .content {
+    width: 100%;
+  }
+
+  .right_sidebar #sidebar,
+  .left_sidebar #sidebar {
+    width: 33%;
+    margin-left: 3%;
+  }
+}
+
+//****************************************************************************//
+//                               COLORE PAGINE DI STRIKING
+//****************************************************************************//
+#page {
+  background-color: palette(main, bg);
+}
+
+#page .inner {
+  padding-top: $line-height;
+  padding-bottom: $line-height;
+}
 //****************************************************************************//
 //                               PADDING TOTALE SOPRA IL CONTENUTO
 //****************************************************************************//

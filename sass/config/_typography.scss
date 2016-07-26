@@ -40,6 +40,7 @@ $weights: (
     light: 400,
     normal: 400,
     bold: 700,
+    bolder: 700,
   ),
 
   ffh: (
@@ -49,6 +50,7 @@ $weights: (
     light: 300,
     normal: 400,
     bold: 400,
+    bolder: 400,
   ),
 
   ffs: (
@@ -58,6 +60,7 @@ $weights: (
     light: 300,
     normal: 400,
     bold: 400,
+    bolder: 400,
   ),
 );
 
@@ -80,7 +83,7 @@ $weights: (
       mt: 0.3304347826086957em,
       mb: 0em,
       fm: family(ffh, family),
-      wt: family(ffh, u-thin),
+      wt: family(ffh, thin),
     ),
 
     h2: (
@@ -98,7 +101,7 @@ $weights: (
       mt: 0.9032258064516129em,
       mb: 0em,
       fm: family(ffh, family),
-      wt: family(ffh, light),
+      wt: family(ffh, normal),
     ),
 
     h4: (
@@ -116,7 +119,7 @@ $weights: (
       mt: 1.087059910589em,
       mb: 0em,
       fm: family(ffh, family),
-      wt: family(ffh, normal),
+      wt: family(ffh, light),
     ),
 
     blockquote: (

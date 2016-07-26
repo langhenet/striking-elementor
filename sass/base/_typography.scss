@@ -5,7 +5,8 @@
 //*                                                                     *//
 //***********************************************************************//
 
-
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
 
 //***********************************************************************//
 //              PARTE PRINCIPALE - BODY - P - TITOLI & DETTAGLI
@@ -71,11 +72,15 @@ padding-bottom: 0;
 h1 {
   @include size(h1);
   @include deco(h1);
+
+  letter-spacing: -0.035em;
 }
 
 h2 {
   @include size(h2);
   @include deco(h2);
+
+  letter-spacing: -.0148em;
 }
 
 h3 {
@@ -85,12 +90,17 @@ h3 {
 
 h4 {
   @include size(h4);
-  @include deco(h4)
+  @include deco(h4);
+
+  text-transform: uppercase;
 }
 
 h5 {
   @include size(h5);
   @include deco(h5);
+
+  text-transform: uppercase;
+  font-style: italic;
 }
 
 /*
@@ -143,7 +153,7 @@ blockquote {
 #page h2 {color: palette(main, heading);}
 #page h3 {color: palette(main, heading);}
 #page h4 {color: palette(main, heading);}
-#page h5 {color: $grigio;}
+#page h5 {color: palette(main, heading);}
 #page p {color: palette(main, body);}
 
 /*

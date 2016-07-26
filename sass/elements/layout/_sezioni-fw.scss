@@ -31,6 +31,10 @@
 //                               BG DELLE SEZ FW
 //****************************************************************************//
 
+.et_divi_builder #et_builder_outer_content .et_pb_section {
+  background-color: palette(main, bg);
+}
+
 @each $palette, $sections in $colors {
 .et_divi_builder #et_builder_outer_content .et_pb_section.#{$palette}_color {
     background-color: palette($palette, bg);
@@ -306,13 +310,3 @@
 //****************************************************************************//
 //                               FRECCETTE CHE SCROLLANO
 //****************************************************************************//
-#intro .et_parallax_bg::before {
-  @include color-overlay(socket);
-}
-
-#intro {
-
-  p {
-    @include size(h3);
-  }
-}
