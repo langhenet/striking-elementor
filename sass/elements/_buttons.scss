@@ -137,6 +137,7 @@ div .et_pb_bg_layout_light.et_pb_module.et_pb_button {
 
 @each $palette, $bg in $colors {
   div .#{$palette}_color .et_pb_bg_layout_light.et_pb_module.et_pb_button {
+
     @include button-color(none, $palette);
 
     &:hover {

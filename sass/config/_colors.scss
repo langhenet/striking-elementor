@@ -19,56 +19,57 @@
 // Usare qui le variabili semantiche segnate sopra
 ///
 
-$arancio: #ff7f00;
-$grigio: #989898;
-$grigio-scuro: #3c3c3c;
-$grigio-chiaro: #cecece;
-$grigio-chiarissimo: #f0f0f0;
-$bianco: #ffffff;
-$nero: #222222;
-$verde: #3f9f00;
+
+$bianco: #f6f6f0;
+$nero: #272525;
+$grigio: #64645a;
+$grigio-chiaro: #989792;
+$grigio-chiarissimo: #dcdcd6;
+$verde: #8fa170;
+$verde-scuro: #60694e;
+$porpora: #934954;
 
 /*
  * Colori delle parti principali del sito
  */
 $layout-colors: (
   topbar: (
-    body: $grigio-scuro,
-    link: $grigio-scuro,
-    accent: $arancio,
-    border: $grigio-scuro,
-    bg: $bianco,
-    button-bg: $arancio,
+    body: $bianco,
+    link: $bianco,
+    accent: $bianco,
+    border: $bianco,
+    bg: rgba($nero, 0.55),
+    button-bg: $verde,
     button: $bianco,
     ),
 
   header: (
-    body: $grigio-scuro,
-    link: $grigio-scuro,
-    accent: $arancio,
-    border: $grigio-scuro,
-    bg: $grigio-chiarissimo,
-    button-bg: $arancio,
+    body: $bianco,
+    link: $bianco,
+    accent: $bianco,
+    border: $bianco,
+    bg: rgba($nero, 0.55),
+    button-bg: $verde,
     button: $bianco,
     ),
 
   footer: (
-    body: $bianco,
-    link: $grigio-chiarissimo,
-    accent: $arancio,
-    border: $grigio-scuro,
-    bg: $grigio-scuro,
-    button-bg: $arancio,
+    body: $nero,
+    link: $nero,
+    accent: $nero,
+    border: $bianco,
+    bg: $grigio-chiaro,
+    button-bg: $verde,
     button: $bianco,
     ),
 
   sidebar: (
-    body: $grigio-scuro,
-    link: $grigio-scuro,
-    accent: $arancio,
-    border: $grigio-scuro,
-    bg: $grigio-chiarissimo,
-    button-bg: $arancio,
+    body: $nero,
+    link: $nero,
+    accent: $nero,
+    border: $nero,
+    bg: $bianco,
+    button-bg: $nero,
     button: $bianco,
     )
   );
@@ -79,94 +80,122 @@ $layout-colors: (
    * Colori delle Sezioni FW
    */
 $colors: (
-  alternate: ( //sezioni grigio
+  grigio: ( //sezioni grigio
     body:       $nero,      //Corpo - testo
-    body-sec:   $arancio,      //Secondario - blockquote o blog meta
-    heading:    $grigio-scuro,      //Titoli
-    link:       $arancio,      //Link
+    body-sec:   $grigio-chiaro,      //Secondario - blockquote o blog meta
+    heading:    $grigio-chiaro,      //Titoli 1 e 2
+    heading2:    $grigio,      //Titoli 3
+    heading3:    $nero,      //Titoli 4 e 5
+    link:       $porpora,      //Link
     bg:         $grigio-chiarissimo,      //Sfondo principale
-    border:     $grigio-chiaro,      //Bordi
+    border:     $bianco,      //Bordi
 
-    accent:     $arancio,      //Accento - sfondo lista icone / grassetti / icone
+    accent:     $verde,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $nero,      //body alternativo - testo in un form o in un box
-    bg-alt:     $arancio,      //sfondo alt - il bg di un form o di un box
-    accent-alt: $grigio-scuro,      //accento alt - il di un link nel form
+    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
+    bg-alt:     $porpora,      //sfondo alt - il bg di un form o di un box
+    accent-alt: $bianco,      //accento alt - il di un link nel form
 
     form-body: $nero,
-    form-bg: $grigio-chiaro,
-    form-link: $grigio-scuro,
-    form-desc: $grigio,
+    form-bg: $bianco,
+    form-link: $porpora,
+    form-desc: $nero,
 
     overlay:    rgba($nero, 0.25),      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
-    button-bg:  $arancio,      //bg bottone
+    button-bg:  $verde,      //bg bottone
 
     button-subtle: $bianco,
-    button-bg-subtle: $grigio-scuro
+    button-bg-subtle: $porpora
   ),
 
   main: (
     body:       $nero,      //Corpo - testo
-    body-sec:   $arancio,      //Secondario - blockquote o blog meta
-    heading:    $grigio-scuro,      //Titoli
-    link:       $arancio,      //Link
+    body-sec:   $grigio-chiaro,      //Secondario - blockquote o blog meta
+    heading:    $grigio-chiaro,      //Titoli 1 e 2
+    heading2:    $grigio,      //Titoli 3
+    heading3:    $nero,      //Titoli 4 e 5
+    link:       $porpora,      //Link
     bg:         $bianco,      //Sfondo principale
-    border:     $grigio,      //Bordi
+    border:     $grigio-chiaro,      //Bordi
 
-    accent:     $arancio,      //Accento - sfondo lista icone / grassetti / icone
+    accent:     $verde,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $grigio-chiarissimo,      //body alternativo - testo in un form o in un box
-    bg-alt:     $arancio,      //sfondo alt - il bg di un form o di un box
+    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
+    bg-alt:     $porpora,      //sfondo alt - il bg di un form o di un box
     accent-alt: $bianco,      //accento alt - il di un link nel form
 
     form-body: $nero,
     form-bg: $grigio-chiarissimo,
-    form-link: $arancio,
-    form-desc: $grigio,
+    form-link: $porpora,
+    form-desc: $nero,
 
     overlay:    rgba($nero, 0.25),      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
-    button-bg:  $arancio,
+    button-bg:  $verde,
 
-    button-subtle: $grigio-scuro,
-    button-bg-subtle: $grigio-chiaro      //bg bottone
+    button-subtle: $bianco,
+    button-bg-subtle: $porpora      //bg bottone
   ),
 
-  socket: (
+  verde: (
     body:       $bianco,      //Corpo - testo
     body-sec:   $bianco,      //Secondario - blockquote o blog meta
     heading:    $bianco,      //Titoli
     link:       $bianco,      //Link
-    bg:         $arancio,      //Sfondo principale
+    bg:         $verde,      //Sfondo principale
     border:     $bianco,      //Bordi
 
     accent:     $bianco,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $grigio-scuro,      //body alternativo - testo in un form o in un box
-    bg-alt:     $grigio-chiarissimo,      //sfondo alt - il bg di un form o di un box
+    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
+    bg-alt:     rgba($nero, 0.5),      //sfondo alt - il bg di un form o di un box
     accent-alt: $arancio,      //accento alt - il di un link nel form
 
-    form-body: $grigio-scuro,
-    form-bg: $grigio-chiaro,
-    form-link: $nero,
-    form-desc: $bianco,
+    form-body: $nero,
+    form-bg: rgba($bianco, 0.5),
+    form-link: $porpora,
+    form-desc: $nero,
+
+    overlay:    rgba($nero, 0.5),      //Colore sfondo overlay
+
+    button:     $bianco,      //colore bottone
+    button-bg:  $porpora,
+
+    button-subtle: $bianco,
+    button-bg-subtle: $verde-scuro     //bg bottone            //bg bottone
+  ),
+
+  porpora: (
+    body:       $bianco,      //Corpo - testo
+    body-sec:   $bianco,      //Secondario - blockquote o blog meta
+    heading:    $bianco,      //Titoli
+    link:       $bianco,      //Link
+    bg:         $porpora,      //Sfondo principale
+    border:     $bianco,      //Bordi
+
+    accent:     $bianco,      //Accento - sfondo lista icone / grassetti / icone
+
+    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
+    bg-alt:     rgba($nero, 0.3),      //sfondo alt - il bg di un form o di un box
+    accent-alt: $bianco,      //accento alt - il di un link nel form
+
+    form-body: $nero,
+    form-bg: rgba($bianco, 0.5),
+    form-link: $porpora,
+    form-desc: $nero,
 
     overlay:    rgba($nero, 0.5),      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $verde,
 
-    button-subtle: $grigio-scuro,
+    button-subtle: $bianco,
     button-bg-subtle: $grigio-chiaro      //bg bottone            //bg bottone
   ),
 );
-
-
-
-
 
 //****************************************************************************//                         //                                 BOTTONI
 //****************************************************************************//
@@ -175,9 +204,3 @@ $colors: (
 // Ombra
 ///
 $button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
-
-
-///
-// HOVER del BOTTONE
-// Funzione: darken e/o lighten (del bg originale) + funzione
-///

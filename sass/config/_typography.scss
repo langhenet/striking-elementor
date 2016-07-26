@@ -9,24 +9,24 @@
 // BASE DEL BODY
 ///
   $base: 16;
-  $font-size: 1.0625em; //TODO
-  $line-height: 1.6470588235294117em; //TODO
+  $font-size: 1.1875em; //TODO
+  $line-height: 2em; //TODO
 
 
 ///
 // p and other standard elements
 ///
   $margin-top: 0em; //TODO
-  $margin-bottom: 1.6470588235294117em; //TODO
+  $margin-bottom: 2em; //TODO
 
 
 ///
 // Families
 ///
-  $font-family: 'Raleway', sans-serif; //TODO
-  $font-family-heading: $font-family; //TODO
+  $font-family: 'PT Serif', serif; //TODO
+  $font-family-heading: 'Oswald', sans-serif; //TODO
   $font-family-special: $font-family; //TODO
-  $font-family-button: $font-family;
+  $font-family-button: $font-family-heading;
 
 
 ///
@@ -35,29 +35,29 @@
 $weights: (
   ff: (
     family: $font-family,
-    u-thin: 100,
-    thin: 200,
-    light: 300,
+    u-thin: 400,
+    thin: 400,
+    light: 400,
     normal: 400,
-    bold: 600,
+    bold: 700,
   ),
 
   ffh: (
     family: $font-family-heading,
-    u-thin: 100,
-    thin: 200,
+    u-thin: 300,
+    thin: 300,
     light: 300,
     normal: 400,
-    bold: 600,
+    bold: 400,
   ),
 
   ffs: (
     family: $font-family-special,
-    u-thin: 100,
-    thin: 200,
+    u-thin: 300,
+    thin: 300,
     light: 300,
     normal: 400,
-    bold: 600,
+    bold: 400,
   ),
 );
 
@@ -75,9 +75,9 @@ $weights: (
     ),
 
     h1: (
-      fs: 6.352941176470588em,
-      lh: 1.037037037037037em,
-      mt: 0.25925925925925924em,
+      fs: 6.052631578947368em,
+      lh: 1.3217391304347827em,
+      mt: 0.3304347826086957em,
       mb: 0em,
       fm: family(ffh, family),
       wt: family(ffh, u-thin),
@@ -145,17 +145,17 @@ $weights: (
 
 $forms: (
   field: (
-    fm: family(ffh, family),
-    wt: family(ffh, normal),
+    fm: family(ff, family),
+    wt: family(ff, normal),
   ),
 
   label: (
-    fm: family(ffh, family),
-    wt: family(ffh, normal),
+    fm: family(ff, family),
+    wt: family(ff, normal),
   ),
 
   desc: (
-    fm: family(ffh, family),
-    wt: family(ffh, normal),
+    fm: family(ff, family),
+    wt: family(ff, normal),
   ),
 );
