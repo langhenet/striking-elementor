@@ -6,11 +6,11 @@
 //****************************************************************************//
 
 #main-footer {
-  background-color: main-color(footer, bg);
+  background-color: main-colors(footer, bg);
 }
 
 #et-footer-nav {
-  background-color: lighten(main-color(footer, bg), 10%);
+  background-color: lighten(main-colors(footer, bg), 10%);
 
   .bottom-nav li {
     @include size(p);
@@ -19,7 +19,7 @@
 }
 
 #footer-bottom {
-  background-color: main-color(footer, bg);
+  background-color: main-colors(footer, bg);
 }
 
 

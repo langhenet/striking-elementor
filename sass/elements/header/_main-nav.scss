@@ -5,50 +5,96 @@
 //*                                                                          *//
 //****************************************************************************//
 /*
- * Position della navigazione prima di scrollare - TRICK DA CONTROLLARE O ELIMINARE
- */
- //.et_fixed_nav #main-header,
- //.et_fixed_nav #top-header {
-//   position: static;
-// }
-//
-//  .et_fixed_nav #main-header.et-fixed-header {
-//    position: fixed;
-//  }
-
-/*
  * Contenitore Nav
  */
+#navigation {
+  height: 2em;
+  bottom: 50%;
+}
 
 
-/*
- * Contenitore Nav SCROLLATA
- */
-
-
-/*
- * I li del menu - Font e spaziature orizzontali
- */
 
 
 /*
  * I LI del menu - Altezze e spaziature verticali + hover
  */
 
+ #navigation .menu > li {
+  background-color: transparent;
+  transition: background-color 250ms linear;
+  padding: 0 15px 0 15px;
+  @include deco(h2);
+  text-transform: uppercase;
+ }
+
 /*
- * I LI correnti
+ * I LI hover
  */
 
+ #navigation .menu > li:hover {
+  background-color: main-colors(header, bg);
+  transition: background-color 250ms linear;
+  border-left: main-colors(header, border) 2px solid;
+  padding: 0 15px 0 13px;
+ }
 
 
 /*
  * I Link del menu - reset dei margini e dei padding + colore hover
  */
+ #navigation .menu > li > a,
+ #navigation .menu > li > a:visited {
+  color: main-colors(header, link);
+  font-size: font(p,fs);
+  line-height: font(p, lh) * 2;
+  height: font(p, lh) * 3.5;
+  transition: background-color 250ms linear;
+  padding: 0;
+ }
+
+.sticker_sticky {
+  #navigation .menu > li > a,
+  #navigation .menu > li > a:visited {
+    height: font(p, lh) * 2;
+  }
+}
+
+#navigation .menu > li > a:hover,
+#navigation .menu > li.hover > a,
+#navigation .menu > li.hover > a:active,
+#navigation .menu > li.hover > a:visited,
+#navigation .menu > li.hover > a > i {
+  color: main-colors(header, accent);
+//  background-color: main-colors(header, bg);
+  transition: background-color 250ms linear;
+}
 
 /*
- * Le freccette del sottomenu da nascondere a certe risoluzioni
+ * Current A - Link correnti
  */
 
+#navigation .menu > li.current-menu-item > a,
+#navigation .menu > li.current-menu-item > a:visited,
+#navigation .menu > li.current-menu_item > a,
+#navigation .menu > li.current-menu_item > a:visited,
+#navigation .menu > li.current-menu-ancestor > a,
+#navigation .menu > li.current-menu-ancestor > a:visited,
+#navigation .menu > li.current_page_item > a,
+#navigation .menu > li.current_page_item > a:visited,
+#navigation .menu > li.current_page_ancestor > a,
+#navigation .menu > li.current_page_ancestor > a:visited,
+#navigation .menu > li.current-page-item > a,
+#navigation .menu > li.current-page-item > a:visited,
+#navigation .menu > li.current-page-ancestor > a,
+#navigation .menu > li.current-page-ancestor > a:visited,
+#navigation .menu > li.current-menu-item > a > i,
+#navigation .menu > li.current-menu-ancestor > a > i,
+#navigation .menu > li.current_page_item > a > i,
+#navigation .menu > li.current_page_ancestor > a > i,
+#navigation .menu > li.current-page-item > a > i,
+#navigation .menu > li.current-page-ancestor > a > i {
+  color: main-colors(header, accent);
+}
  /*
   * I Link del menu scrollato
   */

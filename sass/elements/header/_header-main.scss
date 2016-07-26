@@ -5,7 +5,62 @@
 //*                              (tutto centrato)
 //*                                                                          *//
 //****************************************************************************//
+#header-sticker-wrapper {
+  height: 0 !important;
+}
+
+
+
 
 //****************************************************************************//
-//                 TOP BAR - decommentare per utilizzarla
+//                HEADER
 //****************************************************************************//
+/*
+ * BG dell'header
+ */
+#header {
+  background-color: rgba(main-colors(header, bg), 0.5);
+  transition: all 0.5s;
+//  position: static;
+}
+
+
+/*
+ * BG dell'header - da scrollato
+ */
+.sticker_sticky #header {
+  background-color: main-colors(header, bg);
+  transition: all 0.5s;
+}
+
+
+
+
+//****************************************************************************//
+//                INNER HEADER
+//****************************************************************************//
+/*
+ * Altezza
+ */
+#header .inner {
+  height: $line-height * 5;
+  transition: all 0.5s;
+}
+
+/*
+ * Altezza - da scrollato
+ */
+.sticker_sticky #header .inner {
+  height: $line-height * 2;
+  transition: all 0.5s;
+}
+
+
+
+//****************************************************************************//
+//                LOGO
+//****************************************************************************//
+
+#logo, #logo_text {
+  bottom: $line-height / 2;
+}

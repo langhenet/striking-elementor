@@ -1,0 +1,64 @@
+//***************************************************************************//
+//*                                                                     *****//
+//*                               SEZIONE INTRODUTTIVA
+//*              a cappello delle pagine
+//*                                                                         *//
+//***************************************************************************//
+
+#feature,
+.has-gradient #feature {
+  background-color: main-colors(fheader, bg);
+  padding:$line-height * 10 0 $line-height * 2 0;
+  background-size: cover;
+  background-image: none;
+}
+
+#feature .inner {
+  padding: $line-height * 2 $line-height;
+  position: relative;
+  z-index: 1;
+}
+
+#feature .inner::before {
+  @include color-overlay;
+  max-width: 800px;
+  background: rgba(main-colors(fheader, bg), 0.5);
+  border-left: 0.7em #fff solid;
+  display: block;
+  z-index: -1;
+}
+
+.has-shadow #feature .top_shadow,
+.has-shadow #feature .bottom_shadow {
+  display: none;
+}
+
+/******************************************************************************
+/*                TITOLO
+*******************************************************************************/
+
+#feature h1 {
+  @include size(h1);
+  @include deco(h1);
+
+  max-width: 770px;
+  letter-spacing: -0.035em;
+  margin-top: 0;
+}
+
+/******************************************************************************
+/*                TESTO
+*******************************************************************************/
+
+.feature-introduce {
+  max-width: 770px;
+  font-size: 1.578947368421053em;
+  line-height:  1.266666666666667em;
+  @include deco(p);
+}
+
+#feature h1,
+.feature-introduce {
+//  background: rgba(#fff, 0.5);
+//padding: 0 $line-height;
+}

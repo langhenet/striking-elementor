@@ -48,7 +48,17 @@ $layout-colors: (
     link: $bianco,
     accent: $bianco,
     border: $bianco,
-    bg: rgba($nero, 0.55),
+    bg: $nero,
+    button-bg: $verde,
+    button: $bianco,
+    ),
+
+  fheader: (
+    body: $bianco,
+    link: $bianco,
+    accent: $bianco,
+    border: $bianco,
+    bg: $nero,
     button-bg: $verde,
     button: $bianco,
     ),

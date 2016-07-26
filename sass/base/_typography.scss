@@ -160,7 +160,7 @@ blockquote {
  * Colori Tipografia nelle Varie sezioni
  */
 @each $palette, $sections in $colors {
-  #page .#{$palette}_color {
+  #page .#{$palette} {
     p {
       color: palette($palette, body)
     }
