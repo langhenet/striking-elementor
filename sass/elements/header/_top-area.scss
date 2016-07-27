@@ -1,12 +1,88 @@
-#lang_sel_list a,
-#lang_sel_list a:visited {
-  font-size: font(p, fs);
-  font-weight: family(ff, bolder);
-  font-family: font(p, fm);
+#top_area {
+
+}
+.sticker_sticky #top_area {
+  display: none;
 }
 
-#lang_sel_list ul a.lang_sel_other:hover {
-  color: main-colors(header, link) !important;
+#top_area {
+  border-bottom: 2px solid main-colors(header, border);
+  border-top: 2px solid transparent;
+  padding: bhpad(2);
+  top: 0;
+  right: 0;
+
+  @at-root .responsive #{&} {
+    @include respond-to(step-3) {
+      display: block;
+      width: 48%;
+      float: right;
+    }
+  }
+
+  @at-root .responsive #logo, .responsive #logo_text {
+    @include respond-to(step-3) {
+      display: block;
+      width: 48%;
+      float: left;
+    }
+  }
+
+  .widget {
+    float: right;
+    margin-right: $line-height;
+    margin-bottom: 0;
+  }
+
+  section:first-child {
+    margin-right: 0;
+  }
+
+  .widget_nav_menu {
+    line-height: font(p, lh);
+    //padding: 0;
+    @include respond-to(step-3) {
+      display: none;
+    }
+    li {
+      float: left;
+
+      a {
+        border-bottom: 0;
+        color: main-colors(header, link);
+        padding: 0 14px;
+        line-height: font(p, lh);
+      }
+    }
+  }
+}
+
+
+#lang_sel_list {
+  height: font(p, lh);
+
+  ul {
+    border-top: 0 !important;
+  }
+
+  li {
+    line-height: font(p, lh);
+    padding: 0 $line-height / 4 !important;
+    border-right: 1px solid main-colors(header, border);
+  &:last-child {
+    padding-right: 0;
+    border-right: 0;
+  }
+  }
+
+  a,
+  a:visited {
+    font-size: font(p, fs);
+    font-weight: family(ff, bolder);
+    font-family: font(p, fm);
+    line-height: font(p, lh);
+    display: inline;
+  }
 }
 
 #lang_sel_list a.lang_sel_sel:hover,
@@ -17,4 +93,9 @@
 #lang_sel li ul a:link,
 #lang_sel_list ul a.lang_sel_other:visited {
   background-color: transparent !important;
+}
+
+
+#lang_sel_list ul a.lang_sel_other:hover {
+  color: main-colors(header, link) !important;
 }

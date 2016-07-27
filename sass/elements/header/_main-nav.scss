@@ -36,7 +36,7 @@
 
 
 /*
- * I LI hover
+ * I LI hover & Current
   aggiungo il bordo e cambio il padding per non far saltare il menu, cambio il colore
  */
  #navigation .menu > li:hover {
@@ -46,7 +46,30 @@
   padding: 0 15px 0 13px;
  }
 
-
+ #navigation .menu > li.current-menu-item,
+ #navigation .menu > li.current-menu-item,
+ #navigation .menu > li.current-menu_item,
+ #navigation .menu > li.current-menu_item,
+ #navigation .menu > li.current-menu-ancestor,
+ #navigation .menu > li.current-menu-ancestor,
+ #navigation .menu > li.current_page_item,
+ #navigation .menu > li.current_page_item,
+ #navigation .menu > li.current_page_ancestor,
+ #navigation .menu > li.current_page_ancestor,
+ #navigation .menu > li.current-page-item,
+ #navigation .menu > li.current-page-item,
+ #navigation .menu > li.current-page-ancestor,
+ #navigation .menu > li.current-page-ancestor,
+ #navigation .menu > li.current-menu-item,
+ #navigation .menu > li.current-menu-ancestor,
+ #navigation .menu > li.current_page_item,
+ #navigation .menu > li.current_page_ancestor,
+ #navigation .menu > li.current-page-item,
+ #navigation .menu > li.current-page-ancestor {
+  background-color: main-colors(header, bg);
+  border-left: main-colors(header, border) 2px solid;
+  padding: 0 15px 0 13px;
+ }
 
 /*
  * I LINK - A - del menu
@@ -85,6 +108,8 @@
 //  background-color: main-colors(header, bg);
   transition: background-color 250ms linear;
 }
+
+
 
 /*
  * Current A - Link correnti
