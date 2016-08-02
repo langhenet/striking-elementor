@@ -14,7 +14,7 @@
    */
   .et_pb_button.size-small {
     @extend %button;
-    @include button(h5, 1);
+    @include button(small, 1);
 
     font-weight: button-deco(small, weight);
     text-transform: uppercase;
@@ -32,7 +32,7 @@
   .et_pb_button.size-medium,
   body a.big-button { //TOCHK ultima dichiarazione per bottone merda nel blurb
     @extend %button;
-    @include button(p, 2);
+    @include button(p, 4, half);
 
     font-weight: inherit; //TODO
     text-transform: uppercase;
@@ -56,7 +56,7 @@
   //body #page-container a.et_pb_button.size-large[class*="et_pb_button_"],
   .et_pb_button.size-large {
     @extend %button;
-    @include button(h3, 4, half)
+    @include button(h3, 4)
 
     font-weight: inherit; //TODO
     text-transform: uppercase;
@@ -119,18 +119,6 @@ a.et_pb_more_button:after {
   }
 }
 
-//TOCHK - BOTTONI SCHELETRICI in sezioni di base DA RIFARE!!
-.bigblue {
-  border-color: palette(main, body-alt) !important;
-  background: palette(main, bg-alt);
-  color: palette(main, body-alt) !important;
-
-  &:hover {
-    border-color: palette(main, bg-alt) !important;
-    background: palette(main, body-alt);
-    color: palette(main, bg-alt) !important;
-  }
-}
 
 /*****
  * Loop Bottoni per varie sezioni
@@ -147,7 +135,7 @@ a.et_pb_more_button:after {
   }
 
 //TOCHK - BOTTONI SCHELETRICI DA RIFARE!!
-  .#{$palette}_color .bigblue {
+  .et_divi_builder #et_builder_outer_content .#{$palette} .et_pb_bg_layout_light.et_pb_module.et_pb_button.skeleton {
     border-color: palette($palette, body-alt) !important;
     background: palette($palette, bg-alt);
     color: palette($palette, body-alt) !important;
@@ -188,7 +176,7 @@ a.et_pb_more_button:after {
  */
 
 @each $palette, $bg in $colors {
-  #top .#{$palette}_color .avia-button.avia-color-light {
+  #top .#{$palette} .avia-button.avia-color-light {
     border-color: white;
     color: white;
     background: transparent;
