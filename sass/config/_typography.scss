@@ -122,6 +122,15 @@ $weights: (
       wt: family(ffh, light),
     ),
 
+    small: (
+      fs: 0.6842105263158em,
+      lh: 1.461538461538em,
+      mt: 0.730769230769em,
+      mb: 0.730769230769em,
+      fm: family(ffh, family),
+      wt: family(ffh, light),
+    ),
+
     blockquote: (
       fs: 2em,
       lh: 2em,

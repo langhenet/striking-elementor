@@ -89,7 +89,7 @@
 @mixin button($size: p, $bw:2, $pw: null) {
   font-size: font($size, fs);
   line-height: font($size, lh);
-  margin-bottom: font($size, mb) !important;
+  margin-bottom: font($size, mb);
 
   @if $size == p {
     margin-top: font($size, mb);

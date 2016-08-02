@@ -1,18 +1,22 @@
 #top_area {
 
 }
+
+/*
+ * Top Area con scroll
+ */
 .sticker_sticky #top_area {
   display: none;
 }
 
 #top_area {
-  border-bottom: 2px solid main-colors(header, border);
-  border-top: 2px solid transparent;
-  padding: bhpad(2);
+//  border-bottom: 2px solid main-colors(header, border);
+//  border-top: 2px solid transparent;
+//  padding: bhpad(2);
   top: 0;
   right: 0;
 
-  @at-root .responsive #{&} {
+  @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
     @include respond-to(step-3) {
       display: block;
       width: 48%;
@@ -20,7 +24,8 @@
     }
   }
 
-  @at-root .responsive #logo, .responsive #logo_text {
+  @at-root .responsive #logo,
+  .responsive #logo_text { //dimezzo la larghezza del logo
     @include respond-to(step-3) {
       display: block;
       width: 48%;
@@ -28,30 +33,36 @@
     }
   }
 
-  .widget {
+  .widget { //affianco i widget uno all'altro
     float: right;
     margin-right: $line-height;
     margin-bottom: 0;
   }
 
-  section:first-child {
+  section:first-child { //tolgo il margine laterale dal primo
     margin-right: 0;
   }
 
   .widget_nav_menu {
-    line-height: font(p, lh);
-    //padding: 0;
-    @include respond-to(step-3) {
+    height: 2em;
+    border-bottom: 2px solid main-colors(header, border);
+    border-top: 2px solid transparent;
+  //  padding: bqpad(2);
+
+    @include respond-to(step-3) { //nascondo il menu di navigazione sotto i 767px
       display: none;
     }
     li {
       float: left;
+      @include size(small);
+      @include deco(small);
+      font-style: italic;
 
       a {
         border-bottom: 0;
         color: main-colors(header, link);
         padding: 0 14px;
-        line-height: font(p, lh);
+        line-height: inherit;
       }
     }
   }
