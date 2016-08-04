@@ -7,6 +7,10 @@
  */
 .sticker_sticky #top_area {
   display: none;
+
+  @include respond-to(step-2) {
+    display: block;
+  }
 }
 
 #top_area {

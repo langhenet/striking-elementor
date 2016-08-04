@@ -25,7 +25,7 @@
  */
 #header {
   background-color: rgba(main-colors(header, bg), 0.5);
-  transition: all 0.5s;
+  transition: all 500ms linear;
 //  position: static;
 }
 
@@ -34,9 +34,20 @@
  */
 .sticker_sticky #header {
   background-color: main-colors(header, bg);
-  transition: all 0.5s;
+  transition: all 500ms linear;
+  @include respond-to(step-2) {
+    background-color: rgba(main-colors(header, bg), 0.5);
+  }
 }
 
+/*
+ * HEADER non sticky su mobile
+ */
+#header-sticker-wrapper.sticker_enabled #header {
+  @include respond-to(step-2) {
+    position: relative !important;
+  }
+}
 
 
 
@@ -49,7 +60,7 @@
  */
 #header .inner {
   height: $line-height * 5;
-  transition: all 0.5s;
+  transition: all 500ms linear;
 }
 
 /*
@@ -57,7 +68,11 @@
  */
 .sticker_sticky #header .inner {
   height: $line-height * 2;
-  transition: all 0.5s;
+  transition: all 500ms linear;
+
+  @include respond-to(step-2) {
+    height: $line-height * 5;
+  }
 }
 
 

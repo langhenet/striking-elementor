@@ -81,7 +81,7 @@
   font-size: font(p,fs);
   line-height: font(p, lh) * 2;
   height: font(p, lh) * 3.5;
-  transition: background-color 250ms linear;
+  transition: background-color 500ms linear;
   padding: 0;
  }
 
@@ -92,6 +92,11 @@
   #navigation .menu > li > a,
   #navigation .menu > li > a:visited {
     height: font(p, lh) * 2;
+    transition:  background-color 500ms linear;
+
+    @include respond-to(step-2) {
+      height: font(p, lh) * 3.5;
+    }
   }
 }
 
@@ -106,7 +111,7 @@
 #navigation .menu > li.hover > a > i {
   color: main-colors(header, accent);
 //  background-color: main-colors(header, bg);
-  transition: background-color 250ms linear;
+  transition: background-color 500ms linear;
 }
 
 
@@ -156,6 +161,10 @@
 
     @at-root .sticker_sticky #{&} { //con header scrollato - il margin top ritorna a 0
       margin-top: 0;
+
+      @include respond-to(step-2) {
+        margin-top: -$line-height * 2;
+      }
     }
 }
 
