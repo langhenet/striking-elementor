@@ -8,11 +8,15 @@
  * Padding contenitore & Dimensioni titolo
  */
 .et_pb_blurb {
-  padding: $line-height;
+  padding-top: $line-height;
+  padding-left: $line-height;
+  padding-right: $line-height;
+  padding-bottom: bspad(4);
+  border-bottom: 4px solid;
 
-  &.et_pb_blurb_position_top h4 { //solo titolo top
+  @at-root .et_divi_builder #et_builder_outer_content  #{&}.et_pb_blurb_position_top h4 { //solo titolo top
     @include size(h3);
-
+    margin-bottom: font(h3,lh);
     margin-top: 0;
     padding-bottom: 0;
 

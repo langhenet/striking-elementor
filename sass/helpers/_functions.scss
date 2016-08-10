@@ -90,6 +90,14 @@
 }
 
 ////
+// SINGLE PADDING - da usare quando c'è un bordo singolo
+//
+////
+@function bspad($bp-bw: 1, $bp-fs: p, $bp-lh: $line-height) {
+  @return ($base * $font-size * (font($bp-fs, fs) / 1em) * ($bp-lh / 1em) - $bp-bw) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 1em;
+}
+
+////
 // Border Line Height - questa funzione fà le stesse cose delle precedenti ma
 // calcolate per essere usate nella line-height. **ATTENZIONE** gli elementi
 // che usano questa funzione NON possono andare a capo
@@ -97,7 +105,6 @@
 @function blh($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
   @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em)) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 1em;
 }
-
 
 
 //****************************************************************************//

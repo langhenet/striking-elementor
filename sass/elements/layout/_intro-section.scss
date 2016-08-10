@@ -15,7 +15,7 @@
 }
 
 #feature .inner {
-  padding: $line-height * 2 $line-height;
+  padding: $line-height $line-height * 1.5;
   position: relative;
   z-index: 1;
 }
@@ -24,7 +24,7 @@
   @include color-overlay;
   max-width: 800px;
   background: rgba(main-colors(fheader, bg), 0.5);
-  border-left: 0.7em #fff solid;
+  border-left: 1em #fff solid;
   display: block;
   z-index: -1;
 }
@@ -41,10 +41,10 @@
 #feature h1 {
   @include size(h1);
   @include deco(h1);
-
   max-width: 770px;
   letter-spacing: -0.035em;
   margin-top: 0;
+  padding: 0;
 }
 
 /******************************************************************************
@@ -52,9 +52,11 @@
 *******************************************************************************/
 
 .feature-introduce {
+  margin-top: font(p,lh);
   max-width: 770px;
   font-size: 1.578947368421053em;
   line-height:  1.266666666666667em;
+  padding: 0;
   @include deco(p);
 }
 

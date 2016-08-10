@@ -1,0 +1,96 @@
+//*==========================================================================*//
+//*                                                                          *//
+//*                       POST SINGOLO - BIG IMAGE
+//*                          DIMENSIONI & FACE
+//*                                                                          *//
+//*==========================================================================*//
+//****************************************************************************//
+//*                     TITOLO - FEATURED
+//****************************************************************************//
+/*
+ * Titolo
+ */
+.type-post #feature h1 {
+  @include size(h2);
+  @include deco(h2);
+
+  margin-top: 0;
+}
+
+
+/*
+ * Meta
+ */
+.type-post .feature-introduce {
+  @include size(h5);
+  @include deco(h5);
+
+  font-style: italic;
+  text-transform: uppercase;
+
+  //font-family: font(h5,fm);
+}
+
+//****************************************************************************//
+//              Authro Box
+//****************************************************************************//
+#about_the_author {
+  padding: $line-height * 1.5;
+  background: palette(main, bg-alt);
+  margin-bottom: $line-height;
+
+  h3 {
+    margin-top: 0;
+    color: palette(main, body-alt);
+    margin-bottom: font(h3, lh);
+  }
+
+  .author_content {
+    padding: 0;
+    border: 0;
+  }
+
+  span.fn {
+    @include size(h5);
+    @include deco(h5);
+
+    text-transform: uppercase;
+    font-weight: family(ffh, bold);
+    a {
+      color: palette(main, body-alt);
+    }
+  }
+
+  .author_desc {
+   color: palette(main, body-alt);
+  }
+}
+
+//****************************************************************************//
+//              ARTICOLI CORRELATI
+//****************************************************************************//
+.related_popular_wrap {
+  background: palette(grigio, bg);
+  padding: $line-height;
+
+  h3 {
+    margin-top: font(h3, lh);
+    margin-bottom: font(h3, lh);
+  }
+
+  .posts_list {
+    padding-left: 0;
+
+    @at-root #page #{&} a {
+      color: palette(grigio, link);
+    }
+
+    time {
+      color: palette(grigio, body);
+    }
+  }
+}
+
+//****************************************************************************//
+//             COMMENTO
+//****************************************************************************//

@@ -12,7 +12,10 @@
  * Wrapper di gravity
  */
 .gform_wrapper {
-  padding: $line-height * 2;
+  padding: $line-height * 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 100%;
 }
 
 
@@ -31,7 +34,7 @@
 .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first,
 .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last,
 .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 
 
@@ -103,7 +106,7 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
 .gform_wrapper .ginput_complex label,
 .gform_wrapper .instruction {
 
-  @include form-desc(h5);
+  @include form-desc(small);
 
 }
 
@@ -139,8 +142,52 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
 //                     Colori FORM, LABEL e DESCRIZIONI CAMPI
 //                     di tutte le varie sezioni
 //****************************************************************************//
+.gform_wrapper {
+  background: palette(main, form-bg); //BG del form
+
+  a {
+    color: palette(main, form-link); //Colore link
+  }
+
+  input,
+  textarea,
+  select { //Colore Bordo dei campi
+    border-color: darken(palette(main, form-bg), 2.5%);
+
+    &:focus { //colore bordo campi focused
+      border-color: darken(palette(main, form-bg), 20%);
+    }
+  }
+
+  label { //colore del label
+    color: palette(main, form-body)
+  }
+
+  .gfield_date_day label,
+  .gfield_date_month label,
+  .gfield_date_year label,
+  .gfield_time_ampm label,
+  .gfield_time_hour label,
+  .gfield_time_minute label,
+  .ginput_complex label,
+  .instruction,
+  .gfield_description { //colore sottoetichette e descrizione campi
+    color: palette(main, form-desc)
+  }
+
+  input.button,
+  input[type=submit] { //colore bottone
+    @include button-color;
+    cursor: pointer;
+
+    &:hover { //hover bottone
+      @include button-color(hover);
+    }
+  }
+}
+
 @each $palette, $bg in $colors {
-  .#{$palette}_color .gform_wrapper {
+  .#{$palette} .gform_wrapper {
     background: palette($palette, form-bg); //BG del form
 
     a {

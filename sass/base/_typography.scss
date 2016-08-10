@@ -155,6 +155,9 @@ blockquote {
 #page h4 {color: palette(main, heading);}
 #page h5 {color: palette(main, heading);}
 #page p {color: palette(main, body);}
+#page a,
+#page a:visited {color: palette(main, link);}
+#page a:hover {color: darken(palette(main, link), 10%);}
 
 /*
  * Colori Tipografia nelle Varie sezioni
@@ -167,6 +170,15 @@ blockquote {
 
     h1, h2, h3, h4, h5 {
       color: palette($palette, heading);
+    }
+
+    a,
+    a:visited {
+      color: palette($palette, link);
+
+      &:hover {
+        color: darken(palette(main, link), 10%);
+      }
     }
   }
 }
