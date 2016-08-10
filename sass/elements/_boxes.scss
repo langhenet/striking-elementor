@@ -47,7 +47,7 @@ a {
  * colori
  */
 @each $palette, $bg in $colors {
-  .#{$palette}_color .et_pb_blurb {
+  .#{$palette} .et_pb_blurb {
     background-color: palette($palette, bg-alt);
     color: palette($palette, body-alt);
 
