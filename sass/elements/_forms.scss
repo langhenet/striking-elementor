@@ -5,8 +5,24 @@
 //*                                                                     ******//
 //****************************************************************************//
 
+/*
+ * Reset Background di tutti i campi
+ */
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=url],
+textarea,
+textarea.textarea,
+select {
+  background: #fff;
+}
+
+
 //****************************************************************************//
-//                            SPECIFICI PER GRAVITY FORMS
+//                  CONTENITORE & STRUTTURA di GRAVITY FORMS
 //****************************************************************************//
 /*
  * Wrapper di gravity
@@ -16,8 +32,10 @@
   margin-top: 0;
   margin-bottom: 0;
   max-width: 100%;
+  border-bottom: 6px solid;
+  $pad: bspad(6);
+  padding-bottom: bspad(6) + ($line-height / 2em);
 }
-
 
 
 /*
@@ -25,27 +43,92 @@
  */
 .gform_wrapper form li,
 .gform_wrapper li,
-#page-container .gform_wrapper .top_label li.gfield.gf_left_half,
-#page-container .gform_wrapper .top_label li.gfield.gf_right_half {
+.gform_wrapper .top_label li.gfield.gf_left_half,
+.gform_wrapper .top_label li.gfield.gf_right_half {
   margin-bottom: $line-height * 1.5;
 }
 
-//correggo il padding di questi campi
+
+/*
+ * Correzione padding campi complessi
+ */
 .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first,
 .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last,
 .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
   padding-top: 0;
 }
 
+.gform_wrapper .top_label li.gfield.gf_left_half,
+.gform_wrapper .top_label li.gfield.gf_right_half {
+  @include respond-to(step-0) {
+    width: 100%;
+  }
+
+  @include respond-to(step-2) {
+    width: 49%;
+  }
+
+  @include respond-to(step-4) {
+    width: 100%;
+  }
+}
+
+
+//****************************************************************************//
+//                 CAMPI HTML & SECTION di GRAVITY FORMS
+//****************************************************************************//
+/*
+ *  Il Contenitore del campo HTML
+ */
+.gform_wrapper .gfield_html.gfield_no_follows_desc,
+.gform_wrapper li.gfield_htm {
+  margin-top: 0;
+  padding-top: $line-height / 2;
+  max-width: 100%;
+}
+
 
 
 /*
- * Contenitore campi gravity
+ * Il Contenitore del campo SEZIONE
+ */
+.gform_wrapper .gsection {
+  margin: 0;
+  border-bottom: 1px solid;
+  padding-bottom: bspad(1) - ($line-height / 2);
+  padding-top: $line-height / 2;
+  margin-bottom: $line-height * 2;
+
+  // Titolo Sezione
+  @at-root .et_divi_builder #et_builder_outer_content .et_pb_module #{&} h2 {
+    @include size(h3);
+    @include deco(h3);
+  }
+}
+
+/*
+ * Descrizione del campo SECTION
+ */
+// Larghezza
+.gform_wrapper .top_label .gsection_description {
+  width: 100%;
+}
+// Tipografia
+.gform_wrapper .gsection_description {
+  @include size(p);
+  margin-bottom: 0;
+  padding: 0;
+}
+
+//****************************************************************************//
+//                  ETICHETTE di GRAVITY FORMS
+//****************************************************************************//
+/*
+ * Contenitore Label - resetto il Margine
  */
 body .gform_wrapper label.gfield_label+div.ginput_container {
   margin-top: 0 !important;
 }
-
 
 
 /*
@@ -57,42 +140,72 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
 
 
 
+
+//****************************************************************************//
+//                  CAMPI di GRAVITY FORMS e GENERICI
+//****************************************************************************//
 ///
-// Dimensioni dei campi
+// Dimensioni dei campi - Genrici e di Gravity
 ///
-.gform_wrapper input[type=email],
-.gform_wrapper input[type=number],
-.gform_wrapper input[type=password],
-.gform_wrapper input[type=tel],
-.gform_wrapper input[type=text],
-.gform_wrapper input[type=url],
-.gform_wrapper textarea,
-.gform_wrapper select {
+ input[type=email],
+ input[type=number],
+ input[type=password],
+ input[type=tel],
+ input[type=text],
+ input[type=url],
+ textarea,
+ input.text_input,
+ textarea.textarea,
+ select {
   @include form-field(p, 2);
   margin-bottom: 0;
 }
 
+input.text_input:focus,
+textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px - devo metterlo a mano
+  @include form-field(p, 2);
+  margin-bottom: 0;
+}
+
+
+/*
+ * Altezza Select
+ */
 .gform_wrapper select {
   height: $line-height * 1.5; //TODO
 }
 
+
+/*
+ * Altezza Text Area
+ */
 .gform_wrapper textarea.medium {
-  height: $line-height * 6 !important;
+  height: $line-height * 6;
+}
+
+
+/*
+ * Larghezza campi medi
+ */
+.gform_wrapper .top_label input.medium,
+.gform_wrapper .top_label select.medium {
+  width: 100%;
 }
 
 
 
+
+//****************************************************************************//
+//                  DESC E SUB LABEL di GRAVITY FORMS
+//****************************************************************************//
 ///
 // Descrizioni campi Gravity Forms
 ///
 .gform_wrapper .top_label .gfield_description {
-
   @include form-desc(h5);
 
   padding: 0 !important;
 }
-
-
 
 ///
 // Sotto-etichette dei campi complessi (p.es nome)
@@ -105,19 +218,20 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
 .gform_wrapper .gfield_time_minute label,
 .gform_wrapper .ginput_complex label,
 .gform_wrapper .instruction {
-
   @include form-desc(small);
-
 }
 
 
 
+//****************************************************************************//
+//                     FOOTER & BOTTONE
+//****************************************************************************//
 /*
  * Footer Gravity
  */
 .gform_wrapper .gform_footer {
   padding: 0 !important;
-  margin: $line-height * 3 0 0 0 !important;
+  margin: 0 0 0 0 !important;
   text-align: center;
 }
 
@@ -125,12 +239,12 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
 ///
 // Bottone Gravity
 ///
-.entry-content .gform_wrapper .gform_footer input.button,
-.entry-content .gform_wrapper .gform_footer input[type=submit] {
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit] {
   @extend %button;
-  @include button(h3, 2, half);
+  @include button(h3, 4);
 
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   text-transform: uppercase;
 }
@@ -142,8 +256,13 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
 //                     Colori FORM, LABEL e DESCRIZIONI CAMPI
 //                     di tutte le varie sezioni
 //****************************************************************************//
+/*
+ * Colore Sezione standard
+ */
+
 .gform_wrapper {
   background: palette(main, form-bg); //BG del form
+  border-bottom-color: palette(main, accent); //border bottom del form
 
   a {
     color: palette(main, form-link); //Colore link
@@ -175,6 +294,22 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
     color: palette(main, form-desc)
   }
 
+  // campi HTML e SECTION
+  @at-root #page #{&} p {
+    color: palette(main, form-body);
+  }
+
+  @at-root #page #{&} h2,
+           #page #{&} h3 {
+    color: palette(main, heading2); //TOCR
+  }
+
+  .gsection { // Colore bordo bottom del campo SECTION
+    border-bottom-color: darken(palette(main, form-bg), 20%);
+    color: palette(main, form-body);
+  }
+
+  //BOTTONE
   input.button,
   input[type=submit] { //colore bottone
     @include button-color;
@@ -186,9 +321,15 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
   }
 }
 
+
+
+/*
+ * Loop sezioni Colore
+ */
 @each $palette, $bg in $colors {
   .#{$palette} .gform_wrapper {
     background: palette($palette, form-bg); //BG del form
+    border-bottom-color: palette($palette, accent); //border bottom del form
 
     a {
       color: palette($palette, form-link); //Colore link
@@ -220,6 +361,20 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
       color: palette($palette, form-desc)
     }
 
+    // campi HTML e SECTION
+    @at-root #page #{&} p {
+      color: palette($palette, form-body);
+    }
+    @at-root #page #{&} h2,
+             #page #{&} h3 {
+      color: palette(main, heading2); //TOCR
+    }
+    .gsection { // Colore bordo bottom del campo SECTION
+      border-bottom-color: darken(palette($palette, form-bg), 20%);
+      color: palette($palette, form-body);
+    }
+
+    //BOTTONE
     input.button,
     input[type=submit] { //colore bottone
       @include button-color;

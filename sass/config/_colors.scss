@@ -166,6 +166,7 @@ $colors: (
 
     form-body: $nero,
     form-bg: rgba($bianco, 0.5),
+    //form-bg: mix($bianco, $verde, 50%),
     form-link: $porpora,
     form-desc: $nero,
 
@@ -193,7 +194,7 @@ $colors: (
     accent-alt: $bianco,      //accento alt - il di un link nel form
 
     form-body: $nero,
-    form-bg: rgba($bianco, 0.5),
+    form-bg: mix($bianco, $porpora, 50%),
     form-link: $porpora,
     form-desc: $nero,
 

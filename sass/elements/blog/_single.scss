@@ -92,5 +92,16 @@
 }
 
 //****************************************************************************//
-//             COMMENTO
+//                            FORM COMMENTO
+//                  I campi sono racchiusi nei P
 //****************************************************************************//
+.comment-form {
+
+  p { //adeguo il margine sotto per pareggiare altezza campo
+    margin-bottom: $line-height * 1.5;
+  }
+
+  p.comment-notes { //correggo l'adeguamento sul primo p - che contiene del testo
+    margin-bottom: $line-height;
+  }
+}
