@@ -11,33 +11,110 @@
   font-size: 1em;
 }
 
+.has-shadow #footer_shadow {
+  display: none;
+}
 
-#main-footer {
+//****************************************************************************//
+//            FOOTER - COLORI E LAYOUT
+//****************************************************************************//
+
+.no-gradient #footer,
+.has-gradient #footer {
   background-color: main-colors(footer, bg);
 }
 
-#et-footer-nav {
-  background-color: lighten(main-colors(footer, bg), 10%);
 
-  .bottom-nav li {
-    @include size(p);
-    margin-bottom: 0;
-  }
+#footer .inner {
+  padding: $line-height * 2 0;
 }
+
 
 #footer-bottom {
   background-color: main-colors(footer, bg);
 }
 
 
-/*************************************************************************/
-/*                                  WIDGET
-/*************************************************************************/
+//****************************************************************************//
+//                                  WIDGET
+//****************************************************************************//
+#footer .widget {
+  margin-bottom: $line-height * 2;
+}
+
+#footer .inner > div section:last-of-type {
+  margin-bottom: 0;
+}
 
 /*
  * Titoli
  */
+#footer h3.widgettitle {
+  padding-bottom: font(h3, lh);
+  color: main-colors(footer, body)
+}
 
-.footer-widget h4.title {
-  @include size(h3);
+
+/*
+ * Post List
+ */
+#footer .widget .posts_list a,
+#footer .widget .posts_list a:visited {
+  color: main-colors(footer, link);
+
+  &:hover {
+    color: lighten(main-colors(footer, link), 30%)
+  }
+}
+
+
+/*
+ * Nav Menu
+ */
+#footer .widget_nav_menu li {
+  a {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: none;
+
+    &::after {
+      background: none;
+      height: 0;
+    }
+  }
+
+  &::before {
+    color: main-colors(footer, body);
+  }
+}
+
+#footer .widget.widget_nav_menu a,
+#footer .widget.widget_nav_menu a:visited {
+  color: main-colors(footer, link);
+
+  &:hover {
+    color: lighten(main-colors(footer, link), 30%)
+  }
+}
+
+
+
+//****************************************************************************//
+//                                  FOOTER BOTTOM
+//****************************************************************************//
+
+#footer_bottom {
+  background: darken(main-colors(footer, bg), 0.0%);
+
+  &> .inner {
+    padding: $line-height 0;
+  }
+}
+
+#copyright,
+#footer_right_area {
+  @include size(p);
+  @include deco(p);
+
+  color: main-colors(footer, body);
 }
