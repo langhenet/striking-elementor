@@ -105,3 +105,17 @@
     margin-bottom: $line-height;
   }
 }
+
+
+/*
+ * Bottone
+ */
+#commentform input#submit {
+  @extend %button;
+  @include button(p);
+  @include button-color(main);
+  height: auto;
+  width: auto;
+  padding-left: $line-height / 2;
+  padding-right: $line-height / 2;
+}

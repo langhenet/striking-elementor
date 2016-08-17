@@ -19,7 +19,6 @@
     margin-bottom: font(h3,lh);
     margin-top: 0;
     padding-bottom: 0;
-
   }
 }
 
@@ -28,11 +27,16 @@
   background-color: palette(main, bg-alt);
   color: palette(main, body-alt);
 
-  p, h1, h2, h3, h4, h5 {
+  @at-root #page #{&} p,
+           #page #{&} h1,
+           #page #{&} h2,
+           #page #{&} h3,
+           #page #{&} h4,
+           #page #{&} h5 {
     color: palette(main, body-alt);
   }
 
-a {
+  @at-root #page #{&} a {
     color: palette(main, accent-alt);
   }
 }
@@ -55,13 +59,18 @@ a {
     background-color: palette($palette, bg-alt);
     color: palette($palette, body-alt);
 
-    p, h1, h2, h3, h4, h5 {
-    color: palette($palette, body-alt);
-  }
+    @at-root #page #{&} p,
+             #page #{&} h1,
+             #page #{&} h2,
+             #page #{&} h3,
+             #page #{&} h4,
+             #page #{&} h5 {
+      color: palette($palette, body-alt);
+    }
 
-  a {
-    color: palette($palette, accent-alt);
-  }
+    @at-root #page #{&} a {
+      color: palette($palette, accent-alt);
+    }
 
   .et-pb-icon { // colore icona
     color: palette($palette, body-alt) !important;

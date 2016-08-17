@@ -5,3 +5,95 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                     ******//
 //****************************************************************************//
+/*
+ * widge
+ */
+
+section.widget {
+  margin-bottom: $line-height * 2;
+}
+
+/*
+ * Titoli - tipografia
+ */
+#sidebar .widgettitle,
+#footer h3.widgettitle {
+  @include size(h3);
+  margin-top: 0;
+}
+
+//****************************************************************************//
+//                            LISTA ARTICOLI / PORTFOLI
+//****************************************************************************//
+/*
+ * Elemento LI
+ */
+.posts_list li,
+#sidebar .posts_list li,
+#footer .posts_list li {
+  padding: $line-height / 2 0;
+  border-bottom: 0;
+}
+
+
+/*
+ * IMG
+ */
+.posts_list .thumbnail,
+#sidebar .posts_list .thumbnail,
+#footer .posts_list .thumbnail {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.posts_list .thumbnail img {
+  height: blh(1) * 2;
+  width: blh(1) * 2;
+}
+
+
+/*
+ * Contenitore INFO
+ */
+.posts_list .post_extra_info {
+  display: table-cell;
+  vertical-align: middle;
+  height: $line-height*2;
+
+  a {
+  //  vertical-align: middle;
+  }
+}
+
+/*
+ * LINK
+ */
+.posts_list li a,
+#sidebar .posts_list li a,
+#footer .posts_list li a {
+  line-height: inherit;
+}
+
+//****************************************************************************//
+//                           MENU
+//****************************************************************************//
+.widget_nav_menu li {
+  position: relative;
+
+    a {
+    @include size(p);
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: none;
+    border-bottom: 0;
+  }
+
+  &::before {
+    content: "\00BB";
+    top: -0.1em;
+    position: absolute;
+    @include size(p);
+    margin-bottom: 0;
+  }
+}
