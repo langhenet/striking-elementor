@@ -29,19 +29,66 @@
   }
 }
 
+
+
+
 //****************************************************************************//
 //                               COLORE PAGINE DI STRIKING
 //****************************************************************************//
 #page {
   background-color: palette(main, bg);
+  margin-top: -$line-height;
 }
 
-#page .inner {
-  padding-top: $line-height;
-  padding-bottom: $line-height;
-  padding-left: 0;
-  padding-right: 0;
+
+.has-gradient #page:before {
+  content: none;
 }
+
+
+
 //****************************************************************************//
 //                               PADDING TOTALE SOPRA IL CONTENUTO
 //****************************************************************************//
+#page .inner {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+
+
+//****************************************************************************//
+//                          BREAD CRUMBS
+//****************************************************************************//
+#breadcrumbs {
+  margin-top: 0;
+  max-width: 1170px;
+//  float: right;
+  margin: 0 auto;
+  font-size: 1em;
+  padding-bottom: 0;
+  z-index: 99999;
+
+  .breadcrumbs {
+    text-align: right;
+    width: auto;
+    @include size(h5);
+    @include deco(h5);
+    line-height: blh(2, h5);
+    margin-top: 0;
+
+    .breadcrumbs-plus {
+      display: inline-block;
+      padding:0 0.2em 0 1em;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid;
+    }
+  }
+
+  @at-root .inner.right_sidebar #{&} {
+    margin-bottom: $line-height * 2;
+  }
+}
