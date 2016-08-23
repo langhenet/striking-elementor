@@ -23,7 +23,7 @@
 #feature .inner::before {
   @include color-overlay;
   max-width: 800px;
-  background: rgba(main-colors(fheader, bg), 0.5);
+  background: transparent;
   border-left: 1em #fff solid;
   display: block;
   z-index: -1;

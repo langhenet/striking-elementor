@@ -101,7 +101,13 @@
 /*
  * SMALL padding
  */
+ .et_divi_builder #et_builder_outer_content .et_pb_section.lg-padding-small > div.et_pb_row:first-of-type {
+   padding-top: $line-height * 2;
+ }
 
+ .et_divi_builder #et_builder_outer_content .et_pb_section.lg-padding-small > div.et_pb_row:last-of-type {
+   padding-bottom: $line-height * 2;
+ }
 
 /*
 * NORMAL padding - SEZIONI NORMALI E FW
