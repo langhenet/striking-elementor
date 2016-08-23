@@ -37,7 +37,6 @@
 //****************************************************************************//
 #page {
   background-color: palette(main, bg);
-  margin-top: -$line-height;
 }
 
 
@@ -57,8 +56,9 @@
   padding-right: 0;
 }
 
-
-
+#main {
+  margin-top: -$line-height;
+}
 
 //****************************************************************************//
 //                          BREAD CRUMBS
@@ -89,6 +89,6 @@
   }
 
   @at-root .inner.right_sidebar #{&} {
-    margin-bottom: $line-height * 2;
+    margin-bottom: $line-height * 3;
   }
 }
