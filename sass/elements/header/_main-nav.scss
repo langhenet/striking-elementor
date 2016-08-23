@@ -211,7 +211,9 @@
       background: $bianco;
       position: absolute;
       border: 4px solid $bianco;
-
+      @include respond-to(step-2) {
+        font-size: 1.057895em;
+      }
     }
   }
 }

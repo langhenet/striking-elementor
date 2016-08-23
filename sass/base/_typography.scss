@@ -83,6 +83,15 @@ h2 {
   letter-spacing: -.0148em;
 }
 
+.lg-title--border {
+  border-left: 6px solid;
+  border-right: 6px solid;
+  display: inline-block;
+  text-align: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
 h3 {
   @include size(h3);
   @include deco(h3);
