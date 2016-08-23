@@ -20,6 +20,7 @@ section.widget {
 #footer h3.widgettitle {
   @include size(h3);
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 //****************************************************************************//
