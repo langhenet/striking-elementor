@@ -1,0 +1,31 @@
+//****************************************************************************//
+//*                                                                     ******//
+//*                   ELEMENTO DI SCROLL DOWN
+//*              descrizione - descrizione - descrizione
+//*                                                                     ******//
+//****************************************************************************//
+.et_divi_builder #et_builder_outer_content .et_pb_section > div.lg-scroll-row.et_pb_row:last-of-type {
+  padding-bottom: 4em;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_fullwidth_header.lg-no-padding {
+  padding: 0;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_fullwidth_header .et_pb_fullwidth_header_scroll {
+  padding: 0;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_fullwidth_header .et_pb_fullwidth_header_scroll a .et-pb-icon  {
+  font-size: 4em;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_fullwidth_header .et_pb_fullwidth_header_scroll a .et-pb-icon {
+  color: palette(main, accent);
+}
+
+@each $palette, $bg in $colors {
+  .et_divi_builder #et_builder_outer_content .#{$palette} .et_pb_fullwidth_header .et_pb_fullwidth_header_scroll a .et-pb-icon {
+    color: palette($palette, accent);
+  }
+}

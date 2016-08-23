@@ -41,7 +41,7 @@
   }
 }
 
-.et-pb-icon { // colore icona
+.et_pb_main_blurb_image .et-pb-icon { // colore icona
   color: palette(main, body-alt) !important;
 
   &.et-pb-icon-circle { // icona con il cerchio
@@ -72,7 +72,7 @@
       color: palette($palette, accent-alt);
     }
 
-  .et-pb-icon { // colore icona
+  .et_pb_main_blurb_image .et-pb-icon { // colore icona
     color: palette($palette, body-alt) !important;
 
     &.et-pb-icon-circle { // icona con il cerchio

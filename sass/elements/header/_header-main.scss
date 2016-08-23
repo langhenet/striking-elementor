@@ -88,4 +88,15 @@
 #logo,
 #logo_text {
   bottom: $line-height / 2;
+  transition: all 500ms linear;
+
+  @at-root .sticker_sticky #{&} {
+    bottom: 0;
+    transition: all 500ms linear;
+
+    img {
+      width: 50%;
+      transition: all 500ms linear;
+    }
+  }
 }
