@@ -10,7 +10,7 @@
 }
 
 //****************************************************************************//
-//                               CORREZIONE TIPOGRAFIA SEZ FW
+//                        CORREZIONE TIPOGRAFIA SEZ FW
 //****************************************************************************//
 .et_divi_builder #et_builder_outer_content .et_pb_module {
   h1 { @include size(h1); }
@@ -125,7 +125,7 @@
   padding-top: $line-height * 4;
 }
 
-//Azzera il padding della riga per quelle FW
+//Azzera il padding della riga per quelle FULL WIDTH
 .et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:first-of-type,
 .et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:last-of-type {
   padding: 0;
@@ -181,15 +181,17 @@
     vertical-align: middle;  //per allineamento verticale
     padding-top: $line-height * 2;
     padding-bottom: $line-height * 2;
+    padding-right: 2em;
+    padding-left: 2em;
 
-      ///
-      // Elementi interni alle colonne
-      // sono rimpiccioliti per non fargli uscire troppo a risoluzioni troppo grandi
-      ///
-      .et_pb_text,
-      .et_pb_module {
-        max-width: 580px; //TOCR - trovare una larghezza giusta da impostare per gli schermi normali
-      }
+    ///
+    // Elementi interni alle colonne
+    // sono rimpiccioliti per non fargli uscire troppo a risoluzioni troppo grandi
+    ///
+    .et_pb_text,
+    .et_pb_module {
+      max-width: 780px; //TOCR - trovare una larghezza giusta da impostare per gli schermi normali
+    }
 
     &:first-child {
       padding-right: 5.5em; //Paddo la prima cella per dare dello spazio a DX
