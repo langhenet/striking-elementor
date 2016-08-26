@@ -83,14 +83,32 @@ h2 {
   letter-spacing: -.0148em;
 }
 
-.lg-title--border {
+.et_pb_module h2 {
   border-left: 6px solid;
   border-right: 6px solid;
-  display: inline-block;
-  text-align: center;
+  display: table;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
+
+.et_pb_module .lg-title--no-border {
+  border-left-width: 0px;
+  border-right-width: 0px;
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.et_pb_module h2 {
+  border-color: palette(main, accent);
+}
+
+@each $palette, $section in $colors  {
+  .#{$palette} .et_pb_module h2 {
+    border-color: palette($palette, accent);
+  }
+}
+
 
 h3 {
   @include size(h3);
@@ -145,7 +163,7 @@ blockquote {
   * Blockquote - citazione TIPOGRAFIA
   */
 @each $palette, $section in $colors  {
-  .#{$palette}_color blockquote {
+  .#{$palette} blockquote {
     border-color: palette($palette, border);
     color: palette($palette, body-sec);
   }
@@ -186,31 +204,44 @@ blockquote {
       color: palette($palette, link);
 
       &:hover {
-        color: darken(palette(main, link), 10%);
+        color: darken(palette($palette, link), 20%);
       }
     }
   }
 }
 
 
-/*
- * Colore Link + Hover
- */
-a {
-  color: palette(main, link);
-}
+//****************************************************************************//
+//                         LINK
+//****************************************************************************//
 
 /**
  * Decorazione link - Striking e DIVI builder
  **/
+a,
 #main a:link,
 #main a:visited,
 #main a:hover,
 #main a:active,
-#main a:focus
-.et_divi_builder #et_builder_outer_content .et_pb_module a,
-.et_divi_builder #et_builder_outer_content .et_pb_module a:hover {
+#main a:focus {
   text-decoration: underline;
+}
+
+#main h1>a,
+#main h2>a,
+#main h3>a,
+#main h4>a,
+#main h5>a {
+  text-decoration: none;
+  &:link {
+    text-decoration:none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
 }
 
 /*
