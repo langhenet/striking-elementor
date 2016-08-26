@@ -282,26 +282,10 @@
 ///
 // Margini dei moduli
 ///
-.et_divi_builder #et_builder_outer_content .et_pb_gutters3 .et_pb_column_1_2 .et_pb_module,
-.et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
-.et_divi_builder #et_builder_outer_content .et_section_specialty .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
-.et_divi_builder #et_builder_outer_content .et_section_specialty .et_pb_row .et_pb_column_1_2 .et_pb_gutters3.et_pb_row_inner .et_pb_module {
+.et_pb_module {
 
   @include respond-to(divi-1) {
     margin-bottom: $line-height;
-  }
-
-}
-
-.et_divi_builder #et_builder_outer_content .et_pb_gutters3 .et_pb_column_1_4 .et_pb_module,
-.et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module,
-.et_divi_builder #et_builder_outer_content .et_section_specialty .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_column_1_4 .et_pb_module,
-.et_divi_builder #et_builder_outer_content .et_section_specialty .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_column_1_4 .et_pb_module,
-.et_divi_builder #et_builder_outer_content .et_section_specialty .et_pb_row .et_pb_column_3_4 .et_pb_gutters3.et_pb_row_inner .et_pb_column_1_4 .et_pb_module,
-.et_divi_builder #et_builder_outer_content .et_section_specialty .et_pb_row .et_pb_column_1_2 .et_pb_gutters3.et_pb_row_inner .et_pb_column_1_4 .et_pb_module {
-
-  @include respond-to(divi-1) {
-  margin-bottom: $line-height;
   }
 
 }
