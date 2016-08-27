@@ -35,7 +35,8 @@
 .sticker_sticky #header {
   background-color: main-colors(header, bg);
   transition: all 250ms linear;
-  @include respond-to(step-2) {
+
+  @include respond-to(step-1) {
     background-color: rgba(main-colors(header, bg), 0.5);
   }
 }
@@ -44,7 +45,8 @@
  * HEADER non sticky su mobile
  */
 #header-sticker-wrapper.sticker_enabled #header {
-  @include respond-to(step-2) {
+
+  @include respond-to(step-1) {
     position: relative !important;
   }
 }
@@ -70,7 +72,7 @@
   height: $line-height * 2;
   transition: all 250ms linear;
 
-  @include respond-to(step-2) {
+  @include respond-to(step-1) {
     height: $line-height * 5;
   }
 }
@@ -94,9 +96,18 @@
     bottom: 0;
     transition: all 250ms linear;
 
+    @include respond-to(step-1) {
+      bottom: $line-height / 2;
+    }
+
     img {
       width: 50%;
       transition: all 250ms linear;
+
+      @include respond-to(step-1) {
+        max-width: 100%;
+        width:auto;
+      }
     }
   }
 }
