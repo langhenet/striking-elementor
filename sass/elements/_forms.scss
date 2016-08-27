@@ -202,9 +202,9 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 // Descrizioni campi Gravity Forms
 ///
 .gform_wrapper .top_label .gfield_description {
-  @include form-desc(h5);
-
-  padding: 0 !important;
+  @include form-desc(small);
+  padding-top: font(small, lh) / 2;
+  padding-bottom: font(small, lh) / 2;
 }
 
 ///
@@ -219,6 +219,8 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 .gform_wrapper .ginput_complex label,
 .gform_wrapper .instruction {
   @include form-desc(small);
+  padding-top: font(small, lh) / 2;
+  padding-bottom: font(small, lh) / 2;
 }
 
 

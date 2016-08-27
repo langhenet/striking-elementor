@@ -76,6 +76,7 @@
     padding-top: 0;
     padding-bottom: 0;
     background-image: none;
+    text-decoration: none;
 
     &::after {
       background: none;
@@ -88,12 +89,13 @@
   }
 }
 
-#footer .widget.widget_nav_menu a,
-#footer .widget.widget_nav_menu a:visited {
+#footer a,
+#footer a:visited {
   color: main-colors(footer, link);
-
+  text-decoration: underline;
+  
   &:hover {
-    color: lighten(main-colors(footer, link), 30%)
+    color: darken(main-colors(footer, link), 100%)
   }
 }
 
