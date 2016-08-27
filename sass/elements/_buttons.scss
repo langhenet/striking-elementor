@@ -16,6 +16,13 @@
 .button.medium span,
 .button.large span { font-size: inherit; }
 
+.button.small {
+  @extend %button;
+  @include button(small, 1);
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 //***********************************************************************//
 //                              BOTTONI DIVI BUILDER - Dimensioni

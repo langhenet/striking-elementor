@@ -78,8 +78,8 @@
 
 //RESET padding DELLE RIGHE
 .et_divi_builder #et_builder_outer_content .et_pb_row {
-  padding-top: $line-height;
-  padding-bottom: $line-height;
+  padding-top: $line-height / 2;
+  padding-bottom: $line-height / 2;
 
   @include respond-to(step-0) {
     padding-left: 2em;
@@ -177,6 +177,10 @@
   display: inline-table; //per allineamento verticale
   vertical-align: middle; //per allineamento verticale
 
+  @include respond-to(step-2) {
+    display: block;
+  }
+
     ///
     // Colonna interna alle righe
     ///
@@ -189,6 +193,11 @@
     padding-right: 2em;
     padding-left: 2em;
 
+    @include respond-to(step-2) {
+      display: block;
+      float: left;
+      min-height: $line-height * 12;
+    }
     ///
     // Elementi interni alle colonne
     // sono rimpiccioliti per non fargli uscire troppo a risoluzioni troppo grandi
@@ -227,6 +236,10 @@
   .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
     width: 50%;
 //  margin: 0 auto !important;
+
+@include respond-to(step-2) {
+  width: 100%;
+}
   }
 
 }

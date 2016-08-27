@@ -258,6 +258,10 @@
     @media only screen and (max-width: $p-tablet) { @content; }
   }
 
+  @else if $media == min-step-3 {
+    @media only screen and (min-width: $p-tablet) { @content; }
+  }
+
   @else if $media == step-4 {
     @media only screen and (max-width: $l-phone) { @content; }
   }

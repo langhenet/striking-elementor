@@ -225,6 +225,10 @@ a,
 #main a:active,
 #main a:focus {
   text-decoration: underline;
+
+  &.button {
+    text-decoration: none;
+  }
 }
 
 #main h1>a,

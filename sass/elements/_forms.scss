@@ -262,7 +262,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 
 .gform_wrapper {
   background: palette(main, form-bg); //BG del form
-  border-bottom-color: palette(main, accent); //border bottom del form
+  border-bottom-color: mix(palette(main, form-bg), $nero, 50%); //border bottom del form
 
   a {
     color: palette(main, form-link); //Colore link
@@ -329,7 +329,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 @each $palette, $bg in $colors {
   .#{$palette} .gform_wrapper {
     background: palette($palette, form-bg); //BG del form
-    border-bottom-color: palette($palette, accent); //border bottom del form
+    border-bottom-color: mix(palette($palette, form-bg), $nero, 50%); //border bottom del form
 
     a {
       color: palette($palette, form-link); //Colore link

@@ -41,19 +41,26 @@
     float: right;
     margin-right: $line-height;
     margin-bottom: 0;
+
+    @include respond-to(step-4) {
+      margin-right: 0;
+      clear: both;
+      margin-top: $line-height;
+    }
   }
 
   section:first-child { //tolgo il margine laterale dal primo
     margin-right: 0;
+    margin-top: 0;
   }
 
-  .widget_nav_menu {
+  .widget_nav_menu { //NAV MENU
     height: 2em;
     border-bottom: 2px solid main-colors(header, border);
     border-top: 2px solid transparent;
   //  padding: bqpad(2);
 
-    @include respond-to(step-3) { //nascondo il menu di navigazione sotto i 767px
+    @include respond-to(step-2) { //nascondo il menu di navigazione sotto i 767px
       display: none;
     }
     li {
@@ -69,6 +76,18 @@
         line-height: inherit;
       }
     }
+  }
+
+  .widget_text_icl { //WIDGET DI TESTO
+    @include respond-to(divi-1) {
+      display: none;
+    }
+  }
+
+  a.button.primary {
+    background: main-colors(topbar, accent);
+    border-color: main-colors(topbar, accent);
+    border-bottom-color: mix(main-colors(topbar, accent), $nero, 50%)
   }
 }
 

@@ -25,6 +25,10 @@
   max-width: 800px;
   background: transparent;
   border-left: 1em #fff solid;
+
+  @include respond-to(step-5) {
+    border-left-width: 0;
+  }
   display: block;
   z-index: -1;
 }

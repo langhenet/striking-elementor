@@ -58,6 +58,7 @@
   .#{$palette} .et_pb_blurb {
     background-color: palette($palette, bg-alt);
     color: palette($palette, body-alt);
+    border-bottom-color: mix(palette($palette, bg-alt), $nero, 50%);
 
     @at-root #page #{&} p,
              #page #{&} h1,
