@@ -12,6 +12,11 @@
   padding:$line-height * 7 0 $line-height * 2 0;
   background-size: cover !important;
   background-image: none;
+  position: relative;
+}
+
+#feature::before {
+  @include color-overlay;
 }
 
 #feature .inner {

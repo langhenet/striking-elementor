@@ -181,7 +181,7 @@ blockquote {
 #page h3 {color: palette(main, heading);}
 #page h4 {color: palette(main, heading);}
 #page h5 {color: palette(main, heading);}
-#page p {color: palette(main, body);}
+#page p, ul, ol {color: palette(main, body);}
 #page a,
 #page a:visited {color: palette(main, link);}
 #page a:hover {color: darken(palette(main, link), 10%);}
@@ -191,7 +191,7 @@ blockquote {
  */
 @each $palette, $sections in $colors {
   #page .#{$palette} {
-    p {
+    p, ul, ol {
       color: palette($palette, body)
     }
 
