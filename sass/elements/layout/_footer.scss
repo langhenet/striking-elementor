@@ -54,6 +54,17 @@
   color: main-colors(footer, body);
 }
 
+/*
+ * Colori Link Widget
+ */
+
+#footer .widget a {
+  color: main-colors(footer, link);
+
+  &:visited {
+    color: main-colors(footer, link);
+  }
+}
 
 /*
  * Post List
@@ -85,7 +96,7 @@
   }
 
   &::before {
-    color: main-colors(footer, body);
+    color: main-colors(footer, link);
   }
 }
 
@@ -93,7 +104,7 @@
 #footer a:visited {
   color: main-colors(footer, link);
   text-decoration: underline;
-  
+
   &:hover {
     color: darken(main-colors(footer, link), 100%)
   }
@@ -115,7 +126,7 @@
 
 #copyright,
 #footer_right_area {
-  @include size(p);
+  @include size(small);
   @include deco(p);
 
   color: main-colors(footer, body);
