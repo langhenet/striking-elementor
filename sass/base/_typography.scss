@@ -147,7 +147,25 @@ sup {
 
 sub { bottom: $sub-bottom; }
 
+/*
+ * UL & OL
+ */
+#main ul li,
+.et_divi_builder #et_builder_outer_content .et_pb_module ul li {
+  list-style: circle;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_module ol li {
+  list-style: decimal;
+}
 
+#main ol,
+#main ul,
+.et_divi_builder #et_builder_outer_content .et_pb_module ol,
+.et_divi_builder #et_builder_outer_content .et_pb_module ul {
+  margin-left: 3em;
+  padding-bottom: 0;
+  margin-bottom: $line-height;
+}
 
 /*
  * Blockquote - citazione TIPOGRAFIA

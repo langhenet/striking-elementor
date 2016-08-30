@@ -98,3 +98,83 @@ section.widget {
     margin-bottom: 0;
   }
 }
+
+
+
+//****************************************************************************//
+//          WIDGET - DIVI BUILDER
+//****************************************************************************//
+.et_divi_builder #et_builder_outer_content .et_pb_widget_area_left {
+  border-right: 0;
+  padding-right: 0;
+  padding-top: $line-height;
+  padding-bottom: $line-height;
+  padding-left: $line-height;
+  border-left: 9px solid mix(palette(main, bg), $nero, 80%);
+}
+
+///
+// Reset merda Divi
+////
+.et_divi_builder #et_builder_outer_content .et_pb_widget_area ul ul li {
+    margin-top: 0; // Reset merda Divi
+    margin-left: 0; // Reset merda Divi
+    position: relative;
+    a {
+    padding-left: 1.2em;
+    }
+    &::before {
+      content: "\00BB";
+      display: block;
+      position: absolute;
+      margin-right: 1em;
+    }
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_widget_area ul li {
+  margin-bottom: 0; //reset merda DIVI
+  margin-top: 0; //reset merda DIVI
+}
+
+#page #et_builder_outer_content .widget_nav_menu {
+
+  ul.menu,
+  ul.sub-menu {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+
+    @include deco(h3);
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+      padding-right: 0;
+      @include size(h4);
+      @include deco(h4);
+      margin-bottom: 0;
+      margin-top: 0;
+      text-transform: uppercase;
+      color: palette(main, heading3);
+
+      &:hover {
+        color: palette(main, link)
+      }
+    }
+
+    &.menu-item-has-children > a {
+      padding-left: 0;
+      color: palette(main, heading2);
+      font-size: font(h3, fs);
+      line-height: font(h3, lh);
+      margin-bottom: font(h3, mb);
+      text-transform: none;
+    }
+
+    &.current-menu-item > a {
+      color: palette(main, link)
+    }
+  }
+}
