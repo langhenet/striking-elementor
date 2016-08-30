@@ -6,6 +6,7 @@
 //****************************************************************************//
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.lg-scroll-row.et_pb_row:last-of-type {
   padding-bottom: 4em;
+  padding-top: 0;
 }
 
 .et_divi_builder #et_builder_outer_content .et_pb_fullwidth_header.lg-no-padding {
@@ -13,6 +14,7 @@
 }
 
 .et_divi_builder #et_builder_outer_content .et_pb_fullwidth_header .et_pb_fullwidth_header_scroll {
+  position: relative;
   padding: 0;
 }
 
