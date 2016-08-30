@@ -38,8 +38,17 @@
 #sidebar .widgettitle {
   background: palette(verde, bg);
   color: palette(verde, body);
-  padding: font(h3, lh) $line-height / 2;
+  padding: font(h3, lh) / 2 $line-height / 2;
 //  margin-bottom: font(h3, lh);
+text-align: center;
+}
+
+/*
+ * Titoli DENTRO i widget di test
+ */
+#sidebar .widget h3 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 
