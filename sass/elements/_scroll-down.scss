@@ -31,3 +31,15 @@
     color: palette($palette, accent);
   }
 }
+
+/*
+ * Nel featured header
+ */
+#feature .et_pb_fullwidth_header_scroll {
+  margin-top: 1.266666666666667em * 2;
+  text-align: center;
+
+  a {
+    font-size: 2.5em;
+  }
+}

@@ -15,7 +15,17 @@
   position: relative;
 }
 
-#feature::before {
+
+.et_divi_builder #et_builder_outer_content #intro .et_pb_row:first-of-type {
+  padding-top:$line-height * 7;
+  padding-bottom: $line-height * 2;
+}
+#intro {
+  position: relative;
+}
+
+#feature::before,
+#intro::before {
   @include color-overlay;
 }
 
@@ -59,8 +69,7 @@
 /******************************************************************************
 /*                TESTO
 *******************************************************************************/
-
-.feature-introduce {
+.feature-introduce { //TOCR - una sezione di tipografia per questa parte?
   margin-top: font(p,lh);
   max-width: 770px;
   font-size: 1.578947368421053em;
@@ -69,8 +78,14 @@
   @include deco(p);
 }
 
-#feature h1,
-.feature-introduce {
-//  background: rgba(#fff, 0.5);
-//padding: 0 $line-height;
+.et_divi_builder #et_builder_outer_content #intro {
+  h1 { padding-top: font(h1, lh) / 3; }
+
+  p {
+    position: relative;
+    font-size: 1.578947368421053em;
+    line-height:  1.266666666666667em;
+    margin-bottom:  0.6333333333333em;
+    margin-top:  0.6333333333333em;
+  }
 }

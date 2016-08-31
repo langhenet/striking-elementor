@@ -53,6 +53,15 @@
    align-items: center;
 }
 
+///
+// Resetto la larghezza delle RIGHE
+// questo va a confliggere con il padding impsotato sul mobile...
+// bisogna vedere quale metodo SCEGLIERE - magari quello standard è meglio //TOCHK //TOCR
+///
+.et_divi_builder #et_builder_outer_content .et_pb_with_background .et_pb_row {
+  width: 100%;
+}
+
 /*
  * Media queries per margini delle colonne
  */
@@ -101,7 +110,8 @@
  * NO Padding: resetta i margini bottomo degli elementi della sezione
  */
  .et_divi_builder #et_builder_outer_content .et_pb_section.lg-no-padding .et_pb_row {
-   padding: 0 !important;
+   padding-top: 0 !important;
+   padding-bottom: 0 !important;
 
    @include respond-to(divi-p2) {
      padding: 0;
@@ -258,17 +268,6 @@
 }
 
 
-/*.et_pb_row.et_pb_equal_columns {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-
-  .et_pb_column {
-  float: none;
-  display: table-cell;
-  vertical-align: middle;
-  }
-}*/
 
 //****************************************************************************//
 //    CONTENUTI DELLE RIGHE E DELLE SEZIONI
@@ -326,5 +325,17 @@
     max-width: 672px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+///
+// SEZIONE OVERLAY
+///
+
+.et_pb_section.lg-overlay {
+  position: relative;
+
+  &::before {
+    @include color-overlay;
   }
 }

@@ -91,7 +91,7 @@ h2 {
   padding-right: 0.5em;
 }
 
-.et_pb_module .lg-title--no-border {
+.page .et_pb_module .lg-title--no-border {
   border-left-width: 0px;
   border-right-width: 0px;
   display: block;
@@ -173,11 +173,14 @@ sub { bottom: $sub-bottom; }
 blockquote {
   font-size: font(blockquote, fs);
   line-height: font(blockquote, lh);
+  margin-bottom: font(blockquote, mb);
+  margin-top: font(blockquote, mt);
   font-family: font(blockquote, fm);
   font-weight: font(blockquote, wt);
   font-family: $font-family-special;
   position: relative;
   padding-top: 0;
+  padding-bottom: 0;
   padding-left: $line-height * 2;
 
   @at-root #page #{&} p {
@@ -250,10 +253,9 @@ blockquote::before {
     a,
     a:visited {
       color: palette($palette, link);
-
-      &:hover {
-        color: darken(palette($palette, link), 20%);
-      }
+    }
+    &:hover {
+      color: darken(palette($palette, link), 20%);
     }
   }
 }
@@ -274,7 +276,8 @@ a,
 #main a:focus {
   text-decoration: underline;
 
-  &.button {
+  &.button,
+  &.et_pb_button {
     text-decoration: none;
   }
 }
