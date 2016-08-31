@@ -93,8 +93,8 @@
 // SINGLE PADDING - da usare quando c'è un bordo singolo
 //
 ////
-@function bspad($bp-bw: 1, $bp-fs: p, $bp-lh: $line-height) {
-  @return ($base * $font-size * (font($bp-fs, fs) / 1em) * ($bp-lh / 1em) - $bp-bw) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 1em;
+@function bspad($bp-bw: 1, $bp-fs: p, $bp-lh: p) {
+  @return ($base * $font-size * (font($bp-fs, fs) / 1em) * (font($bp-lh, lh) / 1em) - $bp-bw) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 1em;
 }
 
 ////

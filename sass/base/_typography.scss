@@ -282,6 +282,9 @@ a,
   }
 }
 
+///
+// Link nei titoli
+///
 #main h1>a,
 #main h2>a,
 #main h3>a,
@@ -293,21 +296,21 @@ a,
   }
   &:hover {
     text-decoration: none;
+    color: darken(palette(main, heading), 15%);
   }
   &:visited {
     text-decoration: none;
   }
 }
 
-/*
- * Colore Link + HOVER per varie sezioni
- */
 @each $palette, $bg in $colors {
-  .#{$palette}_color .content a {
-    color: palette($palette, link);
-
+  #main .#{$palette} h1>a,
+  #main .#{$palette} h2>a,
+  #main .#{$palette} h3>a,
+  #main .#{$palette} h4>a,
+  #main .#{$palette} h5>a {
     &:hover {
-      color: lighten(palette($palette, link), 20%);
+      color: darken(palette($palette, heading), 15%);
     }
   }
 }

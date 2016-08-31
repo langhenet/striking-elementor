@@ -16,12 +16,15 @@
 
   @at-root .et_divi_builder #et_builder_outer_content  #{&}.et_pb_blurb_position_top h4 { //solo titolo top
     @include size(h3);
-    margin-bottom: font(h3,lh);
-    margin-top: 0;
+    margin-bottom: 0;
+    margin-top: bspad(12, h3, h3) / 2;
     padding-bottom: 0;
   }
 }
 
+.et_divi_builder #et_builder_outer_content .et_pb_main_blurb_image {
+  margin-bottom: 0;
+}
 
 .et_pb_blurb {
   background-color: palette(main, bg-alt);
