@@ -135,6 +135,9 @@
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:first-of-type {
   padding-top: $line-height * 4;
 }
+.et_divi_builder #et_builder_outer_content .et_pb_section.et_pb_section_parallax  > div.et_pb_row:nth-of-type(2) {
+  padding-top: $line-height * 4; //per sezioni parallasse
+}
 
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:last-of-type {
   padding-bottom: $line-height * 4;
