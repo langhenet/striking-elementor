@@ -291,6 +291,7 @@ a,
 #main h4>a,
 #main h5>a {
   text-decoration: none;
+  color: palette(main, heading2);
   &:link {
     text-decoration:none;
   }
@@ -300,6 +301,7 @@ a,
   }
   &:visited {
     text-decoration: none;
+    color: palette(main, heading2);
   }
 }
 
@@ -309,8 +311,9 @@ a,
   #main .#{$palette} h3>a,
   #main .#{$palette} h4>a,
   #main .#{$palette} h5>a {
+    color: palette($palette, heading2);
     &:hover {
-      color: darken(palette($palette, heading), 15%);
+      color: palette($palette, heading2);
     }
   }
 }
