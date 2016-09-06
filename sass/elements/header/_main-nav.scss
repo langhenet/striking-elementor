@@ -28,7 +28,7 @@
 
  #navigation .menu > li {
   background-color: transparent;
-  transition: background-color 250ms linear;
+  transition: all 250ms linear;
   padding: 0 15px 0 15px;
   @include deco(h2);
   text-transform: uppercase;
@@ -41,7 +41,7 @@
  */
  #navigation .menu > li:hover {
   background-color: main-colors(header, bg);
-  transition: background-color 250ms linear;
+  transition: all 250ms linear;
   border-left: main-colors(header, border) 2px solid;
   padding: 0 15px 0 13px;
  }
@@ -81,7 +81,7 @@
   font-size: font(p,fs);
   line-height: font(p, lh) * 2;
   height: font(p, lh) * 3.5;
-  transition: background-color 250ms linear;
+  transition: all 250ms linear;
   padding: 0;
  }
 
@@ -111,7 +111,7 @@
 #navigation .menu > li.hover > a > i {
   color: main-colors(header, accent);
 //  background-color: main-colors(header, bg);
-  transition: background-color 250ms linear;
+  transition: all 250ms linear;
 }
 
 

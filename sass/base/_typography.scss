@@ -9,15 +9,8 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
 
 //***********************************************************************//
-//              PARTE PRINCIPALE - BODY - P - TITOLI & DETTAGLI
+//              PARTE PRINCIPALE - BODY - P - TITOLI
 //***********************************************************************//
-/*
- * Reset impostazioni di Striking
- */
-#page {
-  font-size: 1em;
-}
-
 /*
  * BODY e P
  */
@@ -40,7 +33,7 @@ p, ul, ol, pre, table, blockquote,
 #left-area,
 .comment-content,
 .entry-content,
-body.et-pb-preview #main-content .container {
+body.et-pb-preview #main-content .container { //TOCHK - cosa fa questa roba??
   ol, ul {
     padding: 0 0 $line-height $line-height;
   }
@@ -64,10 +57,10 @@ ul ul, ol ol, ul ol, ol ul {
 /*
 * HEADINGS - TITOLI
 */
-
 h1, h2, h3, h4, h5 {
 padding-bottom: 0;
 }
+
 
 h1 {
   @include size(h1);
@@ -76,6 +69,7 @@ h1 {
   letter-spacing: -0.035em;
 }
 
+
 h2 {
   @include size(h2);
   @include deco(h2);
@@ -83,6 +77,10 @@ h2 {
   letter-spacing: -.0148em;
 }
 
+
+///
+// H2 con Bordo - solo nel builder
+///
 .page .et_pb_module h2 {
   border-left: 6px solid;
   border-right: 6px solid;
@@ -91,14 +89,8 @@ h2 {
   padding-right: 0.5em;
 }
 
-.page .et_pb_module .lg-title--no-border {
-  border-left-width: 0px;
-  border-right-width: 0px;
-  display: block;
-  padding-left: 0;
-  padding-right: 0;
-}
 
+//colori bordo
 .et_pb_module h2 {
   border-color: palette(main, accent);
 }
@@ -110,10 +102,23 @@ h2 {
 }
 
 
+///
+// H2 senza Bordo
+///
+.page .et_pb_module .lg-title--no-border {
+  border-left-width: 0px;
+  border-right-width: 0px;
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
 h3 {
   @include size(h3);
   @include deco(h3);
 }
+
 
 h4 {
   @include size(h4);
@@ -121,6 +126,7 @@ h4 {
 
   text-transform: uppercase;
 }
+
 
 h5 {
   @include size(h5);
@@ -130,13 +136,17 @@ h5 {
   font-style: italic;
 }
 
-/*
- * Dettagli
- */
 
+
+
+//****************************************************************************//
+//                                DETTAGLI
+//****************************************************************************//
 hr { @include hr-spacing; }
 
+
 b, strong, em, small, code { line-height: 1; }
+
 
 sup {
   line-height: 0;
@@ -145,19 +155,18 @@ sup {
   top: $sup-top;
 }
 
+
 sub { bottom: $sub-bottom; }
 
-/*
- * UL & OL
- */
-#main ul li,
-.et_divi_builder #et_builder_outer_content .et_pb_module ul li {
-  list-style: circle;
-}
-.et_divi_builder #et_builder_outer_content .et_pb_module ol li {
-  list-style: decimal;
-}
 
+
+
+//****************************************************************************//
+//                                OL & UL
+//****************************************************************************//
+///
+// Impostazione di Margine e Padding per OL e UL
+///
 #main ol,
 #main ul,
 .et_divi_builder #et_builder_outer_content .et_pb_module ol,
@@ -167,9 +176,25 @@ sub { bottom: $sub-bottom; }
   margin-bottom: $line-height;
 }
 
-/*
- * Blockquote - citazione TIPOGRAFIA
- */
+
+///
+// Stile lista per UL e OL
+///
+#main ul li,
+.et_divi_builder #et_builder_outer_content .et_pb_module ul li {
+  list-style: circle;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_module ol li {
+  list-style: decimal;
+}
+
+
+
+
+//****************************************************************************//
+//                                BLOCKQUOTE
+//****************************************************************************//
 blockquote {
   font-size: font(blockquote, fs);
   line-height: font(blockquote, lh);
@@ -183,7 +208,7 @@ blockquote {
   padding-bottom: 0;
   padding-left: $line-height * 2;
 
-  @at-root #page #{&} p {
+  @at-root #page #{&} p { //TOCHK il #page è necessario?
     color: palette(main, body-sec);
     margin-bottom: 0;
   }
@@ -202,13 +227,11 @@ blockquote::before {
 }
 
 
-
-
  /*
   * Blockquote - citazione COLORI
   */
 @each $palette, $section in $colors  {
-  #page .#{$palette} blockquote {
+  #page .#{$palette} blockquote { //TOCHK il #page è necessario?
 
     &::before {
       color: palette($palette, accent);
@@ -236,6 +259,7 @@ blockquote::before {
 #page a,
 #page a:visited {color: palette(main, link);}
 #page a:hover {color: darken(palette(main, link), 10%);}
+
 
 /*
  * Colori Tipografia nelle Varie sezioni
@@ -282,36 +306,43 @@ a,
   }
 }
 
+
+
 ///
-// Link nei titoli
+// Link nei titoli - Colori
 ///
-#page #main h1>a,
-#page #main h2>a,
-#page #main h3>a,
-#page #main h4>a,
-#page #main h5>a {
+#page h1>a,
+#page h2>a,
+#page h3>a,
+#page h4>a,
+#page h5>a {
   text-decoration: none;
   color: palette(main, heading2);
+
   &:link {
     text-decoration:none;
   }
+
   &:hover {
     text-decoration: none;
     color: palette(main, heading);
   }
+
   &:visited {
     text-decoration: none;
     color: palette(main, heading2);
   }
 }
 
+///
+// Link nei titoli - Colori nelle varie sezioni
+///
 @each $palette, $bg in $colors {
-  #page #main .#{$palette} h1>a,
-  #page #main .#{$palette} h2>a,
-  #page #main .#{$palette} h3>a,
-  #page #main .#{$palette} h4>a,
-  #page #main .#{$palette} h5>a {
-
+  #page .#{$palette} h1>a,
+  #page .#{$palette} h2>a,
+  #page .#{$palette} h3>a,
+  #page .#{$palette} h4>a,
+  #page .#{$palette} h5>a {
     color: palette($palette, heading);
 
     &:link {
