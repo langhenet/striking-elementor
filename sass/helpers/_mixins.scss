@@ -247,7 +247,7 @@
   }
 
   @else if $media == step-1 {
-    @media only screen and (max-width: $s-desktop) { @content; }
+    @media only screen and (max-width: $s-desktop - 1px) { @content; }
   }
 
   @else if $media == step-2 {
@@ -275,8 +275,13 @@
   }
 
   @else if $media == step-p1 {
+    @media only screen and (min-width: $s-desktop) { @content; }
+  }
+
+  @else if $media == step-p2 {
     @media only screen and (min-width: $u-hd) { @content; }
   }
+
 
   // DIVI Media queries
   //@media all and (min-width: 1405px)

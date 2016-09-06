@@ -30,14 +30,12 @@
 }
 
 /*
- * BG dell'header - da scrollato
+ * BG dell'header - da scrollato -  - solo su desktop
  */
-.sticker_sticky #header {
-  background-color: main-colors(header, bg);
-  transition: all 250ms linear;
-
-  @include respond-to(step-1) {
-    background-color: rgba(main-colors(header, bg), 0.5);
+@include respond-to(step-p1) {
+  .sticker_sticky #header {
+    background-color: main-colors(header, bg);
+    transition: all 250ms linear;
   }
 }
 
@@ -45,7 +43,6 @@
  * HEADER non sticky su mobile
  */
 #header-sticker-wrapper.sticker_enabled #header {
-
   @include respond-to(step-1) {
     position: relative !important;
   }
@@ -66,14 +63,12 @@
 }
 
 /*
- * Altezza - da scrollato
+ * Altezza - da scrollato - solo su desktop
  */
+@include respond-to(step-p1) {
 .sticker_sticky #header .inner {
-  height: $line-height * 2;
-  transition: all 250ms linear;
-
-  @include respond-to(step-1) {
-    height: auto;
+    height: $line-height * 2;
+    transition: all 250ms linear;
   }
 }
 
@@ -93,20 +88,15 @@
   transition: all 250ms linear;
 
   @at-root .sticker_sticky #{&} {
-    bottom: 0;
-    transition: all 250ms linear;
-
-    @include respond-to(step-1) {
-      bottom: $line-height / 2;
+    @include respond-to(step-p1) { //quando l'header è sticcato - tolgo il bottom solo su desktop
+      bottom: 0;
+      transition: all 250ms linear;
     }
 
     img {
-      width: 50%;
-      transition: all 250ms linear;
-
-      @include respond-to(step-1) {
-        max-width: 100%;
-        width:auto;
+      @include respond-to(step-p1) { //quando l'header è sticcato - rimpicciolisco il logo solo su desktop
+        width: 50%;
+        transition: all 250ms linear;
       }
     }
   }

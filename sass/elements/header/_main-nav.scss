@@ -29,15 +29,15 @@
  #navigation .menu > li {
   background-color: transparent;
   transition: all 250ms linear;
-  padding: 0 15px 0 15px;
+  padding: 0 15px 0 13px;
   @include deco(h2);
   text-transform: uppercase;
+  border-left: 2px solid transparent;
  }
 
 
 /*
  * I LI hover & Current
-  aggiungo il bordo e cambio il padding per non far saltare il menu, cambio il colore
  */
  #navigation .menu > li:hover {
   background-color: main-colors(header, bg);
@@ -46,6 +46,7 @@
   padding: 0 15px 0 13px;
  }
 
+//current
  #navigation .menu > li.current-menu-item,
  #navigation .menu > li.current-menu-item,
  #navigation .menu > li.current-menu_item,
@@ -86,16 +87,14 @@
  }
 
 /*
- * I LINK - A - Quando sono scrollati
+ * I LINK - A - Quando sono scrollati - solo su desktop
  */
 .sticker_sticky {
   #navigation .menu > li > a,
   #navigation .menu > li > a:visited {
-    height: font(p, lh) * 2;
-    transition:  background-color 250ms linear;
-
-    @include respond-to(step-1) {
-      height: font(p, lh) * 3.5;
+    @include respond-to(step-p1) {
+      height: font(p, lh) * 2;
+      transition:  background-color 250ms linear;
     }
   }
 }
@@ -149,20 +148,18 @@
 // Sottomenu - contenitore / UL
 ///
 #navigation ul li ul {
-    background-color: main-colors(header, bg);
-    border: 0;
-    border-left: 2px solid main-colors(header, border);
-    left: -2px !important;
-    font-family: $font-family-heading;
-    text-transform: none;
-    margin-top: -$line-height * 2;
-    padding: $line-height / 2 0 $line-height / 2 0;
+  background-color: main-colors(header, bg);
+  border: 0;
+  border-left: 2px solid main-colors(header, border);
+  left: -2px !important;
+  font-family: $font-family-heading;
+  text-transform: none;
+  margin-top: -$line-height * 2;
+  padding: $line-height / 2 0 $line-height / 2 0;
 
-    @at-root .sticker_sticky #{&} { //con header scrollato - il margin top ritorna a 0
-      margin-top: 0;
-
-      @include respond-to(step-1) {
-        margin-top: -$line-height * 2;
+    @at-root .sticker_sticky #{&} { //con header scrollato - il margin top ritorna a 0 - solo su desktop
+      @include respond-to(step-p1) {
+        margin-top: 0;
       }
     }
 }

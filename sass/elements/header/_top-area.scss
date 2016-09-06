@@ -2,11 +2,17 @@
 /*
  * Top Area con scroll
  */
-.sticker_sticky #top_area {
-  display: none;
+#top_area {//imposto il visible per poter fare transizione
+  visibility: visible;
+  transition: all 200ms;
+}
 
-  @include respond-to(step-2) {
+.sticker_sticky #top_area {//quando è scrollata la nascondo
+  visibility: hidden;
+  transition: all 200ms;
+  @include respond-to(step-2) {//la rendo di nuovo visible sotto i 979px
     display: block;
+    visibility: visible;
   }
 }
 
@@ -16,6 +22,14 @@
 //  padding: bhpad(2);
   top: 0;
   right: 0;
+
+  @include respond-to(step-2) {//la paddo sotto i 979px
+    padding-top: $line-height;
+  }
+
+  @include respond-to(step-4) {//rimuovo il padding sotto i 567px
+    padding-top: 0;
+  }
 
   @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
     @include respond-to(step-3) {
@@ -34,12 +48,16 @@
     }
   }
 
+  /*
+   * Widget della Top Bar
+   */
+
   .widget { //affianco i widget uno all'altro
     float: right;
     margin-right: $line-height;
     margin-bottom: 0;
 
-    @include respond-to(step-4) {
+    @include respond-to(step-4) { //li faccio cadere sotto i 567px
       margin-right: 0;
       clear: both;
       margin-top: $line-height;
@@ -51,15 +69,18 @@
     margin-top: 0;
   }
 
-  .widget_nav_menu { //NAV MENU
+  /*
+   * Stile specifico per il menu di navigazione della Top Bar
+   */
+  .widget_nav_menu {
     height: 2em;
     border-bottom: 2px solid main-colors(header, border);
     border-top: 2px solid transparent;
-  //  padding: bqpad(2);
 
     @include respond-to(step-2) { //nascondo il menu di navigazione sotto i 767px
       display: none;
     }
+
     li {
       float: left;
       @include size(small);
@@ -80,12 +101,18 @@
     }
   }
 
-  .widget_text_icl { //WIDGET DI TESTO
-    @include respond-to(divi-1) {
+  /*
+   * Widget di testo della Top body-margin
+   */
+  .widget_text_icl {
+    @include respond-to(divi-1) { //lo nascondo quando in formato desktop
       display: none;
     }
   }
 
+  /*
+   * Bottone della topbar
+   */
   a.button.primary {
     background: main-colors(topbar, accent);
     border-color: main-colors(topbar, accent);
