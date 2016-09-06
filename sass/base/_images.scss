@@ -17,13 +17,13 @@
 /*** verde bianco
 /*** rosso 4 px bianco **/
 /**é*** classe immagine su vista in cantina */
-.lg-image--border img {
+.et_divi_builder #et_builder_outer_content .et_pb_module.lg-image--border img {
   border-bottom: 4px solid;
   border-bottom-color: mix(palette(main, bg), $nero, 50%);
 }
 
 @each $palette, $section in $colors  {
-  .#{$palette} .lg-image--border img {
+  .#{$palette} .et_divi_builder #et_builder_outer_content .et_pb_module.lg-image--border img {
     border-bottom-color: mix(palette($palette, bg), $nero, 50%);
   }
 }

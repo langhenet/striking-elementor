@@ -285,11 +285,11 @@ a,
 ///
 // Link nei titoli
 ///
-#main h1>a,
-#main h2>a,
-#main h3>a,
-#main h4>a,
-#main h5>a {
+#page #main h1>a,
+#page #main h2>a,
+#page #main h3>a,
+#page #main h4>a,
+#page #main h5>a {
   text-decoration: none;
   color: palette(main, heading2);
   &:link {
@@ -297,7 +297,7 @@ a,
   }
   &:hover {
     text-decoration: none;
-    color: darken(palette(main, heading), 15%);
+    color: palette(main, heading);
   }
   &:visited {
     text-decoration: none;
@@ -306,14 +306,24 @@ a,
 }
 
 @each $palette, $bg in $colors {
-  #main .#{$palette} h1>a,
-  #main .#{$palette} h2>a,
-  #main .#{$palette} h3>a,
-  #main .#{$palette} h4>a,
-  #main .#{$palette} h5>a {
-    color: palette($palette, heading2);
+  #page #main .#{$palette} h1>a,
+  #page #main .#{$palette} h2>a,
+  #page #main .#{$palette} h3>a,
+  #page #main .#{$palette} h4>a,
+  #page #main .#{$palette} h5>a {
+
+    color: palette($palette, heading);
+
+    &:link {
+      color: palette($palette, heading);
+    }
+
+    &:visited {
+      color: palette($palette, heading);
+    }
+
     &:hover {
-      color: palette($palette, heading2);
+      color: palette($palette, heading);
     }
   }
 }

@@ -21,7 +21,7 @@
 
 .no-gradient #footer,
 .has-gradient #footer {
-  background-color: main-colors(footer, bg);
+  background-color: mix(main-colors(footer, bg), $bianco, 80%);
 }
 
 
