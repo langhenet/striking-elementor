@@ -73,7 +73,7 @@
   transition: all 250ms linear;
 
   @include respond-to(step-1) {
-    height: $line-height * 5;
+    height: auto;
   }
 }
 
