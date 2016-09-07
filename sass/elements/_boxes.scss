@@ -11,7 +11,7 @@
   padding-top: $line-height;
   padding-left: $line-height;
   padding-right: $line-height;
-  padding-bottom: bpad(4) + ($line-height / 2);
+  padding-bottom: bspad(4);
   border-bottom: 4px solid;
 
   @at-root .et_divi_builder #et_builder_outer_content  #{&}.et_pb_blurb_position_top h4 { //solo titolo top
