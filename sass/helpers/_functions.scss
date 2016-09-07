@@ -41,7 +41,8 @@
 //  Height che non rispetta
 //  la griglia, perché devono tenere conto del bordo
 //
-//  Per ogni grandezza io devo quindi sottrarre l'altezza del bordo (dichiarata //  in PX) all'altezza di griglia - che è invece dichiarata in EM).
+//  Per ogni grandezza io devo quindi sottrarre l'altezza del bordo (dichiarata)
+//  in PX) all'altezza di griglia - che è invece dichiarata in EM).
 //
 //        PASSO #1 - TROVARE IL VALORE IN PX DEL PADDING RIDOTTO
 //        PAD è il valore in PX che risulta da
@@ -66,18 +67,20 @@
 
 
 ///
-// Padding Pieno
+// FULL PADDING
+// da usare SOPRA e SOTTO - oppure SOPRA o SOTTO con in più una mezza
+// interlinea dall'altro lato
 ///
-@function bpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
-  @return ($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) - $bp-bw * 2) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
+@function bpad($bp-bw: 1, $bp-fs: p) {
+  @return ($base * $font-size * (font($bp-fs, fs) / 1em) * (font($bp-fs, lh) / 1em) - $bp-bw * 2) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 0.5em;
 }
 
 
 ///
 // Mezzo padding
 ///
-@function bhpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
-  @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) / 2) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
+@function bhpad($bp-bw: 1, $bp-fs: p) {
+  @return (($base * $font-size * (font($bp-fs, fs) / 1em) * (font($bp-fs, lh) / 1em) / 2) - ($bp-bw * 2)) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 0.5em;
 }
 
 ////
@@ -85,17 +88,20 @@
 // del margine a metà o a un quarto
 ////
 
-@function bqpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
-  @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) / 4) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
+@function bqpad($bp-bw: 1, $bp-fs: p) {
+  @return (($base * $font-size * (font($bp-fs, fs) / 1em) * (font($bp-fs, lh) / 1em) / 4) - ($bp-bw * 2)) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 0.5em;
 }
 
 ////
-// SINGLE PADDING - da usare quando c'è un bordo singolo
-//
+// SINGLE PADDING
+// da usare quando c'è un bordo singolo
+// e si vuole ottenere un altezza di linea intera
 ////
-@function bspad($bp-bw: 1, $bp-fs: p, $bp-lh: p) {
-  @return ($base * $font-size * (font($bp-fs, fs) / 1em) * (font($bp-lh, lh) / 1em) - $bp-bw) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 1em;
+@function bspad($bp-bw: 1, $bp-fs: p) {
+  @return ($base * $font-size * (font($bp-fs, fs) / 1em) * (font($bp-fs, lh) / 1em) - $bp-bw) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 1em;
 }
+
+
 
 ////
 // Border Line Height - questa funzione fà le stesse cose delle precedenti ma

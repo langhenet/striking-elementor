@@ -89,29 +89,20 @@
 @mixin button($size: p, $bw:2, $pw: null) {
   font-size: font($size, fs);
   line-height: font($size, lh);
-//  margin-bottom: font($size, mb);
-
-//  @if $size == p {
-//    margin-top: font($size, mb);
-//  }
-
-//  @else {
-//    margin-top: font($size, mt);
-//  }
 
   @if $pw == half {
-    padding-top: bhpad($bw, font($size, fs), font($size, lh));
-    padding-bottom: bhpad($bw, font($size, fs), font($size, lh));
+    padding-top: bhpad($bw, $size);
+    padding-bottom: bhpad($bw, $size);
   }
 
   @else if $pw == quarter {
-    padding-top: bqpad($bw, font($size, fs), font($size, lh));
-    padding-bottom: bqpad($bw, font($size, fs), font($size, lh));
+    padding-top: bqpad($bw, $size);
+    padding-bottom: bqpad($bw, $size);
   }
 
   @else {
-    padding-top: bpad($bw, font($size, fs), font($size, lh));
-    padding-bottom: bpad($bw, font($size, fs), font($size, lh));
+    padding-top: bpad($bw, $size);
+    padding-bottom: bpad($bw, $size);
   }
 
   border-bottom-width: $bw * 1px;
@@ -202,7 +193,7 @@
   line-height: font($size, lh); //TOCR - forse è più facile farla con la funzione blh?
 //  margin-bottom: font($size, mb);
   margin-top: 0;
-  padding: bhpad($bw, font($size, fs), font($size, lh)) !important;
+  padding: bhpad($bw, $size) !important;
   border-width: $bw * 1px;
 }
 

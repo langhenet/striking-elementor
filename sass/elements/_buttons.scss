@@ -129,7 +129,7 @@
       padding-right: 2em;
       padding-left: 1em;
 
-    &::after {
+      &::after {
         opacity: 1;
       }
     }
@@ -188,7 +188,7 @@ a.et_pb_more_button:after {
 /*
  * Bottoni in szeioni di Base
  */
-.et_divi_builder #et_builder_outer_content .et_pb_button,
+.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light.et_pb_module.et_pb_button,
 a.button.primary {
   @include button-color(none, main);
 
@@ -203,7 +203,7 @@ a.button.primary {
  */
 
 @each $palette, $bg in $colors {
-  .et_divi_builder #et_builder_outer_content .#{$palette} .et_pb_bg_layout_light.et_pb_module.et_pb_button,
+  .et_divi_builder #et_builder_outer_content .#{$palette} .et_pb_module.et_pb_button,
   .et_divi_builder #et_builder_outer_content .#{$palette} a.button.primary {
 
     @include button-color(none, $palette);
@@ -243,39 +243,3 @@ a.button.primary {
 //                  include anche i colori dei bottoni di gravity pare
 //                  ho cambiato la dichiarazione nel mixin dei bottoni per fare i bordi -
 //****************************************************************************//
-
-/*
- * Bottoni scheletrici in sezioni di Base
- */
-#top .avia-button.avia-color-light {
-  border-color: white;
-  color: white;
-  background: transparent;
-
-  &:hover {
-    border-color: palette(main, body-alt);
-    color: palette(main, bg-alt);
-    background: palette(main, body-alt);
-    opacity: 1;
-  }
-}
-
-
-/*****
- * Loop Bottoni scheletrici per varie sezioni
- */
-
-@each $palette, $bg in $colors {
-  #top .#{$palette} .avia-button.avia-color-light {
-    border-color: white;
-    color: white;
-    background: transparent;
-
-    &:hover {
-      border-color: palette($palette, body-alt);
-      color: palette($palette, bg-alt);
-      background: palette($palette, body-alt);
-      opacity: 1;
-    }
-  }
-}
