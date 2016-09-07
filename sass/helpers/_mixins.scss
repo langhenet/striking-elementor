@@ -23,11 +23,11 @@
   margin-bottom: font($size, mb);
 
   @if $size == h1 {
-    @include respond-to(step-2) {font-size: font(h1, fs) * 0.75 !important;} //TODO
+    @include respond-to(step-2) {font-size: font(h1, fs) * 0.75;} //TODO
   }
 
   @else if $size == h2 {
-    @include respond-to(step-2) {font-size: font(h2, fs) * 0.85 !important; } //TODO
+    @include respond-to(step-2) {font-size: font(h2, fs) * 0.85; } //TODO
   }
 
   @else if $size == h3 {
