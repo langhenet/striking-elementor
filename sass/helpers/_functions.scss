@@ -109,7 +109,7 @@
 // che usano questa funzione NON possono andare a capo
 ////
 @function blh($bp-bw: 1, $bp-fs: p, $bp-lh: $line-height) {
-  @return (($base * $font-size * (font($bp-fs, fs) / 1em) * ($bp-lh / 1em)) - ($bp-bw * 2)) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 1em;
+  @return (($base * $font-size * (font($bp-fs, fs) / 1em) * (font($bp-fs, lh) / 1em)) - ($bp-bw * 2)) / ($base * $font-size * (font($bp-fs, fs) / 1em)) * 1em;
 }
 
 

@@ -12,13 +12,13 @@
 //****************************************************************************//
 //                        CORREZIONE TIPOGRAFIA SEZ FW
 //****************************************************************************//
-.et_divi_builder #et_builder_outer_content .et_pb_module {
+/*.et_divi_builder #et_builder_outer_content .et_pb_module {
   h1 { @include size(h1); }
   h2 { @include size(h2); }
   h3 { @include size(h3); }
   h4 { @include size(h4); }
   h5 { @include size(h5); }
-}
+}*/
 
 //fix padding bottom su tipografia di DIVI BUILDER
 .et_divi_builder #et_builder_outer_content .et_pb_module {
