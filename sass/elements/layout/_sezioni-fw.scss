@@ -48,6 +48,7 @@
 //****************************************************************************//
 ///
 // Fix delle righe ad altezza uguale in modo che il contenuto si centri
+// TOCR - forse ha senso fare diversi template per diversi allineamenti nelle righe ad altezza uguale?
 ///
 .et_pb_row.et_pb_equal_columns {
    align-items: center;
@@ -90,17 +91,17 @@
   padding-top: $line-height;
   padding-bottom: $line-height;
 
-  @include respond-to(step-0) {
+  @include respond-to(step-0) { //padding laterale riga sotto i 1169
     padding-left: 2em;
     padding-right: 2em;
   }
 
-  @include respond-to(step-2) {
+  @include respond-to(step-2) { //padding-laterle riga sotto i 979
     padding-left: 4em;
     padding-right: 4em;
   }
 
-  @include respond-to(divi-1) {
+  @include respond-to(divi-1) { //padding sopra e sotto delle righe quando non sono prima o ultima
     padding-top: $line-height;
     padding-bottom: $line-height;
   }
@@ -109,56 +110,66 @@
 /*
  * NO Padding: resetta i margini bottomo degli elementi della sezione
  */
- .et_divi_builder #et_builder_outer_content .et_pb_section.lg-no-padding .et_pb_row {
-   padding-top: 0 !important;
-   padding-bottom: 0 !important;
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-no-padding .et_pb_row {
+ padding-top: 0 !important;
+ padding-bottom: 0 !important;
 
-   @include respond-to(divi-p2) {
-     padding: 0;
-   }
+ @include respond-to(divi-p2) {
+   padding: 0;
  }
+}
+
+
 
 /*
  * SMALL padding
  */
- .et_divi_builder #et_builder_outer_content .et_pb_section.lg-padding-small > div.et_pb_row:first-of-type {
-   padding-top: $line-height * 2;
- }
+//prima
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-padding-small > div.et_pb_row:first-of-type {
+ padding-top: $line-height * 2;
+}
 
- .et_divi_builder #et_builder_outer_content .et_pb_section.lg-padding-small > div.et_pb_row:last-of-type {
-   padding-bottom: $line-height * 2;
- }
+
+//Ultima
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-padding-small > div.et_pb_row:last-of-type {
+ padding-bottom: $line-height * 2;
+}
+
+
 
 /*
 * NORMAL padding - SEZIONI NORMALI E FW
 */
+//Prima
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:first-of-type {
   padding-top: $line-height * 4;
 }
+
+//Prima con Parallax
 .et_divi_builder #et_builder_outer_content .et_pb_section.et_pb_section_parallax  > div.et_pb_row:nth-of-type(2) {
   padding-top: $line-height * 4; //per sezioni parallasse
 }
 
+
+//Ultima
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:last-of-type {
   padding-bottom: $line-height * 4;
 }
 
-//fix parallax
-.et_pb_section_parallax > div.et_pb_row:nth-of-type(2) {
-  padding-top: $line-height * 4;
-}
 
-//Azzera il padding della riga per quelle FULL WIDTH
+//Azzera il padding della riga per quelle a Larghezza Piena
 .et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:first-of-type,
 .et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:last-of-type {
   padding: 0;
 }
 
-//sposta il padding sulle colonne per le sezioni FW
+//sposta il padding sulle colonne per le Righe a Larghezza Piena
 .et_pb_section .et_pb_row.et_pb_row_fullwidth .et_pb_column {
   padding-top: $line-height * 4;
   padding-bottom: $line-height * 4;
 }
+
+
 
 
 /*
@@ -193,15 +204,16 @@
 ///
 .et_divi_builder #et_builder_outer_content .et_pb_row.et_pb_row_fullwidth {
   display: inline-table; //per allineamento verticale
+  align-items: center;
   vertical-align: middle; //per allineamento verticale
 
   @include respond-to(step-2) {
     display: block;
   }
 
-    ///
-    // Colonna interna alle righe
-    ///
+  ///
+  // Colonna interna alle righe
+  ///
   .et_pb_column {
     float: none;  //per allineamento verticale
     display: table-cell;  //per allineamento verticale
@@ -216,6 +228,8 @@
       float: left;
       min-height: $line-height * 12;
     }
+
+
     ///
     // Elementi interni alle colonne
     // sono rimpiccioliti per non fargli uscire troppo a risoluzioni troppo grandi
@@ -261,13 +275,11 @@
   .et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_2,
   .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
     width: 50%;
-//  margin: 0 auto !important;
 
-@include respond-to(step-2) {
-  width: 100%;
-}
+    @include respond-to(step-2) {
+      width: 100%;
+    }
   }
-
 }
 
 
@@ -311,11 +323,9 @@
 // Margini dei moduli
 ///
 .et_pb_module {
-
   @include respond-to(divi-1) {
     margin-bottom: $line-height;
   }
-
 }
 
 
