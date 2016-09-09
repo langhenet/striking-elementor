@@ -220,8 +220,8 @@
     vertical-align: middle;  //per allineamento verticale
     padding-top: $line-height * 3;
     padding-bottom: $line-height * 3;
-    padding-right: 2em;
-    padding-left: 2em;
+    padding-right: 5em;
+    padding-left: 5em;
 
     @include respond-to(step-2) {
       display: block;
