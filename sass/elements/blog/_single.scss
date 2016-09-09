@@ -31,6 +31,19 @@
   //font-family: font(h5,fm);
 }
 
+
+
+
+//****************************************************************************//
+//*                    CONTENITORE
+//****************************************************************************//
+.entry.content {
+  margin-bottom: $line-height * 3;
+}
+
+
+
+
 //****************************************************************************//
 //              Authro Box
 //****************************************************************************//
@@ -53,6 +66,7 @@
   span.fn {
     @include size(h5);
     @include deco(h5);
+    color: palette(main, body-alt);
 
     text-transform: uppercase;
     font-weight: family(ffh, bold);
@@ -83,6 +97,10 @@
 
     @at-root #page #{&} a {
       color: palette(grigio, link);
+    }
+
+    li {
+      list-style: none !important;
     }
 
     time {

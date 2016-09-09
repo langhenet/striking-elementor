@@ -64,7 +64,9 @@ text-align: center;
 //                           COLOR LINK
 //****************************************************************************//
 #sidebar .widget .posts_list a,
-#sidebar .widget .posts_list a:visited {
+#sidebar .widget .posts_list a:visited,
+#sidebar .widget a,
+#sidebar .widget a:visited {
   color: palette(grigio, body);
 
   &:hover {

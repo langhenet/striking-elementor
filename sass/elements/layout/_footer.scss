@@ -21,9 +21,8 @@
 
 .no-gradient #footer,
 .has-gradient #footer {
-  background-color: mix(main-colors(footer, bg), $bianco, 80%);
+  background-color: mix(main-colors(footer, bg), $bianco, 95%);
 }
-
 
 #footer .inner {
   padding: $line-height * 2 0;

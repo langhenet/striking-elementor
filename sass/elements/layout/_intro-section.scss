@@ -41,7 +41,7 @@
   background: transparent;
   border-left: 1em #fff solid;
 
-  @include respond-to(step-5) {
+  @include respond-to(step-1) {
     border-left-width: 0;
   }
   display: block;

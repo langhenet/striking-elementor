@@ -123,6 +123,8 @@
 
 #lang_sel_list {
   height: font(p, lh);
+  background: rgba(255,255,255,0.2);
+  padding: 0.1em 0;
 
   ul {
     border-top: 0 !important;
@@ -131,11 +133,7 @@
   li {
     line-height: font(p, lh);
     padding: 0 $line-height / 4 !important;
-    border-right: 1px solid main-colors(header, border);
-  &:last-child {
-    padding-right: 0;
-    border-right: 0;
-  }
+
   }
 
   a,
@@ -145,6 +143,13 @@
     font-family: font(p, fm);
     line-height: font(p, lh);
     display: inline;
+    border-right: 1px solid main-colors(header, border);
+    padding-right: 1em;
+  }
+
+  li:last-child a {
+    border-right: 0;
+    padding-right: 0;
   }
 }
 
