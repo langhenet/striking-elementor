@@ -21,7 +21,7 @@ body {
   margin:0 auto;
 
   @include respond-to(step-0) { font-size: $font-size * 0.9;} //TODO
-  @include respond-to(step-4) { font-size: $font-size * 0.7;} //TODO
+  @include respond-to(step-4) { font-size: $font-size * 0.8;} //TODO
 }
 
 p, ul, ol, pre, table, blockquote,

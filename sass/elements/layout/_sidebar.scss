@@ -82,3 +82,47 @@ text-align: center;
     color: lighten(palette(grigio, body), 30%)
   }
 }
+
+
+
+
+//****************************************************************************//
+//                           SIDEBAR SU MOBILE
+//****************************************************************************//
+#sidebar_content {
+  @include respond-to(step-2) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    section.widget {
+      width: 47.5%;
+      margin-right: 5%;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @at-root .right_sidebar #{&} {
+  @include respond-to(step-4) {
+    padding-left: $line-height;
+    padding-right: $line-height;
+  }
+  }
+
+  @include respond-to(step-5) {
+    display: block;
+
+    section.widget {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .textwidget {
+      text-align: center;
+    }
+  }
+}

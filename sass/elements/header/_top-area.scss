@@ -60,7 +60,7 @@
     @include respond-to(step-4) { //li faccio cadere sotto i 567px
       margin-right: 0;
       clear: both;
-      margin-top: $line-height;
+      margin-top: $line-height / 2;
     }
   }
 
@@ -125,6 +125,11 @@
   height: font(p, lh);
   background: rgba(255,255,255,0.2);
   padding: 0.1em 0;
+
+  @include respond-to(step-1) {
+    height: 1.9em;
+    padding: 0;
+  }
 
   ul {
     border-top: 0 !important;

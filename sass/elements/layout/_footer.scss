@@ -25,7 +25,7 @@
 }
 
 #footer .inner {
-  padding: $line-height * 2 0;
+  padding: $line-height * 3 0;
 }
 
 
@@ -129,4 +129,34 @@
   @include deco(p);
 
   color: main-colors(footer, body);
+}
+
+//****************************************************************************//
+//                                  FOOTER SU MOBILE
+//****************************************************************************//
+#footer > .inner {
+  @include respond-to(step-2) {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+
+    .one_fourth {
+      width: 47.5%;
+      margin-right: 5%;
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include respond-to(step-5) {
+    padding-left: $line-height;
+    padding-right: $line-height;
+
+    .one_fourth {
+      width: 100%;
+      margin-right: 0;
+      margin-top: $line-height * 2;
+    }
+  }
 }

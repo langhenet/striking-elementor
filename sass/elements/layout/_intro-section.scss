@@ -33,6 +33,11 @@
   padding: $line-height $line-height * 1.5;
   position: relative;
   z-index: 1;
+
+  @include respond-to(step-4) {
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
+  }
 }
 
 #feature .inner::before {
