@@ -78,6 +78,7 @@
 //RESET padding DELLE SEZIONI
 .et_divi_builder #et_builder_outer_content .et_pb_section {
   padding: 0;
+
   @include respond-to(divi-2) {
     padding: 0;
   }
@@ -97,10 +98,13 @@
     padding-right: $line-height;
   }
 
-  @include respond-to(step-2) { //padding-laterle riga sotto i 979
+  @include respond-to(step-2) { //padding-laterle riga sotto i 979 - annullo il padding sotto e sopra fra le righe visto che scende tutto a capo
     padding-left: $line-height * 2;
     padding-right: $line-height * 2;
+    padding-top: 0;
+    padding-bottom: 0;
   }
+
 
   @include respond-to(step-4) { //padding-laterle riga sotto i 979
     padding-left: $line-height;
@@ -131,13 +135,13 @@
  * SMALL padding
  */
 //prima
-.et_divi_builder #et_builder_outer_content .et_pb_section.lg-padding-small > div.et_pb_row:first-of-type {
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-small-padding > div.et_pb_row:first-of-type {
  padding-top: $line-height * 2;
 }
 
 
 //Ultima
-.et_divi_builder #et_builder_outer_content .et_pb_section.lg-padding-small > div.et_pb_row:last-of-type {
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-small-padding > div.et_pb_row:last-of-type {
  padding-bottom: $line-height * 2;
 }
 
@@ -149,33 +153,41 @@
 //Prima
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:first-of-type {
   padding-top: $line-height * 4;
-}
 
+  @include respond-to(step-2) {
+    padding-top: $line-height * 3;
+  }
+
+  @include respond-to(step-3) {
+    padding-top: $line-height * 2;
+  }
+}
 //Prima con Parallax
 .et_divi_builder #et_builder_outer_content .et_pb_section.et_pb_section_parallax  > div.et_pb_row:nth-of-type(2) {
   padding-top: $line-height * 4; //per sezioni parallasse
+
+  @include respond-to(step-2) {
+    padding-top: $line-height * 3;
+  }
+
+  @include respond-to(step-3) {
+    padding-top: $line-height * 2;
+  }
 }
 
 
 //Ultima
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:last-of-type {
   padding-bottom: $line-height * 4;
+
+  @include respond-to(step-2) {
+    padding-bottom: $line-height * 3;
+  }
+
+  @include respond-to(step-3) {
+    padding-bottom: $line-height * 2;
+  }
 }
-
-
-//Azzera il padding della riga per quelle a Larghezza Piena
-.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:first-of-type,
-.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:last-of-type {
-  padding: 0;
-}
-
-//sposta il padding sulle colonne per le Righe a Larghezza Piena
-.et_pb_section .et_pb_row.et_pb_row_fullwidth .et_pb_column {
-  padding-top: $line-height * 4;
-  padding-bottom: $line-height * 4;
-}
-
-
 
 
 /*
@@ -203,7 +215,17 @@
   max-width: 100% !important;
 }
 
+//Azzera il padding della riga per quelle a Larghezza Piena
+.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:first-of-type,
+.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:last-of-type {
+  padding: 0;
+}
 
+//sposta il padding sulle colonne per le Righe a Larghezza Piena
+.et_pb_section .et_pb_row.et_pb_row_fullwidth .et_pb_column {
+  padding-top: $line-height * 4;
+  padding-bottom: $line-height * 4;
+}
 
 ///
 // Struttura delle RIGHE a larghezza piena
@@ -252,6 +274,11 @@
         padding-right: 4em;
       }
 
+      @include respond-to(step-3) {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+
       .et_pb_text,
       .et_pb_button_module_wrapper { //Flotto gli elementi interni alla prima cella in modo che si allineino a dx
         float: right;
@@ -265,6 +292,11 @@
       @include respond-to(step-2) {
         padding-left: 4em;
         padding-right: 4em;
+      }
+
+      @include respond-to(step-3) {
+        padding-left: 2em;
+        padding-right: 2em;
       }
     }
   }

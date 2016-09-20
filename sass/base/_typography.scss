@@ -87,6 +87,12 @@ h2 {
   display: table;
   padding-left: 0.5em;
   padding-right: 0.5em;
+
+  @include respond-to(step-4) {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
 }
 
 

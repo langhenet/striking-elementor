@@ -57,7 +57,7 @@
     margin-right: $line-height;
     margin-bottom: 0;
 
-    @include respond-to(step-4) { //li faccio cadere sotto i 567px
+    @include respond-to(step-3) { //li faccio cadere sotto i 567px
       margin-right: 0;
       clear: both;
       margin-top: $line-height / 2;

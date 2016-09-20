@@ -38,17 +38,15 @@
 
     font-weight: button-deco(small, wt);
     text-transform: uppercase;
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
 
     &:after { //il padding viene usato per correggere l'icona di DIVI
-      font-size: inherit !important;
-      line-height: inherit;
-      padding-right: 1em;
-      margin-left: 1em;
+      display: none;
     }
     // HOVER
     &:hover {
       @extend .et_pb_button.size-small;
-      padding-right: 2.5em;
     }
 
     //Bottone icona
@@ -75,16 +73,15 @@
     font-weight: inherit; //TODO
     text-transform: uppercase;
     border-radius: 0; //TOCHK
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
 
     &:hover {
       @extend .et_pb_button.size-medium;
     }
 
    &:after { //il padding viene usato per correggere l'icona di DIVI
-      font-size: inherit !important;
-      line-height: inherit;
-      padding-right: 1em;
-      margin-left: 0.5em;
+      display: none;
     }
     //Bottone icona
     &.et_pb_custom_button_icon {
@@ -111,6 +108,8 @@
 
     font-weight: inherit; //TODO
     text-transform: uppercase;
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
 
 
 
@@ -118,10 +117,7 @@
       @extend .et_pb_button.size-large;
     }
     &:after { //il padding viene usato per correggere l'icona di DIVI
-      font-size: inherit !important;
-      line-height: inherit;
-      padding-right: 1em;
-      margin-left: 0.5em;
+      display: none;
     }
 
     &.et_pb_custom_button_icon { //Bottone icona
@@ -146,15 +142,15 @@
     font-weight: inherit; //TODO
     text-transform: uppercase;
 
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
+
     &:hover {
       @extend .et_pb_button.size-x-large;
     }
 
     &:after { //il padding viene usato per correggere l'icona di DIVI
-      font-size: inherit !important;
-      line-height: inherit;
-      padding-right: 1em;
-      margin-left: 0.5em;
+      display: none;
     }
 
     &.et_pb_custom_button_icon { //Bottone icona

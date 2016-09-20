@@ -88,6 +88,10 @@
     }
   }
 
+  @include respond-to(step-0) {
+    padding-right: 2em;
+  }
+
   @at-root .inner.right_sidebar #{&} {
     margin-bottom: $line-height * 3;
   }
