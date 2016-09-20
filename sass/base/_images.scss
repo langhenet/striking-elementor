@@ -33,6 +33,11 @@
 //*               IMMAGINI SU MOBILE
 //****************************************************************************//
 .et_pb_image {
+  @include respond-to(step-2) {
+    max-width: 30%;
+    margin: 0 auto !important;
+  }
+
   @include respond-to(step-3) {
     max-width: 50%;
     margin: 0 auto !important;

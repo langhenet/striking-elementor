@@ -90,6 +90,7 @@
 .et_divi_builder #et_builder_outer_content .et_pb_row {
   padding-top: $line-height;
   padding-bottom: $line-height;
+  max-width: $website-width;
 
   @include respond-to(step-0) { //padding laterale riga sotto i 1169
     padding-left: $line-height;

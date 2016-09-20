@@ -1,0 +1,76 @@
+////
+// LAYOUT GENERICO
+/////
+
+.et_divi_builder #et_builder_outer_content .et_pb_testimonial.et_pb_testimonial_no_bg {
+//  border-right: 7px solid $grigio-chiarissimo;
+  padding-top: 0;
+}
+
+////
+// Rimuovo Icona
+////
+.et_divi_builder #et_builder_outer_content .et_pb_testimonial.et_pb_testimonial_no_bg:before {
+  display: none;
+}
+
+////
+// Immagine di Profilo
+///
+.et_divi_builder #et_builder_outer_content .et_pb_testimonial_portrait {
+  width: $line-height * 3 !important;
+  height: $line-height * 3 !important;
+}
+// Margin sotto all'immagine di profilo
+.et_divi_builder #et_builder_outer_content .et_pb_column_1_3 .et_pb_testimonial_portrait,
+.et_divi_builder #et_builder_outer_content .et_pb_column_1_4 .et_pb_testimonial_portrait,
+.et_divi_builder #et_builder_outer_content .et_pb_column_3_8 .et_pb_testimonial_portrait {
+  margin-bottom: $line-height / 2;
+}
+
+
+////
+// CONTENUTO
+////
+.et_divi_builder #et_builder_outer_content {
+
+  h4 { //titolo rece - tolgo margine sopra
+    margin-top: 0;
+  }
+
+  .et_pb_testimonial_author { // nome autore
+    @include size(h5);
+    font-style: italic;
+  }
+
+  .et_pb_testimonial .et_pb_testimonial_meta { // Meta autore
+    font-size: 0.6315789473684211em;
+  }
+}
+
+.et_pb_testimonial_description_inner {
+  text-align: left;
+  width: 100% !important; //viene hardocadata dal inline
+
+  .aligncenter {
+    text-align: center;
+    display: block !important; // per raddrizzare le immagini inserite a mano
+  }
+}
+
+
+
+
+//************************************************************************************************//
+//              MERDA PER COLONNE
+//************************************************************************************************//
+.lg-columns--border .et_pb_column {
+  margin-right:0 !important;
+  border-left: 7px solid $grigio-chiarissimo;
+  margin-right:0 !important;
+  padding: 0 $line-height 0 $line-height;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_gutters3 .lg-columns--border .et_pb_column_1_3 {
+  width: 33.33% !important;
+}
