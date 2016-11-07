@@ -156,11 +156,23 @@ h5 {
 //*     linee di codice
 //****************************************************************************//
 .et_divi_builder #et_builder_outer_content div[class*='et_pb_text_'] h1 {
+  @include respond-to(divi-2) {
     @include size(h1);
+  }
 
+  @include respond-to(step-3) {
+    @include size(h1);
+  }
 }
+
 .et_divi_builder #et_builder_outer_content div[class*='et_pb_text_'] p {
+  @include respond-to(divi-2) {
     @include size(p);
+  }
+  
+  @include respond-to(step-3) {
+    @include size(p);
+  }
 }
 
 
