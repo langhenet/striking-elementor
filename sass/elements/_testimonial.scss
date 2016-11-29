@@ -71,6 +71,14 @@
   padding: 0 $line-height 0 $line-height;
 }
 
+.grigio .lg-columns--border .et_pb_column {
+  border-left: 7px solid $bianco;
+}
+
 .et_divi_builder #et_builder_outer_content .et_pb_gutters3 .lg-columns--border .et_pb_column_1_3 {
   width: 33.33% !important;
+
+  @include respond-to(step-2) {
+    width: 100% !important;
+  }
 }

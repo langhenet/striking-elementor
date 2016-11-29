@@ -43,6 +43,12 @@ select {
   }
 }
 
+.et_pb_column_4_4 .gform_wrapper {
+  @include respond-to(step-5) {
+    margin-left: -2em;
+  }
+}
+
 
 /*
  * il LI che contiene i campi

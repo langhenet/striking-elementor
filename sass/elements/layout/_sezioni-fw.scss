@@ -5,20 +5,19 @@
 //*                                                                         *//
 //***************************************************************************//
 
-.page-template-template_fullwidth #page .inner {
+.page-template-template_fullwidth #page .inner,
+.page-template-template_land_page #page .inner {
   width: 100%;
+
+  .entry.content {
+    margin-bottom: 0;
+  }
 }
 
 //****************************************************************************//
 //                        CORREZIONE TIPOGRAFIA SEZ FW
 //****************************************************************************//
-/*.et_divi_builder #et_builder_outer_content .et_pb_module {
-  h1 { @include size(h1); }
-  h2 { @include size(h2); }
-  h3 { @include size(h3); }
-  h4 { @include size(h4); }
-  h5 { @include size(h5); }
-}*/
+
 
 //fix padding bottom su tipografia di DIVI BUILDER
 .et_divi_builder #et_builder_outer_content .et_pb_module {
@@ -373,13 +372,14 @@
 ///
 .et_divi_builder #et_builder_outer_content .et_pb_column_4_4 {
   p, h4, h5, ul, ol, blockquote {
-    max-width: 672px;
+    max-width: 670px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  h1, h2, h3 {
-   max-width: 772px;
+  h1, h2, h3,
+  .gform_wrapper {
+   max-width: 770px;
    margin-left: auto;
    margin-right: auto;
   }

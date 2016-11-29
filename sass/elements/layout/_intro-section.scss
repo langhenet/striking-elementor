@@ -20,6 +20,26 @@
   padding-top:$line-height * 7;
   padding-bottom: $line-height * 2;
 }
+
+.page-template-template_land_page {
+
+  #feature,
+  .has-gradient #feature,
+  .no-gradient #feature,
+  #intro {
+
+    @include respond-to(step-4) {
+      padding-top: $line-height * 5 !important;
+    }
+  }
+
+  &.et_divi_builder #et_builder_outer_content #intro .et_pb_row:first-of-type {
+    @include respond-to(step-4) {
+      padding-top: $line-height * 3 !important;
+    }
+  }
+}
+
 #intro {
   position: relative;
 }
@@ -84,7 +104,8 @@
 }
 
 .et_divi_builder #et_builder_outer_content #intro {
-  h1 { padding-top: font(h1, lh) / 3; }
+  h1:first-child { padding-top: font(h1, lh) / 3; }
+  h2:first-child { padding-top: font(h2, mt) }
 
   p {
     position: relative;

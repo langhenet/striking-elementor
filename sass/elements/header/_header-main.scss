@@ -29,6 +29,30 @@
 //  position: static;
 }
 
+.page-template-template_land_page #header {
+  background: transparent;
+  transition: all 0ms linear;
+  position: relative;
+
+  #logo,
+  #logo_text {
+    @include respond-to(step-3) {
+      width: 100% !important;
+    }
+  }
+}
+
+
+.page-template-template_land_page .sticker_sticky #header {
+  position: relative;
+  transition: all 0ms linear;
+
+  .inner {
+    height: inherit;
+    transition: all 0ms linear;
+  }
+}
+
 /*
  * BG dell'header - da scrollato -  - solo su desktop
  */
