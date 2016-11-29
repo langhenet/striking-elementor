@@ -19,6 +19,11 @@
 .et_divi_builder #et_builder_outer_content #intro .et_pb_row:first-of-type {
   padding-top:$line-height * 7;
   padding-bottom: $line-height * 2;
+
+  @include respond-to(step-3) {
+    padding-top:$line-height * 8;
+    padding-bottom: $line-height * 3;
+  }
 }
 
 .page-template-template_land_page {
