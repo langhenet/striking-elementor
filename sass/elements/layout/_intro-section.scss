@@ -22,7 +22,7 @@
 
   @include respond-to(step-3) {
     padding-top:$line-height * 8;
-    padding-bottom: $line-height * 3;
+    padding-bottom: $line-height * 2;
   }
 }
 
