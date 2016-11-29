@@ -119,7 +119,7 @@
 
     img {
       @include respond-to(step-p1) { //quando l'header è sticcato - rimpicciolisco il logo solo su desktop
-        width: 50%;
+        width: 40%;
         transition: all 250ms linear;
       }
     }

@@ -24,7 +24,7 @@
   right: 0;
 
   @include respond-to(step-2) {//la paddo sotto i 979px
-    padding-top: $line-height;
+    padding-top: $line-height / 2;
   }
 
   @include respond-to(step-4) {//rimuovo il padding sotto i 567px
@@ -34,7 +34,7 @@
   @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
     @include respond-to(step-3) {
       display: block;
-      width: 48%;
+      width: 42%;
       float: right;
     }
   }
@@ -43,7 +43,7 @@
   .responsive #logo_text { //dimezzo la larghezza del logo
     @include respond-to(step-3) {
       display: block;
-      width: 48%;
+      width: 58%;
       float: left;
     }
   }
@@ -61,7 +61,13 @@
       margin-right: 0;
       clear: both;
       margin-top: $line-height / 2;
+
+      &:last-child {
+        margin-bottom: $line-height / 2;
+      }
     }
+
+
   }
 
   section:first-child { //tolgo il margine laterale dal primo
@@ -116,7 +122,18 @@
   a.button.primary {
     background: main-colors(topbar, accent);
     border-color: main-colors(topbar, accent);
-    border-bottom-color: mix(main-colors(topbar, accent), $nero, 50%)
+    border-bottom-color: mix(main-colors(topbar, accent), $nero, 50%);
+
+    &.chiama {
+      background: transparent;
+      border: 0;
+      padding: 0;
+
+      span {
+        padding: 0;
+      }
+    }
+
   }
 }
 
