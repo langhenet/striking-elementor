@@ -110,7 +110,8 @@
   /*
    * Widget di testo della Top body-margin
    */
-  .widget_text_icl {
+  .widget_text_icl,
+  .widget_text {
     @include respond-to(divi-1) { //lo nascondo quando in formato desktop
       display: none;
     }
