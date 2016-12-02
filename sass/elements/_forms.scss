@@ -59,7 +59,14 @@ select {
 .gform_wrapper .top_label li.gfield.gf_right_half {
   margin-bottom: $line-height * 1.5;
 }
-
+.gform_wrapper ul.gform_fields li.gfield,
+.gform_wrapper .top_label li.gfield.gf_right_half {
+  padding-right: 0;
+  margin-top: 0;
+}
+.gform_wrapper li.gfield.field_description_below+li.gsection {
+  margin-top: inherit !important;
+}
 
 /*
  * Correzione padding campi complessi
