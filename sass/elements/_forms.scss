@@ -37,9 +37,9 @@ select {
   padding-bottom: bspad(6) + ($line-height / 2em);
 
   @include respond-to(step-5) {
-    max-width: 120%;
-    margin-left: -10%;
-    width: 120%;
+    max-width: 120% !important;
+    margin-left: -10% !important;
+    width: 120% !important;
   }
 }
 
