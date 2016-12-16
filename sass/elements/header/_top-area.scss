@@ -155,7 +155,12 @@
 
   li {
     line-height: font(p, lh);
-    padding: 0 $line-height / 4 !important;
+    padding: 0;
+
+
+    &:last-child {
+      border-right: 0;
+    }
 
   }
 
@@ -166,13 +171,14 @@
     font-family: font(p, fm);
     line-height: font(p, lh);
     display: inline;
-    border-right: 1px solid main-colors(header, border);
-    padding-right: 1em;
-  }
+    border-right: 0 solid main-colors(header, border);
+    border-right: 1px solid #fff;
+    padding: 0 $line-height / 2 !important;
+    color: #fff;
+   }
 
   li:last-child a {
     border-right: 0;
-    padding-right: 0;
   }
 }
 
