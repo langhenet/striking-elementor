@@ -8,32 +8,71 @@
  * Padding contenitore & Dimensioni titolo
  */
 .et_pb_blurb {
-  padding: $line-height;
+  padding-top: $line-height;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: bspad(4);
+  border-bottom: 4px solid;
 
-  &.et_pb_blurb_position_top h4 { //solo titolo top
+  @at-root .et_divi_builder #et_builder_outer_content  #{&}.et_pb_blurb_position_top h4 { //solo titolo top
     @include size(h3);
-
+    margin-bottom: 0;
     margin-top: 0;
     padding-bottom: 0;
-
   }
 }
 
+
+////
+// Immagine
+////
+.et_divi_builder #et_builder_outer_content .et_pb_main_blurb_image {
+  margin-bottom: 0;
+  margin-top: - $line-height;
+
+  img {
+    border-bottom: 4px solid;
+    border-bottom-color: mix(palette(main, bg-alt), $nero, 50%);
+  }
+}
+
+////
+//Loop Colori immagine
+///
+@each $palette, $bg in $colors {
+  .et_divi_builder #et_builder_outer_content  .#{$palette} .et_pb_main_blurb_image  img {
+    border-bottom-color: mix(palette($palette, bg-alt), $nero, 50%);
+  }
+}
+
+////
+// Contenuto del Blurb
+///
 
 .et_pb_blurb {
   background-color: palette(main, bg-alt);
   color: palette(main, body-alt);
 
-  p, h1, h2, h3, h4, h5 {
+  @at-root #page #{&} p,
+           #page #{&} h1,
+           #page #{&} h2,
+           #page #{&} h3,
+           #page #{&} h4,
+           #page #{&} h5 {
     color: palette(main, body-alt);
   }
 
-a {
+  @at-root #page #{&} a {
     color: palette(main, accent-alt);
+  }
+
+  .et_pb_blurb_container {
+    padding-right: $line-height;
+    padding-left: $line-height;
   }
 }
 
-.et-pb-icon { // colore icona
+.et_pb_main_blurb_image .et-pb-icon { // colore icona
   color: palette(main, body-alt) !important;
 
   &.et-pb-icon-circle { // icona con il cerchio
@@ -47,19 +86,25 @@ a {
  * colori
  */
 @each $palette, $bg in $colors {
-  .#{$palette}_color .et_pb_blurb {
+  .#{$palette} .et_pb_blurb {
     background-color: palette($palette, bg-alt);
     color: palette($palette, body-alt);
+    border-bottom-color: mix(palette($palette, bg-alt), $nero, 50%);
 
-    p, h1, h2, h3, h4, h5 {
-    color: palette($palette, body-alt);
-  }
+    @at-root #page #{&} p,
+             #page #{&} h1,
+             #page #{&} h2,
+             #page #{&} h3,
+             #page #{&} h4,
+             #page #{&} h5 {
+      color: palette($palette, body-alt);
+    }
 
-  a {
-    color: palette($palette, accent-alt);
-  }
+    @at-root #page #{&} a {
+      color: palette($palette, accent-alt);
+    }
 
-  .et-pb-icon { // colore icona
+  .et_pb_main_blurb_image .et-pb-icon { // colore icona
     color: palette($palette, body-alt) !important;
 
     &.et-pb-icon-circle { // icona con il cerchio

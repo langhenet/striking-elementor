@@ -17,43 +17,95 @@
 ///
 
 @mixin size($size: p) {
-  font-size: font($size, fs);
-  line-height: font($size, lh);
-  margin-top: font($size, mt);
-  margin-bottom: font($size, mb);
-
-  @if $size == h1 {
-    @include respond-to(step-2) {font-size: font(h1, fs) * 0.7;} //TODO
-  }
-
-  @else if $size == h2 {
-    @include respond-to(step-2) {font-size: font(h2, fs) * 0.85;} //TODO
-  }
-
-  @else if $size == h3 {
-    @include respond-to(step-2) {font-size: font(h3, fs) * 0.9;} //TODO
-  }
+  font-size: size($size, fs);
+  line-height: size($size, lh);
 }
 
-@mixin body-size {
-  font-size: $font-size;
-  line-height: $line-height;
+@mixin margin($size: p) {
+  margin-top: size($size, mt);
+  margin-bottom: size($size, mb);
 }
 
-@mixin body-margin {
-  margin-top: $margin-top;
-  margin-bottom: $margin-bottom;
-}
+@mixin m-size($size: h3, $mt: $size, $mb: $size) {
+  font-size: m-size($size, fs);
+  line-height: m-size($size, lh);
 
+  @if $mt != $size {
+    margin-top: $mt;
+  }
+  @else {
+    margin-top: m-size($size, mt);
+  }
+
+  @if $mb != $size {
+    margin-bottom: $mt;
+  }
+  @else {
+    margin-bottom: m-size($size, mb);
+  }
+}
 
 ///
 // Decorazioni caratteri (family e boldness)
 ///
-@mixin deco($size: p, $palette: main) {
-  font-family: font($size, fm);
-  font-weight: font($size, wt);
+@mixin decoration($size: p) {
+  font-family: family(decoration($size, fm), fm);
+  font-weight: family(decoration($size, fm), wt);
 }
 
+
+@mixin font-alt($size: p) {
+  @include size($size);
+  @include margin($size);
+  @include family($size);
+}
+
+@mixin font($size: p, $fm: $size, $wt: $size, $mt: $size, $mb: $size) {
+  @include size($size);
+
+  //MARGIN TOP
+  @if $mt == 0 {
+    margin-top: $mt;
+  }
+  @else {
+    margin-top: size($size, mt);
+  }
+
+  //MARGIN bottom
+  @if $mb == 0 {
+    margin-bottom: $mb;
+  }
+  @else {
+    margin-bottom: size($size, mb);
+  }
+
+  //Family
+  @if $fm == serif or $fm == sans or $fm == special {
+    font-family: family($fm, fm);
+  }
+  @else {
+    font-family: family(decoration($size, fm), fm);
+  }
+
+  //WEIGHT
+  @if $wt == bolder or $wt == bold or $wt == normal or $wt == light {
+    @if $fm == serif or $fm == sans or $fm == special {
+      font-weight: family($fm, $wt);
+    }
+    @else { // DOVREI ANDARE A PESCARE LA FAMIGLIA DELLA GRANDEZZA RICHIAMATA e POTERLA METTERE QUI - FORSE CI VUOLE UN ALTRA FUNZIONE CHE FACCIA UN MERGE?!?
+      font-weight: family(decoration($size, fm), $wt);
+    }
+  }
+
+  @else {
+    @if $fm == serif or $fm == sans or $fm == special {
+      font-weight: family($fm, decoration($size, wt));
+    }
+    @else {
+      font-weight: family(decoration($size, fm), decoration($size, wt));
+    }
+  }
+}
 
 ///
 // HR
@@ -77,7 +129,7 @@
 ///
 %button {
   display:inline-block;
-  font-family: $font-family-button; //TODO
+  font-family: $ff-button; //TODO
   white-space: normal;
   border-style: solid;
   box-shadow: $button-shadow;
@@ -89,29 +141,20 @@
 @mixin button($size: p, $bw:2, $pw: null) {
   font-size: font($size, fs);
   line-height: font($size, lh);
-  margin-bottom: font($size, mb) !important;
-
-  @if $size == p {
-    margin-top: font($size, mb);
-  }
-
-  @else {
-    margin-top: font($size, mt);
-  }
 
   @if $pw == half {
-    padding-top: bhpad($bw, font($size, fs), font($size, lh));
-    padding-bottom: bhpad($bw, font($size, fs), font($size, lh));
+    padding-top: bhpad($bw, $size);
+    padding-bottom: bhpad($bw, $size);
   }
 
   @else if $pw == quarter {
-    padding-top: bqpad($bw, font($size, fs), font($size, lh));
-    padding-bottom: bqpad($bw, font($size, fs), font($size, lh));
+    padding-top: bqpad($bw, $size);
+    padding-bottom: bqpad($bw, $size);
   }
 
   @else {
-    padding-top: bpad($bw, font($size, fs), font($size, lh));
-    padding-bottom: bpad($bw, font($size, fs), font($size, lh));
+    padding-top: bpad($bw, $size);
+    padding-bottom: bpad($bw, $size);
   }
 
   border-bottom-width: $bw * 1px;
@@ -200,9 +243,9 @@
   font-family: inherit;
   font-size: font($size, fs);
   line-height: font($size, lh); //TOCR - forse è più facile farla con la funzione blh?
-  margin-bottom: font($size, mb);
+//  margin-bottom: font($size, mb);
   margin-top: 0;
-  padding: bhpad($bw, font($size, fs), font($size, lh)) !important;
+  padding: bhpad($bw, $size) !important;
   border-width: $bw * 1px;
 }
 
@@ -240,96 +283,47 @@
 //****************************************************************************//
 //                            MEDIA QUERIES
 //****************************************************************************//
-@mixin respond-to($media) {
-
-  @if $media == step-0 {
-    @media only screen and (max-width: $website-width - 1px) { @content; }
+@mixin breakpoint-max($media) {
+  @if $media == xs {
+    @media (max-width: em-bp($xs - 1)) { @content; }
   }
-
-  @else if $media == step-1 {
-    @media only screen and (max-width: $s-desktop) { @content; }
+  @if $media == sm {
+    @media (max-width: em-bp($sm - 1)) { @content; }
   }
-
-  @else if $media == step-2 {
-    @media only screen and (max-width: $l-tablet) { @content; }
+  @if $media == md {
+    @media (max-width: em-bp($md - 1)) { @content; }
   }
-
-  @else if $media == step-3 {
-    @media only screen and (max-width: $p-tablet) { @content; }
+  @if $media == lg {
+    @media (max-width: em-bp($lg - 1)) { @content; }
   }
-
-  @else if $media == step-4 {
-    @media only screen and (max-width: $l-phone) { @content; }
+  @if $media == xl {
+    @media (max-width: em-bp($xl - 1)) { @content; }
   }
-
-  @else if $media == step-5 {
-    @media only screen and (max-width: $p-phone) { @content; }
-  }
-
-  @else if $media == step-p0 {
-    @media only screen and (min-width: $website-width ) { @content; }
-  }
-
-  @else if $media == step-p1 {
-    @media only screen and (min-width: $u-hd) { @content; }
-  }
-
-  // DIVI Media queries
-  //@media all and (min-width: 1405px)
-  //@media all and (min-width: 1100px) and (max-width: 1405px)
-  //@media all and (min-width: 981px) and (max-width: 1405px)
-  //@media all and (min-width: 981px)
-  //@media all and (max-width: 980px)
-  //@media screen and (max-width: 782px)
-  //@media all and (max-width: 767px)
-  //@media all and (max-width: 768px)
-  //@media all and (max-width: 479px)
-  //@media all and (min-width: 480px)
-  @else if $media == divi-p2 {
-    @media all and (min-width: $divi-u-hd) { @content; }
-  }
-
-  @else if $media == divi-p1 {
-    @media all and (min-width: $divi-large-desktop) { @content; }
-  }
-
-  @else if $media == divi-p0 {
-    @media all and (min-width: $divi-small-desktop) and (max-width: $divi-large-desktop) { @content; }
-  }
-
-  @else if $media == divi-0 {
-    @media all and (min-width: $divi-l-tablet + 1px) and (max-width: $divi-large-desktop) { @content; }
-  }
-
-  @else if $media ==  divi-1 {
-    @media all and (min-width: $divi-l-tablet + 1px) { @content; }
-  }
-
-  @else if $media == divi-2 {
-    @media all and (max-width: $divi-l-tablet) { @content; }
-  }
-
-  @else if $media == divi-3 {
-    @media screen and (max-width: $divi-m-tablet) { @content; }
-  }
-
-  @else if $media == divi-4 {
-    @media all and (max-width: $p-tablet) { @content; }
-  }
-
-  @else if $media == divi-5 {
-    @media all and (max-width: $p-tablet + 1px) { @content; }
-  }
-
-  @else if $media == divi-6 {
-    @media all and (max-width: $p-phone) { @content; }
-  }
-
-  @else if $media == divi-7 {
-    @media all and (max-width: $p-phone + 1px) { @content; }
+  @if $media == uxl {
+    @media (max-width: em-bp($uxl - 1)) { @content; }
   }
 }
 
+@mixin breakpoint-min($media) {
+  @if $media == xs {
+    @media (min-width: em-bp($xs)) { @content; }
+  }
+  @if $media == sm {
+    @media (min-width: em-bp($sm)) { @content; }
+  }
+  @if $media == md {
+    @media (min-width: em-bp($md)) { @content; }
+  }
+  @if $media == lg {
+    @media (min-width: em-bp($lg)) { @content; }
+  }
+  @if $media == xl {
+    @media (min-width: em-bp($xl)) { @content; }
+  }
+  @if $media == uxl {
+    @media (min-width: em-bp($uxl)) { @content; }
+  }
+}
 
 
 //****************************************************************************//
@@ -339,12 +333,14 @@
 ///
 // Overlay di colore da mettere sui ::before //TOCR
 ///
-@mixin color-overlay($palette: main) {
+@mixin color-overlay($palette: main, $grade: 0.3) {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left:0;
-  background: palette($palette, overlay);
+//  background: palette($palette, overlay);
+  background-color: rgba( palette($palette, overlay), $grade);
+  z-index: 0;
 }

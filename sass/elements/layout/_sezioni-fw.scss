@@ -5,20 +5,19 @@
 //*                                                                         *//
 //***************************************************************************//
 
-.page-template-template_fullwidth #page .inner {
+.page-template-template_fullwidth #page .inner,
+.page-template-template_land_page #page .inner {
   width: 100%;
+
+  .entry.content {
+    margin-bottom: 0;
+  }
 }
 
 //****************************************************************************//
-//                               CORREZIONE TIPOGRAFIA SEZ FW
+//                        CORREZIONE TIPOGRAFIA SEZ FW
 //****************************************************************************//
-.et_divi_builder #et_builder_outer_content .et_pb_module {
-  h1 { @include size(h1); }
-  h2 { @include size(h2); }
-  h3 { @include size(h3); }
-  h4 { @include size(h4); }
-  h5 { @include size(h5); }
-}
+
 
 //fix padding bottom su tipografia di DIVI BUILDER
 .et_divi_builder #et_builder_outer_content .et_pb_module {
@@ -31,9 +30,13 @@
 //                               BG DELLE SEZ FW
 //****************************************************************************//
 
+.et_divi_builder #et_builder_outer_content .et_pb_section {
+  background-color: palette(main, bg) !important;
+}
+
 @each $palette, $sections in $colors {
-.et_divi_builder #et_builder_outer_content .et_pb_section.#{$palette}_color {
-    background-color: palette($palette, bg);
+.et_divi_builder #et_builder_outer_content .et_pb_section.#{$palette} {
+    background-color: palette($palette, bg) !important;
   }
 }
 
@@ -44,9 +47,19 @@
 //****************************************************************************//
 ///
 // Fix delle righe ad altezza uguale in modo che il contenuto si centri
+// TOCR - forse ha senso fare diversi template per diversi allineamenti nelle righe ad altezza uguale?
 ///
 .et_pb_row.et_pb_equal_columns {
    align-items: center;
+}
+
+///
+// Resetto la larghezza delle RIGHE
+// questo va a confliggere con il padding impsotato sul mobile...
+// bisogna vedere quale metodo SCEGLIERE - magari quello standard è meglio //TOCHK //TOCR
+///
+.et_divi_builder #et_builder_outer_content .et_pb_with_background .et_pb_row {
+  width: 100%;
 }
 
 /*
@@ -64,6 +77,7 @@
 //RESET padding DELLE SEZIONI
 .et_divi_builder #et_builder_outer_content .et_pb_section {
   padding: 0;
+
   @include respond-to(divi-2) {
     padding: 0;
   }
@@ -76,55 +90,102 @@
 .et_divi_builder #et_builder_outer_content .et_pb_row {
   padding-top: $line-height;
   padding-bottom: $line-height;
+  max-width: $website-width;
 
-  @include respond-to(divi-1) {
-    padding-top: $line-height * 2;
-    padding-bottom: $line-height * 2;
+  @include respond-to(step-0) { //padding laterale riga sotto i 1169
+    padding-left: $line-height;
+    padding-right: $line-height;
+  }
+
+  @include respond-to(step-2) { //padding-laterle riga sotto i 979 - annullo il padding sotto e sopra fra le righe visto che scende tutto a capo
+    padding-left: $line-height * 2;
+    padding-right: $line-height * 2;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+
+  @include respond-to(step-4) { //padding-laterle riga sotto i 979
+    padding-left: $line-height;
+    padding-right: $line-height;
+  }
+
+  @include respond-to(divi-1) { //padding sopra e sotto delle righe quando non sono prima o ultima
+    padding-top: $line-height;
+    padding-bottom: $line-height;
   }
 }
 
 /*
  * NO Padding: resetta i margini bottomo degli elementi della sezione
  */
- .et_divi_builder #et_builder_outer_content .et_pb_section.lg-no-padding .et_pb_row {
-   padding: 0 !important;
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-no-padding .et_pb_row {
+ padding-top: 0 !important;
+ padding-bottom: 0 !important;
 
-   @include respond-to(divi-p2) {
-     padding: 0;
-   }
+ @include respond-to(divi-p2) {
+   padding: 0;
  }
+}
+
+
 
 /*
  * SMALL padding
  */
+//prima
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-small-padding > div.et_pb_row:first-of-type {
+ padding-top: $line-height * 2;
+}
+
+
+//Ultima
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-small-padding > div.et_pb_row:last-of-type {
+ padding-bottom: $line-height * 2;
+}
+
 
 
 /*
 * NORMAL padding - SEZIONI NORMALI E FW
 */
+//Prima
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:first-of-type {
   padding-top: $line-height * 4;
+
+  @include respond-to(step-2) {
+    padding-top: $line-height * 3;
+  }
+
+  @include respond-to(step-3) {
+    padding-top: $line-height * 2;
+  }
+}
+//Prima con Parallax
+.et_divi_builder #et_builder_outer_content .et_pb_section.et_pb_section_parallax  > div.et_pb_row:nth-of-type(2) {
+  padding-top: $line-height * 4; //per sezioni parallasse
+
+  @include respond-to(step-2) {
+    padding-top: $line-height * 3;
+  }
+
+  @include respond-to(step-3) {
+    padding-top: $line-height * 2;
+  }
 }
 
+
+//Ultima
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:last-of-type {
   padding-bottom: $line-height * 4;
-}
 
-//fix parallax
-.et_pb_section_parallax > div.et_pb_row:nth-of-type(2) {
-  padding-top: $line-height * 4;
-}
+  @include respond-to(step-2) {
+    padding-bottom: $line-height * 3;
+  }
 
-//Azzera il padding della riga per quelle FW
-.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:first-of-type,
-.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:last-of-type {
-  padding: 0;
-}
-
-//sposta il padding sulle colonne per le sezioni FW
-.et_pb_section .et_pb_row.et_pb_row_fullwidth .et_pb_column {
-  padding-top: $line-height * 4;
-  padding-bottom: $line-height * 4;
+  @include respond-to(step-3) {
+    padding-bottom: $line-height * 2;
+  }
 }
 
 
@@ -153,36 +214,69 @@
   max-width: 100% !important;
 }
 
+//Azzera il padding della riga per quelle a Larghezza Piena
+.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:first-of-type,
+.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:last-of-type {
+  padding: 0;
+}
 
+//sposta il padding sulle colonne per le Righe a Larghezza Piena
+.et_pb_section .et_pb_row.et_pb_row_fullwidth .et_pb_column {
+  padding-top: $line-height * 4;
+  padding-bottom: $line-height * 4;
+}
 
 ///
 // Struttura delle RIGHE a larghezza piena
 ///
 .et_divi_builder #et_builder_outer_content .et_pb_row.et_pb_row_fullwidth {
   display: inline-table; //per allineamento verticale
+  align-items: center;
   vertical-align: middle; //per allineamento verticale
 
-    ///
-    // Colonna interna alle righe
-    ///
+  @include respond-to(step-2) {
+    display: block;
+  }
+
+  ///
+  // Colonna interna alle righe
+  ///
   .et_pb_column {
     float: none;  //per allineamento verticale
     display: table-cell;  //per allineamento verticale
     vertical-align: middle;  //per allineamento verticale
-    padding-top: $line-height * 2;
-    padding-bottom: $line-height * 2;
+    padding-top: $line-height * 3;
+    padding-bottom: $line-height * 3;
+    padding-right: 5em;
+    padding-left: 5em;
 
-      ///
-      // Elementi interni alle colonne
-      // sono rimpiccioliti per non fargli uscire troppo a risoluzioni troppo grandi
-      ///
-      .et_pb_text,
-      .et_pb_module {
-        max-width: 580px; //TOCR - trovare una larghezza giusta da impostare per gli schermi normali
-      }
+    @include respond-to(step-2) {
+      display: block;
+      float: left;
+      min-height: $line-height * 12;
+    }
+
+
+    ///
+    // Elementi interni alle colonne
+    // sono rimpiccioliti per non fargli uscire troppo a risoluzioni troppo grandi
+    ///
+    .et_pb_text,
+    .et_pb_module {
+      max-width: 780px; //TOCR - trovare una larghezza giusta da impostare per gli schermi normali
+    }
 
     &:first-child {
       padding-right: 5.5em; //Paddo la prima cella per dare dello spazio a DX
+      @include respond-to(step-2) {
+        padding-left: 4em;
+        padding-right: 4em;
+      }
+
+      @include respond-to(step-3) {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
 
       .et_pb_text,
       .et_pb_button_module_wrapper { //Flotto gli elementi interni alla prima cella in modo che si allineino a dx
@@ -194,6 +288,15 @@
 
     &:nth-child(2) {
       padding-left: 5.5em; //Paddo la seconda cella per dare dello spazio a SX
+      @include respond-to(step-2) {
+        padding-left: 4em;
+        padding-right: 4em;
+      }
+
+      @include respond-to(step-3) {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
     }
   }
 }
@@ -209,23 +312,14 @@
   .et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_2,
   .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
     width: 50%;
-//  margin: 0 auto !important;
-  }
 
+    @include respond-to(step-2) {
+      width: 100%;
+    }
+  }
 }
 
 
-/*.et_pb_row.et_pb_equal_columns {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-
-  .et_pb_column {
-  float: none;
-  display: table-cell;
-  vertical-align: middle;
-  }
-}*/
 
 //****************************************************************************//
 //    CONTENUTI DELLE RIGHE E DELLE SEZIONI
@@ -265,11 +359,8 @@
 ///
 // Margini dei moduli
 ///
-@media (min-width: 981px) { //TOCR
-  .et_divi_builder #et_builder_outer_content .et_pb_gutters3 .et_pb_column_1_2 .et_pb_module,
-  .et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
-  .et_divi_builder #et_builder_outer_content .et_section_specialty .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module,
-  .et_divi_builder #et_builder_outer_content .et_section_specialty .et_pb_row .et_pb_column_1_2 .et_pb_gutters3.et_pb_row_inner .et_pb_module {
+.et_pb_module {
+  @include respond-to(divi-1) {
     margin-bottom: $line-height;
   }
 }
@@ -280,39 +371,28 @@
 // LARGHEZZA DELLA TIPOGRAFIA NELLA RIGA a 1 COLONNA
 ///
 .et_divi_builder #et_builder_outer_content .et_pb_column_4_4 {
-  p, h1, h2, h3, h4, h5, ul, ol, blockquote {
-    max-width: 770px;
+  p, h4, h5, ul, ol, blockquote {
+    max-width: 670px;
     margin-left: auto;
     margin-right: auto;
   }
-}
 
-
-
-
-
-//****************************************************************************//
-//                               FRECCETTE CHE SCROLLANO
-//****************************************************************************//
-@each $palette, $bg in $colors {
-  #top .#{$palette}_color .scroll-down-link {
-    color: palette($palette, accent);
+  h1, h2, h3,
+  .gform_wrapper {
+   max-width: 770px;
+   margin-left: auto;
+   margin-right: auto;
   }
 }
 
+///
+// SEZIONE OVERLAY
+///
 
+.et_pb_section.lg-overlay {
+  position: relative;
 
-
-//****************************************************************************//
-//                               FRECCETTE CHE SCROLLANO
-//****************************************************************************//
-#intro .et_parallax_bg::before {
-  @include color-overlay(socket);
-}
-
-#intro {
-
-  p {
-    @include size(h3);
+  &::before {
+    @include color-overlay;
   }
 }

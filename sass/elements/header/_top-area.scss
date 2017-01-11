@@ -1,0 +1,198 @@
+
+/*
+ * Top Area con scroll
+ */
+#top_area {//imposto il visible per poter fare transizione
+  visibility: visible;
+  transition: all 200ms;
+}
+
+.sticker_sticky #top_area {//quando è scrollata la nascondo
+  visibility: hidden;
+  transition: all 200ms;
+  @include respond-to(step-2) {//la rendo di nuovo visible sotto i 979px
+    display: block;
+    visibility: visible;
+  }
+}
+
+#top_area {
+//  border-bottom: 2px solid main-colors(header, border);
+//  border-top: 2px solid transparent;
+//  padding: bhpad(2);
+  top: 0;
+  right: 0;
+
+  @include respond-to(step-2) {//la paddo sotto i 979px
+    padding-top: $line-height / 2;
+  }
+
+  @include respond-to(step-4) {//rimuovo il padding sotto i 567px
+    padding-top: 0;
+  }
+
+  @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
+    @include respond-to(step-3) {
+      display: block;
+      width: 42%;
+      float: right;
+    }
+  }
+
+  @at-root .responsive #logo,
+  .responsive #logo_text { //dimezzo la larghezza del logo
+    @include respond-to(step-3) {
+      display: block;
+      width: 58%;
+      float: left;
+    }
+  }
+
+  /*
+   * Widget della Top Bar
+   */
+
+  .widget { //affianco i widget uno all'altro
+    float: right;
+    margin-right: $line-height;
+    margin-bottom: 0;
+
+    @include respond-to(step-3) { //li faccio cadere sotto i 567px
+      margin-right: 0;
+      clear: both;
+      margin-top: $line-height / 2;
+
+      &:last-child {
+        margin-bottom: $line-height / 2;
+      }
+    }
+
+
+  }
+
+  section:first-child { //tolgo il margine laterale dal primo
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  /*
+   * Stile specifico per il menu di navigazione della Top Bar
+   */
+  .widget_nav_menu {
+    height: 2em;
+    border-bottom: 2px solid main-colors(header, border);
+    border-top: 2px solid transparent;
+
+    @include respond-to(step-2) { //nascondo il menu di navigazione sotto i 767px
+      display: none;
+    }
+
+    li {
+      float: left;
+      @include size(small);
+      @include deco(small);
+      font-style: italic;
+      text-transform: uppercase;
+
+      a {
+        border-bottom: 0;
+        color: main-colors(header, link);
+        padding: 0 14px;
+        line-height: inherit;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  /*
+   * Widget di testo della Top body-margin
+   */
+  .widget_text_icl,
+  .widget_text {
+    @include respond-to(divi-1) { //lo nascondo quando in formato desktop
+      display: none;
+    }
+  }
+
+  /*
+   * Bottone della topbar
+   */
+  a.button.primary {
+    background: main-colors(topbar, accent);
+    border-color: main-colors(topbar, accent);
+    border-bottom-color: mix(main-colors(topbar, accent), $nero, 50%);
+
+    &.chiama {
+      background: transparent;
+      border: 0;
+      padding: 0;
+
+      span {
+        padding: 0;
+      }
+    }
+
+  }
+}
+
+
+#lang_sel_list {
+  height: font(p, lh);
+  background: rgba(255,255,255,0.2);
+  padding: 0.1em 0;
+
+  @include respond-to(step-1) {
+    height: 1.9em;
+    padding: 0;
+  }
+
+  ul {
+    border-top: 0 !important;
+  }
+
+  li {
+    line-height: font(p, lh);
+    padding: 0;
+
+
+    &:last-child {
+      border-right: 0;
+    }
+
+  }
+
+  a,
+  a:visited {
+    font-size: font(p, fs);
+    font-weight: family(ff, bolder);
+    font-family: font(p, fm);
+    line-height: font(p, lh);
+    display: inline;
+    border-right: 0 solid main-colors(header, border);
+    border-right: 1px solid #fff;
+    padding: 0 $line-height / 2 !important;
+    color: #fff;
+   }
+
+  li:last-child a {
+    border-right: 0;
+  }
+}
+
+#lang_sel_list a.lang_sel_sel:hover,
+#lang_sel_list a.lang_sel_sel,
+#lang_sel_list a.lang_sel_sel,
+#lang_sel_list a.lang_sel_sel:visited,
+#lang_sel_list ul a.lang_sel_other,
+#lang_sel li ul a:link,
+#lang_sel_list ul a.lang_sel_other:visited {
+  background-color: transparent !important;
+}
+
+
+#lang_sel_list ul a.lang_sel_other:hover {
+  color: main-colors(header, link) !important;
+}

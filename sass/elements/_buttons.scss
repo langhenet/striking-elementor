@@ -4,94 +4,164 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                     *//
 //***********************************************************************//
+///
+// Reset bottoni striking
+///
+.button span {
+  line-height: inherit;
+  color: inherit;
+  padding: 0 1em;
+}
+.button.small span,
+.button.medium span,
+.button.large span { font-size: inherit; }
+
+.button.small {
+  @extend %button;
+  @include button(small, 1);
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 //***********************************************************************//
 //                              BOTTONI DIVI BUILDER - Dimensioni
 //***********************************************************************//
+.et_divi_builder #et_builder_outer_content {
+  /*
+   * Bottone Piccolo
+   */
+  .et_pb_button.size-small,
+  .et_pb_module a.button.small {
+    @extend %button;
+    @include button(small, 1);
 
-/*
- * Bottone Piccolo
- */
-body #page-container .et_pb_button.size-small {
-  @extend %button;
-  @include button(h5, 1);
+    font-weight: button-deco(small, wt);
+    text-transform: uppercase;
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
 
-  font-weight: button-deco(small, weight);
-  text-transform: uppercase;
+    &:after { //il padding viene usato per correggere l'icona di DIVI
+      display: none;
+    }
+    // HOVER
+    &:hover {
+      @extend .et_pb_button.size-small;
+    }
 
-  &:hover {
-    @extend .et_pb_button.size-small;
-  }
-}
+    //Bottone icona
+    &.et_pb_custom_button_icon {
+      padding-right: 3em;
+      padding-left: 1em;
 
-
-/*
- * Bottone Medio
- */
-//body #page-container a.et_pb_button[class*="et_pb_button_"],
-body #page-container .et_pb_button.size-medium,
-body a.big-button { //TOCHK ultima dichiarazione per bottone merda nel blurb
-  @extend %button;
-  @include button(p, 2);
-
-  font-weight: inherit; //TODO
-  text-transform: uppercase;
-  border-radius: 0; //TOCHK
-
-  &:hover {
-    @extend .et_pb_button.size-medium;
-  }
-  &:after { //il padding viene usato per correggere l'icona di DIVI
-    font-size: inherit !important;
-    line-height: inherit;
-    padding-right: 1em;
-    margin-left: 0.5em;
-  }
-}
-
-
-/*
- * Bottone Grande
- */
-//body #page-container a.et_pb_button.size-large[class*="et_pb_button_"],
-body #page-container .et_pb_button.size-large {
-  @extend %button;
-  @include button(h3, 4, half)
-
-  font-weight: inherit; //TODO
-  text-transform: uppercase;
-
-  &:hover {
-    @extend .et_pb_button.size-large;
-  }
-  &:after { //il padding viene usato per correggere l'icona di DIVI
-    font-size: inherit !important;
-    line-height: inherit;
-    padding-right: 1em;
-    margin-left: 0.5em;
-  }
-}
-
-
-/*
- * Bottone Xtra Grande
- */
-body #page-container .et_pb_button.size-x-large {
-  @extend %button;
-  @include button(h2, 6, half);
-
-  font-weight: inherit; //TODO
-  text-transform: uppercase;
-
-  &:hover {
-    @extend .et_pb_button.size-x-large;
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 
-  &:after { //il padding viene usato per correggere l'icona di DIVI
-    font-size: inherit !important;
-    line-height: inherit;
-    padding-right: 1em;
-    margin-left: 0.5em;
+
+  /*
+   * Bottone Medio
+   */
+  .et_pb_button.size-medium,
+  body a.big-button,
+  .et_pb_module a.button.medium { //TOCHK ultima dichiarazione per bottone merda nel blurb
+    @extend %button;
+    @include button(p, 4, half);
+
+    font-weight: inherit; //TODO
+    text-transform: uppercase;
+    border-radius: 0; //TOCHK
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
+
+    &:hover {
+      @extend .et_pb_button.size-medium;
+    }
+
+   &:after { //il padding viene usato per correggere l'icona di DIVI
+      display: none;
+    }
+    //Bottone icona
+    &.et_pb_custom_button_icon {
+      padding-right: 3em;
+      padding-left: 1em;
+
+    &::after {
+        margin-left: 1em;
+        font-size: font(p, fs);
+        line-height: font(p, lh);
+        opacity: 1;
+      }
+    }
+  }
+
+
+  /*
+   * Bottone Grande
+   */
+  .et_pb_button.size-large,
+  .et_pb_module a.button.large {
+    @extend %button;
+    @include button(h3, 4)
+
+    font-weight: inherit; //TODO
+    text-transform: uppercase;
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
+
+
+
+    &:hover {
+      @extend .et_pb_button.size-large;
+    }
+    &:after { //il padding viene usato per correggere l'icona di DIVI
+      display: none;
+    }
+
+    &.et_pb_custom_button_icon { //Bottone icona
+
+      padding-right: 2em;
+      padding-left: 1em;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  /*
+   * Bottone Xtra Grande
+   */
+  .et_pb_button.size-x-large {
+    @extend %button;
+    @include button(h2, 6, half);
+
+    font-weight: inherit; //TODO
+    text-transform: uppercase;
+
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
+
+    &:hover {
+      @extend .et_pb_button.size-x-large;
+    }
+
+    &:after { //il padding viene usato per correggere l'icona di DIVI
+      display: none;
+    }
+
+    &.et_pb_custom_button_icon { //Bottone icona
+
+      padding-right: 2em;
+      padding-left: 1em;
+
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -102,6 +172,10 @@ a.et_pb_more_button:after {
   font-size: inherit;
 }
 
+
+
+
+
 //****************************************************************************//
 //                         BOTTONI STANDARD - COLORI
 //                  include anche i colori dei bottoni di gravity pare
@@ -110,7 +184,8 @@ a.et_pb_more_button:after {
 /*
  * Bottoni in szeioni di Base
  */
-div .et_pb_bg_layout_light.et_pb_module.et_pb_button {
+.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light.et_pb_module.et_pb_button,
+a.button.primary {
   @include button-color(none, main);
 
   &:hover {
@@ -118,84 +193,49 @@ div .et_pb_bg_layout_light.et_pb_module.et_pb_button {
   }
 }
 
-//TOCHK - BOTTONI SCHELETRICI in sezioni di base DA RIFARE!!
-.bigblue {
-  border-color: palette(main, body-alt) !important;
-  background: palette(main, bg-alt);
-  color: palette(main, body-alt) !important;
-
-  &:hover {
-    border-color: palette(main, bg-alt) !important;
-    background: palette(main, body-alt);
-    color: palette(main, bg-alt) !important;
-  }
-}
 
 /*****
  * Loop Bottoni per varie sezioni
  */
 
 @each $palette, $bg in $colors {
-  div .#{$palette}_color .et_pb_bg_layout_light.et_pb_module.et_pb_button {
+  .et_divi_builder #et_builder_outer_content .#{$palette} .et_pb_module.et_pb_button,
+  .et_divi_builder #et_builder_outer_content .#{$palette} a.button.primary {
+
     @include button-color(none, $palette);
 
     &:hover {
       @include button-color(hover, $palette);
     }
   }
-
-//TOCHK - BOTTONI SCHELETRICI DA RIFARE!!
-  .#{$palette}_color .bigblue {
-    border-color: palette($palette, body-alt) !important;
-    background: palette($palette, bg-alt);
-    color: palette($palette, body-alt) !important;
-
-    &:hover {
-      border-color: palette($palette, bg-alt) !important;
-      background: palette($palette, body-alt);
-      color: palette($palette, bg-alt) !important;
-    }
-  }
 }
+
+
+
+//****************************************************************************//
+//                         BOTTONI SUBTLE - COLORI
+//                  include anche i colori dei bottoni di gravity pare
+//****************************************************************************//
+
+/*****
+ * Loop Bottoni SUBTLE per varie sezioni
+ */
+
+ @each $palette, $bg in $colors {
+   .et_divi_builder #et_builder_outer_content .#{$palette} .et_pb_bg_layout_light.et_pb_module.et_pb_button.subtle-color,
+   .et_divi_builder #et_builder_outer_content .#{$palette} a.button.primary.subtle-color {
+
+     @include button-color-subtle(none, $palette);
+
+     &:hover {
+       @include button-color-subtle(hover, $palette);
+     }
+   }
+ }
+
 
 //****************************************************************************//
 //                         BOTTONI SCHELETRICI - COLORI
 //                  include anche i colori dei bottoni di gravity pare
 //                  ho cambiato la dichiarazione nel mixin dei bottoni per fare i bordi -
 //****************************************************************************//
-
-/*
- * Bottoni scheletrici in sezioni di Base
- */
-#top .avia-button.avia-color-light {
-  border-color: white;
-  color: white;
-  background: transparent;
-
-  &:hover {
-    border-color: palette(main, body-alt);
-    color: palette(main, bg-alt);
-    background: palette(main, body-alt);
-    opacity: 1;
-  }
-}
-
-
-/*****
- * Loop Bottoni scheletrici per varie sezioni
- */
-
-@each $palette, $bg in $colors {
-  #top .#{$palette}_color .avia-button.avia-color-light {
-    border-color: white;
-    color: white;
-    background: transparent;
-
-    &:hover {
-      border-color: palette($palette, body-alt);
-      color: palette($palette, bg-alt);
-      background: palette($palette, body-alt);
-      opacity: 1;
-    }
-  }
-}

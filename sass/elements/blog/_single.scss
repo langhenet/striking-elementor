@@ -1,0 +1,116 @@
+//*==========================================================================*//
+//*                                                                          *//
+//*                       POST SINGOLO - BIG IMAGE
+//*                          DIMENSIONI & FACE
+//*                                                                          *//
+//*==========================================================================*//
+//****************************************************************************//
+//*                     TITOLO - FEATURED
+//****************************************************************************//
+/*
+ * Titolo
+ */
+.type-post #feature h1 {
+  @include size(h2);
+  @include deco(h2);
+
+  margin-top: 0;
+}
+
+
+/*
+ * Meta
+ */
+.type-post .feature-introduce {
+  @include size(h5);
+  @include deco(h5);
+
+  font-style: italic;
+  text-transform: uppercase;
+
+  //font-family: font(h5,fm);
+}
+
+
+
+
+//****************************************************************************//
+//*                    CONTENITORE
+//****************************************************************************//
+.entry.content {
+  margin-bottom: $line-height * 3;
+}
+
+
+
+
+//****************************************************************************//
+//              Authro Box
+//****************************************************************************//
+#about_the_author {
+
+
+  h3 {
+
+  }
+
+  .author_content {
+    padding: 0;
+    border: 0;
+  }
+
+  span.fn {
+
+    a {
+    }
+  }
+
+  .author_desc {
+  }
+}
+
+//****************************************************************************//
+//              ARTICOLI CORRELATI
+//****************************************************************************//
+.related_popular_wrap {
+
+
+  h3 {
+
+  }
+
+  .posts_list {
+
+    @at-root #page #{&} a {
+    }
+
+    li {
+    }
+
+    time {
+    }
+  }
+}
+
+//****************************************************************************//
+//                            FORM COMMENTO
+//                  I campi sono racchiusi nei P
+//****************************************************************************//
+.comment-form {
+
+  p { //adeguo il margine sotto per pareggiare altezza campo
+  }
+
+  p.comment-notes { //correggo l'adeguamento sul primo p - che contiene del testo
+  }
+}
+
+
+/*
+ * Bottone
+ */
+#commentform input#submit {
+  @extend %button;
+  @include button(p);
+  @include button-color(main);
+}

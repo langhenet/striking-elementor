@@ -9,126 +9,167 @@
 // BASE DEL BODY
 ///
   $base: 16;
-  $font-size: 1.0625em; //TODO
-  $line-height: 1.6470588235294117em; //TODO
+  $font-size: 1.25em; //TODO
+  $line-height: 1.5em; //TODO
 
 
 ///
 // p and other standard elements
 ///
   $margin-top: 0em; //TODO
-  $margin-bottom: 1.6470588235294117em; //TODO
+  $margin-bottom: 1.5em; //TODO
 
 
 ///
 // Families
 ///
-  $font-family: 'Raleway', sans-serif; //TODO
-  $font-family-heading: $font-family; //TODO
-  $font-family-special: $font-family; //TODO
-  $font-family-button: $font-family;
+  $serif: 'PT Serif', serif; //TODO
+  $sans: 'Open Sans', sans-serif; //TODO
+  $special: $serif; //TODO
+  $ff-button: $sans;
 
 
 ///
 // WEIGHTS per Families
 ///
-$weights: (
-  ff: (
-    family: $font-family,
-    u-thin: 100,
+$families: (
+  serif: (
+    fm: $serif,
     thin: 200,
-    light: 300,
     normal: 400,
     bold: 600,
+    bolder: 600,
   ),
 
-  ffh: (
-    family: $font-family-heading,
-    u-thin: 100,
-    thin: 200,
-    light: 300,
+  sans: (
+    fm: $sans,
+    thin: 300,
     normal: 400,
-    bold: 600,
+    bold: 700,
+    bolder: 900,
   ),
 
-  ffs: (
-    family: $font-family-special,
-    u-thin: 100,
-    thin: 200,
-    light: 300,
+  special: (
+    fm: $special,
+    thin: 300,
     normal: 400,
-    bold: 600,
+    bold: 400,
+    bolder: 400,
   ),
 );
 
+$decorations: (
+  p: (
+    fm: serif,
+    wt: normal,
+  ),
+
+  h1: (
+    fm: sans,
+    wt: bold
+  ),
+
+  h2: (
+    fm: sans,
+    wt: bold,
+  ),
+
+  h3: (
+    fm: sans,
+    wt: bold,
+  ),
+
+  h4: (
+    fm: sans,
+    wt: normal,
+  ),
+
+  h5: (
+    fm: sans,
+    wt: normal,
+  ),
+
+  small: (
+    fm: sans,
+    wt: normal,
+  ),
+);
 ////
 // Dimensioni & caratteristiche dei font principali
 ////
-  $fonts: (
+  $sizes: (
     p: (
       fs: 1em,
       lh: $line-height,
       mt: $margin-top,
       mb: $margin-bottom,
-      fm: family(ff, family),
-      wt: family(ff, normal),
     ),
 
     h1: (
-      fs: 6.352941176470588em,
-      lh: 1.037037037037037em,
-      mt: 0.25925925925925924em,
-      mb: 0em,
-      fm: family(ffh, family),
-      wt: family(ffh, u-thin),
+      fs: 3.375em,
+      lh: 1.33333333333em,
+      mt: 0.888888888888889em,
+      mb: 0.44444444444444em,
     ),
 
     h2: (
-      fs: 3.411764705882353em,
-      lh: 1.4482758620689655em,
-      mt: 0.4827586206896552em,
-      mb: 0.4827586206896552em,
-      fm: family(ffh, family),
-      wt: family(ffh, thin),
+      fs: 2.25em,
+      lh: 1.33333333333em,
+      mt: 1.33333333333em,
+      mb: 0.6666666666667em,
     ),
 
     h3: (
-      fs: 1.8235294117647058em,
-      lh: 1.8064516129032258em,
-      mt: 0.9032258064516129em,
-      mb: 0em,
-      fm: family(ffh, family),
-      wt: family(ffh, light),
+      fs: 1.5em,
+      lh: 2em,
+      mt: 1.5em,
+      mb: 1em,
     ),
 
     h4: (
       fs: 1em,
-      lh: 1.6470588235294117em,
-      mt: 1.6470588235294117em,
-      mb: 0em,
-      fm: family(ffh, family),
-      wt: family(ffh, normal),
+      lh: 1.5em,
+      mt: 1.5em,
+      mb: 1.5em,
     ),
 
     h5: (
-      fs: 0.757575em,
-      lh: 1.087059910589em,
-      mt: 1.087059910589em,
-      mb: 0em,
-      fm: family(ffh, family),
-      wt: family(ffh, normal),
-    ),
-
-    blockquote: (
-      fs: 2em,
+      fs: 0.75em,
       lh: 2em,
       mt: 2em,
       mb: 0em,
-      fm: family(ffh, family),
-      wt: family(ffh, light),
-  ),
+    ),
+
+    small: (
+      fs: 0.75em,
+      lh: 2em,
+      mt: 2em,
+      mb: 0,
+    ),
 );
 
+$mobile-sizes: (
+  h1: (
+    fs: 1.953125em,
+    lh: 1.538461538461538em,
+    mt: 1.536em,
+    mb: 0.768em,
+  ),
+
+  h2: (
+    fs: 1.5625em,
+    lh: 1.935483870967742em,
+    mt: 0.96em,
+    mb: 0.96em,
+  ),
+
+  h3: (
+    fs: 1.25em,
+    lh: 1.2em,
+    mt: 1.8em,
+    mb: 0.6em,
+  ),
+);
 
 ////
 // DETTAGLI
@@ -145,17 +186,17 @@ $weights: (
 
 $forms: (
   field: (
-    fm: family(ffh, family),
-    wt: family(ffh, normal),
+    fm: family(sans, fm),
+    wt: family(sans, normal),
   ),
 
   label: (
-    fm: family(ffh, family),
-    wt: family(ffh, normal),
+    fm: family(sans, fm),
+    wt: family(sans, normal),
   ),
 
   desc: (
-    fm: family(ffh, family),
-    wt: family(ffh, normal),
+    fm: family(sans, fm),
+    wt: family(sans, normal),
   ),
 );

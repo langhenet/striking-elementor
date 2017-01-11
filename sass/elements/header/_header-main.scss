@@ -1,0 +1,132 @@
+//****************************************************************************//
+//*                                                                          *//
+//*                           LAYOUT DELL'HEADER
+//*                    in versione LOGO sopra NAVIGAZIONE
+//*                              (tutto centrato)
+//*                                                                          *//
+//****************************************************************************//
+
+/*
+ * Resetta l'altezza del contenitore dell'header
+ */
+#header-sticker-wrapper {
+  height: 0 !important;
+}
+
+
+
+
+//****************************************************************************//
+//                HEADER
+//****************************************************************************//
+
+/*
+ * BG dell'header
+ */
+#header {
+  background-color: rgba(main-colors(header, bg), 0.5);
+  transition: all 250ms linear;
+//  position: static;
+}
+
+.page-template-template_land_page #header {
+  background: transparent;
+  transition: all 0ms linear;
+  position: relative;
+
+  @include respond-to(step-3) {
+    background-color: rgba(main-colors(header, bg), 0.5);
+  }
+
+
+  #logo,
+  #logo_text {
+    @include respond-to(step-3) {
+      width: 100% !important;
+    }
+  }
+}
+
+
+.page-template-template_land_page .sticker_sticky #header {
+  position: relative;
+  transition: all 0ms linear;
+
+  .inner {
+    height: inherit;
+    transition: all 0ms linear;
+  }
+}
+
+/*
+ * BG dell'header - da scrollato -  - solo su desktop
+ */
+@include respond-to(step-p1) {
+  .sticker_sticky #header {
+    background-color: main-colors(header, bg);
+    transition: all 250ms linear;
+  }
+}
+
+/*
+ * HEADER non sticky su mobile
+ */
+#header-sticker-wrapper.sticker_enabled #header {
+  @include respond-to(step-1) {
+    position: relative !important;
+  }
+}
+
+
+
+//****************************************************************************//
+//                INNER HEADER
+//****************************************************************************//
+
+/*
+ * Altezza
+ */
+#header .inner {
+  height: $line-height * 5;
+  transition: all 250ms linear;
+}
+
+/*
+ * Altezza - da scrollato - solo su desktop
+ */
+@include respond-to(step-p1) {
+.sticker_sticky #header .inner {
+    height: $line-height * 2;
+    transition: all 250ms linear;
+  }
+}
+
+
+
+
+//****************************************************************************//
+//                LOGO
+//****************************************************************************//
+
+/*
+ * Contenitore del logo
+ */
+#logo,
+#logo_text {
+  bottom: $line-height / 2;
+  transition: all 250ms linear;
+
+  @at-root .sticker_sticky #{&} {
+    @include respond-to(step-p1) { //quando l'header è sticcato - tolgo il bottom solo su desktop
+      bottom: 0;
+      transition: all 250ms linear;
+    }
+
+    img {
+      @include respond-to(step-p1) { //quando l'header è sticcato - rimpicciolisco il logo solo su desktop
+        width: 40%;
+        transition: all 250ms linear;
+      }
+    }
+  }
+}

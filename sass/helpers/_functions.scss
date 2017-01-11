@@ -14,15 +14,27 @@
 ///
 // Font Size
 ///
-@function font($size, $attr: 'fs') {
-    @return map-get(map-get($fonts, $size), $attr);
+@function size($size, $attr: 'fs') {
+  @return map-get(map-get($sizes, $size), $attr);
 }
+
+@function m-size($size, $attr: 'fs') {
+  @return map-get(map-get($mobile-sizes, $size), $attr);
+}
+
 
 ///
 // Font Families & Weights
 ///
-@function family($family, $weight: 'normal') {
-    @return map-get(map-get($weights, $family), $weight);
+@function family($family, $attr: 'normal') {
+  @return map-get(map-get($families, $family), $attr);
+}
+
+///
+// Font decoration
+///
+@function decoration($size, $attr: 'fm') {
+  @return map-get(map-get($decorations, $size), $attr);
 }
 
 
@@ -30,7 +42,7 @@
 // FORM Decoration
 ///
 @function form($element, $attr: 'fm') {
-    @return map-get(map-get($forms, $element), $attr);
+  @return map-get(map-get($forms, $element), $attr);
 }
 
 //****************************************************************************//
@@ -41,7 +53,8 @@
 //  Height che non rispetta
 //  la griglia, perché devono tenere conto del bordo
 //
-//  Per ogni grandezza io devo quindi sottrarre l'altezza del bordo (dichiarata //  in PX) all'altezza di griglia - che è invece dichiarata in EM).
+//  Per ogni grandezza io devo quindi sottrarre l'altezza del bordo (dichiarata)
+//  in PX) all'altezza di griglia - che è invece dichiarata in EM).
 //
 //        PASSO #1 - TROVARE IL VALORE IN PX DEL PADDING RIDOTTO
 //        PAD è il valore in PX che risulta da
@@ -66,38 +79,49 @@
 
 
 ///
-// Padding Pieno
+// FULL PADDING
+// da usare SOPRA e SOTTO - oppure SOPRA o SOTTO con in più una mezza
+// interlinea dall'altro lato
 ///
-@function bpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
-  @return ($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) - $bp-bw * 2) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
+@function bpad($bp-bw: 1, $bp-fs: p) {
+  @return ($base * $font-size * (size($bp-fs, fs) / 1em) * (size($bp-fs, lh) / 1em) - $bp-bw * 2) / ($base * $font-size * (size($bp-fs, fs) / 1em)) * 0.5em;
 }
 
 
 ///
 // Mezzo padding
 ///
-@function bhpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
-  @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) / 2) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
+@function bhpad($bp-bw: 1, $bp-fs: p) {
+  @return (($base * $font-size * (size($bp-fs, fs) / 1em) * (size($bp-fs, lh) / 1em) / 2) - ($bp-bw * 2)) / ($base * $font-size * (size($bp-fs, fs) / 1em)) * 0.5em;
 }
 
 ////
 // Quarter padding - **Importante** Il quarter padding va sempre compensato con
 // del margine a metà o a un quarto
 ////
-
-@function bqpad($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
-  @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em) / 4) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 0.5em;
+@function bqpad($bp-bw: 1, $bp-fs: p) {
+  @return (($base * $font-size * (size($bp-fs, fs) / 1em) * (size($bp-fs, lh) / 1em) / 4) - ($bp-bw * 2)) / ($base * $font-size * (size($bp-fs, fs) / 1em)) * 0.5em;
 }
+
+////
+// SINGLE PADDING
+// da usare quando c'è un bordo singolo
+// e si vuole ottenere un altezza di linea intera
+////
+@function bspad($bp-bw: 1, $bp-fs: p) {
+  @return ($base * $font-size * (size($bp-fs, fs) / 1em) * (size($bp-fs, lh) / 1em) - $bp-bw) / ($base * $font-size * (size($bp-fs, fs) / 1em)) * 1em;
+}
+
+
 
 ////
 // Border Line Height - questa funzione fà le stesse cose delle precedenti ma
 // calcolate per essere usate nella line-height. **ATTENZIONE** gli elementi
 // che usano questa funzione NON possono andare a capo
 ////
-@function blh($bp-bw: 1, $bp-fs: font(p, fs), $bp-lh: $line-height) {
-  @return (($base * $font-size * ($bp-fs / 1em) * ($bp-lh / 1em)) - ($bp-bw * 2)) / ($base * $font-size * ($bp-fs / 1em)) * 1em;
+@function blh($bp-bw: 1, $bp-fs: p, $bp-lh: $line-height) {
+  @return (($base * $font-size * (size($bp-fs, fs) / 1em) * (size($bp-fs, lh) / 1em)) - ($bp-bw * 2)) / ($base * $font-size * (size($bp-fs, fs) / 1em)) * 1em;
 }
-
 
 
 //****************************************************************************//
@@ -121,6 +145,21 @@
     @return map-get(map-get($colors, $palette), $element);
 }
 
-@function main-color($palette, $element: 'body') {
+@function main-colors($palette, $element: 'body') {
     @return map-get(map-get($layout-colors, $palette), $element);
+}
+
+//****************************************************************************//
+//*                   PX to EM
+//****************************************************************************//
+@function em($value: $base * 1px) {
+  @return ($value / 1px) / ($font-size * $base / 1em) * 1em;
+}
+
+//****************************************************************************//
+//*                  EM BP
+//****************************************************************************//
+
+@function em-bp($value: $base * 1px) {
+  @return ($value / 1px) / ($base) * 1em;
 }

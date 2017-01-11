@@ -1,0 +1,122 @@
+//***************************************************************************//
+//*                                                                     *****//
+//*                               SEZIONE INTRODUTTIVA
+//*              a cappello delle pagine
+//*                                                                         *//
+//***************************************************************************//
+
+#feature,
+.has-gradient #feature,
+.no-gradient #feature {
+  background-color: main-colors(fheader, bg);
+  padding:$line-height * 7 0 $line-height * 2 0;
+  background-size: cover !important;
+  background-image: none;
+  position: relative;
+}
+
+
+.et_divi_builder #et_builder_outer_content #intro .et_pb_row:first-of-type {
+  padding-top:$line-height * 7;
+  padding-bottom: $line-height * 2;
+
+  @include respond-to(step-3) {
+    padding-top:$line-height * 8;
+    padding-bottom: $line-height * 2;
+  }
+}
+
+.page-template-template_land_page {
+
+  #feature,
+  .has-gradient #feature,
+  .no-gradient #feature,
+  #intro {
+
+    @include respond-to(step-4) {
+      padding-top: $line-height * 5 !important;
+    }
+  }
+
+  &.et_divi_builder #et_builder_outer_content #intro .et_pb_row:first-of-type {
+    @include respond-to(step-4) {
+      padding-top: $line-height * 3 !important;
+    }
+  }
+}
+
+#intro {
+  position: relative;
+}
+
+#feature::before,
+#intro::before {
+  @include color-overlay;
+}
+
+#feature .inner {
+  padding: $line-height $line-height * 1.5;
+  position: relative;
+  z-index: 1;
+
+  @include respond-to(step-4) {
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
+  }
+}
+
+#feature .inner::before {
+  @include color-overlay;
+  max-width: 800px;
+  background: transparent;
+  border-left: 1em #fff solid;
+
+  @include respond-to(step-1) {
+    border-left-width: 0;
+  }
+  display: block;
+  z-index: -1;
+}
+
+.has-shadow #feature .top_shadow,
+.has-shadow #feature .bottom_shadow {
+  display: none;
+}
+
+/******************************************************************************
+/*                TITOLO
+*******************************************************************************/
+
+#feature h1 {
+  @include size(h1);
+  @include deco(h1);
+  max-width: 770px;
+  letter-spacing: -0.035em;
+  margin-top: 0;
+  padding: 0;
+}
+
+/******************************************************************************
+/*                TESTO
+*******************************************************************************/
+.feature-introduce { //TOCR - una sezione di tipografia per questa parte?
+  margin-top: font(p,lh);
+  max-width: 770px;
+  font-size: 1.578947368421053em;
+  line-height:  1.266666666666667em;
+  padding: 0;
+  @include deco(p);
+}
+
+.et_divi_builder #et_builder_outer_content #intro {
+  h1:first-child { padding-top: font(h1, lh) / 3; }
+  h2:first-child { padding-top: font(h2, mt) }
+
+  p {
+    position: relative;
+    font-size: 1.578947368421053em;
+    line-height:  1.266666666666667em;
+    margin-bottom:  0.6333333333333em;
+    margin-top:  0.6333333333333em;
+  }
+}

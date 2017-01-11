@@ -1,0 +1,128 @@
+//***************************************************************************//
+//*                                                                     *****//
+//*                         BARRA LATERALE
+//*                         Layout e Widget
+//*                                                                         *//
+//***************************************************************************//
+//****************************************************************************//
+//                             IMPOSTAZIONI GENERALI
+//****************************************************************************//
+
+/*
+ * Contneuto Sidebar - rimozione Ombra
+ */
+.has-gradient .right_sidebar #sidebar_content {
+  background-image: none;
+}
+
+.right_sidebar #sidebar_content.lessgap {
+  padding-top: 0;
+}
+
+
+
+//****************************************************************************//
+//                           WIDGET
+//****************************************************************************//
+/*
+ * Ultimo Widget
+ */
+#sidebar section.widget:last-child {
+  margin-bottom: 0 !important;
+}
+
+
+/*
+ * Titoli
+ */
+#sidebar .widgettitle {
+  background: palette(verde, bg);
+  color: palette(verde, body);
+  padding: font(h3, lh) / 2 $line-height / 2;
+//  margin-bottom: font(h3, lh);
+text-align: center;
+}
+
+/*
+ * Titoli DENTRO i widget di test
+ */
+#sidebar .widget h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/*
+ * Corpo
+ */
+#sidebar .widget ul {
+  padding: $line-height;
+  background: palette(grigio, bg);
+}
+
+//****************************************************************************//
+//                           COLOR LINK
+//****************************************************************************//
+#sidebar .widget .posts_list a,
+#sidebar .widget .posts_list a:visited,
+#sidebar .widget a,
+#sidebar .widget a:visited {
+  color: palette(grigio, body);
+
+  &:hover {
+    color: lighten(palette(grigio, body), 30%)
+  }
+}
+
+#sidebar .widget.widget_nav_menu a,
+#sidebar .widget.widget_nav_menu a:visited {
+  color: palette(grigio, body);
+
+  &:hover {
+    color: lighten(palette(grigio, body), 30%)
+  }
+}
+
+
+
+
+//****************************************************************************//
+//                           SIDEBAR SU MOBILE
+//****************************************************************************//
+#sidebar_content {
+  @include respond-to(step-2) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    section.widget {
+      width: 47.5%;
+      margin-right: 5%;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @at-root .right_sidebar #{&} {
+  @include respond-to(step-4) {
+    padding-left: $line-height;
+    padding-right: $line-height;
+  }
+  }
+
+  @include respond-to(step-5) {
+    display: block;
+
+    section.widget {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .textwidget {
+      text-align: center;
+    }
+  }
+}

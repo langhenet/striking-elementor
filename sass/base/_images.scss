@@ -5,5 +5,41 @@
 //*                                                                     ******//
 //****************************************************************************//
 ///
-// OVERLAY IMMAGINI
+// TONDE
 ///
+.lg-tonde,
+.et_divi_builder #et_builder_outer_content .et_pb_module img.lg-tonde {
+  border-radius: 100%;
+}
+
+/**** bordi immagini 4px main - grigio
+/***** grigio 4px bianco
+/*** verde bianco
+/*** rosso 4 px bianco **/
+/**é*** classe immagine su vista in cantina */
+.et_divi_builder #et_builder_outer_content .et_pb_module.lg-image--border img {
+  border-bottom: 4px solid;
+  border-bottom-color: mix(palette(main, bg), $nero, 50%);
+}
+
+@each $palette, $section in $colors  {
+  .#{$palette} .et_divi_builder #et_builder_outer_content .et_pb_module.lg-image--border img {
+    border-bottom-color: mix(palette($palette, bg), $nero, 50%);
+  }
+}
+
+
+//****************************************************************************//
+//*               IMMAGINI SU MOBILE
+//****************************************************************************//
+.et_pb_image {
+  @include respond-to(step-2) {
+    margin: 0 auto !important;
+  }
+
+  img {
+    @include respond-to(step-2) {
+      max-height: 400px;
+    }
+  }
+}

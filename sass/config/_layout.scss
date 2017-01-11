@@ -4,21 +4,28 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                          *//
 //*==========================================================================*//
+$width: 1170px;
+$website-width: em($width); //TODO
 
+$gutter-small: $line-height;
+$gutter: $line-height * 2;
+$gutter-large: $line-height * 5;
+$gutter-huge: $line-height * 8;
+
+$height-small: $line-height;
+$height: $line-height * 2;
+$height-large: $line-height * 5;
+$height-huge: $line-height * 8;
 
 //***********************************************************************//
 //             LARGHEZZA LAYOUT & BREAKPOINT MEDIA QUERIES
 //***********************************************************************//
-$website-width: 1170px; //TODO
-
-$u-hd:1980px; //step-p1
-
-$s-desktop: 1024px; // step-1
-$l-tablet: 989px; // step-2
-$p-tablet: 767px; // step-3
-$l-phone: 567px; // step-4
-$p-phone: 479px; // step-5
-$s-phone: 320px; // step-6
+$uxl: 1980px;
+$xl: 1200px;
+$lg: 990px;
+$md: 768px;
+$sm: 568px;
+$xs: 479px;
 
 
 $divi-u-hd: 1462px; //min

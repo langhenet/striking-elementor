@@ -4,33 +4,159 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                     ******//
 //****************************************************************************//
-
-#main-footer {
-  background-color: main-color(footer, bg);
+/*
+ * Reset Font Size del footer
+ */
+#footer {
+  font-size: 1em;
 }
 
-#et-footer-nav {
-  background-color: lighten(main-color(footer, bg), 10%);
-
-  .bottom-nav li {
-    @include size(p);
-    margin-bottom: 0;
-  }
+.has-shadow #footer_shadow {
+  display: none;
 }
+
+//****************************************************************************//
+//            FOOTER - COLORI E LAYOUT
+//****************************************************************************//
+
+.no-gradient #footer,
+.has-gradient #footer {
+  background-color: mix(main-colors(footer, bg), $bianco, 95%);
+}
+
+#footer .inner {
+  padding: $line-height * 3 0;
+}
+
 
 #footer-bottom {
-  background-color: main-color(footer, bg);
+  background-color: main-colors(footer, bg);
 }
 
 
-/*************************************************************************/
-/*                                  WIDGET
-/*************************************************************************/
+//****************************************************************************//
+//                                  WIDGET
+//****************************************************************************//
+#footer .widget {
+  margin-bottom: $line-height * 2;
+}
+
+#footer .inner > div section:last-of-type {
+  margin-bottom: 0;
+}
 
 /*
  * Titoli
  */
+#footer h3.widgettitle {
+  padding-bottom: font(h3, lh);
+  color: main-colors(footer, body);
+}
 
-.footer-widget h4.title {
-  @include size(h3);
+/*
+ * Colori Link Widget
+ */
+
+#footer .widget a {
+  color: main-colors(footer, link);
+
+  &:visited {
+    color: main-colors(footer, link);
+  }
+}
+
+/*
+ * Post List
+ */
+#footer .widget .posts_list a,
+#footer .widget .posts_list a:visited {
+  color: main-colors(footer, link);
+
+  &:hover {
+    color: lighten(main-colors(footer, link), 30%)
+  }
+}
+
+
+/*
+ * Nav Menu
+ */
+#footer .widget_nav_menu li {
+  a {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: none;
+    text-decoration: none;
+
+    &::after {
+      background: none;
+      height: 0;
+    }
+  }
+
+  &::before {
+    color: main-colors(footer, link);
+  }
+}
+
+#footer a,
+#footer a:visited {
+  color: main-colors(footer, link);
+  text-decoration: underline;
+
+  &:hover {
+    color: darken(main-colors(footer, link), 100%)
+  }
+}
+
+
+
+//****************************************************************************//
+//                                  FOOTER BOTTOM
+//****************************************************************************//
+
+#footer_bottom {
+  background: darken(main-colors(footer, bg), 0.0%);
+
+  &> .inner {
+    padding: $line-height 0;
+  }
+}
+
+#copyright,
+#footer_right_area {
+  @include size(small);
+  @include deco(p);
+
+  color: main-colors(footer, body);
+}
+
+//****************************************************************************//
+//                                  FOOTER SU MOBILE
+//****************************************************************************//
+#footer > .inner {
+  @include respond-to(step-2) {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+
+    .one_fourth {
+      width: 47.5%;
+      margin-right: 5%;
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include respond-to(step-5) {
+    padding-left: $line-height;
+    padding-right: $line-height;
+
+    .one_fourth {
+      width: 100%;
+      margin-right: 0;
+      margin-top: $line-height * 2;
+    }
+  }
 }

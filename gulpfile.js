@@ -38,7 +38,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./'))
         .pipe(sourceMaps.init())
         //.pipe(postcss([ autoprefixer({ browsers: ['last 10 versions'] }) ]))
-        .pipe(minifyCSS({keepSpecialComments:1}))
+        .pipe(minifyCSS({keepSpecialComments:1},{processImport: false}))
         .pipe(rename('style.css')) //rinomina il file minifcato
         .pipe(sourceMaps.write())
         .pipe(gulp.dest('./'))

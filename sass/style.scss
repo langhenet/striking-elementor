@@ -16,9 +16,9 @@
 @import 'base/typography';
 @import 'base/images';
 
-// TIPI DI HEADER
-//@import 'elements/header/logo-over-nav';
-@import 'elements/header/logo-side-nav';
+// HEADER
+@import 'elements/header/header-main';
+@import 'elements/header/top-area';
 
 //MAIN NAVIGAZIONE
 @import 'elements/header/main-nav';
@@ -27,12 +27,16 @@
 @import 'elements/layout/main-layout';
 @import 'elements/layout/sezioni-fw';
 @import 'elements/layout/footer';
+@import 'elements/layout/intro-section';
 @import 'elements/tables';
 @import 'elements/widgets';
 @import 'elements/buttons';
 @import 'elements/forms';
 @import 'elements/boxes';
 @import 'elements/icons';
+@import 'elements/scroll-down';
+@import 'elements/pages';
+@import 'sass/elements/testimonial';
 
 // PORTFOLIO
 @import 'elements/portfolio/portfolio-list';
@@ -40,7 +44,8 @@
 
 
 // BLOG SINGLE
-@import 'elements/blog/single-big';
+@import 'elements/blog/list-1col';
+@import 'elements/blog/single';
 
-// BLOG LIST
-@import 'elements/blog/list-big';
+//WIDGET & SIDEBAR
+@import 'elements/layout/sidebar';
