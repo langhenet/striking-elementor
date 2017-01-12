@@ -21,8 +21,8 @@
 
 
 $null: transparent;
-$nero: #000;
-$bianco: #fff;
+$nero-vero: #000;
+$bianco-vero: #fff;
 
 
 /*
@@ -30,81 +30,81 @@ $bianco: #fff;
 */
 $layout-colors: (
   topbar: (
-    body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
-    bg: $bianco,
-    button-bg: $nero,
-    button: $bianco,
+    body: $nero-vero,
+    link: $nero-vero,
+    accent: $nero-vero,
+    border: $nero-vero,
+    bg: $bianco-vero,
+    button-bg: $nero-vero,
+    button: $bianco-vero,
   ),
 
   header: (
-    body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
-    bg: $bianco,
-    button-bg: $nero,
-    button: $bianco,
+    body: $nero-vero,
+    link: $nero-vero,
+    accent: $nero-vero,
+    border: $nero-vero,
+    bg: $bianco-vero,
+    button-bg: $nero-vero,
+    button: $bianco-vero,
   ),
 
   fheader: (
-    body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
-    bg: $bianco,
-    button-bg: $nero,
-    button: $bianco,
+    body: $nero-vero,
+    link: $nero-vero,
+    accent: $nero-vero,
+    border: $nero-vero,
+    bg: $bianco-vero,
+    button-bg: $nero-vero,
+    button: $bianco-vero,
   ),
 
   main: (
-    body:       $nero,      //Corpo - testo
-    body-sec:   $nero,      //Secondario - blockquote o blog meta
-    heading:    rgba($nero, 0.68),      //Titoli 1 e 2
-    link:       $nero,      //Link
-    bg:         $bianco,      //Sfondo principale
-    border:     $nero,      //Bordi
+    body:       $nero-vero,      //Corpo - testo
+    body-sec:   $nero-vero,      //Secondario - blockquote o blog meta
+    heading:    rgba($nero-vero, 0.68),      //Titoli 1 e 2
+    link:       $nero-vero,      //Link
+    bg:         $bianco-vero,      //Sfondo principale
+    border:     $nero-vero,      //Bordi
 
-    accent:     $nero,      //Accento - sfondo lista icone / grassetti / icone
+    accent:     $nero-vero,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
-    bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box
-    accent-alt: $bianco,      //accento alt - il di un link nel form
+    body-alt:   $bianco-vero,      //body alternativo - testo in un form o in un box
+    bg-alt:     $nero-vero,      //sfondo alt - il bg di un form o di un box
+    accent-alt: $bianco-vero,      //accento alt - il di un link nel form
 
-    form-body: $bianco,
-    form-bg: $nero,
-    form-link: $bianco,
-    form-desc: $bianco,
+    form-body: $bianco-vero,
+    form-bg: $nero-vero,
+    form-link: $bianco-vero,
+    form-desc: $bianco-vero,
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    $nero-vero,      //Colore sfondo overlay
 
-    button:     $bianco,      //colore bottone
-    button-bg:  $nero,
+    button:     $bianco-vero,      //colore bottone
+    button-bg:  $nero-vero,
 
-    button-subtle: $bianco,
-    button-bg-subtle: mix($nero, white, 50%)    //bg bottone
+    button-subtle: $bianco-vero,
+    button-bg-subtle: mix($nero-vero, white, 50%)    //bg bottone
     ),
 
   footer: (
-    body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
-    bg: $bianco,
-    button-bg: $nero,
-    button: $bianco,
+    body: $nero-vero,
+    link: $nero-vero,
+    accent: $nero-vero,
+    border: $nero-vero,
+    bg: $bianco-vero,
+    button-bg: $nero-vero,
+    button: $bianco-vero,
     ),
 
   sidebar: (
-    body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
-    bg: $bianco,
-    button-bg: $nero,
-    button: $bianco,
+    body: $nero-vero,
+    link: $nero-vero,
+    accent: $nero-vero,
+    border: $nero-vero,
+    bg: $bianco-vero,
+    button-bg: $nero-vero,
+    button: $bianco-vero,
   ),
 );
 
@@ -115,31 +115,31 @@ $layout-colors: (
  */
 $colors: (
   color1: (
-    body:       $nero,      //Corpo - testo
-    body-sec:   $nero,      //Secondario - blockquote o blog meta
-    heading:    rgba($nero, 0.68),      //Titoli 1 e 2
-    link:       $nero,      //Link
-    bg:         $bianco,      //Sfondo principale
-    border:     $nero,      //Bordi
+    body:       $nero-vero,      //Corpo - testo
+    body-sec:   $nero-vero,      //Secondario - blockquote o blog meta
+    heading:    rgba($nero-vero, 0.68),      //Titoli 1 e 2
+    link:       $nero-vero,      //Link
+    bg:         $bianco-vero,      //Sfondo principale
+    border:     $nero-vero,      //Bordi
 
-    accent:     $nero,      //Accento - sfondo lista icone / grassetti / icone
+    accent:     $nero-vero,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
-    bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box
-    accent-alt: $bianco,      //accento alt - il di un link nel form
+    body-alt:   $bianco-vero,      //body alternativo - testo in un form o in un box
+    bg-alt:     $nero-vero,      //sfondo alt - il bg di un form o di un box
+    accent-alt: $bianco-vero,      //accento alt - il di un link nel form
 
-    form-body: $bianco,
-    form-bg: $nero,
-    form-link: $bianco,
-    form-desc: $bianco,
+    form-body: $bianco-vero,
+    form-bg: $nero-vero,
+    form-link: $bianco-vero,
+    form-desc: $bianco-vero,
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    $nero-vero,      //Colore sfondo overlay
 
-    button:     $bianco,      //colore bottone
-    button-bg:  $nero,
+    button:     $bianco-vero,      //colore bottone
+    button-bg:  $nero-vero,
 
-    button-subtle: $bianco,
-    button-bg-subtle: mix($nero, white, 50%)    //bg bottone
+    button-subtle: $bianco-vero,
+    button-bg-subtle: mix($nero-vero, white, 50%)    //bg bottone
   ),
 );
 
