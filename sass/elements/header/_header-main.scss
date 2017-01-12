@@ -24,44 +24,45 @@
  * BG dell'header
  */
 #header {
-  background-color: rgba(main-colors(header, bg), 0.5);
+  background-color: main-colors(header, bg);
   transition: all 250ms linear;
-//  position: static;
 }
 
+///
+// Header Langing Page
+///
 .page-template-template_land_page #header {
   background: transparent;
   transition: all 0ms linear;
   position: relative;
 
-  @include respond-to(step-3) {
-    background-color: rgba(main-colors(header, bg), 0.5);
+  @include breakpoint-max(sm) {
+    background-color: main-colors(header, bg);
   }
 
-
+  ///
+  // Logo landing page
+  ///
   #logo,
   #logo_text {
-    @include respond-to(step-3) {
+    @include breakpoint-max(sm) {
       width: 100% !important;
     }
   }
 }
 
-
+///
+// Header Langing Page quando sticky
+///
 .page-template-template_land_page .sticker_sticky #header {
-  position: relative;
-  transition: all 0ms linear;
 
-  .inner {
-    height: inherit;
-    transition: all 0ms linear;
-  }
 }
+
 
 /*
  * BG dell'header - da scrollato -  - solo su desktop
  */
-@include respond-to(step-p1) {
+@include breakpoint-min(xl) {
   .sticker_sticky #header {
     background-color: main-colors(header, bg);
     transition: all 250ms linear;
@@ -72,7 +73,7 @@
  * HEADER non sticky su mobile
  */
 #header-sticker-wrapper.sticker_enabled #header {
-  @include respond-to(step-1) {
+  @include breakpoint-max(md) {
     position: relative !important;
   }
 }
@@ -94,7 +95,7 @@
 /*
  * Altezza - da scrollato - solo su desktop
  */
-@include respond-to(step-p1) {
+@include breakpoint-min(xl) {
 .sticker_sticky #header .inner {
     height: $line-height * 2;
     transition: all 250ms linear;
@@ -117,13 +118,13 @@
   transition: all 250ms linear;
 
   @at-root .sticker_sticky #{&} {
-    @include respond-to(step-p1) { //quando l'header è sticcato - tolgo il bottom solo su desktop
+    @include breakpoint-min(xl) { //quando l'header è sticcato - tolgo il bottom solo su desktop
       bottom: 0;
       transition: all 250ms linear;
     }
 
     img {
-      @include respond-to(step-p1) { //quando l'header è sticcato - rimpicciolisco il logo solo su desktop
+      @include breakpoint-min(xl) { //quando l'header è sticcato - rimpicciolisco il logo solo su desktop
         width: 40%;
         transition: all 250ms linear;
       }

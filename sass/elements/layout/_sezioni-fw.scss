@@ -31,7 +31,7 @@
 //****************************************************************************//
 
 .et_divi_builder #et_builder_outer_content .et_pb_section {
-  background-color: palette(main, bg) !important;
+  background-color: main-colors(main, bg) !important;
 }
 
 @each $palette, $sections in $colors {
@@ -66,7 +66,7 @@
  * Media queries per margini delle colonne
  */
 .et_divi_builder #et_builder_outer_content .et_pb_column {
-  @include respond-to(divi-2) {
+  @include breakpoint-max(divi-lg) {
     margin-bottom: $line-height;
   }
 }
@@ -78,10 +78,10 @@
 .et_divi_builder #et_builder_outer_content .et_pb_section {
   padding: 0;
 
-  @include respond-to(divi-2) {
+  @include breakpoint-max(divi-lg) {
     padding: 0;
   }
-  @include respond-to(divi-1) {
+  @include breakpoint-min(divi-lg) {
     padding: 0;
   }
 }
@@ -92,12 +92,12 @@
   padding-bottom: $line-height;
   max-width: $website-width;
 
-  @include respond-to(step-0) { //padding laterale riga sotto i 1169
+  @include breakpoint-max(xl) { //padding laterale riga sotto i 1169
     padding-left: $line-height;
     padding-right: $line-height;
   }
 
-  @include respond-to(step-2) { //padding-laterle riga sotto i 979 - annullo il padding sotto e sopra fra le righe visto che scende tutto a capo
+  @include breakpoint-max(md) { //padding-laterle riga sotto i 979 - annullo il padding sotto e sopra fra le righe visto che scende tutto a capo
     padding-left: $line-height * 2;
     padding-right: $line-height * 2;
     padding-top: 0;
@@ -105,12 +105,12 @@
   }
 
 
-  @include respond-to(step-4) { //padding-laterle riga sotto i 979
+  @include breakpoint-max(xs) { //padding-laterle riga sotto i 979
     padding-left: $line-height;
     padding-right: $line-height;
   }
 
-  @include respond-to(divi-1) { //padding sopra e sotto delle righe quando non sono prima o ultima
+  @include breakpoint-min(divi-lg) { //padding sopra e sotto delle righe quando non sono prima o ultima
     padding-top: $line-height;
     padding-bottom: $line-height;
   }
@@ -123,7 +123,7 @@
  padding-top: 0 !important;
  padding-bottom: 0 !important;
 
- @include respond-to(divi-p2) {
+ @include breakpoint-min(divi-uxxl) {
    padding: 0;
  }
 }
@@ -153,11 +153,11 @@
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:first-of-type {
   padding-top: $line-height * 4;
 
-  @include respond-to(step-2) {
+  @include breakpoint-max(md) {
     padding-top: $line-height * 3;
   }
 
-  @include respond-to(step-3) {
+  @include breakpoint-max(sm) {
     padding-top: $line-height * 2;
   }
 }
@@ -165,11 +165,11 @@
 .et_divi_builder #et_builder_outer_content .et_pb_section.et_pb_section_parallax  > div.et_pb_row:nth-of-type(2) {
   padding-top: $line-height * 4; //per sezioni parallasse
 
-  @include respond-to(step-2) {
+  @include breakpoint-max(md) {
     padding-top: $line-height * 3;
   }
 
-  @include respond-to(step-3) {
+  @include breakpoint-max(sm) {
     padding-top: $line-height * 2;
   }
 }
@@ -179,11 +179,11 @@
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:last-of-type {
   padding-bottom: $line-height * 4;
 
-  @include respond-to(step-2) {
+  @include breakpoint-max(md) {
     padding-bottom: $line-height * 3;
   }
 
-  @include respond-to(step-3) {
+  @include breakpoint-max(sm) {
     padding-bottom: $line-height * 2;
   }
 }
@@ -234,7 +234,7 @@
   align-items: center;
   vertical-align: middle; //per allineamento verticale
 
-  @include respond-to(step-2) {
+  @include breakpoint-max(md) {
     display: block;
   }
 
@@ -250,7 +250,7 @@
     padding-right: 5em;
     padding-left: 5em;
 
-    @include respond-to(step-2) {
+    @include breakpoint-max(md) {
       display: block;
       float: left;
       min-height: $line-height * 12;
@@ -268,12 +268,12 @@
 
     &:first-child {
       padding-right: 5.5em; //Paddo la prima cella per dare dello spazio a DX
-      @include respond-to(step-2) {
+      @include breakpoint-max(md) {
         padding-left: 4em;
         padding-right: 4em;
       }
 
-      @include respond-to(step-3) {
+      @include breakpoint-max(sm) {
         padding-left: 2em;
         padding-right: 2em;
       }
@@ -288,12 +288,12 @@
 
     &:nth-child(2) {
       padding-left: 5.5em; //Paddo la seconda cella per dare dello spazio a SX
-      @include respond-to(step-2) {
+      @include breakpoint-max(md) {
         padding-left: 4em;
         padding-right: 4em;
       }
 
-      @include respond-to(step-3) {
+      @include breakpoint-max(sm) {
         padding-left: 2em;
         padding-right: 2em;
       }
@@ -313,7 +313,7 @@
   .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
     width: 50%;
 
-    @include respond-to(step-2) {
+    @include breakpoint-max(md) {
       width: 100%;
     }
   }
@@ -360,7 +360,7 @@
 // Margini dei moduli
 ///
 .et_pb_module {
-  @include respond-to(divi-1) {
+  @include breakpoint-min(divi-lg) {
     margin-bottom: $line-height;
   }
 }
@@ -388,7 +388,6 @@
 ///
 // SEZIONE OVERLAY
 ///
-
 .et_pb_section.lg-overlay {
   position: relative;
 

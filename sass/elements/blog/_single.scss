@@ -11,10 +11,12 @@
  * Titolo
  */
 .type-post #feature h1 {
-  @include size(h2);
-  @include deco(h2);
-
+  @include font(h2);
   margin-top: 0;
+
+  @include breakpoint-max(sm) {
+    @include m-size(h2);
+  }
 }
 
 
@@ -22,8 +24,7 @@
  * Meta
  */
 .type-post .feature-introduce {
-  @include size(h5);
-  @include deco(h5);
+  @include font(h5);
 
   font-style: italic;
   text-transform: uppercase;

@@ -9,7 +9,6 @@
  * Contenitore Nav
  */
 #navigation {
-  height: 2em;
   bottom: 50%;
 }
 
@@ -27,22 +26,16 @@
  */
 
  #navigation .menu > li {
-  background-color: transparent;
   transition: all 250ms linear;
   padding: 0 15px 0 13px;
-  @include deco(h2);
-  text-transform: uppercase;
-  border-left: 2px solid transparent;
- }
+}
 
 
 /*
  * I LI hover & Current
  */
  #navigation .menu > li:hover {
-  background-color: main-colors(header, bg);
   transition: all 250ms linear;
-  border-left: main-colors(header, border) 2px solid;
   padding: 0 15px 0 13px;
  }
 
@@ -67,8 +60,6 @@
  #navigation .menu > li.current_page_ancestor,
  #navigation .menu > li.current-page-item,
  #navigation .menu > li.current-page-ancestor {
-  background-color: main-colors(header, bg);
-  border-left: main-colors(header, border) 2px solid;
   padding: 0 15px 0 13px;
  }
 
@@ -78,10 +69,6 @@
  */
  #navigation .menu > li > a,
  #navigation .menu > li > a:visited {
-  color: main-colors(header, link);
-  font-size: font(p,fs);
-  line-height: font(p, lh) * 2;
-  height: font(p, lh) * 3.5;
   transition: all 250ms linear;
   padding: 0;
  }
@@ -92,9 +79,7 @@
 .sticker_sticky {
   #navigation .menu > li > a,
   #navigation .menu > li > a:visited {
-    @include respond-to(step-p1) {
-      height: font(p, lh) * 2;
-      transition:  background-color 250ms linear;
+    @include breakpoint-min(xl) {
     }
   }
 }
@@ -108,8 +93,6 @@
 #navigation .menu > li.hover > a:active,
 #navigation .menu > li.hover > a:visited,
 #navigation .menu > li.hover > a > i {
-  color: main-colors(header, accent);
-//  background-color: main-colors(header, bg);
   transition: all 250ms linear;
 }
 
@@ -138,7 +121,7 @@
 #navigation .menu > li.current_page_ancestor > a > i,
 #navigation .menu > li.current-page-item > a > i,
 #navigation .menu > li.current-page-ancestor > a > i {
-  color: main-colors(header, accent);
+
 }
 
 /******************************************************************************/
@@ -148,17 +131,9 @@
 // Sottomenu - contenitore / UL
 ///
 #navigation ul li ul {
-  background-color: main-colors(header, bg);
-  border: 0;
-  border-left: 2px solid main-colors(header, border);
-  left: -2px !important;
-  font-family: $font-family-heading;
-  text-transform: none;
-  margin-top: -$line-height * 2;
-  padding: $line-height / 2 0 $line-height / 2 0;
 
     @at-root .sticker_sticky #{&} { //con header scrollato - il margin top ritorna a 0 - solo su desktop
-      @include respond-to(step-p1) {
+      @include breakpoint-min(xl) {
         margin-top: 0;
       }
     }
@@ -180,10 +155,8 @@
 #navigation ul li.hover ul li a,
 #navigation ul ul li a,
 #navigation ul ul li a:visited {
-  @include size(p);
-  margin-bottom: 0;
+  @include font(p, $mt: 0);
   padding: 0 1em;
-  font-weight: family(ffh, light);
 }
 
 /******************************************************************************/
@@ -193,20 +166,13 @@
 // Fix navigazione che copre tutto
 ///
 .responsive #navigation {
-  @include respond-to (step-2) {
+  @include breakpoint-max(md) {
     display: inline-block;
     width: 100%;
     &::before {
-      font-size: 1.057895em;
-      line-height: font(h3, lh);
-      padding: 0 0.5em;
-      margin-top: 0;
-      top: 4px;
       content: "\f0c9";
       font-family: 'FontAwesome';
-      background: $bianco;
       position: absolute;
-      border: 4px solid $bianco;
     }
   }
 }
@@ -217,7 +183,5 @@
 ///
 .responsive .nav2select {
   @include form-field(p, 4);
-  background: $grigio-chiarissimo;
-  border-color: $bianco;
   padding-left: 5em;
 }

@@ -9,24 +9,22 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
 
 //***********************************************************************//
-//              PARTE PRINCIPALE - BODY - P - TITOLI
+//              PARTE PRINCIPALE - BODY - P e UL / OL
 //***********************************************************************//
 /*
  * BODY e P
  */
 body {
-  @include deco();
-  @include body-size;
-
-  margin:0 auto;
-
-  @include respond-to(step-0) { font-size: $font-size * 0.9;} //TODO
-  @include respond-to(step-4) { font-size: $font-size * 0.8;} //TODO
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $serif;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
 }
 
 p, ul, ol, pre, table, blockquote,
 .et_divi_builder #et_builder_outer_content .et_pb_module p {
-  @include body-margin;
+  @include margin;
 }
 
 
@@ -39,13 +37,18 @@ body.et-pb-preview #main-content .container { //TOCHK - cosa fa questa roba??
   }
 }
 
+
+
+///
+// Reset del padding del p e di DIVI BUILDER
+////
 p,
 p.et_normal_padding {
   padding-bottom: 0;
 }
 
 ul, ol, pre, table {
-  @include deco();
+  @include decoration();
 }
 
 ul ul, ol ol, ul ol, ol ul {
@@ -54,92 +57,49 @@ ul ul, ol ol, ul ol, ol ul {
 }
 
 
-/*
-* HEADINGS - TITOLI
-*/
+//***********************************************************************//
+//              TITOLI
+//***********************************************************************//
+///
+// RESET PADDING
+///
 h1, h2, h3, h4, h5 {
-padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 
 h1 {
-  @include size(h1);
-  @include deco(h1);
+  @include font(h1);
 
-  letter-spacing: -0.035em;
+  @include breakpoint-max(sm) {
+    @include m-size(h1);
+  }
 }
-
 
 h2 {
-  @include size(h2);
-  @include deco(h2);
+  @include font(h2);
 
-  letter-spacing: -.0148em;
-}
-
-
-///
-// H2 con Bordo - solo nel builder
-///
-.page .et_pb_module h2 {
-  border-left: 6px solid;
-  border-right: 6px solid;
-  display: table;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-
-  @include respond-to(step-4) {
-    display: block;
-    padding: 0;
-    border: 0;
+  @include breakpoint-max(sm) {
+    @include m-size(h2);
   }
 }
-
-
-//colori bordo
-.et_pb_module h2 {
-  border-color: palette(main, accent);
-}
-
-@each $palette, $section in $colors  {
-  .#{$palette} .et_pb_module h2 {
-    border-color: palette($palette, accent);
-  }
-}
-
-
-///
-// H2 senza Bordo
-///
-.page .et_pb_module .lg-title--no-border {
-  border-left-width: 0px;
-  border-right-width: 0px;
-  display: block;
-  padding-left: 0;
-  padding-right: 0;
-}
-
 
 h3 {
-  @include size(h3);
-  @include deco(h3);
+  @include font(h3);
+
+  @include breakpoint-max(sm) {
+    @include m-size(h3);
+  }
 }
 
 
 h4 {
-  @include size(h4);
-  @include deco(h4);
-
-  text-transform: uppercase;
+  @include font(h4);
 }
 
 
 h5 {
-  @include size(h5);
-  @include deco(h5);
-
-  text-transform: uppercase;
-  font-style: italic;
+  @include font(h5);
 }
 
 
@@ -155,25 +115,27 @@ h5 {
 //*     corrette - è un po' un taccone, nel senso che si aggiugno circa 12
 //*     linee di codice
 //****************************************************************************//
+//TOFIX
+/*
 .et_divi_builder #et_builder_outer_content div[class*='et_pb_text_'] h1 {
   @include respond-to(divi-2) {
-    @include size(h1);
+    @include font(h1);
   }
 
   @include respond-to(step-3) {
-    @include size(h1);
+    @include font(h1);
   }
 }
 
 .et_divi_builder #et_builder_outer_content div[class*='et_pb_text_'] p {
   @include respond-to(divi-2) {
-    @include size(p);
+    @include font(p);
   }
-  
+
   @include respond-to(step-3) {
-    @include size(p);
+    @include font(p);
   }
-}
+}*/
 
 
 
@@ -210,7 +172,7 @@ sub { bottom: $sub-bottom; }
 #main ul,
 .et_divi_builder #et_builder_outer_content .et_pb_module ol,
 .et_divi_builder #et_builder_outer_content .et_pb_module ul {
-  margin-left: 3em;
+  margin-left: $line-height * 2;
   padding-bottom: 0;
   margin-bottom: $line-height;
 }
@@ -235,40 +197,12 @@ sub { bottom: $sub-bottom; }
 //                                BLOCKQUOTE
 //****************************************************************************//
 blockquote {
-  font-size: font(blockquote, fs);
-  line-height: font(blockquote, lh);
-  margin-bottom: font(blockquote, mb);
-  margin-top: font(blockquote, mt);
-  font-family: font(blockquote, fm);
-  font-weight: font(blockquote, wt);
-  font-family: $font-family-special;
-  position: relative;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: $line-height * 2;
 
-  @at-root #page #{&} p { //TOCHK il #page è necessario?
-    color: palette(main, body-sec);
-    margin-bottom: 0;
-  }
 }
 
-blockquote::before {
-  position: absolute;
-  top: 0.2em;;
-  bottom: 0;
-  left: 0em;
-  right: 0;
-  content: "\201C" !important;
-  color: palette(main, accent);
-  font-size: 20em;
-  opacity: 0.2;
-}
-
-
- /*
-  * Blockquote - citazione COLORI
-  */
+/*
+* Blockquote - citazione COLORI
+*/
 @each $palette, $section in $colors  {
   #page .#{$palette} blockquote { //TOCHK il #page è necessario?
 
@@ -289,17 +223,17 @@ blockquote::before {
 /*
  * Colori Tipografia
  */
-#page h1 {color: palette(main, heading);}
-#page h2 {color: palette(main, heading);}
-#page h3 {color: palette(main, heading);}
-#page h4 {color: palette(main, heading);}
-#page h5 {color: palette(main, heading);}
-#page p, ul, ol {color: palette(main, body);}
+#page h1 {color: main-colors(main, heading);}
+#page h2 {color: main-colors(main, heading);}
+#page h3 {color: main-colors(main, heading);}
+#page h4 {color: main-colors(main, heading);}
+#page h5 {color: main-colors(main, heading);}
+#page p, ul, ol {color: main-colors(main, body);}
 #page a,
-#page a:visited {color: palette(main, link);}
-#page a:hover {color: darken(palette(main, link), 10%);}
+#page a:visited {color: main-colors(main, link);}
+#page a:hover {color: darken(main-colors(main, link), 10%);}
 
-
+//TOCHK
 /*
  * Colori Tipografia nelle Varie sezioni
  */
@@ -318,7 +252,7 @@ blockquote::before {
       color: palette($palette, link);
     }
     &:hover {
-      color: darken(palette($palette, link), 20%);
+      color: darken(palette($palette, link), 10%);
     }
   }
 }
@@ -327,7 +261,7 @@ blockquote::before {
 //****************************************************************************//
 //                         LINK
 //****************************************************************************//
-
+//TOCHCK
 /**
  * Decorazione link - Striking e DIVI builder
  **/
@@ -348,15 +282,15 @@ a,
 
 
 ///
-// Link nei titoli - Colori
+// Link DENTRO titoli - Colori
 ///
-#page h1>a,
-#page h2>a,
-#page h3>a,
-#page h4>a,
-#page h5>a {
+#page h1 > a,
+#page h2 > a,
+#page h3 > a,
+#page h4 > a,
+#page h5 > a {
   text-decoration: none;
-  color: palette(main, heading2);
+  color: layout-colors(main, heading2);
 
   &:link {
     text-decoration:none;
@@ -364,12 +298,12 @@ a,
 
   &:hover {
     text-decoration: none;
-    color: palette(main, heading);
+    color: layout-colors(main, heading);
   }
 
   &:visited {
     text-decoration: none;
-    color: palette(main, heading2);
+    color: layout-colors(main, heading2);
   }
 }
 
@@ -377,11 +311,11 @@ a,
 // Link nei titoli - Colori nelle varie sezioni
 ///
 @each $palette, $bg in $colors {
-  #page .#{$palette} h1>a,
-  #page .#{$palette} h2>a,
-  #page .#{$palette} h3>a,
-  #page .#{$palette} h4>a,
-  #page .#{$palette} h5>a {
+  #page .#{$palette} h1 > a,
+  #page .#{$palette} h2 > a,
+  #page .#{$palette} h3 > a,
+  #page .#{$palette} h4 > a,
+  #page .#{$palette} h5 > a {
     color: palette($palette, heading);
 
     &:link {

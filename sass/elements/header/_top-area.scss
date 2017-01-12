@@ -4,13 +4,13 @@
  */
 #top_area {//imposto il visible per poter fare transizione
   visibility: visible;
-  transition: all 200ms;
+  transition: all 250ms;
 }
 
 .sticker_sticky #top_area {//quando è scrollata la nascondo
   visibility: hidden;
-  transition: all 200ms;
-  @include respond-to(step-2) {//la rendo di nuovo visible sotto i 979px
+  transition: all 250ms;
+  @include breakpoint-max(md) {//la rendo di nuovo visible sotto i 979px
     display: block;
     visibility: visible;
   }
@@ -23,16 +23,16 @@
   top: 0;
   right: 0;
 
-  @include respond-to(step-2) {//la paddo sotto i 979px
+  @include breakpoint-max(lg) {//la paddo sotto i 979px
     padding-top: $line-height / 2;
   }
 
-  @include respond-to(step-4) {//rimuovo il padding sotto i 567px
+  @include breakpoint-max(sm) {//rimuovo il padding sotto i 567px
     padding-top: 0;
   }
 
   @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
-    @include respond-to(step-3) {
+    @include breakpoint-max(md) {
       display: block;
       width: 42%;
       float: right;
@@ -41,7 +41,7 @@
 
   @at-root .responsive #logo,
   .responsive #logo_text { //dimezzo la larghezza del logo
-    @include respond-to(step-3) {
+    @include breakpoint-max(sm) {
       display: block;
       width: 58%;
       float: left;
@@ -57,7 +57,7 @@
     margin-right: $line-height;
     margin-bottom: 0;
 
-    @include respond-to(step-3) { //li faccio cadere sotto i 567px
+    @include breakpoint-max(sm) { //li faccio cadere sotto i 567px
       margin-right: 0;
       clear: both;
       margin-top: $line-height / 2;
@@ -79,18 +79,14 @@
    * Stile specifico per il menu di navigazione della Top Bar
    */
   .widget_nav_menu {
-    height: 2em;
-    border-bottom: 2px solid main-colors(header, border);
-    border-top: 2px solid transparent;
 
-    @include respond-to(step-2) { //nascondo il menu di navigazione sotto i 767px
+    @include breakpoint-max(md) { //nascondo il menu di navigazione sotto i 767px
       display: none;
     }
 
     li {
       float: left;
-      @include size(small);
-      @include deco(small);
+      @include font(small);
       font-style: italic;
       text-transform: uppercase;
 
@@ -112,7 +108,7 @@
    */
   .widget_text_icl,
   .widget_text {
-    @include respond-to(divi-1) { //lo nascondo quando in formato desktop
+    @include breakpoint-min(lg) { //lo nascondo quando in formato desktop
       display: none;
     }
   }
@@ -121,9 +117,6 @@
    * Bottone della topbar
    */
   a.button.primary {
-    background: main-colors(topbar, accent);
-    border-color: main-colors(topbar, accent);
-    border-bottom-color: mix(main-colors(topbar, accent), $nero, 50%);
 
     &.chiama {
       background: transparent;
@@ -144,7 +137,7 @@
   background: rgba(255,255,255,0.2);
   padding: 0.1em 0;
 
-  @include respond-to(step-1) {
+  @include breakpoint-max(lg) {
     height: 1.9em;
     padding: 0;
   }
@@ -154,7 +147,7 @@
   }
 
   li {
-    line-height: font(p, lh);
+    line-height: size(p, lh);
     padding: 0;
 
 
@@ -166,10 +159,7 @@
 
   a,
   a:visited {
-    font-size: font(p, fs);
-    font-weight: family(ff, bolder);
-    font-family: font(p, fm);
-    line-height: font(p, lh);
+    @include font(p, $mt: 0);
     display: inline;
     border-right: 0 solid main-colors(header, border);
     border-right: 1px solid #fff;

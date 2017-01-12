@@ -23,7 +23,7 @@
 }
 
 .et_divi_builder #et_builder_outer_content .et_pb_fullwidth_header .et_pb_fullwidth_header_scroll a .et-pb-icon {
-  color: palette(main, accent);
+  color: main-colors(main, accent);
 }
 
 @each $palette, $bg in $colors {
@@ -36,7 +36,6 @@
  * Nel featured header
  */
 #feature .et_pb_fullwidth_header_scroll {
-  margin-top: 1.266666666666667em * 2;
   text-align: center;
 
   a {

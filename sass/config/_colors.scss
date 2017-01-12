@@ -24,67 +24,7 @@ $null: transparent;
 $nero: #000;
 $bianco: #fff;
 
-/*
- * Colori delle parti principali del sito
- */
-$layout-colors: (
-  topbar: (
-    body: $bianco,
-    link: $bianco,
-    accent: $null,
-    border: $bianco,
-    bg: rgba($nero, 0.55),
-    button-bg: $null,
-    button: $bianco,
-    ),
 
-  header: (
-    body: $bianco,
-    link: $bianco,
-    accent: $bianco,
-    border: $bianco,
-    bg: $nero,
-    button-bg: $null,
-    button: $bianco,
-    ),
-
-  fheader: (
-    body: $bianco,
-    link: $bianco,
-    accent: $bianco,
-    border: $bianco,
-    bg: $nero,
-    button-bg: $null,
-    button: $bianco,
-    ),
-
-  footer: (
-    body: $bianco,
-    link: $bianco,
-    accent: $bianco,
-    border: $bianco,
-    bg: $nero,
-    button-bg: $nero,
-    button: $bianco,
-    ),
-
-  sidebar: (
-    body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
-    bg: $bianco,
-    button-bg: $nero,
-    button: $bianco,
-    )
-  );
-
-
-
-  /*
-   * Colori delle Sezioni FW
-   */
-$colors: (
 /*
 * Colori delle parti principali del sito
 */
@@ -97,7 +37,7 @@ $layout-colors: (
     bg: $bianco,
     button-bg: $nero,
     button: $bianco,
-    ),
+  ),
 
   header: (
     body: $nero,
@@ -107,7 +47,7 @@ $layout-colors: (
     bg: $bianco,
     button-bg: $nero,
     button: $bianco,
-    ),
+  ),
 
   fheader: (
     body: $nero,
@@ -117,7 +57,7 @@ $layout-colors: (
     bg: $bianco,
     button-bg: $nero,
     button: $bianco,
-    ),
+  ),
 
   main: (
     body:       $nero,      //Corpo - testo
@@ -138,7 +78,7 @@ $layout-colors: (
     form-link: $bianco,
     form-desc: $bianco,
 
-    overlay:    $nero-vero,      //Colore sfondo overlay
+    overlay:    $nero,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $nero,
@@ -165,7 +105,7 @@ $layout-colors: (
     bg: $bianco,
     button-bg: $nero,
     button: $bianco,
-    ),
+  ),
 );
 
 
@@ -193,7 +133,7 @@ $colors: (
     form-link: $bianco,
     form-desc: $bianco,
 
-    overlay:    $nero-vero,      //Colore sfondo overlay
+    overlay:    $nero,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $nero,

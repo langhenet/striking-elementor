@@ -190,9 +190,24 @@
 //  Nel caso specifico, verrà utilizzato un @each che looppa attraverso tutte
 //  le palette per costruire delle classi dinamiche basate sulle palette
 ///
-@mixin button-color($state:none, $palette:main) {
+@mixin button-color($state: none, $palette: main) {
 
-  @if $state != hover {
+  @if ($state != hover) and ($palette == main) {
+    background: main-colors($palette, button-bg);
+    color: main-colors($palette, button);
+    border-color: main-colors($palette, button-bg);
+    border-bottom-color: darken(main-colors($palette, button-bg), 10%);
+    opacity: 1;
+  }
+
+  @if ($state == hover) and ($palette == main) {
+    background: darken(main-colors($palette, button-bg), 5%);
+    color: main-colors($palette, button);
+    border-color: main-colors($palette, button-bg);
+    border-bottom-color: darken(main-colors($palette, button-bg), 10%);
+  }
+
+  @if $state != hover and $palette != main {
     background: palette($palette, button-bg);
     color: palette($palette, button);
     border-color: palette($palette, button-bg);
@@ -201,10 +216,10 @@
   }
 
   @else {
-    background: darken(palette($palette, button-bg), 5%);
-    color: palette($palette, button);
-    border-color: palette($palette, button-bg);
-    border-bottom-color: darken(palette($palette, button-bg), 10%);
+  //  background: darken(palette($palette, button-bg), 5%);
+  //  color: palette($palette, button);
+  //border-color: palette($palette, button-bg);
+  //border-bottom-color: darken(palette($palette, button-bg), 10%);
   }
 }
 
@@ -302,6 +317,14 @@
   @if $media == uxl {
     @media (max-width: em-bp($uxl - 1)) { @content; }
   }
+
+  //DIVI
+  @if $media == divi-lg {
+    @media (max-width: em-bp($divi-lg - 1)) { @content; }
+  }
+  @if $media == divi-uxxl {
+    @media (max-width: em-bp($divi-uxxl - 1)) { @content; }
+  }
 }
 
 @mixin breakpoint-min($media) {
@@ -323,6 +346,14 @@
   @if $media == uxl {
     @media (min-width: em-bp($uxl)) { @content; }
   }
+
+  //DIVI
+  @if $media == divi-lg {
+    @media (min-width: em-bp($divi-lg)) { @content; }
+  }
+  @if $media == divi-uxxl {
+    @media (min-width: em-bp($divi-uxxl)) { @content; }
+  }
 }
 
 
@@ -341,6 +372,6 @@
   bottom: 0;
   left:0;
 //  background: palette($palette, overlay);
-  background-color: rgba( palette($palette, overlay), $grade);
+  background-color: rgba( main-colors($palette, overlay), $grade);
   z-index: 0;
 }

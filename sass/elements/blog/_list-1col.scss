@@ -51,14 +51,12 @@
  * Decorazione immagini listati
  */
 .image_frame {
-  border-bottom: 10px solid;
-  border-bottom-color: palette(main, accent)
+  border-bottom-color: main-colors(main, accent)
 }
 
 // loop per tutte le sezioni
 @each $palette, $bg in $colors {
   .category .#{$palette}.image_frame {
-    border-bottom: 10px solid;
     border-bottom-color: palette($palette, accent)
   }
 }
@@ -76,38 +74,20 @@
 //                          TITOLO e META
 //****************************************************************************//
 .entry_info .entry-title {
-  @include size(h3);
-  @include deco(h3);
-  margin-bottom: font(h3, lh) / 2;
-  margin-top: font(h3, lh) / 2;
-
-  margin-top: 0;
-  width: 92%;
-  margin-left: auto;
-  margin-right: auto;
+  @include font(h3);
 }
 
 #page .entry .entry_title a,
 #page .entry .entry_title a:visited {
-  color: palette(main, heading2);
+  color: main-colors(main, heading);
 }
 
 .entry .entry_meta {
-  @include size(h5);
-  @include deco(h5);
-
-  font-style: italic;
-  border: none;
-  width: 92%;
-  margin: 0 auto;
-  margin-bottom: font(h5, lh) / 2;
-  margin-top: font(h5, lh) / 2;
-  text-transform: uppercase;
-  color: palette(main, heading3);
+  @include font(h5);
 
   @at-root #page #{&} a,
            #page #{&} a:visited {
-    color: palette(main, heading3);
+    color: main-colors(main, heading);
   }
 }
 
@@ -121,9 +101,6 @@
 //                         EXCERPT e READ MORE
 //****************************************************************************//
 .entry_content {
-  width: 92%;
-  margin-left: auto;
-  margin-right: auto;
 
   p {
     margin-bottom: 0;

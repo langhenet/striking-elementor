@@ -25,13 +25,13 @@ $xl: 1200px;
 $lg: 990px;
 $md: 768px;
 $sm: 568px;
-$xs: 479px;
+$xs: 480px;
 
 
-$divi-u-hd: 1462px; //min
-$divi-large-desktop: 1405px; //max
-$divi-small-desktop: 1100px; //max
-$divi-l-tablet: 980px; //max
-$divi-m-tablet: 782px;
-$divi-p-tablet: 767px; //***
-$divi-p-phone: 479px; //***
+$divi-uxxl: 1462px; //min u-hd
+$divi-xxl: 1405px; //max large desk
+$divi-xl: 1100px; //max small desk
+$divi-lg: 981px; //max l-tablet
+//$divi-md: 782px; //
+$divi-md: 768px; //***
+$divi-xs: 480px; //***

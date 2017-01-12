@@ -15,9 +15,7 @@
   border-bottom: 4px solid;
 
   @at-root .et_divi_builder #et_builder_outer_content  #{&}.et_pb_blurb_position_top h4 { //solo titolo top
-    @include size(h3);
-    margin-bottom: 0;
-    margin-top: 0;
+    @include font(h3, $mt: 0, $mb: 0);
     padding-bottom: 0;
   }
 }
@@ -31,8 +29,6 @@
   margin-top: - $line-height;
 
   img {
-    border-bottom: 4px solid;
-    border-bottom-color: mix(palette(main, bg-alt), $nero, 50%);
   }
 }
 
@@ -41,17 +37,15 @@
 ///
 @each $palette, $bg in $colors {
   .et_divi_builder #et_builder_outer_content  .#{$palette} .et_pb_main_blurb_image  img {
-    border-bottom-color: mix(palette($palette, bg-alt), $nero, 50%);
   }
 }
 
 ////
 // Contenuto del Blurb
 ///
-
 .et_pb_blurb {
-  background-color: palette(main, bg-alt);
-  color: palette(main, body-alt);
+  background-color: main-colors(main, bg-alt);
+  color: main-colors(main, body-alt);
 
   @at-root #page #{&} p,
            #page #{&} h1,
@@ -59,11 +53,11 @@
            #page #{&} h3,
            #page #{&} h4,
            #page #{&} h5 {
-    color: palette(main, body-alt);
+    color: main-colors(main, body-alt);
   }
 
   @at-root #page #{&} a {
-    color: palette(main, accent-alt);
+    color: main-colors(main, accent-alt);
   }
 
   .et_pb_blurb_container {
@@ -73,17 +67,17 @@
 }
 
 .et_pb_main_blurb_image .et-pb-icon { // colore icona
-  color: palette(main, body-alt) !important;
+  color: main-colors(main, body-alt) !important;
 
   &.et-pb-icon-circle { // icona con il cerchio
     background: transparent !important;
-    border: palette(main, border) 2px solid;
+    border: main-colors(main, border) 2px solid;
   }
 }
 
 
 /*
- * colori
+ * Loop Colori Blurb
  */
 @each $palette, $bg in $colors {
   .#{$palette} .et_pb_blurb {

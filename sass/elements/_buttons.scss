@@ -189,7 +189,7 @@ a.button.primary {
   @include button-color(none, main);
 
   &:hover {
-    @include button-color(hover, main);
+    @include button-color(hover);
   }
 }
 

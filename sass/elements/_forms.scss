@@ -36,7 +36,7 @@ select {
   $pad: bspad(6);
   padding-bottom: bspad(6) + ($line-height / 2em);
 
-  @include respond-to(step-5) {
+  @include breakpoint-max(xs) {
     max-width: 120% !important;
     margin-left: -10% !important;
     width: 120% !important;
@@ -44,7 +44,7 @@ select {
 }
 
 .et_pb_column_4_4 .gform_wrapper {
-  @include respond-to(step-5) {
+  @include breakpoint-max(xs) {
     margin-left: -2em;
   }
 }
@@ -79,15 +79,15 @@ select {
 
 .gform_wrapper .top_label li.gfield.gf_left_half,
 .gform_wrapper .top_label li.gfield.gf_right_half {
-  @include respond-to(step-0) {
+  @include breakpoint-max(xl) {
     width: 100%;
   }
 
-  @include respond-to(step-2) {
+  @include breakpoint-max(md) {
     width: 49%;
   }
 
-  @include respond-to(step-4) {
+  @include breakpoint-max(xs) {
     width: 100%;
   }
 }
@@ -122,8 +122,7 @@ select {
 
   // Titolo Sezione
   h2 {
-    @include size(h3);
-    @include deco(h3);
+    @include font(h3)
     display: block;
     border: 0px;
   }
@@ -138,8 +137,7 @@ select {
 }
 // Tipografia
 .gform_wrapper .gsection_description {
-  @include size(p);
-  margin-bottom: 0;
+  @include font(p, $mt: 0);
   padding: 0;
 }
 
@@ -285,25 +283,25 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
  * Colore Sezione standard
  */
 .gform_wrapper {
-  background: palette(main, form-bg); //BG del form
-  border-bottom-color: mix(palette(main, form-bg), $nero, 50%); //border bottom del form
+  background: main-colors(main, form-bg); //BG del form
+  border-bottom-color: mix(main-colors(main, form-bg), $nero, 50%); //border bottom del form
 
   a {
-    color: palette(main, form-link); //Colore link
+    color: main-colors(main, form-link); //Colore link
   }
 
   input,
   textarea,
   select { //Colore Bordo dei campi
-    border-color: darken(palette(main, form-bg), 2.5%);
+    border-color: darken(main-colors(main, form-bg), 2.5%);
 
     &:focus { //colore bordo campi focused
-      border-color: darken(palette(main, form-bg), 20%);
+      border-color: darken(main-colors(main, form-bg), 20%);
     }
   }
 
   label { //colore del label
-    color: palette(main, form-body)
+    color: main-colors(main, form-body)
   }
 
   .gfield_date_day label,
@@ -315,22 +313,22 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
   .ginput_complex label,
   .instruction,
   .gfield_description { //colore sottoetichette e descrizione campi
-    color: palette(main, form-desc)
+    color: main-colors(main, form-desc)
   }
 
   // campi HTML e SECTION
   @at-root #page #{&} p {
-    color: palette(main, form-body);
+    color: main-colors(main, form-body);
   }
 
   @at-root #page #{&} h2,
            #page #{&} h3 {
-    color: palette(main, heading2); //TOCR
+    color: main-colors(main, heading2); //TOCR
   }
 
   .gsection { // Colore bordo bottom del campo SECTION
-    border-bottom-color: mix(palette(main, form-bg), $nero, 50%);
-    color: palette(main, form-body);
+    border-bottom-color: mix(main-colors(main, form-bg), $nero, 50%);
+    color: main-colors(main, form-body);
   }
 
   //BOTTONE
@@ -391,7 +389,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
     }
     @at-root #page #{&} h2,
              #page #{&} h3 {
-      color: palette(main, heading2); //TOCR
+      color: palette($palette, form-body); //TOCR
     }
 
     .gsection { // Colore bordo bottom del campo SECTION

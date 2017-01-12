@@ -36,20 +36,8 @@
  * Titoli
  */
 #sidebar .widgettitle {
-  background: palette(verde, bg);
-  color: palette(verde, body);
-  padding: font(h3, lh) / 2 $line-height / 2;
-//  margin-bottom: font(h3, lh);
-text-align: center;
 }
 
-/*
- * Titoli DENTRO i widget di test
- */
-#sidebar .widget h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
 
 /*
@@ -57,7 +45,6 @@ text-align: center;
  */
 #sidebar .widget ul {
   padding: $line-height;
-  background: palette(grigio, bg);
 }
 
 //****************************************************************************//
@@ -67,19 +54,18 @@ text-align: center;
 #sidebar .widget .posts_list a:visited,
 #sidebar .widget a,
 #sidebar .widget a:visited {
-  color: palette(grigio, body);
 
   &:hover {
-    color: lighten(palette(grigio, body), 30%)
   }
 }
 
+///
+// LINK Nav Menu
+///
 #sidebar .widget.widget_nav_menu a,
 #sidebar .widget.widget_nav_menu a:visited {
-  color: palette(grigio, body);
 
   &:hover {
-    color: lighten(palette(grigio, body), 30%)
   }
 }
 
@@ -90,7 +76,7 @@ text-align: center;
 //                           SIDEBAR SU MOBILE
 //****************************************************************************//
 #sidebar_content {
-  @include respond-to(step-2) {
+  @include breakpoint-max(md) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -107,22 +93,9 @@ text-align: center;
   }
 
   @at-root .right_sidebar #{&} {
-  @include respond-to(step-4) {
-    padding-left: $line-height;
-    padding-right: $line-height;
-  }
-  }
-
-  @include respond-to(step-5) {
-    display: block;
-
-    section.widget {
-      width: 100%;
-      margin-right: 0;
-    }
-
-    .textwidget {
-      text-align: center;
+    @include breakpoint-max(xs) {
+      padding-left: $line-height;
+      padding-right: $line-height;
     }
   }
 }
