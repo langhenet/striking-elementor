@@ -284,7 +284,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
  */
 .gform_wrapper {
   background: main-colors(main, form-bg); //BG del form
-  border-bottom-color: mix(main-colors(main, form-bg), $nero, 50%); //border bottom del form
+  border-bottom-color: main-colors(main, border); //border bottom del form
 
   a {
     color: main-colors(main, form-link); //Colore link
@@ -327,7 +327,6 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
   }
 
   .gsection { // Colore bordo bottom del campo SECTION
-    border-bottom-color: mix(main-colors(main, form-bg), $nero, 50%);
     color: main-colors(main, form-body);
   }
 
@@ -351,7 +350,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 @each $palette, $bg in $colors {
   .#{$palette} .gform_wrapper {
     background: palette($palette, form-bg); //BG del form
-    border-bottom-color: mix(palette($palette, form-bg), $nero, 50%); //border bottom del form
+    border-bottom-color: darken(palette($palette, form-bg), 50%); //border bottom del form
 
     a {
       color: palette($palette, form-link); //Colore link
@@ -393,7 +392,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
     }
 
     .gsection { // Colore bordo bottom del campo SECTION
-      border-bottom-color: mix(palette($palette, form-bg), $nero, 50%);
+      border-bottom-color: darken(palette($palette, form-bg), 50%);
       color: palette($palette, form-body);
     }
 

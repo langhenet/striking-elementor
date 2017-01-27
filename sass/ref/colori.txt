@@ -1,0 +1,12 @@
+nero #21211e
+bianco #f0f0ee (� anche lo sfondo del sito)
+
+$grigio-scuro: #41413c;
+$grigio-chiaro: #6f6f69;
+$beige: #c2b59b;
+$beige-chiaro: #e1dacd;
+$blu: #24768e;
+
+
+la sezione FW ha come sfondo il $beige-chiaro cos� come i box info
+la tipografia invece � $beige (dove la vedi non nera o grigia)
