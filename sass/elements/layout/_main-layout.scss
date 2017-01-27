@@ -75,7 +75,8 @@
   padding-top: $line-height * 4;
 }
 //resetto padding nelle FW
-.page-template-template_fullwidth #main {
+.page-template-template_fullwidth #main,
+.page-template-template_land_page #main {
   padding-top: 0;
   padding-right: 0;
   padding-left: 0;
