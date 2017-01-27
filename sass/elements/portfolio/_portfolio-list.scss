@@ -4,3 +4,199 @@
 //*
 //*                                                                         *//
 //***************************************************************************//
+
+//**************************************************************************************//
+//                      TITOLI PORTFOLI
+//**************************************************************************************//
+///
+// Impostazioni LINK dentro i Titoli
+///
+.portfolio_title {
+
+  //Decorazione
+  @at-root #main #{&} {
+    a,
+    a:visited {
+      text-decoration: none;
+    }
+  }
+
+  //Reset font-size
+  @at-root #page #{&} a {
+    font-size: 1em;
+  }
+}
+
+///
+// Descrizione - Excerpt
+///
+.portfolio_desc {
+  margin-top: 0;
+}
+
+
+
+
+
+
+///
+// Colori
+///
+.portfolio_title,
+#page .portfolio_title a,
+#page .portfolio_title a:visited {
+  color: main-colors(main, link);
+}
+
+//Loop
+@each $palette, $sections in $colors {
+  .#{$palette} .portfolio_title,
+  #page .#{$palette} .portfolio_title a,
+  #page .#{$palette} .portfolio_title a:visited {
+    color: palette($palette, link)
+  }
+}
+
+
+
+
+
+//**************************************************************************************//
+//                      IMPOSTAZIONE DI BASE LAYOUT
+//**************************************************************************************//
+///
+// Impostazione Flex
+///
+.portfolio_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+//cambio impostazione flex su mobile
+@include breakpoint-max(sm) {
+  .portfolio_container {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+
+//resetto i margini
+.portfolio_item {
+  margin-right: 0 !important;
+}
+
+//resetto margini contenitore su mobile
+.portfolios .portfolio_three_columns,
+.portfolios .portfolio_four_columns {
+  margin-right: auto !important;
+}
+
+
+
+//**************************************************************************************//
+//                      3 Colonne
+//**************************************************************************************//
+///
+//impostazioni di base
+///
+.portfolio_three_columns .portfolio_item {
+  flex-basis: 30%;
+  width: 30%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 0 !important;
+}
+
+
+///
+//impostazione su schermi grandi
+///
+@include breakpoint-min(lg) {
+  .portfolio_three_columns .portfolio_item {
+    flex-basis: 27%;
+    width: 27%;
+    flex-shrink: 0;
+    margin-right: 0;
+  }
+}
+
+
+///
+//impostazione su schermi medi
+///
+@include breakpoint-max(md) {
+  .portfolio_three_columns .portfolio_item {
+    flex-basis: 45%;
+    width: 45% !important;
+  }
+}
+
+
+///
+//impostazione schermi piccoli
+///
+@include breakpoint-max(sm) {
+  .portfolio_three_columns .portfolio_item {
+    flex-basis: 95%;
+    width: 95% !important;
+  }
+}
+
+
+///
+// Titolo & Descrizione: dimensioni per 3 colonne
+///
+.portfolio_three_columns {
+
+  //titolo
+  .portfolio_title {
+    @include font(h3, $mt: size(h3, lh) / 2, $mb: size(h3, lh) / 2);
+
+    @include breakpoint-max(md) {
+      @include m-size(h3);
+    }
+  }
+
+  //Descrizione
+  .portfolio_desc {
+    @include font(h5, $mt: 0, $fm: secondary);
+  }
+}
+
+
+
+//**************************************************************************************//
+//                      4 Colonne
+//**************************************************************************************//
+///
+//impostazioni di base
+///
+.portfolio_four_columns .portfolio_item {
+  flex-basis: 21%;
+  width: 21%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 0 !important;
+}
+
+
+
+///
+// Titolo & Descrizione: dimensioni per 4 colonne
+///
+.portfolio_four_columns {
+
+  //titolo
+  .portfolio_title {
+    @include font(h4, $mt: size(h4, lh) / 2, $mb: size(h4, lh) / 2);
+    text-transform: uppercase;
+  }
+
+  //Descrizione
+  .portfolio_desc {
+    @include font(h5, $mt: 0, $fm: secondary);
+  }
+}

@@ -10,6 +10,7 @@
  */
 #navigation {
   bottom: 50%;
+  height: $line-height;
 }
 
 
@@ -70,7 +71,11 @@
  #navigation .menu > li > a,
  #navigation .menu > li > a:visited {
   transition: all 250ms linear;
+  height: auto;
+  font-size: 1em;
+  line-height: $line-height;
   padding: 0;
+  color: main-colors(header, link);
  }
 
 /*

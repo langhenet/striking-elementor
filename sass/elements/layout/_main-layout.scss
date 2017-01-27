@@ -44,11 +44,10 @@
   content: none;
 }
 
-
-
 //****************************************************************************//
 //                               PADDING TOTALE SOPRA IL CONTENUTO
 //****************************************************************************//
+
 #page .inner {
   padding-top: 0;
   padding-bottom: 0;
@@ -56,18 +55,53 @@
   padding-right: 0;
 }
 
-#main {
-  margin-top: -$line-height;
+#main,
+#sidebar {
+  box-sizing: border-box;
+  @include breakpoint-max(lg) {
+    padding-right: $line-height;
+    padding-left: $line-height;
+  }
+  @include breakpoint-max(xs) {
+    padding-right: $line-height / 2;
+    padding-left: $line-height / 2;
+  }
+}
+
+
+//padding del contenuto dal featured header
+#main,
+#sidebar {
+  padding-top: $line-height * 4;
+}
+//resetto padding nelle FW
+.page-template-template_fullwidth #main {
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+
+  @include breakpoint-max(lg) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @include breakpoint-max(xs) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 //****************************************************************************//
 //                          BREAD CRUMBS
 //****************************************************************************//
 #breadcrumbs { //contenitore
-
+  font-size: 1em;
 
   .breadcrumbs {
     @include font(h5, $mt: 0);
+
+    text {
+      font-weight: bold;
+    }
 
     .breadcrumbs-plus {
 

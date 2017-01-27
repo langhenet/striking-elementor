@@ -64,7 +64,7 @@
   @include size($size);
 
   //MARGIN TOP
-  @if $mt == 0 {
+  @if $mt != $size  {
     margin-top: $mt;
   }
   @else {
@@ -72,7 +72,7 @@
   }
 
   //MARGIN bottom
-  @if $mb == 0 {
+  @if $mb != $size {
     margin-bottom: $mb;
   }
   @else {
