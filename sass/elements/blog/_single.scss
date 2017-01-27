@@ -114,4 +114,6 @@
   @extend %button;
   @include button(p);
   @include button-color(main);
+
+  height: auto;
 }
