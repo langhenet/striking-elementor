@@ -18,10 +18,44 @@
 
 .button.small {
   @extend %button;
-  @include button(small, 1);
+  @include button(small, 1, half);
 
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.button.medium {
+  @extend %button;
+  @include button(p, 2);
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.button.large {
+  @extend %button;
+  @include button(h3, 4);
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#page .button.primary {
+  color: #fff;
+
+  [class^="icon-"] {
+    color: #fff;
+  }
+}
+
+@each $palette, $bg in $colors {
+  #page .#{$palette} .button.primary {
+    color: palette($palette, button);
+  }
+
+  [class^="icon-"]{
+    color: palette($palette, button);
+  }
 }
 
 //***********************************************************************//
@@ -31,7 +65,7 @@
   /*
    * Bottone Piccolo
    */
-  .et_pb_button.size-small,
+  .et_pb_button.size--small,
   .et_pb_module a.button.small {
     @extend %button;
     @include button(small, 1);
@@ -46,7 +80,7 @@
     }
     // HOVER
     &:hover {
-      @extend .et_pb_button.size-small;
+      @extend .et_pb_button.size--small;
     }
 
     //Bottone icona
@@ -64,11 +98,12 @@
   /*
    * Bottone Medio
    */
-  .et_pb_button.size-medium,
+  .et_pb_button,
+  .et_pb_button.size--medium,
   body a.big-button,
   .et_pb_module a.button.medium { //TOCHK ultima dichiarazione per bottone merda nel blurb
     @extend %button;
-    @include button(p, 4, half);
+    @include button(p, 4);
 
     font-weight: inherit; //TODO
     text-transform: uppercase;
@@ -77,7 +112,7 @@
     padding-right: $line-height / 2;
 
     &:hover {
-      @extend .et_pb_button.size-medium;
+      @extend .et_pb_button.size--medium;
     }
 
    &:after { //il padding viene usato per correggere l'icona di DIVI
@@ -101,7 +136,7 @@
   /*
    * Bottone Grande
    */
-  .et_pb_button.size-large,
+  .et_pb_button.size--large,
   .et_pb_module a.button.large {
     @extend %button;
     @include button(h3, 4)
@@ -114,7 +149,7 @@
 
 
     &:hover {
-      @extend .et_pb_button.size-large;
+      @extend .et_pb_button.size--large;
     }
     &:after { //il padding viene usato per correggere l'icona di DIVI
       display: none;
@@ -135,7 +170,7 @@
   /*
    * Bottone Xtra Grande
    */
-  .et_pb_button.size-x-large {
+  .et_pb_button.size--huge {
     @extend %button;
     @include button(h2, 6, half);
 
@@ -146,7 +181,7 @@
     padding-right: $line-height / 2;
 
     &:hover {
-      @extend .et_pb_button.size-x-large;
+      @extend .et_pb_button.size--huge;
     }
 
     &:after { //il padding viene usato per correggere l'icona di DIVI
@@ -239,3 +274,17 @@ a.button.primary {
 //                  include anche i colori dei bottoni di gravity pare
 //                  ho cambiato la dichiarazione nel mixin dei bottoni per fare i bordi -
 //****************************************************************************//
+
+.et_divi_builder #et_builder_outer_content  .et_pb_bg_layout_light.et_pb_module.et_pb_button.skeleton--light,
+.et_divi_builder #et_builder_outer_content a.button.primary.skeleton--light {
+
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+
+  &:hover {
+    color: #111;
+    background-color: #fff;
+    border-color: #fff;
+  }
+}
