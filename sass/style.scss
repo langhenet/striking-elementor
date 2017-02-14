@@ -25,18 +25,17 @@
 
 // ELEMENTI
 @import 'elements/layout/main-layout';
-@import 'elements/layout/sezioni-fw';
 @import 'elements/layout/footer';
 @import 'elements/layout/intro-section';
 @import 'elements/tables';
 @import 'elements/widgets';
 @import 'elements/buttons';
 @import 'elements/forms';
-@import 'elements/boxes';
-@import 'elements/icons';
-@import 'elements/scroll-down';
 @import 'elements/pages';
 @import 'sass/elements/testimonial';
+
+//DIVI
+@import 'divi/divi.scss';
 
 // PORTFOLIO
 @import 'elements/portfolio/portfolio-list';

@@ -35,8 +35,9 @@
 }
 
 @each $palette, $sections in $colors {
-.et_divi_builder #et_builder_outer_content .et_pb_section.#{$palette} {
-    background-color: palette($palette, bg) !important;
+  .#{$palette},
+  .et_divi_builder #et_builder_outer_content .et_pb_section.#{$palette} {
+      background-color: palette($palette, bg) !important;
   }
 }
 
@@ -50,7 +51,7 @@
 // TOCR - forse ha senso fare diversi template per diversi allineamenti nelle righe ad altezza uguale?
 ///
 .et_pb_row.et_pb_equal_columns {
-   align-items: center;
+  align-items: stretch !important;
 }
 
 ///
@@ -93,8 +94,8 @@
   max-width: $website-width;
 
   @include breakpoint-max(xl) { //padding laterale riga sotto i 1169
-    padding-left: $line-height;
-    padding-right: $line-height;
+    padding-left: $line-height * 2;
+    padding-right: $line-height * 2;
   }
 
   @include breakpoint-max(md) { //padding-laterle riga sotto i 979 - annullo il padding sotto e sopra fra le righe visto che scende tutto a capo
@@ -135,13 +136,13 @@
  */
 //prima
 .et_divi_builder #et_builder_outer_content .et_pb_section.lg-small-padding > div.et_pb_row:first-of-type {
- padding-top: $line-height * 2;
+  padding-top: $height--small;
 }
 
 
 //Ultima
 .et_divi_builder #et_builder_outer_content .et_pb_section.lg-small-padding > div.et_pb_row:last-of-type {
- padding-bottom: $line-height * 2;
+  padding-bottom: $height--small;
 }
 
 
@@ -151,40 +152,40 @@
 */
 //Prima
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:first-of-type {
-  padding-top: $line-height * 4;
+  padding-top: $height;
 
   @include breakpoint-max(md) {
     padding-top: $line-height * 3;
   }
 
   @include breakpoint-max(sm) {
-    padding-top: $line-height * 2;
+    padding-top: $height--small;
   }
 }
 //Prima con Parallax
 .et_divi_builder #et_builder_outer_content .et_pb_section.et_pb_section_parallax  > div.et_pb_row:nth-of-type(2) {
-  padding-top: $line-height * 4; //per sezioni parallasse
+  padding-top: $height; //per sezioni parallasse
 
   @include breakpoint-max(md) {
     padding-top: $line-height * 3;
   }
 
   @include breakpoint-max(sm) {
-    padding-top: $line-height * 2;
+    padding-top: $height--small;
   }
 }
 
 
 //Ultima
 .et_divi_builder #et_builder_outer_content .et_pb_section > div.et_pb_row:last-of-type {
-  padding-bottom: $line-height * 4;
+  padding-bottom: $height;
 
   @include breakpoint-max(md) {
     padding-bottom: $line-height * 3;
   }
 
   @include breakpoint-max(sm) {
-    padding-bottom: $line-height * 2;
+    padding-bottom: $height--small;
   }
 }
 
@@ -193,6 +194,16 @@
 * LARGE padding
 */
 
+//prima
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-large-padding > div.et_pb_row:first-of-type {
+  padding-top: $height--large;
+}
+
+
+//Ultima
+.et_divi_builder #et_builder_outer_content .et_pb_section.lg-large-padding > div.et_pb_row:last-of-type {
+  padding-bottom: $height--large;
+}
 
 /*
 * HUGE padding
@@ -215,6 +226,7 @@
 }
 
 //Azzera il padding della riga per quelle a Larghezza Piena
+.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth,
 .et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:first-of-type,
 .et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row.et_pb_row_fullwidth:last-of-type {
   padding: 0;
@@ -222,20 +234,21 @@
 
 //sposta il padding sulle colonne per le Righe a Larghezza Piena
 .et_pb_section .et_pb_row.et_pb_row_fullwidth .et_pb_column {
-  padding-top: $line-height * 4;
-  padding-bottom: $line-height * 4;
+  padding-top: $height;
+  padding-bottom: $height;
 }
 
 ///
 // Struttura delle RIGHE a larghezza piena
 ///
 .et_divi_builder #et_builder_outer_content .et_pb_row.et_pb_row_fullwidth {
-  display: inline-table; //per allineamento verticale
+  display: flex; //per allineamento verticale
   align-items: center;
-  vertical-align: middle; //per allineamento verticale
+  flex-flow: row;
 
-  @include breakpoint-max(md) {
-    display: block;
+  @include breakpoint-max(lg) {
+    flex-flow: column;
+    align-content: space-around;
   }
 
   ///
@@ -243,19 +256,21 @@
   ///
   .et_pb_column {
     float: none;  //per allineamento verticale
-    display: table-cell;  //per allineamento verticale
-    vertical-align: middle;  //per allineamento verticale
     padding-top: $line-height * 3;
     padding-bottom: $line-height * 3;
-    padding-right: 5em;
-    padding-left: 5em;
+    padding-right: $line-height * 3;
+    padding-left: $line-height * 3;
 
-    @include breakpoint-max(md) {
+    @include breakpoint-max(lg) {
       display: block;
-      float: left;
       min-height: $line-height * 12;
+      float: none;
     }
-
+  .et_pb_column {
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
 
     ///
     // Elementi interni alle colonne
@@ -263,7 +278,16 @@
     ///
     .et_pb_text,
     .et_pb_module {
-      max-width: 780px; //TOCR - trovare una larghezza giusta da impostare per gli schermi normali
+      max-width: 570px; //TOCR - trovare una larghezza giusta da impostare per gli schermi normali
+
+      @include breakpoint-max(lg) {
+        margin: 0 auto;
+        float: none !important;
+      }
+    }
+
+    .et_pb_module.magic-image {
+      max-width: 100%;
     }
 
     &:first-child {
@@ -302,7 +326,6 @@
 }
 
 
-
 ///
 // Colonne 1/2 delle righe a larghezza PIENA
 // le allargo al massimo
@@ -311,10 +334,13 @@
 
   .et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_2,
   .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
-    width: 50%;
+    width: auto;
+    flex-basis: 50%;
+    margin: 0;
 
-    @include breakpoint-max(md) {
-      width: 100%;
+    @include breakpoint-max(lg) {
+      width: auto;
+      flex-basis: 100%;
     }
   }
 }
@@ -372,14 +398,14 @@
 ///
 .et_divi_builder #et_builder_outer_content .et_pb_column_4_4 {
   p, h4, h5, ul, ol, blockquote {
-    max-width: 670px;
+  //  max-width: 970px;
     margin-left: auto;
     margin-right: auto;
   }
 
   h1, h2, h3,
   .gform_wrapper {
-   max-width: 770px;
+  // max-width: 1270px;
    margin-left: auto;
    margin-right: auto;
   }

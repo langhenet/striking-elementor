@@ -16,6 +16,10 @@
 .button.medium span,
 .button.large span { font-size: inherit; }
 
+
+///
+// Dimensioni bottoni striking
+///
 .button.small {
   @extend %button;
   @include button(small, 1, half);
@@ -40,233 +44,36 @@
   letter-spacing: 1px;
 }
 
+
+
+///
+// COLORI BOTTONI STRIKING
+///
+
 #page .button.primary {
-  color: #fff;
+  @include button-color(none, main);
 
   [class^="icon-"] {
     color: #fff;
   }
 }
 
+//LOOP
 @each $palette, $bg in $colors {
-  #page .#{$palette} .button.primary {
-    color: palette($palette, button);
-  }
 
-  [class^="icon-"]{
-    color: palette($palette, button);
-  }
-}
-
-//***********************************************************************//
-//                              BOTTONI DIVI BUILDER - Dimensioni
-//***********************************************************************//
-.et_divi_builder #et_builder_outer_content {
-  /*
-   * Bottone Piccolo
-   */
-  .et_pb_button.size--small,
-  .et_pb_module a.button.small {
-    @extend %button;
-    @include button(small, 1);
-
-    font-weight: button-deco(small, wt);
-    text-transform: uppercase;
-    padding-left: $line-height / 2;
-    padding-right: $line-height / 2;
-
-    &:after { //il padding viene usato per correggere l'icona di DIVI
-      display: none;
-    }
-    // HOVER
-    &:hover {
-      @extend .et_pb_button.size--small;
-    }
-
-    //Bottone icona
-    &.et_pb_custom_button_icon {
-      padding-right: 3em;
-      padding-left: 1em;
-
-      &::after {
-        opacity: 1;
-      }
-    }
-  }
-
-
-  /*
-   * Bottone Medio
-   */
-  .et_pb_button,
-  .et_pb_button.size--medium,
-  body a.big-button,
-  .et_pb_module a.button.medium { //TOCHK ultima dichiarazione per bottone merda nel blurb
-    @extend %button;
-    @include button(p, 4);
-
-    font-weight: inherit; //TODO
-    text-transform: uppercase;
-    border-radius: 0; //TOCHK
-    padding-left: $line-height / 2;
-    padding-right: $line-height / 2;
-
-    &:hover {
-      @extend .et_pb_button.size--medium;
-    }
-
-   &:after { //il padding viene usato per correggere l'icona di DIVI
-      display: none;
-    }
-    //Bottone icona
-    &.et_pb_custom_button_icon {
-      padding-right: 3em;
-      padding-left: 1em;
-
-    &::after {
-        margin-left: 1em;
-        font-size: font(p, fs);
-        line-height: font(p, lh);
-        opacity: 1;
-      }
-    }
-  }
-
-
-  /*
-   * Bottone Grande
-   */
-  .et_pb_button.size--large,
-  .et_pb_module a.button.large {
-    @extend %button;
-    @include button(h3, 4)
-
-    font-weight: inherit; //TODO
-    text-transform: uppercase;
-    padding-left: $line-height / 2;
-    padding-right: $line-height / 2;
-
-
-
-    &:hover {
-      @extend .et_pb_button.size--large;
-    }
-    &:after { //il padding viene usato per correggere l'icona di DIVI
-      display: none;
-    }
-
-    &.et_pb_custom_button_icon { //Bottone icona
-
-      padding-right: 2em;
-      padding-left: 1em;
-
-      &::after {
-        opacity: 1;
-      }
-    }
-  }
-
-
-  /*
-   * Bottone Xtra Grande
-   */
-  .et_pb_button.size--huge {
-    @extend %button;
-    @include button(h2, 6, half);
-
-    font-weight: inherit; //TODO
-    text-transform: uppercase;
-
-    padding-left: $line-height / 2;
-    padding-right: $line-height / 2;
-
-    &:hover {
-      @extend .et_pb_button.size--huge;
-    }
-
-    &:after { //il padding viene usato per correggere l'icona di DIVI
-      display: none;
-    }
-
-    &.et_pb_custom_button_icon { //Bottone icona
-
-      padding-right: 2em;
-      padding-left: 1em;
-
-      &::after {
-        opacity: 1;
-      }
-    }
-  }
-}
-
-a.et_pb_more_button:after {
-  line-height: inherit;
-}
-.et_pb_button:after {
-  font-size: inherit;
-}
-
-
-
-
-
-//****************************************************************************//
-//                         BOTTONI STANDARD - COLORI
-//                  include anche i colori dei bottoni di gravity pare
-//****************************************************************************//
-
-/*
- * Bottoni in szeioni di Base
- */
-.et_divi_builder #et_builder_outer_content .et_pb_bg_layout_light.et_pb_module.et_pb_button,
-a.button.primary {
-  @include button-color(none, main);
-
-  &:hover {
-    @include button-color(hover);
-  }
-}
-
-
-/*****
- * Loop Bottoni per varie sezioni
- */
-
-@each $palette, $bg in $colors {
-  .et_divi_builder #et_builder_outer_content .#{$palette} .et_pb_module.et_pb_button,
+  #page .#{$palette} .button.primary,
   .et_divi_builder #et_builder_outer_content .#{$palette} a.button.primary {
-
     @include button-color(none, $palette);
 
     &:hover {
       @include button-color(hover, $palette);
     }
   }
+
+  .#{$palette} [class^="icon-"]{
+    color: palette($palette, button);
+  }
 }
-
-
-
-//****************************************************************************//
-//                         BOTTONI SUBTLE - COLORI
-//                  include anche i colori dei bottoni di gravity pare
-//****************************************************************************//
-
-/*****
- * Loop Bottoni SUBTLE per varie sezioni
- */
-
- @each $palette, $bg in $colors {
-   .et_divi_builder #et_builder_outer_content .#{$palette} .et_pb_bg_layout_light.et_pb_module.et_pb_button.subtle-color,
-   .et_divi_builder #et_builder_outer_content .#{$palette} a.button.primary.subtle-color {
-
-     @include button-color-subtle(none, $palette);
-
-     &:hover {
-       @include button-color-subtle(hover, $palette);
-     }
-   }
- }
 
 
 //****************************************************************************//
@@ -275,7 +82,7 @@ a.button.primary {
 //                  ho cambiato la dichiarazione nel mixin dei bottoni per fare i bordi -
 //****************************************************************************//
 
-.et_divi_builder #et_builder_outer_content  .et_pb_bg_layout_light.et_pb_module.et_pb_button.skeleton--light,
+a.button.primary.skeleton--light,
 .et_divi_builder #et_builder_outer_content a.button.primary.skeleton--light {
 
   color: #fff;

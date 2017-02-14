@@ -224,8 +224,8 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 ///
 .gform_wrapper .top_label .gfield_description {
   @include form-desc(small);
-  padding-top: font(small, lh) / 2;
-  padding-bottom: font(small, lh) / 2;
+  padding-top: size(small, lh) / 2;
+  padding-bottom: size(small, lh) / 2;
 }
 
 ///
@@ -240,8 +240,8 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 .gform_wrapper .ginput_complex label,
 .gform_wrapper .instruction {
   @include form-desc(small);
-  padding-top: font(small, lh) / 2;
-  padding-bottom: font(small, lh) / 2;
+  padding-top: size(small, lh) / 2;
+  padding-bottom: size(small, lh) / 2;
 }
 
 
@@ -265,7 +265,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 .gform_wrapper .gform_footer input.button,
 .gform_wrapper .gform_footer input[type=submit] {
   @extend %button;
-  @include button(h3, 4);
+  @include button(h3, 4, half);
 
   width: 100%;
   margin: 0 auto;
