@@ -37,6 +37,8 @@
 //****************************************************************************//
 #page {
   background-color: main-colors(main, bg);
+
+
 }
 
 
@@ -44,10 +46,11 @@
   content: none;
 }
 
+
+
 //****************************************************************************//
 //                               PADDING TOTALE SOPRA IL CONTENUTO
 //****************************************************************************//
-
 #page .inner {
   padding-top: 0;
   padding-bottom: 0;
@@ -59,8 +62,8 @@
 #sidebar {
   box-sizing: border-box;
   @include breakpoint-max(lg) {
-    padding-right: $line-height;
-    padding-left: $line-height;
+    padding-right: $line-height * 2;
+    padding-left: $line-height * 2;
   }
   @include breakpoint-max(xs) {
     padding-right: $line-height / 2;
@@ -72,7 +75,7 @@
 //padding del contenuto dal featured header
 #main,
 #sidebar {
-  padding-top: $line-height * 4;
+  padding-top: $height;
 }
 //resetto padding nelle FW
 .page-template-template_fullwidth #main,
@@ -95,10 +98,13 @@
 //                          BREAD CRUMBS
 //****************************************************************************//
 #breadcrumbs { //contenitore
-  font-size: 1em;
+  margin-top: 0;
 
   .breadcrumbs {
     @include font(h5, $mt: 0);
+
+    a {
+    }
 
     text {
       font-weight: bold;
