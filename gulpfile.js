@@ -4,11 +4,11 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var sass        = require('gulp-sass');
-var minifyCSS   = require('gulp-minify-css');
 var sourceMaps  = require('gulp-sourcemaps');
 var rename      = require('gulp-rename');
 var postcss      = require('gulp-postcss');
 var autoprefixer      = require('autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 
 
 
@@ -38,7 +38,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./'))
         .pipe(sourceMaps.init())
         //.pipe(postcss([ autoprefixer({ browsers: ['last 10 versions'] }) ]))
-        .pipe(minifyCSS({keepSpecialComments:1},{processImport: false}))
+        .pipe(cleanCSS({specialComments:1}))
         .pipe(rename('style.css')) //rinomina il file minifcato
         .pipe(sourceMaps.write())
         .pipe(gulp.dest('./'))
