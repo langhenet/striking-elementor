@@ -2,7 +2,7 @@
 /*
  * Top Area con scroll
  */
-  #top_area {//imposto il visible per poter fare transizione
+#top_area {//imposto il visible per poter fare transizione
   visibility: visible;
   transition: all 250ms;
   order: 1;
@@ -14,6 +14,30 @@
   margin: 0 auto;
   padding: ($line-height / 2) 0;
   justify-content: flex-end;
+
+  &::before {
+    content:"";
+    background: main-colors(topbar, bg);
+    height: 100%;
+    width: 100vw;
+    left: -50%;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    z-index: -1;
+  }
+  &::after {
+    content:"";
+    background: main-colors(topbar, bg);
+    height: 100%;
+    width: 100vw;
+    right: -50%;
+    position: absolute;
+    display: inline-block;
+    top:0;
+    z-index: -1;
+    top: 0;
+  }
 }
 
 .sticker_sticky #top_area {//quando è scrollata la nascondo
@@ -21,18 +45,18 @@
   transition: all 250ms;
 }
 
-
 #top_area {
   top: auto;
   right: auto;
 
   @at-root .responsive #logo,
-.responsive #logo_text { //dimezzo la larghezza del logo
+  .responsive #logo_text { //dimezzo la larghezza del logo
 
-  @include breakpoint-max(sm) {
-    display: block;
-    width: 58%;
-    float: none;
+    @include breakpoint-max(sm) {
+      display: block;
+      width: 58%;
+      float: none;
+    }
   }
 
   /*
@@ -40,6 +64,7 @@
    */
 
   .widget { //affianco i widget uno all'altro
+    //float: right;
     margin-right: $line-height;
     margin-bottom: 0;
 
@@ -57,7 +82,6 @@
     margin-right: 0;
     margin-top: 0;
   }
-}
 
   /*
    * Stile specifico per il menu di navigazione della Top Bar
@@ -69,15 +93,16 @@
     z-index: 99;
     position: relative;
 
+
     li {
       float: left;
-      @include font(small);
+      @include font(small, $mt: 0);
       font-style: italic;
       text-transform: uppercase;
 
       a {
         border-bottom: 0;
-        color: main-colors(header, link);
+        color: main-colors(topbar, link);
         padding: 0 14px;
         line-height: inherit;
       }
@@ -89,11 +114,18 @@
   }
 
   /*
-   * Widget di testo della Top body-margin
+   * Widget di testo della Top BAR
    */
   .widget_text_icl,
   .widget_text {
+    order: 1;
+    margin-right: auto;
+    z-index: 99;
+    position: relative;
 
+    @include breakpoint-min(lg) { //lo nascondo quando in formato desktop
+    //  display: none;
+    }
   }
 
   /*
@@ -113,7 +145,6 @@
 
   }
 }
-
 
 ///
 // Selettore Lingua

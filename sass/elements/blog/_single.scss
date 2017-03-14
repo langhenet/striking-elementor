@@ -12,6 +12,7 @@
  */
 .type-post #feature h1 {
   @include font(h2);
+
   margin-top: 0;
 
   @include breakpoint-max(sm) {
@@ -51,7 +52,7 @@
 #about_the_author {
   padding: ($line-height * 2) ($line-height * 2) ($line-height * 2) $line-height;
   margin-bottom: ($line-height * 2);
-  
+
   h3 {
 
   }
