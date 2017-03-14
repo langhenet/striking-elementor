@@ -12,10 +12,11 @@
  //  bottom: 50%;
    height: auto;
    position: relative;
-   order: 3;
+   order: 2;
    max-width: $website-width;
    margin: 0 auto;
    padding: 0;
+   flex-basis: 66%;
 
    .menu {
      display: flex;

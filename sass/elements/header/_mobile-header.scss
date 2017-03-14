@@ -1,158 +1,145 @@
+//******************************************************************************/
+//          HEADER
+//******************************************************************************/
 
-/*
- * Top Area con scroll
- */
-#top_area {//imposto il visible per poter fare transizione
-  visibility: visible;
-  transition: all 250ms;
-  order: 1;
-  width: 100%;
-  display: flex;
-  position: relative;
-  background: main-colors(topbar, bg);
-  max-width: $website-width;
-  margin: 0 auto;
-  padding: ($line-height / 2) 0;
-  justify-content: flex-end;
-
-  &::before {
-    content:"";
-    background: main-colors(topbar, bg);
-    height: 100%;
-    width: 100vw;
-    left: -50%;
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    z-index: -1;
-  }
-  &::after {
-    content:"";
-    background: main-colors(topbar, bg);
-    height: 100%;
-    width: 100vw;
-    right: -50%;
-    position: absolute;
-    display: inline-block;
-    top:0;
-    z-index: -1;
-    top: 0;
+////
+// HEADER non sticky su mobile
+////
+#header-sticker-wrapper.sticker_enabled #header {
+  @include breakpoint-max(md) {
+    position: relative !important;
   }
 }
 
-.sticker_sticky #top_area {//quando è scrollata la nascondo
-  visibility: hidden;
-  transition: all 250ms;
+///
+// logo
+///
+#logo,
+#logo_text {
+  @at-root .responsive #{&} {
+    @include breakpoint-max(lg) {
+      margin: 0 auto;
+    }
+  }
+
+  @include breakpoint-max(sm) {
+    display: block;
+    width: 60%;
+    float: none;
+    height: auto;
+  }
+}
+
+//******************************************************************************/
+//         TOB BAR
+//******************************************************************************/
+.sticker_sticky #top_area { //TOP AREA NASCOSTA quando sticky
+
+  @include breakpoint-max(md) {//la rendo di nuovo visible sotto i 979px
+
+  }
 }
 
 #top_area {
-  top: auto;
-  right: auto;
 
-  @at-root .responsive #logo,
-  .responsive #logo_text { //dimezzo la larghezza del logo
 
-    @include breakpoint-max(sm) {
-      display: block;
-      width: 58%;
-      float: none;
+  @include breakpoint-max(lg) {//la paddo sotto i 979px
+    padding-top: $line-height / 2;
+  }
+
+  @include breakpoint-max(md) {
+    display: flex;
+    visibility: visible;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @include breakpoint-max(sm) {//rimuovo il padding sotto i 567px
+    padding-top: 0;
+  }
+
+  @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
+    @include breakpoint-max(md) {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
     }
   }
 
-  /*
-   * Widget della Top Bar
-   */
-
-  .widget { //affianco i widget uno all'altro
-    //float: right;
-    margin-right: $line-height;
-    margin-bottom: 0;
-
-    p {
-      color: main-colors(topbar, body);
-      @include font(small, $mt: 0);
-
-      a {
-        color: main-colors(topbar, link);
-      }
-    }
-  }
-
-  section:first-child { //tolgo il margine laterale dal primo
-    margin-right: 0;
-    margin-top: 0;
-  }
-
-  /*
-   * Stile specifico per il menu di navigazione della Top Bar
-   */
-  .widget_nav_menu {
-    float: none;
-    position: relative;
-    order: 2;
-    z-index: 99;
-    position: relative;
-
-
-    li {
-      float: left;
-      @include font(small, $mt: 0);
-      font-style: italic;
-      text-transform: uppercase;
-
-      a {
-        border-bottom: 0;
-        color: main-colors(topbar, link);
-        padding: 0 14px;
-        line-height: inherit;
+  .widget {
+    @include breakpoint-max(md) { //li faccio cadere sotto i 567px
+      margin-right: 0;
+      box-sizing: border-box;
+      //clear: both;
+      //margin-top: $line-height / 2;
+      &.widget_icl_lang_sel_widget {
+        flex-basis: 100%;
+        flex-grow: 1;
+        flex-shrink: 0;
+        order: 0;
+        text-align: center;
       }
 
-      &::before {
-        display: none;
+      &.widget_text,
+      &.widget_text_icl {
+        margin-right: 0;
+        flex-basis: 40%;
+        flex-shrink: 0;
+
+           }
+
+      &.widget_nav_menu {
+        flex-basis: 50%;
+        flex-shrink: 0;
+        z-index: 99;
+        position: relative;
+
+        li {
+          text-align:right;
+          width: 100%;
+        }
+      }
+
+      &:last-child {
+      //  margin-bottom: $line-height / 2;
       }
     }
-  }
-
-  /*
-   * Widget di testo della Top BAR
-   */
-  .widget_text_icl,
-  .widget_text {
-    order: 1;
-    margin-right: auto;
-    z-index: 99;
-    position: relative;
-
-    @include breakpoint-min(lg) { //lo nascondo quando in formato desktop
-    //  display: none;
-    }
-  }
-
-  /*
-   * Bottone della topbar
-   */
-  a.button.primary {
-
-    &.chiama {
-      background: transparent;
-      border: 0;
-      padding: 0;
-
-      span {
-        padding: 0;
-      }
-    }
-
   }
 }
 
-///
-// Selettore Lingua
-///
-.widget_icl_lang_sel_widget {
-  order: 3;
+////
+// Selettore della Lingua
+////
+#lang_sel_list {
+  @include breakpoint-max(lg) {
+    height: 2em;
+    padding: 0;
+  }
 }
-.wpml-ls-legacy-list-horizontal {
-  padding: 0;
-  border: 0;
+
+/******************************************************************************/
+/*          NAVIGAZIONE MOBILE - HAMBURGER NAV
+/******************************************************************************/
+///
+// Fix navigazione che copre tutto
+///
+.responsive #navigation {
+  @include breakpoint-max(md) {
+    display: inline-block;
+    width: 100%;
+    &::before {
+      content: "\f0c9";
+      font-family: 'FontAwesome';
+      position: absolute;
+    }
+  }
+}
+
+
+///
+// Colori e tipografia della nav a menu
+///
+.responsive .nav2select {
+  @include form-field(p, 4);
+  padding-left: 5em;
 }

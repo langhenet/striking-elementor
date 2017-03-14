@@ -85,9 +85,10 @@
   height: auto;
   transition: all 250ms linear;
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   width: 100%;
   max-width: $website-width;
+  flex-wrap: wrap;
 }
 
 /*
@@ -114,9 +115,10 @@
    bottom: 0;
    transition: all 250ms linear;
    position: relative;
-   order: 2;
+   order: 1;
    padding: 0;
-   height: $line-height * 4;
+   height: auto;
+   flex-basis: 33%;
 
    // LOGO DA SCROLLATO
    @at-root .sticker_sticky #{&} {
@@ -141,7 +143,6 @@
    }
 
    img {
-     margin-top: -($line-height * 1.5);
      z-index: 1;
      position: relative;
    }

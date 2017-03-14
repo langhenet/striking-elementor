@@ -5,7 +5,7 @@
   #top_area {//imposto il visible per poter fare transizione
   visibility: visible;
   transition: all 250ms;
-  order: 1;
+  order: 0;
   width: 100%;
   display: flex;
   position: relative;
@@ -14,6 +14,7 @@
   margin: 0 auto;
   padding: ($line-height / 2) 0;
   justify-content: flex-end;
+  flex-basis: 100%;
 }
 
 .sticker_sticky #top_area {//quando è scrollata la nascondo
@@ -27,12 +28,13 @@
   right: auto;
 
   @at-root .responsive #logo,
-.responsive #logo_text { //dimezzo la larghezza del logo
+  .responsive #logo_text { //dimezzo la larghezza del logo
 
-  @include breakpoint-max(sm) {
-    display: block;
-    width: 58%;
-    float: none;
+    @include breakpoint-max(sm) {
+      display: block;
+      width: 58%;
+      float: none;
+    }
   }
 
   /*
@@ -57,7 +59,6 @@
     margin-right: 0;
     margin-top: 0;
   }
-}
 
   /*
    * Stile specifico per il menu di navigazione della Top Bar
@@ -110,7 +111,6 @@
         padding: 0;
       }
     }
-
   }
 }
 
