@@ -23,26 +23,26 @@
 ///
 // Families
 ///
-  $serif: 'PT Serif', serif; //TODO
-  $sans: 'Open Sans', sans-serif; //TODO
-  $special: $serif; //TODO
-  $ff-button: $sans;
+  $ff-primary: 'PT primary', serif; //TODO
+  $ff-secondary: 'Open secondary', sans-serif; //TODO
+  $ff-special: $ff-primary; //TODO
+  $ff-button: $ff-secondary;
 
 
 ///
 // WEIGHTS per Families
 ///
 $families: (
-  serif: (
-    fm: $serif,
+  primary: (
+    fm: $ff-primary,
     thin: 200,
     normal: 400,
     bold: 600,
     bolder: 600,
   ),
 
-  sans: (
-    fm: $sans,
+  secondary: (
+    fm: $ff-secondary,
     thin: 300,
     normal: 400,
     bold: 700,
@@ -50,7 +50,7 @@ $families: (
   ),
 
   special: (
-    fm: $special,
+    fm: $ff-special,
     thin: 300,
     normal: 400,
     bold: 400,
@@ -60,37 +60,37 @@ $families: (
 
 $decorations: (
   p: (
-    fm: serif,
+    fm: primary,
     wt: normal,
   ),
 
   h1: (
-    fm: sans,
+    fm: secondary,
     wt: normal,
   ),
 
   h2: (
-    fm: sans,
+    fm: secondary,
     wt: normal,
   ),
 
   h3: (
-    fm: sans,
+    fm: secondary,
     wt: normal,
   ),
 
   h4: (
-    fm: sans,
+    fm: secondary,
     wt: normal,
   ),
 
   h5: (
-    fm: sans,
+    fm: secondary,
     wt: normal,
   ),
 
   small: (
-    fm: sans,
+    fm: secondary,
     wt: normal,
   ),
 );
@@ -186,17 +186,17 @@ $mobile-sizes: (
 
 $forms: (
   field: (
-    fm: family(sans, fm),
-    wt: family(sans, normal),
+    fm: family(secondary, fm),
+    wt: family(secondary, normal),
   ),
 
   label: (
-    fm: family(sans, fm),
-    wt: family(sans, normal),
+    fm: family(secondary, fm),
+    wt: family(secondary, normal),
   ),
 
   desc: (
-    fm: family(sans, fm),
-    wt: family(sans, normal),
+    fm: family(secondary, fm),
+    wt: family(secondary, normal),
   ),
 );

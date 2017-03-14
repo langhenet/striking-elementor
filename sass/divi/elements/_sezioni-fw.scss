@@ -6,7 +6,10 @@
 //***************************************************************************//
 
 .page-template-template_fullwidth #page .inner,
-.page-template-template_land_page #page .inner {
+.page-template-template_land_page #page .inner,
+//queste due classi selecionano gli inner dei portfoli SENZA Sidebar - la prima è quella effettiva ma ho messo anche quella senza spazio perché lo spazio potrebbe essere un typo
+.single-portfolio #page div[class="inner "],
+.single-portfolio #page div[class="inner"] {
   width: 100%;
 
   .entry.content {
@@ -52,6 +55,12 @@
 ///
 .et_pb_row.et_pb_equal_columns {
   align-items: stretch !important;
+
+  .et_pb_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 ///
@@ -243,12 +252,16 @@
 ///
 .et_divi_builder #et_builder_outer_content .et_pb_row.et_pb_row_fullwidth {
   display: flex; //per allineamento verticale
-  align-items: center;
+  align-items: stretch;
   flex-flow: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
 
   @include breakpoint-max(lg) {
-    flex-flow: column;
-    align-content: space-around;
+  //  flex-flow: column;
+  //  align-content: space-around;
+    -ms-flex-wrap: wrap;
   }
 
   ///
@@ -258,68 +271,64 @@
     float: none;  //per allineamento verticale
     padding-top: $line-height * 3;
     padding-bottom: $line-height * 3;
-    padding-right: $line-height * 3;
-    padding-left: $line-height * 3;
+    padding-right: $line-height *2;
+    padding-left: $line-height *2;
+    flex-grow: 0;
+    flex-shrink: 1;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+
+    &:first-child {
+      align-items: flex-end;
+    }
+
+    &:last-child {
+      align-items: flex-start;
+    }
+
+    &.align--center {
+      justify-content: space-around;
+    }
+    &.align--bottom {
+      justify-content: flex-end;
+    }
+
+    @include breakpoint-max(xl) {
+      padding-left: $line-height;
+      padding-right: $line-height;
+    }
 
     @include breakpoint-max(lg) {
-      display: block;
       min-height: $line-height * 12;
       float: none;
+      padding-left: $line-height * 2;
+      padding-right: $line-height * 2;
+      width: auto !important;
     }
-  .et_pb_column {
-    flex-grow: 0;
-    flex-shrink: 0;
-    box-sizing: border-box;
-  }
 
+    @include breakpoint-max(sm) {
+      padding-left: $line-height;
+      padding-right: $line-height;
+    }
     ///
     // Elementi interni alle colonne
     // sono rimpiccioliti per non fargli uscire troppo a risoluzioni troppo grandi
     ///
     .et_pb_text,
     .et_pb_module {
-      max-width: 570px; //TOCR - trovare una larghezza giusta da impostare per gli schermi normali
+      clear: both;
+      float: none;
+      //width: 100%;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 700px;
 
-      @include breakpoint-max(lg) {
-        margin: 0 auto;
-        float: none !important;
-      }
-    }
 
-    .et_pb_module.magic-image {
-      max-width: 100%;
-    }
-
-    &:first-child {
-      padding-right: 5.5em; //Paddo la prima cella per dare dello spazio a DX
-      @include breakpoint-max(md) {
-        padding-left: 4em;
-        padding-right: 4em;
-      }
-
-      @include breakpoint-max(sm) {
-        padding-left: 2em;
-        padding-right: 2em;
-      }
-
-      .et_pb_text,
-      .et_pb_button_module_wrapper { //Flotto gli elementi interni alla prima cella in modo che si allineino a dx
-        float: right;
-        clear: both;
-        width: 100%;
-      }
-    }
-
-    &:nth-child(2) {
-      padding-left: 5.5em; //Paddo la seconda cella per dare dello spazio a SX
-      @include breakpoint-max(md) {
-        padding-left: 4em;
-        padding-right: 4em;
-      }
-
-      @include breakpoint-max(sm) {
-        padding-left: 2em;
-        padding-right: 2em;
+      &.et_pb_button { //fix width del bottone che contiene 2 et_pb_module uno dentro l'altro
+        width: auto;
       }
     }
   }
@@ -334,16 +343,100 @@
 
   .et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_2,
   .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_2 {
-    width: auto;
     flex-basis: 50%;
     margin: 0;
 
     @include breakpoint-max(lg) {
-      width: auto;
+      flex-basis: 100%;
+    }
+  }
+
+  .et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_3,
+  .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_3 {
+    flex-basis: 33.33333%;
+    margin: 0;
+
+    @include breakpoint-max(xl) {
+      font-size: 0.75em;
+    }
+    @include breakpoint-max(lg) {
+      font-size: 1em;
+      flex-basis: 100%;
+    }
+  }
+
+  .et_pb_gutters3 .et_pb_row_fullwidth .et_pb_column_1_4,
+  .et_pb_gutters3.et_pb_row.et_pb_row_fullwidth .et_pb_column_1_4 {
+    flex-basis: 25%;
+    margin: 0;
+
+    @include breakpoint-max(xl) {
+      font-size: 0.75em;
+    }
+    @include breakpoint-max(lg) {
+      font-size: 1em;
+      flex-basis: 50%;
+    }
+    @include breakpoint-max(md) {
+      font-size: 1em;
       flex-basis: 100%;
     }
   }
 }
+
+///
+// Colonne col bordo
+///
+
+.border--between.et_pb_row_fullwidth .et_pb_column {
+  border-right: solid $line-height / 4;
+  border-left: solid $line-height / 4;
+//  border-top: solid $line-height / 4;
+  border-bottom: solid $line-height / 2;
+  border-color: main-colors(main, border);
+
+  @include breakpoint-max(md) {
+    border-top: solid $line-height / 4;
+    border-bottom: solid $line-height / 4;
+  }
+
+
+  @each $palette, $sections in $colors {
+    &.#{$palette} {
+        border-color: palette($palette, border);
+    }
+  }
+}
+
+
+
+//****************************************************************************//
+//    QUINTI
+//****************************************************************************//
+
+@include breakpoint-min(divi-lg) {
+  .et_divi_builder #et_builder_outer_content .et_pb_gutters3 .lg-fifth .et_pb_column_1_3,
+  .et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row.lg-fifth .et_pb_column_1_3 {
+    width: 37.8%;
+  }
+
+  .et_divi_builder #et_builder_outer_content .et_pb_gutters3 .lg-fifth .et_pb_column_2_3,
+  .et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row.lg-fifth .et_pb_column_2_3 {
+    width: 56.7%;
+  }
+
+//1/5 e 3/5
+  .et_divi_builder #et_builder_outer_content .et_pb_gutters3 .lg-fifth .et_pb_column_1_3 .et_pb_column_1_4,
+  .et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row.lg-fifth .et_pb_column_1_4 {
+    width: 17.8%;
+  }
+
+  .et_divi_builder #et_builder_outer_content .et_pb_gutters3 .lg-fifth .et_pb_column_1_3 .et_pb_column_1_2,
+  .et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row.lg-fifth .et_pb_column_1_2 {
+    width: 53.4%;
+  }
+}
+
 
 
 

@@ -79,7 +79,10 @@
 }
 //resetto padding nelle FW
 .page-template-template_fullwidth #main,
-.page-template-template_land_page #main {
+.page-template-template_land_page #main,
+//queste due classi selecionano gli inner dei portfoli SENZA Sidebar - la prima è quella effettiva ma ho messo anche quella senza spazio perché lo spazio potrebbe essere un typo
+.single-portfolio #page div[class="inner "] #main,
+.single-portfolio #page div[class="inner"] #main {
   padding-top: 0;
   padding-right: 0;
   padding-left: 0;
