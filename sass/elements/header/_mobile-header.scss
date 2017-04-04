@@ -12,14 +12,26 @@
 }
 
 ///
+// HEADER inner
+///
+#header .inner {
+  @include breakpoint-max(lg) {
+    padding: 0 $line-height;
+  }
+
+  @include breakpoint-max(md) {
+    padding: 0 ( $line-height / 2 );
+  }
+}
+
+
+///
 // logo
 ///
-#logo,
-#logo_text {
-  @at-root .responsive #{&} {
-    @include breakpoint-max(lg) {
-      margin: 0 auto;
-    }
+.responsive #logo,
+.responsive #logo_text {
+  @include breakpoint-max(lg) {
+    margin: 0 auto;
   }
 
   @include breakpoint-max(sm) {
@@ -44,14 +56,12 @@
 
 
   @include breakpoint-max(lg) {//la paddo sotto i 979px
-    padding-top: $line-height / 2;
   }
 
   @include breakpoint-max(md) {
     display: flex;
     visibility: visible;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   @include breakpoint-max(sm) {//rimuovo il padding sotto i 567px
@@ -61,8 +71,6 @@
   @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
     @include breakpoint-max(md) {
       display: flex;
-      width: 100%;
-      flex-direction: row;
     }
   }
 
@@ -73,23 +81,17 @@
       //clear: both;
       //margin-top: $line-height / 2;
       &.widget_icl_lang_sel_widget {
-        flex-basis: 100%;
-        flex-grow: 1;
         flex-shrink: 0;
-        order: 0;
         text-align: center;
       }
 
       &.widget_text,
       &.widget_text_icl {
         margin-right: 0;
-        flex-basis: 40%;
         flex-shrink: 0;
-
-           }
+      }
 
       &.widget_nav_menu {
-        flex-basis: 50%;
         flex-shrink: 0;
         z-index: 99;
         position: relative;
@@ -131,6 +133,8 @@
       content: "\f0c9";
       font-family: 'FontAwesome';
       position: absolute;
+      top: 0.25em;
+      left: 0.7em;
     }
   }
 }
@@ -139,7 +143,12 @@
 ///
 // Colori e tipografia della nav a menu
 ///
-.responsive .nav2select {
-  @include form-field(p, 4);
-  padding-left: 5em;
+@include breakpoint-max(lg) {
+  .responsive .nav2select {
+    @include font(p);
+    padding-top: bhpad(2);
+    padding-bottom: bhpad(2);
+    padding-left: 2em !important;
+    border: 2px solid main-colors(header, border);
+  }
 }

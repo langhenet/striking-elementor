@@ -7,4 +7,9 @@
 
 .single-portfolio {
 
+  #comments {
+    max-width: $website-width / 2;
+    margin: 0 auto;
+    padding-bottom: $line-height * 3;
+  }
 }

@@ -1,0 +1,29 @@
+//****************************************************************************//
+//                        FEATURED HEADER BLOG
+//****************************************************************************//
+///
+// ARCHIVIO
+///
+ .archive.category #feature {
+   background-image: url();
+   background-position: top center;
+ }
+
+///
+// SINGLE POST
+///
+ .single-post #feature {
+   background-image: url();
+   background-position: top center;
+ }
+
+///
+// CATEGORIE SPECIFICHE
+///
+.category-reviews #feature,
+.category-critica #feature,
+.single-post .category-reviews #feature,
+.single-post .category-critica #feature {
+  background-image: url();
+  background-position: bottom center;
+}

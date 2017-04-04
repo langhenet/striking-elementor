@@ -19,22 +19,6 @@
 
 
 
-///
-// Featured Header della Landing Page
-///
-.page-template-template_land_page {
-
-  //contenitore standard
-  #feature,
-  .has-gradient #feature,
-  .no-gradient #feature {
-    @include breakpoint-max(xs) {
-      padding-top: $line-height * 5 !important;
-    }
-  }
-}
-
-
 
 ///
 // Overlay della sezione introduttiva

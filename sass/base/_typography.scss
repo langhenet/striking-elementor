@@ -27,6 +27,10 @@ p, ul, ol, pre, table, blockquote,
   @include margin;
 }
 
+::selection {
+  color: $bianco;
+  background: main-colors(main, accent);
+}
 
 ///
 // Reset del padding del p e di DIVI BUILDER

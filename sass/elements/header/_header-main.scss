@@ -28,36 +28,6 @@
   transition: all 250ms linear;
 }
 
-///
-// Header Langing Page
-///
-.page-template-template_land_page #header {
-  background: transparent;
-  transition: all 0ms linear;
-  position: relative;
-
-  @include breakpoint-max(sm) {
-    background-color: main-colors(header, bg);
-  }
-
-  ///
-  // Logo landing page
-  ///
-  #logo,
-  #logo_text {
-    @include breakpoint-max(sm) {
-      width: 100% !important;
-    }
-  }
-}
-
-///
-// Header Langing Page quando sticky
-///
-.page-template-template_land_page .sticker_sticky #header {
-
-}
-
 
 /*
  * BG dell'header - da scrollato -  - solo su desktop
@@ -108,7 +78,7 @@
 //****************************************************************************//
 
 /*
- * Contenitore del logo
+ * Contenitore del logo //TODO @at-root directive is not working here
  */
  #logo,
  #logo_text {

@@ -6,64 +6,24 @@
 //***************************************************************************//
 
 //**************************************************************************************//
-//                      TITOLI PORTFOLI
-//**************************************************************************************//
-///
-// Impostazioni LINK dentro i Titoli
-///
-.portfolio_title {
-
-  //Decorazione
-  @at-root #main #{&} {
-    a,
-    a:visited {
-      text-decoration: none;
-    }
-  }
-
-  //Reset font-size
-  @at-root #page #{&} a {
-    font-size: 1em;
-  }
-}
-
-///
-// Descrizione - Excerpt
-///
-.portfolio_desc {
-  margin-top: 0;
-}
-
-
-
-
-
-
-///
-// Colori
-///
-.portfolio_title,
-#page .portfolio_title a,
-#page .portfolio_title a:visited {
-  color: main-colors(main, link);
-}
-
-//Loop
-@each $palette, $sections in $colors {
-  .#{$palette} .portfolio_title,
-  #page .#{$palette} .portfolio_title a,
-  #page .#{$palette} .portfolio_title a:visited {
-    color: palette($palette, link)
-  }
-}
-
-
-
-
-
-//**************************************************************************************//
 //                      IMPOSTAZIONE DI BASE LAYOUT
 //**************************************************************************************//
+///
+// RESET MARGINI UL
+///
+#main ul,
+.et_divi_builder #et_builder_outer_content .et_pb_module ul {
+  &.portfolio_container {
+    margin-left: -$line-height / 2 !important;
+    margin-right: -$line-height / 2 !important;
+
+    @include breakpoint-max(sm) {
+    //  margin: 0 !important;
+    }
+  }
+}
+
+
 ///
 // Impostazione Flex
 ///
@@ -72,6 +32,23 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @at-root #et_builder_outer_content ul.portfolio_container li.portfolio_item,
+  .portfolio_container .portfolio_item {
+    margin-top: 0;
+    margin-bottom: $line-height * 2;
+    padding: 0 ($line-height);
+    box-sizing: border-box;
+
+
+    &:last-of-type {
+      margin-right: auto !important;
+    }
+
+    @include breakpoint-max(sm) {
+      padding: 0;
+    }
+  }
 }
 
 //cambio impostazione flex su mobile
@@ -103,8 +80,8 @@
 //impostazioni di base
 ///
 .portfolio_three_columns .portfolio_item {
-  flex-basis: 30%;
-  width: 30%;
+  flex-basis: 33%;
+  width: 33%;
   flex-shrink: 0;
   flex-grow: 0;
   margin-right: 0 !important;
@@ -116,8 +93,8 @@
 ///
 @include breakpoint-min(lg) {
   .portfolio_three_columns .portfolio_item {
-    flex-basis: 27%;
-    width: 27%;
+    flex-basis: 33%;
+    width: 33%;
     flex-shrink: 0;
     margin-right: 0;
   }
@@ -129,8 +106,8 @@
 ///
 @include breakpoint-max(md) {
   .portfolio_three_columns .portfolio_item {
-    flex-basis: 45%;
-    width: 45% !important;
+    flex-basis: 50%;
+    width: 50% !important;
   }
 }
 
@@ -140,8 +117,8 @@
 ///
 @include breakpoint-max(sm) {
   .portfolio_three_columns .portfolio_item {
-    flex-basis: 95%;
-    width: 95% !important;
+    flex-basis: 100%;
+    width: 100% !important;
   }
 }
 
@@ -153,16 +130,20 @@
 
   //titolo
   .portfolio_title {
-    @include font(h3, $mt: size(h3, lh) / 2, $mb: size(h3, lh) / 2);
+    @include font(h4, $mt: 0, $mb: 0, $fm: secondary, $wt: bold);
+    text-align: center;
+    font-weight: bold;
 
-    @include breakpoint-max(md) {
-      @include m-size(h3);
-    }
   }
 
   //Descrizione
   .portfolio_desc {
-    @include font(h5, $mt: 0, $fm: secondary);
+    @include font(small, $mb: 0, $mt: size(small, lh) / 2);
+    text-align: center;
+  }
+
+  .portfolio_more_button {
+    margin-top: $line-height / 2;
   }
 }
 
@@ -175,11 +156,25 @@
 //impostazioni di base
 ///
 .portfolio_four_columns .portfolio_item {
-  flex-basis: 21%;
-  width: 21%;
+  flex-basis: 25%;
+  width: 25%;
   flex-shrink: 0;
   flex-grow: 0;
   margin-right: 0 !important;
+
+  @include breakpoint-max(lg) {
+    flex-basis: 33.33333%;
+    width: 33.33333%;
+  }
+
+  @include breakpoint-max(md) {
+    flex-basis: 50%;
+    width: 50% !important;
+  }
+  @include breakpoint-max(sm) {
+    flex-basis: 100%;
+    width: 100% !important;
+  }
 }
 
 
@@ -191,12 +186,117 @@
 
   //titolo
   .portfolio_title {
-    @include font(h4, $mt: size(h4, lh) / 2, $mb: size(h4, lh) / 2);
-    text-transform: uppercase;
+    @include font(h4, $mt: 0, $mb: 0);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .portfolio_more_button {
+    margin-top: 0;
   }
 
   //Descrizione
   .portfolio_desc {
     @include font(h5, $mt: 0, $fm: secondary);
+  }
+}
+//**************************************************************************************//
+//                      TITOLI PORTFOLI
+//**************************************************************************************//
+///
+// IMMAGINI
+///
+.has-shadow .image_shadow_wrap:before,
+.has-shadow .image_shadow_wrap:after {
+  display: none;
+}
+
+.et_divi_builder #et_builder_outer_content .et_pb_module .portfolio_item img {
+  display: block;
+}
+
+.portfolio_container .portfolio_image .image_frame {
+ @include breakpoint-max(sm) {
+   max-width: 190px !important;
+   margin: 0 auto;
+ }
+}
+///
+// Contenitore dettagli
+///
+.portfolio_details {
+  overflow: hidden;
+  padding: 0;
+
+  @include breakpoint-max(md) {
+    padding: 0;
+    max-width: 190px !important;
+    margin: 0 auto;
+  }
+
+  //background: $grigio-chiarissimo;
+}
+
+.color--light .portfolio_details {
+  background-color: $bianco;
+}
+
+///
+// Impostazioni LINK dentro i Titoli
+///
+.portfolio_title {
+
+  //Decorazione
+  @at-root #main #{&} {
+    a,
+    a:visited {
+      text-decoration: none;
+    }
+  }
+
+  //Reset font-size
+  @at-root #page #{&} a {
+    font-size: 1em;
+  }
+}
+
+///
+// Descrizione - Excerpt
+///
+.portfolio_desc {
+  margin-top: 0;
+}
+
+.portfolio_more_button {
+  text-align: center;
+
+  @at-root #main #{&} a {
+    text-decoration: none;
+  }
+}
+
+
+
+
+///
+// Colori
+///
+.portfolio_title,
+#page .portfolio_title a,
+#page .portfolio_title a:visited {
+  color: main-colors(main, link);
+}
+
+//Loop
+@each $palette, $sections in $colors {
+  .#{$palette} .portfolio_title,
+  #page .#{$palette} .portfolio_title a,
+  #page .#{$palette} .portfolio_title a:visited {
+    color: palette($palette, link);
+  }
+
+  .#{$palette} .portfolio_desc,
+  #page .#{$palette} .portfolio_more_button a {
+    color: palette($palette, link);
   }
 }

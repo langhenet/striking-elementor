@@ -1,0 +1,81 @@
+.page-template-template_fullwidth #page .inner,
+.page-template-template_land_page #page .inner {
+  width: 100%;
+
+  .entry.content {
+    margin-bottom: 0;
+  }
+}
+
+///
+// Header Langing Page
+///
+.page-template-template_land_page #header {
+  transition: all 0ms linear;
+  position: absolute;
+
+  @include breakpoint-max(md) {
+  }
+
+  ///
+  // Logo landing page
+  ///
+  #logo,
+  #logo_text {
+    @include breakpoint-max(sm) {
+      width: 100% !important;
+    }
+  }
+
+  a {
+    @include breakpoint-max(lg) {
+      text-align: center;
+    }
+  }
+}
+
+///
+// Header Langing Page quando sticky
+///
+.page-template-template_land_page .sticker_sticky #header {
+
+}
+
+///
+// Featured Header della Landing Page
+///
+.page-template-template_land_page {
+
+  //contenitore standard
+  #feature,
+  .has-gradient #feature,
+  .no-gradient #feature {
+    @include breakpoint-max(xs) {
+      padding-top: $line-height * 5 !important;
+    }
+  }
+}
+
+
+///
+// Featured Header della Landing Page di DIVI
+///
+.page-template-template_land_page {
+
+  #intro {
+    padding-top: $line-height * 2 !important;
+    @include breakpoint-max(md) {
+      padding-top: $line-height * 4 !important;
+    }
+    @include breakpoint-max(xs) {
+      padding-top: $line-height * 2 !important;
+    }
+  }
+
+//contenitore DIVI
+  &.et_divi_builder #et_builder_outer_content #intro .et_pb_row:first-of-type {
+    @include breakpoint-max(xs) {
+      padding-bottom: $line-height * 0 !important;
+    }
+  }
+}
