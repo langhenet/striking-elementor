@@ -95,6 +95,14 @@ h5 {
   @include font(h5);
 }
 
+.body--special {
+  @include font(h3, $fm: primary, $wt: normal);
+
+  @include breakpoint-max(xl) {
+    @include m-size(h3);
+  }
+}
+
 
 
 //****************************************************************************//
@@ -166,8 +174,42 @@ sub { bottom: $sub-bottom; }
 //****************************************************************************//
 //                                BLOCKQUOTE
 //****************************************************************************//
-blockquote {
+blockquote,
+.et_divi_builder #et_builder_outer_content .et_pb_module blockquote {
+  border: 0;
+  margin: 0;
+  font-size: 1em;
+  padding: size(blockquote, lh);
+  padding-left: size(blockquote, lh) * 2;
 
+  @include font(blockquote);
+
+  @include breakpoint-max(lg) {
+    @include m-size(h3);
+  }
+
+  @include breakpoint-max(sm) {
+    padding: size(blockquote, lh) / 2;
+  }
+
+  &::before {
+    top: 1em;
+    content:"\e643" !important;
+
+    @include breakpoint-max(sm) {
+      display: none;
+    }
+  }
+}
+
+#page blockquote {
+  p {
+    color: main-colors(main, accent);
+  }
+
+  &::before {
+    color: main-colors(main, accent);
+  }
 }
 
 /*
@@ -260,7 +302,7 @@ a,
 #page h4 > a,
 #page h5 > a {
   text-decoration: none;
-  color: layout-colors(main, heading2);
+  color: layout-colors(main, heading);
 
   &:link {
     text-decoration:none;
@@ -268,12 +310,12 @@ a,
 
   &:hover {
     text-decoration: none;
-    color: layout-colors(main, heading);
+    color: lighten(main-colors(main, heading), 5%);
   }
 
   &:visited {
     text-decoration: none;
-    color: layout-colors(main, heading2);
+    color: layout-colors(main, heading);
   }
 }
 

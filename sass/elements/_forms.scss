@@ -32,9 +32,6 @@ select {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 100%;
-  border-bottom: 6px solid;
-  $pad: bspad(6);
-  padding-bottom: bspad(6) + ($line-height / 2em);
 
   @include breakpoint-max(xs) {
     max-width: 120% !important;
@@ -213,7 +210,14 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
   width: 100%;
 }
 
-
+///
+// CAMPI DATE PICKER
+///
+.gform_wrapper .top_label input.large.datepicker,
+.gform_wrapper .top_label input.medium.datepicker,
+.gform_wrapper .top_label input.small.datepicker {
+  width: 90%;
+}
 
 
 //****************************************************************************//

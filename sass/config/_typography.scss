@@ -93,6 +93,11 @@ $decorations: (
     fm: secondary,
     wt: normal,
   ),
+
+  blockquote: (
+    fm: secondary,
+    wt: normal,
+  ),
 );
 ////
 // Dimensioni & caratteristiche dei font principali
@@ -145,6 +150,13 @@ $decorations: (
       lh: 2em,
       mt: 2em,
       mb: 0,
+    ),
+
+    blockquote: (
+      fs: 1.77777778em,
+      lh: (1.8125em / 1.5),
+      mt: 0.90625em,
+      mb: 0.90625em,
     ),
 );
 

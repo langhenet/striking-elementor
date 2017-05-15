@@ -93,6 +93,7 @@
       padding-left: $line-height * 2;
       padding-right: $line-height * 2;
       width: auto !important;
+      align-items: center !important;
     }
 
     @include breakpoint-max(sm) {

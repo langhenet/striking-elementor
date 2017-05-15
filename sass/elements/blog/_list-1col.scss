@@ -83,3 +83,45 @@
     margin-bottom: 0;
   }
 }
+
+
+//****************************************************************************//
+//                         PAGINAZIONE
+//****************************************************************************//
+.wp-pagenavi {
+  height: auto;
+  padding: 0;
+  position: relative;
+  display: block;
+
+  span.current,
+  a,
+  a:link {
+    @include font(p, $fm: primary);
+    padding: $line-height / 4 $line-height / 2;
+    display: inline-block;
+    margin-left: $line-height / 2;
+
+    @include breakpoint-max(md) {
+      @include font(p);
+      padding: ($line-height / 2);
+    }
+  }
+
+  span.current {
+    margin-right: 0;
+    background: main-colors(main, bg-alt);
+  }
+
+  a {
+    margin-right: 0;
+
+    &:hover {
+      background: main-colors(main, bg-alt);
+    }
+  }
+
+  @at-root #page #{&} a {
+    text-decoration: none;
+  }
+}

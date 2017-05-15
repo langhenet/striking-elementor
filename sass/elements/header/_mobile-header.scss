@@ -150,5 +150,10 @@
     padding-bottom: bhpad(2);
     padding-left: 2em !important;
     border: 2px solid main-colors(header, border);
+    -webkit-appearance: none;
+
+    option {
+      padding-left: 2em;
+    }
   }
 }

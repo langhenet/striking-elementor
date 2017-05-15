@@ -8,8 +8,16 @@
 // TONDE
 ///
 .lg-tonde,
-.et_divi_builder #et_builder_outer_content .et_pb_module img.lg-tonde {
+.et_divi_builder #et_builder_outer_content .et_pb_module.lg-tonde img {
   border-radius: 100%;
+}
+
+//FIX IMAGES
+@include breakpoint-max(lg) {
+  .et_divi_builder #et_builder_outer_content .et_pb_module img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 
@@ -17,13 +25,38 @@
 //*               IMMAGINI SU MOBILE
 //****************************************************************************//
 .et_pb_image {
-  @include breakpoint-max(sm) {
+
+  @include breakpoint-max(lg) {
     margin: 0 auto !important;
   }
 
   img {
+
+    @include breakpoint-max(lg) {
+      max-height: 600px;
+    }
+
+    @include breakpoint-max(md) {
+      max-height: 500px;
+    }
+
     @include breakpoint-max(sm) {
       max-height: 400px;
     }
+  }
+}
+
+#page img {
+  @include breakpoint-max(lg) {
+    max-height: 600px;
+    width: auto;
+  }
+
+  @include breakpoint-max(md) {
+    max-height: 500px;
+  }
+
+  @include breakpoint-max(sm) {
+    max-height: 400px;
   }
 }
