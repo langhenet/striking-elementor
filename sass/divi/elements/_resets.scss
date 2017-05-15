@@ -28,3 +28,10 @@
     @include font(p);
   }
 }
+
+#et_builder_outer_content input[type="text"],
+#et_builder_outer_content input[type="password"],
+#et_builder_outer_content input[type="number"],
+#et_builder_outer_content input[type="email"] {
+    height: inherit;
+}

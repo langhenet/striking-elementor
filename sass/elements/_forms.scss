@@ -80,11 +80,11 @@ select {
     width: 100%;
   }
 
-  @include breakpoint-max(md) {
+  @include breakpoint-max(lg) {
     width: 49%;
   }
 
-  @include breakpoint-max(xs) {
+  @include breakpoint-max(md) {
     width: 100%;
   }
 }

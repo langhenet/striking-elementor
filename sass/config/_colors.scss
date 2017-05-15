@@ -116,10 +116,10 @@ $layout-colors: (
  * Colori delle Sezioni FW
  */
 $colors: (
-  color--dark1: (
+  color--dark: (
     body:       $bianco,      //Corpo - testo
     body-sec:   $bianco,      //Secondario - blockquote o blog meta
-    heading:    rgba($bianco, 0.80),      //Titoli 1 e 2
+    heading:    rgba($bianco, 0.90),      //Titoli 1 e 2
     link:       $bianco,      //Link
     bg:         $rosso-vero,      //Sfondo principale
     border:     $bianco,      //Bordi

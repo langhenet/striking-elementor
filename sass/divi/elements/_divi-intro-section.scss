@@ -24,7 +24,7 @@
 // Overlay della sezione introduttiva
 ///
 #intro::before {
-  @include color-overlay;
+  @include color-overlay(fheader, 0.45);
 }
 
 
