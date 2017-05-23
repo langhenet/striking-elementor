@@ -71,6 +71,16 @@
 
   .author_desc {
   }
+
+  @include breakpoint-max(xs) {
+  padding: $line-height;
+  margin-left: -$line-height;
+  margin-right: -$line-height;
+
+    .author_desc {
+      @include font(small, $mt:0);
+    }
+  }
 }
 
 //****************************************************************************//
