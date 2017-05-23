@@ -167,7 +167,7 @@
   }
 
   @include breakpoint-max(sm) {
-    padding-top: $height--small;
+    padding-top: $line-height * 2;
   }
 }
 //Prima con Parallax
@@ -179,7 +179,7 @@
   }
 
   @include breakpoint-max(sm) {
-    padding-top: $height--small;
+    padding-top: $line-height * 2;
   }
 }
 
@@ -193,7 +193,7 @@
   }
 
   @include breakpoint-max(sm) {
-    padding-bottom: $height--small;
+    padding-bottom: $line-height * 2;
   }
 }
 
