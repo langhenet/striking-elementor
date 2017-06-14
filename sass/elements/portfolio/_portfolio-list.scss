@@ -11,8 +11,7 @@
 ///
 // RESET MARGINI UL
 ///
-#main ul,
-.et_divi_builder #et_builder_outer_content .et_pb_module ul {
+#main ul {
   &.portfolio_container {
     margin-left: -$line-height / 2 !important;
     margin-right: -$line-height / 2 !important;
@@ -33,8 +32,8 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
-  @at-root #et_builder_outer_content ul.portfolio_container li.portfolio_item,
-  .portfolio_container .portfolio_item {
+  li.portfolio_item,
+  .portfolio_item {
     margin-top: 0;
     margin-bottom: $line-height * 2;
     padding: 0 ($line-height);
@@ -245,7 +244,7 @@
   display: none;
 }
 
-.et_divi_builder #et_builder_outer_content .et_pb_module .portfolio_item img {
+.portfolio_item img {
   display: block;
 }
 

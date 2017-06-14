@@ -1,0 +1,26 @@
+/**********************************************************************************************************************/
+/** ELEMENTOR INTERFACE FIXES
+/**********************************************************************************************************************/
+/*
+ * Spazio il primo row dell'editor
+ */
+.elementor-editor-active .elementor-inner {
+  margin-top: $line-height * 2;
+}
+
+
+/*
+ * Colore comandi su pagina
+ */
+#page .elementor-editor-element-settings a {
+  color: white;
+  text-decoration: none;
+}
+
+/*
+ * Spaziatura comandi su pagina
+ */
+#main ul.elementor-editor-element-settings-list {
+  margin-left: 0;
+  margin-bottom: 0;
+}

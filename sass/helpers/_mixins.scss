@@ -300,7 +300,7 @@
 //****************************************************************************//
 //                            MEDIA QUERIES
 //****************************************************************************//
-@mixin breakpoint-max($media) {
+@mixin breakpoint-max($media: $bp-default) {
   @if $media == xs {
     @media (max-width: em-bp($xs - 1)) { @content; }
   }
@@ -329,7 +329,7 @@
   }
 }
 
-@mixin breakpoint-min($media) {
+@mixin breakpoint-min($media: $bp-default) {
   @if $media == xs {
     @media (min-width: em-bp($xs)) { @content; }
   }

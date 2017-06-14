@@ -61,8 +61,7 @@
 //LOOP
 @each $palette, $bg in $colors {
 
-  #page .#{$palette} .button.primary,
-  .et_divi_builder #et_builder_outer_content .#{$palette} a.button.primary {
+  #page .#{$palette} .button.primary {
     @include button-color(none, $palette);
 
     &:hover {
@@ -82,8 +81,7 @@
 //                  ho cambiato la dichiarazione nel mixin dei bottoni per fare i bordi -
 //****************************************************************************//
 
-a.button.primary.skeleton--light,
-.et_divi_builder #et_builder_outer_content a.button.primary.skeleton--light {
+a.button.primary.skeleton--light {
 
   color: #fff;
   background-color: transparent;

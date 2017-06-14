@@ -22,8 +22,7 @@ body {
   text-rendering: geometricPrecision;
 }
 
-p, ul, ol, pre, table, blockquote,
-.et_divi_builder #et_builder_outer_content .et_pb_module p {
+p, ul, ol, pre, table, blockquote {
   @include margin;
 }
 
@@ -35,8 +34,7 @@ p, ul, ol, pre, table, blockquote,
 ///
 // Reset del padding del p e di DIVI BUILDER
 ////
-p,
-p.et_normal_padding {
+p {
   padding-bottom: 0;
 }
 
@@ -64,7 +62,7 @@ h1, h2, h3, h4, h5 {
 h1 {
   @include font(h1);
 
-  @include breakpoint-max(sm) {
+  @include breakpoint-max() {
     @include m-size(h1);
   }
 }
@@ -72,7 +70,7 @@ h1 {
 h2 {
   @include font(h2);
 
-  @include breakpoint-max(sm) {
+  @include breakpoint-max() {
     @include m-size(h2);
   }
 }
@@ -80,7 +78,7 @@ h2 {
 h3 {
   @include font(h3);
 
-  @include breakpoint-max(sm) {
+  @include breakpoint-max() {
     @include m-size(h3);
   }
 }
@@ -98,7 +96,7 @@ h5 {
 .body--special {
   @include font(h3, $fm: primary, $wt: normal);
 
-  @include breakpoint-max(xl) {
+  @include breakpoint-max() {
     @include m-size(h3);
   }
 }
@@ -134,9 +132,7 @@ sub { bottom: $sub-bottom; }
 // Impostazione di Margine e Padding per OL e UL
 ///
 #main ol,
-#main ul,
-.et_divi_builder #et_builder_outer_content .et_pb_module ol,
-.et_divi_builder #et_builder_outer_content .et_pb_module ul {
+#main ul {
   margin-left: $line-height * 2;
   padding-bottom: 0;
   margin-bottom: $line-height;
@@ -150,21 +146,15 @@ sub { bottom: $sub-bottom; }
 ///
 // Stile lista per UL e OL
 ///
-#main ul li,
-.et_divi_builder #et_builder_outer_content .et_pb_module ul li {
+#main ul li {//TODO
   list-style: circle;
-}
-
-.et_divi_builder #et_builder_outer_content .et_pb_module ol li {
-  list-style: decimal;
 }
 
 
 ///
 // Liste Speciali di Striking
 ///
-#main ul[class^="list_"] li,
-.et_divi_builder #et_builder_outer_content .et_pb_module ul[class*=" list_"] li {
+#main ul[class^="list_"] li { //TODO
   list-style: none !important;
   margin: 0;
 }
@@ -174,8 +164,7 @@ sub { bottom: $sub-bottom; }
 //****************************************************************************//
 //                                BLOCKQUOTE
 //****************************************************************************//
-blockquote,
-.et_divi_builder #et_builder_outer_content .et_pb_module blockquote {
+blockquote {
   border: 0;
   margin: 0;
   font-size: 1em;
@@ -184,7 +173,7 @@ blockquote,
 
   @include font(blockquote);
 
-  @include breakpoint-max(lg) {
+  @include breakpoint-max() {
     @include m-size(h3);
   }
 
@@ -286,7 +275,7 @@ a,
   text-decoration: underline;
 
   &.button,
-  &.et_pb_button {
+  &.ELEMENTOR BUTTON { //TODO
     text-decoration: none;
   }
 }

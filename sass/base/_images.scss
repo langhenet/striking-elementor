@@ -7,24 +7,16 @@
 ///
 // TONDE
 ///
-.lg-tonde,
-.et_divi_builder #et_builder_outer_content .et_pb_module.lg-tonde img {
+.lg-tonde {
   border-radius: 100%;
 }
 
-//FIX IMAGES
-@include breakpoint-max(lg) {
-  .et_divi_builder #et_builder_outer_content .et_pb_module img {
-    display: block;
-    margin: 0 auto;
-  }
-}
 
 
 //****************************************************************************//
 //*               IMMAGINI SU MOBILE
 //****************************************************************************//
-.et_pb_image {
+.ELEMENTOR IMAGE { //TODO - nel file giusto
 
   @include breakpoint-max(lg) {
     margin: 0 auto !important;
