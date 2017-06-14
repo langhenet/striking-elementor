@@ -8,3 +8,40 @@ Altri tipi di quote: \201D" "\2018" "\2019";
 //TOCR - cose da fare per il template
 //PJRL - relative al progetto. Si possono eliminare
 //TODL - da cancellare
+
+///
+//ELEMENTOR REFERENCE
+///
+
+//STRUTTURA GENERALE
+.elementor-section //SEZIONE
+  .elementor-container //CONTAINER con max width
+    .elementor-row //RIGA - ELEMENTO FLEX
+      .elementor-column //COLONNA
+        .elementor-column-wrap //INTERNO COLONNA
+
+
+//SEZIONI
+section.elementor-section -> Sezione
+
+  //ALTEZZA
+  elementor-section-height-default
+
+  //ALLINEAMENTO VERTICALE DEL CONTENUTO
+  .elementor-section-content-middle / top / bottom -> Allineamento Sezione
+
+  .elementor-section-content-bottom > .elementor-container > .elementor-row >.elementor-column > .elementor-column-wrap {
+    alig-items: ;
+  }
+
+  L'impostazione dell'allineamento del contenuto "a colonna" viene outputtato NON COME CLASSE, ma nel CSS della pagina
+
+  //LARGHEZZA
+  .elementor-section-full_width / boxed -> Determina la larghezza del container
+
+//CONTAINER
+  //LARGHEZZA GUTTER COLONNE
+  .elementor-column-gap-wider / wide / extended / narrow / no / default
+  (CONTAINER).elementor-column-gap-wider .elementor-row > .elementor-column > .elementor-element-populated {
+    padding:;
+  }

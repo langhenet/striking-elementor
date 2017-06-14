@@ -1,0 +1,63 @@
+///
+// Impostazioni BG COLONNA
+///
+.elementor-section {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@each $palette, $sections in $colors {
+  .#{$palette},
+  .elementor-section.#{$palette} {
+    background-color: palette($palette, bg);
+  }
+}
+
+
+///
+// Spazi Verticali delle Colonne - DEFAULT
+///
+.elementor-column-gap-default > .elementor-row {
+
+  //PADDING LATERALE
+  &> .elementor-column > .elementor-element-populated {
+    padding-right: $line-height;
+    padding-left: $line-height;
+  }
+
+  //PADDING VERTICALE - PRIMA RIGA
+  &:first-child {
+    &> .elementor-column > .elementor-element-populated {
+      padding-top: $height;
+    }
+  }
+
+  //PADDING VERTICALE - ULTIMA RIGA
+  &:last-child {
+    &> .elementor-column > .elementor-element-populated {
+      padding-bottom: $height;
+    }
+  }
+
+  .elementor-row {
+    &:first-child,
+    &:last-child {
+      &> .elementor-column > .elementor-element-populated {
+        padding-top: $line-height * 1.5;
+        padding-bottom: $line-height * 1.5;
+
+        @include breakpoint-max(md) {
+          padding-top: $line-height / 2;
+          padding-bottom: $line-height / 2;
+        }
+      }
+    }
+  }
+
+}
+
+//.elementor-column-gap-default > .elementor-row {
+//  padding-top: $height;
+//  padding-bottom: $height;
+//}
