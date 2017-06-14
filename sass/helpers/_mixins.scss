@@ -302,59 +302,43 @@
 //****************************************************************************//
 @mixin breakpoint-max($media: $bp-default) {
   @if $media == xs {
-    @media (max-width: em-bp($xs - 1)) { @content; }
+    @media (max-width: em-bp( width(xs) - 1) ) { @content; }
   }
   @if $media == sm {
-    @media (max-width: em-bp($sm - 1)) { @content; }
+    @media (max-width: em-bp( width(sm) - 1) ) { @content; }
   }
   @if $media == md {
-    @media (max-width: em-bp($md - 1)) { @content; }
+    @media (max-width: em-bp( width(md) - 1) ) { @content; }
   }
   @if $media == lg {
-    @media (max-width: em-bp($lg - 1)) { @content; }
+    @media (max-width: em-bp( width(lg) - 1) ) { @content; }
   }
   @if $media == xl {
-    @media (max-width: em-bp($xl - 1)) { @content; }
+    @media (max-width: em-bp( width(xl) - 1) ) { @content; }
   }
   @if $media == uxl {
-    @media (max-width: em-bp($uxl - 1)) { @content; }
-  }
-
-  //DIVI
-  @if $media == divi-lg {
-    @media (max-width: em-bp($divi-lg - 1)) { @content; }
-  }
-  @if $media == divi-uxxl {
-    @media (max-width: em-bp($divi-uxxl - 1)) { @content; }
+    @media (max-width: em-bp( width(uxl) - 1) ) { @content; }
   }
 }
 
 @mixin breakpoint-min($media: $bp-default) {
   @if $media == xs {
-    @media (min-width: em-bp($xs)) { @content; }
+    @media (min-width: em-bp( width(xs) ) ) { @content; }
   }
   @if $media == sm {
-    @media (min-width: em-bp($sm)) { @content; }
+    @media (min-width: em-bp( width(sm) ) ) { @content; }
   }
   @if $media == md {
-    @media (min-width: em-bp($md)) { @content; }
+    @media (min-width: em-bp( width(md) ) ) { @content; }
   }
   @if $media == lg {
-    @media (min-width: em-bp($lg)) { @content; }
+    @media (min-width: em-bp( width(lg) ) ) { @content; }
   }
   @if $media == xl {
-    @media (min-width: em-bp($xl)) { @content; }
+    @media (min-width: em-bp( width(xl) ) ) { @content; }
   }
   @if $media == uxl {
-    @media (min-width: em-bp($uxl)) { @content; }
-  }
-
-  //DIVI
-  @if $media == divi-lg {
-    @media (min-width: em-bp($divi-lg)) { @content; }
-  }
-  @if $media == divi-uxxl {
-    @media (min-width: em-bp($divi-uxxl)) { @content; }
+    @media (min-width: em-bp( width(uxl) ) ) { @content; }
   }
 }
 

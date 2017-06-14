@@ -7,10 +7,10 @@
 $width: 1170px;
 $website-width: em($width); //TODO
 
-$gutter--small: $line-height;
-$gutter: $line-height * 2;
-$gutter--large: $line-height * 5;
-$gutter--huge: $line-height * 8;
+$gutter--small: $line-height / 2;
+$gutter: $line-height;
+$gutter--large: $line-height * 2;
+$gutter--huge: $line-height * 4;
 
 $height--small: $line-height;
 $height: $line-height * 2;
@@ -27,13 +27,13 @@ $md: 768px;
 $sm: 568px;
 $xs: 480px;
 
-$bp-default: $lg;
+$widths: (
+  uxl: 1980px,
+  xl: 1200px,
+  lg: 990px,
+  md: 768px,
+  sm: 568px,
+  xs: 480px,
+);
 
-
-$divi-uxxl: 1462px; //min u-hd
-$divi-xxl: 1405px; //max large desk
-$divi-xl: 1100px; //max small desk
-$divi-lg: 981px; //max l-tablet
-//$divi-md: 782px; //
-$divi-md: 768px; //***
-$divi-xs: 480px; //***
+$bp-default: lg;

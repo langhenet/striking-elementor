@@ -37,9 +37,7 @@
   position: relative;
   z-index: 1;
   padding: 0 0;
-
   //Padding Laterali
-  
   @include breakpoint-max(md) {
     padding-left: $line-height * 1;
     padding-right: $line-height * 1;

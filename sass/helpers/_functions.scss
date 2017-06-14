@@ -45,6 +45,12 @@
   @return map-get(map-get($forms, $element), $attr);
 }
 
+///
+// Widths
+///
+@function width($width: $bp-default) {
+  @return map-get($widths, $width);
+}
 //****************************************************************************//
 //              PADDING & LINE HEIGHT per ELEMENTI SOTTOLINEATI
 //            qui c'è un trick complicato che va spiegato per bene
