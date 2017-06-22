@@ -1,9 +1,7 @@
-.elementor-section.elementor-section-boxed > .elementor-container {
-  max-width: $container-width;
-}
+
 
 ///
-// Impostazioni BG COLONNA
+// Impostazioni BG SEZIONE
 ///
 .elementor-section {
   background-size: cover;
@@ -11,6 +9,10 @@
   background-repeat: no-repeat;
 }
 
+
+///
+// LOOP COLORI
+///
 @each $palette, $sections in $colors {
   .#{$palette},
   .elementor-section.#{$palette} {
@@ -18,46 +20,122 @@
   }
 }
 
+
+
+
+/**********************************************************************************************************************/
+/** LAYOUT - PADDING LATERALI
+/**********************************************************************************************************************/
+
+////
+// Larghezza Contenuto
+///
+.elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: $container-width;
+}
+
+
 ///
 // CONTAINER NESTATI - OVERFLOW PADDING LATERALE
 ///
-
-//DEFAULT
-.elementor-section .elementor-container.elementor-column-gap-default {
-  .elementor-section .elementor-container.elementor-column-gap-default {
-    margin-left: -$line-height / 2;
-    margin-right: -$line-height / 2;
-  }
-
-  .elementor-section .elementor-container.elementor-column-gap-extended {
+.elementor-section .elementor-container {
+  .elementor-section .elementor-container {
     margin-left: -$line-height;
     margin-right: -$line-height;
   }
 }
 
-//EXTENDED
-.elementor-section .elementor-container.elementor-column-gap-extended {
 
-  .elementor-section .elementor-container.elementor-column-gap-default {
-    margin-left: -$line-height / 2;
-    margin-right: -$line-height / 2;
+////
+// Padding Laterale delle Colonne
+///
+.elementor-column-gap-no,
+.elementor-column-gap-narrow,
+.elementor-column-gap-default,
+.elementor-column-gap-extended,
+.elementor-column-gap-wide,
+.elementor-column-gap-wider {
+
+  &> .elementor-row > .elementor-column > .elementor-column-wrap,
+  &> .elementor-row > .elementor-column > .elementor-column-wrap.elementor-element-populated {
+    padding-right: $line-height;
+    padding-left: $line-height;
+  }
+}
+
+///
+// Padding laterali sui widget delle colonne WIDE
+///
+.elementor-column-gap-wide {
+
+  .elementor-widget-wrap {
+    padding: 0 $line-height;
+  }
+}
+
+//Allineo i margini nella prima e ultima colonno
+.elementor-column-gap-wide .elementor-row {
+
+  .elementor-column:first-child .elementor-widget-wrap {
+    margin-left: -$line-height;
   }
 
-  .elementor-section .elementor-container.elementor-column-gap-extended {
-    margin-left: -$line-height;
+  .elementor-column:last-child .elementor-widget-wrap {
     margin-right: -$line-height;
   }
 }
+
+
+///
+// Padding laterali sui widget delle colonne WIDER
+///
+.elementor-column-gap-wider {
+  .elementor-widget-wrap {
+    padding: 0 $line-height * 2;
+  }
+}
+
+//Allineo i margini nella prima e ultima colonno
+.elementor-column-gap-wider .elementor-row {
+
+  .elementor-column:first-child .elementor-widget-wrap {
+    margin-left: -$line-height * 2;
+  }
+
+  .elementor-column:last-child .elementor-widget-wrap {
+    margin-right: -$line-height * 2;
+  }
+}
+
+
+////
+// RESETTO TUTTO SU MOBILE
+////
+@include breakpoint-max(lg) {
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider {
+
+    .elementor-row {
+      .elementor-column .elementor-widget-wrap,
+      .elementor-column:first-child .elementor-widget-wrap,
+      .elementor-column:last-child .elementor-widget-wrap {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+}
+
+/**********************************************************************************************************************/
+/** LAYOUT - PADDING LATERALI
+/**********************************************************************************************************************/
 
 ///
 // Spazi Verticali delle Colonne - DEFAULT
 ///
 .elementor-column-gap-default > .elementor-row {
-  //PADDING LATERALE
-  &> .elementor-column > .elementor-element-populated {
-    padding-right: $line-height / 2;
-    padding-left: $line-height / 2;
-  }
   //PADDING VERTICALE
   &> .elementor-column > .elementor-element-populated {
     padding-top: $height;
@@ -95,11 +173,6 @@
 // Spazi Verticali delle Colonne - EXTENDED
 ///
 .elementor-column-gap-extended > .elementor-row {
-  //PADDING LATERALE
-  &> .elementor-column > .elementor-element-populated {
-    padding-right: $line-height;
-    padding-left: $line-height;
-  }
   //PADDING VERTICALE
   &> .elementor-column > .elementor-element-populated {
     padding-top: $height--large;
@@ -130,8 +203,3 @@
     }
   }
 }
-
-//.elementor-column-gap-default > .elementor-row {
-//  padding-top: $height;
-//  padding-bottom: $height;
-//}
