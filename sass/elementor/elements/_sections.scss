@@ -1,3 +1,7 @@
+.elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: $container-width;
+}
+
 ///
 // Impostazioni BG COLONNA
 ///
@@ -14,47 +18,117 @@
   }
 }
 
+///
+// CONTAINER NESTATI - OVERFLOW PADDING LATERALE
+///
+
+//DEFAULT
+.elementor-section .elementor-container.elementor-column-gap-default {
+  .elementor-section .elementor-container.elementor-column-gap-default {
+    margin-left: -$line-height / 2;
+    margin-right: -$line-height / 2;
+  }
+
+  .elementor-section .elementor-container.elementor-column-gap-extended {
+    margin-left: -$line-height;
+    margin-right: -$line-height;
+  }
+}
+
+//EXTENDED
+.elementor-section .elementor-container.elementor-column-gap-extended {
+
+  .elementor-section .elementor-container.elementor-column-gap-default {
+    margin-left: -$line-height / 2;
+    margin-right: -$line-height / 2;
+  }
+
+  .elementor-section .elementor-container.elementor-column-gap-extended {
+    margin-left: -$line-height;
+    margin-right: -$line-height;
+  }
+}
 
 ///
 // Spazi Verticali delle Colonne - DEFAULT
 ///
 .elementor-column-gap-default > .elementor-row {
+  //PADDING LATERALE
+  &> .elementor-column > .elementor-element-populated {
+    padding-right: $line-height / 2;
+    padding-left: $line-height / 2;
+  }
+  //PADDING VERTICALE
+  &> .elementor-column > .elementor-element-populated {
+    padding-top: $height;
+    padding-bottom: $height;
+  }
 
+  //ROW NESTATE
+  //DEFAULT
+  .elementor-column-gap-default .elementor-row {
+    &> .elementor-column > .elementor-element-populated {
+      padding-top: $line-height;
+      padding-bottom: $line-height;
+
+      @include breakpoint-max(md) {
+        padding-top: $line-height / 2;
+        padding-bottom: $line-height / 2;
+      }
+    }
+  }
+  //EXTENDED NESTATO
+  .elementor-column-gap-extended .elementor-row {
+    &> .elementor-column > .elementor-element-populated {
+      padding-top: $line-height * 1.5;
+      padding-bottom: $line-height * 1.5;
+
+      @include breakpoint-max(md) {
+        padding-top: $line-height / 2;
+        padding-bottom: $line-height / 2;
+      }
+    }
+  }
+}
+
+///
+// Spazi Verticali delle Colonne - EXTENDED
+///
+.elementor-column-gap-extended > .elementor-row {
   //PADDING LATERALE
   &> .elementor-column > .elementor-element-populated {
     padding-right: $line-height;
     padding-left: $line-height;
   }
-
-  //PADDING VERTICALE - PRIMA RIGA
-  &:first-child {
-    &> .elementor-column > .elementor-element-populated {
-      padding-top: $height;
-    }
+  //PADDING VERTICALE
+  &> .elementor-column > .elementor-element-populated {
+    padding-top: $height--large;
+    padding-bottom: $height--large;
   }
 
-  //PADDING VERTICALE - ULTIMA RIGA
-  &:last-child {
+  //PADDING COLONNE NESTATE
+  .elementor-column-gap-default .elementor-row {
     &> .elementor-column > .elementor-element-populated {
-      padding-bottom: $height;
-    }
-  }
+      padding-top: $line-height;
+      padding-bottom: $line-height;
 
-  .elementor-row {
-    &:first-child,
-    &:last-child {
-      &> .elementor-column > .elementor-element-populated {
-        padding-top: $line-height * 1.5;
-        padding-bottom: $line-height * 1.5;
-
-        @include breakpoint-max(md) {
-          padding-top: $line-height / 2;
-          padding-bottom: $line-height / 2;
-        }
+      @include breakpoint-max(md) {
+        padding-top: $line-height / 2;
+        padding-bottom: $line-height / 2;
       }
     }
   }
+  .elementor-column-gap-extended .elementor-row {
+    &> .elementor-column > .elementor-element-populated {
+      padding-top: $line-height * 1.5;
+      padding-bottom: $line-height * 1.5;
 
+      @include breakpoint-max(md) {
+        padding-top: $line-height / 2;
+        padding-bottom: $line-height / 2;
+      }
+    }
+  }
 }
 
 //.elementor-column-gap-default > .elementor-row {

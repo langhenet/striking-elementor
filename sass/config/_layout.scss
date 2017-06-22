@@ -6,6 +6,7 @@
 //*==========================================================================*//
 $width: 1170px;
 $website-width: em($width); //TODO
+$container-width: em(1230px);
 
 $gutter--small: $line-height / 2;
 $gutter: $line-height;
@@ -14,8 +15,8 @@ $gutter--huge: $line-height * 4;
 
 $height--small: $line-height;
 $height: $line-height * 3;
-$height--large: $line-height * 5;
-$height--huge: $line-height * 8;
+$height--large: $line-height * 4;
+$height--huge: $line-height * 6;
 
 //***********************************************************************//
 //             LARGHEZZA LAYOUT & BREAKPOINT MEDIA QUERIES

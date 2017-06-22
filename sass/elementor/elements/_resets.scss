@@ -24,3 +24,11 @@
   margin-left: 0;
   margin-bottom: 0;
 }
+
+
+/*
+ * Tolgo il Margine dalle Sezioni
+ */
+.elementor-editor-active .elementor.elementor-edit-mode .elementor-top-column .elementor-widget-wrap .elementor-inner-section {
+  margin-top: 0;
+}
