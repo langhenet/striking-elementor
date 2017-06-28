@@ -48,6 +48,8 @@
 
 ////
 // Padding Laterale delle Colonne
+// Lo uso sempre uguale in tutti gli step
+// per le più larghe (WIDE e WIDER) paddo gli elementi interni
 ///
 .elementor-column-gap-no,
 .elementor-column-gap-narrow,
@@ -60,11 +62,14 @@
   &> .elementor-row > .elementor-column > .elementor-column-wrap.elementor-element-populated {
     padding-right: $line-height;
     padding-left: $line-height;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
 ///
 // Padding laterali sui widget delle colonne WIDE
+// Non paddo la colonna, ma il suo contenuto
 ///
 .elementor-column-gap-wide {
 
@@ -88,6 +93,7 @@
 
 ///
 // Padding laterali sui widget delle colonne WIDER
+// Non paddo la colonna, ma il suo contenuto
 ///
 .elementor-column-gap-wider {
   .elementor-widget-wrap {
@@ -109,9 +115,9 @@
 
 
 ////
-// RESETTO TUTTO SU MOBILE
+// Su TABLET / SMALL DESKTOP resetto i padding laterali e imargini laterali delle colonne WIDE e WIDER
 ////
-@include breakpoint-max(lg) {
+@include breakpoint-max(xl) {
   .elementor-column-gap-wide,
   .elementor-column-gap-wider {
 
@@ -119,87 +125,193 @@
       .elementor-column .elementor-widget-wrap,
       .elementor-column:first-child .elementor-widget-wrap,
       .elementor-column:last-child .elementor-widget-wrap {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
       }
     }
   }
 }
 
 /**********************************************************************************************************************/
-/** LAYOUT - PADDING LATERALI
+/** LAYOUT - PADDING VERTICALI
 /**********************************************************************************************************************/
+////
+// Padding Verticale - stretta
+// Il padding va sul CONTAINER
+////
+.elementor-column-gap-narrow {
+  padding: $line-height 0;
+
+  // NESTED NARROW & DEFAULT
+  .elementor-column-gap-narrow,
+  .elementor-column-gap-default {
+    padding: $line-height 0;
+  }
+
+  //NESTED EXTENDED, WIDE, WIDER
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider  {
+    padding: $line-height * 1.5 0;
+  }
+}
+
+////
+// Padding Verticale - DEFAULT
+// Il padding va sul CONTAINER
+////
+.elementor-column-gap-default {
+  padding: $height 0;
+
+  // NESTED NARROW & DEFAULT
+  .elementor-column-gap-narrow,
+  .elementor-column-gap-default {
+    padding: $line-height 0;
+  }
+
+  //NESTED EXTENDED, WIDE, WIDER
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider  {
+    padding: $line-height * 1.5 0;
+  }
+}
+
+////
+// Padding Verticale - EXTENDED
+// Il padding va sul CONTAINER
+////
+.elementor-column-gap-extended {
+  padding: $height * 1.5 0;
+
+  // NESTED NARROW & DEFAULT
+  .elementor-column-gap-narrow
+  .elementor-column-gap-default {
+    padding: $line-height 0;
+  }
+
+  //NESTED EXTENDED, WIDE, WIDER
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider {
+    padding: $line-height * 1.5 0;
+  }
+}
+
+
+////
+// Padding Verticale - WIDE
+// Il padding va sul CONTAINER
+////
+.elementor-column-gap-wide {
+  padding: $height--large 0;
+
+  // NESTED NARROW & DEFAULT
+  .elementor-column-gap-narrow
+  .elementor-column-gap-default {
+    padding: $line-height 0;
+  }
+
+  //NESTED EXTENDED, WIDE, WIDER
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider  {
+    padding: $line-height * 1.5 0;
+  }
+}
+
+
+////
+// Padding Verticale - WIDER
+// Il padding va sul CONTAINER
+////
+.elementor-column-gap-wider {
+  padding: $height--huge 0;
+
+  // NESTED NARROW & DEFAULT
+  .elementor-column-gap-narrow,
+  .elementor-column-gap-default {
+    padding: $line-height 0;
+  }
+
+  //NESTED EXTENDED, WIDE, WIDER
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider  {
+    padding: $line-height * 1.5 0;
+  }
+}
+
+////
+// Su Mobile tengo il padding nel container SOLO nei CONTAINER principali
+// e lo tolgo in quelli nestati
+///
+@include breakpoint-max(md) {
+  .elementor-column-gap-narrow,
+  .elementor-column-gap-default,
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider {
+    padding: $line-height 0;
+
+    //Metto il padding verticale per separare le colonne
+    &>.elementor-row .elementor-column .elementor-column-wrap.elementor-element-populated {
+      padding-top: $line-height / 2;
+      padding-bottom: $line-height / 2;
+    }
+
+    //Tolgo il padding dai CONTAINER nestati
+    .elementor-column-gap-narrow,
+    .elementor-column-gap-default,
+    .elementor-column-gap-extended,
+    .elementor-column-gap-wide,
+    .elementor-column-gap-wider {
+      padding: 0;
+    }
+  }
+}
 
 ///
-// Spazi Verticali delle Colonne - DEFAULT
+// COLONNE IMBOTTITE
+// .colonna--imbottita
+// Come prima cosa metto il padding verticale nella colonna
 ///
-.elementor-column-gap-default > .elementor-row {
-  //PADDING VERTICALE
-  &> .elementor-column > .elementor-element-populated {
+.elementor-column-gap-no,
+.elementor-column-gap-default,
+.elementor-column-gap-extended,
+.elementor-column-gap-wide,
+.elementor-column-gap-wider {
+  &> .elementor-row > .colonna--imbottita > .elementor-column-wrap.elementor-element-populated {
     padding-top: $height;
     padding-bottom: $height;
-  }
 
-  //ROW NESTATE
-  //DEFAULT
-  .elementor-column-gap-default .elementor-row {
-    &> .elementor-column > .elementor-element-populated {
-      padding-top: $line-height;
-      padding-bottom: $line-height;
-
-      @include breakpoint-max(md) {
-        padding-top: $line-height / 2;
-        padding-bottom: $line-height / 2;
-      }
-    }
-  }
-  //EXTENDED NESTATO
-  .elementor-column-gap-extended .elementor-row {
-    &> .elementor-column > .elementor-element-populated {
-      padding-top: $line-height * 1.5;
-      padding-bottom: $line-height * 1.5;
-
-      @include breakpoint-max(md) {
-        padding-top: $line-height / 2;
-        padding-bottom: $line-height / 2;
-      }
+    //Aggiungo un margine SOPRA e SOTTO quando le colonne cadono
+    @include breakpoint-max(md) {
+      margin-top: $line-height;
+      margin-bottom: $line-height;
     }
   }
 }
 
-///
-// Spazi Verticali delle Colonne - EXTENDED
-///
-.elementor-column-gap-extended > .elementor-row {
-  //PADDING VERTICALE
-  &> .elementor-column > .elementor-element-populated {
-    padding-top: $height--large;
-    padding-bottom: $height--large;
+
+
+/*
+ * COLONNE IMBOTTITE
+ * Quando le colonne cadono, metto un margine negativo
+ * in modo che la colonna faccia un overflow del padding del container
+ */
+@include breakpoint-max(md) {
+  .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child > .elementor-column-wrap.elementor-element-populated {
+    margin-bottom: -$line-height * 1.5; //TODO - integrare nella precedente dichiarazione
   }
 
-  //PADDING COLONNE NESTATE
-  .elementor-column-gap-default .elementor-row {
-    &> .elementor-column > .elementor-element-populated {
-      padding-top: $line-height;
-      padding-bottom: $line-height;
-
-      @include breakpoint-max(md) {
-        padding-top: $line-height / 2;
-        padding-bottom: $line-height / 2;
-      }
-    }
-  }
-  .elementor-column-gap-extended .elementor-row {
-    &> .elementor-column > .elementor-element-populated {
-      padding-top: $line-height * 1.5;
-      padding-bottom: $line-height * 1.5;
-
-      @include breakpoint-max(md) {
-        padding-top: $line-height / 2;
-        padding-bottom: $line-height / 2;
-      }
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider {
+    &> .elementor-row > .colonna--imbottita:last-child > .elementor-column-wrap.elementor-element-populated {
+      margin-bottom: -$line-height * 1.5; //TODO - integrare nella precedente dichiarazione
     }
   }
 }

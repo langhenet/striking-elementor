@@ -5,7 +5,7 @@
 //*                                                                          *//
 //*==========================================================================*//
 $width: 1170px;
-$website-width: em($width); //TODO
+$website-width: em($width);
 $container-width: em($width) + ($line-height * 2);
 
 $gutter--small: $line-height / 2;
@@ -14,7 +14,7 @@ $gutter--large: $line-height * 2;
 $gutter--huge: $line-height * 4;
 
 $height--small: $line-height;
-$height: $line-height * 3;
+$height: $line-height * 2;
 $height--large: $line-height * 4;
 $height--huge: $line-height * 6;
 

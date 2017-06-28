@@ -9,23 +9,23 @@
 // BASE DEL BODY
 ///
   $base: 16;
-  $font-size: 1.25em; //TODO
-  $line-height: 1.5em; //TODO
+  $font-size: 1.25em; //PROJ
+  $line-height: 1.5em; //PROJ
 
 
 ///
 // p and other standard elements
 ///
-  $margin-top: 0em; //TODO
-  $margin-bottom: 1.5em; //TODO
+  $margin-top: 0em; //PROJ
+  $margin-bottom: 1.5em; //PROJ
 
 
 ///
 // Families
 ///
-  $ff-primary: 'PT primary', serif; //TODO
-  $ff-secondary: 'Open secondary', sans-serif; //TODO
-  $ff-special: $ff-primary; //TODO
+  $ff-primary: 'PT primary', serif; //PROJ
+  $ff-secondary: 'Open secondary', sans-serif; //PROJ
+  $ff-special: $ff-primary; //PROJ
   $ff-button: $ff-secondary;
 
 
@@ -186,9 +186,9 @@ $mobile-sizes: (
 ////
 // DETTAGLI
 ////
-  $sup-top: -0.5em; //TODO
-  $sub-bottom: -0.25em; //TODO
-  $hr-spacing: 1px; //TODO
+  $sup-top: -0.5em;
+  $sub-bottom: -0.25em;
+  $hr-spacing: 1px;
 
 
 
