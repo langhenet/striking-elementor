@@ -3,7 +3,8 @@
 ///
 // Impostazioni BG SEZIONE
 ///
-.elementor-section {
+.elementor-section,
+.elementor-element-populated {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -134,6 +135,9 @@
   }
 }
 
+
+
+
 /**********************************************************************************************************************/
 /** LAYOUT - PADDING VERTICALI
 /**********************************************************************************************************************/
@@ -158,6 +162,7 @@
   }
 }
 
+
 ////
 // Padding Verticale - DEFAULT
 // Il padding va sul CONTAINER
@@ -178,6 +183,7 @@
     padding: $line-height * 1.5 0;
   }
 }
+
 
 ////
 // Padding Verticale - EXTENDED
@@ -244,10 +250,12 @@
   }
 }
 
-////
-// Su Mobile tengo il padding nel container SOLO nei CONTAINER principali
-// e lo tolgo in quelli nestati
-///
+
+/*
+ * PADDING VERTICALE - MOBILE
+ * Quando cadono le colonne tengo il padding nel container SOLO nei CONTAINER principali
+ * e lo tolgo in quelli nestati
+ */
 @include breakpoint-max(md) {
   .elementor-column-gap-narrow,
   .elementor-column-gap-default,
@@ -304,14 +312,14 @@
  */
 @include breakpoint-max(md) {
   .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child > .elementor-column-wrap.elementor-element-populated {
-    margin-bottom: -$line-height * 1.5; //TODO - integrare nella precedente dichiarazione
+    margin-bottom: -$line-height * 1.5;
   }
 
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider {
     &> .elementor-row > .colonna--imbottita:last-child > .elementor-column-wrap.elementor-element-populated {
-      margin-bottom: -$line-height * 1.5; //TODO - integrare nella precedente dichiarazione
+      margin-bottom: -$line-height * 1.5;
     }
   }
 }

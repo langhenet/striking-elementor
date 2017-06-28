@@ -1,0 +1,123 @@
+/*************************************************************************
+*  Qui lavoro solo sulle SEZIONI FULL WIDTH
+*  In Particale mi concentro sulle colonne FW in situazione NO PADDING visto che per ricreare le griglie che usiamo solitamente
+* Ref: .elementor-section-full_width
+*************************************************************************/
+.elementor-section-full_width {
+
+  //Imposto la max width del container a 100%
+  .elementor-column-gap-no {
+    max-width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    //Imposto la larghezza massima dei contenitori e il loro padding verticale
+    .elementor-widget-wrap {
+      max-width: 700px;
+      padding-top: $line-height * 3;
+      padding-bottom: $line-height * 3;
+    }
+
+
+    /*
+     * Determino il tipo di allineamento orizzontale
+     * Viene fatto sul contenitore di .elementor-widget-wrap
+     */
+    .elementor-element-populated {
+      justify-content: space-around;
+    }
+
+    //Cambio l'allineamtno della prima colonna in modo venga a dx
+    .elementor-column:first-child {
+      .elementor-element-populated {
+        justify-content: flex-end;
+      }
+    }
+
+    //cambio l'allineamento sull'ultima colonna in modo che venga a sx
+    .elementor-column:last-child {
+      .elementor-element-populated {
+        justify-content: flex-start;
+      }
+    }
+
+
+    /*
+     * COLONNE 1/2
+     * Aumento un po' lo spazio laterale sulle due colonne
+     */
+    .elementor-col-50 {
+
+      //Prima
+      &:first-child {
+        .elementor-element-populated {
+          padding-right: $line-height * 2;
+        }
+      }
+
+      //Ultima
+      &:last-child {
+        .elementor-element-populated {
+          padding-left: $line-height * 2;
+        }
+      }
+    }
+
+
+    /*
+     * Colonna Imbottita Su Mobile
+     */
+    @include breakpoint-max(md) {
+      .colonna--imbottita .elementor-column-wrap.elementor-element-populated {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+/*
+ * Imposto una max-width sui contenitori che NON sono .elementor-column-gap-no
+ * in modo che comunque non superino la larghezza massima
+ */
+.elementor-section-full_width {
+  .elementor-container {
+    max-width: 1920px;
+    margin: 0 auto;
+
+
+    @include breakpoint-max(md) {
+      &.elementor-column-gap-default,
+      &.elementor-column-gap-extended,
+      &.elementor-column-gap-narrow,
+      &.elementor-column-gap-wide,
+      &.elementor-column-gap-wider {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .elementor-column-wrap.elementor-element-populated {
+          padding-top: 0;
+          padding-bottom: 0;
+
+          .elementor-column-gap-default,
+          .elementor-column-gap-extended,
+          .elementor-column-gap-narrow,
+          .elementor-column-gap-wide,
+          .elementor-column-gap-wider {
+            .elementor-column-wrap.elementor-element-populated {
+              padding-top: $line-height * 1.5;
+              padding-bottom: $line-height * 1.5;
+            }
+          }
+        }
+      }
+
+      .colonna--imbottita,
+      .colonna--imbottita:last-child {
+        .elementor-column-wrap.elementor-element-populated {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
