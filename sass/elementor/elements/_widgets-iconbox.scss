@@ -1,0 +1,94 @@
+/*
+ * Titolo Iconbox
+ */
+.elementor-widget-icon-box .elementor-icon-box-content {
+
+  h3.elementor-icon-box-title {
+    @include font(h3, $mt: 0);
+  }
+
+  h4.elementor-icon-box-title {
+    @include font(h4, $mt: $line-height);
+    text-transform: uppercase;
+  }
+}
+
+/*
+ * Descrizione IconBox
+ */
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-description {
+  @include font(p, $mb: 0);
+}
+
+/********************************************************************************/
+/** BOX CON SFONDO
+/********************************************************************************/
+
+/*
+ * Padding
+ */
+.elementor-widget-icon-box.icon-box--sfondo {
+  padding: $line-height;
+  box-shadow: $card-shadow;
+}
+
+/*
+ * Colori
+ */
+#page .elementor-widget-icon-box.icon-box--sfondo {
+  background: main-colors(main, bg-alt);
+
+  //Link - Icona
+  a {
+    color: main-colors(main, body-alt);
+  }
+
+  .elementor-icon-box-content {
+
+    //Colore titoli
+    h2, h3, h4, h5 {
+      color: main-colors(main, body-alt);
+    }
+
+    //Resetto le impostazione di LH del P
+    .elementor-icon-box-description {
+      color: main-colors(main, body-alt);
+
+      a {
+        color: main-colors(main, accent-alt);
+      }
+    }
+  }
+}
+
+
+/*
+ * Loop Colori
+ */
+@each $palette, $section in $colors {
+  #page .#{$palette} .elementor-widget-icon-box.icon-box--sfondo {
+    background: palette($palette, bg-alt);
+
+    //Link - Icona
+    a {
+      color: palette($palette, body-alt);
+    }
+
+    .elementor-icon-box-content {
+
+      //Colore titoli
+      h2, h3, h4, h5 {
+        color: palette($palette, body-alt);
+      }
+
+      //Resetto le impostazione di LH del P
+      .elementor-icon-box-description {
+        color: palette($palette, body-alt);
+
+        a {
+          color: palette($palette, accent-alt);
+        }
+      }
+    }
+  }
+}

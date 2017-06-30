@@ -30,6 +30,19 @@
 }
 
 
+/*
+ * Larghezza Pagine FW
+ */
+.page-template-template_fullwidth #page .inner,
+//queste due classi selecionano gli inner dei portfoli SENZA Sidebar - la prima è quella effettiva ma ho messo anche quella senza spazio perché lo spazio potrebbe essere un typo
+.single-portfolio #page div[class="inner "],
+.single-portfolio #page div[class="inner"] {
+  width: 100%;
+
+  .entry.content {
+    margin-bottom: 0;
+  }
+}
 
 
 //****************************************************************************//
@@ -45,7 +58,6 @@
 .has-gradient #page:before {
   content: none;
 }
-
 
 
 //****************************************************************************//

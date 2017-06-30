@@ -291,7 +291,7 @@ a,
 #page h4 > a,
 #page h5 > a {
   text-decoration: none;
-  color: layout-colors(main, heading);
+  color: main-colors(main, heading);
 
   &:link {
     text-decoration:none;
@@ -304,7 +304,7 @@ a,
 
   &:visited {
     text-decoration: none;
-    color: layout-colors(main, heading);
+    color: main-colors(main, heading);
   }
 }
 

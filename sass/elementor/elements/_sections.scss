@@ -18,6 +18,12 @@
   .#{$palette},
   .elementor-section.#{$palette} {
     background-color: palette($palette, bg);
+
+  /*    border-color: palette($palette, border);
+
+  * {
+      border-color: palette($palette, border);
+    }*/
   }
 }
 

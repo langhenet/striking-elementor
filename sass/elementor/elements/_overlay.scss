@@ -1,0 +1,83 @@
+.overlay--dark.elementor-section,
+.overlay--dark.elementor-column .elementor-column-wrap {
+  position: relative;
+
+  &::before {
+    @include color-overlay(fheader, 0.3);
+  }
+}
+
+///
+//COLOR OVERLAY
+///
+.overlay--color.elementor-section,
+.overlay--color.elementor-column .elementor-column-wrap {
+  position: relative;
+  background-blend-mode: luminosity;
+
+  &::before {
+    @include color-overlay($palette: main, $grade: 0.90);
+  }
+}
+
+@each $palette, $sections in $colors {
+  .#{$palette}.overlay--color.elementor-section,
+  .#{$palette}.overlay--color.elementor-column .elementor-column-wrap {
+
+    &::before {
+      @include color-overlay($palette: $palette, $grade: 0.8);
+    }
+  }
+}
+
+
+///
+//OVERLAY SPECIAL
+///
+.overlay--special.elementor-section,
+.overlay--special.elementor-column .elementor-column-wrap {
+  position: relative;
+
+  &::before {
+    @include color-overlay(main, $grade: 0.5);
+    background: linear-gradient(100deg, rgba(main-colors(main, bg), 1) 0%, rgba(main-colors(main, bg), 1) 55%, rgba(main-colors(main, bg), 0.50) 60%, rgba(main-colors(main, bg), 0.0) 65%, rgba(main-colors(main, bg),0) 100%);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+}
+
+@each $palette, $sections in $colors {
+  .#{$palette}.overlay--special.elementor-section,
+  .#{$palette}.overlay--special.elementor-column .elementor-column-wrap  {
+
+    &::before {
+      @include color-overlay(main, $grade: 0.5);
+
+      background: linear-gradient(100deg, rgba(palette($palette, bg), 1) 0%, rgba(palette($palette, bg), 1) 55%, rgba(palette($palette, bg), 0.50) 60%, rgba(palette($palette, bg), 0.0) 65%, rgba(palette($palette, bg),0) 100%);
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    }
+  }
+}
+
+
+///
+//COLOR FILTER
+///
+.color--filter.elementor-section,
+.color--filter.elementor-column .elementor-column-wrap {
+  position: relative;
+  background-blend-mode: luminosity;
+
+  &::before {
+    @include color-overlay($palette: main, $grade: 0.00);
+  }
+}
+
+@each $palette, $sections in $colors {
+
+  .#{$palette}.color--filter.elementor-section,
+  .#{$palette}.color--filter.elementor-column .elementor-column-wrap {
+    &::before {
+      @include color-overlay($palette: $palette, $grade: 0.0);
+    }
+  }
+}

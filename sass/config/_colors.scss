@@ -83,7 +83,7 @@ $layout-colors: (
     overlay:    $nero,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
-    button-bg:  lighten($nero, 10%),
+    button-bg:  $rosso-vero,
 
     button-subtle: $bianco,
     button-bg-subtle: mix($nero, white, 50%)    //bg bottone
@@ -126,9 +126,9 @@ $colors: (
 
     accent:     $bianco,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
-    bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box
-    accent-alt: $bianco,      //accento alt - il di un link nel form
+    body-alt:   $nero,      //body alternativo - testo in un form o in un box
+    bg-alt:     lighten($rosso-vero, 40%),      //sfondo alt - il bg di un form o di un box
+    accent-alt: $rosso-vero,      //accento alt - il di un link nel form
 
     form-body: $bianco,
     form-bg: $nero,
@@ -138,7 +138,7 @@ $colors: (
     overlay:    $nero,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
-    button-bg:  $nero,
+    button-bg:  lighten($nero, 30%),
 
     button-subtle: $bianco,
     button-bg-subtle: mix($nero, white, 50%)    //bg bottone
@@ -182,3 +182,4 @@ $colors: (
 // Ombra
 ///
 $button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
+$card-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

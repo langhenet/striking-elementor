@@ -1,0 +1,93 @@
+/*
+ * Titolo ImageBox
+ */
+.elementor-widget-image-box {
+
+  .elementor-image-box-content {
+
+    h3.elementor-image-box-title {
+      margin: 0;
+      @include font(h3, $mt: 0, $mb: 0);
+    }
+
+    h4.elementor-image-box-title {
+      margin: 0;
+      @include font(h4, $wt: bold);
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+/*
+ * Descrizione ImageBox
+ */
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-description {
+  @include font(p, $mb: 0);
+}
+
+
+
+/******************************************************************************/
+/** IMAGE BOX CON SFONDO
+/******************************************************************************/
+/*
+ * Padding
+ */
+.image-box--sfondo {
+  box-shadow: $card-shadow;
+
+  .elementor-image-box-content {
+    padding: 0 $line-height $line-height;
+  }
+}
+
+
+/*
+ * Colori
+ */
+#page .image-box--sfondo {
+  background: main-colors(main, bg-alt);
+
+  .elementor-image-box-content {
+
+    .elementor-image-box-title,
+    .elementor-image-box-title a {
+      color: main-colors(main, body-alt);
+    }
+
+    .elementor-image-box-description {
+      color: main-colors(main, body-alt);
+
+      a {
+        color: main-colors(main, accent-alt);
+      }
+    }
+  }
+}
+
+
+/*
+ * Loop Colori
+ */
+@each $palette, $section in $colors {
+  #page .#{$palette}.image-box--sfondo {
+    background: palette($palette, bg-alt);
+
+    .elementor-image-box-content {
+
+      .elementor-image-box-title,
+      .elementor-image-box-title a {
+        color: palette($palette, body-alt);
+      }
+
+      .elementor-image-box-description {
+        color: palette($palette, body-alt);
+
+        a {
+          color: palette($palette, accent-alt);
+        }
+      }
+    }
+  }
+}

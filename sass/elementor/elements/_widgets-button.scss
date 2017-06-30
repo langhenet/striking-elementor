@@ -1,0 +1,83 @@
+/********************************************************************************/
+/** Dimensione bottone
+/********************************************************************************/
+.elementor-button {
+  @extend %button;
+
+  &.elementor-size-sm {
+    border-radius: 0;
+    @include button(h5, 2, half);
+  }
+
+  &.elementor-size-md {
+    border-radius: 0;
+    text-transform: uppercase;
+    @include button(p, 3);
+  }
+
+  &.elementor-size-lg {
+    border-radius: 0;
+    @include button(h3, 4, quarter);
+  }
+
+  &.elementor-size-xl {
+    border-radius: 0;
+    @include button(h2, 5, half);
+  }
+}
+
+/********************************************************************************/
+/** Colori Bottoni
+/********************************************************************************/
+
+/*
+ * Bottone Default
+ */
+#page .elementor-widget-button a.elementor-button {
+  @include button-color();
+
+  &:hover {
+    @include button-color(hover);
+  }
+}
+
+//LOOP
+@each $palette, $section in $colors {
+  #page .#{$palette} .elementor-widget-button a.elementor-button {
+    @include button-color(none, $palette);
+
+    &:hover {
+      @include button-color(hover, $palette);
+    }
+  }
+}
+
+
+/*
+ * Bottone Info
+ */
+#page .elementor-button-info.elementor-widget-button a.elementor-button {
+  border-color: main-colors(main, accent);
+  background-color: main-colors(main, bg);
+  color: main-colors(main, accent);
+
+  &:hover {
+    background: main-colors(main, accent);
+    color: main-colors(main, bg)
+  }
+}
+
+//LOOP
+@each $palette, $section in $colors {
+
+  #page .#{$palette} .elementor-button-info.elementor-widget-button a.elementor-button {
+    border-color: palette($palette, body);
+    background-color: palette($palette, bg);
+    color: palette($palette, body);
+
+    &:hover {
+      background: palette($palette, body);
+      color: palette($palette, bg)
+    }
+  }
+}

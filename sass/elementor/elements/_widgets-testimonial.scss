@@ -1,0 +1,37 @@
+.elementor-widget-testimonial {
+  .elementor-testimonial-content {
+    @include font(blockquote);
+    color: main-colors(main, body-sec);
+  }
+
+  .elementor-testimonial-name {
+    @include font(h4, $mt:0, $mb: 0);
+    color: main-colors(main, accent);
+  }
+
+  .elementor-testimonial-job {
+    @include font(p, $mb: 0);
+    color: main-colors(main, body-sec);
+  }
+}
+
+
+/*
+ * Loop Colori
+ */
+@each $palette, $section in $colors {
+  .#{$palette} .elementor-widget-testimonial {
+
+    .elementor-testimonial-content {
+      color: palette($palette, body-sec);
+    }
+
+    .elementor-testimonial-name {
+      color: palette($palette, accent);
+    }
+
+    .elementor-testimonial-job {
+      color: palette($palette, body-sec);
+    }
+  }
+}
