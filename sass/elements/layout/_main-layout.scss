@@ -70,13 +70,32 @@
   padding-right: 0;
 }
 
-#main,
-#sidebar {
+#main {
   box-sizing: border-box;
+
+  @include breakpoint-max(xl) {
+    padding-right: $line-height * 2;
+    padding-left: $line-height * 2;
+  }
+
   @include breakpoint-max(lg) {
     padding-right: $line-height * 2;
     padding-left: $line-height * 2;
   }
+  @include breakpoint-max(sm) {
+    padding-right: $line-height;
+    padding-left: $line-height;
+  }
+  @include breakpoint-max(xs) {
+    padding-right: $line-height / 2;
+    padding-left: $line-height / 2;
+  }
+}
+
+#sidebar {
+  padding-left: $line-height;
+  padding-right: $line-height;
+
   @include breakpoint-max(xs) {
     padding-right: $line-height / 2;
     padding-left: $line-height / 2;

@@ -38,14 +38,21 @@
   z-index: 1;
   padding: 0 0;
   //Padding Laterali
-  @include breakpoint-max(md) {
-    padding-left: $line-height * 1;
-    padding-right: $line-height * 1;
+  @include breakpoint-max(xl) {
+    padding-right: $line-height * 2;
+    padding-left: $line-height * 2;
   }
-
+  @include breakpoint-max(lg) {
+    padding-right: $line-height * 2;
+    padding-left: $line-height * 2;
+  }
   @include breakpoint-max(sm) {
-    padding-left: $line-height / 2;
+    padding-right: $line-height;
+    padding-left: $line-height;
+  }
+  @include breakpoint-max(xs) {
     padding-right: $line-height / 2;
+    padding-left: $line-height / 2;
   }
 }
 
@@ -69,6 +76,10 @@
   @include font(h1, $mt: 0);
   padding: 0;
   color: main-colors(fheader, body);
+
+  @include breakpoint-max(lg) {
+    @include m-size(h1);
+  }
 }
 
 
@@ -80,4 +91,9 @@
 .feature-introduce {
   @include font(h3, $mt: 0, $fm: primary);
   color: main-colors(fheader, body);
+  padding: 0;
+  
+  @include breakpoint-max(lg) {
+    @include m-size(h3);
+  }
 }
