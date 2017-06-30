@@ -100,9 +100,13 @@
   }
 
   @at-root .right_sidebar #{&} {
-    @include breakpoint-max(xs) {
+    @include breakpoint-max(md) {
       padding-left: $line-height;
       padding-right: $line-height;
+    }
+    @include breakpoint-max(sm) {
+      padding-left: $line-height / 2;
+      padding-right: $line-height / 2;
     }
   }
 }

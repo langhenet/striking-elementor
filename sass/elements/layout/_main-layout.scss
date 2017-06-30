@@ -50,8 +50,6 @@
 //****************************************************************************//
 #page {
   background-color: main-colors(main, bg);
-
-
 }
 
 
@@ -68,6 +66,18 @@
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
+
+  @media only screen and (max-width: 767px) and (min-width: 568px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 567px) and (min-width: 480px) {
+    width: 100%;
+  }
+
+  @include breakpoint-max(xs) {
+    width: 100%;
+  }
 }
 
 #main {
