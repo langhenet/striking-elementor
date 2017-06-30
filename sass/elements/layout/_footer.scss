@@ -19,15 +19,29 @@
 //            FOOTER - COLORI E LAYOUT
 //****************************************************************************//
 
+/*
+ * BG Footer
+ */
 .no-gradient #footer,
 .has-gradient #footer {
-  background-color: main-colors(footer, bg);
+  background-color: lighten( main-colors(footer, bg), 5% );
+  background-image: none;
 }
 
 #footer .inner {
-  padding: ($line-height * 3) 0;
+  padding: ($line-height * 2) 0;
 }
 
+/*
+ * BG footer bottom
+ */
+#footer_bottom {
+  background-color: main-colors(footer, bg);
+
+  &> .inner {
+    padding: $line-height 0;
+  }
+}
 
 //****************************************************************************//
 //                                  WIDGET
@@ -113,17 +127,9 @@
 //                                  FOOTER BOTTOM
 //****************************************************************************//
 
-#footer_bottom {
-  background: darken(main-colors(footer, bg), 0.0%);
-
-  &> .inner {
-    padding: $line-height 0;
-  }
-}
-
 #copyright,
 #footer_right_area {
-  @include font(small);
+  @include font(small, $mt: 0, $mb: 0);
 
   color: main-colors(footer, body);
 }
@@ -136,24 +142,39 @@
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
+    padding-left: $line-height;
+    padding-right: $line-height;
+    margin-top: $line-height * 2 !important;
 
     .one_fourth {
-      width: 47.5%;
-      margin-right: 5%;
+      width: 47.5% !important;
+      margin-right: 5% !important;
       &:nth-child(even) {
-        margin-right: 0;
+        margin-right: 0 !important;
       }
     }
   }
 
   @include breakpoint-max(sm) {
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
+    
+    .one_fourth {
+      width: 100% !important;
+      margin-right: 0 !important;
+      margin-top: $line-height !important;
+    }
+  }
+}
+
+#footer_bottom > .inner {
+  @include breakpoint-max(md) {
     padding-left: $line-height;
     padding-right: $line-height;
+  }
 
-    .one_fourth {
-      width: 100%;
-      margin-right: 0;
-      margin-top: $line-height * 2;
-    }
+  @include breakpoint-max(sm) {
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
   }
 }

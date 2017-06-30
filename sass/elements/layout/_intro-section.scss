@@ -41,18 +41,22 @@
   @include breakpoint-max(xl) {
     padding-right: $line-height * 2;
     padding-left: $line-height * 2;
+    width: 100%;
   }
   @include breakpoint-max(lg) {
-    padding-right: $line-height * 2;
-    padding-left: $line-height * 2;
+    padding-right: $line-height;
+    padding-left: $line-height;
+    width: 100%;
   }
   @include breakpoint-max(sm) {
     padding-right: $line-height;
     padding-left: $line-height;
+    width: 100%;
   }
   @include breakpoint-max(xs) {
-    padding-right: $line-height / 2;
-    padding-left: $line-height / 2;
+    padding-right: $line-height;
+    padding-left: $line-height;
+    width: 100%;
   }
 }
 
@@ -92,7 +96,7 @@
   @include font(h3, $mt: 0, $fm: primary);
   color: main-colors(fheader, body);
   padding: 0;
-  
+
   @include breakpoint-max(lg) {
     @include m-size(h3);
   }

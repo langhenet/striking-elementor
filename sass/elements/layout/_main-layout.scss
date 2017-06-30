@@ -79,8 +79,8 @@
   }
 
   @include breakpoint-max(lg) {
-    padding-right: $line-height * 2;
-    padding-left: $line-height * 2;
+    padding-right: $line-height;
+    padding-left: $line-height;
   }
   @include breakpoint-max(sm) {
     padding-right: $line-height;
@@ -95,6 +95,7 @@
 #sidebar {
   padding-left: $line-height;
   padding-right: $line-height;
+  box-sizing: border-box;
 
   @include breakpoint-max(xs) {
     padding-right: $line-height / 2;

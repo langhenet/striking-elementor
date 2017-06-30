@@ -92,6 +92,13 @@
     }
   }
 
+  @include breakpoint-max(sm) {
+    section.widget {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
   @at-root .right_sidebar #{&} {
     @include breakpoint-max(xs) {
       padding-left: $line-height;
