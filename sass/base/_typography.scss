@@ -5,8 +5,8 @@
 //*                                                                     *//
 //***********************************************************************//
 
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Muli:200,300,600);
 
 //***********************************************************************//
 //              PARTE PRINCIPALE - BODY - P e UL / OL
@@ -61,17 +61,21 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   @include font(h1);
+  letter-spacing: -5px;
 
   @include breakpoint-max() {
     @include m-size(h1);
+    letter-spacing: 0;
   }
 }
 
 h2 {
   @include font(h2);
+  letter-spacing: -1px;
 
   @include breakpoint-max() {
     @include m-size(h2);
+    letter-spacing: 0;
   }
 }
 

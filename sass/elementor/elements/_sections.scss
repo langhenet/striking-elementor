@@ -144,15 +144,15 @@
 
 
 
-/**********************************************************************************************************************/
+/**********************************************************************************************************/
 /** LAYOUT - PADDING VERTICALI
-/**********************************************************************************************************************/
+/**********************************************************************************************************/
 ////
 // Padding Verticale - stretta
 // Il padding va sul CONTAINER
 ////
 .elementor-column-gap-narrow {
-  padding: $line-height 0;
+  padding: $height 0;
 
   // NESTED NARROW & DEFAULT
   .elementor-column-gap-narrow,
@@ -174,19 +174,19 @@
 // Il padding va sul CONTAINER
 ////
 .elementor-column-gap-default {
-  padding: $height 0;
+  padding: $height * 2 0;
 
   // NESTED NARROW & DEFAULT
   .elementor-column-gap-narrow,
   .elementor-column-gap-default {
-    padding: $line-height 0;
+    padding: $line-height * 1.5 0;
   }
 
   //NESTED EXTENDED, WIDE, WIDER
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider  {
-    padding: $line-height * 1.5 0;
+    padding: $line-height * 2 0;
   }
 }
 
@@ -196,10 +196,10 @@
 // Il padding va sul CONTAINER
 ////
 .elementor-column-gap-extended {
-  padding: $height * 1.5 0;
+  padding: $height * 3 0;
 
   // NESTED NARROW & DEFAULT
-  .elementor-column-gap-narrow
+  .elementor-column-gap-narrow,
   .elementor-column-gap-default {
     padding: $line-height 0;
   }
@@ -221,7 +221,7 @@
   padding: $height--large 0;
 
   // NESTED NARROW & DEFAULT
-  .elementor-column-gap-narrow
+  .elementor-column-gap-narrow,
   .elementor-column-gap-default {
     padding: $line-height 0;
   }

@@ -18,16 +18,13 @@
   padding: $line-height * 4 0;
 }
 
-
-
-
-///
-// Overlay della sezione introduttiva
-///
-#feature::before {
-  @include color-overlay(fheader, 0.45);
+@include breakpoint-max(lg) {
+  #feature {
+    &::before {
+      //@include color-overlay(fheader, 0.7);
+    }
+  }
 }
-
 
 
 ///
@@ -54,8 +51,8 @@
     width: 100%;
   }
   @include breakpoint-max(xs) {
-    padding-right: $line-height;
-    padding-left: $line-height;
+    padding-right: $line-height / 2;
+    padding-left: $line-height / 2;
     width: 100%;
   }
 }
@@ -78,11 +75,19 @@
 *******************************************************************************/
 #feature h1 {
   @include font(h1, $mt: 0);
-  padding: 0;
+  padding: (size(h1, lh) / 2) (size(h1, lh) / 2) (size(h1, lh) / 4);
   color: main-colors(fheader, body);
+  max-width: 650px;
+  background: rgba( main-colors(fheader, bg), 0.7 );
+  text-transform: uppercase;
+
+  @include breakpoint-max(xl) {
+    max-width: 650px;
+  }
 
   @include breakpoint-max(lg) {
-    @include m-size(h1);
+    @include m-size(h1, $mb:0);
+    padding: ( m-size(h1, lh) / 2) ( m-size(h1, lh) / 2 ) ( m-size(h1, lh) / 4 );
   }
 }
 
@@ -93,11 +98,22 @@
 /*                TESTO
 *******************************************************************************/
 .feature-introduce {
-  @include font(h3, $mt: 0, $fm: primary);
+  @include font(h3, $mt: 0, $fm: primary, $wt: normal);
   color: main-colors(fheader, body);
-  padding: 0;
+  padding: 0 (size(h3, lh) * 2) (size(h3, lh) * 4);
+  max-width: 650px;
+  background: rgba( main-colors(fheader, bg), 0.7 );
+
+  @include breakpoint-max(xl) {
+    max-width: 650px;
+  }
 
   @include breakpoint-max(lg) {
-    @include m-size(h3);
+    @include m-size(h3, $mt: 0);
+    padding: 0 m-size(h3, lh) (m-size(h3, lh) * 3);
+  }
+
+  @include breakpoint-max(sm) {
+    padding: 0 m-size(h3, lh) (m-size(h3, lh) * 1);
   }
 }

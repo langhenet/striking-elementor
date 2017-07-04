@@ -9,8 +9,8 @@
 // BASE DEL BODY
 ///
   $base: 16;
-  $font-size: 1.25em; //PROJ
-  $line-height: 1.5em; //PROJ
+  $font-size: 1.125em; //PROJ
+  $line-height: 1.77777778em; //PROJ
 
 
 ///
@@ -23,10 +23,10 @@
 ///
 // Families
 ///
-  $ff-primary: 'PT Serif', serif; //PROJ
-  $ff-secondary: 'Open Sans', sans-serif; //PROJ
+  $ff-primary: 'Lora', serif; //PROJ
+  $ff-secondary: 'Muli', sans-serif; //PROJ
   $ff-special: $ff-primary; //PROJ
-  $ff-button: $ff-secondary;
+  $ff-button: $ff-primary;
 
 
 ///
@@ -35,7 +35,7 @@
 $families: (
   primary: (
     fm: $ff-primary,
-    thin: 200,
+    thin: 400,
     normal: 400,
     bold: 600,
     bolder: 600,
@@ -43,18 +43,18 @@ $families: (
 
   secondary: (
     fm: $ff-secondary,
-    thin: 300,
-    normal: 400,
-    bold: 700,
-    bolder: 900,
+    thin: 200,
+    normal: 300,
+    bold: 600,
+    bolder: 600,
   ),
 
   special: (
     fm: $ff-special,
-    thin: 300,
+    thin: 400,
     normal: 400,
-    bold: 400,
-    bolder: 400,
+    bold: 600,
+    bolder: 600,
   ),
 );
 
@@ -66,7 +66,7 @@ $decorations: (
 
   h1: (
     fm: secondary,
-    wt: normal,
+    wt: thin,
   ),
 
   h2: (
@@ -76,17 +76,17 @@ $decorations: (
 
   h3: (
     fm: secondary,
-    wt: normal,
+    wt: bold,
   ),
 
   h4: (
     fm: secondary,
-    wt: normal,
+    wt: bold,
   ),
 
   h5: (
     fm: secondary,
-    wt: normal,
+    wt: bold,
   ),
 
   small: (
@@ -111,37 +111,37 @@ $decorations: (
     ),
 
     h1: (
-      fs: 3.375em,
-      lh: 1.33333333333em,
-      mt: 0.888888888888889em,
-      mb: 0.44444444444444em,
+      fs: 5.83333333em,
+      lh: 1.21904762em,
+      mt: 0.3047619em,
+      margin-bottom: 0.6095238em,
     ),
 
     h2: (
-      fs: 2.25em,
-      lh: 1.33333333333em,
-      mt: 1.33333333333em,
-      mb: 0.6666666666667em,
+      fs: 3.22222222em,
+      lh: 1.10344828em,
+      mt: 0.55172414em,
+      mb: 0.55172414em,
     ),
 
     h3: (
-      fs: 1.5em,
-      lh: 2em,
-      mt: 1.5em,
+      fs: 1.77777778em,
+      lh: 1em,
+      mt: 1em,
       mb: 1em,
     ),
 
     h4: (
       fs: 1em,
-      lh: 1.5em,
-      mt: 1.5em,
-      mb: 1.5em,
+      lh: 1.77777778em,
+      mt: 1.77777778em,
+      mb: 0em,
     ),
 
     h5: (
-      fs: 0.75em,
-      lh: 2em,
-      mt: 2em,
+      fs: 1em,
+      lh: 1.77777778em,
+      mt: 1.77777778em,
       mb: 0em,
     ),
 
@@ -162,24 +162,22 @@ $decorations: (
 
 $mobile-sizes: (
   h1: (
-    fs: 1.953125em,
-    lh: 1.538461538461538em,
-    mt: 1.536em,
-    mb: 0.768em,
+    fs: 2.38888889em,
+    lh: 1.48837209em,
+    mt: 0.74418605em,
+    mb: 0.74418605em,
   ),
-
   h2: (
-    fs: 1.5625em,
-    lh: 1.935483870967742em,
-    mt: 0.96em,
-    mb: 0.96em,
+    fs: 1.77777778em,
+    lh: 1em,
+    mt: 1em,
+    mb: 1em,
   ),
-
   h3: (
-    fs: 1.25em,
-    lh: 1.2em,
-    mt: 1.8em,
-    mb: 0.6em,
+    fs: 1.33333333em,
+    lh: 1.33333333em,
+    mt: 1.33333333em,
+    mb: 0em,
   ),
 );
 
