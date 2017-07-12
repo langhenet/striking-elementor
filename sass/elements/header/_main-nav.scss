@@ -16,7 +16,8 @@
    max-width: $website-width;
    margin: 0 auto;
    padding: 0;
-   flex-basis: 100%;
+   flex-basis: 76%;
+   padding: $line-height 0;
 
    .menu {
      display: flex;
@@ -37,10 +38,17 @@
  qui "trasferisco" i padding dagli A ai LI.
  */
  #navigation .menu > li {
-  padding: ($line-height / 2) 15px ($line-height / 4) 13px;
+  padding: ($line-height / 2) 3px bqpad(2) 3px;
   font-family: $ff-secondary;
+  font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: ($line-height / 4)
+  margin-bottom: ($line-height / 4);
+  border-top: 3px solid main-colors(header, bg);
+  border-bottom: 3px solid transparent;
+
+  &:last-child {
+    //padding-right: 0;
+  }
 }
 
 
@@ -48,7 +56,8 @@
  * I LI hover & Current
  */
  #navigation .menu > li:hover {
-  transition: all 250ms linear;
+//  transition: all 250ms linear;
+  border-bottom: 3px solid main-colors(header, border);
  }
 
 //current
@@ -72,6 +81,7 @@
  #navigation .menu > li.current_page_ancestor,
  #navigation .menu > li.current-page-item,
  #navigation .menu > li.current-page-ancestor {
+    border-bottom: 3px solid main-colors(header, border);
  }
 
 /*

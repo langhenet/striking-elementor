@@ -26,7 +26,7 @@
   $ff-primary: 'Lora', serif; //PROJ
   $ff-secondary: 'Muli', sans-serif; //PROJ
   $ff-special: $ff-primary; //PROJ
-  $ff-button: $ff-primary;
+  $ff-button: $ff-secondary;
 
 
 ///
@@ -139,17 +139,17 @@ $decorations: (
     ),
 
     h5: (
-      fs: 1em,
-      lh: 1.77777778em,
-      mt: 1.77777778em,
-      mb: 0em,
+      fs: 0.75em,
+      lh: 2.37037037037037em,
+      mt: 2.37037037037037em,
+      mb: 0,
     ),
 
     small: (
       fs: 0.75em,
-      lh: 2em,
-      mt: 2em,
-      mb: 0,
+      lh: 2.37037037037037em,
+      mt: 0,
+      mb: 2.37037037037037em,
     ),
 
     blockquote: (
@@ -201,8 +201,8 @@ $forms: (
   ),
 
   label: (
-    fm: family(secondary, fm),
-    wt: family(secondary, normal),
+    fm: family(primary, fm),
+    wt: family(primary, normal),
   ),
 
   desc: (

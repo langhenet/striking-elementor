@@ -277,7 +277,7 @@
   padding-top: 0;
   font-family: form(label, fm);
   font-weight: form(label, wt);
-  text-transform: uppercase; //TODO //TOCR
+  text-transform: none; //TODO //TOCR
   letter-spacing: 0px;
 }
 
@@ -312,6 +312,9 @@
   }
   @if $media == lg {
     @media (max-width: em-bp( width(lg) - 1) ) { @content; }
+  }
+  @if $media == str_lg {
+    @media (max-width: em-bp( width(str_lg) - 1) ) { @content; }
   }
   @if $media == xl {
     @media (max-width: em-bp( width(xl) - 1) ) { @content; }

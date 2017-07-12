@@ -15,7 +15,7 @@
 // HEADER inner
 ///
 #header .inner {
-  @include breakpoint-max(lg) {
+  @include breakpoint-max(str_lg) {
     padding: 0 $line-height;
   }
 
@@ -30,15 +30,47 @@
 ///
 .responsive #logo,
 .responsive #logo_text {
-  @include breakpoint-max(lg) {
+  @include breakpoint-max(str_lg) {
     margin: 0 auto;
+    flex-basis: 35%;
+    padding-right: $line-height;
+
+    img {
+      //position: relative;
+      margin-top: $line-height * -0.25;
+      max-width: 240px;
+    }
   }
 
   @include breakpoint-max(sm) {
     display: block;
-    width: 60%;
+  //  width: 60%;
     float: none;
     height: auto;
+    flex-basis: 60%;
+  }
+
+  @include breakpoint-max(xs) {
+    flex-basis: 100%;
+
+    img {
+      position: relative;
+      margin: -$line-height / 2 auto;
+    }
+  }
+}
+
+#navigation {
+  @include breakpoint-max(str_lg) {
+    flex-basis: 50%;
+  }
+
+  @include breakpoint-max(sm) {
+    flex-basis: 40%;
+  }
+
+  @include breakpoint-max(xs) {
+    flex-basis: 100%;
   }
 }
 
@@ -55,7 +87,7 @@
 #top_area {
 
 
-  @include breakpoint-max(lg) {//la paddo sotto i 979px
+  @include breakpoint-max(str_lg) {//la paddo sotto i 979px
   }
 
   @include breakpoint-max(md) {
@@ -76,7 +108,7 @@
 
   .widget {
     @include breakpoint-max(md) { //li faccio cadere sotto i 567px
-      margin-right: 0;
+      //margin-right: $line-height / 2;
       box-sizing: border-box;
       //clear: both;
       //margin-top: $line-height / 2;
@@ -87,7 +119,7 @@
 
       &.widget_text,
       &.widget_text_icl {
-        margin-right: 0;
+        margin-right: $line-height / 2;
         flex-shrink: 0;
       }
 
@@ -113,7 +145,7 @@
 // Selettore della Lingua
 ////
 #lang_sel_list {
-  @include breakpoint-max(lg) {
+  @include breakpoint-max(str_lg) {
     height: 2em;
     padding: 0;
   }
@@ -126,14 +158,14 @@
 // Fix navigazione che copre tutto
 ///
 .responsive #navigation {
-  @include breakpoint-max(md) {
+  @include breakpoint-max(str_lg) {
     display: inline-block;
     width: 100%;
     &::before {
       content: "\f0c9";
       font-family: 'FontAwesome';
       position: absolute;
-      top: 0.25em;
+      top: $line-height * 1.25;
       left: 0.7em;
     }
   }
@@ -143,9 +175,9 @@
 ///
 // Colori e tipografia della nav a menu
 ///
-@include breakpoint-max(lg) {
+@include breakpoint-max(str_lg) {
   .responsive .nav2select {
-    @include font(p);
+    @include font(p, $mb: 0);
     padding-top: bhpad(2);
     padding-bottom: bhpad(2);
     padding-left: 2em !important;
@@ -154,6 +186,26 @@
 
     option {
       padding-left: 2em;
+    }
+  }
+}
+
+/****
+ BOTTONE BOOK
+*****/
+#top_area #book {
+  @include breakpoint-max(sm) {
+    position: fixed;
+    bottom: $line-height;
+    right: $line-height / 2;
+    max-width: 100px;
+    border-radius: 100%;
+    line-height: 1.5;
+    padding: 1.30em 0;
+    box-shadow: $card-shadow-hi;
+
+    &:active {
+      top: auto;
     }
   }
 }

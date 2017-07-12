@@ -28,6 +28,7 @@ $grigio-chiaro: #a1a09f;
 $oro: #b7871b;
 $bianco: #f3f3ef;
 $verde: #329b45;
+$bianco-vero: #fff;
 
 
 /*
@@ -48,7 +49,7 @@ $layout-colors: (
     body: $nero,
     link: $nero,
     accent: $oro,
-    border: $grigio-chiaro,
+    border: $oro,
     bg: $bianco,
     button-bg: $verde,
     button: $bianco,
@@ -80,11 +81,11 @@ $layout-colors: (
     accent-alt: $bianco,      //accento alt - il di un link nel form
 
     form-body: $nero,
-    form-bg: $grigio-chiaro,
+    form-bg: mix($grigio-chiaro, $bianco, 35%),
     form-link: $oro,
     form-desc: $nero,
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    $bianco,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $verde,
@@ -134,10 +135,10 @@ $colors: (
     bg-alt:     mix($grigio-chiaro, $bianco, 25%),      //sfondo alt - il bg di un form o di un box
     accent-alt: $oro,      //accento alt - il di un link nel form
 
-    form-body: $bianco,
-    form-bg: $nero,
-    form-link: $bianco,
-    form-desc: $bianco,
+    form-body: $nero,
+    form-bg: rgba($bianco, 0.7),
+    form-link: $nero,
+    form-desc: $nero,
 
     overlay:    $nero,      //Colore sfondo overlay
 
@@ -151,7 +152,7 @@ $colors: (
   color--light: (
     body:       $nero,      //Corpo - testo
     body-sec:   $grigio-scuro,      //Secondario - blockquote o blog meta
-    heading:    $grigio-chiaro,      //Titoli 1 e 2
+    heading:    $grigio-scuro,      //Titoli 1 e 2
     link:       $oro,      //Link
     bg:         mix($oro, $bianco, 15%),      //Sfondo principale
     border:     $grigio-scuro,      //Bordi
@@ -167,7 +168,7 @@ $colors: (
     form-link: $oro,
     form-desc: $nero,
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    mix($oro, $bianco, 15%),      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $verde,
@@ -181,7 +182,7 @@ $colors: (
     body-sec:   $grigio-scuro,      //Secondario - blockquote o blog meta
     heading:    $grigio-scuro,      //Titoli 1 e 2
     link:       $oro,      //Link
-    bg:         mix($grigio-chiaro, $bianco, 40%),      //Sfondo principale
+    bg:         mix($grigio-chiaro, $bianco, 60%),      //Sfondo principale
     border:     $grigio-scuro,      //Bordi
 
     accent:     $oro,      //Accento - sfondo lista icone / grassetti / icone
@@ -190,12 +191,12 @@ $colors: (
     bg-alt:     rgba($oro, 0.75),      //sfondo alt - il bg di un form o di un box
     accent-alt: $bianco,      //accento alt - il di un link nel form
 
-    form-body: $nero,
-    form-bg: rgba($grigio-chiaro, 0.35),
-    form-link: $oro,
-    form-desc: $nero,
+    form-body: $bianco,
+    form-bg: rgba($grigio-scuro, 0.50),
+    form-link: $bianco,
+    form-desc: $bianco,
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    mix($grigio-chiaro, $bianco, 40%),      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $verde,
@@ -215,3 +216,4 @@ $colors: (
 ///
 $button-shadow: 0 0.07em 0.085em 0 rgba(0, 0, 0, 0.26);
 $card-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$card-shadow-hi: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);

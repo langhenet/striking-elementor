@@ -22,10 +22,10 @@
 ///
 .button.small {
   @extend %button;
-  @include button(small, 1, half);
+  @include button(small, 1, quarter);
 
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0;
 }
 
 .button.medium {
