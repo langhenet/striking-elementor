@@ -1,1 +1,62 @@
 
+.testimonial_content {
+  padding: $line-height;
+  margin-bottom: $line-height;
+}
+
+.testimonial_name {
+  margin: 0 0 0 ($line-height * 3);
+  font-size: 1em;
+}
+
+.testimonial_meta {
+  margin: 0 0 0 ( size(h5, lh) * 3 );
+  font-size: size(h5, fs);
+  font-family: family(secondary, fm)
+}
+
+/************************************************************************
+** COLORI
+************************************************************************/
+.testimonial_content {
+  background: main-colors(main, bg-alt);
+  color: main-colors(main, body-alt);
+  border: 0;
+
+  &::after {
+    border-color: main-colors(main, bg-alt) transparent transparent;
+  }
+}
+
+.testimonial_name {
+  color: main-colors(main, body);
+}
+
+.testimonial_meta {
+  color: main-colors(main, body-sec);
+}
+
+//LOOP
+@each $palette, $bg in $colors {
+
+  .#{$palette} {
+
+    .testimonial_content {
+      background: palette($palette, bg-alt);
+      color: palette($palette, body-alt);
+      border-color: palette($palette, border);
+
+      &::after {
+        border-color: palette($palette, bg-alt) transparent transparent;
+      }
+    }
+
+    .testimonial_name {
+      color: palette($palette, body);
+    }
+
+    .testimonial_meta {
+      color: palette($palette, body-sec);
+    }
+  }
+}
