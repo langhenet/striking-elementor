@@ -17,28 +17,6 @@
 //****************************************************************************//
 //*               IMMAGINI SU MOBILE
 //****************************************************************************//
-.ELEMENTOR IMAGE { //TODO - nel file giusto
-
-  @include breakpoint-max(lg) {
-    margin: 0 auto !important;
-  }
-
-  img {
-
-    @include breakpoint-max(lg) {
-      max-height: 600px;
-    }
-
-    @include breakpoint-max(md) {
-      max-height: 500px;
-    }
-
-    @include breakpoint-max(sm) {
-      max-height: 400px;
-    }
-  }
-}
-
 #page img {
   @include breakpoint-max(lg) {
     max-height: 600px;
