@@ -260,8 +260,8 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 ///
 // Bottone Gravity
 ///
-.gform_wrapper .gform_footer input.button,
-.gform_wrapper .gform_footer input[type=submit] {
+#page .gform_wrapper .gform_footer input.button,
+#page .gform_wrapper .gform_footer input[type=submit] {
   @extend %button;
   @include button(h3, 4);
 

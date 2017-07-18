@@ -64,6 +64,7 @@
 #navigation {
   @include breakpoint-max(str_lg) {
     flex-basis: 50%;
+    padding: $line-height 0;
   }
 
   @include breakpoint-max(sm) {

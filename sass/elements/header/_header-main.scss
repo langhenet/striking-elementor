@@ -26,6 +26,7 @@
 #header {
   background-color: main-colors(header, bg);
   transition: all 250ms linear;
+  box-shadow: $card-shadow-hi;
 }
 
 
