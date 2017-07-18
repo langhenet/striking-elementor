@@ -8,8 +8,20 @@
   }
 
   h4.elementor-icon-box-title {
-    @include font(h4, $mt: $line-height);
+    @include font(h4, $mt: 0);
     text-transform: uppercase;
+  }
+}
+
+/*
+ * Icona Iconbox
+ */
+.elementor-icon {
+  @include size(h2);
+
+  i {
+    //margin-top: size(h2, lh) / 2;
+    margin-bottom: size(h2, lh) / 2;
   }
 }
 

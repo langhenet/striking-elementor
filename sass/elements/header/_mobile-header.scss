@@ -17,6 +17,7 @@
 #header .inner {
   @include breakpoint-max(str_lg) {
     padding: 0 $line-height;
+    overflow: visible;
   }
 
   @include breakpoint-max(md) {

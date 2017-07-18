@@ -100,6 +100,8 @@ h5 {
 .body--special {
   @include font(h3, $fm: primary, $wt: normal);
 
+  line-height: 1.5em;
+
   @include breakpoint-max() {
     @include m-size(h3);
   }

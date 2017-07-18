@@ -53,12 +53,21 @@
   .portfolio_image {
     margin-bottom: 0;
   }
+
   .image_frame {
     background: transparent;
+
+    img {
+      border: 0;
+    }
 
     a {
       background: transparent;
     }
+  }
+
+  .image_styled  {
+    display: block;
   }
 
   .image_frame.effect-icon {
@@ -163,15 +172,14 @@
 
   //titolo
   .portfolio_title {
-    @include font(h4, $mt: 0, $mb: 0, $fm: secondary, $wt: bold);
+    @include font(h3, $mt: size(h3, lh) / 2, $mb: 0, $fm: secondary, $wt: normal);
     text-align: center;
-    font-weight: bold;
-
+  //  font-weight: bold;
   }
 
   //Descrizione
   .portfolio_desc {
-    @include font(small, $mb: 0, $mt: size(small, lh) / 2);
+    @include font(small, $mb: 0, $mt: ( size(small, lh) / 2 ), $fm: primary );
     text-align: center;
   }
 
@@ -219,7 +227,62 @@
 
   //titolo
   .portfolio_title {
-    @include font(h4, $mt: 0, $mb: 0);
+    @include font(h4, $mt: ($line-height / 2),$mb: 0);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .portfolio_more_button {
+    margin-top: 0;
+  }
+
+  //Descrizione
+  .portfolio_desc {
+    @include font(h5, $mt: 0, $fm: secondary);
+    //line-height: size(h5, lh) / 2;
+  }
+}
+
+
+
+//**************************************************************************************//
+//                      5 Colonne
+//**************************************************************************************//
+///
+//impostazioni di base
+///
+.portfolio_five_columns .portfolio_item {
+  flex-basis: 20%;
+  width: 20%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 0 !important;
+
+  @include breakpoint-max(lg) {
+    flex-basis: 33.33333%;
+    width: 33.33333%;
+  }
+
+  @include breakpoint-max(md) {
+    flex-basis: 50%;
+    width: 50% !important;
+  }
+  @include breakpoint-max(sm) {
+    flex-basis: auto;
+    width: 100% !important;
+  }
+}
+
+
+
+///
+// Titolo & Descrizione: dimensioni per 4 colonne
+///
+.portfolio_five_columns {
+
+  //titolo
+  .portfolio_title {
+    @include font(h4, $mt: ($line-height / 2),$mb: 0);
     text-align: center;
     font-weight: bold;
   }
@@ -233,6 +296,8 @@
     @include font(h5, $mt: 0, $fm: secondary);
   }
 }
+
+
 //**************************************************************************************//
 //                      TITOLI PORTFOLI
 //**************************************************************************************//
@@ -270,9 +335,6 @@
   //background: $grigio-chiarissimo;
 }
 
-.color--light .portfolio_details {
-  background-color: $bianco;
-}
 
 ///
 // Impostazioni LINK dentro i Titoli
@@ -328,7 +390,10 @@
     color: palette($palette, link);
   }
 
-  .#{$palette} .portfolio_desc,
+  .#{$palette} .portfolio_desc {
+    color: palette($palette, body);
+  }
+
   #page .#{$palette} .portfolio_more_button a {
     color: palette($palette, link);
   }
