@@ -3,7 +3,7 @@
   position: relative;
 
   &::before {
-    @include color-overlay(color--dark, 0.3);
+    @include color-overlay(color--dark, 0.35);
   }
 }
 
