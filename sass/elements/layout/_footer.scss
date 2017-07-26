@@ -9,6 +9,12 @@
  */
 #footer {
   font-size: 1em;
+
+  a {
+    &:hover {
+      color: darken(main-colors(footer, link), 10%);
+    }
+  }
 }
 
 .has-shadow #footer_shadow {
