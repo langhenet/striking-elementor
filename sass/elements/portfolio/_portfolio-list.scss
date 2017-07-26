@@ -59,6 +59,7 @@
 
     img {
       border: 0;
+      background: transparent;
     }
 
     a {
@@ -121,12 +122,13 @@
 ///
 //impostazioni di base
 ///
-.portfolio_three_columns .portfolio_item {
+.portfolio_container.portfolio_three_columns .portfolio_item {
   flex-basis: 33%;
   width: 33%;
   flex-shrink: 0;
   flex-grow: 0;
   margin-right: 0 !important;
+  padding: 0 $line-height * 2.5;
 }
 
 
@@ -147,9 +149,8 @@
 //impostazione su schermi medi
 ///
 @include breakpoint-max(md) {
-  .portfolio_three_columns .portfolio_item {
-    flex-basis: 50%;
-    width: 50% !important;
+  .portfolio_container.portfolio_three_columns .portfolio_item {
+    padding: 0 $line-height;
   }
 }
 
@@ -175,6 +176,10 @@
     @include font(h3, $mt: size(h3, lh) / 2, $mb: 0, $fm: secondary, $wt: normal);
     text-align: center;
   //  font-weight: bold;
+
+    @include breakpoint-max() {
+      @include m-size(h3, $mt: 0);
+    }
   }
 
   //Descrizione
