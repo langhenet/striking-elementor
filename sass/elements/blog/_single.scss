@@ -11,8 +11,8 @@
  * Titolo
  */
 .type-post #feature h1 {
-  @include font(h2);
-
+  @include font(h2, $mt: 0, $mb: 0);
+  padding: size(h2, lh) size(h2, lh) (size(h2, lh) / 2);
   margin-top: 0;
 
   @include breakpoint-max(sm) {
@@ -25,12 +25,14 @@
  * Meta
  */
 .type-post .feature-introduce {
-  @include font(h5);
+  //@include font(h3);
 
   font-style: italic;
   text-transform: uppercase;
 
-  //font-family: font(h5,fm);
+  a {
+    color: main-colors(fheader, body);
+  }
 }
 
 

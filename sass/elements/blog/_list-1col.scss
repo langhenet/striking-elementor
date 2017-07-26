@@ -23,10 +23,21 @@
   content: none;
 }
 
+/*
+ * Elemento Listato
+ */
+.category .entry {
+  background-color: main-colors(main, bg-alt);
+  box-shadow: $card-shadow-hi;
+}
 
 /*
  * Decorazione immagini listati
  */
+.entry .image_styled.entry_image {
+  margin-bottom: 0;
+}
+
 .image_frame {
   border-bottom-color: main-colors(main, accent)
 }
@@ -52,15 +63,22 @@
 //****************************************************************************//
 .entry_info .entry-title {
   @include font(h3);
+  padding: 0 size(h3, lh);
+  color: main-colors(main, body-alt);
 }
 
 #page .entry .entry_title a,
 #page .entry .entry_title a:visited {
-  color: main-colors(main, heading);
+  color: main-colors(main, body-alt);
+
+  &:hover {
+    color: main-colors(main, body-alt);
+  }
 }
 
 .entry .entry_meta {
   @include font(h5);
+  display: none;
 
   @at-root #page #{&} a,
            #page #{&} a:visited {
@@ -78,9 +96,26 @@
 //                         EXCERPT e READ MORE
 //****************************************************************************//
 .entry_content {
+  padding: 0 $line-height;
 
-  p {
+
+@at-root #page #{&} p {
     margin-bottom: 0;
+    color: main-colors(main, body-alt);
+
+    @include breakpoint-max(xs) {
+      max-height: $line-height * 4;
+      overflow: hidden;
+    }
+  }
+
+  @at-root #page #{&} .read_more_wrap {
+    top: 0;
+    margin-bottom: $line-height;
+
+    a {
+      color: main-colors(main, body-alt);
+    }
   }
 }
 

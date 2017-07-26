@@ -4,16 +4,18 @@
 ///
 // ARCHIVIO
 ///
- .archive.category #feature {
-   background-image: url();
-   background-position: top center;
- }
+.archive.category #feature {
+  background-image: url(http://risveglioinlanga.langhe.net/files/2017/06/pietra.jpg);
+  background-position: top center;
+}
+
+
 
 ///
 // SINGLE POST
 ///
  .single-post #feature {
-   background-image: url();
+   background-image: url(http://risveglioinlanga.langhe.net/files/2017/06/pietra.jpg);
    background-position: top center;
  }
 
@@ -26,4 +28,16 @@
 .single-post .category-critica #feature {
   background-image: url();
   background-position: bottom center;
+}
+
+
+///
+// BREADCRUMBS
+///
+.category #breadcrumbs {
+  padding-left: $line-height * 2;
+}
+
+.single-post #breadcrumbs {
+  padding-left: $line-height * 2;
 }
