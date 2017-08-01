@@ -8,6 +8,7 @@
     border-radius: 0;
     @include button(h5, 2, quarter);
     margin-top: size(h5, lh);
+    font-weight: family(secondary, bold);
 
     @include breakpoint-max() {
       margin-top: 0;
