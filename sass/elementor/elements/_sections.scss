@@ -122,7 +122,8 @@
 
 
 ////
-// Su TABLET / SMALL DESKTOP resetto i padding laterali e imargini laterali delle colonne WIDE e WIDER
+// Su TABLET / SMALL DESKTOP
+// resetto i padding laterali e imargini laterali delle colonne WIDE e WIDER
 ////
 @include breakpoint-max(xl) {
   .elementor-column-gap-wide,
@@ -164,7 +165,7 @@
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider  {
-    padding: $line-height * 1.5 0;
+    padding: $height--nested 0;
   }
 }
 
@@ -174,7 +175,7 @@
 // Il padding va sul CONTAINER
 ////
 .elementor-column-gap-default {
-  padding: $height 0;
+  padding: $height--default 0;
 
   // NESTED NARROW & DEFAULT
   .elementor-column-gap-narrow,
@@ -186,7 +187,7 @@
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider  {
-    padding: $line-height * 1.5 0;
+    padding: $height--nested 0;
   }
 }
 
@@ -196,7 +197,7 @@
 // Il padding va sul CONTAINER
 ////
 .elementor-column-gap-extended {
-  padding: $height * 1.5 0;
+  padding: $height--extended 0;
 
   // NESTED NARROW & DEFAULT
   .elementor-column-gap-narrow
@@ -208,7 +209,7 @@
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider {
-    padding: $line-height * 1.5 0;
+    padding: $height--nested 0;
   }
 }
 
@@ -218,7 +219,7 @@
 // Il padding va sul CONTAINER
 ////
 .elementor-column-gap-wide {
-  padding: $height--large 0;
+  padding: $height--wide 0;
 
   // NESTED NARROW & DEFAULT
   .elementor-column-gap-narrow
@@ -230,7 +231,7 @@
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider  {
-    padding: $line-height * 1.5 0;
+    padding: $height--nested 0;
   }
 }
 
@@ -240,7 +241,7 @@
 // Il padding va sul CONTAINER
 ////
 .elementor-column-gap-wider {
-  padding: $height--huge 0;
+  padding: $height--wider 0;
 
   // NESTED NARROW & DEFAULT
   .elementor-column-gap-narrow,
@@ -252,7 +253,7 @@
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider  {
-    padding: $line-height * 1.5 0;
+    padding: $height--nested 0;
   }
 }
 
@@ -287,6 +288,12 @@
   }
 }
 
+/***************************************************************************************************/
+/* COLONNE IMBOTTITE
+/* .colonna--imbottita
+/* Una colonna che può avere uno sfondo
+/***************************************************************************************************/
+
 ///
 // COLONNE IMBOTTITE
 // .colonna--imbottita
@@ -297,15 +304,22 @@
 .elementor-column-gap-extended,
 .elementor-column-gap-wide,
 .elementor-column-gap-wider {
+  &> .elementor-row > .colonna--imbottita {
 
-  &> .elementor-row > .colonna--imbottita > .elementor-column-wrap.elementor-element-populated {
-    padding-top: $height;
-    padding-bottom: $height;
-
-    //Aggiungo un margine SOPRA e SOTTO quando le colonne cadono
     @include breakpoint-max(md) {
       margin-top: $line-height;
       margin-bottom: $line-height;
+    }
+
+    &> .elementor-column-wrap.elementor-element-populated {
+      padding-top: $height;
+      padding-bottom: $height;
+
+      //Aggiungo un margine SOPRA e SOTTO quando le colonne cadono
+      @include breakpoint-max(md) {
+        padding-top: $height;
+        padding-bottom: $height;
+      }
     }
   }
 }
@@ -318,14 +332,13 @@
  * in modo che la colonna faccia un overflow del padding del container
  */
 @include breakpoint-max(md) {
-  .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child > .elementor-column-wrap.elementor-element-populated {
+  .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child {
     margin-bottom: -$line-height * 1.5;
   }
 
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider {
-
     &> .elementor-row > .colonna--imbottita:last-child > .elementor-column-wrap.elementor-element-populated {
       margin-bottom: -$line-height * 1.5;
     }

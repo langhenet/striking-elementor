@@ -14,9 +14,17 @@ $gutter--large: $line-height * 2;
 $gutter--huge: $line-height * 4;
 
 $height--small: $line-height;
-$height: $line-height * 2;
+$height: $line-height * 3;
 $height--large: $line-height * 4;
 $height--huge: $line-height * 6;
+
+$height--small: $line-height;
+$height--default: $line-height * 3;
+$height--extended: $line-height;
+$height--wide: $line-height;
+$height--wider: $line-height;
+
+$height--nested: $line-height * 1.5;
 
 //***********************************************************************//
 //             LARGHEZZA LAYOUT & BREAKPOINT MEDIA QUERIES
