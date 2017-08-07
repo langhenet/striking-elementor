@@ -38,7 +38,7 @@
   }
 
   @if $mb != $size {
-    margin-bottom: $mt;
+    margin-bottom: $mb;
   }
   @else {
     margin-bottom: m-size($size, mb);

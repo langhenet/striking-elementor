@@ -297,6 +297,7 @@
 .elementor-column-gap-extended,
 .elementor-column-gap-wide,
 .elementor-column-gap-wider {
+
   &> .elementor-row > .colonna--imbottita > .elementor-column-wrap.elementor-element-populated {
     padding-top: $height;
     padding-bottom: $height;
@@ -324,6 +325,7 @@
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider {
+
     &> .elementor-row > .colonna--imbottita:last-child > .elementor-column-wrap.elementor-element-populated {
       margin-bottom: -$line-height * 1.5;
     }
