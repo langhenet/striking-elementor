@@ -297,14 +297,22 @@
 .elementor-column-gap-extended,
 .elementor-column-gap-wide,
 .elementor-column-gap-wider {
-  &> .elementor-row > .colonna--imbottita > .elementor-column-wrap.elementor-element-populated {
-    padding-top: $height;
-    padding-bottom: $height;
+  &> .elementor-row > .colonna--imbottita {
 
-    //Aggiungo un margine SOPRA e SOTTO quando le colonne cadono
     @include breakpoint-max(md) {
       margin-top: $line-height;
       margin-bottom: $line-height;
+    }
+
+    &> .elementor-column-wrap.elementor-element-populated {
+      padding-top: $height;
+      padding-bottom: $height;
+
+      //Aggiungo un margine SOPRA e SOTTO quando le colonne cadono
+      @include breakpoint-max(md) {
+        padding-top: $height;
+        padding-bottom: $height;
+      }
     }
   }
 }
@@ -317,7 +325,7 @@
  * in modo che la colonna faccia un overflow del padding del container
  */
 @include breakpoint-max(md) {
-  .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child > .elementor-column-wrap.elementor-element-populated {
+  .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child {
     margin-bottom: -$line-height * 1.5;
   }
 
