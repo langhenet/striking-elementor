@@ -4,3 +4,12 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                          *//
 //****************************************************************************//
+.page-id-97 #2ygvjpp {
+  @include breakpoint-max(sm) {
+    z-index: 9999;
+  }
+}
+
+body div#ui-datepicker-div[style] {
+  z-index: 99999!important;
+}
