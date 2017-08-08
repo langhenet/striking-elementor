@@ -13,18 +13,22 @@ $gutter: $line-height;
 $gutter--large: $line-height * 2;
 $gutter--huge: $line-height * 4;
 
-$height--small: $line-height;
 $height: $line-height * 3;
-$height--large: $line-height * 4;
-$height--huge: $line-height * 6;
 
+
+
+///
+// ELEMENTOR Heights
+///
 $height--small: $line-height;
 $height--default: $line-height * 3;
-$height--extended: $line-height;
-$height--wide: $line-height;
-$height--wider: $line-height;
+$height--extended: $line-height * 4;
+$height--wide: $line-height * 5;
+$height--wider: $line-height * 6;
 
 $height--nested: $line-height * 1.5;
+
+$height--padded: $line-height;
 
 //***********************************************************************//
 //             LARGHEZZA LAYOUT & BREAKPOINT MEDIA QUERIES

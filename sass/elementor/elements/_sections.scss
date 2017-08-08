@@ -200,7 +200,7 @@
   padding: $height--extended 0;
 
   // NESTED NARROW & DEFAULT
-  .elementor-column-gap-narrow
+  .elementor-column-gap-narrow,
   .elementor-column-gap-default {
     padding: $line-height 0;
   }
@@ -222,7 +222,7 @@
   padding: $height--wide 0;
 
   // NESTED NARROW & DEFAULT
-  .elementor-column-gap-narrow
+  .elementor-column-gap-narrow,
   .elementor-column-gap-default {
     padding: $line-height 0;
   }
@@ -312,13 +312,13 @@
     }
 
     &> .elementor-column-wrap.elementor-element-populated {
-      padding-top: $height;
-      padding-bottom: $height;
+      padding-top: $height--padded;
+      padding-bottom: $height--padded;
 
       //Aggiungo un margine SOPRA e SOTTO quando le colonne cadono
       @include breakpoint-max(md) {
-        padding-top: $height;
-        padding-bottom: $height;
+        padding-top: $height--padded;
+        padding-bottom: $height--padded;
       }
     }
   }

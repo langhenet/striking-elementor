@@ -1,8 +1,12 @@
-/*************************************************************************
-*  Qui lavoro solo sulle SEZIONI FULL WIDTH
-*  In Particale mi concentro sulle colonne FW in situazione NO PADDING visto che per ricreare le griglie che usiamo solitamente
-* Ref: .elementor-section-full_width
-*************************************************************************/
+/*============================================================================*/
+/*  Qui lavoro solo sulle SEZIONI FULL WIDTH
+/*
+/*  In Particale mi concentro sulle colonne FW in situazione NO PADDING visto
+/*  che per ricreare le griglie che usiamo solitamente
+/*  Ref: .elementor-section-full_width
+/*============================================================================*/
+
+
 .elementor-section-full_width {
 
   //Imposto la max width del container a 100%
@@ -114,9 +118,7 @@
 
       .colonna--imbottita,
       .colonna--imbottita:last-child {
-        .elementor-column-wrap.elementor-element-populated {
-          margin: 0;
-        }
+        margin: 0;
       }
     }
   }
