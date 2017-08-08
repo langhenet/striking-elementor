@@ -10,17 +10,24 @@
 .elementor-section-full_width {
 
   //Imposto la max width del container a 100%
-  .elementor-column-gap-no {
+  .elementor-column-gap-no,
+  .elementor-column-gap-narrow,
+  .elementor-column-gap-default,
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider {
     max-width: 100%;
     padding-top: 0;
     padding-bottom: 0;
 
+
     //Imposto la larghezza massima dei contenitori e il loro padding verticale
     .elementor-widget-wrap {
-      max-width: 700px;
+      max-width: 800px;
       padding-top: $line-height * 3;
       padding-bottom: $line-height * 3;
     }
+
 
 
     /*
@@ -56,6 +63,11 @@
       &:first-child {
         .elementor-element-populated {
           padding-right: $line-height * 2;
+
+          //RESET on Mobile
+          @include breakpoint-max(md) {
+            padding-right: $line-height;
+          }
         }
       }
 
@@ -63,6 +75,11 @@
       &:last-child {
         .elementor-element-populated {
           padding-left: $line-height * 2;
+
+          //RESET on Mobile
+          @include breakpoint-max(md) {
+            padding-left: $line-height;
+          }
         }
       }
     }
@@ -72,52 +89,50 @@
      * Colonna Imbottita Su Mobile
      */
     @include breakpoint-max(md) {
-      .colonna--imbottita .elementor-column-wrap.elementor-element-populated {
+      .colonna--imbottita {
         margin: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }
 }
 
 
-/*
- * Imposto una max-width sui contenitori che NON sono .elementor-column-gap-no
- * in modo che comunque non superino la larghezza massima
- */
+/*============================================================================*/
+/* NESTED COLUMNS
+/*============================================================================*/
 .elementor-section-full_width {
-  .elementor-container {
-    max-width: 1920px;
-    margin: 0 auto;
 
-    //TODO - COMMENTARE TUTTA QUESTA PARTE
-    @include breakpoint-max(md) {
-      &.elementor-column-gap-default,
-      &.elementor-column-gap-extended,
-      &.elementor-column-gap-narrow,
-      &.elementor-column-gap-wide,
-      &.elementor-column-gap-wider {
-        padding-top: 0;
-        padding-bottom: 0;
+  //Imposto la max width del container a 100%
+  .elementor-column-gap-no,
+  .elementor-column-gap-narrow,
+  .elementor-column-gap-default,
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider {
 
-        .elementor-column-wrap.elementor-element-populated {
-          padding-top: 0;
-          padding-bottom: 0;
+    //Tolgo il padding laterale agli elementi popolati che sono dentro una colonna a 100 di larghezza
+    &> .elementor-row > .elementor-col-100 > .elementor-column-wrap.elementor-element-populated {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-          .elementor-column-gap-default,
-          .elementor-column-gap-extended,
-          .elementor-column-gap-narrow,
-          .elementor-column-gap-wide,
-          .elementor-column-gap-wider {
-            .elementor-column-wrap.elementor-element-populated {
-              padding-top: $line-height * 1.5;
-              padding-bottom: $line-height * 1.5;
-            }
-          }
-        }
+    //per le i widget wrap nestati dentro una colonna a 100 - quindi che nesta, la larghezza non è più limitata al 800px e non c'è padding;
+    .elementor-col-100 .elementor-widget-wrap {
+      max-width: 100%;
+      padding: 0;
+
+      //paddo perà il wrap nestato
+      .elementor-widget-wrap {
+        padding-top: $line-height * 2;
+        padding-bottom: $line-height * 2;
       }
 
-      .colonna--imbottita,
-      .colonna--imbottita:last-child {
+      //elimino i margini negativi degli elementi nestati
+      .elementor-section .elementor-container {
         margin: 0;
       }
     }
