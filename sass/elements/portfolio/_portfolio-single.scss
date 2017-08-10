@@ -7,6 +7,10 @@
 
 .single-portfolio {
 
+  #feature h1 {
+    padding: (size(h1, lh) / 2);  
+  }
+
   #comments {
     max-width: $website-width / 2;
     margin: 0 auto;

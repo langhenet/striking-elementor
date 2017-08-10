@@ -97,6 +97,11 @@ h5 {
   @include font(h5);
 }
 
+h6 {
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+
 .body--special {
   @include font(h3, $fm: primary, $wt: normal);
 
