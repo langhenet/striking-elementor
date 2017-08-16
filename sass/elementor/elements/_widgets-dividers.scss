@@ -1,0 +1,42 @@
+/*
+ * Spacers
+ */
+#page .elementor-element .elementor-widget-spacer {
+  margin-bottom: 0;
+
+  .elementor-spacer-inner {
+    height: $line-height;
+
+    @include breakpoint-max(md) {
+      height: 0;
+    }
+  }
+}
+
+/*
+ * Dividers
+ */
+#page .elementor-element .elementor-widget-divider .elementor-divider {
+  padding: $line-height / 2 0;
+  font-size: 1em;
+  line-height: $line-height;
+
+  .elementor-divider-separator {
+    display: block;
+  }
+}
+
+/*
+ * Dividers Color
+ */
+#page .elementor-element .elementor-widget-divider .elementor-divider .elementor-divider-separator {
+  border-color: main-colors(main, border);
+}
+
+//LOOP
+@each $palette, $section in $colors {
+
+  #page .#{$palette} .elementor-element .elementor-widget-divider .elementor-divider .elementor-divider-separator {
+    border-color: palette($palette, border);
+  }
+}

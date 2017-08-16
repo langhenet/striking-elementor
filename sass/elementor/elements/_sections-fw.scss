@@ -28,6 +28,10 @@
       padding-bottom: $line-height * 3;
     }
 
+    .elementor-col-33 .elementor-widget-wrap {
+      max-width: 740px;
+    }
+
 
 
     /*
@@ -129,11 +133,34 @@
       .elementor-widget-wrap {
         padding-top: $line-height * 2;
         padding-bottom: $line-height * 2;
+        max-width: 800px;
       }
 
       //elimino i margini negativi degli elementi nestati
       .elementor-section .elementor-container {
         margin: 0;
+
+        /*
+         * Determino il tipo di allineamento orizzontale
+         * Viene fatto sul contenitore di .elementor-widget-wrap
+         */
+        .elementor-element-populated {
+          justify-content: space-around;
+        }
+
+        //Cambio l'allineamtno della prima colonna in modo venga a dx
+        .elementor-column:first-child {
+          .elementor-element-populated {
+            justify-content: flex-end;
+          }
+        }
+
+        //cambio l'allineamento sull'ultima colonna in modo che venga a sx
+        .elementor-column:last-child {
+          .elementor-element-populated {
+            justify-content: flex-start;
+          }
+        }
       }
     }
   }

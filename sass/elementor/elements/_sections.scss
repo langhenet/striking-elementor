@@ -306,11 +306,13 @@
 .elementor-column-gap-wider {
   &> .elementor-row > .colonna--imbottita {
 
+    //quando le colonne cadono - metto un margine per spaziarle dal resto del contenuto
     @include breakpoint-max(md) {
       margin-top: $line-height;
       margin-bottom: $line-height;
     }
 
+    //paddo l'elemento interno alla colonna
     &> .elementor-column-wrap.elementor-element-populated {
       padding-top: $height--padded;
       padding-bottom: $height--padded;
@@ -320,6 +322,11 @@
         padding-top: $height--padded;
         padding-bottom: $height--padded;
       }
+    }
+
+    &.tanto > .elementor-column-wrap.elementor-element-populated {
+      padding-top: $height--padded * 4;
+      padding-bottom: $height--padded * 4;
     }
   }
 }
@@ -332,15 +339,62 @@
  * in modo che la colonna faccia un overflow del padding del container
  */
 @include breakpoint-max(md) {
+
   .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child {
     margin-bottom: -$line-height * 1.5;
   }
 
+
   .elementor-column-gap-extended,
   .elementor-column-gap-wide,
   .elementor-column-gap-wider {
+
     &> .elementor-row > .colonna--imbottita:last-child {
       margin-bottom: -$line-height * 1.5;
+    }
+  }
+
+  /*
+   * Resetto per le sezioni nestate: margine negativo SOLO agli elementi
+   * dell'ultima sezione nestata
+   */
+
+  //Default
+  section .elementor-column section {
+
+    .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child {
+      margin-bottom: 0;
+    }
+
+    //Ultima
+    &:last-of-type .elementor-column-gap-default > .elementor-row > .colonna--imbottita:last-child {
+      margin-bottom: -$line-height * 1.5;
+    }
+  }
+
+  //exteded, wide & wider
+  section .elementor-column section {
+
+    .elementor-column-gap-extended,
+    .elementor-column-gap-wide,
+    .elementor-column-gap-wider {
+
+      &> .elementor-row > .colonna--imbottita:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    //nestata
+    &:last-of-type {
+
+      .elementor-column-gap-extended,
+      .elementor-column-gap-wide,
+      .elementor-column-gap-wider {
+
+        &> .elementor-row > .colonna--imbottita:last-child {
+          margin-bottom: -$line-height * 1.5;
+        }
+      }
     }
   }
 }
