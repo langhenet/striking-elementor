@@ -1,0 +1,38 @@
+IN PIXEL
+
+html, .root: (
+  font-size: 18px,
+  line-height: 32px;
+),
+
+
+h1: (
+  fs: 5.83333333em,
+  lh: 1.21904762em,
+  mt: 0.3047619em,
+  mb: 0.6095238em,
+),
+h2: (
+  fs: 3.22222222em,
+  lh: 1.10344828em,
+  mt: 0.55172414em,
+  mb: 0.55172414em,
+),
+h3: (
+  fs: 1.77777778em,
+  lh: 1em,
+  mt: 1em,
+  mb: 1em,
+),
+h4: (
+  fs: 1em,
+  lh: 1.77777778em,
+  mt: 1.77777778em,
+  mb: 0em,
+),
+h5: (
+  fs: 1em,
+  lh: 1.77777778em,
+  mt: 1.77777778em,
+  mb: 0em,
+),

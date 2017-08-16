@@ -1,0 +1,7 @@
+$bianco: #fdfdf9; //sfondo sito
+$grigio-chiaro: #bec0bb;
+$grigio-scuro: #4c4847;
+$rosso: #9f464a;
+$giallo: #cba673;
+$nero: #000000;
+$beige: #bfa695;

@@ -9,8 +9,8 @@
 // BASE DEL BODY
 ///
   $base: 16;
-  $font-size: 1.25em; //PROJ
-  $line-height: 1.5em; //PROJ
+  $font-size: 1.125em; //PROJ
+  $line-height: 1.77777778em; //PROJ
 
 
 ///
@@ -23,8 +23,8 @@
 ///
 // Families
 ///
-  $ff-primary: 'PT Serif', serif; //PROJ
-  $ff-secondary: 'Open Sans', sans-serif; //PROJ
+  $ff-primary: 'Cardo', serif; //PROJ
+  $ff-secondary: 'Oswald', sans-serif; //PROJ
   $ff-special: $ff-primary; //PROJ
   $ff-button: $ff-secondary;
 
@@ -35,10 +35,10 @@
 $families: (
   primary: (
     fm: $ff-primary,
-    thin: 200,
+    thin: 400,
     normal: 400,
-    bold: 600,
-    bolder: 600,
+    bold: 700,
+    bolder: 700,
   ),
 
   secondary: (
@@ -46,7 +46,7 @@ $families: (
     thin: 300,
     normal: 400,
     bold: 700,
-    bolder: 900,
+    bolder: 700,
   ),
 
   special: (
@@ -66,7 +66,7 @@ $decorations: (
 
   h1: (
     fm: secondary,
-    wt: normal,
+    wt: thin,
   ),
 
   h2: (
@@ -111,45 +111,44 @@ $decorations: (
     ),
 
     h1: (
-      fs: 3.375em,
-      lh: 1.33333333333em,
-      mt: 0.888888888888889em,
-      mb: 0.44444444444444em,
+      fs: 5.83333333em,
+      lh: 1.21904762em,
+      mt: 0.3047619em,
+      mb: 0.6095238em,
     ),
-
     h2: (
-      fs: 2.25em,
-      lh: 1.33333333333em,
-      mt: 1.33333333333em,
-      mb: 0.6666666666667em,
+      fs: 3.22222222em,
+      lh: 1.10344828em,
+      mt: 0.55172414em,
+      mb: 0.55172414em,
     ),
 
     h3: (
-      fs: 1.5em,
-      lh: 2em,
-      mt: 1.5em,
+      fs: 1.77777778em,
+      lh: 1em,
+      mt: 1em,
       mb: 1em,
     ),
 
     h4: (
       fs: 1em,
-      lh: 1.5em,
-      mt: 1.5em,
-      mb: 1.5em,
+      lh: 1.77777778em,
+      mt: 1.77777778em,
+      mb: 0em,
     ),
 
     h5: (
       fs: 0.75em,
-      lh: 2em,
-      mt: 2em,
+      lh: 2.37037037037037em,
+      mt: 2.37037037037037em,
       mb: 0em,
     ),
 
     small: (
       fs: 0.75em,
-      lh: 2em,
-      mt: 2em,
-      mb: 0,
+      lh: 2.37037037037037em,
+      mt: 0,
+      mb: 2.37037037037037em,
     ),
 
     blockquote: (
