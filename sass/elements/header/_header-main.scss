@@ -26,6 +26,7 @@
 #header {
   background-color: main-colors(header, bg);
   transition: all 250ms linear;
+  position: absolute;
 }
 
 
@@ -114,6 +115,8 @@
 
    img {
      z-index: 1;
-     position: relative;
+     position: absolute;
+    margin-top: 0.45em;
+    left: 0;
    }
  }

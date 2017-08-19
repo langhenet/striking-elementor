@@ -49,9 +49,9 @@ $layout-colors: (
   header: (
     body: $bianco,
     link: $bianco,
-    accent: $bianco,
+    accent: $giallo,
     border: $bianco,
-    bg: $nero,
+    bg: rgba($nero, 0.2),
     button-bg: $giallo,
     button: $bianco,
   ),
@@ -75,7 +75,7 @@ $layout-colors: (
     bg:         $bianco,      //Sfondo principale
     border:     $grigio-chiaro,      //Bordi
 
-    accent:     $blu,      //Accento - sfondo lista icone / grassetti / icone
+    accent:     $giallo,      //Accento - sfondo lista icone / grassetti / icone
 
     body-alt:   $nero,      //body alternativo - testo in un form o in un box
     bg-alt:     $giallo,      //sfondo alt - il bg di un form o di un box
@@ -182,7 +182,7 @@ $colors: (
     body:       $bianco,      //Corpo - testo
     body-sec:   $bianco,      //Secondario - blockquote o blog meta
     heading:    rgba($bianco, 0.90),      //Titoli 1 e 2
-    link:       darken($giallo, 20%),      //Link
+    link:       $giallo,      //Link
     bg:         $nero-chiaro,      //Sfondo principale
     border:     $bianco,      //Bordi
 

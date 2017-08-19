@@ -20,6 +20,18 @@ select {
   background: #fff;
 }
 
+//NINJA
+.nf-form-fields-required {
+  display: none;
+}
+
+#page .entry-content .nf-form-title h3:last-child {
+  margin-bottom: size(h3, mb);
+}
+
+#nf-form-3-cont #nf-field-14-container {
+  display: none;
+}
 
 //****************************************************************************//
 //                  CONTENITORE & STRUTTURA di GRAVITY FORMS

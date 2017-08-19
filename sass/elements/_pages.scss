@@ -4,3 +4,22 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                          *//
 //****************************************************************************//
+
+#page .elementor-shortcode {
+
+  .posts_list {
+    margin: 0;
+
+    li {
+      margin: 0;
+      list-style: none;
+      a {
+        background: transparent !important;
+        text-decoration: none;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+}

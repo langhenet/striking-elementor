@@ -4,3 +4,44 @@
 //*              descrizione - descrizione - descrizione
 //*                                                                          *//
 //****************************************************************************//
+
+table.orari {
+  width: 100%;
+  text-align: center;
+  border: 1px solid;
+
+  @include breakpoint-max(xs) {
+    width: 120%;
+    margin-left: -10%;
+
+  }
+
+  th {
+    padding: $line-height / 4;
+    border-right: 1px solid;
+  }
+  td {
+    padding: size(small, lh) / 2;
+    width: 17%;
+    @include font(small, $mt: 0, $mb: 0);
+    border-right: 1px solid;
+
+    &:first-child {
+      width: 15%;
+      text-align: left;
+    }
+  }
+}
+
+table.orari {
+
+  th {
+    background: main-colors(main, accent);
+  }
+
+  tr {
+    &:nth-child(odd) {
+      background: $grigio-chiaro;
+    }
+  }
+}

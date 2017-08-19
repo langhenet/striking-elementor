@@ -7,7 +7,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @import url('https://fonts.googleapis.com/css?family=Glegoo:400,700');
-@import url('https://fonts.googleapis.com/css?family=Bangers');
+//@import url('https://fonts.googleapis.com/css?family=Bangers');
+//@import url('https://fonts.googleapis.com/css?family=Changa+One');
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One');
+
 
 //***********************************************************************//
 //              PARTE PRINCIPALE - BODY - P e UL / OL
@@ -62,9 +65,11 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   @include font(h1);
+  letter-spacing: 5px;
 
   @include breakpoint-max() {
     @include m-size(h1);
+    letter-spacing: 2px;
   }
 }
 
@@ -99,6 +104,14 @@ h5 {
 
   @include breakpoint-max() {
     @include m-size(h3);
+  }
+}
+
+.cta--special {
+  @include font(h2, $fm: special);
+
+  @include breakpoint-max() {
+    @include m-size(h2);
   }
 }
 
@@ -160,7 +173,7 @@ sub { bottom: $sub-bottom; }
 // Stile lista per UL e OL
 ///
 #main ul li {//TODO
-  list-style: circle;
+  list-style: disc;
 }
 
 
@@ -246,10 +259,10 @@ blockquote {
 #page a,
 #page a:visited {
   color: main-colors(main, body);
-  background: main-colors(main, link);
+  background: rgba(main-colors(main, link), 0.5);
 }
 #page a:hover {
-  background: lighten(main-colors(main, link), 15%);
+  background: rgba(main-colors(main, link), 0.8);
   color: main-colors(main, body);
 }
 
@@ -270,9 +283,9 @@ blockquote {
     a,
     a:visited {
       color: palette($palette, body);
-      background: palette($palette, link);
+      background: rgba(palette($palette, link), 0.7);
       &:hover {
-        background: lighten(palette($palette, link), 15%);
+        background: rgba(palette($palette, link), 0.9);
         color: palette($palette, body);
       }
     }

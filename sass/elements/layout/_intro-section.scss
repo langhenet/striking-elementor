@@ -15,7 +15,12 @@
   background-size: cover !important;
   background-image: none;
   position: relative;
-  padding: $line-height * 4 0;
+  padding: $feat-header-padding 0 $line-height * 4;
+
+  @include breakpoint-max(lg) {
+    padding-top: $line-height * 6;
+    padding-bottom: $line-height * 5;
+  }
 }
 
 
@@ -104,7 +109,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
   @include font(h3, $mt: 0);
   color: main-colors(fheader, body);
   padding: 0;
-  max-width: 700px;
+  max-width: 550px;
 
   @include breakpoint-max(lg) {
     @include m-size(h3);

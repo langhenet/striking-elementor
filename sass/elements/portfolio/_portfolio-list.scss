@@ -32,6 +32,8 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
+
+
   li.portfolio_item,
   .portfolio_item {
     margin-top: 0;
@@ -47,14 +49,21 @@
     @include breakpoint-max(sm) {
       padding: 0;
     }
+
+    .portfolio_title  a {
+      background: transparent !important;
+    }
   }
 
   //IMMAGINE PORTFOLIO
   .portfolio_image {
     margin-bottom: 0;
+    display: block;
   }
+
   .image_frame {
     background: transparent;
+    height: auto !important;
 
     a {
       background: transparent;
@@ -118,6 +127,20 @@
   flex-shrink: 0;
   flex-grow: 0;
   margin-right: 0 !important;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 $line-height;
+    box-shadow: $card-shadow;
+    z-index: -1;
+  }
 }
 
 
@@ -260,6 +283,7 @@
 .portfolio_details {
   overflow: hidden;
   padding: 0;
+  padding: $line-height / 2;
 
   @include breakpoint-max(md) {
     padding: 0;
@@ -312,12 +336,12 @@
 
 
 ///
-// Colori
+// Colori TITOLO
 ///
 .portfolio_title,
 #page .portfolio_title a,
 #page .portfolio_title a:visited {
-  color: main-colors(main, link);
+  color: main-colors(main, body);
 }
 
 //Loop
@@ -325,11 +349,18 @@
   .#{$palette} .portfolio_title,
   #page .#{$palette} .portfolio_title a,
   #page .#{$palette} .portfolio_title a:visited {
-    color: palette($palette, link);
+    color: palette($palette, body);
   }
 
   .#{$palette} .portfolio_desc,
   #page .#{$palette} .portfolio_more_button a {
     color: palette($palette, link);
   }
+}
+
+///
+// COLORI BG
+////
+.portfolio_container .portfolio_item::before {
+  background: main-colors(main, bg-alt);
 }

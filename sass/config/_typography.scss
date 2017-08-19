@@ -25,7 +25,7 @@
 ///
   $ff-primary: 'Open Sans', sans-serif; //PROJ
   $ff-secondary: 'Glegoo', serif; //PROJ
-  $ff-special: 'Bangers', cursive; //PROJ
+  $ff-special: 'Bowlby One', cursive; //PROJ
   $ff-button: $ff-secondary;
 
 
@@ -76,7 +76,7 @@ $decorations: (
 
   h3: (
     fm: secondary,
-    wt: normal,
+    wt: bold,
   ),
 
   h4: (
@@ -90,7 +90,7 @@ $decorations: (
   ),
 
   small: (
-    fm: secondary,
+    fm: primary,
     wt: normal,
   ),
 
@@ -139,16 +139,16 @@ $decorations: (
     ),
 
     h5: (
-      fs: 1em,
-      lh: 1.8em,
-      mt: 1.8em,
+      fs: 0.75em,
+      lh: 1.2em,
+      mt: 1.2em,
       mb: 0em,
     ),
 
     small: (
       fs: 0.75em,
-      lh: 2em,
-      mt: 2em,
+      lh: 1.2em,
+      mt: 1.2em,
       mb: 0,
     ),
 

@@ -14,7 +14,7 @@
    position: relative;
    order: 2;
    max-width: $website-width;
-   margin: $line-height * 2 auto 0;
+   margin: $line-height auto;
    padding: 0;
    flex-basis: 82%;
 
@@ -38,9 +38,11 @@
  */
  #navigation .menu > li {
   padding: ($line-height / 2) 15px ($line-height / 4) 13px;
-  font-family: $ff-secondary;
+  font-family: $ff-primary;
+  font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: ($line-height / 4)
+  margin-bottom: ($line-height / 4);
+  border-bottom: 3px solid transparent;
 }
 
 
@@ -49,6 +51,7 @@
  */
  #navigation .menu > li:hover {
   transition: all 250ms linear;
+  border-color: main-colors(header, accent);
  }
 
 //current
@@ -72,6 +75,7 @@
  #navigation .menu > li.current_page_ancestor,
  #navigation .menu > li.current-page-item,
  #navigation .menu > li.current-page-ancestor {
+   border-color: main-colors(header, accent);
  }
 
 /*
@@ -109,7 +113,7 @@
 #navigation .menu > li.hover > a:visited,
 #navigation .menu > li.hover > a > i {
   transition: all 250ms linear;
-  color: main-colors(header, link);
+  color: main-colors(header, accent);
 }
 
 
@@ -137,7 +141,7 @@
 #navigation .menu > li.current_page_ancestor > a > i,
 #navigation .menu > li.current-page-item > a > i,
 #navigation .menu > li.current-page-ancestor > a > i {
-  color: darken(main-colors(header, link), 10%);
+  color: main-colors(header, accent);
 }
 
 /******************************************************************************/
@@ -166,7 +170,16 @@
     &:hover {
       background:  rgba(main-colors(header, bg), 0.95);
     }
+
+    a:hover {
+      color: main-colors(header, link) !important;
+    }
   }
+}
+
+
+#navigation ul li.hover ul li a:hover {
+  color: main-colors(header, link) !important;
 }
 
 
