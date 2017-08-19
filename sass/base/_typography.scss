@@ -5,8 +5,9 @@
 //*                                                                     *//
 //***********************************************************************//
 
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Glegoo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
 
 //***********************************************************************//
 //              PARTE PRINCIPALE - BODY - P e UL / OL
@@ -243,8 +244,14 @@ blockquote {
 #page h5 {color: main-colors(main, heading);}
 #page p, ul, ol {color: main-colors(main, body);}
 #page a,
-#page a:visited {color: main-colors(main, link);}
-#page a:hover {color: darken(main-colors(main, link), 10%);}
+#page a:visited {
+  color: main-colors(main, body);
+  background: main-colors(main, link);
+}
+#page a:hover {
+  background: lighten(main-colors(main, link), 15%);
+  color: main-colors(main, body);
+}
 
 //TOCHK
 /*
@@ -262,10 +269,12 @@ blockquote {
 
     a,
     a:visited {
-      color: palette($palette, link);
-    }
-    &:hover {
-      color: darken(palette($palette, link), 10%);
+      color: palette($palette, body);
+      background: palette($palette, link);
+      &:hover {
+        background: lighten(palette($palette, link), 15%);
+        color: palette($palette, body);
+      }
     }
   }
 }

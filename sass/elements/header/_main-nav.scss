@@ -14,9 +14,9 @@
    position: relative;
    order: 2;
    max-width: $website-width;
-   margin: 0 auto;
+   margin: $line-height * 2 auto 0;
    padding: 0;
-   flex-basis: 100%;
+   flex-basis: 70%;
 
    .menu {
      display: flex;

@@ -11,6 +11,7 @@
  */
 .elementor-widget-icon-box .elementor-icon-box-content {
 
+
   h3.elementor-icon-box-title {
     @include font(h3, $mt: 0);
   }
@@ -104,4 +105,11 @@
       }
     }
   }
+}
+
+//// Reset BG
+
+.elementor-icon-box-title a,
+a.elementor-icon {
+  background: transparent !important;
 }

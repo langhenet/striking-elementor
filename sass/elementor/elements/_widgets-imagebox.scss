@@ -7,7 +7,7 @@
 
     h3.elementor-image-box-title {
       margin: 0;
-      @include font(h3, $mt: 0, $mb: 0);
+      @include font(h3);
     }
 
     h4.elementor-image-box-title {
@@ -90,4 +90,10 @@
       }
     }
   }
+}
+
+// RESET LINK BG
+.elementor-image-box-title a,
+.elementor-image-box-img a {
+  background: transparent !important;
 }
