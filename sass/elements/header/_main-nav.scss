@@ -14,9 +14,9 @@
    position: relative;
    order: 2;
    max-width: $website-width;
-   margin: 0 auto;
    padding: 0;
-   flex-basis: 100%;
+   flex-basis: 80%;
+   margin: ($line-height / 2) auto 0;
 
    .menu {
      display: flex;
@@ -37,10 +37,10 @@
  qui "trasferisco" i padding dagli A ai LI.
  */
  #navigation .menu > li {
-  padding: ($line-height / 2) 15px ($line-height / 4) 13px;
+  padding: ($line-height / 2) 15px 0 13px;
   font-family: $ff-secondary;
   text-transform: uppercase;
-  margin-bottom: ($line-height / 4)
+  margin-bottom: 0;
 }
 
 
@@ -84,8 +84,11 @@
   height: auto;
   font-size: 1em;
   line-height: $line-height;
-  padding: 0;
+  padding: bpad(3) 0;
+  margin-bottom: $line-height;
   color: main-colors(header, link);
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
  }
 
 /*
@@ -110,6 +113,7 @@
 #navigation .menu > li.hover > a > i {
   transition: all 250ms linear;
   color: main-colors(header, link);
+  border-bottom: 3px solid main-colors(header, border);
 }
 
 
@@ -149,7 +153,7 @@
 #navigation ul li ul {
   background-color: transparent;
   border: 0;
-  padding: ($line-height / 2) 0 0;
+  padding: 0 0;
   box-shadow: 2px 2px 2px rgba(#000, 0.2);
 
   @at-root .sticker_sticky #{&} { //con header scrollato - il margin top ritorna a 0 - solo su desktop

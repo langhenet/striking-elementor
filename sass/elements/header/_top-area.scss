@@ -12,9 +12,28 @@
   background: main-colors(topbar, bg);
   max-width: $website-width;
   margin: 0 auto;
-  padding: ($line-height / 2) 0;
+  padding: 0 0;
   justify-content: flex-end;
   flex-basis: 100%;
+
+  &::after,
+  &::before {
+    background: main-colors(topbar, bg);
+    content: "";
+    top: 0;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    z-index: -1;
+    width: 100vw;
+  }
+
+  &::before {
+    left: -50%;
+  }
+  &::after {
+    right: -50%;
+  }
 }
 
 .sticker_sticky #top_area {//quando è scrollata la nascondo
@@ -47,7 +66,7 @@
 
     p {
       color: main-colors(topbar, body);
-      @include font(small, $mt: 0);
+      @include font(small, $mt: 0, $mb: 0, $wt: bold);
 
       a {
         color: main-colors(topbar, link);

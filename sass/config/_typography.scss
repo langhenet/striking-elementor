@@ -79,6 +79,11 @@ $decorations: (
     wt: normal,
   ),
 
+  h3-alt: (
+    fm: secondary,
+    wt: normal,
+  ),
+
   h4: (
     fm: secondary,
     wt: normal,
@@ -90,7 +95,7 @@ $decorations: (
   ),
 
   small: (
-    fm: secondary,
+    fm: primary,
     wt: normal,
   ),
 
@@ -116,6 +121,7 @@ $decorations: (
       mt: 0.3047619em,
       mb: 0.6095238em,
     ),
+
     h2: (
       fs: 3.22222222em,
       lh: 1.10344828em,
@@ -126,6 +132,13 @@ $decorations: (
     h3: (
       fs: 1.77777778em,
       lh: 1em,
+      mt: 1em,
+      mb: 1em,
+    ),
+
+    h3-alt: (
+      fs: 1.77777778em,
+      lh: 2em,
       mt: 1em,
       mb: 1em,
     ),

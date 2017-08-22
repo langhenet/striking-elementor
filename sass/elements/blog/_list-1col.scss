@@ -6,8 +6,15 @@
 //****************************************************************************//
 //                         CONTENITORE
 //****************************************************************************//
-.entry {
+.hentry.entry {
   margin-bottom: $line-height * 3;
+  box-shadow: $card-shadow;
+  background: #fff;
+
+  @include breakpoint-max(xs) {
+    margin-left: $line-height / -2;
+    margin-right: $line-height / -2;
+  }
 }
 
 
@@ -23,7 +30,10 @@
   content: none;
 }
 
-
+.category .image_styled {
+  margin-bottom: 0;
+  display: block;
+}
 /*
  * Decorazione immagini listati
  */
@@ -50,8 +60,21 @@
 //****************************************************************************//
 //                          TITOLO e META
 //****************************************************************************//
+.entry_info {
+  padding: 0 $line-height;
+
+  @include breakpoint-max(xs) {
+    padding-right: $line-height / 2;
+    padding-left: $line-height / 2;
+  }
+}
+
 .entry_info .entry-title {
   @include font(h3);
+
+  @include breakpoint-max() {
+    @include m-size(h3);
+  }
 }
 
 #page .entry .entry_title a,
@@ -78,10 +101,27 @@
 //                         EXCERPT e READ MORE
 //****************************************************************************//
 .entry_content {
+  padding: 0 $line-height $line-height;
+  margin-top: $line-height;
+
+  @include breakpoint-max(xs) {
+    padding-right: $line-height / 2;
+    padding-left: $line-height / 2;
+  }
 
   p {
     margin-bottom: 0;
   }
+
+  .read_more_wrap {
+    margin-top: $line-height;
+    text-align: right;
+  }
+}
+
+#page .read_more_wrap a:hover,
+.read_more_wrap a:hover {
+  color: main-colors(main, link);
 }
 
 

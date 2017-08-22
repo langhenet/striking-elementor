@@ -7,16 +7,25 @@
 //****************************************************************************//
 //                             IMPOSTAZIONI GENERALI
 //****************************************************************************//
-
+.right_sidebar #sidebar {
+  padding-left: 0;
+  padding-right: 0;
+}
 /*
  * Contneuto Sidebar - rimozione Ombra
  */
 .has-gradient .right_sidebar #sidebar_content {
   background-image: none;
+  overflow: visible;
+
+  &::after {
+    background: none;
+  }
 }
 
 .right_sidebar #sidebar_content.lessgap {
   padding-top: 0;
+  padding-left: 0;
 }
 
 
@@ -24,6 +33,45 @@
 //****************************************************************************//
 //                           WIDGET
 //****************************************************************************//
+
+#sidebar section.widget {
+  padding: $line-height;
+  background: main-colors(sidebar, bg);
+  box-shadow: $card-shadow;
+
+  &.widget_text,
+  &.widget_text_icl {
+    padding: 0;
+    background: palette(color--dark, bg);
+
+    p {
+      padding: $line-height;
+    }
+    h3 {
+      padding: size(h3, lh);
+
+      a {text-decoration: none;}
+    }
+
+    p,
+    h3 {
+
+      color: palette(color--dark, body);
+
+      &:first-child {
+        padding-bottom: 0;
+      }
+      &:last-child {
+        padding-top: 0;
+      }
+    }
+
+    a {
+      color: palette(color--dark, link);
+      text-decoration: underline;
+    }
+  }
+}
 /*
  * Ultimo Widget
  */
@@ -36,6 +84,7 @@
  * Titoli
  */
 #sidebar .widgettitle {
+  color: main-colors(sidebar, heading);
 }
 
 
@@ -45,6 +94,15 @@
  */
 #sidebar .widget ul {
   padding: $line-height;
+
+  &.posts_list {
+    padding: 0;
+    margin-top: $line-height;
+
+    time {
+      @include font(h5, $mt: 0);
+    }
+  }
 }
 
 //****************************************************************************//
@@ -54,8 +112,9 @@
 #sidebar .widget .posts_list a:visited,
 #sidebar .widget a,
 #sidebar .widget a:visited {
-
+  color: main-colors(sidebar, link);
   &:hover {
+    color: main-colors(sidebar, link);
   }
 }
 

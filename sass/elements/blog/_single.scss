@@ -25,7 +25,7 @@
  * Meta
  */
 .type-post .feature-introduce {
-  @include font(h5);
+  @include font(p, $fm: primary);
 
   font-style: italic;
   text-transform: uppercase;
@@ -41,6 +41,7 @@
 //****************************************************************************//
 .entry.content {
   margin-bottom: $line-height * 3;
+  box-shadow: none;
 }
 
 
@@ -50,26 +51,31 @@
 //              Authro Box
 //****************************************************************************//
 #about_the_author {
-  padding: ($line-height * 2) ($line-height * 2) ($line-height * 2) $line-height;
+  padding: ($line-height * 2);
   margin-bottom: ($line-height * 2);
+  background: main-colors(main, bg-alt);
 
   h3 {
-
+    color: main-colors(main, body-alt);
   }
 
   .author_content {
     padding: 0;
     border: 0;
+    color: main-colors(main, body-alt);
   }
 
   span.fn {
+    color: main-colors(main, body-alt);
 
-    a {
+  @at-root #page #{&} a {
       text-decoration: none;
+      color: main-colors(main, accent-alt);
     }
   }
 
   .author_desc {
+    color: main-colors(main, body-alt);
   }
 
   @include breakpoint-max(xs) {
@@ -79,6 +85,14 @@
 
     .author_desc {
       @include font(small, $mt:0);
+    }
+
+    .author_info {
+      padding-left: 0;
+    }
+
+    .gravatar {
+      display: none;
     }
   }
 }

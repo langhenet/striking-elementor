@@ -110,11 +110,12 @@ $layout-colors: (
 
   sidebar: (
     body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
-    bg: $bianco,
-    button-bg: $nero,
+    heading: $grigio-scuro,
+    link: $rosso,
+    accent: $rosso,
+    border: $grigio-scuro,
+    bg: lighten($beige-chiaro, 20%),
+    button-bg: $verde,
     button: $bianco,
   ),
 );

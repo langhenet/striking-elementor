@@ -88,7 +88,7 @@
   }
 
   //WEIGHT
-  @if $wt == bolder or $wt == bold or $wt == normal or $wt == light {
+  @if $wt == bolder or $wt == bold or $wt == normal or $wt == thin {
     @if $fm == primary or $fm == secondary or $fm == special {
       font-weight: family($fm, $wt);
     }

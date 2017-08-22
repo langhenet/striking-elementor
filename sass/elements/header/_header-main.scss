@@ -24,8 +24,9 @@
  * BG dell'header
  */
 #header {
-  background-color: main-colors(header, bg);
+  background-color: rgba(main-colors(header, bg), 0.6);
   transition: all 250ms linear;
+  position: absolute;
 }
 
 
@@ -88,7 +89,7 @@
    order: 1;
    padding: 0;
    height: auto;
-   flex-basis: 33%;
+   flex-basis: 20%;
 
    // LOGO DA SCROLLATO
    @at-root .sticker_sticky #{&} {
@@ -114,6 +115,7 @@
 
    img {
      z-index: 1;
-     position: relative;
+     position: absolute;
+     left: 0;
    }
  }

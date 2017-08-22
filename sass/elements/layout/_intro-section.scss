@@ -15,7 +15,12 @@
   background-size: cover !important;
   background-image: none;
   position: relative;
-  padding: $line-height * 4 0;
+  padding: $line-height * 8 0 $line-height * 4;
+
+  @include breakpoint-max(lg) {
+    padding-top: $line-height * 5;
+    padding-bottom: $line-height * 3;
+  }
 }
 
 
@@ -77,9 +82,11 @@
 /*                TITOLO del Featured HEADER
 *******************************************************************************/
 #feature h1 {
-  @include font(h1, $mt: 0);
+  @include font(h1, $mt: 0, $wt: bold);
   padding: 0;
   color: main-colors(fheader, body);
+  max-width: 600px;
+  text-transform: uppercase;
 
   @include breakpoint-max(lg) {
     @include m-size(h1);
@@ -93,9 +100,10 @@
 /*                TESTO
 *******************************************************************************/
 .feature-introduce {
-  @include font(h3, $mt: 0, $fm: primary);
+  @include font(h3-alt, $mt: 0, $fm: primary);
   color: main-colors(fheader, body);
   padding: 0;
+  max-width: 600px;
 
   @include breakpoint-max(lg) {
     @include m-size(h3);

@@ -89,11 +89,11 @@
 .elementor-column-gap-wide .elementor-row {
 
   .elementor-column:first-child .elementor-widget-wrap {
-    margin-left: -$line-height;
+    //margin-left: -$line-height;
   }
 
   .elementor-column:last-child .elementor-widget-wrap {
-    margin-right: -$line-height;
+    //margin-right: -$line-height;
   }
 }
 
@@ -112,11 +112,11 @@
 .elementor-column-gap-wider .elementor-row {
 
   .elementor-column:first-child .elementor-widget-wrap {
-    margin-left: -$line-height * 2;
+  //  margin-left: -$line-height * 2;
   }
 
   .elementor-column:last-child .elementor-widget-wrap {
-    margin-right: -$line-height * 2;
+  //  margin-right: -$line-height * 2;
   }
 }
 

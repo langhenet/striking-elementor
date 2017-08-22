@@ -144,22 +144,57 @@
 //****************************************************************************//
 #breadcrumbs { //contenitore
   margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  background: palette(color--dark, bg);
+  font-size: 1em;
+
+
+
+  @include breakpoint-max(xl) {
+    padding: 0 $line-height;
+  }
 
   .breadcrumbs {
-    @include font(h5, $mt: 0);
+    max-width: $website-width;
+    margin: 0 auto;
 
     a {
+      color: main-colors(topbar, body);
     }
 
     text {
-      font-weight: bold;
+      color: main-colors(topbar, body);
     }
 
     .breadcrumbs-plus {
-
+      color: main-colors(topbar, body);
+      @include font(h5, $mt: 0);
+      letter-spacing: 0px;
     }
   }
 
   @at-root .inner.right_sidebar #{&} { //Con sidebar
+    position: relative;
+    z-index: 1;
+
+    &::after,
+    &::before {
+      background: main-colors(topbar, bg);
+      content: "";
+      top: 0;
+      height: 100%;
+      position: absolute;
+      display: inline-block;
+      z-index: -1;
+      width: 100vw;
+    }
+
+    &::before {
+      left: -50%;
+    }
+    &::after {
+      right: -50%;
+    }
   }
 }
