@@ -70,15 +70,19 @@ select {
 
 .gform_wrapper .top_label li.gfield.gf_left_half,
 .gform_wrapper .top_label li.gfield.gf_right_half {
-  @include breakpoint-max(xl) {
+  @include breakpoint-max(lg) {
     width: 100%;
   }
 
-  @include breakpoint-max(lg) {
+  @include breakpoint-max(md) {
     width: 49%;
   }
 
-  @include breakpoint-max(md) {
+  @include breakpoint-max(sm) {
+    width: 100%;
+  }
+
+  @include breakpoint-max(xs) {
     width: 100%;
   }
 }
@@ -238,8 +242,8 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 .gform_wrapper .ginput_complex label,
 .gform_wrapper .instruction {
   @include form-desc(small);
-  padding-top: size(small, lh) / 2;
-  padding-bottom: size(small, lh) / 2;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 
@@ -263,7 +267,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 .gform_wrapper .gform_footer input.button,
 .gform_wrapper .gform_footer input[type=submit] {
   @extend %button;
-  @include button(h3, 4, half);
+  @include button(h3, 4);
 
   width: 100%;
   margin: 0 auto;

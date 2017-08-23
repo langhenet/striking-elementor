@@ -398,3 +398,18 @@
     }
   }
 }
+
+/************************
+ INTRO
+ **************************/
+
+#intro .elementor-column-gap-default {
+  padding: $line-height * 8 0 $line-height * 4;
+}
+
+.elementor-edit-mode #intro {
+  margin-top: $line-height * 4;
+  .elementor-element-overlay {
+    z-index: 9999999999;
+  }
+}

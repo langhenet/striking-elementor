@@ -20,6 +20,7 @@ body {
   font-family: $ff-primary;
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
+  overflow-x: hidden;
 }
 
 p, ul, ol, pre, table, blockquote {
@@ -94,7 +95,7 @@ h5 {
 }
 
 .body--special {
-  @include font(h3, $fm: primary, $wt: normal);
+  @include font(h3-alt, $fm: primary, $wt: normal);
 
   @include breakpoint-max() {
     @include m-size(h3);

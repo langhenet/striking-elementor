@@ -313,6 +313,9 @@
   @if $media == lg {
     @media (max-width: em-bp( width(lg) - 1) ) { @content; }
   }
+  @if $media == str_lg {
+    @media (max-width: em-bp( width(str_lg) - 1) ) { @content; }
+  }
   @if $media == xl {
     @media (max-width: em-bp( width(xl) - 1) ) { @content; }
   }

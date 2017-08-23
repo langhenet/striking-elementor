@@ -34,11 +34,22 @@
     margin: 0 auto;
   }
 
+  @include breakpoint-max(lg) {
+    min-width: 150px;
+  }
   @include breakpoint-max(sm) {
     display: block;
     width: 60%;
     float: none;
     height: auto;
+    flex-basis: 30%;
+    min-width: 150px;
+  }
+
+  @include breakpoint-max(xs) {
+    flex-basis: 30%;
+    min-width: 110px;
+    margin-top: $line-height / 2;
   }
 }
 
@@ -126,16 +137,23 @@
 // Fix navigazione che copre tutto
 ///
 .responsive #navigation {
-  @include breakpoint-max(md) {
+
+
+  @include breakpoint-max(str_lg) {
     display: inline-block;
     width: 100%;
+    flex-basis: 60%;
     &::before {
       content: "\f0c9";
       font-family: 'FontAwesome';
       position: absolute;
-      top: 0.25em;
+      top: $line-height / 4;
       left: 0.7em;
     }
+  }
+
+  @include breakpoint-max(lg) {
+    margin-top: $line-height;
   }
 }
 
@@ -143,7 +161,7 @@
 ///
 // Colori e tipografia della nav a menu
 ///
-@include breakpoint-max(lg) {
+@include breakpoint-max(str_lg) {
   .responsive .nav2select {
     @include font(p);
     padding-top: bhpad(2);
