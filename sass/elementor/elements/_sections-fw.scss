@@ -5,7 +5,7 @@
 /*  che per ricreare le griglie che usiamo solitamente
 /*  Ref: .elementor-section-full_width
 /*============================================================================*/
-
+$max-fw-column-width: 750px;
 
 .elementor-section-full_width {
 
@@ -23,7 +23,7 @@
 
     //Imposto la larghezza massima dei contenitori e il loro padding verticale
     .elementor-widget-wrap {
-      max-width: 800px;
+      max-width: $max-fw-column-width;
       padding-top: $line-height * 3;
       padding-bottom: $line-height * 3;
     }
@@ -133,7 +133,7 @@
       .elementor-widget-wrap {
         padding-top: $line-height * 2;
         padding-bottom: $line-height * 2;
-        max-width: 800px;
+        max-width: $max-fw-column-width;
       }
 
       //elimino i margini negativi degli elementi nestati
