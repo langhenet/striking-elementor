@@ -16,7 +16,9 @@
 ///
 @each $palette, $sections in $colors {
   .#{$palette},
-  .elementor-section.#{$palette} {
+  .elementor-section.#{$palette},
+  //questa riga è per fixare il lumosity negli overlay--color
+  .#{$palette}.elementor-column .elementor-column-wrap {
     background-color: palette($palette, bg);
 
   /*    border-color: palette($palette, border);
@@ -26,6 +28,14 @@
     }*/
   }
 }
+
+///
+// BORDI
+///
+.elementor-column-wrap {
+  border-color: $bianco;
+}
+
 
 
 

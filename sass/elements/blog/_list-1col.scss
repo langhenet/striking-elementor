@@ -17,6 +17,22 @@
   }
 }
 
+.hentry.entry {
+  &.entry_frame {
+    padding: 0;
+  }
+}
+
+#page .color--light .hentry.entry {
+  background: palette(color--light, bg-alt);
+  .entry-title a {
+    color: palette(color--light, body-alt);
+
+    &:hover {
+      color: palette(color--light, body-alt);
+    }
+  }
+}
 
 //****************************************************************************//
 //                         IMMAGINI LISTATI
@@ -77,6 +93,11 @@
   }
 }
 
+.one_third .entry_info .entry_title {
+  @include font(p, $fm: secondary);
+  text-transform: uppercase;
+}
+
 #page .entry .entry_title a,
 #page .entry .entry_title a:visited {
   color: main-colors(main, heading);
@@ -93,7 +114,7 @@
 
 #page .entry .entry_title a:hover,
 #page .entry .entry_title a:active {
-  color: inherit;
+  color: main-colors(main, heading);
 }
 
 

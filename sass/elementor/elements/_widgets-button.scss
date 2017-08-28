@@ -65,7 +65,7 @@
 
   &:hover {
     background: main-colors(main, accent);
-    color: main-colors(main, bg)
+    color: main-colors(main, bg);
   }
 }
 
@@ -73,12 +73,12 @@
 @each $palette, $section in $colors {
 
   #page .#{$palette} .elementor-button-info.elementor-widget-button a.elementor-button {
-    border-color: palette($palette, body);
+    border-color: palette($palette, heading);
     background-color: transparent;
-    color: palette($palette, body);
+    color: palette($palette, heading);
 
     &:hover {
-      background: palette($palette, body);
+      background: palette($palette, heading);
       color: palette($palette, bg)
     }
   }
