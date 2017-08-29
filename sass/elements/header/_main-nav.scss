@@ -72,6 +72,7 @@
  #navigation .menu > li.current_page_ancestor,
  #navigation .menu > li.current-page-item,
  #navigation .menu > li.current-page-ancestor {
+   color: main-colors(header, link);
  }
 
 /*
@@ -141,7 +142,8 @@
 #navigation .menu > li.current_page_ancestor > a > i,
 #navigation .menu > li.current-page-item > a > i,
 #navigation .menu > li.current-page-ancestor > a > i {
-  color: darken(main-colors(header, link), 10%);
+  color: main-colors(header, link);
+  border-bottom: 3px solid main-colors(header, border);
 }
 
 /******************************************************************************/
@@ -167,8 +169,9 @@
     background-color: rgba(main-colors(header, bg), 0.85);
     margin-bottom: 0;
 
+    &.current-menu-item,
     &:hover {
-      background:  rgba(main-colors(header, bg), 0.95);
+      background:  rgba(main-colors(header, bg), 1);
     }
   }
 }
@@ -203,10 +206,12 @@
 #navigation .sub-menu .current_page_ancestor > a,
 #navigation .sub-menu .current_page_ancestor > a:visited {
   background: transparent;
+  color: main-colors(header, link);
 }
 
 //hover
-#navigation ul li ul li a:hover,
+#navigation ul li.hover ul li a:hover,
 #navigation ul ul li a:hover {
   background: transparent !important;
+  color: main-colors(header, link) !important;
 }

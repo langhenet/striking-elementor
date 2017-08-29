@@ -1,0 +1,34 @@
+#page .elementor-widget {
+
+  &.images--big {
+
+    .posts_list {
+      border-color: main-colors(main, border);
+
+      .thumbnail img {
+        height: blh(1) * 3.5;
+        width: blh(1) * 3.5;
+      }
+    }
+  }
+
+  &.border--left {
+    .posts_list {
+      padding-left: $line-height;
+      border-left: 4px solid;
+    }
+  }
+
+  &.border--right {
+    .posts_list {
+      padding-right: $line-height;
+      border-right: 4px solid;
+    }
+  }
+}
+
+@each $palette, $sections in $colors {
+  #page .#{$palette} .elementor-widget .posts_list {
+    border-color: palette($palette, border);
+  }
+}

@@ -96,6 +96,7 @@ h5 {
 
 .body--special {
   @include font(h3-alt, $fm: primary, $wt: normal);
+  color: main-colors(main, heading);
 
   @include breakpoint-max() {
     @include m-size(h3);
@@ -160,7 +161,7 @@ sub { bottom: $sub-bottom; }
 // Stile lista per UL e OL
 ///
 #main ul li {//TODO
-  list-style: circle;
+  list-style: disc;
 }
 
 
@@ -255,6 +256,10 @@ blockquote {
   #page .#{$palette} {
     p, ul, ol {
       color: palette($palette, body)
+    }
+
+    .body--special {
+      color: palette($palette, heading);
     }
 
     h1, h2, h3, h4, h5 {

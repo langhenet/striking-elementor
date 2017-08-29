@@ -91,7 +91,7 @@
 
     li {
       float: left;
-      @include font(small);
+      @include font(small, $mb: 0);
       font-style: italic;
       text-transform: uppercase;
 
