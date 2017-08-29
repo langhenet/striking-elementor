@@ -70,20 +70,27 @@ select {
 
 .gform_wrapper .top_label li.gfield.gf_left_half,
 .gform_wrapper .top_label li.gfield.gf_right_half {
-  @include breakpoint-max(xl) {
+  @include breakpoint-max(lg) {
     width: 100%;
   }
 
-  @include breakpoint-max(lg) {
+  @include breakpoint-max(md) {
     width: 49%;
+    clear: none;
+//    float: left;
+    display: inline-block;
   }
 
-  @include breakpoint-max(md) {
+  @include breakpoint-max(xs) {
     width: 100%;
   }
 }
 
-
+.gform_wrapper .top_label li.gfield.gf_left_half {
+  @include breakpoint-max(md) {
+    padding-right: $line-height / 2;
+  }
+}
 //****************************************************************************//
 //                 CAMPI HTML & SECTION di GRAVITY FORMS
 //****************************************************************************//

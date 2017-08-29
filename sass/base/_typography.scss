@@ -274,9 +274,9 @@ blockquote {
     a,
     a:visited {
       color: palette($palette, link);
-    }
-    &:hover {
-      color: darken(palette($palette, link), 10%);
+      &:hover {
+        color: darken(palette($palette, link), 10%);
+      }
     }
   }
 }
