@@ -44,13 +44,26 @@
     padding: 0;
     background: palette(color--dark, bg);
 
+    .textwidget {
+      overflow: hidden;
+    }
+
     p {
       padding: $line-height;
+
+      a {
+        text-decoration: underline;
+      }
     }
+
     h3 {
       padding: size(h3, lh);
-
-      a {text-decoration: none;}
+      a {
+        text-decoration: none;
+        &:hover {
+          color: palette(color--dark, link);
+        }
+      }
     }
 
     p,
@@ -60,15 +73,46 @@
 
       &:first-child {
         padding-bottom: 0;
+        margin-top: 0;
       }
       &:last-child {
         padding-top: 0;
+        margin-bottom: 0;
       }
     }
 
     a {
       color: palette(color--dark, link);
-      text-decoration: underline;
+
+      &:hover {
+        color: palette(color--dark, link);
+      }
+    }
+  }
+
+  .overlay--dark,
+  .overlay--color {
+    position: relative;
+    background-size: cover;
+    //z-index: 0;
+
+    p, h1, h2, h3, h4, h5 {
+//      z-index: 1;
+      position: relative;
+    }
+  }
+
+  .overlay--dark {
+    &::before {
+      @include color-overlay(fheader);
+    }
+  }
+
+  .overlay--color {
+    background-blend-mode: luminosity;
+
+    &::before {
+      @include color-overlay(color--dark, 0.8);
     }
   }
 }

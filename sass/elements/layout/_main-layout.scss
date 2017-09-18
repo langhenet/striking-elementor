@@ -3,6 +3,11 @@
 //*                          LAYOUT PRINCIPALE DELLE PAGINE
 //*                                                                          *//
 //****************************************************************************//
+
+.body-warp {
+  overflow: hidden;
+}
+
 //****************************************************************************//
 //                               LARGHEZZA SITO - solo su desktop
 //****************************************************************************//
@@ -50,6 +55,10 @@
 //****************************************************************************//
 #page {
   background-color: main-colors(main, bg);
+
+    @include breakpoint-min(sm) {
+    overflow: visible;
+  }
 }
 
 
@@ -143,10 +152,14 @@
 //                          BREAD CRUMBS
 //****************************************************************************//
 #breadcrumbs { //contenitore
-  margin-top: 0;
+  position: absolute;
+  z-index: 9;
+  left: 0;
+  right: 0;
+  margin-top: -$line-height * 1;
   margin-bottom: 0;
   padding: 0;
-  background: $beige-chiaro;
+  background: transparent;
   font-size: 1em;
 
 
@@ -159,16 +172,19 @@
     max-width: $website-width;
     margin: 0 auto;
 
+
     a {
-      color: $grigio-scuro;
+      color: $bianco;
     }
 
     text {
-      color: $grigio-scuro;
+      color: $bianco;
     }
 
     .breadcrumbs-plus {
-      color: $grigio-scuro;
+      //border-top: 1px solid $bianco;
+      width: auto;
+      color: $bianco;
       @include font(h5, $mt: 0);
       letter-spacing: 0px;
     }

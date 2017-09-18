@@ -12,6 +12,22 @@
   border-radius: 100%;
 }
 
+.wp-caption {
+  border: 0;
+  background: transparent;
+  padding: 0;
+
+  figcaption {
+    @include font(small, $mb: 0, $mt: 0, $wt: normal);
+    font-style: italic;
+  }
+}
+
+
+
+.has-shadow .wp-caption {
+  box-shadow: none;
+}
 
 
 

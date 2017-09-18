@@ -14,6 +14,8 @@
 .overlay--color.elementor-column .elementor-column-wrap {
   position: relative;
   background-blend-mode: luminosity;
+  background-color: $bianco;
+
 
   &::before {
     @include color-overlay($palette: main, $grade: 0.80);
@@ -23,6 +25,7 @@
 @each $palette, $sections in $colors {
   .#{$palette}.overlay--color.elementor-section,
   .#{$palette}.overlay--color.elementor-column .elementor-column-wrap {
+    background-color: $bianco;
 
     &::before {
       @include color-overlay($palette: $palette, $grade: 0.7);

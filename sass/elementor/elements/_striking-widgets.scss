@@ -15,14 +15,32 @@
   &.border--left {
     .posts_list {
       padding-left: $line-height;
-      border-left: 4px solid;
+      border-left-width: 4px;
+      border-left-style: solid;
     }
   }
 
   &.border--right {
     .posts_list {
       padding-right: $line-height;
-      border-right: 4px solid;
+      border-right-width: 4px;
+      border-right-style: solid;
+
+      li {
+        text-align: right;
+
+        .thumbnail {
+          float: right;
+          margin-right: 0;
+          margin-left: $line-height / 2;
+          //width: 20%;
+        }
+      .post_extra_info {
+        float: right;
+        width: 70%;
+        display: inline-block;
+      }
+      }
     }
   }
 }

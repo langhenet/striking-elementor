@@ -1,0 +1,7 @@
+
+@each $palette, $sections in $colors {
+  .#{$palette} .bordo .elementor-image img {
+    border: 2px solid $bianco !important;
+    box-shadow: $card-shadow;
+  }
+}

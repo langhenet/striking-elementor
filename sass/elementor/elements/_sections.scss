@@ -409,6 +409,52 @@
   }
 }
 
+
+//////
+// Colori
+////////
+#page {
+  .elementor-column-gap-no,
+  .elementor-column-gap-default,
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider {
+  .colonna--imbottita  .elementor-element-populated {
+      background-color: main-colors(main, bg-alt);
+
+      h1, h2, h3, h4, h5, p, ol, ul, small {
+        color: main-colors(main, body-alt);
+
+        a {
+          color: main-colors(main, accent-alt);
+        }
+      }
+    }
+  }
+}
+
+@each $palette, $sections in $colors {
+  #page .#{$palette} {
+    .elementor-column-gap-no,
+    .elementor-column-gap-default,
+    .elementor-column-gap-extended,
+    .elementor-column-gap-wide,
+    .elementor-column-gap-wider {
+    .colonna--imbottita  .elementor-element-populated {
+        background-color: palette($palette, bg-alt);
+
+        h1, h2, h3, h4, h5, p, ol, ul, small {
+          color: palette($palette, body-alt);
+
+          a {
+            color: palette($palette, accent-alt);
+          }
+        }
+      }
+    }
+  }
+}
+
 /************************
  INTRO
  **************************/

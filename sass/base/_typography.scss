@@ -243,7 +243,7 @@ blockquote {
 #page h3 {color: main-colors(main, heading);}
 #page h4 {color: main-colors(main, heading);}
 #page h5 {color: main-colors(main, heading);}
-#page p, ul, ol {color: main-colors(main, body);}
+#page { p, ul, ol, small {color: main-colors(main, body);} }
 #page a,
 #page a:visited {color: main-colors(main, link);}
 #page a:hover {color: darken(main-colors(main, link), 10%);}
@@ -254,7 +254,7 @@ blockquote {
  */
 @each $palette, $sections in $colors {
   #page .#{$palette} {
-    p, ul, ol {
+    p, ul, ol, small, figcaption {
       color: palette($palette, body)
     }
 
