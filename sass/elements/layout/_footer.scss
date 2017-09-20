@@ -65,6 +65,7 @@
  */
 #footer h3.widgettitle {
   color: main-colors(footer, body);
+  @include font(h3, $mt: 0, $mb: size(h3,lh) / 2);
 }
 
 /*
@@ -136,6 +137,7 @@
 #copyright,
 #footer_right_area {
   @include font(small, $mt: 0, $mb: 0);
+  line-height: 1.5em;
 
   color: main-colors(footer, body);
 }

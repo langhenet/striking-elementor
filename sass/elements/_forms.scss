@@ -410,3 +410,22 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
     }
   }
 }
+
+///
+// CHECBOXES
+///
+#page .gfield_radio,
+#page .gfield_checkbox {
+  margin-left: $line-height / 2;
+}
+
+.gform_wrapper ul.gfield_checkbox li label,
+.gform_wrapper ul.gfield_radio li label {
+  margin-top: 0;  
+}
+
+.gform_wrapper.gf_browser_chrome .gfield_checkbox li input,
+.gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox],
+.gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
+  margin-top: 0;
+}

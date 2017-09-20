@@ -156,6 +156,9 @@ sub { bottom: $sub-bottom; }
   }
 }
 
+ol[type=A] {
+  list-style-type: lower-latin;
+}
 
 ///
 // Stile lista per UL e OL

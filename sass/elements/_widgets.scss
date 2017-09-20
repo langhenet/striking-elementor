@@ -16,8 +16,7 @@ section.widget {
 /*
  * Titoli - tipografia
  */
-#sidebar .widgettitle,
-#footer h3.widgettitle {
+#sidebar .widgettitle {
   @include font(h3, $mt: 0, $mb: 0);
 }
 

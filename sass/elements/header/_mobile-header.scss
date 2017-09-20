@@ -94,6 +94,10 @@
       &.widget_icl_lang_sel_widget {
         flex-shrink: 0;
         text-align: center;
+
+        @include breakpoint-max(xs) {
+          order: 0;
+        }
       }
 
       &.widget_text,
@@ -109,7 +113,7 @@
 
         li {
           text-align:right;
-          width: 100%;
+          width: auto;
         }
       }
 

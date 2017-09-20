@@ -21,6 +21,13 @@
     padding-top: $line-height * 5;
     padding-bottom: $line-height * 3;
   }
+  @include breakpoint-max(md) {
+    padding-top: $line-height * 6;
+    padding-bottom: $line-height * 3;
+  }
+  @include breakpoint-max(sm) {
+    padding-bottom: $line-height * 2;
+  }
 }
 
 

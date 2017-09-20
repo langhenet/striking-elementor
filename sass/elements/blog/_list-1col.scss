@@ -159,7 +159,8 @@
   a,
   a:link {
     @include font(p, $fm: primary);
-    padding: $line-height / 4 $line-height / 2;
+    padding: $line-height / 4 $line-height / 1.5;
+    border-radius: 100%;
     display: inline-block;
     margin-left: $line-height / 2;
 
@@ -172,13 +173,18 @@
   span.current {
     margin-right: 0;
     background: main-colors(main, bg-alt);
+    color: main-colors(main, body-alt) !important;
+    box-shadow: $button-shadow;
   }
 
   a {
     margin-right: 0;
 
+
     &:hover {
       background: main-colors(main, bg-alt);
+      color: main-colors(main, body-alt) !important;
+      box-shadow: $button-shadow;
     }
   }
 

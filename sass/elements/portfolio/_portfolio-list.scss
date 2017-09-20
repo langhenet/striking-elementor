@@ -44,6 +44,10 @@
       margin-right: auto !important;
     }
 
+    @include breakpoint-max(md) {
+      padding: 0 ($line-height / 2);
+    }
+
     @include breakpoint-max(sm) {
       padding: 0;
     }
@@ -52,6 +56,7 @@
   //IMMAGINE PORTFOLIO
   .portfolio_image {
     margin-bottom: 0;
+    display: block;
   }
   .image_frame {
     background: transparent;
@@ -163,7 +168,7 @@
 
   //titolo
   .portfolio_title {
-    @include font(h4, $mt: 0, $mb: 0, $fm: secondary, $wt: bold);
+    @include font(h4, $mt: $line-height / 2, $mb: 0, $fm: secondary, $wt: bold);
     text-align: center;
     font-weight: bold;
 
@@ -177,6 +182,7 @@
 
   .portfolio_more_button {
     margin-top: $line-height / 2;
+    margin-bottom: $line-height / 2;
   }
 }
 
@@ -219,18 +225,72 @@
 
   //titolo
   .portfolio_title {
-    @include font(h4, $mt: 0, $mb: 0);
+    @include font(h4, $mt: $line-height / 2, $mb: 0);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .portfolio_more_button {
+    margin-top: $line-height / 2;
+    margin-bottom: $line-height / 2;
+  }
+
+  //Descrizione
+  .portfolio_desc {
+    @include font(h5, $mt: 0, $fm: primary);
+  }
+}
+//**************************************************************************************//
+//                      5 Colonne
+//**************************************************************************************//
+///
+//impostazioni di base
+///
+.portfolio_five_columns .portfolio_item {
+  flex-basis: 20%;
+  width: 20%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 0 !important;
+
+  @include breakpoint-max(lg) {
+    flex-basis: 33.33333%;
+    width: 33.33333%;
+  }
+
+  @include breakpoint-max(md) {
+    flex-basis: 50%;
+    width: 50% !important;
+  }
+  @include breakpoint-max(sm) {
+    flex-basis: auto;
+    width: 100% !important;
+  }
+}
+
+
+
+///
+// Titolo & Descrizione: dimensioni per 5 colonne
+///
+.portfolio_five_columns {
+
+  //titolo
+  .portfolio_title {
+    @include font(h4, $mt: $line-height / 2, $mb: 0);
     text-align: center;
     font-weight: bold;
   }
 
   .portfolio_more_button {
     margin-top: 0;
+    margin-bottom: $line-height / 2;
   }
 
   //Descrizione
   .portfolio_desc {
-    @include font(h5, $mt: 0, $fm: secondary);
+    @include font(small, $mb: 0, $mt: 0, $fm: primary);
+    text-align: center;
   }
 }
 //**************************************************************************************//
@@ -250,7 +310,7 @@
 
 .portfolio_container .portfolio_image .image_frame {
  @include breakpoint-max(sm) {
-   max-width: 190px !important;
+   //max-width: 190px !important;
    margin: 0 auto;
  }
 }
@@ -263,7 +323,7 @@
 
   @include breakpoint-max(md) {
     padding: 0;
-    max-width: 190px !important;
+    //max-width: 190px !important;
     margin: 0 auto;
   }
 
@@ -325,11 +385,40 @@
   .#{$palette} .portfolio_title,
   #page .#{$palette} .portfolio_title a,
   #page .#{$palette} .portfolio_title a:visited {
-    color: palette($palette, link);
+    color: main-colors(main, link);
   }
 
-  .#{$palette} .portfolio_desc,
+  .#{$palette} .portfolio_item  {
+    //box-shadow: $card-shadow;
+  }
+
+  .#{$palette} .portfolio_details {
+    background: main-colors(main, bg);
+    box-shadow: $card-shadow;
+
+    @include breakpoint-max(md) {
+      max-width: 297px !important;
+      margin: 0 auto;
+    }
+  }
+
+  .#{$palette} {
+    .portfolio_three_columns .portfolio_details {
+      padding-right: $line-height;
+      padding-left: $line-height;
+    }
+
+    .portfolio_four_columns .portfolio_details,
+    .portfolio_five_columns .portfolio_details {
+      padding-right: $line-height / 2;
+      padding-left: $line-height / 2;
+    }
+  }
+
+  .#{$palette} .portfolio_desc {
+    color: main(main, body);
+  }
   #page .#{$palette} .portfolio_more_button a {
-    color: palette($palette, link);
+    color: main(main, link);
   }
 }
