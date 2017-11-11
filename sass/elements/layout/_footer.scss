@@ -190,3 +190,15 @@
     width: 100%;
   }
 }
+
+/*
+ * Footer
+ */
+#footer_widget_area_four #media_image-2 img {
+  float: right;
+
+  @include breakpoint-max(md) {
+    max-width: auto;
+    width: auto;
+  }
+}

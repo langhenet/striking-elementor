@@ -66,6 +66,11 @@ h1 {
   @include breakpoint-max() {
     @include m-size(h1);
   }
+
+  @include breakpoint-max(xs) {
+    text-transform: uppercase;
+    font-weight: family(secondary, normal)
+  }
 }
 
 h2 {

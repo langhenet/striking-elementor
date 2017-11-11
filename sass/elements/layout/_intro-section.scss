@@ -89,14 +89,18 @@
 /*                TITOLO del Featured HEADER
 *******************************************************************************/
 #feature h1 {
-  @include font(h1, $mt: 0, $wt: bold);
+  @include font(h1, $mt: 0, $wt: normal);
   padding: 0;
   color: main-colors(fheader, body);
   max-width: 600px;
-  text-transform: uppercase;
+
 
   @include breakpoint-max(lg) {
     @include m-size(h1);
+  }
+
+  @include breakpoint-max(xs) {
+    text-transform: uppercase;
   }
 }
 

@@ -176,8 +176,9 @@
 
   //Descrizione
   .portfolio_desc {
-    @include font(small, $mb: 0, $mt: size(small, lh) / 2);
+    @include font(small, $mb: 0, $mt: size(small, lh) );
     text-align: center;
+    line-height: size(small, lh) / 2;
   }
 
   .portfolio_more_button {
