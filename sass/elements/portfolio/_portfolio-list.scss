@@ -176,7 +176,7 @@
 
   //Descrizione
   .portfolio_desc {
-    @include font(small, $mb: 0, $mt: size(small, lh) );
+    @include font(small, $mb: 0, $mt: size(small, lh) / 2 );
     text-align: center;
     line-height: size(small, lh) / 2;
   }

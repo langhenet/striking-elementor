@@ -242,7 +242,7 @@ section.widget {
  * Su Mobile
  * SOLO quando il monitor è molto grande
  */
-@include breakpoint-min(uxl) {
+
 
   //Nascondo il booking trigger
   .booking-trigger {
@@ -251,15 +251,13 @@ section.widget {
 
   //nascondo la sua etichetta
   label[for="booking-trigger"] {
-    display: none;
+//    display: none;
   }
-}
 
 /*
  * Su Mobile
  * da monitor grande in già
  */
-@include breakpoint-max(uxl) {
 
   //Il widget è nascosto
   #slope-bl {
@@ -280,9 +278,7 @@ section.widget {
     //left: 15px;
     z-index: 2;
     color: $bianco;
-    bottom: 5vw;
     box-shadow: $card-shadow;
-    right: 5vw;
     background: $verde;
     padding: $line-height * 1.25 $line-height;
     text-align: right;
@@ -294,14 +290,18 @@ section.widget {
     width: $line-height * 4.5;
     height: $line-height * 4.5;
     border-radius: 100%;
+    bottom: 1vw;
+    right: 1vw;
 
     //Label / Bottone su mobile
     @include breakpoint-max(xs) {
       @include font(h5, $mt: 0);
-      line-height: size(h5, lh) / 1.25;
+      line-height: size(h5, lh) / 1.5;
       width: $line-height * 3.5;
       height: $line-height * 3.5;
-      padding: size(h5, lh) / 1.75 size(h5, lh) / 2;
+      padding: (size(h5, lh) * 0.75) size(h5, lh) / 2 0;
+      bottom: 3vw;
+      right: 3vw;
     }
 
     //Lo pseudoelement serve per aggiungere il testo del bottone
@@ -324,7 +324,8 @@ section.widget {
     color: $bianco;
     background: transparent;
     box-shadow: none !important;
-    bottom: 1vw;
+    bottom: -0.5vw;
+    right: -0.5vw;
     padding: $line-height / 2;
     width: auto;
     height: auto;
@@ -346,4 +347,3 @@ section.widget {
     display: block;
     visibility: visible;
   }
-}
