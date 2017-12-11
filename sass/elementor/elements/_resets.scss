@@ -32,3 +32,13 @@
 .elementor-editor-active .elementor.elementor-edit-mode .elementor-top-column .elementor-widget-wrap .elementor-inner-section {
   margin-top: 0;
 }
+
+/*
+ * Visibilità Galleria
+ */
+.elementor-editor-active .gallery .gallery-item img,
+.elementor-editor-active .gallery .gallery-item img.thumbnail,
+.elementor-editor-active .gallery .gallery-image {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
