@@ -14,9 +14,9 @@
    position: relative;
    order: 2;
    max-width: $website-width;
-   margin: 0 auto;
+   margin: 0 0 0 auto;
    padding: 0;
-   flex-basis: 100%;
+   flex-basis: 70%;
 
    .menu {
      display: flex;
@@ -40,7 +40,11 @@
   padding: ($line-height / 2) 15px ($line-height / 4) 13px;
   font-family: $ff-secondary;
   text-transform: uppercase;
-  margin-bottom: ($line-height / 4)
+  margin-bottom: ($line-height / 4);
+
+  &:last-child {
+    padding-right: 0;
+  }
 }
 
 
@@ -48,7 +52,7 @@
  * I LI hover & Current
  */
  #navigation .menu > li:hover {
-  transition: all 250ms linear;
+  //transition: all 250ms linear;
  }
 
 //current
@@ -80,9 +84,11 @@
  */
  #navigation .menu > li > a,
  #navigation .menu > li > a:visited {
-  transition: all 250ms linear;
+  //transition: all 250ms linear;
   height: auto;
   font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   line-height: $line-height;
   padding: 0;
   color: main-colors(header, link);
@@ -108,7 +114,7 @@
 #navigation .menu > li.hover > a:active,
 #navigation .menu > li.hover > a:visited,
 #navigation .menu > li.hover > a > i {
-  transition: all 250ms linear;
+  //transition: all 250ms linear;
   color: main-colors(header, link);
 }
 

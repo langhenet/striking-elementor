@@ -40,6 +40,14 @@
     float: none;
     height: auto;
   }
+
+  @include breakpoint-max(md)   {
+    img {
+      top: -4em;
+      min-width: 80px;
+      z-index: 999999;
+    }
+  }
 }
 
 //******************************************************************************/

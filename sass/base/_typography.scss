@@ -5,8 +5,9 @@
 //*                                                                     *//
 //***********************************************************************//
 
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,600);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
 
 //***********************************************************************//
 //              PARTE PRINCIPALE - BODY - P e UL / OL
@@ -20,6 +21,29 @@ body {
   font-family: $ff-primary;
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
+}
+
+/*
+ * HTML base font size: calculated with between() function
+ */
+body {
+  font-size: between(16,17, 320,480, "vw");
+
+  @include breakpoint-min(sm) {
+    font-size: between(17,20, 480,1360, "vw");
+  }
+
+  @include breakpoint-min(xl) {
+    font-size: between(20,22, 1360,2000, "vw");
+  }
+
+  @include breakpoint-min(uxl) {
+    font-size:1.1vw;
+  }
+}
+
+body {
+//  font-size: $font-size !important;
 }
 
 p, ul, ol, pre, table, blockquote {
@@ -159,7 +183,7 @@ sub { bottom: $sub-bottom; }
 // Stile lista per UL e OL
 ///
 #main ul li {//TODO
-  list-style: circle;
+  list-style: disc;
 }
 
 

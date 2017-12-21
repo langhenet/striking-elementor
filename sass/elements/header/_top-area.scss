@@ -4,7 +4,7 @@
  */
   #top_area {//imposto il visible per poter fare transizione
   visibility: visible;
-  transition: all 250ms;
+  //transition: all 250ms;
   order: 0;
   width: 100%;
   display: flex;
@@ -19,7 +19,7 @@
 
 .sticker_sticky #top_area {//quando è scrollata la nascondo
   visibility: hidden;
-  transition: all 250ms;
+  //transition: all 250ms;
 }
 
 
@@ -42,21 +42,25 @@
    */
 
   .widget { //affianco i widget uno all'altro
-    margin-right: $line-height;
+    padding-right: $line-height;
     margin-bottom: 0;
 
     p {
       color: main-colors(topbar, body);
-      @include font(small, $mt: 0);
+      @include font(h5, $mt: 0);
 
       a {
         color: main-colors(topbar, link);
       }
     }
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 
-  section:first-child { //tolgo il margine laterale dal primo
-    margin-right: 0;
+  section.widget:last-child { //tolgo il margine laterale dal primo
+    padding-right: 0;
     margin-top: 0;
   }
 
@@ -100,8 +104,17 @@
   /*
    * Bottone della topbar
    */
+  a.button.small {
+    padding-top: 0;
+    padding-bottom: 0;
+    @include breakpoint-min(md) {
+      display: none;
+    }
+  }
   a.button.primary {
-
+    background: transparent;
+    border: 1px solid $bianco;
+    color: #fff;
     &.chiama {
       background: transparent;
       border: 0;
@@ -119,7 +132,16 @@
 // Selettore Lingua
 ///
 .widget_icl_lang_sel_widget {
-  order: 3;
+  order: 1;
+
+  @include breakpoint-max(md) {
+    order: -1;
+    margin-right: auto;
+    align-self: flex-start;
+    flex-basis: 100%;
+    width: 100%;
+    margin-bottom: $line-height / 2;
+  }
 }
 .wpml-ls-legacy-list-horizontal {
   padding: 0;

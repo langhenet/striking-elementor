@@ -23,40 +23,44 @@
 $null: transparent;
 $nero: #000;
 $bianco: #fff;
-$rosso-vero: #FF0000;
-
+$rosso-vero: #d24026;
+$arancione: #de7019;
+$blu: #41666c;
+$beige: #c5c4a6;
+$verdolino: #acbe8a;
+$verde: #4CAF50;
 
 /*
 * Colori delle parti principali del sito
 */
 $layout-colors: (
   topbar: (
-    body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
-    bg: $bianco,
+    body: $bianco,
+    link: $bianco,
+    accent: $bianco,
+    border: $bianco,
+    bg: $null,
     button-bg: $nero,
     button: $bianco,
   ),
 
   header: (
-    body: $nero,
-    link: $nero,
-    accent: $rosso-vero,
+    body: $bianco,
+    link: $bianco,
+    accent: $bianco,
     border: $nero,
-    bg: $bianco,
+    bg: rgba($rosso-vero, 0.1),
     button-bg: $nero,
     button: $bianco,
   ),
 
   fheader: (
-    body: $nero,
-    link: $nero,
-    accent: $nero,
-    border: $nero,
+    body: rgba($bianco, 0.8),
+    link: rgba($bianco, 0.8),
+    accent: $bianco,
+    border: $bianco,
     bg: $bianco,
-    overlay: $rosso-vero,
+    overlay: $nero,
     button-bg: $nero,
     button: $bianco,
   ),
@@ -83,7 +87,7 @@ $layout-colors: (
     overlay:    $nero,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
-    button-bg:  $rosso-vero,
+    button-bg:  $verde,
 
     button-subtle: $bianco,
     button-bg-subtle: mix($nero, white, 50%)    //bg bottone
@@ -138,21 +142,22 @@ $colors: (
     overlay:    $nero,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
-    button-bg:  lighten($nero, 30%),
+    button-bg:  $verde,
 
     button-subtle: $bianco,
     button-bg-subtle: mix($nero, white, 50%)    //bg bottone
   ),
 
   color--light: (
-    body:       $nero,      //Corpo - testo
-    body-sec:   $nero,      //Secondario - blockquote o blog meta
-    heading:    rgba($nero, 0.90),      //Titoli 1 e 2
-    link:       $nero,      //Link
-    bg:         lighten($nero, 80%),      //Sfondo principale
+    body:       rgba($nero, 0.6),      //Corpo - testo
+    body-sec:   rgba($nero, 0.6),      //Secondario - blockquote o blog meta
+    heading:    rgba($nero, 0.60),      //Titoli 1 e 2
+    link:       $rosso-vero,      //Link
+    //bg:         lighten($blu, 45%),      //Sfondo principale
+    bg:         lighten($verdolino, 20%),      //Sfondo principale
     border:     $bianco,      //Bordi
 
-    accent:     $bianco,      //Accento - sfondo lista icone / grassetti / icone
+    accent:     $rosso-vero,      //Accento - sfondo lista icone / grassetti / icone
 
     body-alt:   $bianco,      //body alternativo - testo in un form o in un box
     bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box
@@ -166,7 +171,35 @@ $colors: (
     overlay:    $nero,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
-    button-bg:  $nero,
+    button-bg:  $verde,
+
+    button-subtle: $bianco,
+    button-bg-subtle: mix($nero, white, 50%)    //bg bottone
+  ),
+
+  color--light-alt: (
+    body:       rgba($nero, 0.6),      //Corpo - testo
+    body-sec:   rgba($nero, 0.6),      //Secondario - blockquote o blog meta
+    heading:    rgba($nero, 0.60),      //Titoli 1 e 2
+    link:       $rosso-vero,      //Link
+    bg:         lighten($blu, 45%),      //Sfondo principale
+    border:     $bianco,      //Bordi
+
+    accent:     $rosso-vero,      //Accento - sfondo lista icone / grassetti / icone
+
+    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
+    bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box
+    accent-alt: $bianco,      //accento alt - il di un link nel form
+
+    form-body: $bianco,
+    form-bg: $nero,
+    form-link: $bianco,
+    form-desc: $bianco,
+
+    overlay:    $nero,      //Colore sfondo overlay
+
+    button:     $bianco,      //colore bottone
+    button-bg:  $verde,
 
     button-subtle: $bianco,
     button-bg-subtle: mix($nero, white, 50%)    //bg bottone

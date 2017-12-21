@@ -50,3 +50,12 @@ $widths: (
 );
 
 $bp-default: lg;
+
+$featured-header: (
+  desktop: (
+    top: $line-height * 4,
+    bottom: $line-height * 4,
+  ),
+  tablet: (),
+  phone: (),
+);

@@ -25,7 +25,9 @@
  */
 #header {
   background-color: main-colors(header, bg);
-  transition: all 250ms linear;
+  // transition: all 250ms linear;
+  position: absolute;
+  border-bottom: 1px solid rgba($bianco, 0.3);
 }
 
 
@@ -35,7 +37,7 @@
 @include breakpoint-min(xl) {
   .sticker_sticky #header {
     background-color: main-colors(header, bg);
-    transition: all 250ms linear;
+    // transition: all 250ms linear;
   }
 }
 
@@ -53,12 +55,13 @@
 #header .inner {
   position: relative;
   height: auto;
-  transition: all 250ms linear;
+  // transition: all 250ms linear;
   display: flex;
   flex-flow: row;
   width: 100%;
   max-width: $website-width;
   flex-wrap: wrap;
+  align-items: flex-end;
 }
 
 /*
@@ -66,7 +69,7 @@
  */
 @include breakpoint-min(xl) {
 .sticker_sticky #header .inner {
-    transition: all 250ms linear;
+    // transition: all 250ms linear;
   }
 }
 
@@ -83,30 +86,31 @@
  #logo,
  #logo_text {
    bottom: 0;
-   transition: all 250ms linear;
+   // transition: all 250ms linear;
    position: relative;
    order: 1;
    padding: 0;
    height: auto;
-   flex-basis: 33%;
+   flex-basis: 15%;
 
    // LOGO DA SCROLLATO
    @at-root .sticker_sticky #{&} {
      @include breakpoint-min(xl) { //quando l'header è sticcato - tolgo il bottom solo su desktop
        bottom: 0;
-       transition: all 250ms linear;
+       // transition: all 250ms linear;
      }
 
      img {
        @include breakpoint-min(xl) { //quando l'header è sticcato - rimpicciolisco il logo solo su desktop
          width: 40%;
-         transition: all 250ms linear;
+         // transition: all 250ms linear;
        }
      }
    }
 
    a {
-     text-align: center;
+     text-align: left;
+     position: relative;
      display: block;
      max-width: 400px;
      margin: 0 auto;
@@ -114,6 +118,8 @@
 
    img {
      z-index: 1;
-     position: relative;
+     position: absolute;
+     filter: brightness(100);
+    top: -$line-height * 3;
    }
  }

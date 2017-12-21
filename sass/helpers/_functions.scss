@@ -169,3 +169,16 @@
 @function em-bp($value: $base * 1px) {
   @return ($value / 1px) / ($base) * 1em;
 }
+
+//****************************************************************************//
+//*                  CALCOLO FS DINAMICO
+//****************************************************************************//
+@function between($min, $max, $minWidth, $maxWidth, $pct:'%'){
+  $slope : ($max - $min) / ($maxWidth - $minWidth);
+  $intercept : $max - ($slope * $maxWidth);
+  @if $intercept == 0 {
+    @return #{$slope*100}#{$pct};
+  }	@else{
+      @return calc( #{$slope*100}#{$pct} + #{$intercept}px );
+  }
+}

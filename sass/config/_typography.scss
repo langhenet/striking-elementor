@@ -23,8 +23,8 @@
 ///
 // Families
 ///
-  $ff-primary: 'PT Serif', serif; //PROJ
-  $ff-secondary: 'Open Sans', sans-serif; //PROJ
+  $ff-primary: 'Source Serif Pro', serif; //PROJ
+  $ff-secondary: 'Source Sans Pro', sans-serif; //PROJ
   $ff-special: $ff-primary; //PROJ
   $ff-button: $ff-secondary;
 
@@ -35,7 +35,7 @@
 $families: (
   primary: (
     fm: $ff-primary,
-    thin: 200,
+    thin: 400,
     normal: 400,
     bold: 600,
     bolder: 600,
@@ -43,18 +43,18 @@ $families: (
 
   secondary: (
     fm: $ff-secondary,
-    thin: 300,
+    thin: 400,
     normal: 400,
-    bold: 700,
-    bolder: 900,
+    bold: 600,
+    bolder: 600,
   ),
 
   special: (
     fm: $ff-special,
-    thin: 300,
+    thin: 400,
     normal: 400,
-    bold: 400,
-    bolder: 400,
+    bold: 600,
+    bolder: 600,
   ),
 );
 
@@ -71,12 +71,12 @@ $decorations: (
 
   h2: (
     fm: secondary,
-    wt: normal,
+    wt: bold,
   ),
 
   h3: (
     fm: secondary,
-    wt: normal,
+    wt: bold,
   ),
 
   h4: (
@@ -110,11 +110,18 @@ $decorations: (
       mb: $margin-bottom,
     ),
 
-    h1: (
+    h1-sm: (
       fs: 3.375em,
       lh: 1.33333333333em,
       mt: 0.888888888888889em,
       mb: 0.44444444444444em,
+    ),
+
+    h1: (
+      fs: 5.065em,
+      lh: 1.161954070295196em,
+      mt: 0.5809770351476em,
+      mb: 0.2904885175738em,
     ),
 
     h2: (
@@ -126,9 +133,9 @@ $decorations: (
 
     h3: (
       fs: 1.5em,
-      lh: 2em,
-      mt: 1.5em,
-      mb: 1em,
+      lh: 1.25em,
+      mt: 1em,
+      mb: 0.5em,
     ),
 
     h4: (
@@ -140,8 +147,8 @@ $decorations: (
 
     h5: (
       fs: 0.75em,
-      lh: 2em,
-      mt: 2em,
+      lh: 2.178333333333333em,
+      mt: 2.178333333333333em,
       mb: 0em,
     ),
 
@@ -162,24 +169,24 @@ $decorations: (
 
 $mobile-sizes: (
   h1: (
-    fs: 1.953125em,
-    lh: 1.538461538461538em,
-    mt: 1.536em,
-    mb: 0.768em,
+    fs: 3.05em,
+    lh: 1.47540984em,
+    mt: 0.49180328em,
+    mb: 0.98360656em,
   ),
 
   h2: (
-    fs: 1.5625em,
-    lh: 1.935483870967742em,
-    mt: 0.96em,
-    mb: 0.96em,
+    fs: 2.25em,
+    lh: 1.33333333333em,
+    mt: 1.33333333333em,
+    mb: 0.6666666666667em,
   ),
 
   h3: (
-    fs: 1.25em,
-    lh: 1.2em,
-    mt: 1.8em,
-    mb: 0.6em,
+    fs: 1.5em,
+    lh: 1.25em,
+    mt: 1em,
+    mb: 0.5em,
   ),
 );
 
