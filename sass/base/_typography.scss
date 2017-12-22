@@ -159,7 +159,7 @@ sub { bottom: $sub-bottom; }
 // Stile lista per UL e OL
 ///
 #main ul li {//TODO
-  list-style: circle;
+  list-style: disc;
 }
 
 
@@ -242,6 +242,7 @@ blockquote {
 #page h4 {color: main-colors(main, heading);}
 #page h5 {color: main-colors(main, heading);}
 #page p, ul, ol {color: main-colors(main, body);}
+#page small {color: main-colors(main, body-alt);}
 #page a,
 #page a:visited {color: main-colors(main, link);}
 #page a:hover {color: darken(main-colors(main, link), 10%);}
@@ -254,6 +255,10 @@ blockquote {
   #page .#{$palette} {
     p, ul, ol {
       color: palette($palette, body)
+    }
+
+    small {
+      color: palette($paltte, body-alt);
     }
 
     h1, h2, h3, h4, h5 {

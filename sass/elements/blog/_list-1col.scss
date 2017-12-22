@@ -31,6 +31,11 @@
   border-bottom-color: main-colors(main, accent)
 }
 
+.category .image_styled {
+margin-bottom: 0;
+display: block;
+}
+
 // loop per tutte le sezioni
 @each $palette, $bg in $colors {
   .category .#{$palette}.image_frame {

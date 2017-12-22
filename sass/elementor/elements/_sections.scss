@@ -1,5 +1,3 @@
-
-
 ///
 // Impostazioni BG SEZIONE
 ///
@@ -16,16 +14,25 @@
 ///
 @each $palette, $sections in $colors {
   .#{$palette},
-  .elementor-section.#{$palette} {
+  .elementor-section.#{$palette},
+  //questa riga è per fixare il lumosity negli overlay--color
+  .#{$palette}.elementor-column .elementor-column-wrap {
     background-color: palette($palette, bg);
 
   /*    border-color: palette($palette, border);
-
   * {
       border-color: palette($palette, border);
     }*/
   }
 }
+
+///
+// BORDI
+///
+.elementor-column-wrap {
+  border-color: $bianco;
+}
+
 
 
 
@@ -89,11 +96,11 @@
 .elementor-column-gap-wide .elementor-row {
 
   .elementor-column:first-child .elementor-widget-wrap {
-    margin-left: -$line-height;
+    //margin-left: -$line-height;
   }
 
   .elementor-column:last-child .elementor-widget-wrap {
-    margin-right: -$line-height;
+    //margin-right: -$line-height;
   }
 }
 
@@ -112,11 +119,11 @@
 .elementor-column-gap-wider .elementor-row {
 
   .elementor-column:first-child .elementor-widget-wrap {
-    margin-left: -$line-height * 2;
+  //  margin-left: -$line-height * 2;
   }
 
   .elementor-column:last-child .elementor-widget-wrap {
-    margin-right: -$line-height * 2;
+  //  margin-right: -$line-height * 2;
   }
 }
 
@@ -396,5 +403,66 @@
         }
       }
     }
+  }
+}
+
+
+//////
+// Colori
+////////
+#page {
+  .elementor-column-gap-no,
+  .elementor-column-gap-default,
+  .elementor-column-gap-extended,
+  .elementor-column-gap-wide,
+  .elementor-column-gap-wider {
+  .colonna--imbottita  .elementor-element-populated {
+      background-color: main-colors(main, bg-alt);
+
+      h1, h2, h3, h4, h5, p, ol, ul, small {
+        color: main-colors(main, body-alt);
+
+        a {
+          color: main-colors(main, accent-alt);
+        }
+      }
+    }
+  }
+}
+
+@each $palette, $sections in $colors {
+  #page .#{$palette} {
+    .elementor-column-gap-no,
+    .elementor-column-gap-default,
+    .elementor-column-gap-extended,
+    .elementor-column-gap-wide,
+    .elementor-column-gap-wider {
+    .colonna--imbottita  .elementor-element-populated {
+        background-color: palette($palette, bg-alt);
+
+        h1, h2, h3, h4, h5, p, ol, ul, small {
+          color: palette($palette, body-alt);
+
+          a {
+            color: palette($palette, accent-alt);
+          }
+        }
+      }
+    }
+  }
+}
+
+/************************
+ INTRO
+ **************************/
+
+#intro .elementor-column-gap-default {
+  padding: $line-height * 8 0 $line-height * 4;
+}
+
+.elementor-edit-mode #intro {
+  margin-top: $line-height * 4;
+  .elementor-element-overlay {
+    z-index: 9999999999;
   }
 }

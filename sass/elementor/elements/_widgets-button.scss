@@ -58,7 +58,7 @@
  */
 #page .elementor-button-info.elementor-widget-button a.elementor-button {
   border-color: main-colors(main, accent);
-  background-color: main-colors(main, bg);
+  background-color: transparent;
   color: main-colors(main, accent);
 
   &:hover {
@@ -72,7 +72,7 @@
 
   #page .#{$palette} .elementor-button-info.elementor-widget-button a.elementor-button {
     border-color: palette($palette, body);
-    background-color: palette($palette, bg);
+    background-color: transparent;
     color: palette($palette, body);
 
     &:hover {
