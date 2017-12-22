@@ -1,10 +1,6 @@
-/*
- * Iconbox Widget
- */
- .elementor-widget-icon-box {
-   display: block;
- }
-
+.elementor-widget-icon-box {
+  display: block;
+}
 
 /*
  * Titolo Iconbox
@@ -16,11 +12,22 @@
   }
 
   h4.elementor-icon-box-title {
-    @include font(h4, $mt: $line-height);
+    @include font(h4, $mt: 0);
     text-transform: uppercase;
   }
 }
 
+/*
+ * Icona Iconbox
+ */
+.elementor-icon {
+  @include size(h2);
+
+  i {
+    //margin-top: size(h2, lh) / 2;
+    margin-bottom: size(h2, lh) / 2;
+  }
+}
 
 /*
  * Descrizione IconBox
@@ -28,9 +35,6 @@
 .elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-description {
   @include font(p, $mb: 0);
 }
-
-
-
 
 /********************************************************************************/
 /** BOX CON SFONDO
@@ -43,7 +47,6 @@
   padding: $line-height;
   box-shadow: $card-shadow;
 }
-
 
 /*
  * Colori

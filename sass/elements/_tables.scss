@@ -1,6 +1,64 @@
+
 //****************************************************************************//
 //*                                                                          *//
 //*                            TABELLE VARIE
 //*              descrizione - descrizione - descrizione
 //*                                                                          *//
 //****************************************************************************//
+#page table {
+  width: 100%;
+
+  thead {
+    tr {
+      background: main-colors(main, bg-alt);
+
+      th {
+        padding: $line-height / 2;
+        text-transform: uppercase;
+        font-family: $ff-secondary;
+        font-weight: normal;
+        color: main-colors(main, body-alt)
+      }
+    }
+  }
+
+  tbody tr {
+
+    &:nth-child(odd) {
+      background-color: darken(main-colors(main, bg), 2.5%);
+    }
+    &:nth-child(even) {
+      background-color: lighten(main-colors(main, bg), 5%);
+    }
+  }
+
+  td {
+    padding: $line-height / 2;
+  }
+}
+
+@each $palette, $sections in $colors {
+  #page .#{$palette} table {
+    thead {
+      tr {
+        background: palette($palette, bg-alt);
+        text-align: left;
+
+        th {
+            color: palette($palette, body-alt)
+        }
+      }
+    }
+
+  tbody tr {
+      color: palette($palette, body);
+
+      &:nth-child(odd) {
+        background-color: lighten(palette($palette, bg), 10%);
+      }
+      &:nth-child(even) {
+        background-color: lighten(palette($palette, bg), 15%);
+      }
+    }
+  }
+}

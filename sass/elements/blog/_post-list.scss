@@ -1,0 +1,24 @@
+#page .posts_list {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    list-style: none;
+    margin-left: 0;
+
+
+    a {
+      text-decoration: none;
+    }
+
+    .post_title {
+      @include font(h4, $mt: 0);
+    }
+
+    .post_extra_info {
+      p {
+        @include font(small, $mb: 0);
+      }
+    }
+  }
+}
