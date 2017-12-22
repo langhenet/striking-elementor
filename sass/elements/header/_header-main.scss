@@ -93,19 +93,8 @@
    height: auto;
    flex-basis: 15%;
 
-   // LOGO DA SCROLLATO
-   @at-root .sticker_sticky #{&} {
-     @include breakpoint-min(xl) { //quando l'header è sticcato - tolgo il bottom solo su desktop
-       bottom: 0;
-       // transition: all 250ms linear;
-     }
-
-     img {
-       @include breakpoint-min(xl) { //quando l'header è sticcato - rimpicciolisco il logo solo su desktop
-         width: 40%;
-         // transition: all 250ms linear;
-       }
-     }
+   @include breakpoint-min(lg) {
+      top: $line-height * 2;
    }
 
    a {

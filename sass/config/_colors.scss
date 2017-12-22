@@ -27,7 +27,7 @@ $rosso-vero: #d24026;
 $arancione: #de7019;
 $blu: #41666c;
 $beige: #c5c4a6;
-$verdolino: #acbe8a;
+$verdolino: lighten(#de7019, 20);
 $verde: #4CAF50;
 
 /*
@@ -182,7 +182,7 @@ $colors: (
     body-sec:   rgba($nero, 0.6),      //Secondario - blockquote o blog meta
     heading:    rgba($nero, 0.60),      //Titoli 1 e 2
     link:       $rosso-vero,      //Link
-    bg:         lighten($blu, 45%),      //Sfondo principale
+    bg:         lighten($blu, 60%),      //Sfondo principale
     border:     $bianco,      //Bordi
 
     accent:     $rosso-vero,      //Accento - sfondo lista icone / grassetti / icone

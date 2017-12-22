@@ -14,7 +14,7 @@
 ///
 // HEADER inner
 ///
-#header .inner {
+/*#header .inner {
   @include breakpoint-max(lg) {
     padding: 0 $line-height;
   }
@@ -22,7 +22,7 @@
   @include breakpoint-max(md) {
     padding: 0 ( $line-height / 2 );
   }
-}
+}*/
 
 
 ///
@@ -31,7 +31,9 @@
 .responsive #logo,
 .responsive #logo_text {
   @include breakpoint-max(lg) {
-    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-self: flex-start;
   }
 
   @include breakpoint-max(sm) {
@@ -63,8 +65,6 @@
 #top_area {
 
 
-  @include breakpoint-max(lg) {//la paddo sotto i 979px
-  }
 
   @include breakpoint-max(md) {
     display: flex;
@@ -72,47 +72,9 @@
     flex-wrap: wrap;
   }
 
-  @include breakpoint-max(sm) {//rimuovo il padding sotto i 567px
-    padding-top: 0;
-  }
-
   @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
     @include breakpoint-max(md) {
       display: flex;
-    }
-  }
-
-  .widget {
-    @include breakpoint-max(md) { //li faccio cadere sotto i 567px
-      margin-right: 0;
-      box-sizing: border-box;
-      //clear: both;
-      //margin-top: $line-height / 2;
-      &.widget_icl_lang_sel_widget {
-        flex-shrink: 0;
-        text-align: center;
-      }
-
-      &.widget_text,
-      &.widget_text_icl {
-        margin-right: 0;
-        flex-shrink: 0;
-      }
-
-      &.widget_nav_menu {
-        flex-shrink: 0;
-        z-index: 99;
-        position: relative;
-
-        li {
-          text-align:right;
-          width: 100%;
-        }
-      }
-
-      &:last-child {
-      //  margin-bottom: $line-height / 2;
-      }
     }
   }
 }
