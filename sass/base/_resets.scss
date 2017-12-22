@@ -10,3 +10,11 @@
 #page {
   font-size: 1em;
 }
+
+
+@media only screen and (max-width: 641px) {
+  .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
+    line-height: inherit;
+    min-height: inherit;
+  }
+}
