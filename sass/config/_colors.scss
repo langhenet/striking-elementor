@@ -67,7 +67,7 @@ $layout-colors: (
 
   main: (
     body:       $nero,      //Corpo - testo
-    body-sec:   $nero,      //Secondario - blockquote o blog meta
+    body-sec:   rgba($nero, 0.1),      //Secondario - blockquote o blog meta
     heading:    lighten($nero, 50%),      //Titoli 1 e 2
     link:       $rosso-vero,      //Link
     bg:         $bianco,      //Sfondo principale

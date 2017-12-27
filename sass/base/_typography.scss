@@ -169,12 +169,12 @@ sub { bottom: $sub-bottom; }
 ///
 #main ol,
 #main ul {
-  margin-left: $line-height * 2;
+  margin-left: $line-height;
   padding-bottom: 0;
   margin-bottom: $line-height;
 
   @include breakpoint-max(md) {
-    margin-left: $line-height;
+    margin-left: $line-height / 2;
   }
 }
 
@@ -266,7 +266,7 @@ blockquote {
 #page h4 {color: main-colors(main, heading);}
 #page h5 {color: main-colors(main, heading);}
 #page p, ul, ol {color: main-colors(main, body);}
-#page small {color: main-colors(main, body-alt);}
+#page small {color: main-colors(main, body-sec);}
 #page a,
 #page a:visited {color: main-colors(main, link);}
 #page a:hover {color: darken(main-colors(main, link), 10%);}
@@ -282,7 +282,7 @@ blockquote {
     }
 
     small {
-      color: palette($palette, body-alt);
+      color: palette($palette, body-sec);
     }
 
     h1, h2, h3, h4, h5 {

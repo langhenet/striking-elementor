@@ -9,7 +9,7 @@
 //****************************************************************************//
 /*
  * Titolo
- */
+
 .type-post #feature h1 {
   @include font(h2);
 
@@ -18,16 +18,15 @@
   @include breakpoint-max(sm) {
     @include m-size(h2);
   }
-}
+}*/
 
 
 /*
  * Meta
  */
 .type-post .feature-introduce {
-  @include font(h5);
+  @include font(h5, $mt: 0);
 
-  font-style: italic;
   text-transform: uppercase;
 
   //font-family: font(h5,fm);

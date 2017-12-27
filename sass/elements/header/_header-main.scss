@@ -94,7 +94,7 @@
    flex-basis: 15%;
 
    @include breakpoint-min(lg) {
-      top: $line-height * 2;
+      top: $line-height * 1.5;
    }
 
    a {

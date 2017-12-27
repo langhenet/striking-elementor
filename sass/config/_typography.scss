@@ -64,6 +64,10 @@ $decorations: (
     wt: normal,
   ),
 
+  h1sm: (
+    fm: secondary,
+    wt: normal,
+  ),
   h1: (
     fm: secondary,
     wt: normal,
@@ -110,7 +114,7 @@ $decorations: (
       mb: $margin-bottom,
     ),
 
-    h1-sm: (
+    h1sm: (
       fs: 3.375em,
       lh: 1.33333333333em,
       mt: 0.888888888888889em,
