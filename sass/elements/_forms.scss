@@ -30,7 +30,7 @@ select {
 .gform_wrapper {
   padding: $line-height * 1.5;
   margin-top: 0 !important;
-  margin-bottom: !important;
+  margin-bottom: 0 !important;
   max-width: 100%;
 
   @include breakpoint-max(xs) {
@@ -48,7 +48,7 @@ select {
 .gform_wrapper li,
 .gform_wrapper .top_label li.gfield.gf_left_half,
 .gform_wrapper .top_label li.gfield.gf_right_half {
-  margin-bottom: $line-height * 1.5;
+  margin-bottom: $line-height / 2;
 }
 .gform_wrapper ul.gform_fields li.gfield,
 .gform_wrapper .top_label li.gfield.gf_right_half {
@@ -147,7 +147,7 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
  * Etichette dei campi
  */
 .gform_wrapper .top_label .gfield_label {
-  @include form-label(p);
+  @include form-label(h5);
 }
 
 
@@ -169,13 +169,13 @@ body .gform_wrapper label.gfield_label+div.ginput_container {
  input.text_input,
  textarea.textarea,
  select {
-  @include form-field(p, 2);
+  @include form-field(h5, 2);
   margin-bottom: 0;
 }
 
 input.text_input:focus,
 textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px - devo metterlo a mano
-  @include form-field(p, 2);
+  @include form-field(h5, 2);
   margin-bottom: 0;
 }
 
@@ -223,7 +223,7 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 .gform_wrapper .top_label .gfield_description {
   @include form-desc(small);
   padding-top: size(small, lh) / 2;
-  padding-bottom: size(small, lh) / 2;
+
 }
 
 ///
@@ -238,8 +238,6 @@ textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px 
 .gform_wrapper .ginput_complex label,
 .gform_wrapper .instruction {
   @include form-desc(small);
-  padding-top: size(small, lh) / 2;
-  padding-bottom: size(small, lh) / 2;
 }
 
 

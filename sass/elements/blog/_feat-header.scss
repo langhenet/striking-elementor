@@ -12,6 +12,10 @@
   padding-top: $line-height * 2;
   padding-bottom: $line-height;
 
+  @include breakpoint-max(md) {
+    padding-top: $line-height * 6;
+  }
+
   h1 {
     @include font(h1sm, $mt: 0, $mb: 0, $fm: primary);
     color: palette(color--dark, body);
@@ -28,7 +32,7 @@
   .feature-introduce {
     color: $bianco;
   }
-  
+
   &:before {
     display: none;
   }

@@ -75,7 +75,7 @@
   @include font(h1, $mt: 0, $fm: primary);
   padding: 0;
   color: main-colors(fheader, body);
-  max-width: 800px;
+  max-width: 600px;
 
   @include breakpoint-max(lg) {
     @include m-size(h1, $mb: 0);

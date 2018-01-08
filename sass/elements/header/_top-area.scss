@@ -82,7 +82,7 @@
     padding-right: 0;
     margin-top: 0;
   }
-  section.widget:first-child {
+  section.widget:nth-child(2) {
     @include breakpoint-min(md) {
       display: none;
     }
@@ -125,6 +125,9 @@
     @include breakpoint-min(md) {
       border-right: 1px solid $bianco;
     }
+    @include breakpoint-max(md) {
+      margin-bottom: $line-height / 4;
+    }
   }
 
   /*
@@ -159,6 +162,10 @@
 
   @include breakpoint-min(md) {
     padding-left: $line-height;
+  }
+  @include breakpoint-max(md) {
+    order: -1;
+    margin-bottom: $line-height / 4;
   }
 
 /*  @include breakpoint-max(md) {

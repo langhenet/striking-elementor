@@ -83,32 +83,32 @@
 /*
  * Contenitore del logo //TODO @at-root directive is not working here
  */
- #logo,
- #logo_text {
-   bottom: 0;
-   // transition: all 250ms linear;
-   position: relative;
-   order: 1;
-   padding: 0;
-   height: auto;
-   flex-basis: 15%;
+#logo,
+#logo_text {
+  bottom: 0;
+  // transition: all 250ms linear;
+  position: relative;
+  order: 1;
+  padding: 0;
+  height: auto;
+  flex-basis: 15%;
 
-   @include breakpoint-min(lg) {
-      top: $line-height * 1.5;
-   }
+  @include breakpoint-min(lg) {
+    top: $line-height * 1.5;
+  }
 
-   a {
-     text-align: left;
-     position: relative;
-     display: block;
-     max-width: 400px;
-     margin: 0 auto;
-   }
+  a {
+    text-align: left;
+    position: relative;
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 
-   img {
-     z-index: 1;
-     position: absolute;
-     filter: brightness(100);
+  img {
+    z-index: 1;
+    position: absolute;
+    filter: brightness(100);
     top: -$line-height * 3;
-   }
- }
+  }
+}

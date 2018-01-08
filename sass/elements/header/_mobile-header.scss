@@ -36,31 +36,46 @@
     justify-self: flex-start;
   }
 
-  @include breakpoint-max(sm) {
-    display: block;
-    width: 60%;
-    float: none;
-    height: auto;
+
+  @include breakpoint-max(lg) {
+    flex-basis: 25%;
+
+    img {
+      top: -$line-height * 4;
+      min-width: 100px;
+    }
   }
+
+
 
   @include breakpoint-max(md)   {
     img {
-      top: -4em;
       min-width: 80px;
       z-index: 999999;
+      top: 0;
+      position: relative;
     }
+  }
+
+  @include breakpoint-max(sm) {
+    flex-basis: 25%;
+    width: 25%;
+    flex-shrink: 0;
+    min-width: 120px;
+    float: none;
+    height: auto;
+    display: block;
+  }
+
+  @include breakpoint-max(sm) {
+    min-width: 100px;
   }
 }
 
 //******************************************************************************/
 //         TOB BAR
 //******************************************************************************/
-.sticker_sticky #top_area { //TOP AREA NASCOSTA quando sticky
 
-  @include breakpoint-max(md) {//la rendo di nuovo visible sotto i 979px
-
-  }
-}
 
 #top_area {
 
@@ -69,7 +84,12 @@
   @include breakpoint-max(md) {
     display: flex;
     visibility: visible;
+    flex-direction: column;
     flex-wrap: wrap;
+    flex-basis: 65%;
+    order: 1;
+    align-items: flex-end;
+    flex-shrink: 1;
   }
 
   @at-root .responsive #{&} { //rendo la top bar visibile anche sotto i 787px e ne dimezzo la larghezza
@@ -87,6 +107,9 @@
     height: 2em;
     padding: 0;
   }
+  @include breakpoint-max(md) {
+    order: -1;
+  }
 }
 
 /******************************************************************************/
@@ -99,6 +122,8 @@
   @include breakpoint-max(md) {
     display: inline-block;
     width: 100%;
+    flex-basis: 100%;
+    margin-top: $line-height / 2;
     &::before {
       content: "\f0c9";
       font-family: 'FontAwesome';

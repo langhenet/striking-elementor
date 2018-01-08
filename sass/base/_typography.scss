@@ -210,7 +210,7 @@ blockquote {
   @include font(blockquote);
 
   @include breakpoint-max() {
-    @include m-size(h3);
+  //  @include m-size(h3, $mt: 0);
   }
 
   @include breakpoint-max(sm) {
@@ -218,8 +218,10 @@ blockquote {
   }
 
   &::before {
-    top: 1em;
-    content:"\e643" !important;
+    top: 0.6em;
+    content: "\201C"!important;
+    font-size: size(blockquote, fs) * 2;
+    font-family: decoration(blockquote, fm);
 
     @include breakpoint-max(sm) {
       display: none;

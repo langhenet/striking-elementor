@@ -50,6 +50,8 @@
 //****************************************************************************//
 #page {
   background-color: main-colors(main, bg);
+
+  overflow: visible;
 }
 
 
@@ -143,20 +145,35 @@
 //                          BREAD CRUMBS
 //****************************************************************************//
 #breadcrumbs { //contenitore
-  margin-top: 0;
+  margin-top: -$line-height;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: absolute;
+  max-width: $website-width;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  font-size: 1em;
+  @include breakpoint-max(xl) {
+    padding-left: $line-height;
+    padding-right: $line-height;
+  }
 
   .breadcrumbs {
     @include font(h5, $mt: 0);
 
     a {
+      color: $bianco;
     }
 
     text {
       font-weight: bold;
+      color: $bianco;
     }
 
     .breadcrumbs-plus {
-
+      color: $bianco;
     }
   }
 

@@ -37,10 +37,10 @@
  qui "trasferisco" i padding dagli A ai LI.
  */
  #navigation .menu > li {
-  padding: ($line-height / 4) 15px ($line-height / 4) 13px;
+  padding: ($line-height / 4) 15px 0 13px;
   font-family: $ff-secondary;
   text-transform: uppercase;
-  margin-bottom: ($line-height / 4);
+  margin-bottom: ($line-height / 2);
 
   &:last-child {
     padding-right: 0;
@@ -153,8 +153,8 @@
 // Sottomenu - contenitore / UL
 ///
 #navigation ul li ul {
-  background-color: transparent;
   border: 0;
+  background-color: transparent;
   padding: ($line-height / 2) 0 0;
   box-shadow: 2px 2px 2px rgba(#000, 0.2);
 
@@ -166,11 +166,11 @@
 
   li {
     padding: $line-height / 2;
-    background-color: rgba(main-colors(header, bg), 0.85);
+    background-color: rgba($bianco, 0.2);
     margin-bottom: 0;
 
     &:hover {
-      background:  rgba(main-colors(header, bg), 0.95);
+      background-color: rgba($bianco, 0.1);
     }
   }
 }
@@ -182,10 +182,10 @@
 #navigation ul li.hover ul li a,
 #navigation ul ul li a,
 #navigation ul ul li a:visited {
-  color: main-colors(header, link);
+  color: main-colors(header, body);
   margin-bottom: 0;
   padding: 0;
-  @include font(p, $mb: 0);
+  @include font(h4, $mt: 0, $mb: 0, $wt: normal);
   text-transform: none;
 }
 
@@ -205,10 +205,14 @@
 #navigation .sub-menu .current_page_ancestor > a,
 #navigation .sub-menu .current_page_ancestor > a:visited {
   background: transparent;
+  color: main-colors(header, body);
+
 }
 
 //hover
 #navigation ul li ul li a:hover,
+#navigation ul li.hover ul li a:hover,
 #navigation ul ul li a:hover {
   background: transparent !important;
+  color: main-colors(header, body) !important;
 }
