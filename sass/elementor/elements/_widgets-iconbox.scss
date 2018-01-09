@@ -1,5 +1,16 @@
 .elementor-widget-icon-box {
   display: block;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: $line-height;
+  border-color: main-colors(main, border)
+
+}
+
+@each $palette, $color in $colors {
+  .#{$palette} .elementor-widget-icon-box {
+    border-color: palette($palette, border);
+  }
 }
 
 /*
@@ -8,20 +19,27 @@
 .elementor-widget-icon-box .elementor-icon-box-content {
 
   h3.elementor-icon-box-title {
-    @include font(h3, $mt: 0);
+    @include font(h3, $mt: 0, $fm: primary);
   }
 
   h4.elementor-icon-box-title {
-    @include font(h4, $mt: 0);
+    @include font(h5, $mt: 0, $mb: size(h5, mt) / 2, $fm: secondary, $wt: bold);
     text-transform: uppercase;
+    text-align: left;
   }
 }
+
+
 
 /*
  * Icona Iconbox
  */
+.elementor-icon-box-icon {
+  display: none;
+}
 .elementor-icon {
   @include size(h2);
+  display: none;
 
   i {
     //margin-top: size(h2, lh) / 2;
@@ -33,7 +51,8 @@
  * Descrizione IconBox
  */
 .elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-description {
-  @include font(p, $mb: 0);
+  @include font(small, $mb: 0, $fm: secondary);
+  text-align: left;
 }
 
 /********************************************************************************/
