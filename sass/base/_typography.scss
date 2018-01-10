@@ -12,10 +12,15 @@
 //***********************************************************************//
 //              PARTE PRINCIPALE - BODY - P e UL / OL
 //***********************************************************************//
+body {
+  font-size: 1em;
+  line-height: $line-height;
+  font-family: $ff-primary;
+}
 /*
  * BODY e P
  */
-body {
+html {
   font-size: $font-size;
   line-height: $line-height;
   font-family: $ff-primary;
@@ -26,7 +31,7 @@ body {
 /*
  * HTML base font size: calculated with between() function
  */
-body {
+html {
   font-size: between(16,17, 320,480, "vw");
 
   @include breakpoint-min(sm) {
@@ -42,9 +47,7 @@ body {
   }
 }
 
-body {
-//  font-size: $font-size !important;
-}
+
 
 p, ul, ol, pre, table, blockquote {
   @include margin;

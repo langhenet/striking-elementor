@@ -85,7 +85,7 @@ $decorations: (
 
   h4: (
     fm: secondary,
-    wt: normal,
+    wt: bold,
   ),
 
   h5: (
@@ -174,7 +174,7 @@ $decorations: (
 $mobile-sizes: (
   h1: (
     fs: 3.05em,
-    lh: 1.47540984em,
+    lh: 0.99541em, // era 1.47540984em
     mt: 0.49180328em,
     mb: 0.98360656em,
   ),

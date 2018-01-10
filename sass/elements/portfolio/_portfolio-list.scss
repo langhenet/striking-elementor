@@ -333,3 +333,36 @@
     color: palette($palette, link);
   }
 }
+
+#page #main ul.portfolio_one_column {
+  list-style: disc;
+  margin: 0 !important;
+  flex-direction: column;
+
+  .image_styled {
+    display: none;
+  }
+
+  li.portfolio_item {
+    padding: 0;
+    margin-bottom: 0;
+    list-style: disc;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .portfolio_details {
+    padding: 0;
+    width: 100%;
+    float: none;
+    background: transparent;
+  }
+
+  .portfolio_title {
+    @include font(h5, $mt: 0, $mb: 0, $fm: primary, $wt: normal);
+
+    a {
+      color: main-colors(main, body-sec);
+    }
+  }
+}

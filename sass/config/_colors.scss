@@ -152,12 +152,12 @@ $colors: (
     body:       rgba($nero, 0.8),      //Corpo - testo
     body-sec:   rgba($nero, 0.6),      //Secondario - blockquote o blog meta
     heading:    rgba($nero, 0.45),      //Titoli 1 e 2
-    link:       $rosso-vero,      //Link
+    link:       $arancione,      //Link
     //bg:         lighten($blu, 45%),      //Sfondo principale
     bg:         lighten(desaturate($arancione, 10%), 45%),      //Sfondo principale
-    border:     $beige,      //Bordi
+    border:     $arancione,      //Bordi
 
-    accent:     $rosso-vero,      //Accento - sfondo lista icone / grassetti / icone
+    accent:     $arancione,      //Accento - sfondo lista icone / grassetti / icone
 
     body-alt:   $bianco,      //body alternativo - testo in un form o in un box
     bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box
@@ -181,11 +181,11 @@ $colors: (
     body:       rgba($nero, 0.8),      //Corpo - testo
     body-sec:   rgba($nero, 0.6),      //Secondario - blockquote o blog meta
     heading:    rgba($nero, 0.45),      //Titoli 1 e 2
-    link:       $rosso-vero,      //Link
+    link:       $blu,      //Link
     bg:         lighten($blu, 55%),      //Sfondo principale
     border:     $blu,      //Bordi
 
-    accent:     $rosso-vero,      //Accento - sfondo lista icone / grassetti / icone
+    accent:     $blu,      //Accento - sfondo lista icone / grassetti / icone
 
     body-alt:   $bianco,      //body alternativo - testo in un form o in un box
     bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box

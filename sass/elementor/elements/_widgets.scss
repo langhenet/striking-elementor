@@ -5,13 +5,13 @@
 
 .elementor-text-editor > {
   * {
-    max-width: 33rem;
+    max-width: 24.3rem; // was 33
     margin-left: auto;
     margin-right: auto;
   }
 
   img {
-    max-width: 37rem;
+    max-width: 28.3rem;
   }
 
   table {
@@ -37,7 +37,7 @@
 
 .elementor-widget-icon-box,
 .elementor-widget-wp-widget-gform_widget {
-  max-width: 33rem;
+  max-width: 24.3rem;
   margin-left: auto;
   margin-right: auto;
 }

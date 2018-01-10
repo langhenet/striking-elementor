@@ -6,7 +6,15 @@
 //***************************************************************************//
 
 .single-portfolio {
+  #feature {
+    h1 {
+      @include font(h1sm, $fm: primary);
 
+    @include breakpoint-max() {
+        @include m-size(h2);
+      }
+    }
+  }
   #comments {
     max-width: $website-width / 2;
     margin: 0 auto;

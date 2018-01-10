@@ -1,17 +1,44 @@
 .elementor-widget-testimonial {
+  padding-left: $line-height;
+  border-left: 3px solid;
+  border-color: main-colors(main, border);
+
+  .elementor-testimonial-details {
+    padding: 0;
+  }
+
   .elementor-testimonial-content {
-    @include font(blockquote);
-    color: main-colors(main, body-sec);
+    @include font(small, $mb: 0);
+    color: main-colors(main, body);
   }
 
   .elementor-testimonial-name {
-    @include font(h4, $mt:0, $mb: 0);
+    @include font(small, $mt:0, $mb: 0, $wt: bold);
+    text-transform: uppercase;
     color: main-colors(main, accent);
   }
 
   .elementor-testimonial-job {
-    @include font(p, $mb: 0);
+    @include font(p, $mt: 0, $mb: 0);
     color: main-colors(main, body-sec);
+  }
+}
+
+.elementor-testimonial-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .elementor-testimonial-content,
+  .elementor-testimonial-meta {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .elementor-testimonial-content {
+    order: 1;
+  }
+  .elementor-testimonial-meta {
+    margin-bottom: $line-height / 2;
   }
 }
 
@@ -21,9 +48,10 @@
  */
 @each $palette, $section in $colors {
   .#{$palette} .elementor-widget-testimonial {
+    border-color: palette($palette, border);
 
     .elementor-testimonial-content {
-      color: palette($palette, body-sec);
+      color: palette($palette, body);
     }
 
     .elementor-testimonial-name {
