@@ -5,7 +5,7 @@
 
 .elementor-text-editor > {
   * {
-    max-width: 24.3rem; // was 33
+    max-width: 25.3rem; // was 33
     margin-left: auto;
     margin-right: auto;
   }
@@ -23,7 +23,21 @@
   }
 }
 
-
+.elementor-align-center.elementor-widget-button {
+  max-width: 25.3rem; // was 33
+  margin-left: auto;
+  margin-right: auto;
+}
+.elementor-align-right.elementor-widget-button {
+  max-width: 25.3rem; // was 33
+  margin-left: auto;
+  margin-right: 0;
+}
+.elementor-align-left.elementor-widget-button {
+  max-width: 25.3rem; // was 33
+  margin-right: auto;
+  margin-left: 0;
+}
 
 .elementor-row > .elementor-column {
   &:first-child > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget > .elementor-widget-container > .elementor-text-editor > * {
@@ -34,10 +48,16 @@
   }
 }
 
+.elementor-row > .elementor-col-100 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget > .elementor-widget-container > .elementor-text-editor > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 
 .elementor-widget-icon-box,
-.elementor-widget-wp-widget-gform_widget {
-  max-width: 24.3rem;
+.elementor-widget-wp-widget-gform_widget,
+.elementor-widget-image {
+  max-width: 25.3rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -45,14 +65,16 @@
 .elementor-row > .elementor-column {
   &:first-child > .elementor-column-wrap > .elementor-widget-wrap {
     & > .elementor-widget-icon-box,
-    & > .elementor-widget-wp-widget-gform_widget  {
+    & > .elementor-widget-wp-widget-gform_widget,
+    & > .elementor-widget-image {
       margin-left: 0;
     }
   }
 
   &:last-child > .elementor-column-wrap > .elementor-widget-wrap {
     & > .elementor-widget-icon-box,
-    & > .elementor-widget-wp-widget-gform_widget {
+    & > .elementor-widget-wp-widget-gform_widget,
+    & > .elementor-widget-image {
       margin-right: 0;
     }
   }

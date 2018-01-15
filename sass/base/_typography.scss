@@ -92,6 +92,14 @@ h1 {
   @include breakpoint-max() {
     @include m-size(h1);
   }
+
+  &.h1--small {
+    @include font(h1sm, $fm: primary);
+
+    @include breakpoint-max() {
+      @include m-size(h1);
+    }
+  }
 }
 
 h2 {
