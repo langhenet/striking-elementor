@@ -32,3 +32,14 @@
 .elementor-editor-active .elementor.elementor-edit-mode .elementor-top-column .elementor-widget-wrap .elementor-inner-section {
   margin-top: 0;
 }
+
+
+.elementor-edit-mode .elementor-section-wrap.ui-sortable {
+  &> section:first-child {
+
+    &> .elementor-element-overlay {
+      z-index: 9999999999;
+      margin-top: $line-height * 4;
+    }
+  }
+}

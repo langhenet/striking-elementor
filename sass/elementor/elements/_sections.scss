@@ -456,13 +456,27 @@
  INTRO
  **************************/
 
-#intro .elementor-column-gap-default {
-  padding: $line-height * 8 0 $line-height * 4;
-}
+#intro {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: row;
 
-.elementor-edit-mode #intro {
-  margin-top: $line-height * 4;
-  .elementor-element-overlay {
-    z-index: 9999999999;
+  h1 {
+    @include m-size(h1);
+    font-family: decoration(p, fm);
+
+    @include breakpoint-min(md) {
+      @include font(h1, $fm: primary);
+
+      &.h1--small {
+        @include font(h1sm, $fm: primary);
+      }
+    }
+
+  }
+
+  .elementor-column-gap-default {
+    padding: $line-height * 4 0 $line-height * 4;
+    width: 100%;
   }
 }
