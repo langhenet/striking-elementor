@@ -84,7 +84,7 @@ $layout-colors: (
     form-link: rgba($nero, 0.8),
     form-desc: rgba($nero, 0.8),
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    $bianco,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $verde,
@@ -123,15 +123,15 @@ $colors: (
   color--dark: (
     body:       $bianco,      //Corpo - testo
     body-sec:   $bianco,      //Secondario - blockquote o blog meta
-    heading:    rgba($bianco, 0.90),      //Titoli 1 e 2
+    heading:    rgba($bianco, 0.80),      //Titoli 1 e 2
     link:       $bianco,      //Link
     bg:         $rosso-vero,      //Sfondo principale
     border:     $bianco,      //Bordi
 
     accent:     $bianco,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $nero,      //body alternativo - testo in un form o in un box
-    bg-alt:     lighten($rosso-vero, 40%),      //sfondo alt - il bg di un form o di un box
+    body-alt:   rgba($nero, 0.8),      //body alternativo - testo in un form o in un box
+    bg-alt:     lighten($beige, 15%),      //sfondo alt - il bg di un form o di un box
     accent-alt: $rosso-vero,      //accento alt - il di un link nel form
 
     form-body: rgba($nero, 0.8),
@@ -139,7 +139,7 @@ $colors: (
     form-link: rgba($nero, 0.8),
     form-desc: rgba($nero, 0.8),
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    $rosso-vero,      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $verde,
@@ -159,16 +159,16 @@ $colors: (
 
     accent:     $arancione,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
-    bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box
-    accent-alt: $bianco,      //accento alt - il di un link nel form
+    body-alt:   rgba($nero, 0.8),      //body alternativo - testo in un form o in un box
+    bg-alt:     lighten($beige, 15%),      //sfondo alt - il bg di un form o di un box
+    accent-alt: $arancione,      //accento alt - il di un link nel form
 
     form-body: rgba($nero, 0.8),
     form-bg: lighten($beige, 15%),
     form-link: rgba($nero, 0.8),
     form-desc: rgba($nero, 0.8),
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    lighten(desaturate($arancione, 10%), 35%),      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $verde,
@@ -187,16 +187,16 @@ $colors: (
 
     accent:     $blu,      //Accento - sfondo lista icone / grassetti / icone
 
-    body-alt:   $bianco,      //body alternativo - testo in un form o in un box
-    bg-alt:     $nero,      //sfondo alt - il bg di un form o di un box
-    accent-alt: $bianco,      //accento alt - il di un link nel form
+    body-alt:   rgba($nero, 0.8),      //body alternativo - testo in un form o in un box
+    bg-alt:     lighten($beige, 15%),      //sfondo alt - il bg di un form o di un box
+    accent-alt: rgba($nero, 0.8),      //accento alt - il di un link nel form
 
     form-body: rgba($nero, 0.8),
     form-bg: lighten($beige, 15%),
     form-link: rgba($nero, 0.8),
     form-desc: rgba($nero, 0.8),
 
-    overlay:    $nero,      //Colore sfondo overlay
+    overlay:    lighten(desaturate($blu, 10%), 35%),      //Colore sfondo overlay
 
     button:     $bianco,      //colore bottone
     button-bg:  $verde,

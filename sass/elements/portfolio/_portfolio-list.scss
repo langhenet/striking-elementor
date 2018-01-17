@@ -263,7 +263,7 @@
 
   @include breakpoint-max(md) {
     padding: 0;
-    max-width: 190px !important;
+  //  max-width: 190px !important;
     margin: 0 auto;
   }
 
@@ -361,6 +361,10 @@
   .portfolio_title {
     @include font(h5, $mt: 0, $mb: 0, $fm: primary, $wt: normal);
 
+    @include breakpoint-max(md) {
+      @include font(small, $mt: 0, $mb: size(small, lh) / 2, $fm: primary, $wt: normal);
+
+    }
     a {
       color: main-colors(main, body-sec);
     }

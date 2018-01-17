@@ -110,5 +110,12 @@
     position: absolute;
     filter: brightness(100);
     top: -$line-height * 3;
+
+    @include breakpoint-min(md) {
+      @at-root .page-template-template_land_page #{&} {
+        position: relative;
+        top: 0;
+      }
+    }
   }
 }

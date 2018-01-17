@@ -35,7 +35,7 @@
 
 
 .elementor-edit-mode .elementor-section-wrap.ui-sortable {
-  &> section:first-child {
+  &> #intro {
 
     &> .elementor-element-overlay {
       z-index: 9999999999;

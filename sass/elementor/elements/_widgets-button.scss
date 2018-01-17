@@ -13,11 +13,11 @@
   }
 
   &.elementor-size-md {
+    @include button(p, 3, half);
     border-radius: 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 600;
-    @include button(p, 3, half);
   }
 
   &.elementor-size-lg {
@@ -76,9 +76,9 @@
 @each $palette, $section in $colors {
 
   #page .#{$palette} .elementor-button-info.elementor-widget-button a.elementor-button {
-    border-color: palette($palette, body);
+    border-color: rgba(palette($palette, body), 0.75);
     background-color: transparent;
-    color: palette($palette, body);
+    color: rgba(palette($palette, body), 0.75);
 
     &:hover {
       background: palette($palette, body);

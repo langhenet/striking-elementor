@@ -1,0 +1,11 @@
+.toggle_title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: $line-height / 4;
+  @include font(h4);
+}
+
+.toggle_icon::before {
+  top: 0.05em;
+  position: relative;
+}

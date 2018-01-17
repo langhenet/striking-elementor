@@ -16,7 +16,7 @@
   background-blend-mode: luminosity;
 
   &::before {
-    @include color-overlay($palette: main, $grade: 0.90);
+    @include color-overlay($palette: main, $grade: 0.70);
   }
 }
 
@@ -25,7 +25,7 @@
   .#{$palette}.overlay--color.elementor-column .elementor-column-wrap {
 
     &::before {
-      @include color-overlay($palette: $palette, $grade: 0.8);
+      @include color-overlay($palette: $palette, $grade: 0.7);
     }
   }
 }

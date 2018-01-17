@@ -18,34 +18,71 @@
     max-width: 100%;
   }
 
+  .portfolios {
+    max-width: 100%;
+  }
+
+  .portfolios .portfolio_one_column  {
+    max-width: 25.3rem;
+
+    @include breakpoint-max(md) {
+      @at-root #page #main #{&} {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
+  }
+
+
   .gform_wrapper {
   //  max-width: 39rem;
+  }
+
+  .toggle {
+    max-width: 100%;
+  }
+}
+
+.elementor-widget-button {
+  max-width: 25.3rem; // was 33
+
+  @include breakpoint-max(md) {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .elementor-align-center.elementor-widget-button {
-  max-width: 25.3rem; // was 33
   margin-left: auto;
   margin-right: auto;
-}
-.elementor-align-right.elementor-widget-button {
-  max-width: 25.3rem; // was 33
-  margin-left: auto;
-  margin-right: 0;
-}
-.elementor-align-left.elementor-widget-button {
-  max-width: 25.3rem; // was 33
-  margin-right: auto;
-  margin-left: 0;
 }
 
-.elementor-row > .elementor-column {
-  &:first-child > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget > .elementor-widget-container > .elementor-text-editor > * {
-    margin-left: 0;
-  }
-  &:last-child > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget > .elementor-widget-container > .elementor-text-editor > * {
+@include breakpoint-min(md) {
+  .elementor-align-right.elementor-widget-button {
+    margin-left: auto;
     margin-right: 0;
   }
+  .elementor-align-left.elementor-widget-button {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+
+@include breakpoint-min(md) {
+  .elementor-row > .elementor-column {
+    &:first-child > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget > .elementor-widget-container > .elementor-text-editor > * {
+      margin-left: 0;
+    }
+    &:last-child > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget > .elementor-widget-container > .elementor-text-editor > * {
+      margin-right: 0;
+    }
+  }
+}
+
+.colonna--imbottita .elementor-text-editor > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .elementor-row > .elementor-col-100 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget > .elementor-widget-container > .elementor-text-editor > * {
@@ -56,35 +93,41 @@
 
 .elementor-widget-icon-box,
 .elementor-widget-wp-widget-gform_widget,
-.elementor-widget-image {
+.elementor-widget-image,
+.portfolios .portfolio_one_column {
   max-width: 25.3rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.elementor-row > .elementor-column {
-  &:first-child > .elementor-column-wrap > .elementor-widget-wrap {
-    & > .elementor-widget-icon-box,
-    & > .elementor-widget-wp-widget-gform_widget,
-    & > .elementor-widget-image {
-      margin-left: 0;
+@include breakpoint-min(md) {
+  .elementor-row > .elementor-column {
+    &:first-child > .elementor-column-wrap > .elementor-widget-wrap {
+      & > .elementor-widget-icon-box,
+      & > .elementor-widget-wp-widget-gform_widget,
+      & > .elementor-widget-image {
+        margin-left: 0;
+      }
     }
-  }
 
-  &:last-child > .elementor-column-wrap > .elementor-widget-wrap {
-    & > .elementor-widget-icon-box,
-    & > .elementor-widget-wp-widget-gform_widget,
-    & > .elementor-widget-image {
-      margin-right: 0;
+    &:last-child > .elementor-column-wrap > .elementor-widget-wrap {
+      & > .elementor-widget-icon-box,
+      & > .elementor-widget-wp-widget-gform_widget,
+      & > .elementor-widget-image {
+        margin-right: 0;
+      }
     }
   }
 }
 
-.elementor-col-33 .elementor-widget-text-editor {
-  p {
-    @include font(small);
-  }
 
+.elementor-col-33 .elementor-widget-text-editor {
+  @include breakpoint-min(md) {
+    p {
+      @include font(small);
+    }
+  }
+  
   h3 {
     @include font(h3, $fm: primary);
   }

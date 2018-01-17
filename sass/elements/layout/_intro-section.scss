@@ -78,7 +78,7 @@
   max-width: 600px;
 
   @include breakpoint-max(lg) {
-    @include m-size(h1, $mb: 0);
+    @include m-size(h1);
   }
 }
 
