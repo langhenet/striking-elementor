@@ -80,7 +80,7 @@ $layout-colors: (
     accent-alt: $rosso-vero,      //accento alt - il di un link nel form
 
     form-body: rgba($nero, 0.8),
-    form-bg: lighten($beige, 15%),
+    form-bg: lighten(desaturate($arancione, 10%), 45%),
     form-link: rgba($nero, 0.8),
     form-desc: rgba($nero, 0.8),
 
@@ -98,7 +98,7 @@ $layout-colors: (
     link: $bianco,
     accent: $bianco,
     border: $bianco,
-    bg: rgba($nero, 0.8),
+    bg: darken($blu, 20%),
     button-bg: $bianco,
     button: $nero,
     ),
@@ -135,7 +135,7 @@ $colors: (
     accent-alt: $rosso-vero,      //accento alt - il di un link nel form
 
     form-body: rgba($nero, 0.8),
-    form-bg:  lighten($beige, 15%),
+    form-bg:  lighten(desaturate($arancione, 10%), 45%),
     form-link: rgba($nero, 0.8),
     form-desc: rgba($nero, 0.8),
 
@@ -160,11 +160,15 @@ $colors: (
     accent:     $arancione,      //Accento - sfondo lista icone / grassetti / icone
 
     body-alt:   rgba($nero, 0.8),      //body alternativo - testo in un form o in un box
-    bg-alt:     lighten($beige, 15%),      //sfondo alt - il bg di un form o di un box
+    // bg-alt:     lighten($beige, 15%),      //sfondo alt - il bg di un form o di un box
+    bg-alt: lighten(#b59a84, 20%),      //sfondo alt - il bg di un form o di un box
     accent-alt: $arancione,      //accento alt - il di un link nel form
 
     form-body: rgba($nero, 0.8),
-    form-bg: lighten($beige, 15%),
+    //form-bg: lighten(desaturate($rosso-vero, 10%), 45%),
+    // form-bg: lighten(desaturate($blu, 10%), 40%),
+    // form-bg: $blu,
+    form-bg: lighten(#b59a84, 20%),
     form-link: rgba($nero, 0.8),
     form-desc: rgba($nero, 0.8),
 
@@ -192,7 +196,7 @@ $colors: (
     accent-alt: rgba($nero, 0.8),      //accento alt - il di un link nel form
 
     form-body: rgba($nero, 0.8),
-    form-bg: lighten($beige, 15%),
+    form-bg: lighten(desaturate($arancione, 10%), 45%),
     form-link: rgba($nero, 0.8),
     form-desc: rgba($nero, 0.8),
 

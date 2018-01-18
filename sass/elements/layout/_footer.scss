@@ -30,7 +30,7 @@
  */
 .no-gradient #footer,
 .has-gradient #footer {
-  background-color: lighten( main-colors(footer, bg), 5% );
+  background-color: darken( main-colors(footer, bg), 5% );
   background-image: none;
 }
 
@@ -86,9 +86,13 @@
 /*
  * Post List
  */
+#footer .widget .posts_list .post_extra_info {
+  @include font(small, $mt: 0, $mb: 0);
+}
 #footer .widget .posts_list a,
 #footer .widget .posts_list a:visited {
   color: main-colors(footer, link);
+  text-decoration: none;
 
   &:hover {
     color: lighten(main-colors(footer, link), 30%)
@@ -100,11 +104,18 @@
  * Nav Menu
  */
 #footer .widget_nav_menu li {
+
   a {
     padding-top: 0;
     padding-bottom: 0;
     background-image: none;
     text-decoration: none;
+    padding-left: 0;
+    @include font(h5, $mt: 0, $mb: 0);
+
+    &:hover {
+      color: main-colors(footer, link) !important;
+    }
 
     &::after {
       background: none;
@@ -114,6 +125,7 @@
 
   &::before {
     color: main-colors(footer, link);
+    display: none;
   }
 }
 

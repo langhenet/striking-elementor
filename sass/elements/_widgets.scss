@@ -18,7 +18,7 @@ section.widget {
  */
 #sidebar .widgettitle,
 #footer h3.widgettitle {
-  @include font(h3, $mt: 0, $mb: 0);
+  @include font(h3, $mt: 0, $mb: 0, $fm: secondary, $wt: normal);
 }
 
 
@@ -105,7 +105,8 @@ section.widget {
 .posts_list .post_extra_info {
   display: table-cell;
   vertical-align: middle;
-  height: $line-height*2;
+  height: $line-height * 2;
+  @include font(p, $mb: 0, $mt: 0, $fm: primary);
 
   a {
   //  vertical-align: middle;
@@ -119,6 +120,10 @@ section.widget {
 #sidebar .posts_list li a,
 #footer .posts_list li a {
   line-height: inherit;
+
+  &:hover {
+      color: main-colors(main, body-sec);
+  }
 }
 
 //****************************************************************************//
@@ -126,17 +131,28 @@ section.widget {
 //****************************************************************************//
 .widget_nav_menu li {
   position: relative;
+  padding-top: 0;
 
     a {
     @include font(p, $mt: 0, $mb: 0);
     padding-bottom: 0;
+    padding-top: 0;
     background-image: none;
     border-bottom: 0;
+
+    &:hover {
+        color: main-colors(main, body-sec) !important;
+    }
+  }
+
+  ul {
+    padding: 0 !important;
+    margin-left: $line-height / 2 !important;
   }
 
   &::before {
     content: "\00BB";
-    top: -0.1em;
+    top: -0.05em;
     position: absolute;
     @include size(p);
   }

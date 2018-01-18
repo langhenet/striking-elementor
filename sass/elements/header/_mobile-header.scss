@@ -119,18 +119,21 @@
 // Fix navigazione che copre tutto
 ///
 .responsive #navigation {
+
+  @include breakpoint-max(lg) {
+    &::before {
+      content: "\f0c9";
+      font-family: 'FontAwesome';
+      position: absolute;
+      top: 0.4em;
+      left: 0.7em;
+    }
+  }
   @include breakpoint-max(md) {
     display: inline-block;
     width: 100%;
     flex-basis: 100%;
     margin-top: $line-height / 2;
-    &::before {
-      content: "\f0c9";
-      font-family: 'FontAwesome';
-      position: absolute;
-      top: 0.25em;
-      left: 0.7em;
-    }
   }
 }
 
@@ -141,10 +144,12 @@
 @include breakpoint-max(lg) {
   .responsive .nav2select {
     @include font(p);
-    padding-top: bhpad(2);
-    padding-bottom: bhpad(2);
-    padding-left: 2em !important;
-    border: 2px solid main-colors(header, border);
+    font-size: 1em !important;
+    text-transform: uppercase;
+    padding-top: bhpad(2) !important;
+    padding-bottom: bhpad(2) !important;
+    padding-left: 3em !important;
+    border: 2px solid rgba($nero, 0.2);
     -webkit-appearance: none;
 
     option {

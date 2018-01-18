@@ -470,7 +470,7 @@
 
   h1 {
     @include m-size(h1);
-    font-family: decoration(p, fm);
+    font-family: family( decoration(p, fm), fm);
 
     @include breakpoint-min(md) {
       @include font(h1, $fm: primary);

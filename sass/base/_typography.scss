@@ -43,7 +43,7 @@ html {
   }
 
   @include breakpoint-min(uxl) {
-    font-size:1.1vw;
+    font-size: 1.1vw;
   }
 }
 
@@ -217,6 +217,9 @@ blockquote {
   font-size: 1em;
   padding: size(blockquote, lh);
   padding-left: size(blockquote, lh) * 2;
+  display: block;
+  position: relative;
+
 
   @include font(blockquote);
 
@@ -238,9 +241,35 @@ blockquote {
       display: none;
     }
   }
+
+  @include breakpoint-min(lg) {
+    &.left,
+    &.right {
+      position: absolute;
+      padding: 0;
+      @include font(h3, $mt: 0, $mb: 0, $fm: primary, $wt: normal);
+      max-width: 15em;
+
+      &::before {
+        top: 0.2em;
+        right: 50%;
+        left: 50%;
+        display: none;
+      }
+    }
+
+    &.right {
+      right: -$line-height * 7;
+    }
+
+    &.left {
+      left: -$line-height * 7;
+    }
+  }
 }
 
 #page blockquote {
+
   p {
     color: main-colors(main, accent);
   }
