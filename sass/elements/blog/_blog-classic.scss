@@ -2,11 +2,16 @@
   margin-bottom: 0;
   padding-top: $line-height * 2;
 
+  @include breakpoint-max(md) {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
   &::after {
     content: "";
     width: 73%;
     position: absolute;
-    background: main-colors(main, body-sec);
+    background: rgba($nero, 0.1);
     height: 2px;
     right: 0;
 
@@ -14,11 +19,21 @@
       width: 100%;
     }
 
+    @at-root .hentry.entry_left:last-of-type::after {
+      height: 0;
+    }
   }
 
 
   .entry-title {
     @include font(h3, $mt: 0);
+
+    @at-root #page #{&} a {
+      color: main-colors(main, body-sec);
+    }
+    @at-root #page #{&} a:hover {
+      color: main-colors(main, body-sec);
+    }
   }
 
   .entry_meta {
@@ -39,6 +54,10 @@
 
   .read_more_wrap {
     margin-bottom: 0;
+
+    @at-root #page #{&} a:hover {
+      color: main-colors(main, body-sec);
+    }
   }
 }
 

@@ -169,11 +169,11 @@
 
   li {
     padding: $line-height / 2;
-    background-color: rgba($bianco, 0.2);
+    background-color: rgba($nero, 0.2);
     margin-bottom: 0;
 
     &:hover {
-      background-color: rgba($bianco, 0.1);
+      background-color: rgba($nero, 0.4);
     }
   }
 }
