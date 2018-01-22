@@ -463,13 +463,16 @@
   justify-content: space-around;
 
   @include breakpoint-max(md) {
+
+    justify-content: flex-end;
+
     .elementor-element-populated {
       margin-top: $line-height * 2;
     }
   }
 
   h1 {
-    @include m-size(h1);
+    @include m-size(h1, $mt: m-size(h1, mt) * 2);
     font-family: family( decoration(p, fm), fm);
 
     @include breakpoint-min(md) {

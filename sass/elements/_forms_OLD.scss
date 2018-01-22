@@ -1,19 +1,155 @@
+//****************************************************************************//
+//*                                                                     ******//
+//*                             MODULI & FORMS
+//*              descrizione - descrizione - descrizione
+//*                                                                     ******//
+//****************************************************************************//
+
+/*
+ * Reset Background di tutti i campi
+ */
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=url],
+textarea,
+textarea.textarea,
+select {
+  background: #fff;
+}
+
+
+//****************************************************************************//
+//                  CONTENITORE & STRUTTURA di GRAVITY FORMS
+//****************************************************************************//
 /*
  * Wrapper di gravity
  */
 .gform_wrapper {
   padding: $line-height * 1.5;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   max-width: 100%;
 
   @include breakpoint-max(xs) {
     max-width: 120% !important;
-    margin-left: -$line-height !important;
-    margin-right: -$line-height !important;
-    //width: 120% !important;
+    margin-left: -10% !important;
+    width: 120% !important;
   }
 }
+
+
+/*
+ * il LI che contiene i campi
+ */
+.gform_wrapper form li,
+.gform_wrapper li,
+.gform_wrapper .top_label li.gfield.gf_left_half,
+.gform_wrapper .top_label li.gfield.gf_right_half {
+  margin-bottom: $line-height / 1.5;
+}
+.gform_wrapper ul.gform_fields li.gfield,
+.gform_wrapper .top_label li.gfield.gf_right_half {
+  padding-right: 0;
+  margin-top: 0;
+}
+.gform_wrapper li.gfield.field_description_below+li.gsection {
+  margin-top: inherit !important;
+}
+
+/*
+ * Correzione padding campi complessi
+ */
+.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first,
+.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last,
+.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
+  padding-top: 0;
+}
+
+.gform_wrapper .top_label li.gfield.gf_left_half,
+.gform_wrapper .top_label li.gfield.gf_right_half {
+  @include breakpoint-max(xl) {
+    width: 100%;
+  }
+
+  @include breakpoint-max(lg) {
+    width: 49%;
+  }
+
+  @include breakpoint-max(md) {
+    width: 100%;
+  }
+}
+
+
+//****************************************************************************//
+//                 CAMPI HTML & SECTION di GRAVITY FORMS
+//****************************************************************************//
+/*
+ *  Il Contenitore del campo HTML
+ */
+.gform_wrapper .gfield_html.gfield_no_follows_desc,
+.gform_wrapper li.gfield_html {
+  margin-top: 0;
+  padding-top: 0;
+  max-width: 100%;
+}
+//titolo h3 - senza margine
+.gform_wrapper li.gfield_html h3 {
+    margin-bottom: 0;
+}
+
+/*
+ * Il Contenitore del campo SEZIONE
+ */
+.gform_wrapper .gsection {
+  margin: 0;
+  border-bottom: 1px solid;
+  padding-bottom: bspad(1) - ($line-height / 2);
+  padding-top: $line-height / 2;
+  margin-bottom: $line-height * 2;
+
+  // Titolo Sezione
+  h2 {
+    @include font(h3)
+    display: block;
+    border: 0px;
+  }
+}
+
+/*
+ * Contenuto / Descrizione del campo SECTION
+ */
+// Larghezza
+.gform_wrapper .top_label .gsection_description {
+  width: 100%;
+}
+// Tipografia
+.gform_wrapper .gsection_description {
+  @include font(p, $mt: 0);
+  padding: 0;
+}
+
+//****************************************************************************//
+//                  ETICHETTE di GRAVITY FORMS
+//****************************************************************************//
+/*
+ * Contenitore Label - resetto il Margine
+ */
+body .gform_wrapper label.gfield_label+div.ginput_container {
+  margin-top: 0 !important;
+}
+
+
+/*
+ * Etichette dei campi
+ */
+.gform_wrapper .top_label .gfield_label {
+  @include form-label(h5);
+}
+
 
 
 
@@ -35,112 +171,54 @@
  select {
   @include form-field(h5, 2);
   margin-bottom: 0;
-  list-style: none;
-  padding-left: 0;
-  width: 100%;
 }
 
-input:focus,
-textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px - devo metterlo a mano
+input.text_input:focus,
+textarea.textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px - devo metterlo a mano
   @include form-field(h5, 2);
   margin-bottom: 0;
 }
 
 
-/**
- * Gravity Forms UL
+/*
+ * Altezza Select
  */
-#main .gform_fields {
-  list-style: none !important;
-  padding-left: 0;
-  margin-left: -$line-height / 2;
-  margin-right: -$line-height / 2;
-  display: flex;
-  flex-wrap: wrap;
+.gform_wrapper select {
+  height: $line-height * 1.5; //TODO
 }
 
 
-/**
- * Campo Gravity
+/*
+ * Altezza Text Area
  */
-.gfield {
-  list-style: none !important;
-  padding-left: 0;
-  margin-left: 0;
+.gform_wrapper textarea.medium {
+  height: $line-height * 6;
+}
+
+
+/*
+ * Larghezza campi medi
+ */
+.gform_wrapper .top_label input.medium,
+.gform_wrapper .top_label select.medium {
   width: 100%;
-  flex-basis: 100%;
-  padding: 0 $line-height / 2;
-  margin-bottom: $line-height / 1.5;
-  //overflow: hidden;
-  align-self: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
-
-  &.gf_right_half,
-  &.gf_left_half {
-    width: 50%;
-    flex-basis: 50%;
-  }
 }
 
-.gf_name_has_2 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 -$line-height / 2;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 0;
+///
+// CAMPI DATE PICKER
+///
+.gform_wrapper .top_label input.large.datepicker,
+.gform_wrapper .top_label input.medium.datepicker,
+.gform_wrapper .top_label input.small.datepicker {
+  width: 90%;
 }
 
-.name_first,
-.name_last {
-  width: 50%;
-  flex-basis: 50%;
-  padding: 0 $line-height / 2;
-  display: block;
-}
-
-
-/*
- * Label
- */
-.gfield_label {
-  @include form-label(h5);
-}
-
-
-/*
- * Label Complex
- */
-.ginput_complex label {
-  @include form-label(h5);
-  display: block;
-}
-
-.gform_wrapper .top_label .gfield_label_before_complex {
-  display: none !important;
-}
-
-
-/*****************************************************************************/
-/** CAMPI SPECIFICI
-/*****************************************************************************/
-/**
- * Radio
- */
 #main .gfield_radio {
   margin: 0;
   font-size: 1em;
-  list-style: none;
 
   li {
     @include font(small, $mt: 0, $mb: 0);
-    list-style: none;
-
-    input {
-      margin-right: $line-height / 4;
-    }
 
     label {
       font-size: 1em;
@@ -149,23 +227,14 @@ textarea:focus { //FIX - il focus di queste aree perde il bordo da 2px - devo me
   }
 }
 
-/**
- * Text Area
- */
-textarea.medium {
-  height: $line-height * 6;
+.gform_wrapper .top_label .gfield_label_before_complex {
+  display: none !important;
 }
 
-
-/**
- * Select
- */
-.gform_wrapper select {
-  height: $line-height * 1.5; //TODO
+.gform_wrapper .ginput_complex label {
+  @include form-label(h5);
+  display: block;
 }
-
-
-
 
 
 //****************************************************************************//
@@ -174,27 +243,30 @@ textarea.medium {
 ///
 // Descrizioni campi Gravity Forms
 ///
-.gfield_description {
+.gform_wrapper .top_label .gfield_description {
   @include form-desc(small);
   padding-top: size(small, lh) / 4;
+
 }
 
-// .gform_wrapper ul li.gfield.field_sublabel_above.field_description_below+li.gfield {
-//   margin-top: inherit !important;
-// }
+.gform_wrapper ul li.gfield.field_sublabel_above.field_description_below+li.gfield {
+  margin-top: inherit !important;
+}
 
 ///
 // Sotto-etichette dei campi complessi (p.es nome)
 ///
-.gfield_date_day label,
-.gfield_date_month label,
-.gfield_date_year label,
-.gfield_time_ampm label,
-.gfield_time_hour label,
-.gfield_time_minute label,
-.instruction {
+.gform_wrapper .gfield_date_day label,
+.gform_wrapper .gfield_date_month label,
+.gform_wrapper .gfield_date_year label,
+.gform_wrapper .gfield_time_ampm label,
+.gform_wrapper .gfield_time_hour label,
+.gform_wrapper .gfield_time_minute label,
+.gform_wrapper .instruction {
   @include form-desc(small);
 }
+
+
 
 //****************************************************************************//
 //                     FOOTER & BOTTONE
@@ -203,6 +275,8 @@ textarea.medium {
  * Footer Gravity
  */
 .gform_wrapper .gform_footer {
+  padding: 0 !important;
+  margin: 0 0 0 0 !important;
   text-align: center;
 }
 
@@ -211,13 +285,7 @@ textarea.medium {
 // Bottone Gravity
 ///
 .gform_wrapper .gform_footer input.button,
-.gform_wrapper .gform_footer input[type=submit],
-.gform_wrapper .gform_footer input.button:focus,
-.gform_wrapper .gform_footer input[type=submit]:focus,
-.gform_wrapper .gform_footer input.button:active,
-.gform_wrapper .gform_footer input[type=submit]:active, //colore bottone
-.gform_wrapper .gform_footer input.button:checked,
-.gform_wrapper .gform_footer input[type=submit]:checked {
+.gform_wrapper .gform_footer input[type=submit] {
   @extend %button;
   @include button(h3, 4, half);
 
@@ -225,6 +293,8 @@ textarea.medium {
   margin: 0 auto;
   text-transform: uppercase;
 }
+
+
 
 
 //****************************************************************************//
@@ -251,7 +321,6 @@ textarea.medium {
   textarea,
   select { //Colore Bordo dei campi
     border-color: darken(main-colors(main, form-bg), 2.5%);
-    background: #fff;
 
     &:focus { //colore bordo campi focused
       border-color: darken(main-colors(main, form-bg), 20%);
@@ -290,13 +359,7 @@ textarea.medium {
 
   //BOTTONE
   input.button,
-  input[type=submit],
-  input.button:focus,
-  input[type=submit]:focus,
-  input.button:active,
-  input[type=submit]:active, //colore bottone
-  input.button:checked,
-  input[type=submit]:checked { //colore bottone
+  input[type=submit] { //colore bottone
     @include button-color;
     cursor: pointer;
 
@@ -327,7 +390,6 @@ textarea.medium {
     textarea,
     select { //Colore Bordo dei campi
       border-color: darken(palette($palette, form-bg), 2.5%);
-      background: #fff;
 
       &:focus { //colore bordo campi focused
         border-color: darken(palette($palette, form-bg), 20%);
@@ -366,13 +428,7 @@ textarea.medium {
 
     //BOTTONE
     input.button,
-    input[type=submit],
-    input.button:focus,
-    input[type=submit]:focus,
-    input.button:active,
-    input[type=submit]:active, //colore bottone
-    input.button:checked,
-    input[type=submit]:checked { //colore bottone
+    input[type=submit] { //colore bottone
       @include button-color;
       cursor: pointer;
 
@@ -381,17 +437,4 @@ textarea.medium {
       }
     }
   }
-}
-
-/*****
-* VALIDATION */
-
-.validation_error {
-  @include font(small, $mt: 0, $mb: size(h5, lh));
-  padding: size(h5, lh);
-  background: rgba(red, 0.2);
-}
-
-.gfield_description.validation_message {
-  color: red !important;
 }

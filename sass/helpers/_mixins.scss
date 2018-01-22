@@ -257,12 +257,12 @@
 // Form Field size settings
 ///
 @mixin form-field($size: p, $bw: 1) {
-  font-family: form(field, fm) !important;
-  font-size: size($size, fs) !important;
+  font-family: form(field, fm);
+  font-size: size($size, fs);
   line-height: size($size, lh); //TOCR - forse è più facile farla con la funzione blh?
 //  margin-bottom: font($size, mb);
   margin-top: 0;
-  padding: 0 bhpad($bw, $size) !important;
+  padding: 0 bhpad($bw, $size);
   border-width: $bw * 1px;
 }
 
@@ -271,9 +271,9 @@
 ///
 @mixin form-label($size: p) {
   font-size: size($size, fs);
-  line-height: size($size, lh) !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  line-height: size($size, lh);
+  margin-top: 0;
+  margin-bottom: 0;
   padding-top: 0;
   font-family: form(label, fm);
   font-weight: form(label, wt);

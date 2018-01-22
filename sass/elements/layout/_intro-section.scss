@@ -22,7 +22,8 @@
   justify-content: space-around;
 
   @include breakpoint-max(md) {
-    min-height: 85vh;
+    min-height: 90vh;
+    justify-content: flex-end;
   }
 }
 
@@ -53,6 +54,10 @@
     padding-left: $line-height;
     width: 100%;
   }
+
+  @include breakpoint-max(md) {
+    margin-bottom: $line-height * 1.5;
+  }
 }
 
 
@@ -79,6 +84,10 @@
 
   @include breakpoint-max(lg) {
     @include m-size(h1);
+  }
+
+  @include breakpoint-max(xs) {
+    margin-top: m-size(h1, mt) * 2;
   }
 }
 

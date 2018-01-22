@@ -100,12 +100,19 @@
   margin-right: auto;
 }
 
+.elementor-widget-testimonial {
+  max-width: 20.3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @include breakpoint-min(md) {
   .elementor-row > .elementor-column {
     &:first-child > .elementor-column-wrap > .elementor-widget-wrap {
       & > .elementor-widget-icon-box,
       & > .elementor-widget-wp-widget-gform_widget,
-      & > .elementor-widget-image {
+      & > .elementor-widget-image,
+      & > .elementor-widget-testimonial {
         margin-left: 0;
       }
     }
@@ -113,7 +120,8 @@
     &:last-child > .elementor-column-wrap > .elementor-widget-wrap {
       & > .elementor-widget-icon-box,
       & > .elementor-widget-wp-widget-gform_widget,
-      & > .elementor-widget-image {
+      & > .elementor-widget-image,
+      & > .elementor-widget-testimonial {
         margin-right: 0;
       }
     }
@@ -127,7 +135,7 @@
       @include font(small);
     }
   }
-  
+
   h3 {
     @include font(h3, $fm: primary);
   }

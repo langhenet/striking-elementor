@@ -3,6 +3,14 @@
   border-left: 3px solid;
   border-color: main-colors(main, border);
 
+  &.testimonial--column  {
+    border-left: 0 solid;
+    padding-left: 0;
+    border-bottom: 3px solid;
+    padding-bottom: $line-height;
+    border-color: main-colors(main, border);
+  }
+
   .elementor-testimonial-details {
     padding: 0;
   }
@@ -23,6 +31,9 @@
     color: main-colors(main, body-sec);
   }
 }
+
+
+//testimonial--column
 
 .elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image img {
   max-width: 60px;
@@ -54,6 +65,10 @@
 @each $palette, $section in $colors {
   .#{$palette} .elementor-widget-testimonial {
     border-color: palette($palette, border);
+
+    &.testimonial--column {
+      border-color: palette($palette, border);
+    }
 
     .elementor-testimonial-content {
       color: palette($palette, body);
