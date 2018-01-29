@@ -43,6 +43,7 @@
  */
 #footer_bottom {
   background-color: main-colors(footer, bg);
+  background-image: none;
 
   &> .inner {
     padding: $line-height 0;
