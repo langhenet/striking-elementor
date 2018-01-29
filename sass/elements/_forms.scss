@@ -395,3 +395,85 @@ textarea.medium {
 .gfield_description.validation_message {
   color: red !important;
 }
+
+
+/************
+* datepicker
+*************/
+
+.ui-datepicker {
+  width: 270px;
+  background: #fff;
+  padding: $line-height / 4;
+  box-shadow: $card-shadow;
+  border: 1px solid rgba($nero, 0.2);
+}
+
+.ui-datepicker-header {
+  display: flex;
+  justify-content: space-between;
+  padding: $line-height / 2;
+  margin: 0 -$line-height / 4;
+  background: rgba($rosso-vero, 0.8);
+}
+
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  cursor: pointer;
+  text-decoration: none;
+  flex-basis: 10%;
+
+  span {
+    display: none;
+  }
+
+  &::before {
+    color: $bianco;
+  }
+}
+
+.ui-datepicker-prev {
+  order: 0;
+
+  &::before {
+    content: "◀";
+  }
+}
+
+.ui-datepicker-next {
+  order: 2;
+
+  &::before {
+    content: "▶";
+  }
+}
+
+.ui-datepicker-title {
+  flex-basis: 60%;
+}
+.ui-datepicker-month,
+.ui-datepicker-year {
+  width: 45%;
+}
+
+.ui-datepicker-month {
+  padding-right: 2.5%;
+  float: left;
+
+}
+.ui-datepicker-year {
+  padding-left: 2.5%;
+  float: right;
+}
+
+.ui-datepicker-calendar {
+  width: 100%;
+  margin-top: $line-height;
+  margin-bottom: $line-height / 2;
+  font-size: 0.85em;
+  td {
+    padding: 0 $line-height / 3;
+    text-align: center;
+  }
+}
