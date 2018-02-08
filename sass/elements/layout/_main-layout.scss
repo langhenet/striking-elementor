@@ -163,8 +163,11 @@
   padding: 0;
   font-size: 1em;
 
+  @include breakpoint-max(xl) {
+    left: $line-height * 2;
+  }
   @include breakpoint-max(lg) {
-    left: $line-height;  
+    left: $line-height;
   }
 
   .breadcrumbs {

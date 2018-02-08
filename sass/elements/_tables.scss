@@ -43,5 +43,8 @@ table.orari {
     &:nth-child(odd) {
       background: $grigio-chiaro;
     }
+    &:nth-child(even) {
+      background: $bianco;
+    }
   }
 }
