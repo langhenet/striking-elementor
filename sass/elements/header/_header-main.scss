@@ -117,6 +117,13 @@
      z-index: 1;
      position: absolute;
      left: 0;
-     top: $line-height / -1.1;
+     top: $line-height * 0.25;
+
+     @include breakpoint-max(lg) {
+       top: $line-height * 0.5;
+     }
+     @include breakpoint-max(md) {
+       top: $line-height;
+     }
    }
  }

@@ -16,7 +16,7 @@
    max-width: $website-width;
    padding: 0;
    flex-basis: 80%;
-   margin: ($line-height / 2) auto 0;
+   margin: 0 auto 0;
 
    .menu {
      display: flex;
@@ -86,7 +86,7 @@
   font-size: 1em;
   line-height: $line-height;
   padding: bpad(3) 0;
-  margin-bottom: $line-height;
+  margin-bottom: $line-height / 2;
   color: main-colors(header, link);
   border-bottom: 3px solid transparent;
   border-top: 3px solid transparent;

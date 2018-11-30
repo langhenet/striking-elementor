@@ -147,6 +147,9 @@
     display: inline-block;
     width: 100%;
     flex-basis: 60%;
+  }
+
+  @include breakpoint-max(md) {
     &::before {
       content: "\f0c9";
       font-family: 'FontAwesome';
@@ -156,8 +159,8 @@
     }
   }
 
-  @include breakpoint-max(lg) {
-    margin-top: $line-height;
+  @include breakpoint-max(md) {
+    margin-top: $line-height ;
   }
 }
 
