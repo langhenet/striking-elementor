@@ -12,6 +12,10 @@
     a {
       text-decoration: none !important;
     }
+
+    .fa, .fas {
+      line-height: $line-height;
+    }
   }
 
   .elementor-tab-content {
