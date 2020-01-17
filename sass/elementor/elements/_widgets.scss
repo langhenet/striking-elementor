@@ -1,3 +1,21 @@
 .elementor-widget:not(:last-child) {
   margin-bottom: $line-height;
 }
+
+.elementor-toggle-item {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  .elementor-tab-title {
+    @include font(h4, $mt: 0, $mb: 0);
+    padding: ($line-height / 4) 0;
+    border: 0;
+
+    a {
+      text-decoration: none !important;
+    }
+  }
+
+  .elementor-tab-content {
+    border: 0;
+    padding: ($line-height / 4) 0;
+  }
+}

@@ -4,17 +4,17 @@
 ///
 // ARCHIVIO
 ///
- .archive.category #feature {
-   background-image: url(https://ilvignetodiroddi.com/files/2017/08/cantina03.jpg);
-   background-position: top center;
+ .category #feature {
+   background-image: url(https://ilvignetodiroddi.com/files/2020/01/blog.jpg);
+   background-position: center center;
  }
 
 ///
 // SINGLE POST
 ///
  .single-post #feature {
-   background-image: url(https://ilvignetodiroddi.com/files/2017/08/cantina03.jpg);
-   background-position: top center;
+   background-image: url(https://ilvignetodiroddi.com/files/2020/01/blog.jpg);
+   background-position: center center;
  }
 
 ///
@@ -24,6 +24,21 @@
 .category-critica #feature,
 .single-post .category-reviews #feature,
 .single-post .category-critica #feature {
-  background-image: url(https://ilvignetodiroddi.com/files/2017/08/cantina03.jpg);
-  background-position: bottom center;
+  background-image: url(https://ilvignetodiroddi.com/files/2020/01/recensioni.jpg);
+  background-position: center center;
+}
+// .category-reviews #feature,
+.category-menu-speciali #feature,
+// .single-post .category-reviews #feature,
+.single-post .category-menu-speciali #feature {
+  background-image: url(https://ilvignetodiroddi.com/files/2020/01/menu.jpg);
+  background-position: center center;
+}
+
+// .category-reviews #feature,
+.category-foto #feature,
+// .single-post .category-reviews #feature,
+.single-post .category-foto #feature {
+  background-image: url(https://ilvignetodiroddi.com/files/2020/01/foto.jpg);
+  background-position: center center;
 }
