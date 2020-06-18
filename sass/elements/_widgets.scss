@@ -156,194 +156,269 @@ section.widget {
 /** BOOKING ENGINE
 /*****************************************************************************/
 
-/*
- * Contenitore Booking engine
- */
-#slope-bl {
+// /*
+//  * Contenitore Booking engine
+//  */
+// #slope-bl {
+//   position: fixed;
+//   bottom: 0;
+//   right: 0;
+//   background: $rosso;
+//   max-width: 180px;
+//   padding: $line-height;
+//   box-shadow: $card-shadow;
+//   z-index: 1;
+
+//   @include breakpoint-max(xs) {
+//     max-width: 100%;
+//   }
+//   //sotto contenitore
+//   #slope-widget {
+//     padding: 0;
+//     margin: 0;
+//   }
+
+//   //sotto sotto contenitore
+//   #slope-search-wrapper {
+//     overflow: hidden;
+//   }
+
+//   //Labels
+//   label {
+//     @include font(h5, $mt: 0);
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     letter-spacing: 1px;
+//   }
+
+//   //CAMPI DATA
+//   .date-range-container.slp-block {
+//     display: block;
+//     width: 100%;
+
+//     .slp-block {
+//       display: block;
+//       width: 100%;
+//       margin-bottom: $line-height / 2;
+
+//       input {
+//         width: 100%;
+//         color: $grigio-scuro;
+//       }
+//     }
+//   }
+
+//   //Altri campi
+//   .slp-block {
+//     width: 100%;
+//     padding: 0;
+//     margin-bottom: $line-height / 2;
+
+//     .select-container {
+//       select {
+//         width: 50%;
+//         border-radius: 0;
+//       }
+//     }
+//   }
+
+//   //BOTTONE
+//   .center-text.medium-spacing {
+//     margin-bottom: 0;
+
+//     button {
+//       margin-top: $line-height / 2;
+//       margin-bottom: 0;
+//       height: auto;
+//       @extend %button;
+//       @include button(p, 2, half);
+//       @include button-color(none, main);
+//     }
+//   }
+// }
+
+
+// /*
+//  * Su Mobile
+//  * SOLO quando il monitor è molto grande
+//  */
+
+
+//   //Nascondo il booking trigger
+//   .booking-trigger {
+//     display: none;
+//   }
+
+//   //nascondo la sua etichetta
+//   label[for="booking-trigger"] {
+// //    display: none;
+//   }
+
+// /*
+//  * Su Mobile
+//  * da monitor grande in già
+//  */
+
+//   //Il widget è nascosto
+//   #slope-bl {
+//     visibility: hidden;
+//   }
+
+//   //Il trigger è in posizione fissa
+//   .booking-trigger {
+//     position: fixed;
+//     bottom: 0;
+//     clip: rect(0, 0, 0, 0);
+//     z-index: 99999999;
+//   }
+
+//   //la sua label ha la forma di un bottone
+//   label[for="booking-trigger"] {
+//     position: fixed;
+//     //left: 15px;
+//     z-index: 2;
+//     color: $bianco;
+//     box-shadow: $card-shadow;
+//     background: $verde;
+//     padding: $line-height * 1.25 $line-height;
+//     text-align: right;
+//     box-sizing: border-box;
+//     font-weight: bold;
+//     text-transform: uppercase;
+//     @include font(h4, $mt: 0);
+
+//     width: $line-height * 4.5;
+//     height: $line-height * 4.5;
+//     border-radius: 100%;
+//     bottom: 1vw;
+//     right: 1vw;
+
+//     //Label / Bottone su mobile
+//     @include breakpoint-max(xs) {
+//       @include font(h5, $mt: 0);
+//       line-height: size(h5, lh) / 1.5;
+//       width: $line-height * 3.5;
+//       height: $line-height * 3.5;
+//       padding: (size(h5, lh) * 0.75) size(h5, lh) / 2 0;
+//       bottom: 3vw;
+//       right: 3vw;
+//     }
+
+//     //Lo pseudoelement serve per aggiungere il testo del bottone
+//     &::after {
+//       content: "Prenota Adesso";
+//       display: inline-block;
+//       word-wrap: normal;
+//       white-space: normal;
+//       text-align: center;
+
+//       //il testo in INGLESE
+//       @at-root .current-language-english #{&} {
+//         content: "Book Online";
+//       }
+//     }
+//   }
+
+//   //la label (quindi il bottone) quando il trigger è checked
+//   .booking-trigger:checked + label {
+//     color: $bianco;
+//     background: transparent;
+//     box-shadow: none !important;
+//     bottom: -0.5vw;
+//     right: -0.5vw;
+//     padding: $line-height / 2;
+//     width: auto;
+//     height: auto;
+
+//     //IL testo quando il trigger è checked
+//     &::after {
+//       content: "Chiudi";
+
+//       //IL testo in INGLESE
+//       @at-root .current-language-english #{&} {
+//         content: "Close";
+//       }
+//     }
+//   }
+
+
+//   .booking-trigger:checked ~ #slope-bl {
+//     bottom: 0;
+//     display: block;
+//     visibility: visible;
+//   }
+
+.action-bar {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  background: $rosso;
-  max-width: 180px;
-  padding: $line-height;
-  box-shadow: $card-shadow;
-  z-index: 1;
+  right: 1vw;
+  bottom: 1vw;
+  z-index: 99;
+  width: 8rem;
 
-  @include breakpoint-max(xs) {
-    max-width: 100%;
-  }
-  //sotto contenitore
-  #slope-widget {
-    padding: 0;
-    margin: 0;
-  }
-
-  //sotto sotto contenitore
-  #slope-search-wrapper {
+  &__toggle {
+    background: #9f464a;
+    color: white;
+    border-radius: 100%;
     overflow: hidden;
-  }
-
-  //Labels
-  label {
-    @include font(h5, $mt: 0);
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-
-  //CAMPI DATA
-  .date-range-container.slp-block {
+    position: relative;
+    width: $line-height * 2;
+    height: $line-height * 2;
     display: block;
-    width: 100%;
-
-    .slp-block {
+    padding: $line-height / 4;
+    @include font(h4, $mt: 0);
+    line-height: $line-height / 1.5;
+    text-align: center;
+    box-shadow: $card-shadow;
+    cursor: pointer;
+    
+    &-inner {
+      position: absolute;
       display: block;
-      width: 100%;
-      margin-bottom: $line-height / 2;
-
-      input {
-        width: 100%;
-        color: $grigio-scuro;
-      }
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
     }
   }
+  
 
-  //Altri campi
-  .slp-block {
-    width: 100%;
-    padding: 0;
+  &__list {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    // top: 0;
+  }
+
+  &__list-item {
+    cursor: pointer;
+    @include font(h4);
     margin-bottom: $line-height / 2;
+    margin-top: 0;
+    line-height: $line-height / 2;
+    padding: $line-height / 4;
+    background: #9f464a;
+    width: fit-content;
+    position: relative;
+    left: -$line-height / 2;
+    box-shadow: $card-shadow;
 
-    .select-container {
-      select {
-        width: 50%;
-        border-radius: 0;
-      }
+    &:last-child {
+      margin-bottom: $line-height;
     }
-  }
 
-  //BOTTONE
-  .center-text.medium-spacing {
-    margin-bottom: 0;
+    a {
+      text-decoration: none !important;
+    }
 
-    button {
-      margin-top: $line-height / 2;
-      margin-bottom: 0;
-      height: auto;
-      @extend %button;
-      @include button(p, 2, half);
-      @include button-color(none, main);
+    &--close {
+      border-radius: 100%;
+      width: $line-height / 2;
+      height: $line-height / 2;
+      text-align: center;
+      background-color: transparent;
+      display: none;
     }
   }
 }
-
-
-/*
- * Su Mobile
- * SOLO quando il monitor è molto grande
- */
-
-
-  //Nascondo il booking trigger
-  .booking-trigger {
-    display: none;
-  }
-
-  //nascondo la sua etichetta
-  label[for="booking-trigger"] {
-//    display: none;
-  }
-
-/*
- * Su Mobile
- * da monitor grande in già
- */
-
-  //Il widget è nascosto
-  #slope-bl {
-    visibility: hidden;
-  }
-
-  //Il trigger è in posizione fissa
-  .booking-trigger {
-    position: fixed;
-    bottom: 0;
-    clip: rect(0, 0, 0, 0);
-    z-index: 99999999;
-  }
-
-  //la sua label ha la forma di un bottone
-  label[for="booking-trigger"] {
-    position: fixed;
-    //left: 15px;
-    z-index: 2;
-    color: $bianco;
-    box-shadow: $card-shadow;
-    background: $verde;
-    padding: $line-height * 1.25 $line-height;
-    text-align: right;
-    box-sizing: border-box;
-    font-weight: bold;
-    text-transform: uppercase;
-    @include font(h4, $mt: 0);
-
-    width: $line-height * 4.5;
-    height: $line-height * 4.5;
-    border-radius: 100%;
-    bottom: 1vw;
-    right: 1vw;
-
-    //Label / Bottone su mobile
-    @include breakpoint-max(xs) {
-      @include font(h5, $mt: 0);
-      line-height: size(h5, lh) / 1.5;
-      width: $line-height * 3.5;
-      height: $line-height * 3.5;
-      padding: (size(h5, lh) * 0.75) size(h5, lh) / 2 0;
-      bottom: 3vw;
-      right: 3vw;
-    }
-
-    //Lo pseudoelement serve per aggiungere il testo del bottone
-    &::after {
-      content: "Prenota Adesso";
-      display: inline-block;
-      word-wrap: normal;
-      white-space: normal;
-      text-align: center;
-
-      //il testo in INGLESE
-      @at-root .current-language-english #{&} {
-        content: "Book Online";
-      }
-    }
-  }
-
-  //la label (quindi il bottone) quando il trigger è checked
-  .booking-trigger:checked + label {
-    color: $bianco;
-    background: transparent;
-    box-shadow: none !important;
-    bottom: -0.5vw;
-    right: -0.5vw;
-    padding: $line-height / 2;
-    width: auto;
-    height: auto;
-
-    //IL testo quando il trigger è checked
-    &::after {
-      content: "Chiudi";
-
-      //IL testo in INGLESE
-      @at-root .current-language-english #{&} {
-        content: "Close";
-      }
-    }
-  }
-
-
-  .booking-trigger:checked ~ #slope-bl {
-    bottom: 0;
-    display: block;
-    visibility: visible;
-  }

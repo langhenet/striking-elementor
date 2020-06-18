@@ -1,0 +1,25 @@
+<div class="action-bar">
+	<ul id="actions" class="action-bar__list js-is-closed">
+		<li class="action-bar__list-item action-bar__list-item--close" data-toggle="actions">X</li>
+		<li class="action-bar__list-item">
+      <a href="https://ilvignetodiroddi.com/en/restaurant/#book">Book a table</a>
+    </li>
+		<li class="action-bar__list-item">
+      <a href="https://booking.slope.it/widgets/search/f480769a-18e4-46b2-8845-266cb2bd30c2">Book a room</a>
+    </li>
+	</ul>
+	<a class="action-bar__toggle" data-toggle="actions">
+    <span class="action-bar__toggle-inner">
+      Book<br/>now
+    </span>
+  </a>
+</div>
+<script>
+  (function() { // your page initialization code here// the DOM will be available here 
+    var actions = jQuery('#actions');
+    var toggle = jQuery('[data-toggle="actions"]');
+    toggle.click( function() {
+      actions.slideToggle();
+    });
+  })();
+</script>
